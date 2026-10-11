@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DropyHub | Admin Panel</title>
+<style>
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#f3f7ff;color:#172b49;font:14px system-ui,Arial,sans-serif}header{background:#fff;border-top:5px solid #2563eb;border-bottom:1px solid #dce6f5;padding:20px max(18px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between}header strong{font-size:24px}header strong span,a{color:#2563eb}a{text-decoration:none}main{max-width:1120px;margin:32px auto;padding:0 18px}h1{font-size:28px;margin:0 0 8px}p{color:#687c96;line-height:1.6}.notice{background:#e7f0ff;border:1px solid #c8dbff;border-radius:12px;padding:14px;margin:18px 0}.layout{display:grid;grid-template-columns:280px 1fr;gap:20px}.panel{background:white;border:1px solid #e0e8f5;border-radius:18px;padding:22px;box-shadow:0 8px 25px #1c4a8a09}.heading,.bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.heading h2{margin:0;font-size:18px}.btn{background:#2563eb;color:white;border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:pointer}.btn:disabled{opacity:.5}.btn.alt{background:#e9f1ff;color:#2563eb}.btn.danger{background:#ffedf0;color:#bb2c47}.btn.light{background:#fff;color:#46607e;border:1px solid #dce5f2}.actions{display:flex;gap:9px;flex-wrap:wrap}.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.field{display:grid;gap:7px}.wide{grid-column:1/-1}label{font-size:11px;text-transform:uppercase;font-weight:800;color:#657792;letter-spacing:.5px}input,select,textarea{width:100%;min-width:0;padding:12px;border:1px solid #d9e4f3;border-radius:10px;background:white;color:#172b49;font:inherit}textarea{min-height:95px;resize:vertical}.list{max-height:470px;overflow:auto;margin:15px 0}.entry{display:block;width:100%;text-align:left;border:1px solid transparent;border-radius:11px;background:#f5f8fe;padding:13px;margin:7px 0;cursor:pointer}.entry.active{background:#e8f1ff;border-color:#a7c7ff}.section{border-top:1px solid #e4eaf5;margin-top:25px;padding-top:20px}.item{border:1px solid #e2eaf6;border-radius:12px;background:#f8faff;padding:13px;margin-top:12px}.item .fields{margin-top:10px}.bottom{border-top:1px solid #e4eaf5;margin-top:25px;padding-top:20px}#message{color:#087e64;font-weight:700;overflow-wrap:anywhere}#logoPreview{width:70px;height:70px;border:1px solid #e1e8f4;border-radius:15px;display:grid;place-items:center;overflow:hidden;background:#f5f8ff;font-weight:800}@media(max-width:760px){.layout{grid-template-columns:1fr}.panel{padding:17px}.list{max-height:220px}}@media(max-width:400px){.fields{grid-template-columns:1fr}.wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><strong>Dropy<span>Hub</span></strong><a href="index.html">← Website</a></header>
+<main>
+<h1>Project Editor</h1><p>Manage projects, official links and guides.</p>
+<div class="notice">Sign in to publish projects directly to Supabase. Only approved admins can edit.</div>
+<section id="loginBox" class="panel" style="max-width:460px;margin:24px auto">
+<h2>Admin Login</h2><form id="loginForm">
+<div class="field"><label>Email</label><input id="email" type="email" autocomplete="username" required></div>
+<div class="field" style="margin:14px 0"><label>Password</label><input id="password" type="password" autocomplete="current-password" required></div>
+<button class="btn" type="submit">Sign In</button><p id="loginError" role="alert"></p>
+</form></section>
+<div id="dashboard" hidden>
+<div style="text-align:right;margin-bottom:12px"><button id="logout" type="button" class="btn light">Log Out</button></div>
+<div class="layout">
+<aside class="panel"><div class="heading"><h2>Projects</h2><small id="count"></small></div>
+<input id="search" placeholder="Search projects..." style="margin-top:17px">
+<div id="list" class="list"></div><button id="add" type="button" class="btn">+ Add Project</button></aside>
+<section class="panel"><div class="heading"><h2 id="title">Edit Project</h2><button id="remove" type="button" class="btn danger">Delete</button></div>
+<form id="form" hidden><div class="fields">
+<div class="field"><label>Project Name *</label><input id="name" required></div>
+<div class="field"><label>Task</label><select id="task"><option>Airdrop</option><option>Testnet</option><option>Mainnet</option><option>Whitelist</option><option>Points</option><option>Dex</option></select></div>
+<div class="field"><label>Reward</label><select id="status"><option>Confirmed</option><option>Potential</option></select></div>
+
+<div class="field"><label>Funding</label><input id="funding"></div>
+<div class="field"><label>Cost</label><input id="cost" placeholder="Free / $5 / Gas Fee"></div>
+<div class="field"><label>Time</label><input id="time" placeholder="5 min / 30 min"></div>
+<div class="field"><label>Added On</label><input id="addedOn" type="date"></div>
+<div class="field wide"><label>Upload Logo from Gallery</label><input id="logoFile" type="file" accept="image/*"><small>Maximum 5 MB.</small><button id="clearLogo" type="button" class="btn light">Remove Uploaded Logo</button></div>
+<div class="field wide"><label>Official Project Logo URL</label><input id="logoUrl" type="url" placeholder="https://example.com/logo.png"></div>
+<div class="field"><label>Fallback Logo Color</label><input id="color" type="color" style="height:45px;padding:5px"></div>
+<div class="field"><label>Logo Preview</label><div id="logoPreview">?</div></div>
+<div class="field wide"><label>Description</label><textarea id="description"></textarea></div>
+</div>
+<div class="section"><div class="heading"><h2>Social & Official Links</h2></div><p style="font-size:12px;color:#7b8ba3;margin:0 0 14px">Website, Discord aur X links add karein. Khali link website par show nahi hoga.</p><div id="links"></div></div>
+<div class="section"><div class="heading"><h2>Project Guide</h2><button id="addStep" type="button" class="btn alt">+ Add Step</button></div><p>Explain how to join and complete tasks, step by step.</p><div id="steps"></div></div>
+<div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
+</form></section></div></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="supabase-data.js"></script>
+<script src="admin-app.js?v=9"></script>
+</body></html>
