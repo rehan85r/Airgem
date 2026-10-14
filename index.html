@@ -1,0 +1,550 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1E90FF"><title>Airgem — Web3 opportunities, curated</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--bg:#f8fafc;--surface:#fff;--ink:#111d32;--muted:#7a879a;--line:#e8edf3;--accent:#1E90FF;--accent-soft:#eef3ff;--shadow:0 14px 45px rgba(24,42,77,.045)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #a5baff;outline-offset:2px}.wrap{max-width:1100px;margin:auto;padding:0 24px}.header{height:88px;background:#fff;border-bottom:1px solid var(--line)}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}.mark{width:43px;height:43px;border-radius:13px;background:#1E90FF;display:grid;place-items:center;color:#fff;box-shadow:0 8px 18px #1E90FF2c}.brand-name{font-family:Manrope,sans-serif;font-weight:800;font-size:23px;letter-spacing:-1.2px}.brand-name span{color:var(--accent)}.header-right{display:flex;align-items:center;gap:18px}.header-caption{font-size:12px;color:#8c98a9;letter-spacing:.03em}.menu-btn{width:43px;height:43px;border:1px solid #e4eaf2;background:#fff;border-radius:12px;display:grid;place-items:center;color:#1e304b}.main{padding-top:48px;padding-bottom:100px}.eyebrow{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#687b9a;margin-bottom:17px}.eyebrow:before{content:'';width:7px;height:7px;border-radius:50%;background:#1E90FF;box-shadow:0 0 0 4px #eaf0ff}.intro{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:28px}h1{font:800 clamp(26px,4vw,39px)/1.2 Manrope,sans-serif;letter-spacing:-1.6px;margin:0}.intro p{font-size:14px;color:var(--muted);margin:9px 0 0}.live{color:#55735f;background:#eaf7ed;border:1px solid #d9eedf;padding:8px 12px;border-radius:100px;font-size:11px;font-weight:700;white-space:nowrap}.search-row{display:flex;gap:12px;margin-bottom:44px}.searchbox{display:flex;align-items:center;gap:13px;flex:1;min-width:0;height:58px;border:1px solid #e2e8f1;background:#fff;border-radius:15px;padding:0 19px;box-shadow:0 5px 22px #1d35600a;color:#8d9ab0}.searchbox input{width:100%;border:0;outline:0;color:var(--ink);background:transparent;font-size:14px}.searchbox input::placeholder{color:#a0aabc}.filter-btn{display:flex;align-items:center;gap:10px;padding:0 23px;border-radius:15px;border:1px solid #e2e8f1;background:white;font-weight:700;font-size:13px;color:#273753}.filter-btn.on{border-color:#8ea7ff;color:var(--accent);background:#f7f9ff}.filter-panel{display:none;margin-top:-29px;margin-bottom:36px;background:white;border:1px solid var(--line);padding:20px;border-radius:16px;box-shadow:var(--shadow)}.filter-panel.open{display:block}.filter-grid{display:grid;grid-template-columns:1fr 1fr auto;gap:14px;align-items:end}.field label{display:block;font-size:11px;font-weight:700;color:#728198;margin-bottom:8px}.custom-select{position:relative}.select-trigger{width:100%;height:43px;border:1px solid var(--line);border-radius:10px;background:white;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:13px;color:#26354e}.select-trigger span{display:flex;align-items:center;gap:9px}.options{display:none;position:absolute;z-index:30;top:calc(100% + 5px);left:0;right:0;background:white;border:1px solid var(--line);border-radius:12px;box-shadow:0 16px 40px #1a2a4820;padding:5px;max-height:260px;overflow:auto}.custom-select.open .options{display:block}.option{display:flex;align-items:center;gap:9px;border:0;background:transparent;padding:11px;width:100%;border-radius:8px;text-align:left;font-size:13px;color:#34435b}.option:hover,.option.selected{background:#eef3ff;color:#1E90FF}.clear{height:43px;border:0;border-radius:10px;padding:0 16px;background:#eef3ff;color:#1E90FF;font-size:12px;font-weight:700}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 17px}.section-head h2{font:800 17px Manrope,sans-serif;letter-spacing:-.5px;margin:0}.section-head small{font-size:11px;font-weight:700;color:#8b97a9;letter-spacing:.04em}.feature{background:#fff;border:1px solid #e3e9f3;border-radius:21px;padding:32px 35px;min-height:260px;position:relative;overflow:hidden;box-shadow:var(--shadow);margin-bottom:48px}.feature:after{content:'';position:absolute;width:360px;height:360px;right:-150px;top:-185px;background:radial-gradient(circle,#eaf0ff 0%,#f6f8ff 55%,transparent 75%);pointer-events:none}.feature-top,.feature-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:15px}.project-identity{display:flex;align-items:center;gap:17px;min-width:0}.project-icon{width:59px;height:59px;flex-shrink:0;border-radius:17px;display:grid;place-items:center;color:white;font:800 23px Manrope,sans-serif;letter-spacing:-1px}.project-identity h3{margin:0 0 6px;font:800 20px Manrope,sans-serif;letter-spacing:-.7px;overflow-wrap:anywhere}.micro{font-size:12px;color:#8b98a9}.status{display:inline-flex;align-items:center;gap:6px;border-radius:8px;padding:8px 11px;font-size:11px;font-weight:700;white-space:nowrap}.status:before{content:'';width:6px;height:6px;background:currentColor;border-radius:50%}.status.Confirm{color:#17835b;background:#e9f8f0}.status.Potential{color:#ac7926;background:#fff5e4}.status.End{color:#8b94a5;background:#f1f3f6}.feature-bottom{margin-top:78px;padding-top:22px;border-top:1px solid var(--line)}.meta{display:flex;gap:35px;flex-wrap:wrap}.meta-item{display:flex;flex-direction:column;gap:5px}.meta-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#94a0b0;font-weight:700}.meta-value{font-size:13px;font-weight:700}.details{border:0;background:none;color:#1E90FF;font-size:12px;font-weight:800;white-space:nowrap}.projects{display:grid;gap:12px;max-height:560px;overflow-y:auto;padding:2px 4px 4px 0;scrollbar-color:#d7dfed transparent;scrollbar-width:thin}.project-card{display:flex;align-items:center;gap:17px;background:white;border:1px solid var(--line);border-radius:17px;padding:20px 23px;min-height:102px;box-shadow:0 3px 15px #1d356006;transition:transform .2s,border-color .2s}.project-card:hover{transform:translateY(-2px);border-color:#cbd8f8}.project-card .project-icon{height:48px;width:48px;border-radius:13px;font-size:18px}.card-name{font:800 15px Manrope,sans-serif;letter-spacing:-.3px;margin-bottom:6px}.card-info{flex:1;min-width:0}.card-right{display:flex;align-items:center;gap:24px}.card-type{font-size:11px;color:#8996a8;min-width:65px;text-align:right}.empty{padding:38px;text-align:center;background:white;border:1px dashed #d8e1ef;border-radius:16px;color:#7d8a9f;font-size:13px}.foot{border-top:1px solid var(--line);padding:24px 0;color:#95a0b0;font-size:11px}.foot .wrap{display:flex;justify-content:space-between;gap:15px}.overlay{position:fixed;inset:0;background:rgba(12,24,44,.46);z-index:1000;opacity:0;visibility:hidden;transition:.2s}.overlay.show{opacity:1;visibility:visible}.drawer{position:fixed;z-index:1001;right:0;top:0;height:100dvh;width:70vw;max-width:480px;background:#fff;box-shadow:-18px 0 55px #09182d1a;transform:translateX(102%);transition:transform .25s ease;display:flex;flex-direction:column;padding:29px 25px;overflow:auto}.drawer.open{transform:translateX(0)}.drawer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:25px;border-bottom:1px solid var(--line)}.close-btn{width:36px;height:36px;border:1px solid var(--line);background:white;border-radius:10px;display:grid;place-items:center}.nav-label{font-size:10px;font-weight:800;letter-spacing:.13em;color:#9aa6b6;text-transform:uppercase;margin:32px 10px 12px}.nav-item{display:flex;align-items:center;gap:13px;padding:16px 14px;border:0;background:transparent;color:#65748b;border-radius:12px;width:100%;text-align:left;font-size:14px;font-weight:700}.nav-item:hover,.nav-item.active{background:#eef3ff;color:#1E90FF}.nav-item svg{width:19px;height:19px}.nav-item .filter-icon{width:34px;height:34px;flex:0 0 34px;border-radius:10px}.nav-item .filter-icon svg{width:19px;height:19px}.drawer-note{margin-top:auto;padding:25px 10px 0;color:#9ca7b6;font-size:11px}.modal{position:fixed;inset:0;z-index:1100;display:none;align-items:center;justify-content:center;background:#0d1b33a8;padding:20px}.modal.open{display:flex}.modal-card{background:white;border-radius:21px;width:min(100%,510px);padding:28px;box-shadow:0 25px 70px #0d1b3340;max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px;padding-top:22px;border-top:1px solid var(--line)}.modal-grid p{margin:5px 0 0;font-size:14px;font-weight:700}.modal-grid small{font-size:11px;color:#8d99aa}.disclaimer{font-size:11px;color:#8793a5;line-height:1.6;margin-top:25px}.svg{width:18px;height:18px;display:inline-block;vertical-align:middle;flex-shrink:0}body.lock{overflow:hidden}@media(max-width:650px){.wrap{padding:0 18px}.header{height:75px}.header-caption{display:none}.main{padding-top:32px}.intro{align-items:start}.intro p{font-size:12px}.live{display:none}.search-row{gap:9px;margin-bottom:37px}.searchbox{height:54px;padding:0 13px}.filter-btn{height:54px;padding:0 15px}.filter-btn .filter-text{display:none}.filter-grid{grid-template-columns:1fr 1fr}.filter-grid .clear{grid-column:1/-1}.feature{padding:24px 21px;min-height:255px;margin-bottom:37px}.project-icon{width:51px;height:51px;border-radius:14px}.project-identity{gap:12px}.project-identity h3{font-size:17px}.feature-bottom{margin-top:76px;align-items:end}.meta{gap:14px}.meta-value{font-size:12px}.details{font-size:11px}.project-card{padding:16px;gap:12px}.card-right{gap:9px;flex-direction:column;align-items:end}.card-type{min-width:0}.drawer{max-width:none;padding:24px 18px}.foot .wrap{flex-direction:column}.modal-grid{gap:14px}}
+
+
+/* Airgem Aurora — vibrant premium design */
+:root{--bg:#f5f6ff;--surface:#fff;--ink:#182044;--muted:#7883a1;--line:#e0e9f7;--accent:#1E90FF;--accent-soft:#eaf2ff;--shadow:0 16px 48px rgba(60,47,137,.09)}
+body{background:radial-gradient(ellipse 75% 26% at 8% 8%,#e8f1ff 0%,transparent 75%),radial-gradient(ellipse 45% 28% at 95% 22%,#eaf2ff 0%,transparent 76%),#f8f9ff;color:var(--ink)}
+.header{background:rgba(255,255,255,.92);border-bottom:1px solid #e3ebf7;box-shadow:0 3px 18px #4831ac08}.header-inner{position:relative}.brand-name{font-size:25px;letter-spacing:-1.4px}.brand-name span{color:#1E90FF}.mark{background:linear-gradient(145deg,#60B5FF,#1879D8 65%,#21b4db);border-radius:15px;box-shadow:0 8px 24px #1E90FF42}.menu-btn{background:#f1efff;border-color:#e4defe;color:#1E90FF;box-shadow:0 4px 14px #6354ed12}.menu-btn:hover{background:#e6e0ff}
+.main{padding-top:38px}.eyebrow,.intro{display:none}.search-row{margin:0 0 34px;position:relative}.searchbox{height:65px;border-radius:19px;border:1px solid #dce7f8;box-shadow:0 14px 36px #1879D812;background:#fff;padding:0 22px}.searchbox:focus-within{border-color:#a79afc;box-shadow:0 0 0 4px #8c76ff20,0 14px 36px #1879D812}.searchbox input{font-size:15px}.filter-btn{border:0;background:linear-gradient(135deg,#1E90FF,#1879D8);color:white;border-radius:18px;padding:0 27px;box-shadow:0 12px 25px #6752e93d;font-size:14px}.filter-btn.on,.filter-btn:hover{background:linear-gradient(135deg,#1879D8,#1879D8);color:white}.filter-panel{border-color:#e9e5fb;box-shadow:0 18px 45px #1879D81a}.option:hover,.option.selected{background:#eaf2ff;color:#6250db}.clear{background:#eaf2ff;color:#1E90FF}
+.section-head{margin-bottom:17px}.section-head h2{font-size:19px;letter-spacing:-.7px}.section-head h2:before{content:'';display:inline-block;width:5px;height:19px;border-radius:8px;background:linear-gradient(#1E90FF,#93c5fd);vertical-align:-3px;margin-right:11px}.section-head small{background:#eaf2ff;color:#1E90FF;padding:7px 11px;border-radius:20px;letter-spacing:0}
+.feature{border:1px solid #dbe8ff;border-radius:27px;padding:35px;min-height:300px;background:linear-gradient(120deg,#ffffff 0%,#f3f8ff 51%,#e7f7ff 100%);box-shadow:0 18px 48px #5940c01a;margin-bottom:43px;isolation:isolate}.feature:before{content:'';position:absolute;width:240px;height:240px;right:8%;top:-140px;border-radius:50%;background:#c6b6ff6b;filter:blur(12px);pointer-events:none}.feature:after{content:'';position:absolute;width:360px;height:360px;right:-180px;bottom:-260px;top:auto;background:radial-gradient(circle,#a9f2e7 0%,#d7f5f788 48%,transparent 74%);pointer-events:none}.feature .project-icon{width:73px;height:73px;border-radius:22px;box-shadow:0 13px 26px #4c42a32c}.feature .project-identity h3{font-size:25px}.feature-bottom{margin-top:98px;border-top:1px solid #dedcf2;padding-top:25px}.feature .details{background:#1E90FF;color:white;border-radius:11px;padding:12px 16px;box-shadow:0 8px 18px #1E90FF2b}.meta-label{color:#8890a9}.meta-value{color:#303456;font-size:14px}.status.Confirm{color:#087d6e;background:#dcf9ed}.status.Potential{color:#a66c13;background:#fff1d3}.status.Claim{color:#6741c5;background:#e9dfff}.status.End{color:#74798e;background:#e9ebf3}
+.projects{gap:15px;max-height:650px;padding:4px 8px 12px 2px}.project-card{border:1px solid #e0e9f7;border-radius:20px;min-height:116px;padding:23px 25px;box-shadow:0 9px 26px #4c40a30a;position:relative;overflow:hidden}.project-card:before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:0 6px 6px 0;background:linear-gradient(#1E90FF,#60B5FF)}.project-card:hover{transform:translateY(-3px);border-color:#cfc4ff;box-shadow:0 16px 34px #5140af19}.project-card .project-icon{width:55px;height:55px;border-radius:16px}.card-name{font-size:17px}.card-type{color:#857da9}.details{color:#1E90FF}.drawer{background:#fff;box-shadow:-24px 0 70px #21164e3b}.nav-item.active,.nav-item:hover{background:#eaf2ff;color:#1E90FF}.overlay{background:rgba(24,18,65,.56)}.foot{background:#fff9}
+@media(max-width:650px){.main{padding-top:25px}.search-row{margin-bottom:31px}.searchbox{height:58px;padding:0 15px}.filter-btn{height:58px;padding:0 16px;border-radius:15px}.feature{padding:26px 22px;min-height:280px;margin-bottom:36px;border-radius:23px}.feature .project-icon{width:58px;height:58px;border-radius:17px}.feature .project-identity h3{font-size:19px}.feature-bottom{margin-top:89px;gap:10px}.feature .details{padding:10px 11px;font-size:10px}.meta{gap:15px}.project-card{padding:19px 17px;min-height:106px}.project-card .project-icon{width:47px;height:47px}.card-name{font-size:15px}.section-head h2{font-size:17px}}
+
+/* Airgem blue & white premium palette */
+:root{--bg:#f6f9ff;--surface:#fff;--ink:#14233e;--muted:#71829b;--line:#e0e9f7;--accent:#1E90FF;--accent-soft:#eaf2ff;--shadow:0 16px 45px rgba(30,83,170,.08)}
+body{background:radial-gradient(ellipse 80% 24% at 8% 7%,#e8f1ff 0%,transparent 78%),radial-gradient(ellipse 55% 25% at 98% 22%,#edf5ff 0%,transparent 78%),#f8fbff;color:var(--ink)}
+.header{border-bottom-color:#e3ebf7;box-shadow:0 3px 18px rgba(37,99,235,.045)}
+.brand-name span{color:#1E90FF}.mark{background:linear-gradient(135deg,#1879D8,#66B5FF)}
+.searchbox{border-color:#dce7f8;box-shadow:0 12px 32px rgba(37,99,235,.07)}
+.section-head h2:before{background:linear-gradient(#1E90FF,#93c5fd)}
+.feature{border-color:#dbe8ff;background:linear-gradient(120deg,#fff 0%,#f3f8ff 56%,#e8f2ff 100%);box-shadow:0 18px 46px rgba(37,99,235,.10)}
+.project-card{border-color:#e0e9f7;box-shadow:0 9px 26px rgba(37,99,235,.05)}
+
+/* Airgem — refined premium visual system */
+:root{--bg:#f5f8fe;--surface:#fff;--ink:#0b1d3a;--muted:#72829c;--line:#e2eaf7;--accent:#1E90FF;--accent-soft:#edf4ff;--shadow:0 12px 36px rgba(20,62,129,.055)}
+body{background:linear-gradient(180deg,#eef5ff 0,#f8faff 320px,#f5f8fe 100%);color:var(--ink)}
+.header{height:76px;background:rgba(255,255,255,.97);border-bottom:1px solid #e4ebf6;box-shadow:0 2px 18px #184c9808}
+.brand-name{letter-spacing:-1.05px;font-size:24px}.brand-name span{color:#1E90FF}
+.mark{border-radius:12px;background:#1E90FF;box-shadow:none}
+.menu-btn{border-radius:11px;border-color:#dce6f5;background:#f8fbff;color:#1E90FF}
+.main{padding-top:36px;padding-bottom:78px}
+.search-row{margin-bottom:39px;gap:10px}
+.searchbox{height:58px;border-radius:12px;border:1px solid #dce6f4;box-shadow:0 6px 22px #123a7808;background:#fff}
+.searchbox:focus-within{border-color:#1E90FF;box-shadow:0 0 0 4px #1E90FF12}
+.filter-btn{border-radius:12px;border-color:#dce6f4;color:#17468e;background:#fff;box-shadow:0 6px 22px #123a7808}
+.filter-btn.on{background:#edf4ff;color:#1E90FF}
+.section-head{margin-bottom:15px}.section-head h2{font-size:19px;letter-spacing:-.65px}.section-head small{color:#1E90FF;font-size:10px;letter-spacing:.1em}
+.feature{border-radius:18px;border:1px solid #d9e6fa;background:linear-gradient(115deg,#ffffff 0%,#ffffff 62%,#edf5ff 100%);box-shadow:0 16px 38px #16458a0b;min-height:245px;margin-bottom:43px;padding:30px}
+.feature:after{background:radial-gradient(circle,#dbeaff 0%,transparent 70%);opacity:.6;pointer-events:none}
+.projects{gap:12px}
+.project-card{border-radius:15px!important;border:1px solid #e0e9f6!important;background:#fff!important;box-shadow:0 5px 18px #143a7808!important;transition:transform .18s ease,box-shadow .18s ease}
+.project-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #143a7816!important}
+.project-card:before{display:none!important}
+.filter-panel{border-radius:14px;border-color:#dfe9f7;box-shadow:0 14px 30px #133b7a0d}
+.select-trigger{border-color:#dce6f4}.clear{background:#edf4ff;color:#1E90FF}
+.drawer{background:#fff!important;box-shadow:-16px 0 40px #0d2c5d26!important;z-index:10001!important}
+.overlay{z-index:10000!important}
+.modal{z-index:10002!important}
+@media(max-width:640px){.wrap{padding-left:18px;padding-right:18px}.header{height:68px}.main{padding-top:25px}.search-row{margin-bottom:31px}.searchbox{height:54px}.filter-btn{padding:0 15px}.feature{padding:22px;min-height:235px;border-radius:16px}.section-head h2{font-size:18px}}
+
+/* Premium duotone filter icon system */
+.filter-icon{line-height:0;vertical-align:middle;align-items:center;justify-items:center}.select-trigger>span{min-width:0;align-items:center}.select-trigger>span b{line-height:1.2}
+.filter-icon{width:30px;height:30px;flex:0 0 30px;display:inline-grid;place-items:center;border-radius:9px;background:var(--icon-bg);color:var(--icon-fg)}
+.filter-icon svg{width:17px;height:17px;display:block;margin:auto;flex:none}
+.select-trigger .filter-icon{width:28px;height:28px;flex-basis:28px;align-items:center;justify-items:center}
+.option{gap:11px;min-height:44px;align-items:center}.option.selected .filter-icon{box-shadow:inset 0 0 0 1px currentColor}
+
+/* Taller Explore Airdrop cards with Featured-style details */
+.project-card-bottom .meta{column-gap:26px}
+@media(max-width:650px){.project-card-bottom .meta{column-gap:15px}.project-card-bottom .meta-item{min-width:0}}
+.projects{max-height:720px}
+.project-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:space-between;min-height:185px!important;padding:23px 25px!important;gap:0!important}
+.project-card-top{display:flex;align-items:center;gap:16px;min-width:0}
+.project-card-top .card-info{flex:1;min-width:0}
+.project-card-bottom{display:flex;justify-content:space-between;align-items:end;gap:16px;border-top:1px solid var(--line);margin-top:24px;padding-top:17px}
+.project-card-bottom .meta{display:flex;gap:35px;flex-wrap:wrap}
+.project-card-bottom .meta-item{gap:5px}
+.project-card-bottom .details{flex-shrink:0}
+@media(max-width:650px){.project-card{min-height:180px!important;padding:20px 18px!important}.project-card-bottom .meta{gap:22px}.project-card-bottom{gap:8px}.project-card-bottom .meta-value{font-size:12px}.project-card-bottom .details{font-size:11px}}
+
+/* Project layout refinement */
+.status,.status.Confirm,.status.Potential,.status.End{background:transparent!important;border:0!important;padding:0!important;border-radius:0!important;box-shadow:none!important}
+.card-right,.feature-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.project-card-bottom .meta,.feature-bottom .meta{display:grid!important;grid-template-columns:repeat(2,minmax(0,max-content)) 1fr;align-items:end;gap:14px 22px;width:100%}
+.project-card-bottom .added-date,.feature-bottom .added-date{grid-column:3;justify-self:end;text-align:right}
+.project-card-bottom,.feature-bottom{justify-content:stretch!important}
+.project-card-top{align-items:flex-start!important}
+.feature-actions .details,.card-right .details{background:#1E90FF;color:#fff;border-radius:9px;padding:10px 13px;cursor:pointer;font-weight:700}
+.feature-actions .details:hover,.card-right .details:hover{background:#1879D8}
+@media(max-width:650px){.card-right,.feature-actions{flex-direction:column;align-items:flex-end;gap:9px}.card-right .details,.feature-actions .details{font-size:10px;padding:8px 9px}.project-card-bottom .meta,.feature-bottom .meta{gap:12px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.project-card-bottom .added-date,.feature-bottom .added-date{grid-column:2;grid-row:2}.project-card-bottom .meta-item:nth-child(2),.feature-bottom .meta-item:nth-child(2){grid-column:2;grid-row:1}.project-card-bottom .meta-item:first-child,.feature-bottom .meta-item:first-child{grid-column:1;grid-row:1}}
+/* Align Added On in the same bottom row, pinned to the right */
+.project-card-bottom .meta,.feature-bottom .meta{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr) max-content!important;gap:12px!important;align-items:start!important}
+.project-card-bottom .meta-item,.feature-bottom .meta-item{min-width:0!important;grid-row:1!important}
+.project-card-bottom .meta-item:first-child,.feature-bottom .meta-item:first-child{grid-column:1!important}
+.project-card-bottom .meta-item:nth-child(2),.feature-bottom .meta-item:nth-child(2){grid-column:2!important}
+.project-card-bottom .added-date,.feature-bottom .added-date{grid-column:3!important;grid-row:1!important;justify-self:end!important;text-align:right!important}
+@media(max-width:650px){.project-card-bottom .meta,.feature-bottom .meta{grid-template-columns:minmax(0,1fr) minmax(0,1fr) max-content!important;gap:7px!important}.project-card-bottom .meta-label,.feature-bottom .meta-label{font-size:9px!important;letter-spacing:.045em!important}.project-card-bottom .meta-value,.feature-bottom .meta-value{font-size:11px!important;white-space:normal!important}.project-card-bottom .added-date .meta-value,.feature-bottom .added-date .meta-value{white-space:nowrap!important;font-size:10px!important}}
+.feature .meta,.project-card-bottom .meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 14px;width:100%}.feature-bottom{margin-top:60px}.project-card{min-height:215px!important}.project-card-bottom{width:100%}.meta-item{min-width:0}.meta-value{overflow-wrap:anywhere}@media(max-width:650px){.feature .meta,.project-card-bottom .meta{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px 8px}.meta-value{font-size:11px!important}.meta-label{font-size:9px!important}.feature-bottom{margin-top:48px}} 
+/* Final layout: exactly 3 columns and 2 rows for all project cards */
+.feature-bottom .meta, .project-card-bottom .meta {
+ display:grid!important;
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-template-rows:auto auto!important;
+ column-gap:16px!important;
+ row-gap:24px!important;
+ width:100%!important;
+}
+.feature-bottom .meta-item, .project-card-bottom .meta-item {
+ grid-column:auto!important;
+ grid-row:auto!important;
+ justify-self:stretch!important;
+ text-align:left!important;
+ min-width:0!important;
+}
+.feature-bottom .meta-item:nth-child(3n+1),.project-card-bottom .meta-item:nth-child(3n+1){grid-column:1!important}
+.feature-bottom .meta-item:nth-child(3n+2),.project-card-bottom .meta-item:nth-child(3n+2){grid-column:2!important}
+.feature-bottom .meta-item:nth-child(3n),.project-card-bottom .meta-item:nth-child(3n){grid-column:3!important}
+.feature-bottom .meta-item:nth-child(-n+3),.project-card-bottom .meta-item:nth-child(-n+3){grid-row:1!important}
+.feature-bottom .meta-item:nth-child(n+4),.project-card-bottom .meta-item:nth-child(n+4){grid-row:2!important}
+@media(max-width:650px){
+ .feature-bottom .meta,.project-card-bottom .meta{column-gap:7px!important;row-gap:18px!important}
+ .feature-bottom .meta-label,.project-card-bottom .meta-label{font-size:9px!important}
+ .feature-bottom .meta-value,.project-card-bottom .meta-value{font-size:11px!important;white-space:normal!important}
+}
+
+/* Professional alignment: left / center / right in both rows */
+.feature-bottom .meta, .project-card-bottom .meta {
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+.feature-bottom .meta-item:nth-child(3n+1),
+.project-card-bottom .meta-item:nth-child(3n+1) {
+  justify-self:start!important;
+  text-align:left!important;
+}
+.feature-bottom .meta-item:nth-child(3n+2),
+.project-card-bottom .meta-item:nth-child(3n+2) {
+  justify-self:center!important;
+  text-align:center!important;
+}
+.feature-bottom .meta-item:nth-child(3n),
+.project-card-bottom .meta-item:nth-child(3n) {
+  justify-self:end!important;
+  text-align:right!important;
+}
+
+/* Airgem premium project cards */
+.feature, .project-card {
+  background:linear-gradient(135deg,#fff 0%,#fbfdff 58%,#edf4ff 100%)!important;
+  border:1px solid #dce7f8!important;
+  box-shadow:0 16px 45px rgba(28,69,143,.085),0 2px 7px rgba(28,69,143,.025)!important;
+  transition:transform .2s ease,box-shadow .2s ease!important;
+}
+.feature{border-radius:22px!important;padding:30px!important;min-height:0!important}
+.feature:hover,.project-card:hover{transform:translateY(-3px);box-shadow:0 22px 52px rgba(28,69,143,.13)!important}
+.feature .project-identity h3{font-weight:800;letter-spacing:-.75px}
+.feature .project-icon{box-shadow:0 9px 22px rgba(23,51,99,.12)!important}
+.feature-bottom,.project-card-bottom{
+  margin-top:30px!important;
+  padding-top:22px!important;
+  border-top:1px solid #e5ebf6!important;
+}
+.feature-bottom .meta,.project-card-bottom .meta{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,auto)!important;
+  column-gap:12px!important;
+  row-gap:12px!important;
+  width:100%!important;
+}
+.feature-bottom .meta-item,.project-card-bottom .meta-item{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  gap:7px!important;
+  min-width:0!important;
+  min-height:76px!important;
+  padding:14px 16px!important;
+  background:rgba(245,248,255,.85)!important;
+  border:1px solid #e9eef9!important;
+  border-radius:13px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95)!important;
+}
+.feature-bottom .meta-item:nth-child(3n+1),.project-card-bottom .meta-item:nth-child(3n+1){grid-column:1!important;justify-self:stretch!important;text-align:left!important}
+.feature-bottom .meta-item:nth-child(3n+2),.project-card-bottom .meta-item:nth-child(3n+2){grid-column:2!important;justify-self:stretch!important;text-align:center!important}
+.feature-bottom .meta-item:nth-child(3n),.project-card-bottom .meta-item:nth-child(3n){grid-column:3!important;justify-self:stretch!important;text-align:right!important}
+.feature-bottom .meta-item:nth-child(-n+3),.project-card-bottom .meta-item:nth-child(-n+3){grid-row:1!important}
+.feature-bottom .meta-item:nth-child(n+4),.project-card-bottom .meta-item:nth-child(n+4){grid-row:2!important}
+.feature-bottom .meta-label,.project-card-bottom .meta-label{
+  color:#8190aa!important;font-size:10px!important;letter-spacing:.085em!important;font-weight:800!important;
+}
+.feature-bottom .meta-value,.project-card-bottom .meta-value{
+  color:#172a4b!important;font-size:15px!important;font-weight:800!important;line-height:1.3!important;overflow-wrap:anywhere!important;
+}
+.feature-actions .details,.card-right .details{
+  background:linear-gradient(135deg,#1E90FF,#1879D8)!important;
+  color:#fff!important;border-radius:11px!important;
+  padding:12px 17px!important;
+  box-shadow:0 8px 18px rgba(37,99,235,.2)!important;
+}
+@media(max-width:650px){
+ .feature{padding:19px!important;border-radius:18px!important}
+ .feature-bottom,.project-card-bottom{margin-top:23px!important;padding-top:17px!important}
+ .feature-bottom .meta,.project-card-bottom .meta{column-gap:7px!important;row-gap:8px!important}
+ .feature-bottom .meta-item,.project-card-bottom .meta-item{min-height:68px!important;padding:10px 7px!important;border-radius:10px!important;gap:6px!important}
+ .feature-bottom .meta-label,.project-card-bottom .meta-label{font-size:8px!important;letter-spacing:.02em!important}
+ .feature-bottom .meta-value,.project-card-bottom .meta-value{font-size:11px!important}
+ .feature-actions .details,.card-right .details{padding:9px 10px!important;font-size:10px!important}
+}
+
+
+/* Center text inside every project information box */
+.feature-bottom .meta-item,
+.project-card-bottom .meta-item,
+.feature-bottom .meta-item:nth-child(n),
+.project-card-bottom .meta-item:nth-child(n) {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  justify-self:stretch!important;
+  text-align:center!important;
+}
+.feature-bottom .meta-label,.feature-bottom .meta-value,
+.project-card-bottom .meta-label,.project-card-bottom .meta-value {
+  width:100%;
+  text-align:center!important;
+}
+
+/* Drawer creator footer */
+.drawer-creator{margin-top:auto;padding:22px 10px 8px;border-top:1px solid #e5ecf8}
+.drawer-creator-heading{font-size:10px;letter-spacing:.14em;font-weight:800;color:#8b99b1;margin-bottom:14px}
+.drawer-creator-row{display:flex;align-items:center;gap:12px}
+.drawer-creator-avatar{width:48px;height:48px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#1E90FF,#8bb8ff);color:#fff;display:grid;place-items:center;font-weight:800;font-size:21px;overflow:hidden;border:2px solid #e6efff}
+.drawer-creator-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.drawer-creator-info{display:flex;flex-direction:column;gap:3px;min-width:0}
+.drawer-creator-info strong{font:800 14px Manrope,sans-serif;color:#15294a}
+.drawer-creator-info span{font-size:11px;color:#8a98af}
+.drawer-follow{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:16px;padding:12px;border-radius:11px;background:#1E90FF;color:#fff;text-decoration:none;font-size:13px;font-weight:800;transition:background .2s}
+.drawer-follow:hover{background:#1879D8}
+
+
+/* Compact premium drawer navigation */
+.drawer{padding:22px 20px!important}
+.drawer-top{padding-bottom:16px!important}
+#navigation{display:flex;flex-direction:column;gap:5px;margin-top:14px}
+#navigation .nav-item{min-height:49px!important;padding:7px 12px!important;gap:12px!important;border-radius:11px!important;font-size:13px!important;line-height:1.2!important;transition:background .18s,color .18s!important}
+#navigation .nav-item .filter-icon{width:32px!important;height:32px!important;flex:0 0 32px!important;border-radius:9px!important}
+#navigation .nav-item .filter-icon svg{width:18px!important;height:18px!important}
+#navigation .nav-item.active{background:#eaf2ff!important;color:#1E90FF!important}
+#navigation .nav-item:hover{background:#f1f5ff!important}
+.drawer-creator{padding:15px 8px 5px!important}
+.drawer-creator-heading{margin-bottom:10px!important}
+.drawer-creator-avatar{width:42px!important;height:42px!important}
+.drawer-follow{margin-top:12px!important;padding:10px!important}
+@media(max-width:650px){.drawer{padding:20px 18px!important}#navigation{gap:4px;margin-top:10px}#navigation .nav-item{min-height:46px!important;padding:6px 11px!important}#navigation .nav-item .filter-icon{width:30px!important;height:30px!important;flex-basis:30px!important}}
+
+/* Airgem 2026 — cohesive premium interface refinements */
+:root{--dh-ink:#10213e;--dh-muted:#74849c;--dh-blue:#1E90FF;--dh-line:#e4ebf6}
+body{color:var(--dh-ink);background:linear-gradient(180deg,#f5f8fe 0%,#f8faff 54%,#f4f7fc 100%);-webkit-font-smoothing:antialiased}
+.header{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #e8eef8!important;box-shadow:0 3px 18px rgba(25,55,105,.035)!important}
+.brand-name{font-weight:800!important;letter-spacing:-.055em!important}
+.header-caption{color:#8491a6!important;font-weight:500!important}
+.menu-btn,.filter-btn{border:1px solid #e3eaf6!important;box-shadow:0 3px 10px rgba(28,61,111,.04)!important;border-radius:13px!important}
+.menu-btn:hover,.filter-btn:hover{background:#eff5ff!important;border-color:#cbdcf8!important}
+.searchbox{background:#fff!important;border:1px solid #e0e8f5!important;border-radius:16px!important;box-shadow:0 7px 23px rgba(29,65,126,.045)!important}
+.searchbox:focus-within{border-color:#93b6ff!important;box-shadow:0 0 0 3px rgba(37,99,235,.09)!important}
+.section-head h2{color:#132748!important;font-weight:800!important;letter-spacing:-.045em!important}
+.section-head small{font-weight:700!important;letter-spacing:.045em!important}
+.feature,.project-card{background:linear-gradient(145deg,#fff 0%,#fcfdff 66%,#f1f6ff 100%)!important;border:1px solid #e0e9f8!important;box-shadow:0 12px 35px rgba(28,66,131,.055),0 2px 8px rgba(28,66,131,.025)!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease!important}
+.feature:hover,.project-card:hover{transform:translateY(-2px)!important;border-color:#cbdcf8!important;box-shadow:0 17px 42px rgba(28,66,131,.095)!important}
+.feature{border-radius:24px!important;padding:30px!important}
+.feature .project-identity h3{font-weight:800!important;letter-spacing:-.05em!important;line-height:1.15!important}
+.project-card .card-name{font-weight:800!important;letter-spacing:-.025em!important}
+.feature .project-icon,.project-card .project-icon{border-radius:19px!important;box-shadow:0 6px 18px rgba(19,42,78,.085)!important}
+.feature-actions .details,.card-right .details{background:linear-gradient(135deg,#1E90FF,#1879D8)!important;color:#fff!important;border:0!important;border-radius:12px!important;font-weight:750!important;box-shadow:0 6px 17px rgba(37,99,235,.17)!important;transition:transform .18s,box-shadow .18s!important}
+.feature-actions .details:hover,.card-right .details:hover{transform:translateY(-1px)!important;box-shadow:0 9px 21px rgba(37,99,235,.24)!important}
+.feature-bottom,.project-card-bottom{border-top:1px solid #e7edf6!important;margin-top:26px!important;padding-top:21px!important}
+.feature-bottom .meta,.project-card-bottom .meta{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto)!important;gap:11px!important;width:100%!important}
+.feature-bottom .meta-item,.project-card-bottom .meta-item{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;justify-self:stretch!important;gap:8px!important;min-width:0!important;min-height:79px!important;padding:13px 9px!important;border:1px solid #e7edf7!important;border-radius:13px!important;background:linear-gradient(145deg,#f9fbff,#f3f7fe)!important;box-shadow:inset 0 1px 0 #fff!important}
+.feature-bottom .meta-item:nth-child(3n+1),.project-card-bottom .meta-item:nth-child(3n+1){grid-column:1!important}
+.feature-bottom .meta-item:nth-child(3n+2),.project-card-bottom .meta-item:nth-child(3n+2){grid-column:2!important}
+.feature-bottom .meta-item:nth-child(3n),.project-card-bottom .meta-item:nth-child(3n){grid-column:3!important}
+.feature-bottom .meta-item:nth-child(-n+3),.project-card-bottom .meta-item:nth-child(-n+3){grid-row:1!important}
+.feature-bottom .meta-item:nth-child(n+4),.project-card-bottom .meta-item:nth-child(n+4){grid-row:2!important}
+.feature-bottom .meta-label,.project-card-bottom .meta-label{color:#8390a7!important;font-size:10px!important;font-weight:800!important;letter-spacing:.08em!important;line-height:1.2!important}
+.feature-bottom .meta-value,.project-card-bottom .meta-value{color:#1b2e50!important;font-size:15px!important;font-weight:800!important;line-height:1.25!important;overflow-wrap:anywhere!important}
+.drawer{background:#fff!important;box-shadow:-16px 0 55px rgba(16,38,77,.15)!important}
+.drawer-top{border-bottom:1px solid #e9eef7!important}
+#navigation{display:flex!important;flex-direction:column!important;gap:5px!important;margin-top:12px!important}
+#navigation .nav-item{display:flex!important;align-items:center!important;min-height:48px!important;padding:7px 11px!important;gap:12px!important;border-radius:12px!important;font-size:13px!important;font-weight:700!important;color:#62718a!important;line-height:1.2!important}
+#navigation .nav-item .filter-icon{width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:9px!important}
+#navigation .nav-item .filter-icon svg{width:17px!important;height:17px!important}
+#navigation .nav-item.active{background:#eaf2ff!important;color:#1E90FF!important}
+#navigation .nav-item:hover{background:#f1f5fc!important;color:#1E90FF!important}
+.drawer-creator{padding:16px 9px 7px!important;border-top:1px solid #e9eef7!important}
+.drawer-creator-heading{font-size:10px!important;letter-spacing:.13em!important}
+.drawer-creator-avatar{width:42px!important;height:42px!important}
+.drawer-creator-info strong{font-size:13px!important}
+.drawer-creator-info span{font-size:11px!important}
+.drawer-follow{padding:11px!important;margin-top:12px!important;border-radius:10px!important;font-size:13px!important}
+.filter-panel{border:1px solid #e3ebf7!important;box-shadow:0 10px 26px rgba(26,61,120,.06)!important;border-radius:16px!important}
+.foot{color:#8290a5!important;font-size:12px!important}
+@media(max-width:650px){
+ .feature{padding:18px!important;border-radius:19px!important}
+ .feature .project-identity h3{font-size:clamp(18px,4.8vw,24px)!important;line-height:1.15!important}
+ .feature-bottom,.project-card-bottom{margin-top:20px!important;padding-top:16px!important}
+ .feature-bottom .meta,.project-card-bottom .meta{gap:7px!important}
+ .feature-bottom .meta-item,.project-card-bottom .meta-item{min-height:65px!important;padding:9px 4px!important;gap:5px!important;border-radius:10px!important}
+ .feature-bottom .meta-label,.project-card-bottom .meta-label{font-size:8px!important;letter-spacing:.015em!important}
+ .feature-bottom .meta-value,.project-card-bottom .meta-value{font-size:11px!important;line-height:1.3!important}
+ .feature-actions .details,.card-right .details{font-size:11px!important;padding:10px 11px!important;border-radius:10px!important}
+ .drawer{padding:19px 18px!important}
+ #navigation .nav-item{min-height:45px!important;padding:6px 10px!important;font-size:13px!important}
+ .section-head h2{letter-spacing:-.035em!important}
+}
+@media(prefers-reduced-motion:reduce){.feature,.project-card,.details{transition:none!important}}
+
+
+/* Airgem / Atlas edition — original premium interface */
+:root{--bg:#f5f7fc;--ink:#14233d;--muted:#78869a;--line:#e2e8f2;--accent:#1E90FF;--shadow:0 16px 46px rgba(22,43,85,.065)}
+body{background:radial-gradient(ellipse 80% 420px at 50% -120px,#e5edff 0%,transparent 80%),#f5f7fc!important;color:#14233d!important}
+.header{background:rgba(255,255,255,.95)!important;border-bottom:1px solid #e2e9f5!important;box-shadow:none!important}
+.header-inner{max-width:1160px!important}
+.brand-name{font-weight:800!important;letter-spacing:-1.35px!important}
+.mark{background:linear-gradient(145deg,#1879D8,#1E90FF)!important;box-shadow:0 9px 24px rgba(35,91,217,.18)!important}
+.main{max-width:1160px!important;padding-top:43px!important}
+.search-row{margin-bottom:35px!important}
+.searchbox{border-radius:17px!important;height:62px!important;box-shadow:0 9px 32px rgba(22,51,108,.045)!important}
+.filter-btn{background:#fff!important;color:#1c365c!important;border:1px solid #dce5f3!important;border-radius:16px!important;box-shadow:none!important}
+.filter-btn.on{background:#eaf1ff!important;color:#1E90FF!important}
+.section-head{margin-bottom:20px!important}
+.section-head h2{font-size:19px!important;letter-spacing:-.6px!important}
+.section-head h2:before{background:#1E90FF!important;border-radius:20px!important}
+.section-head small{background:#edf2fa!important;color:#647a9b!important}
+.feature{background:#fff!important;border:1px solid #e0e8f4!important;border-radius:25px!important;box-shadow:0 16px 45px rgba(20,51,107,.065)!important;isolation:isolate!important}
+.feature:before{background:radial-gradient(circle,#e8efff 0%,transparent 72%)!important;filter:none!important;right:-45px!important;top:-100px!important}
+.feature:after{background:radial-gradient(circle,#eff5ff 0%,transparent 70%)!important}
+.feature .project-identity h3{color:#132541!important}
+.feature .project-icon,.project-card .project-icon{box-shadow:0 8px 20px rgba(18,48,105,.08)!important}
+.feature-bottom,.project-card-bottom{border-top:1px solid #e8edf5!important}
+.feature-bottom .meta-item,.project-card-bottom .meta-item{background:#f7f9fd!important;border:1px solid #e9eef6!important;box-shadow:none!important;border-radius:12px!important}
+.feature-bottom .meta-value,.project-card-bottom .meta-value{color:#192d4c!important}
+.feature-actions .details,.card-right .details{background:#1E90FF!important;box-shadow:0 7px 16px rgba(36,94,232,.15)!important}
+.project-card{background:#fff!important;border:1px solid #e3eaf5!important;border-radius:21px!important;box-shadow:0 8px 30px rgba(20,51,107,.045)!important;overflow:hidden!important}
+.project-card:hover,.feature:hover{border-color:#c8d7f2!important;box-shadow:0 17px 42px rgba(20,51,107,.09)!important}
+.drawer{background:#fff!important}
+.nav-item.active{background:#ebf2ff!important;color:#1E90FF!important}
+.foot{border-color:#e3eaf5!important}
+@media(max-width:650px){
+ .main{padding-top:27px!important}
+ .search-row{margin-bottom:28px!important}
+ .searchbox{height:57px!important;border-radius:14px!important}
+ .filter-btn{border-radius:14px!important}
+ .feature{padding:20px!important;border-radius:21px!important}
+ .project-card{border-radius:18px!important}
+ .feature-bottom .meta-item,.project-card-bottom .meta-item{background:#f7f9fd!important}
+}
+
+/* Remove decorative bars beside Trending and Explore headings */
+.section-head h2::before{content:none!important;display:none!important}
+ .brand .mark{background:transparent!important;box-shadow:none!important;border-radius:12px!important;overflow:hidden} 
+/* UX polish: clear separation when filters expand; neutral touch feedback */
+.search-row{margin-bottom:35px!important}
+.filter-panel{margin-top:0!important;margin-bottom:38px!important;position:relative;clear:both}
+.filter-panel.open{display:block!important}
+.search-row:has(+ .filter-panel.open){margin-bottom:16px!important}
+*{-webkit-tap-highlight-color:transparent}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button:active,a:active{ -webkit-tap-highlight-color:transparent }
+button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
+@media(max-width:650px){.search-row{margin-bottom:28px!important}.search-row:has(+ .filter-panel.open){margin-bottom:16px!important}.filter-panel{margin-bottom:32px!important}}
+
+/* Airgem consistency pass: keyboard access, spacing and touch */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg{max-width:100%}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[contenteditable]:focus-visible{outline:3px solid #8cb3ff;outline-offset:3px}
+button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
+@media(hover:none){button:hover,a:hover{filter:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Consistent breathing room between search and filter drawer */
+.search-row{position:relative;z-index:1;margin-bottom:30px!important}
+.search-row:has(+ .filter-panel.open){margin-bottom:20px!important}
+.filter-panel{position:relative;z-index:0;margin-top:0!important;margin-bottom:34px!important}
+.filter-panel.open{margin-top:0!important}
+.searchbox,.filter-btn{min-width:0}
+@media(max-width:650px){.search-row{margin-bottom:26px!important}.search-row:has(+ .filter-panel.open){margin-bottom:18px!important}.filter-panel{margin-bottom:30px!important}}
+
+/* Airgem compact filter dropdown — balanced icons and restrained states */
+.filter-panel .select-trigger{height:44px!important;min-height:44px!important;padding:0 12px!important;border-radius:11px!important;font-size:13px!important}
+.filter-panel .select-trigger>span{gap:9px!important}
+.filter-panel .filter-icon{width:27px!important;height:27px!important;flex:0 0 27px!important;border-radius:8px!important}
+.filter-panel .filter-icon svg{width:15px!important;height:15px!important;stroke-width:1.8}
+.filter-panel .select-trigger .filter-icon{width:26px!important;height:26px!important;flex-basis:26px!important}
+.filter-panel .options{top:calc(100% + 6px)!important;padding:5px!important;max-height:228px!important;border-radius:12px!important;box-shadow:0 12px 30px rgba(19,45,88,.12)!important;scrollbar-width:thin}
+.filter-panel .option{height:39px!important;min-height:39px!important;padding:5px 9px!important;gap:10px!important;border-radius:8px!important;font-size:12.5px!important;font-weight:550!important;line-height:1.25!important;transition:background-color .15s,color .15s!important}
+.filter-panel .option .filter-icon{width:25px!important;height:25px!important;flex-basis:25px!important;border-radius:7px!important}
+.filter-panel .option .filter-icon svg{width:14px!important;height:14px!important}
+.filter-panel .option:hover{background:#f4f7ff!important;color:#1E90FF!important}
+.filter-panel .option.selected{background:#eaf1ff!important;color:#1E90FF!important}
+.filter-panel .option.selected .filter-icon{box-shadow:none!important}
+.filter-panel .option:focus-visible{outline:2px solid #8aafff!important;outline-offset:-2px!important}
+@media(max-width:650px){.filter-panel .options{max-height:205px!important}.filter-panel .option{height:38px!important;min-height:38px!important}.filter-panel .select-trigger{padding:0 9px!important}}
+
+/* Reward-only direct filters: task selection lives in the navigation drawer. */
+.filter-panel{padding:16px 18px!important}
+.reward-filter{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.reward-label{font-size:12px;font-weight:800;color:#66758e}
+.reward-options{display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap}
+.reward-chip{height:36px;padding:0 16px;border:1px solid #e1e8f3;border-radius:10px;background:#fff;color:#52627c;font-size:12px;font-weight:700;transition:background .15s,border-color .15s,color .15s}
+.reward-chip:hover{background:#f3f6ff;border-color:#cbd8f8;color:#1E90FF}
+.reward-chip.active{background:#eef3ff;border-color:#9db8ff;color:#1E90FF}
+.reward-chip:focus-visible{outline:2px solid #1E90FF;outline-offset:2px}
+.reward-filter .clear{height:36px;padding:0 13px;margin-left:auto;background:#f4f6fa;color:#64748b}
+@media(max-width:650px){.filter-panel{padding:14px!important}.reward-filter{gap:10px}.reward-label{width:100%}.reward-options{gap:7px}.reward-chip{height:34px;padding:0 12px;font-size:12px}.reward-filter .clear{height:34px;margin-left:0}}
+
+/* Keep Trending and All Airdrop Join Now buttons identical. */
+.feature-actions .details, .card-right .details {
+  box-sizing:border-box!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:152px!important;
+  min-width:152px!important;
+  height:62px!important;
+  padding:0 12px!important;
+  margin:0!important;
+  border-radius:12px!important;
+  font-size:15px!important;
+  font-weight:750!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+  background:#1E90FF!important;
+  color:#fff!important;
+}
+.feature-actions, .card-right {
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+}
+@media(max-width:650px){
+  .feature-actions .details, .card-right .details {
+    width:152px!important;min-width:152px!important;height:62px!important;
+    padding:0 12px!important;font-size:15px!important;border-radius:12px!important;
+  }
+}
+/* Compact Join Now buttons — same proportions in Trending and All Airdrop. */
+.feature-actions .details,.card-right .details{
+  width:auto!important;min-width:0!important;height:48px!important;
+  padding:0 20px!important;font-size:13px!important;border-radius:12px!important;
+  white-space:nowrap!important;
+}
+@media(max-width:650px){
+  .feature-actions .details,.card-right .details{
+    width:auto!important;min-width:0!important;height:44px!important;
+    padding:0 15px!important;font-size:12px!important;border-radius:10px!important;
+  }
+  .feature-actions,.card-right{flex:0 0 auto!important;min-width:0!important}
+}
+/* Unified Join Now buttons: identical in Trending and All Airdrop. */
+.feature-actions .details,.card-right .details{
+  appearance:none!important;-webkit-appearance:none!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  flex:0 0 auto!important;box-sizing:border-box!important;
+  width:124px!important;min-width:124px!important;max-width:124px!important;
+  height:48px!important;min-height:48px!important;
+  padding:0 12px!important;margin:0!important;
+  border:0!important;border-radius:12px!important;
+  background:#1E90FF!important;background-image:none!important;
+  color:#fff!important;font-size:13px!important;font-weight:750!important;
+  line-height:1!important;letter-spacing:0!important;text-align:center!important;
+  white-space:nowrap!important;text-shadow:none!important;
+  box-shadow:0 6px 17px rgba(30,144,255,.17)!important;
+}
+@media(max-width:650px){
+  .feature-actions .details,.card-right .details{
+    width:100px!important;min-width:100px!important;max-width:100px!important;
+    height:40px!important;min-height:40px!important;
+    padding:0 10px!important;font-size:12px!important;border-radius:10px!important;
+  }
+}
+/* Trending horizontal swipe: one complete card per page */
+.trending-slider{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}.trending-slider::-webkit-scrollbar{display:none}.trending-track{display:flex;gap:0}.trending-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start}.trending-slide .feature{margin-bottom:8px!important}.trending-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:9px 0 34px;color:#657792;font-weight:700}.trending-controls button{width:36px;height:36px;border:1px solid #dce6f5;border-radius:50%;background:#fff;color:#1E90FF;font-size:25px;line-height:1}.trending-slider .feature:hover{transform:none!important}
+
+/* Remove the clipped shadow strip beneath the Trending slider. */
+#featured .trending-slider{margin-bottom:20px;overflow-y:hidden}
+#featured .trending-slide .feature{margin-bottom:0!important;box-shadow:none!important}
+
+/* Trending navigation: aligned with heading, not below the card */
+.trending-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.trending-heading h2{min-width:0}
+#trendingHeaderControls{flex-shrink:0}
+.trending-heading .trending-controls{display:flex;align-items:center;justify-content:flex-end;gap:9px;margin:0;color:#657792;font-weight:700}
+.trending-heading .trending-controls button{display:grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid #dce6f5;border-radius:50%;background:#fff;color:#1E90FF;font-size:23px;line-height:1;cursor:pointer;transition:background .2s,border-color .2s}
+.trending-heading .trending-controls button:hover{background:#edf6ff;border-color:#1E90FF}
+.trending-heading #trendPosition{font-size:13px;white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
+@media(max-width:420px){.trending-heading .trending-controls{gap:6px}.trending-heading .trending-controls button{width:29px;height:29px;font-size:21px}.trending-heading #trendPosition{font-size:12px}}
+
+/* Search: prevent native mobile focus rectangle while keeping outer focus indication */
+.searchbox input,.searchbox input:focus,.searchbox input:focus-visible{outline:none!important;outline-offset:0!important;box-shadow:none!important;border:0!important;-webkit-appearance:none;appearance:none}
+.searchbox:focus-within{border-color:#dce6f4!important;box-shadow:0 6px 22px #123a7808!important}
+
+/* Airgem homepage tagline — scoped to hero only */
+.dropy-hero{text-align:center;margin:0 auto 29px;padding:4px 10px 0}.dropy-hero h1{display:block;margin:0;font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(27px,4.5vw,42px);line-height:1.2;letter-spacing:-1.2px;color:#172b4c}.dropy-hero h1 span{color:#1E90FF}.dropy-hero p{margin:12px 0 14px;color:#74849b;font-size:clamp(13px,1.8vw,16px);line-height:1.55}.dropy-verified{display:inline-flex;align-items:center;gap:7px;border:1px solid #d7e8ff;background:#eff6ff;color:#1763a6;border-radius:100px;padding:7px 13px;font-size:12px;font-weight:800;letter-spacing:.01em}.dropy-verified span{font-size:13px}@media(max-width:650px){.dropy-hero{margin-bottom:24px;padding-top:0}.dropy-hero p{max-width:330px;margin:10px auto 12px}.dropy-verified{font-size:11px;padding:6px 12px}}
+
+/* All Airdrop: remove rectangular shadow/extra backdrop behind cards. */
+.project-card,.project-card:hover{box-shadow:none!important;filter:none!important;}
+</style><link rel="icon" type="image/png" href="airgem-logo.png"></head><body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.2c-1 .7-1.7 1.2-1.7 2.8M12 17h.01"/></symbol><symbol id="i-stop" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h6v6H9z"/></symbol><symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M3 10h18M12 10v11M12 10c-8 0-7-7-3-7 2 0 3 3 3 7Zm0 0c8 0 7-7 3-7-2 0-3 3-3 7Z"/></symbol><symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol></svg>
+<header class="header"><div class="wrap header-inner"><a class="brand" href="#" aria-label="Airgem Home"><span class="mark"><img src="airgem-logo.png" alt="Airgem logo" width="43" height="43" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:12px"></span><span class="brand-name">Airgem</span></a><div class="header-right"><span class="header-caption">WEB3 DISCOVERY PLATFORM</span><button class="menu-btn" id="openMenu" aria-label="Open menu"><svg class="svg" style="width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><use href="#i-menu"/></svg></button></div></div></header>
+<main class="wrap main"><section class="dropy-hero" aria-label="Airgem introduction"><h1>Crypto <span>Airdrops</span></h1><p>Join Projects. Follow Guides. Earn Rewards.</p></section><div class="search-row"><label class="searchbox"><svg class="svg" style="fill:none;stroke:currentColor;stroke-width:1.8"><use href="#i-search"/></svg><input id="search" type="search" placeholder="Search projects..." autocomplete="off" aria-label="Search projects"></label></div><div class="section-head trending-heading"><h2>Trending Airdrop</h2><div id="trendingHeaderControls"></div></div><div id="featured"></div><div class="section-head"><h2 id="listTitle">All Airdrop</h2><small id="count">0 PROJECTS</small></div><div class="projects" id="projects"></div></main><footer class="foot"><div class="wrap"><span>© 2026 Airgem. Built for Web3 discovery.</span><span>Project information is illustrative; verify before participating.</span></div></footer>
+<div class="overlay" id="overlay"></div><aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-top"><div class="brand-name" style="font-size:20px">Airgem</div><button class="close-btn" id="closeMenu" aria-label="End menu"><svg class="svg" style="fill:none;stroke:currentColor;stroke-width:1.8"><use href="#i-close"/></svg></button></div><nav id="navigation"></nav><div class="drawer-creator">
+  <div class="drawer-creator-heading">BUILT BY</div>
+  <div class="drawer-creator-row">
+    <div class="drawer-creator-avatar"><img src="rehan-dp.png" alt="Rehan profile" onerror="this.style.display='none';this.parentElement.textContent='R'"></div>
+    <div class="drawer-creator-info"><strong>@Rehanx85R</strong><span>Creator of Airgem</span></div>
+  </div>
+  <a class="drawer-follow" href="https://x.com/Rehanx85R" target="_blank" rel="noopener noreferrer">Follow <span aria-hidden="true">↗</span></a>
+</div></aside><div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Project details"><div class="modal-card"><div class="modal-head"><strong style="font:800 17px Manrope">Project Overview</strong><button class="close-btn" id="closeModal" aria-label="End details"><svg class="svg" style="fill:none;stroke:currentColor;stroke-width:1.8"><use href="#i-close"/></svg></button></div><div id="modalContent"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="supabase-config.js"></script><script src="supabase-data.js"></script><script src="projects.js"></script><script>
+const icon=(name,size=18)=>`<svg width="${size}" height="${size}" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><use href="#i-${name}"/></svg>`;
+const data=[];
+// Demo entries use a demo listing date; for new projects, store the real creation date in addedOn.
+data.forEach(p=>{if(!p.addedOn)p.addedOn='2026-10-11'});
+const formatAdded=date=>{if(!date)return 'Not available';const d=new Date(date+'T12:00:00');return Number.isNaN(d.getTime())?'Not available':d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})};
+let trendingProjectIds=[],trendingSelectionLoaded=false;let task='All',status='All';const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const cats=['Testnet','Mainnet','Whitelist','Points'];const taskTypes=['All','Testnet','Mainnet','Whitelist','Points'];const statuses=['All','Confirmed','Potential'];const statusIcons={All:'grid',Potential:'help',Confirm:'check',End:'stop',};
+// Consistent, duotone SVG icon family for filter choices.
+const filterPaths={
+ All:'<rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/>',
+ Potential:'<circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.3a2.6 2.6 0 1 1 4.3 2c-1.1.9-1.9 1.3-1.9 2.7"/><circle cx="12" cy="17" r=".7" fill="currentColor" stroke="none"/>',
+ Confirm:'<circle cx="12" cy="12" r="8.5"/><path d="m8.3 12.1 2.5 2.6 4.9-5.2"/>',
+ 
+ End:'<circle cx="12" cy="12" r="8.5"/><rect x="9" y="9" width="6" height="6" rx="1.2"/>',
+ Claim:'<rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M3.5 10h17M12 10v10M12 10c-5.5 0-6.6-5.5-3.3-5.5 2 0 3.3 2.4 3.3 5.5Zm0 0c5.5 0 6.6-5.5 3.3-5.5-2 0-3.3 2.4-3.3 5.5Z"/>',
+ Mainnet:'<circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c-4 4-4 12 0 16M12 4c4 4 4 12 0 16"/>',
+ Testnet:'<circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="18" r="2"/><path d="m8 8 3 8m5-8-3 8M8 7h8"/>',
+ Whitelist:'<rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 4.5h6M8.5 11h7M8.5 15h4"/>',
+ Dex:'<path d="M4 8h16M4 16h16M8 4l-4 4 4 4M16 12l4 4-4 4"/>',
+ Points:'<path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3-5.7-3-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/>'
+};
+const filterColors={All:['#1E90FF','#eaf2ff'],Potential:['#d18b24','#fff5e3'],Confirm:['#119a74','#e6f8f0'],End:['#778398','#eef1f5'],Mainnet:['#1E90FF','#eaf2ff'],Testnet:['#0899a5','#e5f8fa'],Whitelist:['#8657b9','#f5edff'],Points:['#d38c24','#fff5e3'],Dex:['#1E90FF','#eaf2ff']};
+function filterIcon(name){const [fg,bg]=filterColors[name]||filterColors.All;return `<span class="filter-icon" style="--icon-fg:${fg};--icon-bg:${bg}" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${filterPaths[name]||filterPaths.All}</svg></span>`}
+function selectMarkup(id,items,selected,kind){$(id).innerHTML=`<button type="button" class="select-trigger" aria-expanded="false"><span>${filterIcon(selected)}<b style="font-weight:600">${esc(selected)}</b></span>${icon('chevron',15)}</button><div class="options">${items.map(v=>`<button type="button" class="option ${v===selected?'selected':''}" data-value="${esc(v)}">${filterIcon(v)}${esc(v)}</button>`).join('')}</div>`;const root=$(id);root.querySelector('.select-trigger').onclick=()=>{const was=root.classList.contains('open');document.querySelectorAll('.custom-select').forEach(x=>{x.classList.remove('open');x.querySelector('.select-trigger').setAttribute('aria-expanded','false')});root.classList.toggle('open',!was);root.querySelector('.select-trigger').setAttribute('aria-expanded',String(!was))};root.querySelectorAll('.option').forEach(b=>b.onclick=()=>{if(kind==='task')task=b.dataset.value;else status=b.dataset.value;root.classList.remove('open');refreshSelects();render()})}
+function refreshSelects(){/* Task navigation remains in the menu. */}
+function getMatches(){let q=$('search').value.trim().toLowerCase();return data.filter(p=>(task==='All'||p.task===task)&&(status==='All'||(p.status==='Confirm'?'Confirmed':p.status)===status)&&(!q||[p.name,p.task,p.status].join(' ').toLowerCase().includes(q)))}
+function logo(p){const url=p.logoUrl&&/^(https:\/\/|data:image\/(?:png|jpeg|webp);base64,)/i.test(p.logoUrl)?p.logoUrl:null;return `<div class="project-icon" style="background:${esc(p.color||'#1E90FF')}">${url?`<img src="${esc(url)}" alt="${esc(p.name)} logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;background:white" onerror="this.style.display='none';this.parentNode.append(document.createTextNode(${JSON.stringify("?")}))">`:esc(p.name[0])}</div>`}function badge(p){return `<span class="status ${esc(p.status)}">${esc(p.status==='Confirm'?'Confirmed':p.status)}</span>`}function card(p){return `<article class="project-card"><div class="project-card-top">${logo(p)}<div class="card-info"><div class="card-name">${esc(p.name)}</div><div class="micro">${esc(p.displayTag||p.task)}</div></div><div class="card-right"><button class="details" data-id="${p.id}" aria-label="View ${esc(p.name)} details">Join Now →</button></div></div><div class="project-card-bottom"><div class="meta"><div class="meta-item"><span class="meta-label">Type</span><span class="meta-value">${esc(p.task)}</span></div><div class="meta-item"><span class="meta-label">Cost</span><span class="meta-value">${esc(p.cost||'—')}</span></div><div class="meta-item"><span class="meta-label">Time</span><span class="meta-value">${esc(p.time||'—')}</span></div><div class="meta-item"><span class="meta-label">Reward</span><span class="meta-value">${esc(p.status==='Confirm'?'Confirmed':p.status)}</span></div><div class="meta-item"><span class="meta-label">Funding</span><span class="meta-value">${esc(p.funding)}</span></div><div class="meta-item"><span class="meta-label">Added On</span><span class="meta-value">${esc(formatAdded(p.addedOn))}</span></div></div></div></article>`}
+function featuredCard(p){return `<article class="feature"><div class="feature-top"><div class="project-identity">${logo(p)}<div><h3>${esc(p.name)}</h3><div class="micro">${esc(p.displayTag||p.task)}</div></div></div><div class="feature-actions"><button class="details" data-id="${esc(p.id)}">Join Now →</button></div></div><div class="feature-bottom"><div class="meta">${[['Type',p.task],['Cost',p.cost||'—'],['Time',p.time||'—'],['Reward',p.status==='Confirm'?'Confirmed':p.status],['Funding',p.funding||'N/A'],['Added On',formatAdded(p.addedOn)]].map(([k,v])=>`<div class="meta-item"><span class="meta-label">${k}</span><span class="meta-value">${esc(v)}</span></div>`).join('')}</div></div></article>`}
+function render(){const matches=getMatches();const featured=trendingProjectIds.map(id=>data.find(p=>String(p.id)===String(id))).filter(Boolean).slice(0,5);if(!trendingSelectionLoaded&&!featured.length&&data.length)featured.push(data[0]);const featuredIds=new Set(featured.map(p=>String(p.id)));const searching=Boolean($('search').value.trim());const explore=searching?matches:matches.filter(p=>!featuredIds.has(String(p.id)));document.querySelector('.trending-heading').style.display=searching?'none':'';$('featured').style.display=searching?'none':'';$('featured').innerHTML=featured.length?`<div class="trending-slider" tabindex="0" aria-label="Trending projects, swipe left or right"><div class="trending-track">${featured.map(p=>`<div class="trending-slide">${featuredCard(p)}</div>`).join('')}</div></div>`:`<div class="empty" style="margin-bottom:35px">No trending projects selected</div>`;$('trendingHeaderControls').innerHTML=featured.length>1?`<div class="trending-controls"><button type="button" id="trendPrev" aria-label="Previous trending project">‹</button><span id="trendPosition">1 / ${featured.length}</span><button type="button" id="trendNext" aria-label="Next trending project">›</button></div>`:'';$('projects').innerHTML=explore.map(card).join('')||(searching?'<div class="empty">No projects found.</div>':'<div class="empty">No more projects match your selection.</div>');$('count').textContent=`${explore.length} PROJECTS`;$('listTitle').textContent=searching?'Search Results':'All Airdrop';document.querySelectorAll('[data-id]').forEach(b=>b.onclick=e=>{e.stopPropagation();goProject(b.dataset.id)});document.querySelectorAll('.project-card,.feature').forEach(el=>{const btn=el.querySelector('[data-id]');if(btn){el.style.cursor='pointer';el.tabIndex=0;el.setAttribute('role','link');el.onclick=()=>goProject(btn.dataset.id);el.onkeydown=e=>{if(e.key==='Enter')goProject(btn.dataset.id)}}});const slider=document.querySelector('.trending-slider');if(slider&&featured.length>1){let position=0;const update=()=>{position=Math.max(0,Math.min(featured.length-1,Math.round(slider.scrollLeft/slider.clientWidth)));$('trendPosition').textContent=`${position+1} / ${featured.length}`};const move=d=>slider.scrollTo({left:Math.max(0,Math.min(featured.length-1,position+d))*slider.clientWidth,behavior:'smooth'});$('trendPrev').onclick=()=>move(-1);$('trendNext').onclick=()=>move(1);slider.addEventListener('scroll',update,{passive:true});slider.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();move(1)}if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}})}}
+
+function goProject(id){window.location.href=`project.html?id=${encodeURIComponent(id)}`}
+function openProject(id){const p=data.find(x=>x.id===id);if(!p)return;$('modalContent').innerHTML=`<div style="display:flex;align-items:center;gap:14px;margin-top:25px">${logo(p)}<div><div style="font:800 20px Manrope">${esc(p.name)}</div><div class="micro">${esc(p.displayTag||p.task)}</div></div></div><div class="modal-grid"><div><small>Reward</small><p>${esc(p.status==='Confirm'?'Confirmed':p.status)}</p></div><div><small>Type</small><p>${esc(p.task)}</p></div><div><small>Funding</small><p>${esc(p.funding)}</p></div><div><small>Cost</small><p>${esc(p.cost||'—')}</p></div><div><small>Time</small><p>${esc(p.time||'—')}</p></div><div><small>Added On</small><p>${esc(formatAdded(p.addedOn))}</p></div></div><p style="font-size:13px;color:#627188;line-height:1.8;margin-top:24px">${esc(p.description)}</p><p class="disclaimer">Demo project information. This is not a verified listing or financial recommendation.</p>`;$('modal').classList.add('open');document.body.classList.add('lock')}
+function closeModal(){$('modal').classList.remove('open');if(!$('drawer').classList.contains('open'))document.body.classList.remove('lock')}
+function toggleMenu(open){$('drawer').classList.toggle('open',open);$('overlay').classList.toggle('show',open);$('drawer').setAttribute('aria-hidden',String(!open));document.body.classList.toggle('lock',open)}
+$('navigation').innerHTML=['All','Testnet','Mainnet','Whitelist','Points'].map(c=>`<button type="button" class="nav-item ${task===c?'active':''}" data-task="${c}">${filterIcon(c)}<span>${c==='All'?'All Airdrop':c}</span></button>`).join('');document.querySelectorAll('#navigation [data-task]').forEach(b=>b.onclick=()=>{task=b.dataset.task;refreshSelects();toggleMenu(false);render();document.querySelectorAll('#navigation [data-task]').forEach(x=>x.classList.toggle('active',x===b))});$('openMenu').onclick=()=>toggleMenu(true);$('closeMenu').onclick=()=>toggleMenu(false);$('overlay').onclick=()=>toggleMenu(false);$('search').oninput=render;$('closeModal').onclick=closeModal;$('modal').onclick=e=>{if(e.target===$('modal'))closeModal()};document.addEventListener('click',e=>{if(!e.target.closest('.custom-select'))document.querySelectorAll('.custom-select').forEach(x=>{x.classList.remove('open');x.querySelector('.select-trigger').setAttribute('aria-expanded','false')})});document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggleMenu(false);closeModal();}});refreshSelects();render();Promise.all([dropyFetchProjects(),dropyClient.from('site_trending_items').select('project_id,position').order('position',{ascending:true}),dropyClient.from('site_trending').select('project_id').eq('slot',1).maybeSingle()]).then(([items,choice,legacy])=>{data.splice(0,data.length,...items);if(!choice.error){trendingSelectionLoaded=true;trendingProjectIds=(choice.data||[]).map(x=>x.project_id)}else{console.warn('Trending list:',choice.error.message);if(!legacy.error){trendingSelectionLoaded=true;trendingProjectIds=legacy.data?.project_id?[legacy.data.project_id]:[]}}render()}).catch(err=>{console.error(err);document.getElementById("featured").innerHTML="<div class=empty>Unable to load projects. Please refresh.</div>"});
+</script></body></html>
