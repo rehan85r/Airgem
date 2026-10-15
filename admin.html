@@ -110,6 +110,15 @@ body:has(#loginBox:not([hidden])) .editor-page-heading{display:none}
 }
 @media(max-height:620px){body:has(#loginBox:not([hidden])) main{align-items:flex-start}}
 
+
+/* Center the sign-in page content on mobile and desktop. */
+body:has(#loginBox:not([hidden])){min-height:100svh;display:flex;flex-direction:column}
+body:has(#loginBox:not([hidden])) header{flex-direction:column;justify-content:center;gap:12px;text-align:center}
+body:has(#loginBox:not([hidden])) main{flex:1;width:100%;min-height:0}
+#loginBox{text-align:center}
+#loginBox .login-mark{margin-left:auto;margin-right:auto}
+#loginForm label,#loginForm input,#loginError{text-align:center}
+
 </style>
 </head>
 <body>
