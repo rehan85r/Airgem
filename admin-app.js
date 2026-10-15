@@ -96,5 +96,52 @@ $('guideClear').addEventListener('click',e=>{
  msg('Entire guide cleared. Click Publish Changes to save the empty guide.');
  editor.focus();
 });
-async function initialize(){const {data:{user}}=await dropyClient.auth.getUser();if(!user){$('loginBox').hidden=false;$('dashboard').hidden=true;return}const {data,error}=await dropyClient.from('admin_users').select('user_id').eq('user_id',user.id).maybeSingle();if(error||!data){$('loginBox').hidden=false;$('dashboard').hidden=true;$('loginError').textContent=error?.message||'Not authorized as admin';return}$('loginBox').hidden=true;$('dashboard').hidden=false;try{await refresh();await loadTrending()}catch(e){msg('Error: '+e.message)}}await initialize();
+let pendingMfa=null;
+function mfaView(show){$('mfaBox').hidden=!show;$('dashboard').hidden=true;$('loginBox').hidden=true;$('logout').hidden=false}
+function mfaMessage(message){$('mfaError').textContent=message}
+async function startMfaSetup(){
+ try{
+  mfaMessage('Preparing authenticator setup...');
+  const {data,error}=await dropyClient.auth.mfa.enroll({factorType:'totp',friendlyName:'Airgem Admin'});
+  if(error)throw error;
+  pendingMfa={id:data.id,mode:'enroll'};
+  $('mfaHeading').textContent='Set Up Authenticator';
+  $('mfaInstructions').textContent='Scan This QR Code In Google Authenticator Or Another TOTP App. Then Enter The 6-Digit Code.';
+  $('mfaQr').src=data.totp.qr_code;$('mfaQr').hidden=false;
+  $('mfaSecret').textContent='Manual Setup Key: '+data.totp.secret;
+  $('mfaCancel').textContent='Cancel Setup';
+  $('mfaCode').value='';mfaView(true);mfaMessage('');
+ }catch(e){mfaMessage('Unable to start MFA setup: '+e.message);mfaView(true)}
+}
+$('mfaSetup').onclick=startMfaSetup;
+$('mfaCancel').onclick=async()=>{
+ if(pendingMfa?.mode==='enroll'){try{await dropyClient.auth.mfa.unenroll({factorId:pendingMfa.id})}catch{}pendingMfa=null;await initialize()}
+ else{await dropyClient.auth.signOut();location.reload()}
+};
+$('mfaForm').onsubmit=async e=>{
+ e.preventDefault();const code=$('mfaCode').value.trim();
+ if(!/^[0-9]{6}$/.test(code)){mfaMessage('Enter a valid 6-digit code.');return}
+ const button=$('mfaForm').querySelector('button');button.disabled=true;mfaMessage('Verifying...');
+ try{
+  if(!pendingMfa?.id)throw Error('MFA session expired. Please sign in again.');
+  const {data:challenge,error:challengeError}=await dropyClient.auth.mfa.challenge({factorId:pendingMfa.id});
+  if(challengeError)throw challengeError;
+  const {error}=await dropyClient.auth.mfa.verify({factorId:pendingMfa.id,challengeId:challenge.id,code});
+  if(error)throw error;
+  pendingMfa=null;$('mfaQr').hidden=true;$('mfaSecret').textContent='';$('mfaCode').value='';
+  await initialize();
+ }catch(err){mfaMessage(err.message)}finally{button.disabled=false}
+};
+async function initialize(){const {data:{user}}=await dropyClient.auth.getUser();if(!user){$('loginBox').hidden=false;$('dashboard').hidden=true;return}const {data,error}=await dropyClient.from('admin_users').select('user_id').eq('user_id',user.id).maybeSingle();if(error||!data){$('loginBox').hidden=false;$('dashboard').hidden=true;$('mfaBox').hidden=true;$('logout').hidden=false;$('loginError').textContent=error?.message||'Not authorized as admin';return}
+ const {data:factorData,error:factorError}=await dropyClient.auth.mfa.listFactors();
+ if(factorError){$('loginError').textContent='MFA check failed: '+factorError.message;$('loginBox').hidden=false;$('dashboard').hidden=true;return}
+ const verified=factorData.totp?.filter(f=>f.status==='verified')||[];
+ const {data:assurance,error:aalError}=await dropyClient.auth.mfa.getAuthenticatorAssuranceLevel();
+ if(aalError){$('loginError').textContent='MFA assurance check failed: '+aalError.message;$('loginBox').hidden=false;$('dashboard').hidden=true;return}
+ if(verified.length&&assurance.currentLevel!=='aal2'){
+  pendingMfa={id:verified[0].id,mode:'verify'};
+  $('mfaHeading').textContent='Verify Your Identity';$('mfaInstructions').textContent='Enter The 6-Digit Code From Your Authenticator App.';
+  $('mfaQr').hidden=true;$('mfaSecret').textContent='';$('mfaCancel').textContent='Log Out';$('mfaCode').value='';mfaMessage('');mfaView(true);return;
+ }
+ $('mfaBox').hidden=true;$('loginBox').hidden=true;$('dashboard').hidden=false;$('logout').hidden=false;$('mfaSetup').hidden=verified.length>0;try{await refresh();await loadTrending()}catch(e){msg('Error: '+e.message)}}await initialize();
 })();
