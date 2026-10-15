@@ -170,7 +170,16 @@ body:has(#loginBox:not([hidden])) main{padding:12px 16px;align-items:center}
 </form>
 <p class="login-footer">Airgem · Admin Access</p>
 </section>
-<div id="dashboard" hidden>
+<section id="mfaBox" class="panel" hidden aria-labelledby="mfaHeading" style="max-width:520px;margin:24px auto;text-align:center">
+<h2 id="mfaHeading">Two-Factor Authentication</h2>
+<p id="mfaInstructions">Enter The 6-Digit Code From Your Authenticator App.</p>
+<img id="mfaQr" alt="Authenticator Setup QR Code" hidden style="width:190px;height:190px;max-width:100%;margin:12px auto;display:block">
+<p id="mfaSecret" style="overflow-wrap:anywhere;font-family:monospace"></p>
+<form id="mfaForm"><div class="field"><label for="mfaCode">Authenticator Code</label><input id="mfaCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="000000"></div><button class="btn" type="submit">Verify Code</button></form>
+<p id="mfaError" role="alert" aria-live="polite"></p>
+<button id="mfaCancel" type="button" class="btn light">Cancel</button>
+</section>
+<div id="dashboard" hidden><div style="display:flex;justify-content:flex-end;margin-bottom:12px"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
 
 <section class="panel" id="trendingManager" style="margin-bottom:20px">
 <div class="heading"><h2>★ Trending Airdrop Management</h2><small id="trendingState">0 / 10 selected</small></div>
