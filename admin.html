@@ -88,7 +88,7 @@ body:has(#loginBox:not([hidden])) main{min-height:calc(100svh - 75px);margin:0 a
 body:has(#loginBox:not([hidden])) .editor-page-heading{display:none}
 #loginBox{width:100%;max-width:440px;margin:0;padding:38px;border:1px solid #e2eaf4;border-radius:24px;box-shadow:0 18px 60px #17365d08}
 .login-mark{display:block;width:60px;height:60px;object-fit:contain;border-radius:16px;margin-bottom:26px}
-.login-eyebrow{margin:0 0 9px;color:#1E90FF;font-size:11px;font-weight:750;letter-spacing:1.6px;text-transform:uppercase}
+.login-eyebrow{margin:0 0 9px;color:#1E90FF;font-size:11px;font-weight:750;letter-spacing:1.6px;text-transform:none}
 #loginBox h2{margin:0;color:#172b49;font-size:30px;line-height:1.2;font-weight:750;letter-spacing:-1px}
 .login-description{margin:12px 0 28px;font-size:14px;line-height:1.65}
 #loginForm{display:grid;gap:20px}
@@ -122,21 +122,21 @@ body:has(#loginBox:not([hidden])) main{flex:1;width:100%;min-height:0}
 </style>
 </head>
 <body>
-<header><a class="admin-brand" href="index.html" aria-label="Airgem home"><img src="airgem-logo.png" alt="" width="38" height="38"><span>Airgem</span></a><a class="website-link" href="index.html"><span aria-hidden="true">←</span> Back to website</a></header>
+<header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="38" height="38"><span>Airgem</span></a><a class="website-link" href="index.html"><span aria-hidden="true">←</span> Back To Website</a></header>
 <main>
 <div class="editor-page-heading"><h1>Project Editor</h1><button id="logout" type="button" class="btn light" hidden>Log Out</button></div>
 <section id="loginBox" class="panel" aria-labelledby="loginHeading">
 <img class="login-mark" src="airgem-logo.png" alt="Airgem" width="60" height="60">
-<p class="login-eyebrow">Admin workspace</p>
-<h2 id="loginHeading">Welcome back</h2>
-<p class="login-description">Sign in to manage Airgem projects and publish your latest updates.</p>
+<p class="login-eyebrow">Admin Workspace</p>
+<h2 id="loginHeading">Welcome Back</h2>
+<p class="login-description">Sign In To Manage Airgem Projects And Publish Your Latest Updates.</p>
 <form id="loginForm">
-<div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="username" placeholder="you@example.com" autocapitalize="none" spellcheck="false" required></div>
-<div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required></div>
+<div class="field"><label for="email">Email Address</label><input id="email" type="email" autocomplete="username" placeholder="Enter Your Email" autocapitalize="none" spellcheck="false" required></div>
+<div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter Your Password" required></div>
 <button class="btn" type="submit">Sign In <span aria-hidden="true">→</span></button>
 <p id="loginError" role="alert" aria-live="polite"></p>
 </form>
-<p class="login-footer">Airgem · Admin access</p>
+<p class="login-footer">Airgem · Admin Access</p>
 </section>
 <div id="dashboard" hidden>
 
