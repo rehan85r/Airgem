@@ -660,7 +660,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;letter-spacing:0}
 .ag-score-entry #agHighestScore .ag-score-value{color:#1E90FF!important;font-weight:800!important;white-space:nowrap!important}
 
 /* Compact dynamic project logo in Highest Score heading. */
-.ag-score-entry #agHighestScore .ag-leader-logo{display:inline-block!important;width:12px!important;height:12px!important;object-fit:contain!important;vertical-align:-4px!important;margin:0 6px 0 7px!important;border-radius:4px!important;background:transparent!important}
+.ag-score-entry #agHighestScore .ag-leader-logo{display:inline-block!important;width:12px!important;height:12px!important;object-fit:contain!important;vertical-align:-2px!important;margin:0 6px 0 7px!important;border-radius:4px!important;background:transparent!important}
 .ag-score-entry #agHighestScore .ag-leader-name{white-space:normal!important}
 
 /* Airgem refined minimal fintech theme — visual-only overrides */
@@ -817,7 +817,7 @@ dropyClient.from('site_trending_items').select('project_id,position').order('pos
      const matching=Array.isArray(window.airgemProjectData)?window.airgemProjectData.find(x=>safeName(x.name).toLowerCase()===safeName(p.name).toLowerCase()):null;
      const url=matching?.logoUrl||matching?.logo_url||p.logo_url||p.logoUrl||'';
      if(typeof url==='string'&&/^(https:\/\/|data:image\/(?:png|jpeg|webp);base64,)/i.test(url)){
-       const logo=document.createElement('img');logo.className='ag-leader-logo';logo.src=url;logo.alt=safeName(p.name)+' logo';logo.width=19;logo.height=19;logo.decoding='async';logo.onerror=()=>logo.remove();title.append(logo);
+       const logo=document.createElement('img');logo.className='ag-leader-logo';logo.src=url;logo.alt=safeName(p.name)+' logo';logo.width=12;logo.height=12;logo.decoding='async';logo.onerror=()=>logo.remove();title.append(logo);
      }else{title.append(document.createTextNode(' '));}
      const name=document.createElement('span');name.className='ag-leader-name';name.textContent=safeName(p.name);title.append(name);title.append(document.createTextNode(' '));
      const sep2=document.createElement('span');sep2.className='ag-score-separator';sep2.textContent='·';title.append(sep2);
