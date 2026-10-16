@@ -155,3 +155,33 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
  [data-view="home"] .ag-card .ag-stat-label svg{width:16px!important;height:16px!important;flex-basis:16px!important}
  [data-view="home"] .ag-card .ag-stat strong{font-size:clamp(12px,3.3vw,15px)!important;line-height:1.4!important;text-align:center!important}
 }
+
+/* Unified six-metric card grid: Type, Cost, Time, Reward, Funding, Added On. */
+[data-view="home"] .ag-card .ag-stats{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ column-gap:clamp(10px,2.5vw,24px)!important;row-gap:26px!important;
+ align-items:start!important;width:100%!important
+}
+[data-view="home"] .ag-card .ag-stat{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:flex-start!important;text-align:center!important;min-width:0!important;
+ gap:7px!important;padding:0!important
+}
+[data-view="home"] .ag-card .ag-stat-label{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;text-align:center!important;gap:5px!important;
+ min-height:40px!important;line-height:1.3!important;white-space:normal!important;
+ font-size:11px!important;color:#718198!important
+}
+[data-view="home"] .ag-card .ag-stat-label svg{
+ display:block!important;width:17px!important;height:17px!important;flex:0 0 17px!important
+}
+[data-view="home"] .ag-card .ag-stat strong{
+ display:block!important;width:100%;text-align:center!important;
+ font-size:clamp(12px,1.6vw,15px)!important;line-height:1.45!important;
+ font-weight:800!important;overflow-wrap:anywhere!important
+}
+@media(max-width:650px){
+ [data-view="home"] .ag-card .ag-stats{column-gap:12px!important;row-gap:27px!important}
+ [data-view="home"] .ag-card .ag-stat strong{font-size:clamp(12px,3.3vw,15px)!important}
+}
