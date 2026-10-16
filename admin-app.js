@@ -37,7 +37,18 @@ async function loadTrending(){const {data,error}=await dropyClient.from('site_tr
 $('setTrending').onclick=()=>{const id=$('trendingSelect').value;if(!id)return;if(trending.length>=10){$('trendingMessage').textContent='Maximum 10 trending projects allowed.';return}trending.push(id);trendingUI();$('trendingMessage').textContent='Click Save Trending to publish.'};
 $('clearTrending').onclick=()=>{trending=[];trendingUI();$('trendingMessage').textContent='Click Save Trending to remove all.'};
 $('saveTrending').onclick=async()=>{const button=$('saveTrending');button.disabled=true;try{const {error:delErr}=await dropyClient.from('site_trending_items').delete().gte('position',1);if(delErr)throw delErr;if(trending.length){const {error}=await dropyClient.from('site_trending_items').insert(trending.map((id,i)=>({position:i+1,project_id:id})));if(error)throw error}savedTrending=[...trending];$('trendingMessage').textContent='Trending saved! Refresh homepage to see the slider.'}catch(e){$('trendingMessage').textContent='Error: '+e.message+' (If interrupted, press Save Trending again.)'}finally{button.disabled=false}};
-$('loginForm').onsubmit=async e=>{e.preventDefault();$('loginError').textContent='Signing in...';try{const {error}=await dropyClient.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error)throw error;await initialize()}catch(err){$('loginError').textContent=err.message}};
+// CAPTCHA stays inactive until a real Cloudflare Turnstile site key is configured.
+// Do not enable Supabase Auth CAPTCHA before this frontend is configured and tested.
+let turnstileWidgetId=null,turnstileToken='';
+const turnstileSiteKey=String(window.AIRGEM_TURNSTILE_SITE_KEY||'').trim();
+if(turnstileSiteKey){
+ $('turnstileContainer').hidden=false;
+ const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;script.defer=true;
+ script.onload=()=>{turnstileWidgetId=window.turnstile.render('#airgemTurnstile',{sitekey:turnstileSiteKey,callback:token=>{turnstileToken=token},'expired-callback':()=>{turnstileToken=''},'error-callback':()=>{turnstileToken=''}})};
+ script.onerror=()=>{$('loginError').textContent='Security check could not load. Please reload the page.'};
+ document.head.append(script);
+}
+$('loginForm').onsubmit=async e=>{e.preventDefault();if(turnstileSiteKey&&!turnstileToken){$('loginError').textContent='Complete The Security Check First.';return}$('loginError').textContent='Signing in...';try{const options={email:$('email').value.trim(),password:$('password').value};if(turnstileSiteKey)options.options={captchaToken:turnstileToken};const {error}=await dropyClient.auth.signInWithPassword(options);if(error)throw error;await initialize()}catch(err){$('loginError').textContent=err.message}finally{if(turnstileSiteKey&&turnstileWidgetId!==null){turnstileToken='';window.turnstile?.reset(turnstileWidgetId)}}};
 $('logout').onclick=async()=>{await dropyClient.auth.signOut();location.reload()};
 $('form').onsubmit=async e=>{e.preventDefault();if(busy)return;busy=true;try{const row=collect();msg('Publishing changes...');const payload=dropyToRow(row);const {error}=await dropyClient.from('projects').update(payload).eq('id',row.id).select('id').single();if(error)throw error;await refresh(row.id);msg('Published to live database!')}catch(err){msg('Error: '+err.message)}finally{busy=false}};
 $('add').onclick=async()=>{if(busy)return;busy=true;try{const {data,error}=await dropyClient.from('projects').insert({name:'New Project',task:'Testnet',category:'Airdrop',status:'Potential'}).select('id').single();if(error)throw error;$('search').value='';await refresh(data.id);$('name').focus();msg('New project created. Edit and publish.')}catch(err){msg('Error: '+err.message)}finally{busy=false}};
