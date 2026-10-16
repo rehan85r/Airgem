@@ -185,3 +185,6 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
  [data-view="home"] .ag-card .ag-stats{column-gap:12px!important;row-gap:27px!important}
  [data-view="home"] .ag-card .ag-stat strong{font-size:clamp(12px,3.3vw,15px)!important}
 }
+
+/* Consistent understated outline icons for all six project metrics. */
+[data-view="home"] .ag-card .ag-stat-label svg{width:18px!important;height:18px!important;flex:0 0 18px!important;color:#8190a4!important;stroke-width:1.75!important;stroke-linecap:round;stroke-linejoin:round}
