@@ -49,7 +49,7 @@ if(turnstileSiteKey){
  document.head.append(script);
 }
 $('loginForm').onsubmit=async e=>{e.preventDefault();if(turnstileSiteKey&&!turnstileToken){$('loginError').textContent='Complete The Security Check First.';return}$('loginError').textContent='Signing in...';try{const options={email:$('email').value.trim(),password:$('password').value};if(turnstileSiteKey)options.options={captchaToken:turnstileToken};const {error}=await dropyClient.auth.signInWithPassword(options);if(error)throw error;await initialize()}catch(err){$('loginError').textContent=err.message}finally{if(turnstileSiteKey&&turnstileWidgetId!==null){turnstileToken='';window.turnstile?.reset(turnstileWidgetId)}}};
-$('logout').onclick=async()=>{await dropyClient.auth.signOut();location.reload()};
+$('logout').onclick=async()=>{await dropyClient.auth.signOut();window.location.replace('/admin')};
 $('form').onsubmit=async e=>{e.preventDefault();if(busy)return;busy=true;try{const row=collect();msg('Publishing changes...');const payload=dropyToRow(row);const {error}=await dropyClient.from('projects').update(payload).eq('id',row.id).select('id').single();if(error)throw error;await refresh(row.id);msg('Published to live database!')}catch(err){msg('Error: '+err.message)}finally{busy=false}};
 $('add').onclick=async()=>{if(busy)return;busy=true;try{const {data,error}=await dropyClient.from('projects').insert({name:'New Project',task:'Testnet',category:'Airdrop',status:'Potential'}).select('id').single();if(error)throw error;$('search').value='';await refresh(data.id);$('name').focus();msg('New project created. Edit and publish.')}catch(err){msg('Error: '+err.message)}finally{busy=false}};
 $('remove').onclick=async()=>{const p=current();if(!p||busy||!confirm('Delete '+p.name+' permanently?'))return;busy=true;try{const {error}=await dropyClient.from('projects').delete().eq('id',p.id);if(error)throw error;selected=null;await refresh(null);msg('Project deleted')}catch(err){msg('Error: '+err.message)}finally{busy=false}};
@@ -127,7 +127,7 @@ async function startMfaSetup(){
 $('mfaSetup').onclick=startMfaSetup;
 $('mfaCancel').onclick=async()=>{
  if(pendingMfa?.mode==='enroll'){try{await dropyClient.auth.mfa.unenroll({factorId:pendingMfa.id})}catch{}pendingMfa=null;await initialize()}
- else{await dropyClient.auth.signOut();location.reload()}
+ else{await dropyClient.auth.signOut();window.location.replace('/admin')}
 };
 $('mfaForm').onsubmit=async e=>{
  e.preventDefault();const code=$('mfaCode').value.trim();
