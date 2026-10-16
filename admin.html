@@ -165,6 +165,7 @@ body:has(#loginBox:not([hidden])) main{padding:12px 16px;align-items:center}
 <form id="loginForm">
 <div class="field"><label for="email">Email Address</label><input id="email" type="email" autocomplete="username" placeholder="Enter Your Email" autocapitalize="none" spellcheck="false" required></div>
 <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter Your Password" required></div>
+<div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div><p style="font-size:12px;margin:0">Complete The Security Check To Sign In.</p></div>
 <button class="btn" type="submit">Sign In <span aria-hidden="true">→</span></button>
 <p id="loginError" role="alert" aria-live="polite"></p>
 </form>
@@ -249,7 +250,8 @@ body:has(#loginBox:not([hidden])) main{padding:12px 16px;align-items:center}
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('is-open'))close();});
 })();
 </script>
-<script src="admin-app.js?v=20261013-guide-3-fixes-v4"></script>
+<script>window.AIRGEM_TURNSTILE_SITE_KEY = '';</script>
+<script src="admin-app.js?v=20261016-turnstile-ready"></script>
 <script>
 (function(){
   const dashboard=document.getElementById('dashboard');
