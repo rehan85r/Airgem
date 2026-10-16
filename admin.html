@@ -172,6 +172,7 @@ body:has(#loginBox:not([hidden])) main{width:100%;max-width:none;min-height:100d
 @media(max-width:480px){#loginBox{padding:28px 24px}}
 
 /* Login brand sits outside the white form card. */
+.login-shell:has(#loginBox[hidden]){display:none}
 body:has(#loginBox:not([hidden])) main{display:flex;align-items:center;justify-content:center}
 .login-shell{width:100%;max-width:440px}
 .login-brand{display:flex;align-items:center;justify-content:flex-start;gap:11px;margin:0 0 24px 3px;color:#192333;font-size:25px;font-weight:800;letter-spacing:-.9px;line-height:1.1}
