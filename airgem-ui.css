@@ -134,3 +134,9 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 [data-view="research"] header .back:active{color:#172b4c!important;background:transparent!important}
 [data-view] :is(button,a):focus-visible{outline:3px solid #86c5ff;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link,input,select){transition:none!important}}
+
+/* Featured Top Airdrops: subtle distinction while retaining the shared card layout. */
+[data-view="home"] #featured .ag-card{border-color:#d6e7fa!important;box-shadow:0 7px 24px rgba(30,90,150,.055)!important}
+@media(hover:hover) and (pointer:fine){
+ [data-view="home"] #featured .ag-card:hover{border-color:#b9d8fa!important;box-shadow:0 10px 28px rgba(30,90,150,.085)!important}
+}
