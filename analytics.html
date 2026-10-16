@@ -50,8 +50,8 @@ body[data-view="research"] main>.intro p{margin:0}
 
 /* Hide the unused status row and keep the form card snug below its button. */
 body[data-view="research"] #status:empty{display:none}
-body[data-view="research"] .panel:has(> #analyze){padding-bottom:22px}
-@media(max-width:600px){body[data-view="research"] .panel:has(> #analyze){padding-bottom:20px}}
+body[data-view="research"] .panel:has(> #analyze){padding-top:22px;padding-bottom:22px}
+@media(max-width:600px){body[data-view="research"] .panel:has(> #analyze){padding-top:20px;padding-bottom:20px}}
 
 /* Give the Project Analytics introduction the same card treatment as the form below. */
 body[data-view="research"] main>.intro{background:#fff;border:1px solid var(--ag-line,#e3eaf2);border-radius:var(--ag-radius,20px);box-shadow:var(--ag-shadow,0 8px 28px rgba(20,40,70,.045));padding:25px 22px;margin-bottom:20px;max-width:none}
