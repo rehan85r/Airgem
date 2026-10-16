@@ -57,7 +57,7 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 [data-view="project"] #details .item strong{font-size:16px;font-weight:750;line-height:1.5}
 [data-view="project"] .panel+.panel{margin-top:24px;padding:28px 30px!important}
 [data-view="project"] .guide-article{font-size:16px;line-height:1.85;color:#34445b}
-[data-view="project"] .links .social-link{width:48px;min-height:48px;background:#f4f8fd;border:1px solid #e8eff6;border-radius:12px}
+[data-view="project"] .links .social-link{width:48px;min-height:48px;justify-self:center;margin:0!important;background:#f4f8fd;border:1px solid #e8eff6;border-radius:12px}
 [data-view="project"] .links .social-link svg{width:23px;height:23px}
 /* Research: same brand, type scale, controls, and report hierarchy. */
 [data-view="research"] main{max-width:900px;padding:32px 24px 56px}
