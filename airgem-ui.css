@@ -140,3 +140,9 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 @media(hover:hover) and (pointer:fine){
  [data-view="home"] #featured .ag-card:hover{border-color:#b9d8fa!important;box-shadow:0 10px 28px rgba(30,90,150,.085)!important}
 }
+
+/* Align Type, Cost and Time metrics in three equal centered columns across cards. */
+[data-view="home"] .ag-card .ag-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+[data-view="home"] .ag-card .ag-stat{align-items:center!important;justify-content:flex-start!important;text-align:center!important;min-width:0}
+[data-view="home"] .ag-card .ag-stat-label{justify-content:center!important;text-align:center!important;white-space:normal!important}
+[data-view="home"] .ag-card .ag-stat strong{text-align:center!important;overflow-wrap:anywhere}
