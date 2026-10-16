@@ -1,0 +1,117 @@
+/* Shared public-site design system. Keep content and application behavior separate. */
+:root{--ag-ink:#142238;--ag-muted:#607086;--ag-line:#e3eaf2;--ag-blue:#1e90ff;--ag-radius:20px;--ag-shadow:0 8px 28px rgba(20,40,70,.045)}
+body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+[data-view] button,[data-view] input,[data-view] select{font-family:inherit}
+[data-view] a,[data-view] button,[data-view] input,[data-view] select{touch-action:manipulation}
+[data-view] :is(button,a,input,select):focus-visible{outline:3px solid #86c5ff;outline-offset:4px}
+[data-view] :is(.header,header){background:#fff!important;border-bottom:1px solid var(--ag-line)!important;box-shadow:none!important}
+[data-view] .header{height:76px}
+[data-view] :is(.wrap,.head){max-width:1120px;padding-left:24px;padding-right:24px}
+[data-view] .head{min-height:76px;padding-top:12px;padding-bottom:12px}
+[data-view] :is(.brand,.brand-name){font-family:'Manrope',system-ui,sans-serif;font-size:24px;font-weight:800;letter-spacing:-.9px;color:var(--ag-ink)!important}
+[data-view] .brand{display:inline-flex;align-items:center;gap:10px}
+[data-view] .brand img{width:40px!important;height:40px!important;object-fit:contain;border-radius:11px!important;margin:0!important;display:block}
+[data-view] .brand .mark{width:40px;height:40px;box-shadow:none}
+[data-view] .back{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:1px solid var(--ag-line);border-radius:12px;background:#fff;font-size:12px;font-weight:700;white-space:nowrap}
+[data-view] .header-caption{font-size:11px;color:var(--ag-muted);letter-spacing:.08em}
+[data-view] :is(.menu-btn,.close-btn){width:44px;height:44px;border-radius:12px;box-shadow:none;color:var(--ag-ink)}
+[data-view] :is(.micro,.muted,.crumb){color:var(--ag-muted)!important}
+[data-view] .panel{background:#fff;border:1px solid var(--ag-line);border-radius:var(--ag-radius);box-shadow:var(--ag-shadow)}
+/* Discovery: consistent cards, readable metrics, and comfortable tap targets. */
+[data-view="home"] .main{max-width:1120px;padding-top:36px!important;padding-bottom:56px!important}
+[data-view="home"] .ag-category-tabs{gap:8px;margin-bottom:16px}
+[data-view="home"] .ag-category-tab{min-height:44px;padding:11px 16px;font-size:13px;box-shadow:none;border-radius:12px}
+[data-view="home"] .searchbox{height:56px!important;padding:0 18px!important;border-color:var(--ag-line)!important;box-shadow:none!important}
+[data-view="home"] .searchbox input{font-size:16px}
+[data-view="home"] .searchbox input::placeholder{color:#718095}
+[data-view="home"] .section-head{margin:26px 0 16px}
+[data-view="home"] .section-head h2{font-size:18px!important;letter-spacing:-.45px}
+[data-view="home"] .section-head small{font-size:11px;color:#607086;background:#eef2f7}
+[data-view="home"] .ag-card{padding:26px!important;border-radius:20px!important;border-color:var(--ag-line)!important;box-shadow:var(--ag-shadow)!important;transform:none!important}
+[data-view="home"] .ag-card:before,[data-view="home"] .ag-card:after{display:none!important}
+[data-view="home"] .ag-card .project-icon{width:56px!important;height:56px!important;border-radius:14px!important;box-shadow:none!important}
+[data-view="home"] .ag-card .ag-card-head{gap:14px!important}
+[data-view="home"] .ag-card .ag-identity .card-name{font-size:19px!important;line-height:1.35!important;letter-spacing:-.5px!important}
+[data-view="home"] .ag-card .ag-identity .micro{font-size:13px!important;line-height:1.5!important;color:var(--ag-muted)!important}
+[data-view="home"] .ag-card .ag-stats{margin-top:24px!important;row-gap:20px!important;column-gap:16px!important}
+[data-view="home"] .ag-card .ag-stat-label{font-size:12px!important;color:var(--ag-muted)!important;gap:7px!important}
+[data-view="home"] .ag-card .ag-stat-label svg{width:17px!important;height:17px!important;flex-basis:17px!important}
+[data-view="home"] .ag-card .ag-stat strong{font-size:15px!important;font-weight:750!important;line-height:1.5!important;color:var(--ag-ink)!important}
+[data-view="home"] .ag-card .ag-card-foot{margin-top:22px!important;padding-top:18px!important;border-color:var(--ag-line)!important}
+[data-view="home"] .ag-card .ag-join{height:48px!important;min-height:48px!important;font-size:14px!important;font-weight:700!important}
+[data-view="home"] .trending-controls button{width:38px!important;height:38px!important;min-width:38px!important}
+[data-view="home"] .trending-controls{gap:10px!important}
+[data-view="home"] .ag-score-entry a{height:44px!important;min-height:44px!important}
+[data-view="home"] .foot{padding:24px 0;font-size:12px;color:#66758a;line-height:1.7}
+[data-view="home"] .drawer{max-width:380px;padding:24px}
+[data-view="home"] .drawer .nav-item{min-height:48px;font-size:14px}
+/* Project detail: a quieter reading surface with a matching metric grid. */
+[data-view="project"] main{max-width:1120px;margin:28px auto 0;padding:0 24px 40px!important}
+[data-view="project"] .crumb{font-size:12px;margin-bottom:18px}
+[data-view="project"] .panel{padding:30px}
+[data-view="project"] .identity{gap:16px}
+[data-view="project"] .identity h1{font-size:clamp(24px,3vw,32px);line-height:1.3;letter-spacing:-1px}
+[data-view="project"] .logo{width:68px;height:68px;flex-basis:68px;border-radius:16px;box-shadow:none}
+[data-view="project"] .logo img{object-fit:contain}
+[data-view="project"] #details .item small{font-size:12px;color:var(--ag-muted)}
+[data-view="project"] #details .item strong{font-size:16px;font-weight:750;line-height:1.5}
+[data-view="project"] .panel+.panel{margin-top:24px;padding:28px 30px!important}
+[data-view="project"] .guide-article{font-size:16px;line-height:1.85;color:#34445b}
+[data-view="project"] .links .social-link{width:48px;min-height:48px;background:#f4f8fd;border:1px solid #e8eff6;border-radius:12px}
+[data-view="project"] .links .social-link svg{width:23px;height:23px}
+/* Research: same brand, type scale, controls, and report hierarchy. */
+[data-view="research"] main{max-width:900px;padding:32px 24px 56px}
+[data-view="research"] .intro{margin:28px auto;text-align:center;max-width:660px}
+[data-view="research"] h1{font-size:clamp(28px,4vw,38px);line-height:1.25;letter-spacing:-1.2px;margin:10px 0 14px}
+[data-view="research"] h2{font-size:20px;line-height:1.4;letter-spacing:-.5px;margin-bottom:20px}
+[data-view="research"] p{font-size:14px;color:var(--ag-muted);line-height:1.75}
+[data-view="research"] .panel{padding:28px;margin-bottom:24px}
+[data-view="research"] label{font-size:13px;font-weight:650;color:#43536a;line-height:1.5;margin-bottom:9px}
+[data-view="research"] .field{margin-bottom:20px}
+[data-view="research"] :is(input,select){font:500 16px/1.5 'Manrope',system-ui,sans-serif;min-height:50px;padding:12px 14px;border:1px solid #dce4ee;border-radius:12px}
+[data-view="research"] .action{min-height:50px;font:700 14px/1.5 'Manrope',system-ui,sans-serif;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px}
+[data-view="research"] .action svg{width:19px;height:19px}
+[data-view="research"] .status{font-size:13px;margin-top:16px}
+[data-view="research"] .ranktitle{display:flex;align-items:center;gap:7px;font-size:13px;color:#43536a}
+[data-view="research"] .ranktitle svg{width:19px;height:19px;color:#1e90ff}
+[data-view="research"] .rankvalue{font-size:14px}
+[data-view="research"] .rankmeta{font-size:12px;color:var(--ag-muted)}
+[data-view="research"] :is(.cathead,.catdesc,.source,.note,.muted){font-size:13px;line-height:1.75}
+[data-view="research"] .source{text-decoration:underline;text-underline-offset:3px}
+[data-view="research"] .metricgrid{gap:12px}
+[data-view="research"] .metric{padding:16px;border:1px solid #e9eff6;border-radius:12px}
+[data-view="research"] .metric .val{font-size:16px}
+[data-view="research"] .service{font-size:12px}
+@media(hover:hover){[data-view] .back:hover{background:#f1f7ff}[data-view="research"] .action:not(:disabled):hover{background:#1879d8}[data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px #1428460c!important}}
+@media(max-width:650px){
+ [data-view] :is(.wrap,.head){padding-left:18px;padding-right:18px}
+ [data-view] .header{height:68px}[data-view] .head{min-height:68px}
+ [data-view] :is(.brand,.brand-name){font-size:22px}
+ [data-view] .brand img{width:36px!important;height:36px!important}
+ [data-view] .back{padding:9px 11px;font-size:11px}
+ [data-view="home"] .main{padding-top:26px!important;padding-bottom:36px!important}
+ [data-view="home"] .ag-card{padding:20px!important;border-radius:18px!important}
+ [data-view="home"] .ag-card .project-icon{width:46px!important;height:46px!important;border-radius:12px!important}
+ [data-view="home"] .ag-card .ag-card-head{gap:10px!important}
+ [data-view="home"] .ag-card .ag-identity .card-name{font-size:17px!important}
+ [data-view="home"] .ag-card .ag-identity .micro{font-size:12px!important}
+ [data-view="home"] .ag-card .ag-stats{column-gap:9px!important;row-gap:18px!important;margin-top:22px!important}
+ [data-view="home"] .ag-card .ag-stat-label{font-size:11px!important;gap:5px!important}
+ [data-view="home"] .ag-card .ag-stat-label svg{width:15px!important;height:15px!important;flex-basis:15px!important}
+ [data-view="home"] .ag-card .ag-stat strong{font-size:13px!important;overflow-wrap:anywhere}
+ [data-view="home"] .ag-card .ag-join{font-size:13px!important}
+ [data-view="home"] .section-head h2{font-size:17px!important}
+ [data-view="project"] main{margin-top:22px;padding:0 16px 28px!important}
+ [data-view="project"] .panel{padding:22px 20px;border-radius:18px}
+ [data-view="project"] .panel+.panel{padding:24px 20px!important;margin-top:20px}
+ [data-view="project"] .logo{width:56px;height:56px;flex-basis:56px;border-radius:14px}
+ [data-view="project"] .identity h1{font-size:24px}
+ [data-view="project"] #details .item small{font-size:11px}
+ [data-view="project"] #details .item strong{font-size:13px}
+ [data-view="research"] main{padding:24px 16px 40px}
+ [data-view="research"] .panel{padding:22px 20px;border-radius:18px}
+ [data-view="research"] .intro{margin:24px 0}
+ [data-view="research"] .metricgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:360px){[data-view="home"] .ag-card{padding:16px!important}[data-view="home"] .ag-card .ag-identity .card-name{font-size:15px!important}[data-view="home"] .ag-card .ag-stat-label{font-size:10px!important}[data-view="home"] .ag-card .ag-stat strong{font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){[data-view] *,[data-view] *:before,[data-view] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
