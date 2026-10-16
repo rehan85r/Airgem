@@ -170,15 +170,23 @@ body:has(#loginBox:not([hidden])) main{width:100%;max-width:none;min-height:100d
 #loginBox .login-footer{border:0;padding:0;margin:23px 0 0;font-size:11px;color:#9da9b9}
 #loginBox .login-copyright{margin:19px 0 0;font-size:11px;color:#a5afbd}
 @media(max-width:480px){#loginBox{padding:28px 24px}}
+
+/* Login brand sits outside the white form card. */
+body:has(#loginBox:not([hidden])) main{display:flex;align-items:center;justify-content:center}
+.login-shell{width:100%;max-width:440px}
+.login-brand{display:flex;align-items:center;justify-content:flex-start;gap:11px;margin:0 0 24px 3px;color:#192333;font-size:25px;font-weight:800;letter-spacing:-.9px;line-height:1.1}
+.login-brand img{width:44px;height:44px;object-fit:contain;border-radius:11px;flex-shrink:0}
+.login-brand-admin{font-size:14px;font-weight:700;color:#1e90ff;letter-spacing:0}
+#loginBox{max-width:none;margin:0}
+@media(max-width:480px){.login-brand{margin-bottom:20px;font-size:23px}.login-brand img{width:41px;height:41px}}
 </style>
 </head>
 <body>
 <header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="38" height="38"><span>Airgem</span></a><a class="website-link" href="index.html"><span aria-hidden="true">←</span> Back To Website</a></header>
 <main>
 <div class="editor-page-heading"><h1>Project Editor</h1><button id="logout" type="button" class="btn light" hidden>Log Out</button></div>
+<div class="login-shell"><div class="login-brand"><img src="airgem-logo.png" alt="" width="44" height="44"><span>Airgem <span class="login-brand-admin">Admin</span></span></div>
 <section id="loginBox" class="panel" aria-labelledby="loginHeading">
-<img class="login-mark" src="airgem-logo.png" alt="Airgem" width="60" height="60">
-<p class="login-eyebrow">Airgem</p>
 <h2 id="loginHeading">Sign In</h2>
 <p class="login-description">Welcome Back! Please Enter Your Details.</p>
 <form id="loginForm">
@@ -189,7 +197,7 @@ body:has(#loginBox:not([hidden])) main{width:100%;max-width:none;min-height:100d
 <p id="loginError" role="alert" aria-live="polite"></p>
 </form>
 <p class="login-footer">Authorized Personal Only</p><p class="login-copyright">© 2026 Airgem. All Rights Reserved.</p>
-</section>
+</section></div>
 <section id="mfaBox" class="panel" hidden aria-labelledby="mfaHeading" style="max-width:520px;margin:24px auto;text-align:center">
 <h2 id="mfaHeading">Two-Factor Authentication</h2>
 <p id="mfaInstructions">Enter The 6-Digit Code From Your Authenticator App.</p>
