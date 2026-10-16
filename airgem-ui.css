@@ -115,3 +115,22 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 }
 @media(max-width:360px){[data-view="home"] .ag-card{padding:16px!important}[data-view="home"] .ag-card .ag-identity .card-name{font-size:15px!important}[data-view="home"] .ag-card .ag-stat-label{font-size:10px!important}[data-view="home"] .ag-card .ag-stat strong{font-size:12px!important}}
 @media(prefers-reduced-motion:reduce){[data-view] *,[data-view] *:before,[data-view] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Premium interaction system: hover only on capable pointers; preserve keyboard focus. */
+[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link){transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease,transform 180ms ease}
+[data-view] :is(input,select){transition:border-color 180ms ease,box-shadow 180ms ease}
+[data-view] :is(a,button){-webkit-tap-highlight-color:transparent}
+@media(hover:hover) and (pointer:fine){
+ [data-view="research"] header .back:hover{color:#1e90ff!important;background:transparent!important}
+ [data-view="research"] header .back:hover span{color:#1e90ff}
+ [data-view="research"] .action:not(:disabled):hover{background:#1879d8}
+ [data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px rgba(20,40,70,.07)!important}
+ [data-view="home"] .ag-category-tab:not(:disabled):hover{border-color:#bfdaff;background:#f0f7ff}
+ [data-view="home"] .ag-join:not(:disabled):hover{filter:brightness(.95)}
+ [data-view] :is(.menu-btn,.close-btn,.trending-controls button):not(:disabled):hover{background:#f1f7ff;border-color:#cbdff7}
+ [data-view] :is(.nav-item,.social-link):hover{background:#eef6ff;color:#1879d8;border-color:#d1e5ff}
+ [data-view] a:not(.ag-card):not(.ag-join):not(.back):hover{text-decoration-color:currentColor}
+}
+[data-view="research"] header .back:active{color:#172b4c!important;background:transparent!important}
+[data-view] :is(button,a):focus-visible{outline:3px solid #86c5ff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link,input,select){transition:none!important}}
