@@ -66,7 +66,7 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 [data-view="research"] h2{font-size:20px;line-height:1.4;letter-spacing:-.5px;margin-bottom:20px}
 [data-view="research"] p{font-size:14px;color:var(--ag-muted);line-height:1.75}
 [data-view="research"] .panel{padding:28px;margin-bottom:24px}
-[data-view="research"] label{font-size:13px;font-weight:650;color:#43536a;line-height:1.5;margin-bottom:9px}
+[data-view="research"] label{font-size:15px;font-weight:500;color:#43536a;line-height:1.5;margin-bottom:9px}
 [data-view="research"] .field{margin-bottom:20px}
 [data-view="research"] :is(input,select){font:500 16px/1.5 'Manrope',system-ui,sans-serif;min-height:50px;padding:12px 14px;border:1px solid #dce4ee;border-radius:12px}
 [data-view="research"] .action{min-height:50px;font:700 14px/1.5 'Manrope',system-ui,sans-serif;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px}
