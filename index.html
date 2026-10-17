@@ -555,13 +555,6 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 .ag-card .ag-join span{position:absolute!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;font-size:20px!important}
 @media(max-width:650px){.ag-card .ag-card-head{gap:10px!important}.ag-card .ag-head-status{font-size:11px!important;gap:5px!important}.ag-card .ag-head-status i{width:7px!important;height:7px!important;flex-basis:7px!important}.ag-card .ag-join{min-height:44px!important;font-size:12px!important}}
 
-/* Airgem Project Score entry */
-.ag-score-entry{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;background:#fff;border:1px solid #e0e9f5;border-radius:17px;padding:19px 22px;margin:-9px 0 34px}
-.ag-score-entry strong{font:800 16px Manrope,sans-serif;color:#162b49}.ag-score-entry p{margin:5px 0 0;color:#77869b;font-size:12px;line-height:1.5}
-.ag-score-entry > div{width:100%;text-align:center}.ag-score-entry a{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;text-decoration:none;background:#1E90FF;color:white;padding:12px 17px;border-radius:11px;font-size:12px;font-weight:800;min-width:220px}
-.ag-score-entry a .ag-score-arrow{display:block;width:19px;height:19px;flex:0 0 19px;vertical-align:middle}
-@media(max-width:560px){.ag-score-entry{padding:16px;align-items:center;gap:13px;margin-bottom:27px}.ag-score-entry a{width:100%}}
-
 /* Precise project header status and Join Now arrow alignment (Trending + All Airdrop). */
 .ag-card .ag-card-head{align-items:flex-start!important}
 .ag-card .ag-head-status{align-self:flex-start!important;margin-top:3px!important;line-height:1.25!important;display:inline-flex!important;align-items:center!important}
@@ -570,30 +563,8 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 .ag-card .ag-join .ag-join-arrow svg{display:block!important;width:23px!important;height:23px!important;flex:0 0 23px!important}
 @media(max-width:650px){.ag-card .ag-head-status{margin-top:2px!important}.ag-card .ag-join .ag-join-arrow{right:15px!important}}
 
-/* Final centered Highest Score layout: fixed CTA and supporting tagline underneath. */
-.ag-score-entry{gap:10px!important}
-.ag-score-entry a{width:200px!important;min-width:200px!important;max-width:200px!important;height:42px!important;min-height:42px!important;padding:0 13px!important;border-radius:12px!important;box-sizing:border-box!important}
-.ag-score-entry p{margin:0!important;font-size:12px!important;color:#77869b!important;line-height:1.5!important}
-@media(max-width:560px){.ag-score-entry a{width:200px!important;min-width:200px!important;max-width:200px!important}}
-/* Responsive live highest score line. */
-.ag-score-entry #agHighestScore{display:block;max-width:100%;overflow-wrap:anywhere;line-height:1.5;text-wrap:balance}
-
-/* Crisp, native SVG analytics icon: no emoji, font glyph, or CSS mask. */
-.ag-score-heading{display:flex;align-items:center;justify-content:center;gap:9px;max-width:100%;flex-wrap:wrap}
-.ag-score-heading .ag-analytics-icon{width:24px;height:24px;flex:0 0 24px;color:#1E90FF;display:block}
-.ag-score-heading #agHighestScore{margin:0!important}
-
-
-/* Airgem typography polish — unified type scale and compact borderless analytics. */
 :root{--ag-font-body:13px;--ag-font-caption:12px;--ag-font-label:11px;--ag-font-title:17px}
 body{font-family:'DM Sans',system-ui,sans-serif;letter-spacing:0}
-.ag-score-entry{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:7px 0 4px!important;margin:-9px 0 32px!important;gap:12px!important}
-.ag-score-heading{gap:8px!important;flex-wrap:wrap!important}
-.ag-score-heading .ag-analytics-icon{width:22px!important;height:22px!important;flex:0 0 22px!important;color:#1E90FF!important}
-.ag-score-entry #agHighestScore{font-family:Manrope,system-ui,sans-serif!important;font-size:15px!important;font-weight:700!important;line-height:1.45!important;letter-spacing:-.35px!important;color:#172b4c!important}
-.ag-score-entry a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:13px!important;font-weight:700!important;line-height:1!important;gap:9px!important}
-.ag-score-entry a .ag-score-arrow{width:19px!important;height:19px!important;flex-basis:19px!important;stroke-width:2.4!important}
-.ag-score-entry p{font-family:'DM Sans',system-ui,sans-serif!important;font-size:12px!important;font-weight:400!important;line-height:1.5!important;letter-spacing:0!important;color:#77869b!important}
 .section-head h2{font-family:Manrope,system-ui,sans-serif!important;font-size:17px!important;font-weight:800!important;line-height:1.35!important}
 .ag-card .ag-identity .card-name,.feature.ag-card .ag-card-head .card-name{font-family:Manrope,system-ui,sans-serif!important;font-size:18px!important;font-weight:800!important;line-height:1.3!important;letter-spacing:-.4px!important}
 .ag-card .ag-identity .micro{font-family:'DM Sans',system-ui,sans-serif!important;font-size:12px!important;line-height:1.45!important}
@@ -602,8 +573,6 @@ body{font-family:'DM Sans',system-ui,sans-serif;letter-spacing:0}
 .ag-card .ag-head-status{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:800!important;line-height:1.4!important}
 .ag-card .ag-join{font-family:'DM Sans',system-ui,sans-serif!important;font-size:13px!important;font-weight:800!important;line-height:1.3!important}
 @media(max-width:650px){
- .ag-score-entry{margin-bottom:27px!important}
- .ag-score-entry #agHighestScore{font-size:15px!important}
  .ag-card .ag-identity .card-name,.feature.ag-card .ag-card-head .card-name{font-size:16px!important}
  .ag-card .ag-identity .micro{font-size:11px!important}
  .ag-card .ag-stat-label{font-size:clamp(9px,2.3vw,11px)!important}
@@ -632,11 +601,6 @@ body{font-family:'DM Sans',system-ui,sans-serif;letter-spacing:0}
 /* Search field matches Premium Balanced 12px corners; behavior unchanged. */
 .search-row .searchbox{border-radius:12px!important;}
 
-/* Search directly beneath compact analytics, with balanced section spacing. */
-.ag-score-entry{margin-bottom:22px!important}
-.ag-score-entry + .search-row{margin:0 0 32px!important}
-@media(max-width:650px){.ag-score-entry{margin-bottom:20px!important}.ag-score-entry + .search-row{margin-bottom:20px!important}}
-
 /* Airgem category navigation — compact Premium Balanced tabs */
 .ag-category-tabs{display:flex;gap:9px;align-items:center;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 0 14px;padding:2px 1px 4px}
 .ag-category-tabs::-webkit-scrollbar{display:none}
@@ -655,14 +619,6 @@ body{font-family:'DM Sans',system-ui,sans-serif;letter-spacing:0}
 /* Menu branding: restore official logo beside Airgem name. */
 .drawer-brand{display:inline-flex;align-items:center;gap:10px;min-width:0}.drawer-brand .mark{width:38px;height:38px;flex:0 0 38px;border-radius:11px;overflow:hidden;box-shadow:none}.drawer-brand .brand-name{letter-spacing:-.8px}
 
-/* Highest Score: refined separators and brand-colored score, preserving compact layout. */
-.ag-score-entry #agHighestScore .ag-score-separator{color:#A1ACBB!important;font-weight:500!important;margin:0 1px!important}
-.ag-score-entry #agHighestScore .ag-score-value{color:#1E90FF!important;font-weight:700!important;white-space:nowrap!important}
-
-/* Compact dynamic project logo in Highest Score heading. */
-.ag-score-entry #agHighestScore .ag-leader-logo{display:inline-block!important;width:15px!important;height:15px!important;object-fit:contain!important;vertical-align:-2px!important;margin:0 6px 0 7px!important;border-radius:4px!important;background:transparent!important}
-.ag-score-entry #agHighestScore .ag-leader-name{white-space:normal!important}
-
 /* Airgem refined minimal fintech theme — visual-only overrides */
 :root{--bg:#F8FAFC!important;--surface:#FFFFFF!important;--ink:#0F172A!important;--muted:#64748B!important;--line:#E8EDF3!important;--accent:#1E90FF!important;--accent-soft:#EFF6FF!important;--shadow:0 5px 20px rgba(15,23,42,.035)!important}
 html,body{background:#F8FAFC!important;color:#0F172A!important}
@@ -679,7 +635,6 @@ h1,.section-head h2{color:#0F172A!important}
 .feature-bottom,.project-card-bottom{border-top-color:#E8EDF3!important}
 .foot{border-top-color:#E8EDF3!important}
 /* Preserve hero spacing and primary CTA dimensions */
-.ag-score-entry a{width:200px!important;min-width:200px!important;max-width:200px!important;height:42px!important;min-height:42px!important;border-radius:12px!important;font-size:13px!important}
 
 /* Airgem premium trending navigation — soft off-white + Dodger Blue */
 .trending-heading .trending-controls button#trendPrev{background:#F8FAFC;color:#1E90FF;border-color:#DCE7F4}
@@ -699,10 +654,8 @@ h1,.section-head h2{color:#0F172A!important}
 .header .menu-btn{width:40px;height:40px}
 .header .menu-btn svg{width:20px!important;height:20px!important}
 
-/* Keep subtitle-to-Highest Score spacing at 20px */
-.dropy-hero{margin-bottom:0!important}
+.dropy-hero{margin-bottom:20px!important}
 .dropy-hero p{margin-bottom:0!important}
-.ag-score-entry{margin-top:0!important;padding-top:20px!important}
 
 /* Consistent spacing around All Airdrops heading and project count */
 #featured + .section-head{margin-top:20px!important;margin-bottom:20px!important}
