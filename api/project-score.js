@@ -33,7 +33,14 @@ async function geminiResearch(name,links,rows){
   const result={};for(const k of ['funding','investors','team','partners','narrative','useCase','ecosystem','projectStage'])result[k]=typeof obj[k]==='string'&&obj[k].trim()?obj[k].trim().slice(0,140):NA;
   if(!['Strong','Good','Weak'].includes(result.narrative))result.narrative=NA;
   return {status:'ok',fields:result};
- }catch(e){const msg=String(e?.message||'');const status=/GEMINI_EMPTY_RESPONSE/.test(msg)?'empty_model_response':/GEMINI_INVALID_JSON/.test(msg)?'invalid_model_json':/SyntaxError|Unexpected token/.test(msg)?'invalid_response_json':/HTTP 429/.test(msg)?'api_429_quota_or_rate_limit':/HTTP 401/.test(msg)?'api_401_invalid_key':/HTTP 403/.test(msg)?'api_403_permission':/HTTP 400/.test(msg)?'api_400_request_error':/HTTP 5\d\d/.test(msg)?'api_server_error':/abort/i.test(msg)?'api_timeout':'api_error';console.warn('Airgem Gemini research status:',status,'http_status:',/^HTTP (\d{3})$/.exec(msg)?.[1]||'none','error_type:',e?.name||'unknown');return {status,fields:null}}
+ }catch(e){const msg=String(e?.message||'');const status=/GEMINI_EMPTY_RESPONSE/.test(msg)?'empty_model_response':/GEMINI_INVALID_JSON/.test(msg)?'invalid_model_json':/SyntaxError|Unexpected token/.test(msg)?'invalid_response_json':/HTTP 429/.test(msg)?'api_429_quota_or_rate_limit':/HTTP 401/.test(msg)?'api_401_invalid_key':/HTTP 403/.test(msg)?'api_403_permission':/HTTP 400/.test(msg)?'api_400_request_error':/HTTP 5\d\d/.test(msg)?'api_server_error':/abort/i.test(msg)?'api_timeout':'api_error';console.warn('Airgem Gemini research status:',status,'http_status:',/^HTTP (\\d{3})$/.exec(msg)?.[1]||'none','error_type:',e?.name||'unknown');
+  if(msg==='HTTP 404'){
+   try{
+    const models=await get('https://generativelanguage.googleapis.com/v1beta/models?pageSize=100',{headers:{'x-goog-api-key':key}},7000);
+    const supported=(models.models||[]).filter(m=>(m.supportedGenerationMethods||[]).includes('generateContent')).map(m=>m.name);
+    console.warn('Airgem Gemini accessible generateContent models:',supported.slice(0,40).join(', ')||'none');
+   }catch(listErr){console.warn('Airgem Gemini model listing failed:',/^HTTP (\\d{3})$/.exec(String(listErr?.message||''))?.[1]||'network_or_parse_error')}
+  }return {status,fields:null}}
 }
 function amount(text){const m=String(text).match(/\b(?:raised|funding|financing|investment|seed round|series [a-f])\b[^.!?\n]{0,85}?\$\s*([\d,.]+)\s*(billion|million|bn|mn|b|m)\b|\$\s*([\d,.]+)\s*(billion|million|bn|mn|b|m)\b[^.!?\n]{0,70}\b(?:raised|funding|round|investment)\b/i);if(!m)return null;const n=Number((m[1]||m[3]).replace(/,/g,''));return Number.isFinite(n)?n*((m[2]||m[4]).toLowerCase().startsWith('b')?1e9:1e6):null}
 async function assess(input,protocols){const name=input.name.trim().slice(0,100),links=input.links.filter(safe).slice(0,15),categories=Object.keys(W).map(category),by=n=>categories.find(c=>c.name===n);
