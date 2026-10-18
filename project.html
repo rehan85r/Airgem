@@ -283,6 +283,8 @@ body[data-view="project"] .panel[data-project-panel] + .panel[data-project-panel
 #guide .guide-article .guide-step-box>a::after{width:15px!important;height:15px!important;right:12px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E")!important}
 @media(hover:hover){#guide .guide-article .guide-step-box>a:hover{background:#eff6ff!important;border-color:#bfdbfe!important;color:#2563eb!important}}
 @media(max-width:640px){#guide .guide-article .dh-step{grid-template-columns:34px minmax(0,1fr)!important;column-gap:11px!important;padding-bottom:20px!important}#guide .guide-article .dh-step:last-child{padding-bottom:0!important}#guide .guide-article .dh-step-number,#guide .guide-article .dh-step:first-child .dh-step-number{width:34px!important;height:34px!important}#guide .guide-article .dh-step:not(:last-child)::before{left:16px!important;top:39px!important}}
+/* Consistent label-to-heading spacing across desktop and mobile */
+[data-project-panel].panel > .guide-label{margin-bottom:10px!important}
 /* Subtle guide label icon, aligned with Airgem brand accent */
 [data-project-panel] .guide-label{display:flex!important;align-items:center!important;gap:5px!important;color:#1e90ff!important}
 [data-project-panel] .guide-label svg{width:15px!important;height:15px!important;flex:0 0 15px!important;stroke-width:1.8!important}
