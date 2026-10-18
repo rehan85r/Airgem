@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Airgem | Admin Panel</title>
 <link rel="icon" type="image/png" href="airgem-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#f3f7ff;color:#172b49;font:14px system-ui,Arial,sans-serif}header{background:#fff;border-top:5px solid #1E90FF;border-bottom:1px solid #dce6f5;padding:20px max(18px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between}header strong{font-size:24px}header strong span,a{color:#1E90FF}a{text-decoration:none}main{max-width:1120px;margin:32px auto;padding:0 18px}h1{font-size:28px;margin:0 0 8px}p{color:#687c96;line-height:1.6}.notice{background:#e7f0ff;border:1px solid #c8dbff;border-radius:12px;padding:14px;margin:18px 0}.layout{display:grid;grid-template-columns:280px 1fr;gap:20px}.panel{background:white;border:1px solid #e0e8f5;border-radius:18px;padding:22px;box-shadow:0 8px 25px #1c4a8a09}.heading,.bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.heading h2{margin:0;font-size:18px}.btn{background:#1E90FF;color:white;border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:pointer}.btn:disabled{opacity:.5}.btn.alt{background:#e9f1ff;color:#1E90FF}.btn.danger{background:#ffedf0;color:#bb2c47}.btn.light{background:#fff;color:#46607e;border:1px solid #dce5f2}.actions{display:flex;gap:9px;flex-wrap:wrap}.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.field{display:grid;gap:7px}.wide{grid-column:1/-1}label{font-size:11px;text-transform:uppercase;font-weight:800;color:#657792;letter-spacing:.5px}input,select,textarea{width:100%;min-width:0;padding:12px;border:1px solid #d9e4f3;border-radius:10px;background:white;color:#172b49;font:inherit}textarea{min-height:95px;resize:vertical}.list{max-height:470px;overflow:auto;margin:15px 0}.entry{display:block;width:100%;text-align:left;border:1px solid transparent;border-radius:11px;background:#f5f8fe;padding:13px;margin:7px 0;cursor:pointer}.entry.active{background:#e8f1ff;border-color:#a7c7ff}.section{border-top:1px solid #e4eaf5;margin-top:25px;padding-top:20px}.item{border:1px solid #e2eaf6;border-radius:12px;background:#f8faff;padding:13px;margin-top:12px}.item .fields{margin-top:10px}.bottom{border-top:1px solid #e4eaf5;margin-top:25px;padding-top:20px}#message{color:#087e64;font-weight:700;overflow-wrap:anywhere}#logoPreview{width:70px;height:70px;border:1px solid #e1e8f4;border-radius:15px;display:grid;place-items:center;overflow:hidden;background:#f5f8ff;font-weight:800}@media(max-width:760px){.layout{grid-template-columns:1fr}.panel{padding:17px}.list{max-height:220px}}@media(max-width:400px){.fields{grid-template-columns:1fr}.wide{grid-column:auto}}
 .editor-shell{border:1px solid #dbe5f3;border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 4px 20px #1b4a8a09}.editor-toolbar{display:flex;flex-direction:column;flex-wrap:nowrap;gap:8px;padding:10px;border-bottom:1px solid #e2eaf5;background:#f7faff}.editor-toolbar .toolbar-row{display:flex;flex-wrap:nowrap;gap:6px;align-items:center}.editor-toolbar .toolbar-row button{flex:0 1 auto;min-width:0;white-space:nowrap}@media(max-width:420px){.editor-toolbar .toolbar-row{gap:4px}.editor-toolbar .toolbar-row button{padding:7px 6px;font-size:11px}}
@@ -180,6 +181,48 @@ body:has(#loginBox:not([hidden])) main{display:flex;align-items:center;justify-c
 .login-brand-admin{font-size:14px;font-weight:700;color:#1e90ff;letter-spacing:0}
 #loginBox{max-width:none;margin:0}
 @media(max-width:480px){.login-brand{margin-bottom:20px;font-size:23px}.login-brand img{width:41px;height:41px}}
+
+/* Airgem 2026 admin refresh: cohesive light premium UI, functionality preserved */
+:root{--admin-blue:#1e90ff;--admin-ink:#1b2e50;--admin-muted:#64748b;--admin-line:#e3eaf2;--admin-shadow:0 8px 28px rgba(20,40,70,.045)}
+body{font-family:Manrope,system-ui,Arial,sans-serif!important;background:#f7f9fc!important;color:var(--admin-ink)!important;-webkit-font-smoothing:antialiased}
+header{background:#fff!important;border-bottom:1px solid var(--admin-line)!important;padding-top:15px!important;padding-bottom:15px!important}
+.admin-brand{font-weight:700!important;font-size:20px!important;color:var(--admin-ink)!important}
+.website-link{font-size:12px!important;font-weight:600!important}
+main{max-width:1120px!important;margin-top:26px!important}
+.editor-page-heading{margin-bottom:20px!important}
+.editor-page-heading h1{font-size:25px!important;font-weight:700!important;letter-spacing:-.7px!important;color:var(--admin-ink)!important}
+.layout{gap:20px!important;align-items:start}
+.panel{background:#fff!important;border:1px solid var(--admin-line)!important;border-radius:20px!important;padding:20px!important;box-shadow:var(--admin-shadow)!important}
+.heading h2{font-size:16px!important;font-weight:700!important;letter-spacing:-.3px!important;color:var(--admin-ink)!important}
+.section{border-color:var(--admin-line)!important;margin-top:22px!important;padding-top:20px!important}
+.fields{gap:14px!important}
+label{font-size:11px!important;font-weight:700!important;color:#718096!important;letter-spacing:.4px!important}
+input,select,textarea{border:1px solid #e0e8f1!important;border-radius:10px!important;background:#fff!important;color:var(--admin-ink)!important;font-family:inherit!important;font-size:13px!important;min-height:42px!important;padding:10px 12px!important}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!important;outline-offset:1px!important;border-color:var(--admin-blue)!important}
+.btn{font-family:inherit!important;font-size:12px!important;font-weight:700!important;border-radius:9px!important;min-height:38px!important;padding:9px 13px!important}
+.btn.alt{background:#eff6ff!important;color:#1e90ff!important}
+.btn.light{background:#fff!important;color:#334155!important;border:1px solid #e2e8f0!important}
+.entry{border:1px solid #e6edf5!important;background:#fafcff!important;border-radius:11px!important;padding:12px!important}
+.entry.active{border-color:#a8d5ff!important;background:#eff6ff!important}
+.item{border:1px solid #e5ebf3!important;background:#fbfcfe!important;border-radius:12px!important;padding:13px!important}
+.notice{background:#eff6ff!important;border-color:#d8e9ff!important;color:#173d6b!important;border-radius:12px!important}
+.editor-shell{border-color:#e3eaf2!important;border-radius:12px!important;box-shadow:none!important}
+.editor-toolbar{background:#f8fafd!important;border-bottom-color:#e3eaf2!important}
+.editor-toolbar button{font-family:inherit!important;font-weight:600!important;color:#334155!important;border-color:#e2e8f0!important}
+.guide-editor{font-family:inherit!important;color:var(--admin-ink)!important}
+#loginBox{border-color:var(--admin-line)!important;box-shadow:0 12px 40px rgba(20,40,70,.06)!important}
+#loginBox h2{color:var(--admin-ink)!important}
+#loginForm input{min-height:50px!important;font-size:16px!important}
+#loginForm label{font-size:13px!important;letter-spacing:0!important;color:#344861!important}
+#loginForm .btn{min-height:50px!important;font-size:14px!important}
+@media(max-width:760px){
+ main{margin-top:20px!important;padding:0 15px 30px!important}
+ .layout{grid-template-columns:minmax(0,1fr)!important;gap:20px!important}
+ .panel{padding:20px!important}
+ .editor-page-heading h1{font-size:22px!important}
+ .fields{gap:12px!important}
+}
+@media(max-width:400px){.panel{padding:16px!important}.actions{gap:7px!important}}
 </style>
 </head>
 <body>
