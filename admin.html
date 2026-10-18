@@ -182,6 +182,8 @@ body:has(#loginBox:not([hidden])) main{display:flex;align-items:center;justify-c
 #loginBox{max-width:none;margin:0}
 @media(max-width:480px){.login-brand{margin-bottom:20px;font-size:23px}.login-brand img{width:41px;height:41px}}
 
+/* Match the public Airgem logo dimensions */
+.admin-brand img{width:40px!important;height:40px!important;flex:0 0 40px!important}
 /* Match the public Airgem header height on desktop and mobile */
 body:not(:has(#loginBox:not([hidden]))) header{height:70px!important;min-height:70px!important;padding-top:0!important;padding-bottom:0!important;align-items:center!important}
 /* Admin form labels: sentence case rather than all caps */
