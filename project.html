@@ -231,6 +231,21 @@ main{padding-bottom:24px!important}
 .identity h1{font:800 20px/1.25 Manrope,sans-serif!important;letter-spacing:-.5px!important;margin:0 0 6px!important}
 .identity .muted{font-family:'DM Sans',system-ui,sans-serif!important;font-size:12px!important;line-height:1.45!important;color:#87929f!important}
 @media(max-width:650px){.identity{gap:10px!important}.identity .logo{width:50px!important;height:50px!important;flex:0 0 50px!important;border-radius:10px!important}.identity h1{font-size:15px!important}.identity .muted{font-size:11px!important}}
+
+/* Consistent Project Details card on mobile and desktop */
+[data-project-panel].panel{padding:20px 20px 24px!important}
+[data-project-panel] .identity{gap:10px!important;align-items:center!important}
+[data-project-panel] .logo{width:50px!important;height:50px!important;flex:0 0 50px!important;border-radius:10px!important}
+[data-project-panel] .identity h1{font:800 15px/1.25 Manrope,sans-serif!important;letter-spacing:-.5px!important;margin:0 0 6px!important}
+[data-project-panel] .identity .muted{font:400 11px/1.45 'DM Sans',system-ui,sans-serif!important;color:#87929f!important}
+[data-project-panel] .identity>.activity-line{top:0!important;right:0!important}
+[data-project-panel] .activity-chip{font-size:10px!important;font-weight:600!important;padding:5px 10px!important;gap:6px!important}
+[data-project-panel] #details.grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:9px!important;row-gap:22px!important;margin:22px -10px 0!important;padding:20px 0!important}
+[data-project-panel] #details .item{align-items:center!important;text-align:center!important;gap:8px!important}
+[data-project-panel] #details .item small{font-size:10px!important;font-weight:600!important;line-height:1.4!important;justify-content:center!important;gap:5px!important}
+[data-project-panel] #details .item strong{font-size:12px!important;font-weight:700!important;line-height:1.4!important;text-align:center!important}
+[data-project-panel] #details .item small svg{width:15px!important;height:15px!important;flex:0 0 15px!important}
+[data-project-panel] .links{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
 </style><link rel="icon" type="image/png" href="airgem-logo.png"><link rel="stylesheet" href="airgem-ui.css?v=20261016-2"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head><body data-view="project"><header><div class="head"><a class="brand" href="index.html"><img src="airgem-logo.png" alt="Airgem logo" width="38" height="38" style="width:38px;height:38px;border-radius:10px;object-fit:contain;margin-right:9px;vertical-align:middle">Airgem</a><a class="back" href="index.html">← Back to Projects</a></div></header><main><div class="crumb">Home / Project Details</div><div id="projectLoading" class="project-loading" role="status" aria-live="polite"><div class="load-row"><span class="load-logo shimmer"></span><span class="load-text"><span class="shimmer load-title"></span><span class="shimmer load-subtitle"></span></span></div><div class="load-metrics"><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span></div><span class="loading-caption">Loading project details…</span></div><section class="panel" data-project-panel hidden><div class="identity"><div class="logo" id="logo">D</div><div class="identity-info"><h1 id="name">Project</h1><div class="muted" id="subtitle"></div></div><div class="activity-line" id="activityLine"></div></div><div class="grid" id="details"></div><div class="links" id="links"></div></section><section class="panel" data-project-panel hidden><div class="label">Step-by-Step</div><h2>Airdrop Guide</h2><div id="guide"></div></section></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="supabase-config.js"></script><script src="supabase-data.js"></script><script>
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
