@@ -182,6 +182,8 @@ body:has(#loginBox:not([hidden])) main{display:flex;align-items:center;justify-c
 #loginBox{max-width:none;margin:0}
 @media(max-width:480px){.login-brand{margin-bottom:20px;font-size:23px}.login-brand img{width:41px;height:41px}}
 
+/* Admin form labels: sentence case rather than all caps */
+#dashboard label{text-transform:none!important;letter-spacing:0!important}
 /* Airgem 2026 admin refresh: cohesive light premium UI, functionality preserved */
 :root{--admin-blue:#1e90ff;--admin-ink:#1b2e50;--admin-muted:#64748b;--admin-line:#e3eaf2;--admin-shadow:0 8px 28px rgba(20,40,70,.045)}
 body{font-family:Manrope,system-ui,Arial,sans-serif!important;background:#f7f9fc!important;color:var(--admin-ink)!important;-webkit-font-smoothing:antialiased}
