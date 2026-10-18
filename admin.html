@@ -268,7 +268,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 <form id="form" hidden><div class="fields">
 <div class="field"><label>Project Name *</label><input id="name" required></div>
 <div class="field"><label>Project Subtitle / Custom Tag</label><input id="displayTag" placeholder="Mainnet Spot & Future Trading"></div>
-<div class="field"><label>Type</label><select id="task"><option>Testnet</option><option>Mainnet</option><option>Whitelist</option><option>Points</option></select></div>
+<div class="field"><label for="task">Type</label><input id="task" type="text" placeholder="e.g. Testnet, Mainnet, Points" autocomplete="off"></div>
 <div class="field"><label>Reward</label><select id="status"><option>Confirmed</option><option>Potential</option></select></div>
 
 <div class="field"><label>Funding</label><input id="funding"></div>
