@@ -21,7 +21,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 /* Single source of truth for header-to-hero spacing on desktop and mobile. */
 [data-view="home"] .main{max-width:1120px;padding-top:15px!important;padding-bottom:36px!important}
 [data-view="home"] .ag-category-tabs{gap:8px;margin-bottom:16px}
-[data-view="home"] .ag-category-tab{min-height:44px;padding:11px 16px;font-size:13px;box-shadow:none;border-radius:12px}
+[data-view="home"] .ag-category-tab{height:40px;min-height:40px;padding:0 15px;font-size:13px;box-shadow:none;border-radius:12px}
 [data-view="home"] .searchbox{height:56px!important;padding:0 18px!important;border-color:var(--ag-line)!important;box-shadow:none!important}
 [data-view="home"] .searchbox input{font-size:16px}
 [data-view="home"] .searchbox input::placeholder{color:#718095}
