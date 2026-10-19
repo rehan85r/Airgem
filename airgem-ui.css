@@ -18,7 +18,7 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 [data-view] :is(.micro,.muted,.crumb){color:var(--ag-muted)!important}
 [data-view] .panel{background:#fff;border:1px solid var(--ag-line);border-radius:var(--ag-radius);box-shadow:var(--ag-shadow)}
 /* Discovery: consistent cards, readable metrics, and comfortable tap targets. */
-[data-view="home"] .main{max-width:1120px;padding-top:10px!important;padding-bottom:56px!important}
+[data-view="home"] .main{max-width:1120px;padding-top:10px!important;padding-bottom:36px!important}
 [data-view="home"] .ag-category-tabs{gap:8px;margin-bottom:16px}
 [data-view="home"] .ag-category-tab{min-height:44px;padding:11px 16px;font-size:13px;box-shadow:none;border-radius:12px}
 [data-view="home"] .searchbox{height:56px!important;padding:0 18px!important;border-color:var(--ag-line)!important;box-shadow:none!important}
@@ -89,7 +89,7 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
  [data-view] :is(.brand,.brand-name){font-size:22px}
  [data-view] .brand img{width:36px!important;height:36px!important}
  [data-view] .back{padding:9px 11px;font-size:11px}
- [data-view="home"] .main{padding-top:10px!important;padding-bottom:36px!important}
+ 
  [data-view="home"] .ag-card{padding:20px!important;border-radius:18px!important}
  [data-view="home"] .ag-card .project-icon{width:46px!important;height:46px!important;border-radius:12px!important}
  [data-view="home"] .ag-card .ag-card-head{gap:10px!important}
