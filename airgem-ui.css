@@ -4,7 +4,7 @@ body[data-view]{background:#ffffff!important;color:var(--ag-ink)!important;font-
 [data-view] button,[data-view] input,[data-view] select{font-family:inherit}
 [data-view] a,[data-view] button,[data-view] input,[data-view] select{touch-action:manipulation}
 [data-view] :is(button,a,input,select):focus-visible{outline:3px solid #86c5ff;outline-offset:4px}
-[data-view] :is(.header,header){background:#fff!important;border-bottom:none!important;box-shadow:none!important}
+[data-view] :is(.header,header){background:#fff!important;border:0!important;outline:0!important;box-shadow:none!important}
 [data-view] .header{height:76px}
 [data-view] :is(.wrap,.head){max-width:1120px;padding-left:24px;padding-right:24px}
 [data-view] .head{min-height:76px;padding-top:12px;padding-bottom:12px}
