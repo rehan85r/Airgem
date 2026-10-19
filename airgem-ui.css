@@ -1,10 +1,10 @@
 /* Shared public-site design system. Keep content and application behavior separate. */
 :root{--ag-ink:#142238;--ag-muted:#607086;--ag-line:#e5eaf0;--ag-blue:#1e90ff;--ag-radius:20px;--ag-shadow:0 8px 28px rgba(20,40,70,.04)}
-body[data-view]{background:#ffffff!important;color:var(--ag-ink)!important;font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 [data-view] button,[data-view] input,[data-view] select{font-family:inherit}
 [data-view] a,[data-view] button,[data-view] input,[data-view] select{touch-action:manipulation}
 [data-view] :is(button,a,input,select):focus-visible{outline:3px solid #86c5ff;outline-offset:4px}
-[data-view] :is(.header,header){background:#fff!important;border:0!important;outline:0!important;box-shadow:none!important}
+[data-view] :is(.header,header){background:#fff!important;border:0!important;border-bottom:1px solid #E2E8F0!important;outline:0!important;box-shadow:none!important}
 [data-view] .header{height:76px}
 [data-view] :is(.wrap,.head){max-width:1120px;padding-left:24px;padding-right:24px}
 [data-view] .head{min-height:76px;padding-top:12px;padding-bottom:12px}
