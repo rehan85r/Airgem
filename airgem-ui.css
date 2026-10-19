@@ -18,6 +18,7 @@ body[data-view]{background:#f8fafc!important;color:var(--ag-ink)!important;font-
 [data-view] :is(.micro,.muted,.crumb){color:var(--ag-muted)!important}
 [data-view] .panel{background:#fff;border:1px solid var(--ag-line);border-radius:var(--ag-radius);box-shadow:var(--ag-shadow)}
 /* Discovery: consistent cards, readable metrics, and comfortable tap targets. */
+/* Single source of truth for header-to-hero spacing on desktop and mobile. */
 [data-view="home"] .main{max-width:1120px;padding-top:10px!important;padding-bottom:36px!important}
 [data-view="home"] .ag-category-tabs{gap:8px;margin-bottom:16px}
 [data-view="home"] .ag-category-tab{min-height:44px;padding:11px 16px;font-size:13px;box-shadow:none;border-radius:12px}
