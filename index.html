@@ -362,7 +362,9 @@ body[data-view="home"] .header-inner{padding-left:15px!important;padding-right:1
 
 /* Match All Airdrops heading to Top Airdrops. */
 [data-view="home"] .section-head h2#listTitle{font-size:20px!important}
-@media(max-width:650px){[data-view="home"] #listTitle{margin-left:2px!important}}
+/* Match heading left insets at 20px on mobile and desktop. */
+@media(max-width:650px){[data-view="home"] #listTitle,[data-view="home"] .trending-heading h2{margin-left:2px!important}}
+@media(min-width:651px){[data-view="home"] .trending-heading h2,[data-view="home"] #listTitle{margin-left:0!important}}
 
 /* Unified homepage detail buttons (Top and All Airdrops). */
 [data-view="home"] .ag-card .ag-join{height:40px!important;min-height:40px!important;padding:0 42px!important;border-radius:10px!important;font-size:15px!important;font-weight:600!important;line-height:1!important}
