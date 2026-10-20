@@ -89,7 +89,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
  [data-view] :is(.wrap,.head){padding-left:18px;padding-right:18px}
  [data-view] .header{height:68px}[data-view] .head{min-height:68px}
  [data-view] :is(.brand,.brand-name){font-size:22px}
- [data-view] .brand img{width:36px!important;height:36px!important}
+ [data-view] .brand img{width:40px!important;height:40px!important}
  [data-view] .back{padding:9px 11px;font-size:11px}
  
  [data-view="home"] .ag-card{padding:20px!important;border-radius:18px!important}
