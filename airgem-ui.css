@@ -203,3 +203,6 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 
 /* Keep 25px between the last metric row and the footer divider. */
 [data-view="home"] .ag-card .ag-stats{margin-bottom:25px!important}
+
+/* Keep divider-to-View Details spacing at 20px across viewport sizes. */
+[data-view="home"] .ag-card .ag-card-foot{padding-top:20px!important}
