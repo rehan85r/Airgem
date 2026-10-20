@@ -186,3 +186,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 }
 /* Consistent understated outline icons for all six project metrics. */
 [data-view="home"] .ag-card .ag-stat-label svg{width:15px!important;height:15px!important;flex:0 0 15px!important;color:#8190a4!important;stroke-width:1.8!important;stroke-linecap:round;stroke-linejoin:round}
+
+/* Shared slate gray for all home card metric labels and Lucide icons. */
+[data-view="home"] .ag-card .ag-stat-label,
+[data-view="home"] .ag-card .ag-stat-label svg{color:#64748B!important}
