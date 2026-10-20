@@ -41,7 +41,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .ag-stat strong{font-size:15px!important;font-weight:750!important;line-height:1.5!important;color:var(--ag-ink)!important}
 [data-view="home"] .ag-card .ag-card-foot{margin-top:22px!important;padding-top:18px!important;border-color:var(--ag-line)!important}
 [data-view="home"] .ag-card .ag-join{height:48px!important;min-height:48px!important;font-size:14px!important;font-weight:700!important}
-[data-view="home"] .trending-controls button{width:38px!important;height:38px!important;min-width:38px!important}
+[data-view="home"] .trending-controls button{width:30px!important;height:30px!important;min-width:30px!important}
 [data-view="home"] .trending-controls{gap:10px!important}
 [data-view="home"] .ag-score-entry a{height:44px!important;min-height:44px!important}
 [data-view="home"] .foot{padding:24px 0;font-size:12px;color:#66758a;line-height:1.7}
