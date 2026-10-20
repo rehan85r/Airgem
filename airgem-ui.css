@@ -34,7 +34,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .project-icon{width:40px!important;height:40px!important;border-radius:12px!important;box-shadow:none!important}
 [data-view="home"] .ag-card .ag-card-head{gap:14px!important}
 [data-view="home"] .ag-card .ag-identity .card-name{font-size:15px!important;line-height:1!important;letter-spacing:-.5px!important;font-weight:700!important}
-[data-view="home"] .ag-card .ag-identity .micro{font-size:13px!important;line-height:1.5!important;color:var(--ag-muted)!important;font-weight:400!important}
+[data-view="home"] .ag-card .ag-identity .micro{font-size:13px!important;line-height:1.5!important;color:#64748B!important;font-weight:400!important}
 [data-view="home"] .ag-card .ag-stats{margin-top:24px!important;row-gap:20px!important;column-gap:16px!important}
 [data-view="home"] .ag-card .ag-stat-label{font-size:12px!important;color:var(--ag-muted)!important;gap:7px!important}
 [data-view="home"] .ag-card .ag-stat-label svg{width:17px!important;height:17px!important;flex-basis:17px!important}
