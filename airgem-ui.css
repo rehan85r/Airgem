@@ -204,3 +204,9 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 /* Keep 25px between the last metric row and the footer divider. */
 [data-view="home"] .ag-card .ag-stats{margin-bottom:25px!important}
 
+
+/* Canonical branding: identical homepage and project header logo geometry. */
+body[data-view="home"] header .brand,body[data-view="project"] header .brand{display:inline-flex!important;align-items:center!important;gap:10px!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#0F172A!important;text-decoration:none!important}
+body[data-view="home"] header .brand .mark,body[data-view="project"] header .brand .mark{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;flex:0 0 40px!important;border-radius:12px!important;overflow:hidden!important;background:transparent!important;box-shadow:none!important}
+body[data-view="home"] header .brand .mark img,body[data-view="project"] header .brand .mark img{display:block!important;width:40px!important;height:40px!important;object-fit:contain!important;border-radius:12px!important;margin:0!important}
+body[data-view="home"] header .brand .brand-name,body[data-view="project"] header .brand .brand-name{display:inline-block!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#0F172A!important}
