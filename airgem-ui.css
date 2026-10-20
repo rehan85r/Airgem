@@ -192,4 +192,4 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .ag-stat-label svg{color:#64748B!important}
 
 /* Balanced six-metric grid: reduce outer whitespace without separating icons from labels. */
-[data-view="home"] .ag-card .ag-stats{grid-template-columns:minmax(0,.88fr) minmax(0,1.24fr) minmax(0,.88fr)!important;column-gap:9px!important}
+[data-view="home"] .ag-card .ag-stats{grid-template-columns:minmax(0,.88fr) minmax(0,1.24fr) minmax(0,.88fr)!important;column-gap:10px!important}
