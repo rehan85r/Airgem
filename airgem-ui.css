@@ -137,9 +137,9 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 @media(prefers-reduced-motion:reduce){[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link,input,select){transition:none!important}}
 
 /* Featured Top Airdrops: subtle distinction while retaining the shared card layout. */
-[data-view="home"] #featured .ag-card{border-color:#E2E8F0!important;box-shadow:0 7px 24px rgba(30,90,150,.055)!important}
+[data-view="home"] #featured .ag-card{border-color:#E2E8F0!important;box-shadow:none!important}
 @media(hover:hover) and (pointer:fine){
- [data-view="home"] #featured .ag-card:hover{border-color:#b9d8fa!important;box-shadow:0 10px 28px rgba(30,90,150,.085)!important}
+ [data-view="home"] #featured .ag-card:hover{border-color:#E2E8F0!important;box-shadow:none!important}
 }
 
 /* Align Type, Cost and Time metrics in three equal centered columns across cards. */
