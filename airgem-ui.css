@@ -195,7 +195,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .ag-stats{grid-template-columns:minmax(0,.88fr) minmax(0,1.24fr) minmax(0,.88fr)!important;column-gap:10px!important}
 
 /* Set consistent 25px metric row spacing across both home card types. */
-[data-view="home"] .ag-card .ag-stats{row-gap:50px!important}
+[data-view="home"] .ag-card .ag-stats{row-gap:40px!important}
 
 /* Slate Gray separator between the project header and metrics on both home card types. */
 [data-view="home"] .ag-card .ag-card-head{padding-bottom:20px!important;border-bottom:1px solid #E2E8F0!important}
