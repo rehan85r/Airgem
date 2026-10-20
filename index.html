@@ -183,6 +183,7 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 #featured .trending-track{padding:0 20px;box-sizing:border-box}
 #featured .trending-slide{flex:0 0 calc(100% - 40px)}
 #featured .trending-track::after{content:"";flex:0 0 40px}
+@media(max-width:650px){#featured .trending-slider{margin:0 0 20px;padding:0;scroll-padding-inline:0}#featured .trending-track{padding:0}#featured .trending-slide{flex:0 0 100%}#featured .trending-track::after{display:none}}
 #featured .trending-slide .feature{margin-bottom:0!important;box-shadow:none!important}
 
 .trending-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
