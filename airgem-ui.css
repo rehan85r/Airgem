@@ -93,7 +93,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
  [data-view] .back{padding:9px 11px;font-size:11px}
  
  [data-view="home"] .ag-card{padding:20px!important;border-radius:18px!important}
- [data-view="home"] .ag-card .project-icon{width:46px!important;height:46px!important;border-radius:12px!important}
+ [data-view="home"] .ag-card .project-icon{width:40px!important;height:40px!important;border-radius:12px!important}
  [data-view="home"] .ag-card .ag-card-head{gap:10px!important}
  [data-view="home"] .ag-card .ag-identity .card-name{font-size:17px!important}
  [data-view="home"] .ag-card .ag-identity .micro{font-size:12px!important}
