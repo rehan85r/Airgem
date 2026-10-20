@@ -184,7 +184,9 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 #featured .trending-slide{flex:0 0 calc(100% - 40px)}
 #featured .trending-track::after{content:"";flex:0 0 40px}
 @media(max-width:650px){#featured .trending-slider{margin:0 0 20px;padding:0;scroll-padding-inline:0}#featured .trending-track{padding:0}#featured .trending-slide{flex:0 0 100%}#featured .trending-track::after{display:none}}
-#featured .trending-slide .feature{margin-bottom:0!important;box-shadow:none!important}
+#featured .trending-slide .feature{margin-bottom:0!important;box-shadow:none!important;height:100%!important;box-sizing:border-box!important;display:flex!important;flex-direction:column!important}
+#featured .trending-slide .ag-stats{flex:1 0 auto!important}
+#featured .trending-slide .ag-card-foot{margin-top:auto!important}
 
 .trending-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .trending-heading h2{min-width:0}
