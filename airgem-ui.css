@@ -39,7 +39,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .ag-stat-label{font-size:12px!important;color:var(--ag-muted)!important;gap:7px!important}
 [data-view="home"] .ag-card .ag-stat-label svg{width:17px!important;height:17px!important;flex-basis:17px!important}
 [data-view="home"] .ag-card .ag-stat strong{font-size:15px!important;font-weight:750!important;line-height:1.5!important;color:var(--ag-ink)!important}
-[data-view="home"] .ag-card .ag-card-foot{margin-top:22px!important;padding-top:18px!important;border-color:var(--ag-line)!important}
+[data-view="home"] .ag-card .ag-card-foot{margin-top:22px!important;padding-top:20px!important;border-color:var(--ag-line)!important}
 [data-view="home"] .ag-card .ag-join{height:48px!important;min-height:48px!important;font-size:14px!important;font-weight:700!important}
 [data-view="home"] .trending-controls button{width:30px!important;height:30px!important;min-width:30px!important}
 [data-view="home"] .trending-controls{gap:10px!important}
@@ -204,5 +204,3 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 /* Keep 25px between the last metric row and the footer divider. */
 [data-view="home"] .ag-card .ag-stats{margin-bottom:25px!important}
 
-/* Keep divider-to-View Details spacing at 20px across viewport sizes. */
-[data-view="home"] .ag-card .ag-card-foot{padding-top:20px!important}
