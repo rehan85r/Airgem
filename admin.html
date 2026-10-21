@@ -289,6 +289,15 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 #trendingDisclosure[open] .trending-chevron{transform:rotate(180deg)}
 #trendingCurrent{padding:0 12px 12px;display:grid;gap:10px}
 #trendingCurrent .item{margin:0!important}
+
+/* Search-based Top Airdrops project picker */
+#trendingSelect{appearance:auto!important;-webkit-appearance:auto!important;background-image:none!important;padding-right:15px!important}
+#trendingSearchResults[hidden]{display:none!important}
+#trendingSearchResults{margin-top:8px;border:1px solid #e0e8f1;border-radius:12px;background:#fff;overflow:hidden;max-height:240px;overflow-y:auto}
+#trendingSearchResults button{display:block;width:100%;border:0;border-bottom:1px solid #eef2f7;background:#fff;color:#1b2e50;text-align:left;padding:12px 15px;font-family:inherit;font-size:12px;font-weight:500;cursor:pointer}
+#trendingSearchResults button:last-child{border-bottom:0}
+#trendingSearchResults button:hover,#trendingSearchResults button:focus-visible{background:#eff6ff;outline:none}
+#trendingSearchResults .trending-empty{padding:12px 15px;color:#64748b;font-size:12px}
 </style>
 </head>
 <body>
@@ -322,8 +331,8 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <section class="panel" id="trendingManager" style="margin-bottom:20px">
 <div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
 
-<div class="fields"><div class="field wide"><label for="trendingSelect">Select Project</label><select id="trendingSelect"><option value="">Select A Project...</option></select></div></div>
-<div class="actions" style="margin-top:12px"><button class="btn alt" id="setTrending" type="button">+ Add To Top</button><button class="btn" id="saveTrending" type="button">Save Top</button><button class="btn light" id="clearTrending" type="button">Remove All</button></div>
+<div class="fields"><div class="field wide"><label for="trendingSelect">Select Project</label><input id="trendingSelect" type="search" placeholder="Search A Project..." autocomplete="off" aria-controls="trendingSearchResults" aria-expanded="false"><div id="trendingSearchResults" class="trending-search-results" hidden></div></div></div>
+<div class="actions" style="margin-top:12px"><button class="btn" id="saveTrending" type="button">Save Top</button><button class="btn light" id="clearTrending" type="button">Remove All</button></div>
 <details id="trendingDisclosure" class="trending-disclosure"><summary><span id="trendingDisclosureLabel">Selected Projects (0/10)</span><span class="trending-chevron" aria-hidden="true">⌄</span></summary><div id="trendingCurrent" aria-live="polite"></div></details><p id="trendingMessage" role="status"></p>
 </section>
 <div class="layout">
@@ -393,7 +402,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 })();
 </script>
 <script>window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';</script>
-<script src="admin-app.js?v=20261021-collapsible-top"></script>
+<script src="admin-app.js?v=20261021-top-search"></script>
 <script>
 (function(){
   const dashboard=document.getElementById('dashboard');
