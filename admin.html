@@ -246,12 +246,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 /* Project Editor heading: consistent sizing on mobile and desktop */
 .editor-page-heading h1{font-size:20px!important;letter-spacing:-0.7px!important}
 .editor-page-heading{margin-bottom:0!important}
+header .admin-header-logout{display:inline-flex;align-items:center;justify-content:center;height:40px;min-width:40px;padding:0 4px;border:0;background:transparent;color:#64748B;font-family:Manrope,system-ui,sans-serif;font-size:13px;font-weight:500;cursor:pointer}header .admin-header-logout:hover{color:#1E90FF;background:transparent}header .admin-header-logout[hidden]{display:none!important}
 </style>
 </head>
 <body>
-<header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="40" height="40"><span>Airgem</span></a><a class="website-link" href="index.html"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Back To Website</span></a></header>
+<header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="40" height="40"><span>Airgem</span></a><button id="logout" class="admin-header-logout" type="button" hidden>Log Out</button></header>
 <main>
-<div class="editor-page-heading"><h1>Project Editor</h1><button id="logout" type="button" class="btn light" hidden>Log Out</button></div>
+<div class="editor-page-heading"><h1>Project Editor</h1></div>
 <div class="login-shell"><div class="login-brand"><img src="airgem-logo.png" alt="" width="44" height="44"><span>Airgem <span class="login-brand-admin">Admin</span></span></div>
 <section id="loginBox" class="panel" aria-labelledby="loginHeading">
 <h2 id="loginHeading">Sign In</h2>
