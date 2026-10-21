@@ -306,7 +306,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 <div class="toolbar-row"><button type="button" data-cmd="justifyLeft" title="Align left">Left</button><button type="button" data-cmd="justifyCenter" title="Align center">Center</button><button type="button" data-cmd="justifyRight" title="Align right">Right</button></div>
 <div class="toolbar-row"><button type="button" id="guideStepBox" title="Insert Step Box with optional link">Step Box</button><button type="button" id="guideDaily" title="Add daily task update box">Update Box</button><button type="button" id="guideNote" title="Add editable important note">Note Box</button></div>
 <div class="toolbar-row"><button type="button" id="guideImage" title="Insert image">Image</button><button type="button" id="guidePreview" title="Preview guide">Preview</button><button type="button" id="guideClear" title="Remove formatting">Clear</button></div></div>
-</div><div class="ag-task-manager"><div class="ag-task-manager-head"><strong>Guide Tasks</strong><button type="button" id="agTaskAdd" class="btn light">+ Add Task</button></div><div id="agTaskTabs" class="ag-task-tabs"></div><div class="ag-task-fields"><label>Task Title<input id="agTaskTitle" type="text" placeholder="e.g. Waitlist"></label><label>Task Status<select id="agTaskStatus"><option>Active</option><option>Ended</option><option>Upcoming</option></select></label><label>Available From<input id="agTaskDate" type="text" placeholder="e.g. 08 October 2026"></label><label>Task Tag<input id="agTaskTag" type="text" placeholder="e.g. Fill The Form"></label></div><button type="button" id="agTaskRemove" class="btn danger">Remove Selected Task</button></div>
+</div><div class="ag-task-manager"><div class="ag-task-manager-head"><strong>Guide Tasks</strong><button type="button" id="agTaskAdd" class="btn light">+ Add Task</button></div><div id="agTaskTabs" class="ag-task-tabs"></div><div class="ag-task-fields"><label>Task Title<input id="agTaskTitle" type="text" placeholder="e.g. Waitlist"></label><label>Task Status<select id="agTaskStatus"><option>Active</option><option>Ended</option><option>Upcoming</option></select></label><label>Subtitle<input id="agTaskDate" type="text" placeholder="Write any subtitle... "></label><label>Task Tag<input id="agTaskTag" type="text" placeholder="e.g. Fill The Form"></label></div><button type="button" id="agTaskRemove" class="btn danger">Remove Selected Task</button></div>
 <div id="guideEditor" class="guide-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write your complete project guide here..."></div></div>
 <input id="guideImageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
 <div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
@@ -340,7 +340,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 })();
 </script>
 <script>window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';</script>
-<script src="admin-app.js?v=20261021-task-status"></script>
+<script src="admin-app.js?v=20261021-subtitle"></script>
 <script>
 (function(){
   const dashboard=document.getElementById('dashboard');
