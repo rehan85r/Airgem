@@ -199,6 +199,10 @@ header{background:#fff!important;border-bottom:1px solid var(--admin-line)!impor
 .admin-brand{font-family:Manrope,system-ui,sans-serif!important;font-weight:700!important;font-size:20px!important;letter-spacing:-.5px!important;line-height:1!important;color:#0F172A!important}
 .admin-brand span{font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;color:inherit!important}
 .website-link{font-size:12px!important;font-weight:600!important}
+/* Match Project Details header Back button */
+header .website-link{height:40px!important;min-height:40px!important;max-height:40px!important;width:auto!important;min-width:40px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;padding:0 4px!important;background:transparent!important;border:0!important;border-radius:0!important;font-family:Manrope,system-ui,sans-serif!important;font-size:15px!important;font-weight:600!important;line-height:1!important;color:#64748B!important;text-decoration:none!important}
+header .website-link svg{width:20px!important;height:20px!important;flex:0 0 20px!important}
+header .website-link:hover{background:transparent!important;color:#1E90FF!important}
 main{max-width:1120px!important;margin-top:26px!important}
 .editor-page-heading{margin-bottom:20px!important}
 .editor-page-heading h1{font-size:25px!important;font-weight:700!important;letter-spacing:-.7px!important;color:var(--admin-ink)!important}
@@ -240,7 +244,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 </style>
 </head>
 <body>
-<header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="40" height="40"><span>Airgem</span></a><a class="website-link" href="index.html"><span aria-hidden="true">←</span> Back To Website</a></header>
+<header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="40" height="40"><span>Airgem</span></a><a class="website-link" href="index.html"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Back To Website</span></a></header>
 <main>
 <div class="editor-page-heading"><h1>Project Editor</h1><button id="logout" type="button" class="btn light" hidden>Log Out</button></div>
 <div class="login-shell"><div class="login-brand"><img src="airgem-logo.png" alt="" width="44" height="44"><span>Airgem <span class="login-brand-admin">Admin</span></span></div>
