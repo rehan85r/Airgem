@@ -219,3 +219,12 @@ body[data-view="home"] header.header > .header-inner > .brand,body[data-view="pr
 /* Guide section is unboxed; preserve separate callout cards. */
 body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide){background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;margin-top:20px!important;}
 body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) #guide,body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .guide-article{background:transparent!important;box-shadow:none!important;border:0!important;}
+
+/* Transparent Airdrop Guide surface; retain only blue/yellow information callouts. */
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide),
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) #guide,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .guide-article,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-timeline,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-step,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-step-content{background:transparent!important;background-image:none!important;border-color:transparent!important;box-shadow:none!important;}
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-step{padding-left:0!important;padding-right:0!important;}
