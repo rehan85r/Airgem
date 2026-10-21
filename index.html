@@ -336,8 +336,8 @@ body[data-view="home"] .header-inner{padding-left:15px!important;padding-right:1
 #featured{display:flow-root!important;margin:0!important;padding:0!important}
 #featured .trending-slider{margin:0!important;padding:0!important}
 #featured .trending-track,#featured .trending-slide{margin-bottom:0!important;padding-bottom:0!important}
-/* Visual gap: 10px section margin + approximately 10px heading line-box inset = 20px to visible text. */
-body[data-view="home"] main > #featured + .section-head{margin:10px 0 10px!important;padding:0!important}
+/* Consistent section rhythm: 15px heading-to-card and 25px between sections. */
+body[data-view="home"] main > #featured + .section-head{margin:25px 0 15px!important;padding:0!important}
 .feature::before,.feature::after,.project-card::before,.project-card::after{display:none!important}
 
 .ag-card .ag-card-head{display:flex!important;align-items:flex-start!important;gap:10px!important;min-width:0!important}
@@ -363,7 +363,7 @@ body[data-view="home"] main > #featured + .section-head{margin:10px 0 10px!impor
 .ag-category-tabs{margin-bottom:10px!important}
 .search-row{margin-bottom:15px!important}
 .search-row + .section-head{margin-top:0!important;margin-bottom:10px!important;min-height:40px;align-items:center!important}
-[data-view="home"] .search-row + .section-head.trending-heading{margin-bottom:10px!important}
+[data-view="home"] .search-row + .section-head.trending-heading{margin-bottom:15px!important}
 
 /* Match All Airdrops heading to Top Airdrops. */
 [data-view="home"] .section-head h2#listTitle{font-size:20px!important}
