@@ -413,6 +413,18 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 #allProjectsDisclosure #list{max-height:360px!important;overflow-y:auto!important;overscroll-behavior:contain!important;margin:0!important;padding:0 12px 12px!important}
 #allProjectsDisclosure #list .entry{margin-top:0!important;margin-bottom:20px!important}
 #allProjectsDisclosure #list .entry:last-child{margin-bottom:0!important}
+
+/* All Projects rows with Lucide reorder and delete actions */
+#allProjectsManager .project-list-row{display:flex;align-items:center;gap:10px;min-width:0;border:1px solid #e0e9f6;border-radius:12px;background:#fff;padding:8px 10px;margin-bottom:20px}
+#allProjectsManager .project-list-row:last-child{margin-bottom:0}
+#allProjectsManager .project-list-row .entry{flex:1;min-width:0;width:auto!important;margin:0!important;border:0!important;background:transparent!important;padding:4px!important;text-align:left!important}
+#allProjectsManager .project-list-row .entry.active{color:#1e90ff!important}
+#allProjectsManager .project-list-actions{display:flex;align-items:center;gap:15px;flex-shrink:0}
+#allProjectsManager .project-list-actions button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;min-width:30px;padding:0;border:0;background:transparent;color:#64748b;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#allProjectsManager .project-list-actions button[data-project-delete]{color:#dc2626}
+#allProjectsManager .project-list-actions button:disabled{opacity:.35;cursor:default}
+#allProjectsManager .project-list-actions button:hover{background:transparent;filter:none}
+#allProjectsManager .project-list-actions svg{width:15px;height:15px;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -517,7 +529,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 })();
 </script>
 <script>window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';</script>
-<script src="admin-app.js?v=20261021-lucide-actions"></script>
+<script src="admin-app.js?v=20261022-project-list-actions"></script>
 <script>
 (function(){
   const dashboard=document.getElementById('dashboard');
