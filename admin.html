@@ -233,7 +233,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
  .fields{gap:12px!important}
 }
 @media(max-width:400px){.panel{padding:16px!important}.actions{gap:7px!important}}
-</style>
+.guide-panel{display:none;margin-top:20px;margin-left:300px}.layout:has(#form:not([hidden]))+.guide-panel{display:block}@media(max-width:760px){.guide-panel{margin-left:0}}</style>
 <style>
 .ag-task-manager{display:grid;gap:12px;margin:14px 0;padding:15px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}.ag-task-manager-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.ag-task-tabs{display:flex;flex-wrap:wrap;gap:8px}.ag-task-tabs button{border:1px solid #e2e8f0;background:white;border-radius:8px;padding:8px 12px;color:#334155;cursor:pointer}.ag-task-tabs button.active{border-color:#1e90ff;color:#1e90ff;background:#eff6ff}.ag-task-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ag-task-fields label{font-size:12px;color:#64748b}.ag-task-fields input,.ag-task-fields select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px;border:1px solid #e2e8f0;border-radius:8px;background:white;color:#0f172a}@media(max-width:600px){.ag-task-fields{grid-template-columns:1fr}}
 </style>
@@ -300,7 +300,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 
 </div>
 <div class="section"><div class="heading"><h2>Social & Official Links</h2></div><div id="links"></div></div>
-<div class="section"><div class="heading"><h2>Project Guide Editor</h2></div>
+<div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
+</form></section></div><section class="panel guide-panel"><div class="section"><div class="heading"><h2>Guide Editor</h2></div>
 <div class="editor-shell"><div class="editor-toolbar" id="guideToolbar" role="toolbar" aria-label="Guide formatting">
 <div class="toolbar-row"><button type="button" data-cmd="formatBlock" data-val="p" title="Normal text">Text</button><button type="button" data-cmd="bold" title="Bold">Bold</button><button type="button" id="guideLink" title="Add link">Link</button></div>
 <div class="toolbar-row"><button type="button" data-cmd="justifyLeft" title="Align left">Left</button><button type="button" data-cmd="justifyCenter" title="Align center">Center</button><button type="button" data-cmd="justifyRight" title="Align right">Right</button></div>
@@ -309,8 +310,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 </div><div class="ag-task-manager"><div class="ag-task-manager-head"><strong>Guide Tasks</strong><button type="button" id="agTaskAdd" class="btn light">+ Add Task</button></div><div id="agTaskTabs" class="ag-task-tabs"></div><div class="ag-task-fields"><label>Task Title<input id="agTaskTitle" type="text" placeholder="e.g. Waitlist"></label><label>Task Status<select id="agTaskStatus"><option>Active</option><option>Ended</option><option>Upcoming</option></select></label><label>Subtitle<input id="agTaskDate" type="text" placeholder="Write any subtitle... "></label><label>Task Tag<input id="agTaskTag" type="text" placeholder="e.g. Fill The Form"></label></div><button type="button" id="agTaskRemove" class="btn danger">Remove Selected Task</button></div>
 <div id="guideEditor" class="guide-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write your complete project guide here..."></div></div>
 <input id="guideImageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
-<div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
-</form></section></div></div>
+</section></div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
