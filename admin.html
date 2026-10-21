@@ -312,6 +312,8 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 #dashboard input:not([type="checkbox"]):not([type="radio"]),#dashboard select,#dashboard textarea,#dashboard .panel,#dashboard .item,#dashboard .entry:not(.active),#dashboard .btn.light,#dashboard .editor-toolbar button,#dashboard .guide-editor,#dashboard .guide-editor .guide-step-box,#trendingDisclosure,#trendingSearchResults{border-color:#e0e9f6!important}
 #dashboard input:focus,#dashboard select:focus,#dashboard textarea:focus{border-color:var(--admin-blue)!important}
 #trendingManager #clearTrending{border-color:#dc2626!important}
+
+#trendingDisclosure .trending-chevron{width:18px;height:18px;flex-shrink:0;transition:transform .15s ease}
 </style>
 </head>
 <body>
@@ -347,7 +349,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 
 <div class="fields"><div class="field wide"><label for="trendingSelect">Search Projects</label><input id="trendingSelect" type="search" placeholder="Search A Project..." autocomplete="off" aria-controls="trendingSearchResults" aria-expanded="false"><div id="trendingSearchResults" class="trending-search-results" hidden></div></div></div>
 <div class="actions" style="margin-top:12px"><button class="btn" id="saveTrending" type="button">Save Top</button><button class="btn danger" id="clearTrending" type="button">Delete All</button></div>
-<details id="trendingDisclosure" class="trending-disclosure"><summary><span id="trendingDisclosureLabel">Selected Projects (0/10)</span><span class="trending-chevron" aria-hidden="true">⌄</span></summary><div id="trendingCurrent" aria-live="polite"></div></details><p id="trendingMessage" role="status"></p>
+<details id="trendingDisclosure" class="trending-disclosure"><summary><span id="trendingDisclosureLabel">Selected Projects (0/10)</span><svg class="trending-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div id="trendingCurrent" aria-live="polite"></div></details><p id="trendingMessage" role="status"></p>
 </section>
 <div class="layout">
 <aside class="panel"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
