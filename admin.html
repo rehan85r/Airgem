@@ -276,6 +276,9 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 /* Consistent 25px left inset for Top Airdrops heading and Select Project label */
 #trendingManager{padding-left:25px!important}
 #trendingManager .fields,#trendingManager .field,#trendingManager label[for="trendingSelect"]{margin-left:0!important;padding-left:0!important}
+
+/* Top Airdrops action buttons */
+#trendingManager #setTrending,#trendingManager #saveTrending,#trendingManager #clearTrending{font-size:15px!important;font-weight:600!important;height:35px!important;min-height:35px!important;box-sizing:border-box!important;padding:10px 15px!important;line-height:15px!important}
 </style>
 </head>
 <body>
@@ -310,7 +313,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
 
 <div class="fields"><div class="field wide"><label for="trendingSelect">Select Project</label><select id="trendingSelect"><option value="">Select A Project...</option></select></div></div>
-<div class="actions" style="margin-top:12px"><button class="btn alt" id="setTrending" type="button">+ Add To Trending</button><button class="btn" id="saveTrending" type="button">Save Trending</button><button class="btn light" id="clearTrending" type="button">Remove All</button></div>
+<div class="actions" style="margin-top:12px"><button class="btn alt" id="setTrending" type="button">+ Add To Top</button><button class="btn" id="saveTrending" type="button">Save Trending</button><button class="btn light" id="clearTrending" type="button">Remove All</button></div>
 <div id="trendingCurrent" aria-live="polite" style="margin-top:14px"></div><p id="trendingMessage" role="status"></p>
 </section>
 <div class="layout">
