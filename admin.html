@@ -279,6 +279,16 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 
 /* Top Airdrops action buttons */
 #trendingManager #setTrending,#trendingManager #saveTrending,#trendingManager #clearTrending{font-size:15px!important;font-weight:500!important;height:35px!important;min-height:35px!important;box-sizing:border-box!important;padding:10px 15px!important;line-height:15px!important}
+
+/* Compact expandable Top Airdrops project list */
+#trendingDisclosure{margin-top:14px;border:1px solid #e0e8f1;border-radius:12px;overflow:hidden;background:#fff}
+#trendingDisclosure>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:10px 15px;color:#1b2e50;font-size:12px;font-weight:600;user-select:none}
+#trendingDisclosure>summary::-webkit-details-marker{display:none}
+#trendingDisclosure>summary:focus,#trendingDisclosure>summary:focus-visible{outline:none;box-shadow:none}
+#trendingDisclosure .trending-chevron{font-size:19px;line-height:1;transition:transform .15s ease}
+#trendingDisclosure[open] .trending-chevron{transform:rotate(180deg)}
+#trendingCurrent{padding:0 12px 12px;display:grid;gap:10px}
+#trendingCurrent .item{margin:0!important}
 </style>
 </head>
 <body>
@@ -314,7 +324,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 
 <div class="fields"><div class="field wide"><label for="trendingSelect">Select Project</label><select id="trendingSelect"><option value="">Select A Project...</option></select></div></div>
 <div class="actions" style="margin-top:12px"><button class="btn alt" id="setTrending" type="button">+ Add To Top</button><button class="btn" id="saveTrending" type="button">Save Top</button><button class="btn light" id="clearTrending" type="button">Remove All</button></div>
-<div id="trendingCurrent" aria-live="polite" style="margin-top:14px"></div><p id="trendingMessage" role="status"></p>
+<details id="trendingDisclosure" class="trending-disclosure"><summary><span id="trendingDisclosureLabel">Selected Projects (0/10)</span><span class="trending-chevron" aria-hidden="true">⌄</span></summary><div id="trendingCurrent" aria-live="polite"></div></details><p id="trendingMessage" role="status"></p>
 </section>
 <div class="layout">
 <aside class="panel"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
