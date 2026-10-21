@@ -314,6 +314,10 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 #trendingManager #clearTrending{border-color:#dc2626!important}
 
 #trendingDisclosure .trending-chevron{width:18px;height:18px;flex-shrink:0;transition:transform .15s ease}
+
+/* Keep Selected Projects disclosure neutral on hover and press */
+#trendingDisclosure>summary:hover,#trendingDisclosure>summary:active,#trendingDisclosure>summary:focus,#trendingDisclosure>summary:focus-visible{background:#fff!important;color:#1b2e50!important;border-color:#e0e9f6!important;box-shadow:none!important;outline:none!important;filter:none!important}
+#trendingDisclosure>summary:hover .trending-chevron,#trendingDisclosure>summary:active .trending-chevron{color:inherit!important;stroke:currentColor!important}
 </style>
 </head>
 <body>
