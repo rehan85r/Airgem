@@ -376,6 +376,28 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 #allProjectsManager #search:focus,#allProjectsManager #search:focus-visible{outline:none!important;box-shadow:none!important;border-color:#e0e9f6!important}
 #allProjectsManager .list .entry{border:1px solid #e0e9f6!important;border-radius:12px!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important}
 #allProjectsManager #add{height:35px!important;min-height:35px!important;padding:10px 15px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:500!important;line-height:15px!important}
+
+/* Unified admin editor visual system — Top Airdrops reference */
+#projectEditorPanel,#projectGuidePanel{padding:15px 20px 20px!important;border-color:#e0e9f6!important}
+#projectEditorPanel .heading h2,#projectGuidePanel .heading h2{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:700!important;letter-spacing:-.5px!important;color:#1b2e50!important}
+#projectEditorPanel .fields{column-gap:14px!important;row-gap:15px!important;margin-top:20px!important}
+#projectEditorPanel .field{gap:6px!important;min-width:0!important}
+#projectEditorPanel .field>label,#projectGuidePanel .ag-task-fields label{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:600!important;letter-spacing:-.5px!important;text-transform:none!important;color:#64748b!important}
+#projectEditorPanel input:not([type="hidden"]):not([type="file"]),#projectEditorPanel select,#projectEditorPanel textarea,#projectEditorPanel #links input,#projectGuidePanel .ag-task-fields input,#projectGuidePanel .ag-task-fields select{height:40px!important;min-height:40px!important;max-width:100%!important;padding:0 15px!important;border:1px solid #e0e9f6!important;border-radius:12px!important;background:#fff!important;color:#1b2e50!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important;box-sizing:border-box!important}
+#projectEditorPanel input:focus,#projectEditorPanel select:focus,#projectEditorPanel textarea:focus,#projectGuidePanel .ag-task-fields input:focus,#projectGuidePanel .ag-task-fields select:focus{border-color:#1e90ff!important;outline:none!important;box-shadow:none!important}
+#projectEditorPanel .field small,#projectGuidePanel .ag-task-fields small{font-size:12px!important;font-weight:400!important;letter-spacing:0!important;color:#64748b!important}
+#projectEditorPanel .section,#projectGuidePanel .section{border-color:#e0e9f6!important;margin-top:20px!important;padding-top:20px!important}
+#projectEditorPanel .btn,#projectGuidePanel .btn{min-height:35px!important;padding:8px 15px!important;border-radius:10px!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:500!important;line-height:19px!important}
+#projectEditorPanel .btn.light,#projectGuidePanel .btn.light{border-color:#e0e9f6!important}
+#projectEditorPanel .bottom{border-color:#e0e9f6!important}
+#projectEditorPanel #logoFile{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;color:#64748b!important;border:1px solid #e0e9f6!important;border-radius:12px!important;padding:10px!important;background:#fff!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+#projectEditorPanel #logoPreview{border:1px solid #e0e9f6!important;border-radius:12px!important}
+#projectGuidePanel .editor-toolbar button{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important;border-color:#e0e9f6!important;border-radius:10px!important;background:#fff!important}
+#projectGuidePanel .editor-shell,#projectGuidePanel .guide-editor,#projectGuidePanel .ag-task-manager{border-color:#e0e9f6!important;border-radius:12px!important}
+#projectGuidePanel .ag-task-manager{background:#f8fafc!important}
+#projectGuidePanel .ag-task-manager-head strong{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:700!important;letter-spacing:-.5px!important;color:#1b2e50!important}
+#projectGuidePanel .ag-task-tabs button{border-color:#e0e9f6!important;border-radius:10px!important;font-size:12px!important}
+#projectGuidePanel .guide-editor{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;line-height:1.7!important;color:#1b2e50!important}
 </style>
 </head>
 <body>
@@ -417,7 +439,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <aside class="panel" id="allProjectsManager"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
 <input id="search" placeholder="Search Projects..." style="margin-top:17px">
 <div id="list" class="list"></div><button id="add" type="button" class="btn">+ Add Project</button></aside>
-<section class="panel"><div class="heading"><h2 id="title">Edit Project</h2><button id="remove" type="button" class="btn danger">Delete</button></div>
+<section class="panel" id="projectEditorPanel"><div class="heading"><h2 id="title">Edit Project</h2><button id="remove" type="button" class="btn danger">Delete</button></div>
 <form id="form" hidden><div class="fields">
 <div class="field"><label>Project Name *</label><input id="name" required></div>
 <div class="field"><label>Project Subtitle / Custom Tag</label><input id="displayTag" placeholder="Mainnet Spot & Future Trading"></div>
@@ -441,7 +463,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 </div>
 <div class="section"><div class="heading"><h2>Social & Official Links</h2></div><div id="links"></div></div>
 <div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
-</form></section></div><section class="panel guide-panel"><div class="section"><div class="heading"><h2>Guide Editor</h2></div>
+</form></section></div><section class="panel guide-panel" id="projectGuidePanel"><div class="section"><div class="heading"><h2>Guide Editor</h2></div>
 <div class="editor-shell"><div class="editor-toolbar" id="guideToolbar" role="toolbar" aria-label="Guide formatting">
 <div class="toolbar-row"><button type="button" data-cmd="formatBlock" data-val="p" title="Normal text">Text</button><button type="button" data-cmd="bold" title="Bold">Bold</button><button type="button" id="guideLink" title="Add link">Link</button></div>
 <div class="toolbar-row"><button type="button" data-cmd="justifyLeft" title="Align left">Left</button><button type="button" data-cmd="justifyCenter" title="Align center">Center</button><button type="button" data-cmd="justifyRight" title="Align right">Right</button></div>
