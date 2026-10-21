@@ -204,9 +204,9 @@ header{background:#fff!important;border-bottom:1px solid var(--admin-line)!impor
 header .website-link{height:40px!important;min-height:40px!important;max-height:40px!important;width:auto!important;min-width:40px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;padding:0 4px!important;background:transparent!important;border:0!important;border-radius:0!important;font-family:Manrope,system-ui,sans-serif!important;font-size:13px!important;font-weight:500!important;line-height:1!important;color:#64748B!important;text-decoration:none!important}
 header .website-link svg{width:20px!important;height:20px!important;flex:0 0 20px!important}
 header .website-link:hover{background:transparent!important;color:#1E90FF!important}
-main{max-width:1120px!important;margin-top:26px!important}
-.editor-page-heading{margin-bottom:20px!important}
-.editor-page-heading h1{font-size:25px!important;font-weight:700!important;letter-spacing:-.7px!important;color:var(--admin-ink)!important}
+main{max-width:1120px!important;margin-top:20px!important}
+.editor-page-heading{margin-bottom:0!important;padding-left:7px!important}
+.editor-page-heading h1{font-size:20px!important;font-weight:700!important;letter-spacing:-5px!important;color:var(--admin-ink)!important}
 .layout{gap:20px!important;align-items:start}
 .panel{background:#fff!important;border:1px solid var(--admin-line)!important;border-radius:20px!important;padding:20px!important;box-shadow:var(--admin-shadow)!important}
 .heading h2{font-size:16px!important;font-weight:700!important;letter-spacing:-.3px!important;color:var(--admin-ink)!important}
@@ -242,6 +242,10 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 .guide-panel{display:none;margin-top:20px;margin-left:300px}.layout:has(#form:not([hidden]))+.guide-panel{display:block}@media(max-width:760px){.guide-panel{margin-left:0}}</style>
 <style>
 .ag-task-manager{display:grid;gap:12px;margin:14px 0;padding:15px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}.ag-task-manager-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.ag-task-tabs{display:flex;flex-wrap:wrap;gap:8px}.ag-task-tabs button{border:1px solid #e2e8f0;background:white;border-radius:8px;padding:8px 12px;color:#334155;cursor:pointer}.ag-task-tabs button.active{border-color:#1e90ff;color:#1e90ff;background:#eff6ff}.ag-task-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ag-task-fields label{font-size:12px;color:#64748b}.ag-task-fields input,.ag-task-fields select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px;border:1px solid #e2e8f0;border-radius:8px;background:white;color:#0f172a}@media(max-width:600px){.ag-task-fields{grid-template-columns:1fr}}
+
+/* Project Editor heading: consistent sizing on mobile and desktop */
+.editor-page-heading h1{font-size:20px!important;letter-spacing:-5px!important}
+.editor-page-heading{margin-bottom:0!important}
 </style>
 </head>
 <body>
