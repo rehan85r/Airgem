@@ -442,6 +442,19 @@ body[data-view="project"] [data-project-panel] .identity .muted{font-family:"DM 
 
 /* Align STEP-BY-STEP label 25px from viewport edge (main padding is 15px). */
 body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) > .guide-label{margin-left:10px!important;}
+/* Task overview and full guide page */
+body[data-view="project"] .ag-task-list{display:grid;gap:15px}
+body[data-view="project"] .ag-task-card{display:block;text-decoration:none;color:#0F172A;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:20px;transition:border-color .15s}
+body[data-view="project"] .ag-task-card:hover{border-color:#1E90FF}
+body[data-view="project"] .ag-task-top,body[data-view="project"] .ag-task-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px}
+body[data-view="project"] .ag-task-top strong{font:700 16px Manrope,system-ui,sans-serif}
+body[data-view="project"] .ag-task-status{font:500 13px 'DM Sans',sans-serif;color:#334155;white-space:nowrap}
+body[data-view="project"] .ag-task-status:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;margin-right:8px;vertical-align:middle}
+body[data-view="project"] .ag-task-card p{font:400 14px 'DM Sans',sans-serif;color:#64748B;margin:15px 0}
+body[data-view="project"] .ag-task-bottom{margin-top:15px;font:600 12px 'DM Sans',sans-serif;color:#1E90FF}
+body[data-view="project"] .ag-task-tag{border-radius:99px;background:#EFF6FF;padding:7px 10px}
+body[data-view="project"] .ag-guide-back{display:inline-block;color:#1E90FF;font:600 13px 'DM Sans',sans-serif;text-decoration:none;margin-bottom:15px}
+body[data-view="project"] section[hidden]{display:none!important}
 /* Airgem guide: unboxed outer section and unboxed steps. */
 body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide){background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;margin-top:20px!important;}
 body[data-view="project"] #guide .guide-article .dh-timeline{display:grid!important;gap:15px!important;}
@@ -546,6 +559,45 @@ function localizeGuideUtcTimes(container){
   }
 }
 localizeGuideUtcTimes(document.getElementById('guide'));
+/* Task cards on project overview; full instructions on a dedicated guide view. */
+const guideIndexParam=new URLSearchParams(location.search).get('guide');
+const isFullGuide=guideIndexParam!==null;
+const guideSection=document.querySelector('main > section.panel[data-project-panel]:has(> #guide)');
+const projectSection=document.querySelector('main > section.panel[data-project-panel]:not(:has(> #guide))');
+const validGuideIndex=/^\\d+$/.test(guideIndexParam||'')?Number(guideIndexParam):0;
+const taskEntries=steps.length&&steps.every(x=>x&&typeof x==='object')?steps:[];
+if(guideSection&&taskEntries.length){
+ const allGuideHTML=document.getElementById('guide').innerHTML;
+ if(isFullGuide){
+   const task=taskEntries[validGuideIndex];
+   if(!task){document.getElementById('guide').textContent='Guide not found.';}
+   else if(taskEntries.length>1){
+     const html=typeof task.html==='string'?safeGuide(task.html):'<p>'+esc(task.text||'')+'</p>';
+     document.getElementById('guide').innerHTML='<article class="guide-article">'+html+'</article>';
+     upgradeGuideTimeline(document.getElementById('guide'));
+     localizeGuideUtcTimes(document.getElementById('guide'));
+   }
+   if(projectSection)projectSection.hidden=true;
+   guideSection.querySelector('h2').textContent=task?.title||'Full Guide';
+   const back=document.createElement('a');back.href='project.html?id='+encodeURIComponent(projectId);back.className='ag-guide-back';back.textContent='← Back to Tasks';guideSection.insertBefore(back,guideSection.firstChild);
+   document.title=(task?.title||'Full Guide')+' | Airgem';
+ }else{
+   const list=document.createElement('div');list.className='ag-task-list';
+   taskEntries.forEach((task,i)=>{
+     const link=document.createElement('a');link.className='ag-task-card';
+     link.href='project.html?id='+encodeURIComponent(projectId)+'&guide='+i;
+     const title=document.createElement('strong');title.textContent=task.title||((taskEntries.length===1)?'Full Airdrop Guide':'Task '+(i+1));
+     const status=document.createElement('span');status.className='ag-task-status';status.textContent=task.status||'Open';
+     const top=document.createElement('div');top.className='ag-task-top';top.append(title,status);link.append(top);
+     if(task.availableFrom){const date=document.createElement('p');date.textContent='Available from '+task.availableFrom;link.append(date);}
+     const bottom=document.createElement('div');bottom.className='ag-task-bottom';
+     const tag=document.createElement('span');tag.className='ag-task-tag';tag.textContent=task.tag||'Step-by-Step';
+     const more=document.createElement('span');more.textContent='Full Guide ↗';bottom.append(tag,more);link.append(bottom);list.append(link);
+   });
+   document.getElementById('guide').replaceChildren(list);
+ }
+}
+
 
 const links=Array.isArray(p.links)?p.links:[];const icons={
 website:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>',
