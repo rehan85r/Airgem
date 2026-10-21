@@ -123,7 +123,40 @@ $('guideNote').onclick=()=>insertGuideInfo('note');
 
 $('guideToolbar').querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>{editor.focus();document.execCommand(b.dataset.cmd,false,b.dataset.val||null)});
 $('guideLink').onclick=()=>{const url=prompt('Enter https:// link:');if(url&&/^https?:\/\//i.test(url)){editor.focus();document.execCommand('createLink',false,url)}};
-$('guideImage').onclick=()=>{const url=prompt('Image URL (https://):');if(url&&/^https?:\/\//i.test(url)){editor.focus();document.execCommand('insertImage',false,url)}};
+let guideImageRange=null;
+$('guideImage').onclick=()=>{
+ const selection=window.getSelection();
+ guideImageRange=selection&&selection.rangeCount&&editor.contains(selection.anchorNode)?selection.getRangeAt(0).cloneRange():null;
+ $('guideImageFile').click();
+};
+$('guideImageFile').onchange=async(e)=>{
+ const input=e.currentTarget,file=input.files&&input.files[0];
+ if(!file)return;
+ input.value='';
+ if(!['image/png','image/jpeg','image/webp','image/gif'].includes(file.type)){msg('Select a PNG, JPG, WebP or GIF image.');return}
+ if(file.size>5*1024*1024){msg('Image must be 5 MB or smaller.');return}
+ $('guideImage').disabled=true;
+ try{
+  msg('Uploading guide image...');
+  const ext=({ 'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/gif':'gif' })[file.type];
+  const path='guide/'+crypto.randomUUID()+'.'+ext;
+  const {error}=await dropyClient.storage.from('project-logos').upload(path,file,{contentType:file.type,upsert:false});
+  if(error)throw error;
+  const url=dropyClient.storage.from('project-logos').getPublicUrl(path).data.publicUrl;
+  const img=document.createElement('img');img.src=url;img.alt='Guide image';img.loading='lazy';
+  editor.focus();
+  const selection=window.getSelection();
+  if(guideImageRange&&editor.contains(guideImageRange.commonAncestorContainer)){
+   selection.removeAllRanges();selection.addRange(guideImageRange);
+  }else{
+   const range=document.createRange();range.selectNodeContents(editor);range.collapse(false);selection.removeAllRanges();selection.addRange(range);
+  }
+  const range=selection.getRangeAt(0);range.deleteContents();range.insertNode(img);range.setStartAfter(img);range.collapse(true);selection.removeAllRanges();selection.addRange(range);
+  editor.dispatchEvent(new Event('input',{bubbles:true}));
+  msg('Image added to guide. Click Publish Changes to save.');
+ }catch(err){msg('Image upload failed: '+err.message)}
+ finally{guideImageRange=null;$('guideImage').disabled=false}
+};
 $('guideClear').addEventListener('click',e=>{
  e.preventDefault();e.stopPropagation();
  editor.replaceChildren();selectedBox=null;updateStepSelection();
