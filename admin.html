@@ -425,6 +425,14 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 #allProjectsManager .project-list-actions button:disabled{opacity:.35;cursor:default}
 #allProjectsManager .project-list-actions button:hover{background:transparent;filter:none}
 #allProjectsManager .project-list-actions svg{width:15px;height:15px;flex-shrink:0}
+
+/* Keep All Projects actions inside each project name box, right aligned */
+#allProjectsManager .project-list-row{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:nowrap!important;gap:8px!important;min-width:0!important;padding:8px 12px!important}
+#allProjectsManager .project-list-row>.entry{flex:1 1 auto!important;min-width:0!important;max-width:none!important;margin:0!important}
+#allProjectsManager .project-list-row>.project-list-actions{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:nowrap!important;gap:10px!important;flex:0 0 auto!important;width:auto!important;max-width:none!important;margin:0!important;padding:0!important}
+#allProjectsManager .project-list-row>.project-list-actions button{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 30px!important;width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#64748b!important}
+#allProjectsManager .project-list-row>.project-list-actions button[data-project-delete]{color:#dc2626!important}
+#allProjectsManager .project-list-row>.project-list-actions button:disabled{opacity:.35!important}
 </style>
 </head>
 <body>
