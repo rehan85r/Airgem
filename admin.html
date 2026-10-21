@@ -254,6 +254,9 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 /* Top Airdrops heading */
 #trendingManager .heading h2{font-size:15px!important;letter-spacing:-0.5px!important}
 #trendingManager{padding-top:15px!important;padding-left:20px!important}
+
+/* Top Airdrops selected counter */
+#trendingState{font-size:10px!important;margin-top:15px!important}
 </style>
 </head>
 <body>
@@ -285,7 +288,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <div id="dashboard" hidden><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
 
 <section class="panel" id="trendingManager" style="margin-bottom:20px">
-<div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 selected</small></div>
+<div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
 
 <div class="fields"><div class="field wide"><label for="trendingSelect">Add project</label><select id="trendingSelect"><option value="">Select A Project...</option></select></div></div>
 <div class="actions" style="margin-top:12px"><button class="btn alt" id="setTrending" type="button">+ Add To Trending</button><button class="btn" id="saveTrending" type="button">Save Trending</button><button class="btn light" id="clearTrending" type="button">Remove All</button></div>
