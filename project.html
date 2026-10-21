@@ -450,7 +450,7 @@ body[data-view="project"] .ag-task-top,body[data-view="project"] .ag-task-bottom
 body[data-view="project"] .ag-task-top strong{font:700 16px Manrope,system-ui,sans-serif}
 body[data-view="project"] .ag-task-status{font:500 13px 'DM Sans',sans-serif;color:#334155;white-space:nowrap}
 body[data-view="project"] .ag-task-status:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;margin-right:8px;vertical-align:middle}
-body[data-view="project"] .ag-task-card p{font:400 14px 'DM Sans',sans-serif;color:#64748B;margin:15px 0}
+body[data-view="project"] .ag-task-status[data-status="ended"]:before{background:#EF4444}\nbody[data-view="project"] .ag-task-status[data-status="upcoming"]:before{background:#F59E0B}\nbody[data-view="project"] .ag-task-card p{font:400 14px 'DM Sans',sans-serif;color:#64748B;margin:15px 0}
 body[data-view="project"] .ag-task-bottom{margin-top:15px;font:600 12px 'DM Sans',sans-serif;color:#1E90FF}
 body[data-view="project"] .ag-task-tag{border-radius:99px;background:#EFF6FF;padding:7px 10px}
 body[data-view="project"] .ag-guide-back{display:inline-block;color:#1E90FF;font:600 13px 'DM Sans',sans-serif;text-decoration:none;margin-bottom:15px}
@@ -587,7 +587,7 @@ if(guideSection&&taskEntries.length){
      const link=document.createElement('a');link.className='ag-task-card';
      link.href='project.html?id='+encodeURIComponent(projectId)+'&guide='+i;
      const title=document.createElement('strong');title.textContent=task.title||((taskEntries.length===1)?'Full Airdrop Guide':'Task '+(i+1));
-     const status=document.createElement('span');status.className='ag-task-status';status.textContent=task.status||'Open';
+     const status=document.createElement('span');status.className='ag-task-status';status.textContent=({Open:'Active','Coming Soon':'Upcoming'}[task.status]||task.status||'Active');status.dataset.status=status.textContent.toLowerCase();
      const top=document.createElement('div');top.className='ag-task-top';top.append(title,status);link.append(top);
      if(task.availableFrom){const date=document.createElement('p');date.textContent='Available from '+task.availableFrom;link.append(date);}
      const bottom=document.createElement('div');bottom.className='ag-task-bottom';
