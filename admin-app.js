@@ -4,7 +4,25 @@ const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,
 let projects=[],selected=null,busy=false,trending=[],savedTrending=[];
 const current=()=>projects.find(p=>String(p.id)===String(selected));
 const msg=t=>{$('message').textContent=t};
-function list(){const q=$('search').value.toLowerCase();$('count').textContent=projects.length+' Projects';$('list').innerHTML=projects.filter(p=>p.name?.toLowerCase().includes(q)).sort((a,b)=>Number(b.id)-Number(a.id)).map(p=>`<button type="button" class="entry ${String(p.id)===String(selected)?'active':''}" data-id="${esc(p.id)}"><b>${esc(p.name)}</b><br><small>${esc(p.task)} · ${esc(p.status)}</small></button>`).join('');$('list').querySelectorAll('button').forEach(b=>b.onclick=()=>{selected=b.dataset.id;list();load()})}
+const projectOrderKey='airgem-admin-project-order-v1';
+function orderedProjects(){
+ let saved=[];try{saved=JSON.parse(localStorage.getItem(projectOrderKey)||'[]')}catch(e){}
+ const ids=projects.map(p=>String(p.id));
+ const order=[...ids.filter(id=>!saved.includes(id)).reverse(),...saved.filter(id=>ids.includes(id))];
+ return order.map(id=>projects.find(p=>String(p.id)===id)).filter(Boolean);
+}
+function saveProjectOrder(items){try{localStorage.setItem(projectOrderKey,JSON.stringify(items.map(p=>String(p.id))))}catch(e){}}
+function list(){
+ const q=$('search').value.toLowerCase(),all=orderedProjects(),shown=all.filter(p=>p.name?.toLowerCase().includes(q));
+ $('count').textContent=projects.length+' Projects';
+ const up='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>';
+ const down='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>';
+ const remove='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+ $('list').innerHTML=shown.map(p=>{const id=esc(String(p.id)),index=all.findIndex(x=>String(x.id)===String(p.id));return `<div class="project-list-row"><button type="button" class="entry ${String(p.id)===String(selected)?'active':''}" data-id="${id}"><b>${esc(p.name)}</b><br><small>${esc(p.task)} · ${esc(p.status)}</small></button><div class="project-list-actions"><button type="button" data-project-up="${id}" aria-label="Move project up" ${index===0?'disabled':''}>${up}</button><button type="button" data-project-down="${id}" aria-label="Move project down" ${index===all.length-1?'disabled':''}>${down}</button><button type="button" data-project-delete="${id}" aria-label="Delete project">${remove}</button></div></div>`}).join('');
+ $('list').querySelectorAll('button[data-id]').forEach(b=>b.onclick=()=>{selected=b.dataset.id;list();load()});
+ for(const [attr,delta] of [['data-project-up',-1],['data-project-down',1]])$('list').querySelectorAll('button['+attr+']').forEach(b=>b.onclick=()=>{const items=orderedProjects(),i=items.findIndex(p=>String(p.id)===b.getAttribute(attr)),j=i+delta;if(j<0||j>=items.length)return;[items[i],items[j]]=[items[j],items[i]];saveProjectOrder(items);list()});
+ $('list').querySelectorAll('button[data-project-delete]').forEach(b=>b.onclick=async()=>{const id=b.getAttribute('data-project-delete'),p=projects.find(x=>String(x.id)===id);if(!p||busy||!confirm('Delete '+p.name+' permanently?'))return;busy=true;try{const {error}=await dropyClient.from('projects').delete().eq('id',id);if(error)throw error;if(String(selected)===id)selected=null;await refresh(selected);msg('Project deleted')}catch(err){msg('Error: '+err.message)}finally{busy=false}});
+}
 function logoPreview(){const root=$('logoPreview');root.replaceChildren();const url=$('logoUrl').value.trim();if(url){const img=document.createElement('img');img.src=url;img.alt='Project logo';img.style.cssText='width:100%;height:100%;object-fit:contain';img.onerror=()=>root.textContent='?';root.append(img)}else root.textContent='?'}
 function linksLoad(p){$('links').innerHTML='';for(const type of ['Website','Discord','X']){const found=(p.links||[]).find(l=>{const k=String(l.label||'').toLowerCase();return type==='Website'?['website','official website','official link'].includes(k):type==='Discord'?k.includes('discord'):k==='x'||k==='twitter'});const el=document.createElement('div');el.className='item';el.innerHTML=`<div class="field"><label>${type} URL</label><input class="link-url" data-type="${type}" placeholder="https://..." value="${esc(found?.url||'')}"></div>`;$('links').append(el)}}
 function cleanGuideHTML(html){
