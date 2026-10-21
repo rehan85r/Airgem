@@ -367,6 +367,15 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
  background:#fff!important;background-color:#fff!important;color:#1b2e50!important;border-color:#e0e9f6!important;box-shadow:none!important;filter:none!important;outline:none!important;
  -webkit-tap-highlight-color:transparent;
 }
+
+/* All Projects — match Top Airdrops visual design without changing behavior */
+#allProjectsManager{padding:15px 20px 20px!important}
+#allProjectsManager .heading h2{font-size:15px!important;font-weight:700!important;letter-spacing:-0.5px!important;color:#1b2e50!important}
+#allProjectsManager .heading small{font-size:12px!important;font-weight:500!important;color:#64748b!important}
+#allProjectsManager #search{display:block!important;width:100%!important;height:40px!important;min-height:40px!important;padding:0 20px!important;border:1px solid #e0e9f6!important;border-radius:12px!important;background:#fff!important;color:#1b2e50!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important;box-sizing:border-box!important}
+#allProjectsManager #search:focus,#allProjectsManager #search:focus-visible{outline:none!important;box-shadow:none!important;border-color:#e0e9f6!important}
+#allProjectsManager .list .entry{border:1px solid #e0e9f6!important;border-radius:12px!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important}
+#allProjectsManager #add{height:35px!important;min-height:35px!important;padding:10px 15px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:500!important;line-height:15px!important}
 </style>
 </head>
 <body>
@@ -405,7 +414,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <details id="trendingDisclosure" class="trending-disclosure"><summary><span id="trendingDisclosureLabel">Selected Projects (0/10)</span><svg class="trending-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div id="trendingCurrent" aria-live="polite"></div></details><p id="trendingMessage" role="status"></p>
 </section>
 <div class="layout">
-<aside class="panel"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
+<aside class="panel" id="allProjectsManager"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
 <input id="search" placeholder="Search Projects..." style="margin-top:17px">
 <div id="list" class="list"></div><button id="add" type="button" class="btn">+ Add Project</button></aside>
 <section class="panel"><div class="heading"><h2 id="title">Edit Project</h2><button id="remove" type="button" class="btn danger">Delete</button></div>
