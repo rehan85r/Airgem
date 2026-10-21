@@ -589,7 +589,7 @@ if(guideSection&&taskEntries.length){
      const title=document.createElement('strong');title.textContent=task.title||((taskEntries.length===1)?'Full Airdrop Guide':'Task '+(i+1));
      const status=document.createElement('span');status.className='ag-task-status';status.textContent=({Open:'Active','Coming Soon':'Upcoming'}[task.status]||task.status||'Active');status.dataset.status=status.textContent.toLowerCase();
      const top=document.createElement('div');top.className='ag-task-top';top.append(title,status);link.append(top);
-     if(task.availableFrom){const date=document.createElement('p');date.textContent='Available from '+task.availableFrom;link.append(date);}
+     const subtitle=task.subtitle??(task.availableFrom?'Available from '+task.availableFrom:'');if(subtitle){const line=document.createElement('p');line.textContent=subtitle;link.append(line);}
      const bottom=document.createElement('div');bottom.className='ag-task-bottom';
      const tag=document.createElement('span');tag.className='ag-task-tag';tag.textContent=task.tag||'Step-by-Step';
      const more=document.createElement('span');more.textContent='Full Guide ↗';bottom.append(tag,more);link.append(bottom);list.append(link);
