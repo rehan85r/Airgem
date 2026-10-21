@@ -354,6 +354,19 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 
 /* Align Save Top action row with 20px card padding */
 #trendingManager>.actions{margin-left:0!important;padding-left:0!important}
+
+/* Keep Selected Projects disclosure neutral on hover, tap and keyboard focus */
+#dashboard #trendingManager #trendingDisclosure,
+#dashboard #trendingManager #trendingDisclosure:hover,
+#dashboard #trendingManager #trendingDisclosure:focus-within,
+#dashboard #trendingManager #trendingDisclosure>summary,
+#dashboard #trendingManager #trendingDisclosure>summary:hover,
+#dashboard #trendingManager #trendingDisclosure>summary:active,
+#dashboard #trendingManager #trendingDisclosure>summary:focus,
+#dashboard #trendingManager #trendingDisclosure>summary:focus-visible{
+ background:#fff!important;background-color:#fff!important;color:#1b2e50!important;border-color:#e0e9f6!important;box-shadow:none!important;filter:none!important;outline:none!important;
+ -webkit-tap-highlight-color:transparent;
+}
 </style>
 </head>
 <body>
