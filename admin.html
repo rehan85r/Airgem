@@ -307,6 +307,11 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 /* Delete All: red destructive action */
 #trendingManager #clearTrending{background:#DC2626!important;color:#FFFFFF!important;border-color:#DC2626!important}
 #trendingManager #clearTrending:hover{background:#B91C1C!important;border-color:#B91C1C!important}
+
+/* Unified neutral borders for admin inputs, cards, list boxes and outlined controls */
+#dashboard input:not([type="checkbox"]):not([type="radio"]),#dashboard select,#dashboard textarea,#dashboard .panel,#dashboard .item,#dashboard .entry:not(.active),#dashboard .btn.light,#dashboard .editor-toolbar button,#dashboard .guide-editor,#dashboard .guide-editor .guide-step-box,#trendingDisclosure,#trendingSearchResults{border-color:#e0e9f6!important}
+#dashboard input:focus,#dashboard select:focus,#dashboard textarea:focus{border-color:var(--admin-blue)!important}
+#trendingManager #clearTrending{border-color:#dc2626!important}
 </style>
 </head>
 <body>
