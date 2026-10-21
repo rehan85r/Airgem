@@ -234,6 +234,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 }
 @media(max-width:400px){.panel{padding:16px!important}.actions{gap:7px!important}}
 </style>
+<style>
+.ag-task-manager{display:grid;gap:12px;margin:14px 0;padding:15px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}.ag-task-manager-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.ag-task-tabs{display:flex;flex-wrap:wrap;gap:8px}.ag-task-tabs button{border:1px solid #e2e8f0;background:white;border-radius:8px;padding:8px 12px;color:#334155;cursor:pointer}.ag-task-tabs button.active{border-color:#1e90ff;color:#1e90ff;background:#eff6ff}.ag-task-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ag-task-fields label{font-size:12px;color:#64748b}.ag-task-fields input,.ag-task-fields select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px;border:1px solid #e2e8f0;border-radius:8px;background:white;color:#0f172a}@media(max-width:600px){.ag-task-fields{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="38" height="38"><span>Airgem</span></a><a class="website-link" href="index.html"><span aria-hidden="true">←</span> Back To Website</a></header>
@@ -303,7 +306,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!i
 <div class="toolbar-row"><button type="button" data-cmd="justifyLeft" title="Align left">Left</button><button type="button" data-cmd="justifyCenter" title="Align center">Center</button><button type="button" data-cmd="justifyRight" title="Align right">Right</button></div>
 <div class="toolbar-row"><button type="button" id="guideStepBox" title="Insert Step Box with optional link">Step Box</button><button type="button" id="guideDaily" title="Add daily task update box">Update Box</button><button type="button" id="guideNote" title="Add editable important note">Note Box</button></div>
 <div class="toolbar-row"><button type="button" id="guideImage" title="Insert image">Image</button><button type="button" id="guidePreview" title="Preview guide">Preview</button><button type="button" id="guideClear" title="Remove formatting">Clear</button></div></div>
-</div><div id="guideEditor" class="guide-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write your complete project guide here..."></div></div>
+</div><div class="ag-task-manager"><div class="ag-task-manager-head"><strong>Guide Tasks</strong><button type="button" id="agTaskAdd" class="btn light">+ Add Task</button></div><div id="agTaskTabs" class="ag-task-tabs"></div><div class="ag-task-fields"><label>Task Title<input id="agTaskTitle" type="text" placeholder="e.g. Waitlist"></label><label>Task Status<select id="agTaskStatus"><option>Open</option><option>Ended</option><option>Coming Soon</option></select></label><label>Available From<input id="agTaskDate" type="text" placeholder="e.g. 08 October 2026"></label><label>Task Tag<input id="agTaskTag" type="text" placeholder="e.g. Fill The Form"></label></div><button type="button" id="agTaskRemove" class="btn danger">Remove Selected Task</button></div>
+<div id="guideEditor" class="guide-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write your complete project guide here..."></div></div>
 <input id="guideImageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
 <div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
 </form></section></div></div>
