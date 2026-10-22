@@ -473,10 +473,11 @@ body[data-view="project"] #investorsPanel .ag-investors-title>svg,body[data-view
 
 /* Compact investor identities */
 body[data-view="project"] #investorsPanel #investorsPreview{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-body[data-view="project"] #investorsPanel #investorsFull{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:15px;align-items:center}
+body[data-view="project"] #investorsPanel #investorsFull{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px;row-gap:15px;align-items:center}
+@media(max-width:640px){body[data-view="project"] #investorsPanel #investorsFull .ag-investor-entry{gap:6px}body[data-view="project"] #investorsPanel #investorsFull .ag-investor-logo{width:26px;height:26px;flex-basis:26px}body[data-view="project"] #investorsPanel #investorsFull .ag-investor-name{font-size:clamp(10px,2.6vw,12px)}body[data-view="project"] #investorsPanel #investorsFull .ag-investor-tier{font-size:10px}}
 body[data-view="project"] #investorsPanel .ag-investor-entry{display:inline-flex;align-items:center;gap:10px;min-width:0}
 body[data-view="project"] #investorsPanel .ag-investor-logo{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border:1px solid #E2E8F0;border-radius:6px;background:#F8FAFC;color:#1E90FF;font:700 9px Manrope,sans-serif}
-body[data-view="project"] #investorsPanel .ag-investor-name{font:600 14px/1.4 Manrope,sans-serif;color:#334155;overflow-wrap:anywhere}
+body[data-view="project"] #investorsPanel .ag-investor-name{font:600 14px/1.4 Manrope,sans-serif;color:#334155;white-space:nowrap}
 body[data-view="project"] #investorsPanel #investorsToggle{margin-top:10px}
 
 body[data-view="project"] #investorsPanel .ag-investors-title #investorsToggle{margin:0 0 0 auto!important;padding:0!important;border:0!important;background:transparent!important;color:#1E90FF!important;font:600 12px Manrope,sans-serif!important;cursor:pointer!important;white-space:nowrap}
@@ -486,7 +487,7 @@ body[data-view="project"] #investorsPanel.ag-investors-integrated{margin-top:0!i
 body[data-view="project"] #investorsPanel.ag-investors-integrated[hidden]{display:none!important}
 body[data-view="project"] #investorsPanel.ag-investors-integrated .ag-investors-title{margin-bottom:15px!important}
 
-body[data-view="project"] #investorsPanel .ag-investor-info{display:flex;flex-direction:row;align-items:center;gap:6px;flex-wrap:nowrap;min-width:0}
+body[data-view="project"] #investorsPanel .ag-investor-info{display:flex;flex-direction:row;align-items:center;gap:6px;flex-wrap:nowrap;min-width:0;white-space:nowrap}
 body[data-view="project"] #investorsPanel .ag-investor-tier{flex-shrink:0;white-space:nowrap}
 body[data-view="project"] #investorsPanel .ag-investor-tier{font:400 11px/1.3 Manrope,sans-serif;color:#64748B}
 body[data-view="project"] #investorsPanel .ag-investors-more-count{font:600 11px/1.3 Manrope,sans-serif;color:#1E90FF;white-space:nowrap}
