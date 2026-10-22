@@ -472,7 +472,8 @@ body[data-view="project"] #investorsPanel .ag-investors-title{display:flex!impor
 body[data-view="project"] #investorsPanel .ag-investors-title>svg,body[data-view="project"] #investorsPanel .ag-investors-title>i{width:20px!important;height:20px!important;flex:0 0 20px!important;margin:0!important;transform:translateX(2px)}
 
 /* Compact investor identities */
-body[data-view="project"] #investorsPanel #investorsPreview,body[data-view="project"] #investorsPanel #investorsFull{display:flex;flex-wrap:wrap;gap:10px 25px;align-items:center}
+body[data-view="project"] #investorsPanel #investorsPreview{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+body[data-view="project"] #investorsPanel #investorsFull{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:15px;align-items:center}
 body[data-view="project"] #investorsPanel .ag-investor-entry{display:inline-flex;align-items:center;gap:10px;min-width:0}
 body[data-view="project"] #investorsPanel .ag-investor-logo{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border:1px solid #E2E8F0;border-radius:6px;background:#F8FAFC;color:#1E90FF;font:700 9px Manrope,sans-serif}
 body[data-view="project"] #investorsPanel .ag-investor-name{font:600 14px/1.4 Manrope,sans-serif;color:#334155;overflow-wrap:anywhere}
