@@ -214,7 +214,7 @@ main{padding-bottom:24px!important}
 .identity .muted{font-family:'DM Sans',system-ui,sans-serif!important;font-size:12px!important;line-height:1.45!important;color:#87929f!important}
 @media(max-width:650px){.identity{gap:10px!important}.identity .logo{width:50px!important;height:50px!important;flex:0 0 50px!important;border-radius:10px!important}.identity h1{font-size:15px!important}.identity .muted{font-size:11px!important}}
 
-[data-project-panel].panel{padding:20px 20px 10px!important}
+body[data-view="project"] section.panel[data-project-panel]{padding:20px 20px 10px!important}
 [data-project-panel] .identity{gap:10px!important;align-items:center!important}
 [data-project-panel] .logo{width:50px!important;height:50px!important;flex:0 0 50px!important;border-radius:10px!important}
 [data-project-panel] .identity h1{font:700 15px/1.25 Manrope,sans-serif!important;letter-spacing:-.5px!important;margin:0 0 6px!important}
@@ -493,7 +493,7 @@ body[data-view="project"] #investorsPanel .ag-investor-logo img{width:100%;heigh
 body[data-view="project"] main > section.ag-investors-card.panel[data-project-panel]{background:#FFFFFF!important;border:1px solid #E2E8F0!important;border-radius:12px!important;padding:20px!important;box-shadow:none!important;margin-top:20px!important}
 body[data-view="project"] .ag-investors-card #investorsPanel{margin:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
 body[data-view="project"] .ag-investors-card:has(#investorsPanel[hidden]){display:none!important}
-body[data-view="project"] .ag-project-socials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;justify-items:center;gap:10px;margin-top:10px;padding-top:0;border-top:0}
+body[data-view="project"] .ag-project-socials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;justify-items:center;gap:10px;height:20px;margin:10px 0 0;padding:0;border:0;line-height:1}
 body[data-view="project"] .ag-project-socials[hidden]{display:none!important}
 body[data-view="project"] .ag-project-socials a{width:20px;height:20px;display:grid;place-items:center;border:0;border-radius:0;background:transparent;color:#334155;text-decoration:none;transition:color .15s}
 body[data-view="project"] .ag-project-socials a:hover{border-color:#1E90FF;color:#1E90FF}
