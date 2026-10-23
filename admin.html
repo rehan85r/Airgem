@@ -492,7 +492,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <p id="mfaError" role="alert" aria-live="polite"></p>
 <button id="mfaCancel" type="button" class="btn light">Cancel</button>
 </section>
-<div id="dashboard" hidden><div class="ag-dashboard-shell"><aside class="ag-dashboard-sidebar" aria-label="Dashboard navigation"><div class="ag-sidebar-brand"><img src="airgem-logo.png" alt="" width="36" height="36"><strong>Airgem</strong></div><nav class="ag-side-nav"><button type="button" data-go-tab="projects" class="is-active">Dashboard</button><button type="button" data-go-tab="projects">Projects</button><button type="button" data-go-tab="top">Top Airdrops</button><button type="button" data-go-tab="guide">Guides & Tasks</button><button type="button" data-go-tab="investors">Investors</button></nav><a class="ag-view-site" href="/" target="_blank" rel="noopener">View Website ↗</a></aside><div class="ag-dashboard-content"><div class="admin-panel-intro"><h1>Dashboard</h1><p>Manage your projects and content in one place.</p></div><div class="ag-stats-grid"><div class="ag-stat"><span>Total Projects</span><strong id="agStatProjects">—</strong></div><div class="ag-stat"><span>Top Airdrops</span><strong id="agStatTop">—</strong></div><div class="ag-stat"><span>Categories</span><strong>5</strong></div><div class="ag-stat"><span>Editor</span><strong>Ready</strong></div></div><div class="ag-dashboard-actions"><strong>Project Management</strong><button type="button" class="btn" id="agQuickAdd">+ Add New Project</button></div><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
+<div id="dashboard" hidden><div class="ag-dashboard-shell"><aside class="ag-dashboard-sidebar" aria-label="Dashboard navigation"><div class="ag-sidebar-brand"><img src="airgem-logo.png" alt="" width="36" height="36"><strong>Airgem</strong></div><nav class="ag-side-nav"><button type="button" data-go-tab="projects" class="is-active">Dashboard</button><button type="button" data-go-tab="projects">Projects</button><button type="button" data-go-tab="top">Top Airdrops</button><button type="button" data-go-tab="guide">Guides & Tasks</button><button type="button" data-go-tab="investors">Investors</button></nav><a class="ag-view-site" href="/" target="_blank" rel="noopener">View Website ↗</a></aside><div class="ag-dashboard-content"><div class="admin-panel-intro"><h1>Dashboard</h1><p>Manage your projects and content in one place.</p></div><div class="ag-stats-grid"><div class="ag-stat"><span>Total Projects</span><strong id="agStatProjects">—</strong></div><div class="ag-stat"><span>Top Airdrops</span><strong id="agStatTop">—</strong></div><div class="ag-stat"><span>Categories</span><strong id="agStatCategories">—</strong></div><div class="ag-stat"><span>Editor</span><strong>Ready</strong></div></div><div class="ag-dashboard-actions"><strong>Project Management</strong><button type="button" class="btn" id="agQuickAdd">+ Add New Project</button></div><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
 
 <section class="panel" id="trendingManager" style="margin-bottom:20px">
 <div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
@@ -505,7 +505,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <div class="layout">
 <aside class="panel" id="allProjectsManager"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
 <div class="fields"><div class="field wide"><label for="search">Search Projects</label><input id="search" placeholder="Search A Project..." autocomplete="off"></div></div>
-<details id="allProjectsDisclosure"><summary><span>Project List</span><svg class="trending-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div id="list" class="list"></div></details><button id="add" type="button" class="btn">+ Add Project</button></aside>
+<details id="allProjectsDisclosure" open><summary><span>Project List</span><svg class="trending-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div id="list" class="list"></div></details><button id="add" type="button" class="btn">+ Add Project</button></aside>
 <section class="panel" id="projectEditorPanel"><div class="heading"><h2 id="title">Edit Project</h2><button id="remove" type="button" class="btn danger">Delete</button></div>
 <form id="form" hidden><div class="fields">
 <div class="field"><label>Project Name</label><input id="name" required></div>
@@ -571,7 +571,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 })();
 </script>
 <script>window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';</script>
-<script src="admin-app.js?v=20261023-investors-na-button"></script>
+<script src="admin-app.js?v=20261023-premium-rebuild-2"></script>
 <script>
 (function(){
   const dashboard=document.getElementById('dashboard');
@@ -691,6 +691,63 @@ body:has(#dashboard:not([hidden])) main{max-width:1360px;margin:22px auto}
  if(top)observer.observe(top,{childList:true,characterData:true,subtree:true});
  document.getElementById('agStatProjects').textContent=(count?.textContent||'0').match(/\d+/)?.[0]||'0';
  document.getElementById('agStatTop').textContent='0/10';
+})();
+</script>
+<style>
+/* Consolidated minimal premium workspace */
+#dashboard .ag-admin-tabs{display:none!important}
+#dashboard .ag-dashboard-sidebar{border-radius:14px!important}
+#dashboard .ag-side-nav button{transition:background .15s ease,color .15s ease}
+#dashboard .ag-stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#dashboard .ag-stat{min-height:110px;box-shadow:none!important}
+#dashboard .ag-stat strong{font-size:25px}
+#dashboard .ag-dashboard-actions{margin:22px 0 14px}
+#dashboard .ag-table-scroll{overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
+#dashboard .ag-project-table{border-collapse:collapse;width:100%;min-width:650px;text-align:left;font:500 12px Manrope,sans-serif;color:#1B2E50}
+#dashboard .ag-project-table th{padding:13px 12px;background:#F8FAFC;color:#64748B;font-size:11px;font-weight:700}
+#dashboard .ag-project-table td{padding:12px;border-bottom:1px solid #E2E8F0;vertical-align:middle}
+#dashboard .ag-project-table tr:last-child td{border-bottom:0}
+#dashboard .ag-project-open{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:#1B2E50;font:inherit}
+#dashboard .ag-project-open strong{display:block;font-weight:700;font-size:13px}
+#dashboard .ag-project-open small{display:block;color:#64748B;font-size:11px;margin-top:3px}
+#dashboard .ag-row-actions{display:flex;gap:6px}
+#dashboard .ag-row-actions button{border:1px solid #E2E8F0;background:white;border-radius:8px;color:#1B2E50;padding:8px 10px;cursor:pointer;font:600 11px Manrope,sans-serif}
+#dashboard .ag-row-actions button:first-child{color:#1E90FF}
+#dashboard .ag-status-chip{display:inline-block;border-radius:7px;padding:5px 8px;background:#E9F8F0;color:#187C54;font-weight:700;font-size:10px}
+#dashboard .ag-empty-projects{padding:20px;text-align:center}
+#dashboard #allProjectsManager{width:100%;min-width:0}
+#dashboard #allProjectsManager .fields{margin-bottom:12px}
+#dashboard #allProjectsManager #allProjectsDisclosure{border:0!important}
+#dashboard #allProjectsManager #allProjectsDisclosure>summary{display:none!important}
+#dashboard #allProjectsManager #list{display:block!important;max-height:none!important;overflow:visible!important}
+#dashboard .ag-dashboard-content .dashboard-toolbar{margin:0 0 10px}
+#dashboard[data-admin-active="basic"] #projectEditorPanel,#dashboard[data-admin-active="details"] #projectEditorPanel,#dashboard[data-admin-active="links"] #projectEditorPanel{min-width:0}
+#dashboard .ag-dashboard-sidebar .ag-view-site{color:#1B2E50!important}
+@media(max-width:900px){#dashboard .ag-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ #dashboard .ag-dashboard-sidebar{border:0!important;background:transparent!important;padding:0!important;margin:0 0 16px!important}
+ #dashboard .ag-side-nav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
+ #dashboard .ag-side-nav button{border:1px solid #E2E8F0;background:#fff;border-radius:10px;padding:11px 14px}
+ #dashboard .ag-side-nav button.is-active{background:#1E90FF;color:white;border-color:#1E90FF}
+ #dashboard .ag-stats-grid{gap:10px;margin:14px 0}
+ #dashboard .ag-stat{min-height:96px}
+ #dashboard .ag-dashboard-actions{margin:16px 0 12px}
+ #dashboard .ag-dashboard-content .dashboard-toolbar{margin-bottom:8px}
+ #dashboard #allProjectsManager{padding:16px!important}
+ #dashboard .ag-project-table{min-width:620px}
+ #dashboard #projectEditorPanel{padding:16px!important}
+}
+</style>
+<script>
+(function(){
+ const dash=document.getElementById('dashboard');
+ const tabs=document.getElementById('agAdminTabs');
+ if(!dash||!tabs)return;
+ const set=tab=>{const b=tabs.querySelector('[data-admin-tab="'+tab+'"]');b?.click();};
+ const nav=dash.querySelector('.ag-side-nav');
+ if(nav)nav.addEventListener('click',e=>{const b=e.target.closest('[data-go-tab]');if(b){nav.querySelectorAll('button').forEach(x=>x.classList.toggle('is-active',x===b));}});
+ const quick=document.getElementById('agQuickAdd');
+ if(quick)quick.addEventListener('click',()=>{const poll=setInterval(()=>{if(!document.getElementById('form')?.hidden){clearInterval(poll);set('basic')}},150);setTimeout(()=>clearInterval(poll),4000)});
 })();
 </script>
 </body></html>
