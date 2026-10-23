@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="admin.css?v=homepage-header-match-1" />
+    <link rel="stylesheet" href="admin.css?v=sidebar-logout-1" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   </head>
   <body>
@@ -120,7 +120,11 @@
               >View website <i data-lucide="arrow-up-right" aria-hidden="true"></i
             ></a>
           </div>
-          <span class="workspace-label"><span class="status-dot"></span> Admin workspace</span>
+          <div class="sidebar-account">
+            <span class="sidebar-account-label"><i data-lucide="user-round" aria-hidden="true"></i><span>Admin</span></span>
+            <span id="accountEmail" class="sidebar-account-email"></span>
+            <button type="button" id="logout" class="sidebar-logout"><i data-lucide="log-out" aria-hidden="true"></i><span>Log Out</span></button>
+          </div>
         </div>
       </aside>
       <div class="app-shell">
@@ -139,18 +143,6 @@
 
 
         </header>
-        <div class="account-strip">          <details class="account-menu" id="accountMenu">
-            <summary>
-              <span class="account-avatar"><i data-lucide="user-round" aria-hidden="true"></i></span
-              ><span>Admin</span><i data-lucide="chevron-down" aria-hidden="true"></i>
-            </summary>
-            <div class="account-dropdown">
-              <span id="accountEmail"></span
-              ><button type="button" id="logout">
-                <i data-lucide="log-out" aria-hidden="true"></i> Sign out
-              </button>
-            </div>
-          </details></div>
         <main id="mainContent" tabindex="-1">
           <section id="projectsView">
             <div class="page-heading">
