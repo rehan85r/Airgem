@@ -2470,3 +2470,13 @@ dialog .guide-editor {
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
 .topbar .mobile-menu{display:flex;margin-left:auto;order:1;width:40px;height:40px;min-width:40px;padding:0;border:0;border-radius:12px;background:transparent;box-shadow:none;color:#1B2E50;align-items:center;justify-content:center}
 .topbar .mobile-menu svg{width:30px;height:30px}
+
+/* Account and logout live inside the navigation drawer */
+.sidebar-account{display:flex;flex-direction:column;gap:8px;padding:14px 0 0;margin-top:14px;border-top:1px solid #E2E8F0}
+.sidebar-account-label{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:#1B2E50}
+.sidebar-account-label svg{width:18px;height:18px}
+.sidebar-account-email{font-size:11px;color:#64748B;overflow-wrap:anywhere}
+.sidebar-account-email:empty{display:none}
+.sidebar-logout{display:flex;align-items:center;gap:10px;width:100%;min-height:42px;padding:10px 12px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;color:#1B2E50;font-size:13px;font-weight:600;text-align:left}
+.sidebar-logout svg{width:18px;height:18px}
+.sidebar-logout:hover{background:#F8FAFC}
