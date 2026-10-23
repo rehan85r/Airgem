@@ -215,7 +215,7 @@ body[data-view="home"] header .brand .brand-name,body[data-view="project"] heade
 body[data-view="home"] header.header{height:70px!important;min-height:70px!important;max-height:70px!important;position:sticky!important;top:0!important;z-index:1000!important}
 body[data-view="project"] header.header{height:70px!important;min-height:70px!important;max-height:70px!important;position:sticky!important;top:0!important;z-index:1000!important}
 body[data-view="home"] header.header > .header-inner,body[data-view="project"] header.header > .header-inner{width:100%!important;max-width:none!important;height:100%!important;min-height:0!important;margin:0!important;padding:0 15px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
-body[data-view="home"] header.header > .header-inner{padding-right:20px!important}
+body[data-view="home"] header.header > .header-inner{padding-right:15px!important}
 body[data-view="home"] header.header > .header-inner > .brand,body[data-view="project"] header.header > .header-inner > .brand{flex:0 0 auto!important;align-self:center!important}
 
 /* Guide section is unboxed; preserve separate callout cards. */
