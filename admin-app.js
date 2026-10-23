@@ -1036,13 +1036,6 @@
     });
     $('search').oninput = () => {
       state.page = 1;
-      $('globalSearch').value = $('search').value;
-      renderTable();
-    };
-    $('globalSearch').oninput = () => {
-      if (!navigate('projects')) return;
-      $('search').value = $('globalSearch').value;
-      state.page = 1;
       renderTable();
     };
     $('categoryFilter').onchange = () => {
@@ -1112,10 +1105,6 @@
         }
       }
       if (event.key === 'Escape') closeSidebar();
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        $('globalSearch').focus();
-      }
     });
     window.addEventListener('beforeunload', (event) => {
       if (state.dirty || trendingDirty() || state.uploads) {

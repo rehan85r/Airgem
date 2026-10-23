@@ -472,45 +472,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   background: rgb(255 255 255 / 97%);
   border-bottom: 1px solid var(--soft-border);
 }
-.global-search {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 12px;
-  height: 39px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  background: #f7f9fc;
-  width: min(65%, 710px);
-}
-.global-search > svg {
-  width: 18px;
-  height: 18px;
-}
-.global-search input {
-  width: 100%;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  font-size: 13px;
-  color: var(--navy);
-}
-.global-search input:focus {
-  outline: none;
-}
-.global-search:focus-within {
-  outline: 2px solid #b9ddff;
-}
-.global-search kbd {
-  white-space: nowrap;
-  font-family: inherit;
-  font-size: 10px;
-  color: var(--slate);
-  background: white;
-  padding: 4px 7px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-}
 .website-shortcut {
   margin-left: auto;
   background: transparent;
@@ -2035,15 +1996,11 @@ dialog .guide-editor {
     padding-inline: 20px;
     gap: 12px;
   }
-  .global-search {
-    width: auto;
-    flex: 1;
-  }
-  .global-search kbd {
-    display: none;
-  }
   .website-shortcut {
     display: none;
+  }
+  .account-menu {
+    margin-left: auto;
   }
   .editor-tabs {
     gap: 20px;
@@ -2123,20 +2080,6 @@ dialog .guide-editor {
     display: flex;
     background: white;
     width: 32px;
-  }
-  .global-search {
-    height: 36px;
-    gap: 8px;
-    padding-inline: 9px;
-  }
-  .global-search input {
-    font-size: 12px;
-  }
-  .global-search input::placeholder {
-    color: transparent;
-  }
-  .global-search input:placeholder-shown {
-    background: none;
   }
   .account-menu summary {
     gap: 6px;
