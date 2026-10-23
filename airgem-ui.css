@@ -181,7 +181,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .ag-stat strong{
  display:block!important;width:100%;text-align:center!important;
  font-family:Manrope,system-ui,sans-serif!important;font-size:12px!important;
- line-height:1.4!important;font-weight:600!important;color:#17263c!important;
+ line-height:1.4!important;font-weight:600!important;color:#1B2E50!important;
  overflow-wrap:anywhere!important
 }
 /* Consistent understated outline icons for all six project metrics. */
