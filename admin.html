@@ -461,6 +461,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
  background-position:right 15px center!important;
  background-size:16px 16px!important;
 }
+.admin-panel-intro{margin:0 0 15px;color:#172B49}.admin-panel-intro h1{margin:0;font:600 15px/1.4 Manrope,system-ui,sans-serif}.admin-panel-intro p{margin:5px 0 0;color:#64748B;font:500 13px/1.4 Manrope,system-ui,sans-serif}
 </style>
 </head>
 <body>
@@ -489,7 +490,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <p id="mfaError" role="alert" aria-live="polite"></p>
 <button id="mfaCancel" type="button" class="btn light">Cancel</button>
 </section>
-<div id="dashboard" hidden><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
+<div id="dashboard" hidden><div class="admin-panel-intro"><h1>Admin Panel</h1><p>Manage Your Projects Details</p></div><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
 
 <section class="panel" id="trendingManager" style="margin-bottom:20px">
 <div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
