@@ -129,7 +129,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
  [data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px rgba(20,40,70,.07)!important}
  [data-view="home"] .ag-category-tab:not(:disabled):hover{border-color:#bfdaff;background:#f0f7ff}
  [data-view="home"] .ag-join:not(:disabled):hover{filter:brightness(.95)}
- [data-view] :is(.menu-btn,.close-btn,.trending-controls button):not(:disabled):hover{background:#f1f7ff;border-color:#cbdff7}
+ [data-view] :is(.close-btn,.trending-controls button):not(:disabled):hover{background:#f1f7ff;border-color:#cbdff7}
  [data-view] :is(.nav-item,.social-link):hover{background:#eef6ff;color:#1879d8;border-color:#d1e5ff}
  [data-view] a:not(.ag-card):not(.ag-join):not(.back):hover{text-decoration-color:currentColor}
 }
