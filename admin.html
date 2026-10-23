@@ -492,7 +492,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <p id="mfaError" role="alert" aria-live="polite"></p>
 <button id="mfaCancel" type="button" class="btn light">Cancel</button>
 </section>
-<div id="dashboard" hidden><div class="admin-panel-intro"><h1><span>Admin</span> <span class="admin-panel-accent">Panel</span></h1><p>Add Edit And Manage Your Projects Details</p></div><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
+<div id="dashboard" hidden><div class="ag-dashboard-shell"><aside class="ag-dashboard-sidebar" aria-label="Dashboard navigation"><div class="ag-sidebar-brand"><img src="airgem-logo.png" alt="" width="36" height="36"><strong>Airgem</strong></div><nav class="ag-side-nav"><button type="button" data-go-tab="projects" class="is-active">Dashboard</button><button type="button" data-go-tab="projects">Projects</button><button type="button" data-go-tab="top">Top Airdrops</button><button type="button" data-go-tab="guide">Guides & Tasks</button><button type="button" data-go-tab="investors">Investors</button></nav><a class="ag-view-site" href="/" target="_blank" rel="noopener">View Website ↗</a></aside><div class="ag-dashboard-content"><div class="admin-panel-intro"><h1>Dashboard</h1><p>Manage your projects and content in one place.</p></div><div class="ag-stats-grid"><div class="ag-stat"><span>Total Projects</span><strong id="agStatProjects">—</strong></div><div class="ag-stat"><span>Top Airdrops</span><strong id="agStatTop">—</strong></div><div class="ag-stat"><span>Categories</span><strong>5</strong></div><div class="ag-stat"><span>Editor</span><strong>Ready</strong></div></div><div class="ag-dashboard-actions"><strong>Project Management</strong><button type="button" class="btn" id="agQuickAdd">+ Add New Project</button></div><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
 
 <section class="panel" id="trendingManager" style="margin-bottom:20px">
 <div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
@@ -541,7 +541,7 @@ header .admin-header-logout{display:inline-flex;align-items:center;justify-conte
 <div class="toolbar-row"><button type="button" id="guideImage" title="Upload image from gallery">Image</button><button type="button" id="guidePreview" title="Preview guide">Preview</button><button type="button" id="guideClear" title="Remove formatting">Clear</button></div></div>
 </div><div id="guideEditor" class="guide-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write your complete project guide here..."></div></div>
 <input id="guideImageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
-</section><section class="panel" id="investorsEditorPanel"><div class="section"><div class="ag-investor-editor-heading"><h2>Investors</h2><div class="ag-investor-editor-actions"><button type="button" id="agAddInvestor" class="btn light">+ Add Investors</button><button type="button" id="agSetInvestorsNA" class="btn light" aria-pressed="false">N/A</button></div></div><input id="agInvestorsNA" type="checkbox" hidden aria-label="No investors"><input id="investors" type="hidden"><div id="agInvestorList" class="ag-investor-editor-list"></div></div></section></div></div>
+</section><section class="panel" id="investorsEditorPanel"><div class="section"><div class="ag-investor-editor-heading"><h2>Investors</h2><div class="ag-investor-editor-actions"><button type="button" id="agAddInvestor" class="btn light">+ Add Investors</button><button type="button" id="agSetInvestorsNA" class="btn light" aria-pressed="false">N/A</button></div></div><input id="agInvestorsNA" type="checkbox" hidden aria-label="No investors"><input id="investors" type="hidden"><div id="agInvestorList" class="ag-investor-editor-list"></div></div></section></div></div></div></div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase-config.js"></script>
@@ -636,6 +636,61 @@ body:has(#dashboard:not([hidden])) main{max-width:1360px;margin:22px auto}
  document.getElementById('add')?.addEventListener('click',()=>setTab('basic'));
  document.getElementById('list')?.addEventListener('click',e=>{if(e.target.closest('button,[role="button"],a'))setTab('basic')});
  setTab('projects');
+})();
+</script>
+<style>
+/* Minimal premium admin dashboard - scoped to authenticated workspace */
+#dashboard .ag-dashboard-shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:22px;align-items:start}
+#dashboard .ag-dashboard-sidebar{position:sticky;top:16px;min-height:calc(100vh - 100px);border:1px solid #E2E8F0;border-radius:16px;background:#fff;padding:20px 12px;display:flex;flex-direction:column;gap:26px}
+#dashboard .ag-sidebar-brand{display:flex;align-items:center;gap:10px;padding:0 10px;color:#1B2E50;font-size:21px;letter-spacing:-.5px}
+#dashboard .ag-side-nav{display:grid;gap:6px}
+#dashboard .ag-side-nav button{background:transparent;border:0;border-radius:10px;padding:13px 14px;color:#1B2E50;text-align:left;font:600 13px Manrope,sans-serif;cursor:pointer}
+#dashboard .ag-side-nav button.is-active{background:#EAF3FF;color:#1E90FF}
+#dashboard .ag-view-site{margin-top:auto;padding:13px 14px;border:1px solid #E2E8F0;border-radius:10px;color:#1B2E50;text-align:center;font-weight:600}
+#dashboard .ag-dashboard-content{min-width:0}
+#dashboard .ag-stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+#dashboard .ag-stat{padding:18px;background:white;border:1px solid #E2E8F0;border-radius:14px;display:grid;gap:12px}
+#dashboard .ag-stat span{font-size:12px;color:#64748B;font-weight:600}
+#dashboard .ag-stat strong{font-size:24px;color:#1B2E50;letter-spacing:-.5px}
+#dashboard .ag-dashboard-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 12px;color:#1B2E50;font-size:18px}
+#dashboard .ag-dashboard-actions .btn{white-space:nowrap}
+#dashboard .ag-admin-tabs{background:transparent}
+#dashboard[data-admin-active="projects"] #allProjectsManager{padding:20px!important}
+#dashboard[data-admin-active="projects"] #allProjectsDisclosure{display:block}
+#dashboard[data-admin-active="projects"] #allProjectsDisclosure summary{display:none}
+#dashboard[data-admin-active="projects"] #allProjectsDisclosure .list{display:block!important;max-height:none!important}
+#dashboard[data-admin-active="projects"] #allProjectsManager>.heading{margin-bottom:14px}
+#dashboard[data-admin-active="projects"] #allProjectsManager #add{display:none}
+#dashboard .project-list-row{border-bottom:1px solid #E2E8F0!important;padding:8px 4px!important}
+#dashboard .project-list-row:last-child{border-bottom:0!important}
+#dashboard .project-list-row .entry{min-height:52px}
+#dashboard .project-list-actions button{min-width:34px;min-height:34px}
+#dashboard[data-admin-active="top"] .ag-dashboard-actions,#dashboard[data-admin-active="basic"] .ag-dashboard-actions,#dashboard[data-admin-active="details"] .ag-dashboard-actions,#dashboard[data-admin-active="links"] .ag-dashboard-actions,#dashboard[data-admin-active="guide"] .ag-dashboard-actions,#dashboard[data-admin-active="investors"] .ag-dashboard-actions{display:none}
+@media(max-width:1050px){#dashboard .ag-dashboard-shell{grid-template-columns:170px minmax(0,1fr);gap:12px}#dashboard .ag-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){#dashboard .ag-dashboard-shell{display:block}#dashboard .ag-dashboard-sidebar{position:static;min-height:0;padding:10px;margin-bottom:14px;gap:10px}#dashboard .ag-sidebar-brand,#dashboard .ag-view-site{display:none}#dashboard .ag-side-nav{display:flex;overflow-x:auto;gap:6px}#dashboard .ag-side-nav button{flex:0 0 auto;white-space:nowrap;padding:10px 12px}#dashboard .ag-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#dashboard .ag-stat{padding:14px}#dashboard .ag-stat strong{font-size:20px}#dashboard .ag-dashboard-actions{font-size:15px}#dashboard .ag-dashboard-actions .btn{font-size:12px}}
+</style>
+<script>
+(function(){
+ const dash=document.getElementById('dashboard');
+ if(!dash)return;
+ const tabs=document.getElementById('agAdminTabs');
+ const go=name=>tabs?.querySelector('[data-admin-tab="'+name+'"]')?.click();
+ document.querySelectorAll('[data-go-tab]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goTab)));
+ document.getElementById('agQuickAdd')?.addEventListener('click',()=>{document.getElementById('add')?.click();go('basic')});
+ const observer=new MutationObserver(()=>{
+  const active=dash.dataset.adminActive||'projects';
+  document.querySelectorAll('[data-go-tab]').forEach(b=>b.classList.toggle('is-active',b.dataset.goTab===active));
+  const count=document.getElementById('count')?.textContent||'';
+  const n=count.match(/\d+/);if(n)document.getElementById('agStatProjects').textContent=n[0];
+  const top=document.getElementById('trendingState')?.textContent||'';
+  const t=top.match(/\d+\s*\/\s*10/);if(t)document.getElementById('agStatTop').textContent=t[0].replace(/\s/g,'');
+ });
+ observer.observe(dash,{attributes:true,attributeFilter:['data-admin-active']});
+ const count=document.getElementById('count'),top=document.getElementById('trendingState');
+ if(count)observer.observe(count,{childList:true,characterData:true,subtree:true});
+ if(top)observer.observe(top,{childList:true,characterData:true,subtree:true});
+ document.getElementById('agStatProjects').textContent=(count?.textContent||'0').match(/\d+/)?.[0]||'0';
+ document.getElementById('agStatTop').textContent='0/10';
 })();
 </script>
 </body></html>
