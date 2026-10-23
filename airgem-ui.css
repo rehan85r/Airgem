@@ -1,5 +1,5 @@
 /* Shared public-site design system. Keep content and application behavior separate. */
-:root{--ag-ink:#142238;--ag-muted:#607086;--ag-line:#E2E8F0;--ag-blue:#1e90ff;--ag-radius:20px;--ag-shadow:0 8px 28px rgba(20,40,70,.04)}
+:root{--ag-ink:#1B2E50;--ag-muted:#607086;--ag-line:#E2E8F0;--ag-blue:#1e90ff;--ag-radius:20px;--ag-shadow:0 8px 28px rgba(20,40,70,.04)}
 body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 [data-view] button,[data-view] input,[data-view] select{font-family:inherit}
 [data-view] a,[data-view] button,[data-view] input,[data-view] select{touch-action:manipulation}
@@ -206,10 +206,10 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 
 
 /* Canonical branding: identical homepage and project header logo geometry. */
-body[data-view="home"] header .brand,body[data-view="project"] header .brand{display:inline-flex!important;align-items:center!important;gap:10px!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#0F172A!important;text-decoration:none!important}
+body[data-view="home"] header .brand,body[data-view="project"] header .brand{display:inline-flex!important;align-items:center!important;gap:10px!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#1B2E50!important;text-decoration:none!important}
 body[data-view="home"] header .brand .mark,body[data-view="project"] header .brand .mark{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;flex:0 0 40px!important;border-radius:12px!important;overflow:hidden!important;background:transparent!important;box-shadow:none!important}
 body[data-view="home"] header .brand .mark img,body[data-view="project"] header .brand .mark img{display:block!important;width:40px!important;height:40px!important;object-fit:contain!important;border-radius:12px!important;margin:0!important}
-body[data-view="home"] header .brand .brand-name,body[data-view="project"] header .brand .brand-name{display:inline-block!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#0F172A!important}
+body[data-view="home"] header .brand .brand-name,body[data-view="project"] header .brand .brand-name{display:inline-block!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#1B2E50!important}
 
 /* Single header layout contract for homepage and project details. */
 body[data-view="home"] header.header{height:70px!important;min-height:70px!important;max-height:70px!important;position:sticky!important;top:0!important;z-index:1000!important}
