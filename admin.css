@@ -2428,3 +2428,15 @@ dialog .guide-editor {
     scroll-behavior: auto;
   }
 }
+
+/* Header navigation and account placement */
+.topbar .mobile-menu{margin-left:auto;order:3}
+.account-strip{display:flex;justify-content:flex-end;align-items:center;padding:8px 26px;background:#F8FAFC}
+.account-strip .account-menu{margin-left:auto}
+.account-strip .account-menu summary{cursor:pointer}
+.account-strip .account-dropdown{top:calc(100% + 8px);z-index:45}
+@media(max-width:760px){
+ .topbar .mobile-menu{display:flex;margin-left:auto;order:3}
+ .account-strip{padding:10px 16px 0}
+ .account-strip .account-menu summary{min-height:40px}
+}
