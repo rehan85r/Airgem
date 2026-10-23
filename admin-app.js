@@ -1072,6 +1072,7 @@
     mobileSidebar.addEventListener('change', closeSidebar);
     $('sidebar').inert = mobileSidebar.matches;
     $('sidebarBackdrop').onclick = closeSidebar;
+    $('closeSidebar').onclick = closeSidebar;
     document.addEventListener('keydown', (event) => {
       const tab = event.target.closest('[data-editor-tab]');
       if (tab && ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
