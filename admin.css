@@ -2440,3 +2440,9 @@ dialog .guide-editor {
  .account-strip{padding:10px 16px 0}
  .account-strip .account-menu summary{min-height:40px}
 }
+
+/* Mobile navigation opens from the same side as the right-aligned menu trigger. */
+@media(max-width:600px){
+ .sidebar{left:auto!important;right:0!important;transform:translateX(100%)!important;border-right:0!important;border-left:1px solid var(--soft-border)!important}
+ .sidebar.is-open{transform:translateX(0)!important}
+}
