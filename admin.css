@@ -2480,3 +2480,9 @@ dialog .guide-editor {
 .sidebar-logout{display:flex;align-items:center;gap:10px;width:100%;min-height:42px;padding:10px 12px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;color:#1B2E50;font-size:13px;font-weight:600;text-align:left}
 .sidebar-logout svg{width:18px;height:18px}
 .sidebar-logout:hover{background:#F8FAFC}
+
+/* Compact single-line account actions; keep email hidden */
+.sidebar-account-email{display:none!important}
+.sidebar-account-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+.sidebar-account-row .sidebar-account-label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
+.sidebar-account-row .sidebar-logout{width:auto;min-height:38px;flex:0 0 auto;padding:8px 10px;white-space:nowrap}
