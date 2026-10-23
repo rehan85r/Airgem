@@ -2446,3 +2446,12 @@ dialog .guide-editor {
  .sidebar{left:auto!important;right:0!important;transform:translateX(100%)!important;border-right:0!important;border-left:1px solid var(--soft-border)!important}
  .sidebar.is-open{transform:translateX(0)!important}
 }
+
+/* Drawer dismiss control */
+.sidebar-close{display:none!important}
+@media(max-width:640px){
+ .sidebar{position:fixed}
+ .sidebar-close{display:flex!important;position:absolute;top:16px;right:14px;width:40px;height:40px;align-items:center;justify-content:center;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;color:#1B2E50;z-index:2;cursor:pointer}
+ .sidebar-close svg{width:22px;height:22px}
+ .sidebar-brand{padding-right:48px!important}
+}
