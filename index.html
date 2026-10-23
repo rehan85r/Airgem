@@ -325,8 +325,8 @@ h1,.section-head h2{color:#0F172A!important}
 
 body[data-view="home"] .header-inner{padding-left:15px!important;padding-right:15px!important}
 
-.header{height:70px!important;position:sticky!important;top:0!important;z-index:1000!important;background:#FFFFFF!important}
-.header-inner{height:100%;display:flex;align-items:center}.header-right{display:flex;align-items:center}.header .menu-btn{align-self:center;place-items:center}
+.header{height:70px!important;box-sizing:border-box!important;position:sticky!important;top:0!important;z-index:1000!important;background:#FFFFFF!important}
+.header-inner{height:100%;box-sizing:border-box;display:flex;align-items:center}.header-right{display:flex;align-items:center}.header .menu-btn{align-self:center;place-items:center}
 .header .mark{width:40px;height:40px;flex:0 0 40px}
 .header .brand-name{font-size:20px!important;font-weight:700!important}
 
@@ -374,10 +374,6 @@ body[data-view="home"] main > #featured + .section-head{margin:25px 0 15px!impor
 /* Unified homepage detail buttons (Top and All Airdrops). */
 [data-view="home"] .ag-card .ag-join{height:40px!important;min-height:40px!important;padding:0 42px!important;border-radius:10px!important;font-size:15px!important;font-weight:600!important;line-height:1!important}
 
-/* Homepage header vertical spacing: 15px around 40px logo. */
-body[data-view="home"] .header{height:70px!important;min-height:70px!important;box-sizing:border-box!important}
-body[data-view="home"] .header-inner{height:70px!important;min-height:70px!important;box-sizing:border-box!important;padding-top:15px!important;padding-bottom:15px!important;align-items:center!important}
-body[data-view="home"] .header .mark{width:40px!important;height:40px!important;flex:0 0 40px!important}
 </style><link rel="icon" type="image/png" href="airgem-logo.png"><link rel="stylesheet" href="airgem-ui.css?v=20261021-header-unified"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script></head><body data-view="home">
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.2c-1 .7-1.7 1.2-1.7 2.8M12 17h.01"/></symbol><symbol id="i-stop" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h6v6H9z"/></symbol><symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M3 10h18M12 10v11M12 10c-8 0-7-7-3-7 2 0 3 3 3 7Zm0 0c8 0 7-7 3-7-2 0-3 3-3 7Z"/></symbol><symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol></svg>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="#" aria-label="Airgem Home"><span class="mark"><img src="airgem-logo.png" alt="Airgem logo" width="40" height="40" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:12px"></span><span class="brand-name">Airgem</span></a><div class="header-right"><span class="header-caption">WEB3 DISCOVERY PLATFORM</span><button class="menu-btn" id="openMenu" aria-label="Open menu"><svg class="svg" style="width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><use href="#i-menu"/></svg></button></div></div></header>
