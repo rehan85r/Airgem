@@ -2458,4 +2458,4 @@ dialog .guide-editor {
 
 /* Brand mark in the 60px admin header */
 .topbar .admin-header-logo{display:flex;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;order:-1;text-decoration:none}
-.topbar .admin-header-logo img{display:block;width:40px;height:40px;object-fit:contain}
+.topbar .admin-header-logo img{display:block;width:40px;height:40px;object-fit:contain;border-radius:12px}
