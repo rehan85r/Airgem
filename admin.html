@@ -1,768 +1,877 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airgem | Admin Panel</title>
-<link rel="icon" type="image/png" href="airgem-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:#f3f7ff;color:#172b49;font:14px system-ui,Arial,sans-serif}header{background:#fff;border-top:5px solid #1E90FF;border-bottom:1px solid #dce6f5;height:60px;padding:0 max(18px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between}header strong{font-size:24px}header strong span,a{color:#1E90FF}a{text-decoration:none}main{max-width:1120px;margin:32px auto;padding:0 18px}h1{font-size:28px;margin:0 0 8px}p{color:#687c96;line-height:1.6}.notice{background:#e7f0ff;border:1px solid #c8dbff;border-radius:12px;padding:14px;margin:18px 0}.layout{display:grid;grid-template-columns:280px 1fr;gap:20px}.panel{background:white;border:1px solid #e0e8f5;border-radius:18px;padding:22px;box-shadow:0 8px 25px #1c4a8a09}.heading,.bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.heading h2{margin:0;font-size:18px}.btn{background:#1E90FF;color:white;border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:pointer}.btn:disabled{opacity:.5}.btn.alt{background:#e9f1ff;color:#1E90FF}.btn.danger{background:#ffedf0;color:#bb2c47}.btn.light{background:#fff;color:#46607e;border:1px solid #dce5f2}.actions{display:flex;gap:9px;flex-wrap:wrap}.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.field{display:grid;gap:7px}.wide{grid-column:1/-1}label{font-size:11px;text-transform:uppercase;font-weight:800;color:#657792;letter-spacing:.5px}input,select,textarea{width:100%;min-width:0;padding:12px;border:1px solid #d9e4f3;border-radius:10px;background:white;color:#172b49;font:inherit}textarea{min-height:95px;resize:vertical}.list{max-height:470px;overflow:auto;margin:15px 0}.entry{display:block;width:100%;text-align:left;border:1px solid transparent;border-radius:11px;background:#f5f8fe;padding:13px;margin:7px 0;cursor:pointer}.entry.active{background:#e8f1ff;border-color:#a7c7ff}.section{border-top:1px solid #e4eaf5;margin-top:25px;padding-top:20px}.item{border:1px solid #e2eaf6;border-radius:12px;background:#f8faff;padding:13px;margin-top:12px}.item .fields{margin-top:10px}.bottom{border-top:1px solid #e4eaf5;margin-top:25px;padding-top:20px}#message{color:#087e64;font-weight:700;overflow-wrap:anywhere}#logoPreview{width:70px;height:70px;border:1px solid #e1e8f4;border-radius:15px;display:grid;place-items:center;overflow:hidden;background:#f5f8ff;font-weight:800}@media(max-width:760px){.layout{grid-template-columns:1fr}.panel{padding:17px}.list{max-height:220px}}@media(max-width:400px){.fields{grid-template-columns:1fr}.wide{grid-column:auto}}
-.editor-shell{border:1px solid #dbe5f3;border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 4px 20px #1b4a8a09}.editor-toolbar{display:flex;flex-direction:column;flex-wrap:nowrap;gap:8px;padding:10px;border-bottom:1px solid #e2eaf5;background:#f7faff}.editor-toolbar .toolbar-row{display:flex;flex-wrap:nowrap;gap:6px;align-items:center}.editor-toolbar .toolbar-row button{flex:0 1 auto;min-width:0;white-space:nowrap}@media(max-width:420px){.editor-toolbar .toolbar-row{gap:4px}.editor-toolbar .toolbar-row button{padding:7px 6px;font-size:11px}}
-.editor-toolbar button{border:1px solid #e0e8f4;background:#fff;border-radius:8px;padding:8px 10px;color:#254268;font-weight:700;cursor:pointer}.editor-toolbar button:active{background:#dfeaff}.guide-editor{min-height:160px;padding:22px 20px;outline:none;line-height:1.85;font-size:15px;overflow-wrap:anywhere;white-space:normal}.guide-editor:empty:before{content:attr(data-placeholder);color:#98a6b9;pointer-events:none}.guide-editor h2{font-size:24px;line-height:1.35;margin:22px 0 12px}.guide-editor h3{font-size:19px;margin:20px 0 10px}.guide-editor p{margin:0 0 16px;color:#172b49;line-height:inherit}.guide-editor img{display:block;max-width:100%;height:auto;margin:18px auto;border-radius:12px}.guide-editor a{color:#1E90FF;text-decoration:underline}.editor-hint{display:block;margin-top:10px;color:#7b8ba3;line-height:1.7}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#1E90FF" />
+    <title>Airgem | Admin Panel</title>
+    <link rel="icon" type="image/png" href="airgem-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+    <div class="auth-shell" id="authShell">
+      <a class="brand auth-brand" href="index.html"
+        ><img src="airgem-logo.png" width="38" height="38" alt="" /><span>Airgem</span
+        ><span class="brand-label">ADMIN</span></a
+      >
+      <section id="loginBox" class="auth-card" aria-labelledby="loginHeading">
+        <div class="auth-icon"><i data-lucide="shield-check" aria-hidden="true"></i></div>
+        <h1 id="loginHeading">Welcome back</h1>
+        <p class="muted">Sign in to your Airgem workspace.</p>
+        <form id="loginForm">
+          <div class="field">
+            <label for="email">Email address</label
+            ><input
+              id="email"
+              type="email"
+              autocomplete="username"
+              placeholder="you@example.com"
+              autocapitalize="none"
+              spellcheck="false"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="password">Password</label
+            ><input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div></div>
+          <button class="button primary full-width" type="submit">
+            Sign in <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+          <p id="loginError" class="error-message" role="alert" aria-live="polite"></p>
+        </form>
+        <p class="auth-footnote">
+          <i data-lucide="lock-keyhole" aria-hidden="true"></i> Authorized administrators only
+        </p>
+      </section>
+      <section id="mfaBox" class="auth-card" hidden aria-labelledby="mfaHeading">
+        <div class="auth-icon"><i data-lucide="smartphone" aria-hidden="true"></i></div>
+        <h1 id="mfaHeading">Two-factor authentication</h1>
+        <p id="mfaInstructions" class="muted">
+          Enter the 6-digit code from your authenticator app.
+        </p>
+        <img id="mfaQr" alt="Authenticator setup QR code" hidden width="190" height="190" />
+        <p id="mfaSecret"></p>
+        <form id="mfaForm">
+          <div class="field">
+            <label for="mfaCode">Authenticator code</label
+            ><input
+              id="mfaCode"
+              type="text"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+              pattern="[0-9]{6}"
+              maxlength="6"
+              required
+              placeholder="000000"
+            />
+          </div>
+          <button class="button primary full-width" type="submit">
+            Verify code <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </button>
+        </form>
+        <p id="mfaError" class="error-message" role="alert" aria-live="polite"></p>
+        <button id="mfaCancel" type="button" class="button full-width">Cancel</button>
+      </section>
+      <p class="auth-copyright">Airgem · Crypto opportunities, made simple.</p>
+    </div>
 
-/* DropyHub consistency pass: keyboard access, spacing and touch */
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{overflow-x:hidden}
-img,svg{max-width:100%}
-button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
-button,a{touch-action:manipulation}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[contenteditable]:focus-visible{outline:3px solid #8cb3ff;outline-offset:3px}
-button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
-@media(hover:none){button:hover,a:hover{filter:none}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+    <div id="dashboard" hidden>
+      <button
+        id="sidebarBackdrop"
+        class="sidebar-backdrop"
+        type="button"
+        aria-label="Close navigation"
+        hidden
+      ></button>
+      <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+        <a class="brand sidebar-brand" href="index.html"
+          ><img src="airgem-logo.png" width="38" height="38" alt="" /><span>Airgem</span></a
+        >
+        <span class="nav-caption">WORKSPACE</span>
+        <nav class="side-nav">
+          <button type="button" data-nav="dashboard" class="is-active" aria-current="page">
+            <i data-lucide="house" aria-hidden="true"></i><span>Dashboard</span>
+          </button>
+          <button type="button" data-nav="projects">
+            <i data-lucide="box" aria-hidden="true"></i><span>Projects</span
+            ><i class="nav-chevron" data-lucide="chevron-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" data-nav="top">
+            <i data-lucide="star" aria-hidden="true"></i><span>Top Airdrops</span>
+          </button>
+          <button type="button" data-nav="guides">
+            <i data-lucide="notebook-text" aria-hidden="true"></i><span>Guides & Tasks</span>
+          </button>
+          <button type="button" data-nav="investors">
+            <i data-lucide="users" aria-hidden="true"></i><span>Investors</span>
+          </button>
+          <button type="button" data-nav="media">
+            <i data-lucide="image" aria-hidden="true"></i><span>Media Library</span>
+          </button>
+          <button type="button" data-nav="settings">
+            <i data-lucide="settings" aria-hidden="true"></i><span>Settings</span>
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="brand-card">
+            <img src="airgem-logo.png" width="54" height="54" alt="" /><strong>Airgem</strong>
+            <p>Crypto opportunities.<br />Made simple.</p>
+            <a href="index.html" target="_blank" rel="noopener noreferrer"
+              >View website <i data-lucide="arrow-up-right" aria-hidden="true"></i
+            ></a>
+          </div>
+          <span class="workspace-label"><span class="status-dot"></span> Admin workspace</span>
+        </div>
+      </aside>
+      <div class="app-shell">
+        <header class="topbar">
+          <button
+            id="mobileMenu"
+            class="icon-button mobile-menu"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            <i data-lucide="menu" aria-hidden="true"></i>
+          </button>
+          <label class="global-search"
+            ><i data-lucide="search" aria-hidden="true"></i
+            ><input
+              id="globalSearch"
+              type="search"
+              placeholder="Search projects, tags, or keywords…"
+              aria-label="Search all projects"
+            /><kbd>Ctrl K</kbd></label
+          >
+          <a
+            class="icon-button website-shortcut"
+            href="index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View public website"
+            title="View public website"
+            ><i data-lucide="external-link" aria-hidden="true"></i
+          ></a>
+          <details class="account-menu" id="accountMenu">
+            <summary>
+              <span class="account-avatar"><i data-lucide="user-round" aria-hidden="true"></i></span
+              ><span>Admin</span><i data-lucide="chevron-down" aria-hidden="true"></i>
+            </summary>
+            <div class="account-dropdown">
+              <span id="accountEmail"></span
+              ><button type="button" id="logout">
+                <i data-lucide="log-out" aria-hidden="true"></i> Sign out
+              </button>
+            </div>
+          </details>
+        </header>
+        <main id="mainContent" tabindex="-1">
+          <section id="projectsView">
+            <div class="page-heading">
+              <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p id="pageDescription">
+                  Manage your projects, guides, investors and everything in one place.
+                </p>
+              </div>
+              <button type="button" class="button primary heading-add" id="add">
+                <i data-lucide="plus" aria-hidden="true"></i> Add project
+              </button>
+            </div>
+            <p id="dataError" class="data-error" role="alert" hidden></p>
+            <div class="workspace-grid">
+              <div class="workspace-main">
+                <div class="stats-grid" aria-label="Project statistics">
+                  <article class="stat-card">
+                    <span class="stat-icon blue"><i data-lucide="box" aria-hidden="true"></i></span>
+                    <div>
+                      <h2>Total Projects</h2>
+                      <strong id="agStatProjects">—</strong>
+                      <p id="statProjectsNote">From your database</p>
+                    </div>
+                  </article>
+                  <article class="stat-card">
+                    <span class="stat-icon amber"
+                      ><i data-lucide="star" aria-hidden="true"></i
+                    ></span>
+                    <div>
+                      <h2>Top Airdrops</h2>
+                      <strong id="agStatTop">—</strong>
+                      <p>Featured on homepage</p>
+                    </div>
+                  </article>
+                  <article class="stat-card">
+                    <span class="stat-icon green"
+                      ><i data-lucide="file-text" aria-hidden="true"></i
+                    ></span>
+                    <div>
+                      <h2>Guides</h2>
+                      <strong id="agStatGuides">—</strong>
+                      <p id="statGuidesNote">Across your projects</p>
+                    </div>
+                  </article>
+                  <article class="stat-card">
+                    <span class="stat-icon purple"
+                      ><i data-lucide="users" aria-hidden="true"></i
+                    ></span>
+                    <div>
+                      <h2>Investors</h2>
+                      <strong id="agStatInvestors">—</strong>
+                      <p id="statInvestorsNote">Unique investors</p>
+                    </div>
+                  </article>
+                </div>
+                <nav
+                  id="categoryTabs"
+                  class="category-tabs"
+                  aria-label="Filter projects by category"
+                ></nav>
+                <section class="card projects-card" aria-label="Projects">
+                  <div class="table-toolbar">
+                    <label class="table-search"
+                      ><i data-lucide="search" aria-hidden="true"></i
+                      ><input
+                        id="search"
+                        type="search"
+                        placeholder="Search projects…"
+                        aria-label="Search projects"
+                    /></label>
+                    <div class="table-filters">
+                      <select id="categoryFilter" aria-label="Filter category">
+                        <option value="">Category</option></select
+                      ><select id="statusFilter" aria-label="Filter status">
+                        <option value="">Status</option></select
+                      ><select id="sortBy" aria-label="Sort projects">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="name">Name A–Z</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div id="list" aria-live="polite">
+                    <div class="empty-state">
+                      <span class="loading-indicator"></span>
+                      <p>Loading your projects…</p>
+                    </div>
+                  </div>
+                  <footer class="table-footer">
+                    <span id="tableCount">Loading projects</span>
+                    <nav id="pagination" class="pagination" aria-label="Project pages"></nav>
+                  </footer>
+                </section>
+              </div>
+              <aside class="workspace-aside" aria-label="Workspace shortcuts">
+                <section class="card quick-actions">
+                  <h2>Quick Actions</h2>
+                  <button type="button" data-action="add">
+                    <i data-lucide="plus" aria-hidden="true"></i
+                    ><span>Add New Project</span></button
+                  ><button type="button" data-action="top">
+                    <i data-lucide="star" aria-hidden="true"></i
+                    ><span>Manage Top Airdrops</span></button
+                  ><button type="button" data-action="media">
+                    <i data-lucide="image" aria-hidden="true"></i><span>Media Library</span></button
+                  ><button type="button" data-action="investors">
+                    <i data-lucide="users" aria-hidden="true"></i
+                    ><span>Manage Investors</span></button
+                  ><a href="index.html" target="_blank" rel="noopener noreferrer"
+                    ><i data-lucide="external-link" aria-hidden="true"></i
+                    ><span>View Website</span></a
+                  >
+                </section>
+                <section class="card recent-card">
+                  <div class="card-heading">
+                    <h2>Recently Added</h2>
+                    <i data-lucide="clock-3" aria-hidden="true"></i>
+                  </div>
+                  <ul id="recentProjects" class="recent-projects">
+                    <li class="muted">Loading projects…</li>
+                  </ul>
+                </section>
+              </aside>
+              <div class="analytics-grid">
+                <section class="card overview-card">
+                  <div class="card-heading">
+                    <h2>Projects Overview</h2>
+                    <select id="chartRange" aria-label="Overview date range">
+                      <option value="6">Last 6 Months</option>
+                      <option value="12">Last 12 Months</option>
+                    </select>
+                  </div>
+                  <div
+                    id="overviewChart"
+                    class="overview-chart"
+                    aria-label="Projects added per month"
+                  ></div>
+                </section>
+                <section class="card">
+                  <h2>Projects by Category</h2>
+                  <div
+                    id="categoryChart"
+                    class="distribution-chart"
+                    aria-label="Project category distribution"
+                  ></div>
+                </section>
+                <section class="card">
+                  <h2>Projects by Status</h2>
+                  <div
+                    id="statusChart"
+                    class="distribution-chart"
+                    aria-label="Project activity status distribution"
+                  ></div>
+                </section>
+              </div>
+            </div>
+          </section>
 
-/* Admin forms and editor: readable spacing and safe mobile layout */
-.layout,.panel,.fields,.field{min-width:0}
-input,select,textarea{max-width:100%}
-.editor-toolbar{row-gap:8px}
-.editor-toolbar button{min-height:38px}
-.guide-editor{max-width:100%;overflow-x:auto}
-@media(max-width:760px){.layout{gap:18px}.panel{margin-bottom:0}.fields{row-gap:15px}}
+          <section
+            id="trendingManager"
+            class="section-view"
+            hidden
+            aria-labelledby="trendingHeading"
+          >
+            <div class="page-heading">
+              <div>
+                <span class="eyebrow">HOMEPAGE COLLECTION</span>
+                <h1 id="trendingHeading">Top Airdrops</h1>
+                <p>Curate and order the projects featured on your homepage.</p>
+              </div>
+              <span id="trendingState" class="selection-count">0 / 10 selected</span>
+            </div>
+            <div class="card collection-card">
+              <div class="section-heading">
+                <div>
+                  <h2>Featured projects</h2>
+                  <p>Add up to 10 projects. Use the arrows to change their display order.</p>
+                </div>
+                <i data-lucide="star" class="muted" aria-hidden="true"></i>
+              </div>
+              <div class="field trending-search">
+                <label for="trendingSelect">Find a project</label
+                ><input
+                  id="trendingSelect"
+                  type="search"
+                  placeholder="Search by project name…"
+                  autocomplete="off"
+                  aria-controls="trendingSearchResults"
+                  aria-expanded="false"
+                />
+                <div id="trendingSearchResults" class="search-results" hidden></div>
+              </div>
+              <div id="trendingCurrent" class="trending-list" aria-live="polite"></div>
+              <div class="collection-footer">
+                <button class="button danger-quiet" id="clearTrending" type="button">
+                  <i data-lucide="list-x" aria-hidden="true"></i> Clear selection</button
+                ><button class="button primary" id="saveTrending" type="button">
+                  <i data-lucide="check" aria-hidden="true"></i> Save Top Airdrops
+                </button>
+              </div>
+              <p id="trendingMessage" class="inline-message" role="status"></p>
+            </div>
+          </section>
 
-.guide-editor .guide-step-box{border:1px solid #dce7fb;background:#f5f8ff;border-radius:12px;padding:14px 16px;margin:14px 0}.guide-editor .guide-step-box a{font-weight:700}.guide-editor .guide-step-box.selected-step-box{outline:2px solid #1E90FF;outline-offset:2px}.editor-toolbar #guideDeleteStepBox:not(:disabled){color:#b42318;background:#fff1f0;border-color:#fecaca}.editor-toolbar #guideDeleteStepBox:disabled{opacity:.45;cursor:not-allowed}
-.guide-editor .guide-step-box{position:relative;padding-right:48px!important;min-height:48px}
-.guide-editor .step-box-remove{position:absolute;top:50%;right:10px;transform:translateY(-50%);width:30px;height:30px;border:1px solid #fecaca;border-radius:8px;background:#fff1f2;color:#b42318;font-size:17px;font-weight:700;cursor:pointer;display:grid;place-items:center;line-height:1;z-index:2}
-.guide-editor .step-box-remove:hover{background:#ffe4e6;border-color:#f87171}
-/* Compact guide step button in editor; actual link fills the entire button on the site. */
-.guide-editor .guide-step-box{background:#1E90FF!important;color:#fff!important;border:0!important;border-radius:11px!important;padding:0!important;margin:10px 0!important;min-height:0!important;line-height:1.35!important;text-align:center!important;font-weight:800!important;overflow:visible}
-.guide-editor .guide-step-box>a{display:flex!important;align-items:center;justify-content:center;min-height:40px;padding:10px 46px 10px 14px;color:#fff!important;text-decoration:none!important;border-radius:inherit}
-.guide-editor .guide-step-box>strong{display:block;padding:10px 46px 10px 14px;min-height:40px;color:#fff!important}
-.guide-editor .step-box-remove{right:7px!important;width:27px!important;height:27px!important}
+          <section id="editorView" class="section-view" hidden aria-labelledby="title">
+            <button id="backToProjects" type="button" class="back-link">
+              <i data-lucide="arrow-left" aria-hidden="true"></i> Back to projects
+            </button>
+            <div class="page-heading editor-heading">
+              <div>
+                <h1 id="title">New project</h1>
+                <p id="editorProjectMeta">Everything your community needs to get started.</p>
+              </div>
+              <div class="actions">
+                <a
+                  id="previewProject"
+                  class="button"
+                  href="project.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i data-lucide="eye" aria-hidden="true"></i> Preview</a
+                ><button id="remove" type="button" class="button danger-quiet">
+                  <i data-lucide="trash-2" aria-hidden="true"></i><span>Delete project</span>
+                </button>
+              </div>
+            </div>
+            <form id="form" novalidate>
+              <nav class="editor-tabs" aria-label="Project editor sections" role="tablist">
+                <button
+                  type="button"
+                  data-editor-tab="basic"
+                  id="tab-basic"
+                  role="tab"
+                  aria-controls="panel-basic"
+                  aria-selected="true"
+                >
+                  <i data-lucide="box" aria-hidden="true"></i> Basic Info</button
+                ><button
+                  type="button"
+                  data-editor-tab="details"
+                  id="tab-details"
+                  role="tab"
+                  aria-controls="panel-details"
+                  aria-selected="false"
+                >
+                  <i data-lucide="sliders-horizontal" aria-hidden="true"></i> Project Details</button
+                ><button
+                  type="button"
+                  data-editor-tab="links"
+                  id="tab-links"
+                  role="tab"
+                  aria-controls="panel-links"
+                  aria-selected="false"
+                >
+                  <i data-lucide="link" aria-hidden="true"></i> Social Links</button
+                ><button
+                  type="button"
+                  data-editor-tab="investors"
+                  id="tab-investors"
+                  role="tab"
+                  aria-controls="panel-investors"
+                  aria-selected="false"
+                >
+                  <i data-lucide="users" aria-hidden="true"></i> Investors</button
+                ><button
+                  type="button"
+                  data-editor-tab="guide"
+                  id="tab-guide"
+                  role="tab"
+                  aria-controls="panel-guide"
+                  aria-selected="false"
+                >
+                  <i data-lucide="notebook-text" aria-hidden="true"></i> Guide & Tasks
+                </button>
+              </nav>
+              <section
+                class="card editor-panel"
+                data-editor-panel="basic"
+                id="panel-basic"
+                role="tabpanel"
+                aria-labelledby="tab-basic"
+              >
+                <div class="section-heading">
+                  <div>
+                    <h2>Basic information</h2>
+                    <p>Introduce the project with a name, logo and key information.</p>
+                  </div>
+                  <span class="required-note">* Required</span>
+                </div>
+                <div class="logo-upload">
+                  <div id="logoPreview" class="logo-preview">?</div>
+                  <div>
+                    <label class="button" for="logoFile"
+                      ><i data-lucide="upload" aria-hidden="true"></i> Upload logo</label
+                    ><input
+                      id="logoFile"
+                      class="visually-hidden"
+                      type="file"
+                      accept="image/png,image/jpeg,image/webp,image/gif"
+                    />
+                    <p>PNG, JPG, WebP or GIF. Up to 5 MB.</p>
+                    <button id="clearLogo" type="button" class="text-button">Remove logo</button>
+                  </div>
+                </div>
+                <input id="logoUrl" type="hidden" /><input
+                  id="color"
+                  type="hidden"
+                  value="#1E90FF"
+                />
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="name">Project name <span class="required">*</span></label
+                    ><input id="name" required maxlength="200" placeholder="e.g. Axis Robotics" />
+                  </div>
+                  <div class="field">
+                    <label for="displayTag">Custom tag</label
+                    ><input id="displayTag" placeholder="e.g. Mainnet Trading" maxlength="150" />
+                  </div>
+                  <div class="field">
+                    <label for="category">Category <span class="required">*</span></label
+                    ><input
+                      id="category"
+                      list="categoryOptions"
+                      required
+                      placeholder="Select or enter a category"
+                    /><datalist id="categoryOptions">
+                      <option value="Airdrop"></option>
+                      <option value="Testnet"></option>
+                      <option value="Mainnet"></option>
+                      <option value="Whitelist"></option>
+                      <option value="Points"></option>
+                      <option value="Dex"></option>
+                    </datalist>
+                  </div>
+                  <div class="field">
+                    <label for="task">Type</label
+                    ><input id="task" placeholder="e.g. Perp Dex, Testnet, Points" />
+                  </div>
+                  <div class="field">
+                    <label for="status">Reward</label
+                    ><input id="status" placeholder="e.g. Confirmed, Potential" />
+                  </div>
+                  <div class="field">
+                    <label for="activityStatus">Project status</label
+                    ><select id="activityStatus">
+                      <option value="Active">Active</option>
+                      <option value="Ended">Ended</option>
+                    </select>
+                  </div>
+                </div>
+              </section>
+              <section
+                class="card editor-panel"
+                data-editor-panel="details"
+                id="panel-details"
+                role="tabpanel"
+                aria-labelledby="tab-details"
+                hidden
+              >
+                <div class="section-heading">
+                  <div>
+                    <h2>Project details</h2>
+                    <p>Help your community understand the opportunity.</p>
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="tge">TGE</label><input id="tge" placeholder="e.g. Q4 2026 or TBA" />
+                  </div>
+                  <div class="field">
+                    <label for="cost">Cost</label
+                    ><input id="cost" placeholder="e.g. Free, $5 or gas fee" />
+                  </div>
+                  <div class="field">
+                    <label for="started">Start</label
+                    ><input id="started" placeholder="e.g. October 2026" />
+                  </div>
+                  <div class="field">
+                    <label for="timeEstimate">Time</label
+                    ><input id="timeEstimate" placeholder="e.g. 5 min or 1 hour" />
+                  </div>
+                  <div class="field">
+                    <label for="funding">Funding</label
+                    ><input id="funding" placeholder="e.g. $10M or not disclosed" />
+                  </div>
+                  <div class="field">
+                    <label for="ecosystem">Ecosystem</label
+                    ><input id="ecosystem" placeholder="e.g. Ethereum, Base" />
+                  </div>
+                  <div class="field">
+                    <label for="addedOn">Added</label><input id="addedOn" type="date" />
+                  </div>
+                </div>
+              </section>
+              <section
+                class="card editor-panel"
+                data-editor-panel="links"
+                id="panel-links"
+                role="tabpanel"
+                aria-labelledby="tab-links"
+                hidden
+              >
+                <div class="section-heading">
+                  <div>
+                    <h2>Social links</h2>
+                    <p>Use full https:// URLs for official project channels.</p>
+                  </div>
+                </div>
+                <div id="links" class="form-grid"></div>
+              </section>
+              <section
+                class="card editor-panel"
+                data-editor-panel="investors"
+                id="panel-investors"
+                role="tabpanel"
+                aria-labelledby="tab-investors"
+                hidden
+              >
+                <div class="section-heading">
+                  <div>
+                    <h2>Investors</h2>
+                    <p>Add an investor name, tier and optional logo, or mark as N/A.</p>
+                  </div>
+                  <div class="actions">
+                    <button type="button" id="agSetInvestorsNA" class="button" aria-pressed="false">
+                      N/A</button
+                    ><button type="button" id="agAddInvestor" class="button">
+                      <i data-lucide="plus" aria-hidden="true"></i> Add investor
+                    </button>
+                  </div>
+                </div>
+                <input
+                  id="agInvestorsNA"
+                  type="checkbox"
+                  hidden
+                  aria-label="Investors not applicable"
+                /><input id="investors" type="hidden" />
+                <div id="agInvestorList" class="investor-list"></div>
+                <p id="investorsNAHelp" class="investor-na-note" hidden>
+                  Investors are marked as N/A for this project. Add an investor to change this.
+                </p>
+              </section>
+              <section
+                class="card editor-panel guide-panel"
+                data-editor-panel="guide"
+                id="panel-guide"
+                role="tabpanel"
+                aria-labelledby="tab-guide"
+                hidden
+              >
+                <div class="section-heading">
+                  <div>
+                    <h2>Guide & Tasks</h2>
+                    <p>Organize task cards and write a clear, useful guide for each one.</p>
+                  </div>
+                  <button type="button" id="agTaskAdd" class="button">
+                    <i data-lucide="plus" aria-hidden="true"></i> Add task
+                  </button>
+                </div>
+                <div id="agTaskTabs" class="task-tabs" aria-label="Project tasks"></div>
+                <div class="task-fields">
+                  <div class="field">
+                    <label for="agTaskTitle">Task title</label
+                    ><input id="agTaskTitle" placeholder="e.g. Join the waitlist" />
+                  </div>
+                  <div class="field">
+                    <label for="agTaskStatus">Task status</label
+                    ><select id="agTaskStatus">
+                      <option>Active</option>
+                      <option>Ended</option>
+                      <option>Upcoming</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="agTaskDate">Subtitle</label
+                    ><input id="agTaskDate" placeholder="e.g. Complete before October 30" />
+                  </div>
+                  <div class="field">
+                    <label for="agTaskTag">Task tag</label
+                    ><input id="agTaskTag" placeholder="e.g. Daily task" />
+                  </div>
+                </div>
+                <div class="guide-heading">
+                  <label id="guideLabel">Guide content</label
+                  ><button type="button" id="agTaskRemove" class="text-button danger-text">
+                    Remove selected task
+                  </button>
+                </div>
+                <div class="editor-shell">
+                  <div
+                    class="editor-toolbar"
+                    id="guideToolbar"
+                    role="toolbar"
+                    aria-label="Guide formatting"
+                  >
+                    <div class="toolbar-group">
+                      <button
+                        type="button"
+                        data-cmd="formatBlock"
+                        data-val="p"
+                        title="Paragraph"
+                        aria-label="Paragraph"
+                      >
+                        <i data-lucide="type" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        data-cmd="formatBlock"
+                        data-val="h2"
+                        title="Heading"
+                        aria-label="Heading"
+                      >
+                        <i data-lucide="heading-2" aria-hidden="true"></i></button
+                      ><button type="button" data-cmd="bold" title="Bold" aria-label="Bold">
+                        <i data-lucide="bold" aria-hidden="true"></i></button
+                      ><button type="button" data-cmd="italic" title="Italic" aria-label="Italic">
+                        <i data-lucide="italic" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        data-cmd="insertUnorderedList"
+                        title="Bullet list"
+                        aria-label="Bullet list"
+                      >
+                        <i data-lucide="list" aria-hidden="true"></i></button
+                      ><button type="button" id="guideLink" title="Add link" aria-label="Add link">
+                        <i data-lucide="link" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="toolbar-group">
+                      <button
+                        type="button"
+                        data-cmd="justifyLeft"
+                        title="Align left"
+                        aria-label="Align left"
+                      >
+                        <i data-lucide="align-left" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        data-cmd="justifyCenter"
+                        title="Align center"
+                        aria-label="Align center"
+                      >
+                        <i data-lucide="align-center" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        data-cmd="justifyRight"
+                        title="Align right"
+                        aria-label="Align right"
+                      >
+                        <i data-lucide="align-right" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="toolbar-group">
+                      <button type="button" id="guideStepBox">
+                        <i data-lucide="square-mouse-pointer" aria-hidden="true"></i> Step</button
+                      ><button type="button" id="guideDaily">
+                        <i data-lucide="calendar-check" aria-hidden="true"></i> Update</button
+                      ><button type="button" id="guideNote">
+                        <i data-lucide="sticky-note" aria-hidden="true"></i> Note</button
+                      ><button type="button" id="guideImage">
+                        <i data-lucide="image-plus" aria-hidden="true"></i> Image
+                      </button>
+                    </div>
+                    <div class="toolbar-group">
+                      <button
+                        type="button"
+                        id="guideEditStepBox"
+                        title="Edit selected step"
+                        aria-label="Edit selected step"
+                        disabled
+                      >
+                        <i data-lucide="square-pen" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        id="guideDeleteStepBox"
+                        title="Delete selected step"
+                        aria-label="Delete selected step"
+                        disabled
+                      >
+                        <i data-lucide="trash-2" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        id="guidePreview"
+                        title="Preview guide"
+                        aria-label="Preview guide"
+                      >
+                        <i data-lucide="eye" aria-hidden="true"></i></button
+                      ><button
+                        type="button"
+                        id="guideClear"
+                        title="Clear entire guide"
+                        aria-label="Clear entire guide"
+                      >
+                        <i data-lucide="eraser" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    id="guideEditor"
+                    class="guide-editor"
+                    contenteditable="true"
+                    role="textbox"
+                    aria-multiline="true"
+                    aria-labelledby="guideLabel"
+                    data-placeholder="Write your project guide here…"
+                  ></div>
+                </div>
+                <input
+                  id="guideImageFile"
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/gif"
+                  hidden
+                />
+              </section>
+              <footer class="editor-footer">
+                <div><span class="status-dot"></span> Changes are saved when you publish.</div>
+                <div class="actions">
+                  <button type="button" id="cancelEdit" class="button">Cancel</button
+                  ><button type="submit" id="publish" class="button primary">
+                    <i data-lucide="check" aria-hidden="true"></i> Publish Changes
+                  </button>
+                </div>
+              </footer>
+            </form>
+          </section>
 
-.guide-editor .dh-info-box{border-radius:12px;padding:13px 15px;margin:12px 0;font-size:14px;line-height:1.6}
-.guide-editor .dh-daily-box{background:#eff6ff;border:1px solid #d8e9ff;color:#173d6b}
-.guide-editor .dh-note-box{background:#fffbf0;border:1px solid #f2e4b9;color:#78531b}
-.guide-editor .dh-daily-box:before{content:none}
-.guide-editor .dh-daily-box .dh-custom-title{display:block;font-weight:800;font-size:1.05em;margin-bottom:6px;min-height:1.2em}
-.guide-editor .dh-note-box:before{content:'ⓘ  Important Note';display:block;font-weight:800;margin-bottom:4px}
-/* Mobile-friendly editing after a Step Box */
-.guide-editor>p{min-height:24px;cursor:text}
-.guide-editor>.guide-step-box+p{margin:5px 0 12px;min-height:30px}
-.guide-editor>.dh-info-box+p{margin:5px 0 12px;min-height:30px}
-.guide-editor .guide-step-box{user-select:none;-webkit-user-select:none}
-
-/* Read-only project guide preview */
-#guidePreviewOverlay{position:fixed;inset:0;z-index:9999;background:rgba(14,31,56,.65);display:none;align-items:center;justify-content:center;padding:16px}
-#guidePreviewOverlay.is-open{display:flex}
-#guidePreviewPanel{width:min(760px,100%);max-height:90vh;overflow:auto;background:white;border-radius:16px;box-shadow:0 22px 70px #071b3b55}
-#guidePreviewHead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #e0e8f4}
-#guidePreviewHead strong{font-size:17px}
-#guidePreviewClose{border:1px solid #dce5f2;border-radius:9px;background:#fff;padding:7px 12px;cursor:pointer;color:#254268;font-weight:700}
-#guidePreviewContent{padding:20px;min-height:100px;overflow-wrap:anywhere}
-#guidePreviewContent .step-box-remove{display:none!important}
-#guidePreviewContent .guide-step-box{user-select:auto;-webkit-user-select:auto}
-
-.editor-page-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
-.editor-page-heading h1{margin:0}
-.editor-page-heading #logout{flex-shrink:0}
-.editor-page-heading #logout[hidden]{display:none!important}
-body:has(#dashboard:not([hidden])) .editor-page-heading #logout{display:inline-flex}
-
-/* Trending project picker: consistent arrow inset on mobile and desktop. */
-#trendingSelect{appearance:none;-webkit-appearance:none;padding-right:48px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23172b49' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;background-size:16px 16px}
-
-/* Exactly 12 equally sized editor actions: four rows, three columns. */
-#guideToolbar .toolbar-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;align-items:stretch}
-#guideToolbar .toolbar-row button{width:100%;min-width:0;min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;overflow-wrap:normal;padding:9px 4px;font-size:clamp(10px,2.6vw,14px);line-height:1.2;flex:none}
-@media(max-width:420px){#guideToolbar .toolbar-row{gap:6px}#guideToolbar .toolbar-row button{padding:8px 2px;font-size:11px;min-height:42px}}
-
-/* Airgem branding and responsive admin sign-in. */
-body{background:#f6f9fd}
-header{border-top:0;padding-top:18px;padding-bottom:18px;gap:20px}
-.admin-brand{display:inline-flex;align-items:center;gap:10px;color:#172b49;font-size:20px;font-weight:700;letter-spacing:-0.5px}
-.admin-brand img{display:block;width:38px;height:38px;object-fit:contain;border-radius:10px}
-.website-link{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#657792}
-.website-link:hover{color:#1E90FF}
-body:has(#loginBox:not([hidden])) main{min-height:calc(100svh - 75px);margin:0 auto;display:flex;align-items:center;justify-content:center;padding:40px 20px}
-body:has(#loginBox:not([hidden])) .editor-page-heading{display:none}
-#loginBox{width:100%;max-width:440px;margin:0;padding:38px;border:1px solid #e2eaf4;border-radius:24px;box-shadow:0 18px 60px #17365d08}
-.login-mark{display:block;width:60px;height:60px;object-fit:contain;border-radius:16px;margin-bottom:26px}
-.login-eyebrow{margin:0 0 9px;color:#1E90FF;font-size:11px;font-weight:750;letter-spacing:1.6px;text-transform:none}
-#loginBox h2{margin:0;color:#172b49;font-size:30px;line-height:1.2;font-weight:750;letter-spacing:-1px}
-.login-description{margin:12px 0 28px;font-size:14px;line-height:1.65}
-#loginForm{display:grid;gap:20px}
-#loginForm .field{gap:9px}
-#loginForm label{font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:#344861}
-#loginForm input{min-height:50px;padding:13px 15px;border-radius:12px;border-color:#dce5ef;background:#fbfcfe;font-size:16px;transition:border-color .15s,box-shadow .15s}
-#loginForm input:focus{background:#fff;border-color:#1E90FF;box-shadow:0 0 0 4px #1e90ff12;outline:none}
-#loginForm .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;margin-top:4px;border-radius:12px;font-size:14px;font-family:inherit;font-weight:650;box-shadow:0 5px 14px #1e90ff20}
-#loginForm .btn:hover{background:#1283ed}
-#loginError{margin:0;color:#b42318;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
-#loginError:empty{display:none}
-.login-footer{margin:24px 0 0;padding-top:20px;border-top:1px solid #edf1f6;text-align:center;font-size:12px;color:#8492a6}
-@media(max-width:480px){
- header{padding:16px 20px}.admin-brand img{width:34px;height:34px}
- .website-link{font-size:12px}
- body:has(#loginBox:not([hidden])) main{min-height:calc(100svh - 67px);padding:28px 16px}
- #loginBox{padding:28px 24px;border-radius:20px}
- #loginBox h2{font-size:28px}.login-mark{width:54px;height:54px;margin-bottom:24px}
-}
-@media(max-height:620px){body:has(#loginBox:not([hidden])) main{align-items:flex-start}}
-
-
-/* Center the sign-in page content on mobile and desktop. */
-body:has(#loginBox:not([hidden])){min-height:100svh;display:flex;flex-direction:column}
-body:has(#loginBox:not([hidden])) header{flex-direction:column;justify-content:center;gap:12px;text-align:center}
-body:has(#loginBox:not([hidden])) main{flex:1;width:100%;min-height:0}
-#loginBox{text-align:center}
-#loginBox .login-mark{margin-left:auto;margin-right:auto}
-#loginForm label,#loginForm input,#loginError{text-align:center}
-
-
-/* Fit the sign-in screen within the visible viewport without page scrolling. */
-html:has(#loginBox:not([hidden])){height:100%;overflow:hidden}
-body:has(#loginBox:not([hidden])){height:100dvh;min-height:0;overflow:hidden}
-body:has(#loginBox:not([hidden])) header{flex-shrink:0;padding-top:12px;padding-bottom:12px;gap:8px}
-body:has(#loginBox:not([hidden])) main{padding:12px 16px;align-items:center}
-#loginBox{padding:24px}
-#loginBox .login-mark{width:48px;height:48px;margin-bottom:14px}
-.login-eyebrow{margin-bottom:7px}
-#loginBox h2{font-size:28px}
-.login-description{margin:10px 0 18px;line-height:1.5}
-#loginForm{gap:14px}
-#loginForm .field{gap:7px}
-#loginForm input{height:46px;min-height:46px;padding:11px 14px}
-#loginForm .btn{min-height:46px;margin-top:0}
-.login-footer{margin-top:16px;padding-top:14px}
-@media(max-height:650px){
- body:has(#loginBox:not([hidden])) header{padding-top:8px;padding-bottom:8px;gap:5px}
- #loginBox{padding:18px 22px}
- #loginBox .login-mark{width:36px;height:36px;border-radius:10px;margin-bottom:10px}
- #loginBox h2{font-size:25px}
- .login-description{margin:8px 0 12px;font-size:13px}
- #loginForm{gap:10px}
- .login-footer{margin-top:12px;padding-top:10px}
-}
-@media(max-height:500px){
- body:has(#loginBox:not([hidden])) header{display:none}
- #loginBox .login-mark,.login-eyebrow,.login-description,.login-footer{display:none}
- #loginBox h2{margin-bottom:12px;font-size:23px}
- #loginBox{padding:16px 20px}
-}
-
-
-/* Premium Airgem login only; preserve admin dashboard and MFA. */
-body:has(#loginBox:not([hidden])) header{display:none}
-html:has(#loginBox:not([hidden])){height:auto;overflow:auto}
-body:has(#loginBox:not([hidden])){height:auto;min-height:100dvh;overflow:auto;background:#f7f9fd}
-body:has(#loginBox:not([hidden])) main{width:100%;max-width:none;min-height:100dvh;padding:22px 16px;display:flex;align-items:center;justify-content:center}
-#loginBox{width:100%;max-width:440px;background:#fff;border:1px solid #e9edf4;border-radius:19px;padding:34px;box-shadow:0 14px 44px #183a690f;text-align:center}
-#loginBox .login-mark{display:block;width:48px;height:48px;margin:0 auto 12px;border-radius:12px}
-#loginBox .login-eyebrow{font-size:26px;font-weight:800;letter-spacing:-1px;color:#182333;margin:0 0 26px}
-#loginBox h2{font-size:24px;font-weight:800;margin:0 0 7px}
-#loginBox .login-description{font-size:13px;color:#8997aa;margin:0 0 28px}
-#loginForm{display:grid;gap:18px}
-#loginForm .field{text-align:left;gap:9px}
-#loginForm label{text-align:left;font-size:12px;color:#566174;font-weight:650}
-#loginForm input{text-align:left;height:49px;min-height:49px;border-radius:10px;background:#fff;font-size:15px}
-#loginForm .btn{height:49px;min-height:49px;margin:0;border-radius:10px;font-weight:750}
-#loginBox .login-footer{border:0;padding:0;margin:23px 0 0;font-size:11px;color:#9da9b9}
-#loginBox .login-copyright{margin:19px 0 0;font-size:11px;color:#a5afbd}
-@media(max-width:480px){#loginBox{padding:28px 24px}}
-
-/* Login brand sits outside the white form card. */
-.login-shell:has(#loginBox[hidden]){display:none}
-body:has(#loginBox:not([hidden])) main{display:flex;align-items:center;justify-content:center}
-.login-shell{width:100%;max-width:440px}
-.login-brand{display:flex;align-items:center;justify-content:center;gap:11px;margin:0 0 24px;color:#192333;font-size:25px;font-weight:800;letter-spacing:-.9px;line-height:1.1}
-.login-brand img{width:44px;height:44px;object-fit:contain;border-radius:11px;flex-shrink:0}
-.login-brand-admin{font-size:14px;font-weight:700;color:#1e90ff;letter-spacing:0}
-#loginBox{max-width:none;margin:0}
-@media(max-width:480px){.login-brand{margin-bottom:20px;font-size:23px}.login-brand img{width:41px;height:41px}}
-
-/* Match the public Airgem logo dimensions */
-.admin-brand img{width:40px!important;height:40px!important;flex:0 0 40px!important}
-/* Match the public Airgem logo size */
-.admin-brand img{width:40px!important;height:40px!important;flex:0 0 40px!important}
-/* Keep admin header logo 15px from the left on desktop and mobile */
-body:not(:has(#loginBox:not([hidden]))) header{padding-left:15px!important}
-body:not(:has(#loginBox:not([hidden]))) header{padding-right:15px!important}
-/* Match the public Airgem header height on desktop and mobile */
-body:not(:has(#loginBox:not([hidden]))) header{height:60px!important;min-height:60px!important;padding-top:0!important;padding-bottom:0!important;align-items:center!important}
-/* Admin form labels: sentence case rather than all caps */
-#dashboard label{text-transform:none!important;letter-spacing:0!important}
-/* Airgem 2026 admin refresh: cohesive light premium UI, functionality preserved */
-:root{--admin-blue:#1e90ff;--admin-ink:#1b2e50;--admin-muted:#64748b;--admin-line:#e0e9f6;--admin-shadow:0 8px 28px rgba(20,40,70,.045)}
-body{font-family:Manrope,system-ui,Arial,sans-serif!important;background:#f7f9fc!important;color:var(--admin-ink)!important;-webkit-font-smoothing:antialiased}
-header{background:#fff!important;border-bottom:1px solid var(--admin-line)!important;padding-top:0!important;padding-bottom:0!important}
-.admin-brand{font-family:Manrope,system-ui,sans-serif!important;font-weight:700!important;font-size:20px!important;letter-spacing:-.5px!important;line-height:1!important;color:#0F172A!important}
-.admin-brand span{font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;color:inherit!important}
-.website-link{font-size:12px!important;font-weight:600!important}
-/* Match Project Details header Back button */
-header .website-link{height:40px!important;min-height:40px!important;max-height:40px!important;width:auto!important;min-width:40px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;padding:0 4px!important;background:transparent!important;border:0!important;border-radius:0!important;font-family:Manrope,system-ui,sans-serif!important;font-size:13px!important;font-weight:500!important;line-height:1!important;color:#64748B!important;text-decoration:none!important}
-header .website-link svg{width:20px!important;height:20px!important;flex:0 0 20px!important}
-header .website-link:hover{background:transparent!important;color:#1E90FF!important}
-main{max-width:1120px!important;margin-top:15px!important}
-.editor-page-heading{margin-bottom:0!important;padding-left:7px!important}
-.editor-page-heading h1{font-size:20px!important;font-weight:700!important;letter-spacing:-0.7px!important;color:var(--admin-ink)!important}
-.layout{gap:20px!important;align-items:start}
-.panel{background:#fff!important;border:1px solid var(--admin-line)!important;border-radius:20px!important;padding:20px!important;box-shadow:var(--admin-shadow)!important}
-.heading h2{font-size:16px!important;font-weight:700!important;letter-spacing:-.3px!important;color:var(--admin-ink)!important}
-.section{border-color:var(--admin-line)!important;margin-top:22px!important;padding-top:20px!important}
-.fields{gap:14px!important}
-label{font-size:11px!important;font-weight:700!important;color:#718096!important;letter-spacing:.4px!important}
-input,select,textarea{border:1px solid #e0e8f1!important;border-radius:10px!important;background:#fff!important;color:var(--admin-ink)!important;font-family:inherit!important;font-size:13px!important;min-height:42px!important;padding:10px 12px!important}
-input:focus,select:focus,textarea:focus{outline:2px solid rgba(30,144,255,.28)!important;outline-offset:1px!important;border-color:var(--admin-blue)!important}
-.btn{font-family:inherit!important;font-size:12px!important;font-weight:700!important;border-radius:9px!important;min-height:38px!important;padding:9px 13px!important}
-.btn.alt{background:#eff6ff!important;color:#1e90ff!important}
-.btn.light{background:#fff!important;color:#334155!important;border:1px solid #e2e8f0!important}
-.entry{border:1px solid #e6edf5!important;background:#fafcff!important;border-radius:11px!important;padding:12px!important}
-.entry.active{border-color:#a8d5ff!important;background:#eff6ff!important}
-.item{border:1px solid #e5ebf3!important;background:#fbfcfe!important;border-radius:12px!important;padding:13px!important}
-.notice{background:#eff6ff!important;border-color:#d8e9ff!important;color:#173d6b!important;border-radius:12px!important}
-.editor-shell{border-color:#e3eaf2!important;border-radius:12px!important;box-shadow:none!important}
-.editor-toolbar{background:#f8fafd!important;border-bottom-color:#e3eaf2!important}
-.editor-toolbar button{font-family:inherit!important;font-weight:600!important;color:#334155!important;border-color:#e2e8f0!important}
-.guide-editor{font-family:inherit!important;color:var(--admin-ink)!important}
-#loginBox{border-color:var(--admin-line)!important;box-shadow:0 12px 40px rgba(20,40,70,.06)!important}
-#loginBox h2{color:var(--admin-ink)!important}
-#loginForm input{min-height:50px!important;font-size:16px!important}
-#loginForm label{font-size:13px!important;letter-spacing:0!important;color:#344861!important}
-#loginForm .btn{min-height:50px!important;font-size:14px!important}
-@media(max-width:760px){
- main{margin-top:15px!important;padding:0 15px 30px!important}
- .layout{grid-template-columns:minmax(0,1fr)!important;gap:20px!important}
- .panel{padding:20px!important}
- .editor-page-heading h1{font-size:22px!important}
- .fields{gap:12px!important}
-}
-@media(max-width:400px){.panel{padding:16px!important}.actions{gap:7px!important}}
-.guide-panel{display:none;margin-top:20px;margin-left:300px}.layout:has(#form:not([hidden]))+.guide-panel{display:block}@media(max-width:760px){.guide-panel{margin-left:0}}
-#adminExtraPanels{display:none;margin-top:20px;margin-left:300px} .layout:has(#form:not([hidden])) + #adminExtraPanels{display:block}#adminExtraPanels #projectGuidePanel + #investorsEditorPanel{margin-top:20px!important;margin-bottom:0!important}#adminExtraPanels #investorsEditorPanel>.section{margin-top:0!important;padding-top:0!important;border-top:0!important}#adminExtraPanels #projectGuidePanel{display:block;margin:0!important}@media(max-width:760px){#adminExtraPanels{margin-left:0}}
-
-.ag-investor-editor-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.ag-investor-editor-heading h2{margin:0}.ag-investor-editor-list{display:grid;gap:12px}.ag-investor-editor-item{display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:12px;align-items:start;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#F8FAFC}.ag-investor-photo{width:64px;height:64px;border:1px dashed #94A3B8;border-radius:12px;background:white;display:grid;place-items:center;overflow:hidden;cursor:pointer;color:#64748B;font-size:11px;text-align:center}.ag-investor-photo img{width:100%;height:100%;object-fit:contain}.ag-investor-fields{display:grid;gap:10px;min-width:0}.ag-investor-fields label{display:grid;gap:5px;font-size:12px;font-weight:600;color:#64748B}.ag-investor-fields input{width:100%;min-width:0;height:40px;padding:0 12px;border:1px solid #E2E8F0;border-radius:10px;background:white;color:#1B2E50;font:500 13px Manrope,sans-serif}.ag-investor-remove{border:0;background:transparent;color:#64748B;cursor:pointer;font-size:20px;padding:2px 6px}@media(max-width:480px){.ag-investor-editor-item{grid-template-columns:56px minmax(0,1fr) auto;gap:8px;padding:10px}.ag-investor-photo{width:54px;height:54px}.ag-investor-editor-heading .btn{font-size:11px;padding:9px}}
-
-/* Position sign-in branding in the top-left corner. */
-body:has(#loginBox:not([hidden])) .login-brand{position:absolute;top:20px;left:20px;justify-content:flex-start;margin:0}
-body:has(#loginBox:not([hidden])) .login-brand img{width:40px;height:40px}
-body:has(#loginBox:not([hidden])) .login-shell{padding-top:64px}
-.ag-investor-editor-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}#investorsEditorPanel #agInvestorsNA{display:none!important}.ag-investor-editor-heading{flex-wrap:wrap}.ag-investor-editor-actions .btn{white-space:nowrap}.ag-investor-editor-actions #agSetInvestorsNA[aria-pressed="true"]{background:#1E90FF!important;color:#fff!important;border-color:#1E90FF!important}
-#investorsEditorPanel>.section{border-top:0!important}#investorsEditorPanel .ag-investor-editor-heading{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important}#investorsEditorPanel .ag-investor-editor-actions{margin-left:auto;flex-wrap:nowrap!important}#investorsEditorPanel .ag-investor-editor-heading h2{font-size:clamp(15px,2vw,20px)!important}
-</style>
-<style>
-.ag-task-manager{display:grid;gap:12px;margin:14px 0;padding:15px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}.ag-task-manager-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.ag-task-tabs{display:flex;flex-wrap:wrap;gap:8px}.ag-task-tabs button{border:1px solid #e2e8f0;background:white;border-radius:8px;padding:8px 12px;color:#334155;cursor:pointer}.ag-task-tabs button.active{border-color:#1e90ff;color:#1e90ff;background:#eff6ff}.ag-task-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ag-task-fields label{font-size:12px;color:#64748b}.ag-task-fields input,.ag-task-fields select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px;border:1px solid #e2e8f0;border-radius:8px;background:white;color:#0f172a}@media(max-width:600px){.ag-task-fields{grid-template-columns:1fr}}
-
-/* Project Editor heading: consistent sizing on mobile and desktop */
-.editor-page-heading h1{font-size:20px!important;letter-spacing:-0.7px!important}
-header .admin-header-logout{display:inline-flex;align-items:center;justify-content:center;height:40px;min-width:40px;padding:0 4px;border:0;background:transparent;color:#172B49;font-family:Manrope,system-ui,sans-serif;font-size:15px;font-weight:600;cursor:pointer}header .admin-header-logout:hover{color:#1E90FF;background:transparent}header .admin-header-logout[hidden]{display:none!important}
-
-/* Project Editor spacing */
-.editor-page-heading{margin-bottom:10px!important}
-#dashboard>.dashboard-toolbar{margin-bottom:0!important}
-
-/* Top Airdrops heading */
-#trendingManager .heading h2{font-size:20px!important;font-weight:600!important;letter-spacing:-0.5px!important}
-#trendingManager{padding-top:15px!important;padding-left:25px!important}
-
-/* Top Airdrops selected counter */
-#trendingState{font-size:12px!important;font-weight:500!important;margin-top:0!important;padding-top:0!important;align-self:flex-start!important}
-
-/* Top Airdrops Add project label */
-#trendingManager label[for="trendingSelect"]{font-size:12px!important;font-weight:600!important;letter-spacing:-0.5px!important}
-
-/* Select Project label to dropdown spacing */
-#trendingManager label[for="trendingSelect"]{margin-bottom:3px!important}
-
-/* Select Project dropdown dimensions */
-#trendingSelect{height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;border-radius:12px!important;font-size:12px!important}
-
-/* Project selector: 20px horizontal content insets and no blue focus ring */
-#trendingSelect{padding-left:20px!important;padding-right:48px!important}
-#trendingSelect:focus,#trendingSelect:focus-visible,#trendingSelect:active{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-color:#e0e8f1!important}
-
-#trendingSelect{font-weight:500!important}
-
-/* Consistent 25px left inset for Top Airdrops heading and Select Project label */
-#trendingManager{padding-left:25px!important}
-#trendingManager .fields,#trendingManager .field,#trendingManager label[for="trendingSelect"]{margin-left:0!important;padding-left:0!important}
-
-/* Top Airdrops action buttons */
-#trendingManager #setTrending,#trendingManager #saveTrending,#trendingManager #clearTrending{font-size:15px!important;font-weight:500!important;height:35px!important;min-height:35px!important;box-sizing:border-box!important;padding:10px 15px!important;line-height:15px!important}
-
-/* Compact expandable Top Airdrops project list */
-#trendingDisclosure{margin-top:14px;border:1px solid #e0e8f1;border-radius:12px;overflow:hidden;background:#fff}
-#trendingDisclosure>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:10px 15px;color:#1b2e50;font-size:12px;font-weight:600;user-select:none}
-#trendingDisclosure>summary::-webkit-details-marker{display:none}
-#trendingDisclosure>summary:focus,#trendingDisclosure>summary:focus-visible{outline:none;box-shadow:none}
-#trendingDisclosure .trending-chevron{font-size:19px;line-height:1;transition:transform .15s ease}
-#trendingDisclosure[open] .trending-chevron{transform:rotate(180deg)}
-#trendingCurrent{padding:0 12px 12px;display:grid;gap:10px}
-#trendingCurrent .item{margin:0!important}
-
-/* Search-based Top Airdrops project picker */
-#trendingSelect{appearance:auto!important;-webkit-appearance:auto!important;background-image:none!important;padding-right:15px!important}
-#trendingSearchResults[hidden]{display:none!important}
-#trendingSearchResults{margin-top:8px;border:1px solid #e0e8f1;border-radius:12px;background:#fff;overflow:hidden;max-height:240px;overflow-y:auto}
-#trendingSearchResults button{display:block;width:100%;border:0;border-bottom:1px solid #eef2f7;background:#fff;color:#1b2e50;text-align:left;padding:12px 15px;font-family:inherit;font-size:12px;font-weight:500;cursor:pointer}
-#trendingSearchResults button:last-child{border-bottom:0}
-#trendingSearchResults button:hover,#trendingSearchResults button:focus-visible{background:#eff6ff;outline:none}
-#trendingSearchResults .trending-empty{padding:12px 15px;color:#64748b;font-size:12px}
-
-/* Match Search Project and Selected Projects field appearance */
-#trendingSelect,#trendingDisclosure>summary{height:40px!important;min-height:40px!important;box-sizing:border-box!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:13px!important;font-weight:500!important;color:#1b2e50!important;padding-top:0!important;padding-bottom:0!important;padding-left:20px!important}
-#trendingSelect,#trendingDisclosure{border-radius:12px!important;border:1px solid #e0e8f1!important;background:#fff!important}
-#trendingDisclosure>summary{padding-right:15px!important}
-
-/* Delete All: red destructive action */
-#trendingManager #clearTrending{background:#DC2626!important;color:#FFFFFF!important;border-color:#DC2626!important}
-#trendingManager #clearTrending:hover{background:#B91C1C!important;border-color:#B91C1C!important}
-
-/* Unified neutral borders for admin inputs, cards, list boxes and outlined controls */
-#dashboard input:not([type="checkbox"]):not([type="radio"]),#dashboard select,#dashboard textarea,#dashboard .panel,#dashboard .item,#dashboard .entry:not(.active),#dashboard .btn.light,#dashboard .editor-toolbar button,#dashboard .guide-editor,#dashboard .guide-editor .guide-step-box,#trendingDisclosure,#trendingSearchResults{border-color:#e0e9f6!important}
-#dashboard input:focus,#dashboard select:focus,#dashboard textarea:focus{border-color:var(--admin-blue)!important}
-#trendingManager #clearTrending{border-color:#dc2626!important}
-
-#trendingDisclosure .trending-chevron{width:18px;height:18px;flex-shrink:0;transition:transform .15s ease}
-
-/* Keep Selected Projects disclosure neutral on hover and press */
-#trendingDisclosure>summary:hover,#trendingDisclosure>summary:active,#trendingDisclosure>summary:focus,#trendingDisclosure>summary:focus-visible{background:#fff!important;color:#1b2e50!important;border-color:#e0e9f6!important;box-shadow:none!important;outline:none!important;filter:none!important}
-#trendingDisclosure>summary:hover .trending-chevron,#trendingDisclosure>summary:active .trending-chevron{color:inherit!important;stroke:currentColor!important}
-
-/* Fixed height for each selected Top Airdrops project row */
-#trendingCurrent .item{height:50px!important;min-height:50px!important;box-sizing:border-box!important;padding-top:4px!important;padding-bottom:4px!important}
-
-/* Equal 20px side spacing for the Top Airdrops search and selected-project boxes */
-#trendingManager #trendingSelect,#trendingManager #trendingDisclosure{display:block!important;width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;box-sizing:border-box!important}
-
-/* Symmetric card insets: align search, actions, and selected-project list */
-#trendingManager{padding-left:25px!important;padding-right:25px!important;box-sizing:border-box!important}
-#trendingManager>.fields,#trendingManager>.actions,#trendingManager>#trendingDisclosure{width:100%!important;max-width:100%!important;box-sizing:border-box!important;margin-left:0!important;margin-right:0!important}
-#trendingManager .fields>.field{min-width:0!important;width:100%!important;box-sizing:border-box!important}
-#trendingManager #trendingSelect,#trendingManager #trendingDisclosure{width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;box-sizing:border-box!important}
-
-/* Selected Projects: equal square controls */
-#trendingCurrent .item .actions button[data-move],#trendingCurrent .item .actions button[data-remove]{width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;box-sizing:border-box!important;padding:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 30px!important;line-height:1!important}
-
-/* Selected project icon controls: 10px gaps and 10px icons */
-#trendingCurrent .item .actions{gap:10px!important}
-#trendingCurrent .item .actions button[data-move],#trendingCurrent .item .actions button[data-remove]{font-size:10px!important}
-
-/* Selected Projects icon-only actions: no square backgrounds or borders */
-#trendingCurrent .item .actions{gap:15px!important}
-#trendingCurrent .item .actions button[data-move],#trendingCurrent .item .actions button[data-remove]{width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;outline-offset:2px;font-size:15px!important;font-weight:500!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
-#trendingCurrent .item .actions button[data-move]{color:#64748b!important}
-#trendingCurrent .item .actions button[data-remove]{color:#dc2626!important}
-#trendingCurrent .item .actions button[data-move]:hover,#trendingCurrent .item .actions button[data-remove]:hover{background:transparent!important;box-shadow:none!important;filter:none!important}
-
-/* Equal 20px card-edge spacing for search and selected project boxes */
-#trendingManager{padding-left:20px!important;padding-right:20px!important}
-#trendingManager #trendingSelect,#trendingManager #trendingDisclosure{width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;box-sizing:border-box!important}
-
-/* Align Save Top action row with the 20px card inset */
-#trendingManager>.actions{margin-left:0!important;padding-left:0!important}
-
-/* Align Save Top action row with 20px card padding */
-#trendingManager>.actions{margin-left:0!important;padding-left:0!important}
-
-/* Keep Selected Projects disclosure neutral on hover, tap and keyboard focus */
-#dashboard #trendingManager #trendingDisclosure,
-#dashboard #trendingManager #trendingDisclosure:hover,
-#dashboard #trendingManager #trendingDisclosure:focus-within,
-#dashboard #trendingManager #trendingDisclosure>summary,
-#dashboard #trendingManager #trendingDisclosure>summary:hover,
-#dashboard #trendingManager #trendingDisclosure>summary:active,
-#dashboard #trendingManager #trendingDisclosure>summary:focus,
-#dashboard #trendingManager #trendingDisclosure>summary:focus-visible{
- background:#fff!important;background-color:#fff!important;color:#1b2e50!important;border-color:#e0e9f6!important;box-shadow:none!important;filter:none!important;outline:none!important;
- -webkit-tap-highlight-color:transparent;
-}
-
-/* All Projects — match Top Airdrops visual design without changing behavior */
-#allProjectsManager{padding:15px 20px 20px!important}
-#allProjectsManager .heading h2{font-size:15px!important;font-weight:700!important;letter-spacing:-0.5px!important;color:#1b2e50!important}
-#allProjectsManager .heading small{font-size:12px!important;font-weight:500!important;color:#64748b!important}
-#allProjectsManager #search{display:block!important;width:100%!important;height:40px!important;min-height:40px!important;padding:0 20px!important;border:1px solid #e0e9f6!important;border-radius:12px!important;background:#fff!important;color:#1b2e50!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:13px!important;font-weight:500!important;box-sizing:border-box!important}
-#allProjectsManager #search:focus,#allProjectsManager #search:focus-visible{outline:none!important;box-shadow:none!important;border-color:#e0e9f6!important}
-#allProjectsManager .list .entry{border:1px solid #e0e9f6!important;border-radius:12px!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important}
-#allProjectsManager #add{height:35px!important;min-height:35px!important;padding:10px 15px!important;box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:500!important;line-height:15px!important}
-
-/* Unified admin editor visual system — Top Airdrops reference */
-#projectEditorPanel,#projectGuidePanel{padding:15px 20px 20px!important;border-color:#e0e9f6!important}
-#projectEditorPanel .heading h2,#projectGuidePanel .heading h2{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:700!important;letter-spacing:-.5px!important;color:#1b2e50!important}
-#projectEditorPanel .fields{column-gap:14px!important;row-gap:15px!important;margin-top:20px!important}
-#projectEditorPanel .field{gap:6px!important;min-width:0!important}
-#projectEditorPanel .field>label,#projectGuidePanel .ag-task-fields label{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:600!important;letter-spacing:-.5px!important;text-transform:none!important;color:#64748b!important}
-#projectEditorPanel input:not([type="hidden"]):not([type="file"]),#projectEditorPanel select,#projectEditorPanel textarea,#projectEditorPanel #links input,#projectGuidePanel .ag-task-fields input,#projectGuidePanel .ag-task-fields select{height:40px!important;min-height:40px!important;max-width:100%!important;padding:0 15px!important;border:1px solid #e0e9f6!important;border-radius:12px!important;background:#fff!important;color:#1b2e50!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important;box-sizing:border-box!important}
-#projectEditorPanel input:focus,#projectEditorPanel select:focus,#projectEditorPanel textarea:focus,#projectGuidePanel .ag-task-fields input:focus,#projectGuidePanel .ag-task-fields select:focus{border-color:#1e90ff!important;outline:none!important;box-shadow:none!important}
-#projectEditorPanel .field small,#projectGuidePanel .ag-task-fields small{font-size:12px!important;font-weight:400!important;letter-spacing:0!important;color:#64748b!important}
-#projectEditorPanel .section,#projectGuidePanel .section{border-color:#e0e9f6!important;margin-top:20px!important;padding-top:20px!important}
-#projectEditorPanel .btn,#projectGuidePanel .btn{min-height:35px!important;padding:8px 15px!important;border-radius:10px!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:500!important;line-height:19px!important}
-#projectEditorPanel .btn.light,#projectGuidePanel .btn.light{border-color:#e0e9f6!important}
-#projectEditorPanel .bottom{border-color:#e0e9f6!important}
-#projectEditorPanel #logoFile{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;color:#64748b!important;border:1px solid #e0e9f6!important;border-radius:12px!important;padding:10px!important;background:#fff!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important}
-#projectEditorPanel #logoPreview{border:1px solid #e0e9f6!important;border-radius:12px!important}
-#projectGuidePanel .editor-toolbar button{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important;border-color:#e0e9f6!important;border-radius:10px!important;background:#fff!important}
-#projectGuidePanel .editor-shell,#projectGuidePanel .guide-editor,#projectGuidePanel .ag-task-manager{border-color:#e0e9f6!important;border-radius:12px!important}
-#projectGuidePanel .ag-task-manager{background:#f8fafc!important}
-#projectGuidePanel .ag-task-manager-head strong{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:700!important;letter-spacing:-.5px!important;color:#1b2e50!important}
-#projectGuidePanel .ag-task-tabs button{border-color:#e0e9f6!important;border-radius:10px!important;font-size:12px!important}
-#projectGuidePanel .guide-editor{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;line-height:1.7!important;color:#1b2e50!important}
-
-/* 20px vertical space between All Projects item borders */
-#allProjectsManager .list .entry{margin-top:0!important;margin-bottom:20px!important}
-#allProjectsManager .list .entry:last-child{margin-bottom:0!important}
-
-/* Collapsible All Projects list, consistent with Top Airdrops */
-#allProjectsDisclosure{margin:15px 0 20px!important;border:1px solid #e0e9f6!important;border-radius:12px!important;background:#fff!important;overflow:hidden!important}
-#allProjectsDisclosure>summary{list-style:none!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;height:40px!important;min-height:40px!important;padding:0 15px 0 20px!important;background:#fff!important;color:#1b2e50!important;font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:12px!important;font-weight:500!important;user-select:none!important;-webkit-tap-highlight-color:transparent!important}
-#allProjectsDisclosure>summary::-webkit-details-marker{display:none!important}
-#allProjectsDisclosure>summary:hover,#allProjectsDisclosure>summary:focus,#allProjectsDisclosure>summary:focus-visible,#allProjectsDisclosure>summary:active{background:#fff!important;color:#1b2e50!important;outline:none!important;box-shadow:none!important;filter:none!important}
-#allProjectsDisclosure .trending-chevron{width:18px!important;height:18px!important;flex-shrink:0!important;transition:transform .15s ease!important}
-#allProjectsDisclosure[open] .trending-chevron{transform:rotate(180deg)!important}
-#allProjectsDisclosure #list{max-height:360px!important;overflow-y:auto!important;overscroll-behavior:contain!important;margin:0!important;padding:0 12px 12px!important}
-#allProjectsDisclosure #list .entry{margin-top:0!important;margin-bottom:20px!important}
-#allProjectsDisclosure #list .entry:last-child{margin-bottom:0!important}
-
-/* All Projects rows with Lucide reorder and delete actions */
-#allProjectsManager .project-list-row{display:flex;align-items:center;gap:10px;min-width:0;border:1px solid #e0e9f6;border-radius:12px;background:#fff;padding:8px 10px;margin-bottom:20px}
-#allProjectsManager .project-list-row:last-child{margin-bottom:0}
-#allProjectsManager .project-list-row .entry{flex:1;min-width:0;width:auto!important;margin:0!important;border:0!important;background:transparent!important;padding:4px!important;text-align:left!important}
-#allProjectsManager .project-list-row .entry.active{color:#1e90ff!important}
-#allProjectsManager .project-list-actions{display:flex;align-items:center;gap:15px;flex-shrink:0}
-#allProjectsManager .project-list-actions button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;min-width:30px;padding:0;border:0;background:transparent;color:#64748b;cursor:pointer;-webkit-tap-highlight-color:transparent}
-#allProjectsManager .project-list-actions button[data-project-delete]{color:#dc2626}
-#allProjectsManager .project-list-actions button:disabled{opacity:.35;cursor:default}
-#allProjectsManager .project-list-actions button:hover{background:transparent;filter:none}
-#allProjectsManager .project-list-actions svg{width:15px;height:15px;flex-shrink:0}
-
-/* Keep All Projects actions inside each project name box, right aligned */
-#allProjectsManager .project-list-row{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:nowrap!important;gap:8px!important;min-width:0!important;padding:8px 12px!important}
-#allProjectsManager .project-list-row>.entry{flex:1 1 auto!important;min-width:0!important;max-width:none!important;margin:0!important}
-#allProjectsManager .project-list-row>.project-list-actions{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:nowrap!important;gap:10px!important;flex:0 0 auto!important;width:auto!important;max-width:none!important;margin:0!important;padding:0!important}
-#allProjectsManager .project-list-row>.project-list-actions button{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 30px!important;width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#64748b!important}
-#allProjectsManager .project-list-row>.project-list-actions button[data-project-delete]{color:#dc2626!important}
-#allProjectsManager .project-list-row>.project-list-actions button:disabled{opacity:.35!important}
-
-/* Guide Editor heading aligned to card top-left, without divider */
-#projectGuidePanel>.section{border-top:0!important;margin-top:0!important;padding-top:0!important}
-#projectGuidePanel>.section>.heading{margin:0 0 15px!important;padding:0!important;justify-content:flex-start!important}
-#projectGuidePanel>.section>.heading h2{margin:0!important;font-size:15px!important;font-weight:700!important;letter-spacing:-.5px!important;color:#1b2e50!important;text-align:left!important}
-
-/* Task Card heading matches Top Airdrops and All Projects */
-#projectGuidePanel .ag-task-manager-head strong{font-family:Manrope,system-ui,Arial,sans-serif!important;font-size:15px!important;font-weight:700!important;letter-spacing:-0.5px!important;line-height:1.4!important;color:#1b2e50!important}
-
-/* Native dropdown arrows replaced by Lucide ChevronDown, inset 20px */
-#projectEditorPanel select,#projectGuidePanel .ag-task-fields select{
- appearance:none!important;-webkit-appearance:none!important;
- padding-right:40px!important;
- background-color:#fff!important;
- background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231b2e50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")!important;
- background-repeat:no-repeat!important;
- background-position:right 15px center!important;
- background-size:16px 16px!important;
-}
-.admin-panel-intro{margin:15px 0 15px;color:#172B49;text-align:center}.admin-panel-intro h1{margin:0;color:#172B49;font:700 25px/1.2 Manrope,system-ui,sans-serif;letter-spacing:-0.5px}.admin-panel-intro .admin-panel-accent{color:#1E90FF}.admin-panel-intro p{margin:5px 0 0;color:#64748B;font:400 13px/1.5 Manrope,system-ui,sans-serif}
-</style>
-</head>
-<body>
-<header><a class="admin-brand" href="index.html" aria-label="Airgem Home"><img src="airgem-logo.png" alt="" width="40" height="40"><span>Airgem</span></a><button id="logout" class="admin-header-logout" type="button" hidden>Log Out</button></header>
-<main>
-
-<div class="login-shell"><div class="login-brand"><img src="airgem-logo.png" alt="" width="40" height="40"><span>Airgem <span class="login-brand-admin">Admin</span></span></div>
-<section id="loginBox" class="panel" aria-labelledby="loginHeading">
-<h2 id="loginHeading">Sign In</h2>
-<p class="login-description">Welcome Back! Please Enter Your Details.</p>
-<form id="loginForm">
-<div class="field"><label for="email">Email Address</label><input id="email" type="email" autocomplete="username" placeholder="Enter Your Email" autocapitalize="none" spellcheck="false" required></div>
-<div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter Your Password" required></div>
-<div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div><p style="font-size:12px;margin:0">Complete The Security Check To Sign In.</p></div>
-<button class="btn" type="submit">Sign In <span aria-hidden="true">→</span></button>
-<p id="loginError" role="alert" aria-live="polite"></p>
-</form>
-<p class="login-footer">Authorized Personal Only</p><p class="login-copyright">© 2026 Airgem. All Rights Reserved.</p>
-</section></div>
-<section id="mfaBox" class="panel" hidden aria-labelledby="mfaHeading" style="max-width:520px;margin:24px auto;text-align:center">
-<h2 id="mfaHeading">Two-Factor Authentication</h2>
-<p id="mfaInstructions">Enter The 6-Digit Code From Your Authenticator App.</p>
-<img id="mfaQr" alt="Authenticator Setup QR Code" hidden style="width:190px;height:190px;max-width:100%;margin:12px auto;display:block">
-<p id="mfaSecret" style="overflow-wrap:anywhere;font-family:monospace"></p>
-<form id="mfaForm"><div class="field"><label for="mfaCode">Authenticator Code</label><input id="mfaCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="000000"></div><button class="btn" type="submit">Verify Code</button></form>
-<p id="mfaError" role="alert" aria-live="polite"></p>
-<button id="mfaCancel" type="button" class="btn light">Cancel</button>
-</section>
-<div id="dashboard" hidden><div class="ag-dashboard-shell"><aside class="ag-dashboard-sidebar" aria-label="Dashboard navigation"><div class="ag-sidebar-brand"><img src="airgem-logo.png" alt="" width="36" height="36"><strong>Airgem</strong></div><nav class="ag-side-nav"><button type="button" data-go-tab="projects" class="is-active">Dashboard</button><button type="button" data-go-tab="projects">Projects</button><button type="button" data-go-tab="top">Top Airdrops</button><button type="button" data-go-tab="guide">Guides & Tasks</button><button type="button" data-go-tab="investors">Investors</button></nav><a class="ag-view-site" href="/" target="_blank" rel="noopener">View Website ↗</a></aside><div class="ag-dashboard-content"><div class="admin-panel-intro"><h1>Dashboard</h1><p>Manage your projects and content in one place.</p></div><div class="ag-stats-grid"><div class="ag-stat"><span>Total Projects</span><strong id="agStatProjects">—</strong></div><div class="ag-stat"><span>Top Airdrops</span><strong id="agStatTop">—</strong></div><div class="ag-stat"><span>Categories</span><strong id="agStatCategories">—</strong></div><div class="ag-stat"><span>Editor</span><strong>Ready</strong></div></div><div class="ag-dashboard-actions"><strong>Project Management</strong><button type="button" class="btn" id="agQuickAdd">+ Add New Project</button></div><div class="dashboard-toolbar" style="display:flex;justify-content:flex-end;margin-bottom:0"><button id="mfaSetup" type="button" class="btn light">Enable Two-Factor Authentication</button></div>
-
-<section class="panel" id="trendingManager" style="margin-bottom:20px">
-<div class="heading"><h2>Top Airdrops</h2><small id="trendingState">0 / 10 Selected</small></div>
-
-<div class="fields"><div class="field wide"><label for="trendingSelect">Search Projects</label><input id="trendingSelect" type="search" placeholder="Search A Project..." autocomplete="off" aria-controls="trendingSearchResults" aria-expanded="false"><div id="trendingSearchResults" class="trending-search-results" hidden></div></div></div>
-<div class="actions" style="margin-top:12px"><button class="btn" id="saveTrending" type="button">Save Top</button><button class="btn danger" id="clearTrending" type="button">Delete All</button></div>
-<details id="trendingDisclosure" class="trending-disclosure"><summary><span id="trendingDisclosureLabel">Selected Projects (0/10)</span><svg class="trending-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div id="trendingCurrent" aria-live="polite"></div></details><p id="trendingMessage" role="status"></p>
-</section>
-<nav class="ag-admin-tabs" id="agAdminTabs" aria-label="Admin sections"><button type="button" data-admin-tab="projects">Projects</button><button type="button" data-admin-tab="basic">Basic Info</button><button type="button" data-admin-tab="details">Details</button><button type="button" data-admin-tab="links">Social Links</button><button type="button" data-admin-tab="guide">Guide & Tasks</button><button type="button" data-admin-tab="investors">Investors</button><button type="button" data-admin-tab="top">Top Airdrops</button></nav>
-<div class="layout">
-<aside class="panel" id="allProjectsManager"><div class="heading"><h2>All Projects</h2><small id="count"></small></div>
-<div class="fields"><div class="field wide"><label for="search">Search Projects</label><input id="search" placeholder="Search A Project..." autocomplete="off"></div></div>
-<details id="allProjectsDisclosure" open><summary><span>Project List</span><svg class="trending-chevron" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div id="list" class="list"></div></details><button id="add" type="button" class="btn">+ Add Project</button></aside>
-<section class="panel" id="projectEditorPanel"><nav class="ag-editor-nav" aria-label="Project editor sections"><button type="button" data-editor-tab="basic">Basic Info</button><button type="button" data-editor-tab="details">Details</button><button type="button" data-editor-tab="links">Social Links</button><button type="button" data-editor-tab="guide">Guide & Tasks</button><button type="button" data-editor-tab="investors">Investors</button></nav><div class="heading"><h2 id="title">Edit Project</h2><button id="remove" type="button" class="btn danger">Delete</button></div>
-<form id="form" hidden><div class="fields">
-<div class="field"><label>Project Name</label><input id="name" required></div>
-<div class="field"><label>Project Subtitle / Custom Tag</label><input id="displayTag" placeholder="Mainnet Spot & Future Trading"></div>
-<div class="field"><label for="task">Type</label><input id="task" type="text" placeholder="Testnet, Mainnet, Points, Whitelist" autocomplete="off"></div>
-<div class="field"><label>Reward</label><input id="status" type="text" placeholder="Enter reward" autocomplete="off"></div>
-<div class="field"><label>Status</label><select id="activityStatus"><option value="Active">Active</option><option value="Ended">Ended</option></select></div>
-
-<div class="field"><label>Funding</label><input id="funding"></div>
-<div class="field"><label>Cost</label><input id="cost" placeholder="Free / $5 / Gas Fee"></div>
-
-<div class="field"><label>Time</label><input id="timeEstimate" placeholder="5 Min / 30 Min / 1 Hour"></div>
-<div class="field"><label>Added</label><input id="addedOn" type="date"></div>
-
-<div class="field"><label>Effort</label><select id="effort"><option value="">Select Effort</option><option>Low</option><option>Medium</option><option>High</option></select></div>
-<div class="field"><label>TGE</label><input id="tge" placeholder="TBA / Q4 2026"></div>
-<div class="field"><label>Chain</label><input id="ecosystem" placeholder="Base"></div>
-<div class="field wide"><label>Upload Logo from Gallery</label><input id="logoFile" type="file" accept="image/*"><small>Maximum 5 MB.</small><button id="clearLogo" type="button" class="btn light">Remove Uploaded Logo</button></div>
-<!-- Internal values retained for uploaded logo and existing project colors; fields hidden from Admin UI. -->
-<input id="logoUrl" type="hidden">
-<input id="color" type="hidden" value="#1E90FF">
-<div class="field"><label>Logo Preview</label><div id="logoPreview">?</div></div>
-
-</div>
-<div class="section"><div class="heading"><h2>Social & Official Links</h2></div><div id="links"></div></div>
-<div class="bottom"><span id="message" role="status"></span><button type="submit" class="btn">Publish Changes</button></div>
-</form></section></div><div class="guide-panel" id="adminExtraPanels"><section class="panel" id="projectGuidePanel"><div class="section"><div class="ag-task-manager"><div class="ag-task-manager-head"><strong>Task Card</strong><button type="button" id="agTaskAdd" class="btn light">+ Add Task</button></div><div id="agTaskTabs" class="ag-task-tabs"></div><div class="ag-task-fields"><label>Task Title<input id="agTaskTitle" type="text" placeholder="e.g. Waitlist"></label><label>Task Status<select id="agTaskStatus"><option>Active</option><option>Ended</option><option>Upcoming</option></select></label><label>Subtitle<input id="agTaskDate" type="text" placeholder="Write any subtitle... "></label><label>Task Tag<input id="agTaskTag" type="text" placeholder="e.g. Fill The Form"></label></div><button type="button" id="agTaskRemove" class="btn danger">Remove Selected Task</button></div>
-<div class="heading"><h2>Guide Editor</h2></div>
-<div class="editor-shell"><div class="editor-toolbar" id="guideToolbar" role="toolbar" aria-label="Guide formatting">
-<div class="toolbar-row"><button type="button" data-cmd="formatBlock" data-val="p" title="Normal text">Text</button><button type="button" data-cmd="bold" title="Bold">Bold</button><button type="button" id="guideLink" title="Add link">Link</button></div>
-<div class="toolbar-row"><button type="button" data-cmd="justifyLeft" title="Align left">Left</button><button type="button" data-cmd="justifyCenter" title="Align center">Center</button><button type="button" data-cmd="justifyRight" title="Align right">Right</button></div>
-<div class="toolbar-row"><button type="button" id="guideStepBox" title="Insert Step Box with optional link">Step Box</button><button type="button" id="guideDaily" title="Add daily task update box">Update Box</button><button type="button" id="guideNote" title="Add editable important note">Note Box</button></div>
-<div class="toolbar-row"><button type="button" id="guideImage" title="Upload image from gallery">Image</button><button type="button" id="guidePreview" title="Preview guide">Preview</button><button type="button" id="guideClear" title="Remove formatting">Clear</button></div></div>
-</div><div id="guideEditor" class="guide-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Write your complete project guide here..."></div></div>
-<input id="guideImageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
-</section><section class="panel" id="investorsEditorPanel"><div class="section"><div class="ag-investor-editor-heading"><h2>Investors</h2><div class="ag-investor-editor-actions"><button type="button" id="agAddInvestor" class="btn light">+ Add Investors</button><button type="button" id="agSetInvestorsNA" class="btn light" aria-pressed="false">N/A</button></div></div><input id="agInvestorsNA" type="checkbox" hidden aria-label="No investors"><input id="investors" type="hidden"><div id="agInvestorList" class="ag-investor-editor-list"></div></div></section></div></div></div></div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="supabase-config.js"></script>
-<script src="supabase-data.js"></script>
-<div id="guidePreviewOverlay" role="dialog" aria-modal="true" aria-label="Project guide preview" aria-hidden="true"><div id="guidePreviewPanel"><div id="guidePreviewHead"><strong>Project Guide Preview</strong><button type="button" id="guidePreviewClose">Close ✕</button></div><div id="guidePreviewContent" class="guide-editor"></div></div></div>
-<script>
-(function(){
-  const openButton=document.getElementById('guidePreview');
-  const overlay=document.getElementById('guidePreviewOverlay');
-  const closeButton=document.getElementById('guidePreviewClose');
-  const content=document.getElementById('guidePreviewContent');
-  const editor=document.getElementById('guideEditor');
-  let previousFocus=null;
-  function close(){overlay.classList.remove('is-open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
-  openButton.addEventListener('click',function(){
-    previousFocus=document.activeElement;
-    const clone=editor.cloneNode(true);
-    clone.removeAttribute('id');clone.removeAttribute('contenteditable');
-    clone.querySelectorAll('[contenteditable],.step-box-remove').forEach(el=>{if(el.classList.contains('step-box-remove'))el.remove();else el.removeAttribute('contenteditable');});
-    content.replaceChildren(...Array.from(clone.childNodes));
-    if(!content.textContent.trim()&&!content.querySelector('img'))content.textContent='Guide is empty.';
-    overlay.classList.add('is-open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeButton.focus();
-  });
-  closeButton.addEventListener('click',close);
-  overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('is-open'))close();});
-})();
-</script>
-<script>window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';</script>
-<script src="admin-app.js?v=20261023-premium-rebuild-2"></script>
-<script>
-(function(){
-  const dashboard=document.getElementById('dashboard');
-  const logout=document.getElementById('logout');
-  if(!dashboard||!logout)return;
-  const sync=()=>{logout.hidden=dashboard.hidden;};
-  new MutationObserver(sync).observe(dashboard,{attributes:true,attributeFilter:['hidden']});
-  sync();
-})();
-</script>
-<style>
-/* Airgem editor workspace */
-body:has(#dashboard:not([hidden])){background:#F8FAFC;color:#1B2E50}
-body:has(#dashboard:not([hidden])) main{max-width:1360px;margin:22px auto}
-#dashboard .admin-panel-intro{text-align:left!important;margin-bottom:18px!important}
-#dashboard .admin-panel-intro h1{font-size:25px!important;color:#1B2E50!important}
-#dashboard .panel{box-shadow:0 3px 14px #1B2E5009!important;border:1px solid #E2E8F0!important;border-radius:16px!important}
-#dashboard .layout{grid-template-columns:minmax(230px,280px) minmax(0,1fr)!important;gap:16px!important;align-items:start}
-#dashboard .field input,#dashboard .field select{border-radius:10px!important}
-.ag-admin-tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:4px 0 14px;margin-bottom:4px}
-.ag-admin-tabs button{flex:0 0 auto;min-height:42px;padding:10px 16px;border:1px solid #E2E8F0;background:white;color:#1B2E50;border-radius:11px;font:600 13px Manrope,sans-serif;cursor:pointer}
-.ag-admin-tabs button[aria-selected="true"]{background:#1E90FF;color:white;border-color:#1E90FF}
-#dashboard[data-admin-active="projects"] #projectEditorPanel,#dashboard[data-admin-active="projects"] #adminExtraPanels,
-#dashboard[data-admin-active="top"] .layout,#dashboard[data-admin-active="top"] #adminExtraPanels{display:none!important}
-#dashboard:not([data-admin-active="top"]) #trendingManager{display:none!important}
-#dashboard[data-admin-active="projects"] #allProjectsManager{grid-column:1/-1}
-#dashboard[data-admin-active="projects"] .layout{grid-template-columns:1fr!important}
-#dashboard[data-admin-active="projects"] #allProjectsManager .list{max-height:none!important}
-#dashboard[data-admin-active="basic"] #adminExtraPanels,#dashboard[data-admin-active="details"] #adminExtraPanels,#dashboard[data-admin-active="links"] #adminExtraPanels{display:none!important}
-#dashboard[data-admin-active="guide"] #projectEditorPanel,#dashboard[data-admin-active="investors"] #projectEditorPanel{display:none!important}
-#dashboard[data-admin-active="guide"] #investorsEditorPanel,#dashboard[data-admin-active="investors"] #projectGuidePanel{display:none!important}
-#dashboard[data-admin-active="guide"] #adminExtraPanels,#dashboard[data-admin-active="investors"] #adminExtraPanels{margin-top:0!important}
-#dashboard[data-admin-active="guide"] #allProjectsManager,#dashboard[data-admin-active="investors"] #allProjectsManager{display:none!important}
-#dashboard[data-admin-active="guide"] .layout,#dashboard[data-admin-active="investors"] .layout{display:none!important}
-#dashboard[data-admin-active="basic"] #projectEditorPanel .ag-field-details,#dashboard[data-admin-active="basic"] #projectEditorPanel .ag-field-links,
-#dashboard[data-admin-active="details"] #projectEditorPanel .ag-field-basic,#dashboard[data-admin-active="details"] #projectEditorPanel .ag-field-links,
-#dashboard[data-admin-active="links"] #projectEditorPanel .ag-field-basic,#dashboard[data-admin-active="links"] #projectEditorPanel .ag-field-details{display:none!important}
-#dashboard #projectEditorPanel .bottom{position:sticky;bottom:8px;background:#fff;padding:12px 0;z-index:3}
-#dashboard .ag-editor-hint{color:#64748B;font-size:12px;margin:0 0 12px}
-@media(max-width:760px){#dashboard .layout{grid-template-columns:1fr!important}#dashboard[data-admin-active="basic"] #allProjectsManager,#dashboard[data-admin-active="details"] #allProjectsManager,#dashboard[data-admin-active="links"] #allProjectsManager{display:none!important}#dashboard .admin-panel-intro h1{font-size:23px!important}.ag-admin-tabs{margin:0 -6px 4px;padding-left:6px;padding-right:6px}#dashboard .panel{padding:16px!important}#dashboard #projectEditorPanel .bottom{bottom:0;border-top:1px solid #E2E8F0}}
-@media(min-width:761px){#dashboard[data-admin-active="basic"] #allProjectsManager,#dashboard[data-admin-active="details"] #allProjectsManager,#dashboard[data-admin-active="links"] #allProjectsManager{position:sticky;top:20px}}
-</style>
-<script>
-(function(){
- const dash=document.getElementById('dashboard'),tabs=document.getElementById('agAdminTabs'),form=document.getElementById('form');
- if(!dash||!tabs||!form)return;
- const fields=form.querySelector('.fields');
- const basic=new Set(['name','displayTag','task','status','activityStatus','logoFile','clearLogo','logoUrl','color','logoPreview']);
- const links=form.querySelector('.section');
- if(links)links.classList.add('ag-field-links');
- for(const el of Array.from(fields.children)){
-  const ids=[el.id,...Array.from(el.querySelectorAll('[id]')).map(n=>n.id)];
-  el.classList.add(ids.some(id=>basic.has(id))?'ag-field-basic':'ag-field-details');
- }
- const hint=document.createElement('p');hint.className='ag-editor-hint';hint.textContent='Choose a section above to edit project information.';form.before(hint);
- function setTab(name){
-  dash.dataset.adminActive=name;
-  for(const b of tabs.querySelectorAll('button'))b.setAttribute('aria-selected',String(b.dataset.adminTab===name));
-  if(name==='guide'||name==='investors'){const extra=document.getElementById('adminExtraPanels');if(extra)extra.style.display='block';}
- }
- tabs.addEventListener('click',e=>{const b=e.target.closest('button[data-admin-tab]');if(b)setTab(b.dataset.adminTab)});
- document.getElementById('add')?.addEventListener('click',()=>setTab('basic'));
- document.getElementById('list')?.addEventListener('click',e=>{if(e.target.closest('button,[role="button"],a'))setTab('basic')});
- setTab('projects');
-})();
-</script>
-<style>
-/* Minimal premium admin dashboard - scoped to authenticated workspace */
-#dashboard .ag-dashboard-shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:22px;align-items:start}
-#dashboard .ag-dashboard-sidebar{position:sticky;top:16px;min-height:calc(100vh - 100px);border:1px solid #E2E8F0;border-radius:16px;background:#fff;padding:20px 12px;display:flex;flex-direction:column;gap:26px}
-#dashboard .ag-sidebar-brand{display:flex;align-items:center;gap:10px;padding:0 10px;color:#1B2E50;font-size:21px;letter-spacing:-.5px}
-#dashboard .ag-side-nav{display:grid;gap:6px}
-#dashboard .ag-side-nav button{background:transparent;border:0;border-radius:10px;padding:13px 14px;color:#1B2E50;text-align:left;font:600 13px Manrope,sans-serif;cursor:pointer}
-#dashboard .ag-side-nav button.is-active{background:#EAF3FF;color:#1E90FF}
-#dashboard .ag-view-site{margin-top:auto;padding:13px 14px;border:1px solid #E2E8F0;border-radius:10px;color:#1B2E50;text-align:center;font-weight:600}
-#dashboard .ag-dashboard-content{min-width:0}
-#dashboard .ag-stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
-#dashboard .ag-stat{padding:18px;background:white;border:1px solid #E2E8F0;border-radius:14px;display:grid;gap:12px}
-#dashboard .ag-stat span{font-size:12px;color:#64748B;font-weight:600}
-#dashboard .ag-stat strong{font-size:24px;color:#1B2E50;letter-spacing:-.5px}
-#dashboard .ag-dashboard-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 12px;color:#1B2E50;font-size:18px}
-#dashboard .ag-dashboard-actions .btn{white-space:nowrap}
-#dashboard .ag-admin-tabs{background:transparent}
-#dashboard[data-admin-active="projects"] #allProjectsManager{padding:20px!important}
-#dashboard[data-admin-active="projects"] #allProjectsDisclosure{display:block}
-#dashboard[data-admin-active="projects"] #allProjectsDisclosure summary{display:none}
-#dashboard[data-admin-active="projects"] #allProjectsDisclosure .list{display:block!important;max-height:none!important}
-#dashboard[data-admin-active="projects"] #allProjectsManager>.heading{margin-bottom:14px}
-#dashboard[data-admin-active="projects"] #allProjectsManager #add{display:none}
-#dashboard .project-list-row{border-bottom:1px solid #E2E8F0!important;padding:8px 4px!important}
-#dashboard .project-list-row:last-child{border-bottom:0!important}
-#dashboard .project-list-row .entry{min-height:52px}
-#dashboard .project-list-actions button{min-width:34px;min-height:34px}
-#dashboard[data-admin-active="top"] .ag-dashboard-actions,#dashboard[data-admin-active="basic"] .ag-dashboard-actions,#dashboard[data-admin-active="details"] .ag-dashboard-actions,#dashboard[data-admin-active="links"] .ag-dashboard-actions,#dashboard[data-admin-active="guide"] .ag-dashboard-actions,#dashboard[data-admin-active="investors"] .ag-dashboard-actions{display:none}
-@media(max-width:1050px){#dashboard .ag-dashboard-shell{grid-template-columns:170px minmax(0,1fr);gap:12px}#dashboard .ag-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){#dashboard .ag-dashboard-shell{display:block}#dashboard .ag-dashboard-sidebar{position:static;min-height:0;padding:10px;margin-bottom:14px;gap:10px}#dashboard .ag-sidebar-brand,#dashboard .ag-view-site{display:none}#dashboard .ag-side-nav{display:flex;overflow-x:auto;gap:6px}#dashboard .ag-side-nav button{flex:0 0 auto;white-space:nowrap;padding:10px 12px}#dashboard .ag-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#dashboard .ag-stat{padding:14px}#dashboard .ag-stat strong{font-size:20px}#dashboard .ag-dashboard-actions{font-size:15px}#dashboard .ag-dashboard-actions .btn{font-size:12px}}
-</style>
-<script>
-(function(){
- const dash=document.getElementById('dashboard');
- if(!dash)return;
- const tabs=document.getElementById('agAdminTabs');
- const go=name=>tabs?.querySelector('[data-admin-tab="'+name+'"]')?.click();
- document.querySelectorAll('[data-go-tab]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goTab)));
- document.getElementById('agQuickAdd')?.addEventListener('click',()=>{document.getElementById('add')?.click();go('basic')});
- const observer=new MutationObserver(()=>{
-  const active=dash.dataset.adminActive||'projects';
-  document.querySelectorAll('[data-go-tab]').forEach(b=>b.classList.toggle('is-active',b.dataset.goTab===active));
-  const count=document.getElementById('count')?.textContent||'';
-  const n=count.match(/\d+/);if(n)document.getElementById('agStatProjects').textContent=n[0];
-  const top=document.getElementById('trendingState')?.textContent||'';
-  const t=top.match(/\d+\s*\/\s*10/);if(t)document.getElementById('agStatTop').textContent=t[0].replace(/\s/g,'');
- });
- observer.observe(dash,{attributes:true,attributeFilter:['data-admin-active']});
- const count=document.getElementById('count'),top=document.getElementById('trendingState');
- if(count)observer.observe(count,{childList:true,characterData:true,subtree:true});
- if(top)observer.observe(top,{childList:true,characterData:true,subtree:true});
- document.getElementById('agStatProjects').textContent=(count?.textContent||'0').match(/\d+/)?.[0]||'0';
- document.getElementById('agStatTop').textContent='0/10';
-})();
-</script>
-<style>
-/* Consolidated minimal premium workspace */
-#dashboard .ag-admin-tabs{display:none!important}
-#dashboard .ag-dashboard-sidebar{border-radius:14px!important}
-#dashboard .ag-side-nav button{transition:background .15s ease,color .15s ease}
-#dashboard .ag-stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-#dashboard .ag-stat{min-height:110px;box-shadow:none!important}
-#dashboard .ag-stat strong{font-size:25px}
-#dashboard .ag-dashboard-actions{margin:22px 0 14px}
-#dashboard .ag-table-scroll{overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
-#dashboard .ag-project-table{border-collapse:collapse;width:100%;min-width:650px;text-align:left;font:500 12px Manrope,sans-serif;color:#1B2E50}
-#dashboard .ag-project-table th{padding:13px 12px;background:#F8FAFC;color:#64748B;font-size:11px;font-weight:700}
-#dashboard .ag-project-table td{padding:12px;border-bottom:1px solid #E2E8F0;vertical-align:middle}
-#dashboard .ag-project-table tr:last-child td{border-bottom:0}
-#dashboard .ag-project-open{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:#1B2E50;font:inherit}
-#dashboard .ag-project-open strong{display:block;font-weight:700;font-size:13px}
-#dashboard .ag-project-open small{display:block;color:#64748B;font-size:11px;margin-top:3px}
-#dashboard .ag-row-actions{display:flex;gap:6px}
-#dashboard .ag-row-actions button{border:1px solid #E2E8F0;background:white;border-radius:8px;color:#1B2E50;padding:8px 10px;cursor:pointer;font:600 11px Manrope,sans-serif}
-#dashboard .ag-row-actions button:first-child{color:#1E90FF}
-#dashboard .ag-status-chip{display:inline-block;border-radius:7px;padding:5px 8px;background:#E9F8F0;color:#187C54;font-weight:700;font-size:10px}
-#dashboard .ag-empty-projects{padding:20px;text-align:center}
-#dashboard #allProjectsManager{width:100%;min-width:0}
-#dashboard #allProjectsManager .fields{margin-bottom:12px}
-#dashboard #allProjectsManager #allProjectsDisclosure{border:0!important}
-#dashboard #allProjectsManager #allProjectsDisclosure>summary{display:none!important}
-#dashboard #allProjectsManager #list{display:block!important;max-height:none!important;overflow:visible!important}
-#dashboard .ag-dashboard-content .dashboard-toolbar{margin:0 0 10px}
-#dashboard[data-admin-active="basic"] #projectEditorPanel,#dashboard[data-admin-active="details"] #projectEditorPanel,#dashboard[data-admin-active="links"] #projectEditorPanel{min-width:0}
-#dashboard .ag-dashboard-sidebar .ag-view-site{color:#1B2E50!important}
-@media(max-width:900px){#dashboard .ag-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){
- #dashboard .ag-dashboard-sidebar{border:0!important;background:transparent!important;padding:0!important;margin:0 0 16px!important}
- #dashboard .ag-side-nav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
- #dashboard .ag-side-nav button{border:1px solid #E2E8F0;background:#fff;border-radius:10px;padding:11px 14px}
- #dashboard .ag-side-nav button.is-active{background:#1E90FF;color:white;border-color:#1E90FF}
- #dashboard .ag-stats-grid{gap:10px;margin:14px 0}
- #dashboard .ag-stat{min-height:96px}
- #dashboard .ag-dashboard-actions{margin:16px 0 12px}
- #dashboard .ag-dashboard-content .dashboard-toolbar{margin-bottom:8px}
- #dashboard #allProjectsManager{padding:16px!important}
- #dashboard .ag-project-table{min-width:620px}
- #dashboard #projectEditorPanel{padding:16px!important}
-}
-</style>
-<script>
-(function(){
- const dash=document.getElementById('dashboard');
- const tabs=document.getElementById('agAdminTabs');
- if(!dash||!tabs)return;
- const set=tab=>{const b=tabs.querySelector('[data-admin-tab="'+tab+'"]');b?.click();};
- const nav=dash.querySelector('.ag-side-nav');
- if(nav)nav.addEventListener('click',e=>{const b=e.target.closest('[data-go-tab]');if(b){nav.querySelectorAll('button').forEach(x=>x.classList.toggle('is-active',x===b));}});
- const quick=document.getElementById('agQuickAdd');
- if(quick)quick.addEventListener('click',()=>{const poll=setInterval(()=>{if(!document.getElementById('form')?.hidden){clearInterval(poll);set('basic')}},150);setTimeout(()=>clearInterval(poll),4000)});
-})();
-</script>
-<style>
-#dashboard .ag-editor-nav{display:flex;overflow-x:auto;gap:8px;margin-bottom:18px;padding-bottom:6px;scrollbar-width:thin}
-#dashboard .ag-editor-nav button{flex:0 0 auto;border:1px solid #E2E8F0;background:#fff;border-radius:10px;padding:10px 13px;color:#1B2E50;font:600 12px Manrope,sans-serif;cursor:pointer}
-#dashboard .ag-editor-nav button[aria-selected="true"]{background:#1E90FF;color:white;border-color:#1E90FF}
-#dashboard[data-admin-active="projects"] .ag-editor-nav,#dashboard[data-admin-active="top"] .ag-editor-nav{display:none}
-@media(max-width:760px){#dashboard .ag-editor-nav{margin:0 0 14px}}
-</style>
-<script>
-(function(){
- const dash=document.getElementById('dashboard'),nav=document.querySelector('.ag-editor-nav'),tabs=document.getElementById('agAdminTabs');
- if(!dash||!nav||!tabs)return;
- nav.addEventListener('click',e=>{const b=e.target.closest('[data-editor-tab]');if(b)tabs.querySelector('[data-admin-tab="'+b.dataset.editorTab+'"]')?.click()});
- new MutationObserver(()=>{const active=dash.dataset.adminActive;nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.editorTab===active)))}).observe(dash,{attributes:true,attributeFilter:['data-admin-active']});
-})();
-</script>
-</body></html>
+          <section id="libraryView" class="section-view" hidden>
+            <div class="page-heading">
+              <div>
+                <h1 id="libraryTitle">Library</h1>
+                <p id="libraryDescription"></p>
+              </div>
+            </div>
+            <div id="libraryList" class="library-grid"></div>
+          </section>
+          <section id="settingsView" class="section-view" hidden aria-labelledby="settingsHeading">
+            <div class="page-heading">
+              <div>
+                <h1 id="settingsHeading">Settings</h1>
+                <p>Keep your admin account secure.</p>
+              </div>
+            </div>
+            <div class="card settings-card">
+              <span class="stat-icon blue"
+                ><i data-lucide="shield-check" aria-hidden="true"></i
+              ></span>
+              <div>
+                <h2>Two-factor authentication</h2>
+                <p>
+                  Your account is protected by Supabase authentication and admin authorization. Use
+                  an authenticator app for an additional layer of security.
+                </p>
+                <button id="mfaSetup" type="button" class="button primary">
+                  <i data-lucide="smartphone" aria-hidden="true"></i> Set up authenticator
+                </button>
+                <p id="mfaStatus" class="muted"></p>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class="app-footer">
+          <span>© Airgem</span><span>Designed for your next opportunity.</span>
+        </footer>
+      </div>
+    </div>
+    <div id="message" class="toast" role="status" aria-live="polite"></div>
+    <dialog id="guidePreviewOverlay" aria-labelledby="guidePreviewHeading">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">CONTENT PREVIEW</span>
+          <h2 id="guidePreviewHeading">Project guide</h2>
+        </div>
+        <button
+          type="button"
+          id="guidePreviewClose"
+          class="icon-button"
+          aria-label="Close guide preview"
+        >
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="guidePreviewContent" class="guide-editor"></div>
+    </dialog>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="supabase-data.js"></script>
+    <script>
+      window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
+    </script>
+    <script src="admin-editor.js" defer></script>
+    <script src="admin-app.js" defer></script>
+  </body>
+</html>
