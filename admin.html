@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="admin.css?v=top-only-20261024" />
+    <link rel="stylesheet" href="admin.css?v=top-layout-fix-20261024" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   </head>
   <body>
@@ -110,26 +110,11 @@
               </div>
               
             </div>
-          <section
-            id="trendingManager"
-            class="top-airdrops-section"
-                       aria-labelledby="trendingHeading"
-          >
-            <div class="page-heading">
-              <div>
-                <span class="eyebrow">HOMEPAGE COLLECTION</span>
-                <h1 id="trendingHeading">Top Airdrops</h1>
-                <p>Curate and order the projects featured on your homepage.</p>
-              </div>
-              <span id="trendingState" class="selection-count">0 / 10 selected</span>
-            </div>
+          <section id="trendingManager" class="top-airdrops-section" aria-labelledby="trendingHeading">
             <div class="card collection-card">
-              <div class="section-heading">
-                <div>
-                  <h2>Featured projects</h2>
-                  <p>Add up to 10 projects. Use the arrows to change their display order.</p>
-                </div>
-                <i data-lucide="star" class="muted" aria-hidden="true"></i>
+              <div class="top-airdrops-heading">
+                <h2 id="trendingHeading">Top Airdrops</h2>
+                <span id="trendingState" class="selection-count">0 / 10 selected</span>
               </div>
               <div class="field trending-search">
                 <label for="trendingSelect">Find a project</label
@@ -647,6 +632,6 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="admin-editor.js" defer></script>
-    <script src="admin-app.js?v=top-only-20261024" defer></script>
+    <script src="admin-app.js?v=top-layout-fix-20261024" defer></script>
   </body>
 </html>
