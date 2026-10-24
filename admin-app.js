@@ -491,7 +491,7 @@
     icons();
   }
   function renderTrending() {
-    // The selection count is no longer shown in the header.
+    if ($('trendingSelectionCount')) $('trendingSelectionCount').textContent = `${state.trending.length}/10`;
     if ($('trendingDisclosureLabel'))
       $('trendingDisclosureLabel').textContent = `Selected projects (${state.trending.length}/10)`;
     $('trendingCurrent').innerHTML =
