@@ -2289,3 +2289,13 @@ main{padding-top:15px}
 #projectsView .workspace-grid{display:block}
 #projectsView .workspace-main{width:100%;min-width:0}
 #projectsView .projects-card{width:100%}
+
+/* Sidebar-free admin editor navigation */
+#dashboard .app-shell{margin-left:0!important;width:100%;max-width:none}
+#dashboard .topbar{justify-content:space-between;padding-left:20px;padding-right:20px}
+#dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
+#dashboard .header-logout svg{width:20px;height:20px}
+#dashboard .editor-navigation{display:flex;gap:6px;align-items:center;padding:10px 20px;background:#fff;border-bottom:1px solid #E2E8F0;overflow-x:auto}
+#dashboard .editor-navigation button{flex-shrink:0;border:0;background:transparent;color:#64748B;padding:10px 14px;border-radius:9px;font:600 13px Manrope,sans-serif;cursor:pointer}
+#dashboard .editor-navigation button.is-active{background:#EAF3FF;color:#1E90FF}
+@media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .editor-navigation{padding:8px 15px}#dashboard .topbar{padding:0 15px}}
