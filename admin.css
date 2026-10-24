@@ -1796,3 +1796,6 @@ main{padding-top:15px}
 /* Publish feedback directly below the Top Airdrops action */
 #projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
 #projectsView .trending-publish-message:empty{display:none}
+
+#projectsView .trending-publish-message.is-success{color:#15803D}
+#projectsView .trending-publish-message.is-error{color:#DC2626}
