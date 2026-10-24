@@ -2546,3 +2546,9 @@ main{padding-top:15px}
 .stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px}
 .stat-card h2{min-height:30px}
 @media(max-width:600px){.stat-card .stat-icon{width:30px;height:30px;flex-basis:30px}.stat-card h2{min-height:30px}}
+
+/* Refined dashboard metrics typography and vertical rhythm */
+.stat-card .stat-icon svg{width:18px;height:18px}
+.stat-card strong{font-size:24px;font-weight:700;line-height:1.2}
+.stat-card p{font-size:11px;line-height:1.4;margin-top:5px}
+.stat-card h2{font-size:12px;font-weight:600;margin-bottom:0}
