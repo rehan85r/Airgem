@@ -1185,8 +1185,11 @@ input::placeholder {
 .trending-item-copy small {
   display: block;
   color: var(--slate);
-  font-size: 10px;
-  margin-top: 4px;
+  font-family: Manrope, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-top: 5px;
 }
 .collection-footer {
   display: flex;
