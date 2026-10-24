@@ -150,46 +150,6 @@
             <p id="dataError" class="data-error" role="alert" hidden></p>
             <div class="workspace-grid">
               <div class="workspace-main">
-                <div class="stats-grid" aria-label="Project statistics">
-                  <article class="stat-card">
-                    <span class="stat-icon blue"><i data-lucide="layers-3" aria-hidden="true"></i></span>
-                    <div>
-                      <h2>Total Projects</h2>
-                      <strong id="agStatProjects">—</strong>
-                      <p id="statProjectsNote">From your database</p>
-                    </div>
-                  </article>
-                  <article class="stat-card">
-                    <span class="stat-icon amber"
-                      ><i data-lucide="star" aria-hidden="true"></i
-                    ></span>
-                    <div>
-                      <h2>Top Airdrops</h2>
-                      <strong id="agStatTop">—</strong>
-                      <p>Featured projects</p>
-                    </div>
-                  </article>
-                  <article class="stat-card">
-                    <span class="stat-icon green"
-                      ><i data-lucide="circle-check" aria-hidden="true"></i
-                    ></span>
-                    <div>
-                      <h2>Active</h2>
-                      <strong id="agStatActive">—</strong>
-                      <p id="statActiveNote">Active projects</p>
-                    </div>
-                  </article>
-                  <article class="stat-card">
-                    <span class="stat-icon red"
-                      ><i data-lucide="circle-stop" aria-hidden="true"></i
-                    ></span>
-                    <div>
-                      <h2>Ended</h2>
-                      <strong id="agStatEnded">—</strong>
-                      <p id="statEndedNote">Ended projects</p>
-                    </div>
-                  </article>
-                </div>
                 <nav
                   id="categoryTabs"
                   class="category-tabs"
@@ -227,67 +187,6 @@
                     <span id="tableCount">Loading projects</span>
                     <nav id="pagination" class="pagination" aria-label="Project pages"></nav>
                   </footer>
-                </section>
-              </div>
-              <aside class="workspace-aside" aria-label="Workspace shortcuts">
-                <section class="card quick-actions">
-                  <h2>Quick Actions</h2>
-                  <button type="button" data-action="add">
-                    <i data-lucide="plus" aria-hidden="true"></i
-                    ><span>Add New Project</span></button
-                  ><button type="button" data-action="top">
-                    <i data-lucide="star" aria-hidden="true"></i
-                    ><span>Manage Top Airdrops</span></button
-                  ><button type="button" data-action="media">
-                    <i data-lucide="image" aria-hidden="true"></i><span>Media Library</span></button
-                  ><button type="button" data-action="investors">
-                    <i data-lucide="users" aria-hidden="true"></i
-                    ><span>Manage Investors</span></button
-                  ><a href="index.html" target="_blank" rel="noopener noreferrer"
-                    ><i data-lucide="external-link" aria-hidden="true"></i
-                    ><span>View Website</span></a
-                  >
-                </section>
-                <section class="card recent-card">
-                  <div class="card-heading">
-                    <h2>Recently Added</h2>
-                    <i data-lucide="clock-3" aria-hidden="true"></i>
-                  </div>
-                  <ul id="recentProjects" class="recent-projects">
-                    <li class="muted">Loading projects…</li>
-                  </ul>
-                </section>
-              </aside>
-              <div class="analytics-grid">
-                <section class="card overview-card">
-                  <div class="card-heading">
-                    <h2>Projects Overview</h2>
-                    <select id="chartRange" aria-label="Overview date range">
-                      <option value="6">Last 6 Months</option>
-                      <option value="12">Last 12 Months</option>
-                    </select>
-                  </div>
-                  <div
-                    id="overviewChart"
-                    class="overview-chart"
-                    aria-label="Projects added per month"
-                  ></div>
-                </section>
-                <section class="card">
-                  <h2>Projects by Category</h2>
-                  <div
-                    id="categoryChart"
-                    class="distribution-chart"
-                    aria-label="Project category distribution"
-                  ></div>
-                </section>
-                <section class="card">
-                  <h2>Projects by Status</h2>
-                  <div
-                    id="statusChart"
-                    class="distribution-chart"
-                    aria-label="Project activity status distribution"
-                  ></div>
                 </section>
               </div>
             </div>
