@@ -1737,3 +1737,6 @@ main{padding-top:15px}
 
 #projectsView .top-airdrops-heading h2{display:flex;align-items:center;gap:10px}
 #projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;flex-shrink:0;color:#1E90FF;stroke-width:2}
+
+/* Warm amber icon treatment for Top Airdrops */
+#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;box-sizing:content-box;padding:9px;border-radius:10px;background:#FFF7E2;color:#CA8B00;stroke-width:2}
