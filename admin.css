@@ -1721,7 +1721,7 @@ main{padding-top:15px}
 #projectsView .selection-count{flex-shrink:0;background:#eff6ff;color:#1E90FF;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px}
 #projectsView .trending-search{margin-bottom:15px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:0}
-#projectsView .trending-search input{min-height:45px;font-size:13px}
+#projectsView .trending-search input{min-height:50px;font-size:13px}
 #projectsView .trending-list{gap:10px}
 #projectsView .trending-item{gap:10px;padding:10px;border-radius:10px}
 #projectsView .collection-footer{margin-top:18px;padding-top:15px}
