@@ -469,6 +469,7 @@
   }
   function renderTrendingSearch() {
     const query = $('trendingSelect').value.trim().toLowerCase();
+    $('trendingSearchClear').hidden = !$('trendingSelect').value;
     const matches = query
       ? state.projects
           .filter(
@@ -818,6 +819,11 @@
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
     $('trendingSelect').oninput = renderTrendingSearch;
+    $('trendingSearchClear').onclick = () => {
+      $('trendingSelect').value = '';
+      renderTrendingSearch();
+      $('trendingSelect').focus();
+    };
     $('saveTrending').onclick = saveTrending;
     $('clearTrending').onclick = () => {
       if (state.busy || !state.trendingLoaded) return;
