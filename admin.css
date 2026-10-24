@@ -1742,7 +1742,7 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 #projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
-#projectsView .trending-item .icon-button:disabled{opacity:.4}
+#projectsView .trending-item .icon-button:disabled{opacity:.65}
 
  #projectsView .collection-footer{flex-wrap:wrap}
  #projectsView .collection-footer .button{flex:1 1 auto}
