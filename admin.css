@@ -1737,7 +1737,7 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 #projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
-#projectsView .trending-item .icon-button:disabled{opacity:.4;cursor:not-allowed}
+#projectsView .trending-item .icon-button:disabled{opacity:.65;cursor:not-allowed}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
