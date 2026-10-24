@@ -1803,3 +1803,7 @@ main{padding-top:15px}
 /* Replace project count with publish result in the same label row */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 25px 0 auto;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}
+
+/* Reference-style icon and message beside Select Project */
+#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:8px}
+#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}
