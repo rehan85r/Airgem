@@ -1787,3 +1787,8 @@ main{padding-top:15px}
 /* Compact header publishing action in place of the selection count */
 #projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:35px;padding:0 10px;border-radius:10px;font:600 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0}
 #projectsView .top-airdrops-publish svg{width:15px;height:15px}
+
+/* Top Airdrops project search selection count */
+#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#projectsView .trending-search-label-row label{margin-bottom:0}
+#projectsView .trending-selection-count{font:500 13px Manrope,sans-serif;color:#64748B;white-space:nowrap}
