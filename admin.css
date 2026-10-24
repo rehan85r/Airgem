@@ -1178,7 +1178,9 @@ input::placeholder {
 }
 .trending-item-copy strong {
   display: block;
-  font-size: 13px;
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
 }
 .trending-item-copy small {
   display: block;
