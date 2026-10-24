@@ -639,7 +639,6 @@
         await loadTrending();
       } catch (error) {
         message(`Unable to load projects: ${error.message}`, true);
-        renderTable();
         if ($('dataError')) {
           $('dataError').hidden = false;
           $('dataError').textContent =
