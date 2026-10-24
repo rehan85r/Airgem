@@ -1792,3 +1792,7 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 #projectsView .trending-search-label-row label{margin-bottom:0}
 #projectsView .trending-selection-count{font:500 13px Manrope,sans-serif;color:#64748B;white-space:nowrap}
+
+/* Publish feedback directly below the Top Airdrops action */
+#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
+#projectsView .trending-publish-message:empty{display:none}
