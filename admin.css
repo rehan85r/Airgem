@@ -2560,3 +2560,9 @@ main{padding-top:15px}
 .stat-card strong{margin-top:5px}
 .stat-card p{margin-top:5px;overflow-wrap:break-word}
 @media(max-width:600px){.stat-card{min-height:112px;padding:15px;gap:10px}}
+
+/* Editor-first admin workspace: preserve existing data logic, hide analytics-only UI */
+#projectsView .stats-grid,#projectsView .analytics-grid,#projectsView .workspace-aside{display:none!important}
+#projectsView .workspace-grid{display:block}
+#projectsView .workspace-main{width:100%;min-width:0}
+#projectsView .projects-card{width:100%}
