@@ -2498,3 +2498,6 @@ dialog .guide-editor {
 
 /* Match homepage's compact 15px top spacing across breakpoints */
 main{padding-top:15px}
+
+/* Dashboard metric icons: consistent 15px on mobile and desktop */
+.stat-card .stat-icon svg{width:15px;height:15px}
