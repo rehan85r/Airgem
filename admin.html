@@ -125,7 +125,7 @@
             <div class="card collection-card">
               <div class="top-airdrops-heading">
                 <h2 id="trendingHeading"><i data-lucide="star" aria-hidden="true"></i> Top Airdrops</h2>
-                <span id="trendingState" class="selection-count">0 / 10 selected</span>
+                <button class="button primary top-airdrops-publish" id="saveTrending" type="button"><i data-lucide="check" aria-hidden="true"></i> Publish</button>
               </div>
               <div class="field trending-search">
                 <label for="trendingSelect">Search A Project</label
@@ -142,10 +142,7 @@
               <div class="trending-list-viewport"><div id="trendingCurrent" class="trending-list" aria-live="polite"></div><div class="trending-list-navigation" aria-label="Browse selected projects"><button type="button" id="trendingScrollUp" aria-label="Show previous projects" title="Previous projects"><i data-lucide="chevron-up" aria-hidden="true"></i></button><button type="button" id="trendingScrollDown" aria-label="Show next projects" title="Next projects"><i data-lucide="chevron-down" aria-hidden="true"></i></button></div></div>
               <div class="collection-footer">
                 <button class="button danger-quiet" id="clearTrending" type="button">
-                  <i data-lucide="list-x" aria-hidden="true"></i> Clear selection</button
-                ><button class="button primary" id="saveTrending" type="button">
-                  <i data-lucide="check" aria-hidden="true"></i> Save Top Airdrops
-                </button>
+                  <i data-lucide="list-x" aria-hidden="true"></i> Clear selection</button>
               </div>
               <p id="trendingMessage" class="inline-message" role="status"></p>
             </div>
