@@ -2501,3 +2501,6 @@ main{padding-top:15px}
 
 /* Dashboard metric icons: consistent 15px on mobile and desktop */
 .stat-card .stat-icon svg{width:15px;height:15px}
+
+/* Compact mobile dashboard metric icon backgrounds */
+@media(max-width:600px){.stat-card .stat-icon{width:25px;height:25px;border-radius:7px}}
