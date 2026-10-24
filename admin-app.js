@@ -780,7 +780,7 @@
     document.querySelectorAll('[data-project-section]').forEach((button, index) => {
       button.addEventListener('click', () => {
         projectPickerTab = button.dataset.projectSection;
-        $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic', 'Details', 'Task & Guide'][index];
+        $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic', 'Details', 'Guide'][index];
         document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
         const allProjects = index === 0;
         $('trendingManager').hidden = !allProjects;
