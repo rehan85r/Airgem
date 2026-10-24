@@ -260,11 +260,6 @@
     renderDashboard();
     if ($('dataError')) $('dataError').hidden = true;
   }
-  function groupCounts(values) {
-    const counts = new Map();
-    values.forEach((value) => counts.set(value, (counts.get(value) || 0) + 1));
-    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  }
   function renderFilters() {
     const category = $('categoryFilter').value,
       status = $('statusFilter').value;
@@ -373,17 +368,7 @@
       `<button type="button" data-page="${state.page + 1}" ${state.page === pages ? 'disabled' : ''} aria-label="Next page">${icon('chevron-right')}</button>`;
     icons();
   }
-  function renderCategoryTabs() {
-    const categories = groupCounts(state.projects.map(categoryOf));
-    $('categoryTabs').innerHTML = [['', state.projects.length], ...categories]
-      .map(
-        ([name, count]) =>
-          `<button type="button" class="category-tab ${state.category === name ? 'is-active' : ''}" data-category="${esc(name)}" aria-pressed="${state.category === name}">${esc(name || 'All Projects')}<span>${count}</span></button>`,
-      )
-      .join('');
-  }
   function renderDashboard() {
-    renderCategoryTabs();
     renderTable();
     icons();
   }
@@ -850,15 +835,6 @@
         setEditorTab(tab.dataset.editorTab);
         return;
       }
-      const category = event.target.closest('[data-category]');
-      if (category) {
-        state.category = category.dataset.category;
-        $('categoryFilter').value = state.category;
-        state.page = 1;
-        renderCategoryTabs();
-        renderTable();
-        return;
-      }
       const page = event.target.closest('[data-page]');
       if (page) {
         state.page = Number(page.dataset.page);
@@ -904,8 +880,7 @@
     $('categoryFilter').onchange = () => {
       state.category = $('categoryFilter').value;
       state.page = 1;
-      renderCategoryTabs();
-      renderTable();
+        renderTable();
     };
     $('statusFilter').onchange = $('sortBy').onchange = () => {
       state.page = 1;
