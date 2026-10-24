@@ -2527,3 +2527,9 @@ main{padding-top:15px}
 
 /* Airgem brand blue for Total Projects dashboard icon */
 .stat-card .stat-icon.blue{color:#1E90FF}
+
+/* Unified dashboard metric icon sizing across mobile and desktop */
+.stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px;border-radius:8px}
+.stat-card .stat-icon svg{width:20px;height:20px}
+.stat-card h2{min-height:30px}
+@media(max-width:600px){.stat-card .stat-icon{width:30px;height:30px;flex-basis:30px;border-radius:8px}.stat-card h2{min-height:30px}}
