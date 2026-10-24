@@ -1744,7 +1744,7 @@ main{padding-top:15px}
 /* Match the original Top Airdrops dashboard tile icon */
 #projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
 
-#projectsView .top-airdrops-heading h2 svg{width:18px;height:18px;padding:6px;border-radius:8px}
+#projectsView .top-airdrops-heading h2 svg{width:18px;height:18px;padding:6px;border-radius:10px}
 
 /* Top Airdrops card: 15px top and left inset */
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
@@ -1785,5 +1785,5 @@ main{padding-top:15px}
 #projectsView .top-airdrops-heading{padding-bottom:20px;border-bottom:1px solid #E2E8F0;margin-bottom:20px}
 
 /* Compact header publishing action in place of the selection count */
-#projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:35px;padding:0 10px;border-radius:9px;font:600 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0}
+#projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:35px;padding:0 10px;border-radius:10px;font:600 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0}
 #projectsView .top-airdrops-publish svg{width:15px;height:15px}
