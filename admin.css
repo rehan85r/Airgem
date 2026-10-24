@@ -1791,7 +1791,7 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:700;line-height:1.2;letter-spacing:-.5px;color:#1B2E50}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
 
