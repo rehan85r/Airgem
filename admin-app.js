@@ -266,69 +266,10 @@
         ...new Set(['Airdrop', 'Testnet', 'Mainnet', 'Whitelist', 'Points', 'Dex', ...categories]),
       ].map((value) => `<option value="${esc(value)}"></option>`).join('');
   }
-  function filteredProjects() {
-    const rows = [...state.projects];
-    const timestamp = (project) => {
-      const added = Date.parse(project.addedOn || ''),
-        created = Date.parse(project.created_at || '');
-      return Number.isNaN(added) ? (Number.isNaN(created) ? null : created) : added;
-    };
-    rows.sort((a, b) => {
-      const left = timestamp(a), right = timestamp(b);
-      if (left === null && right !== null) return 1;
-      if (right === null && left !== null) return -1;
-      return -((left ?? 0) - (right ?? 0) || Number(a.id) - Number(b.id));
-    });
-    return rows;
-  }
   function avatar(project) {
     return `<span class="project-avatar">${safeURL(project.logoUrl) ? `<img src="${esc(project.logoUrl)}" alt="" loading="lazy">` : esc((project.name || 'A').slice(0, 1).toUpperCase())}</span>`;
   }
-  function badgeClass(value) {
-    const text = String(value).toLowerCase();
-    if (['active', 'published', 'mainnet'].includes(text)) return 'green';
-    if (['ended', 'archived'].includes(text)) return 'slate';
-    if (['upcoming', 'draft', 'whitelist'].includes(text)) return 'amber';
-    if (['points', 'dex'].includes(text)) return 'purple';
-    return 'blue';
-  }
-  function renderTable() {
-    if (!state.dataLoaded) {
-      $('list').innerHTML =
-        '<div class="empty-state"><h3>Projects are unavailable</h3><p>Reload to retry loading your projects.</p></div>';
-      $('tableCount').textContent = 'Projects unavailable';
-      $('pagination').replaceChildren();
-      return;
-    }
-    const filtered = filteredProjects(),
-      pages = Math.max(1, Math.ceil(filtered.length / state.pageSize));
-    state.page = Math.min(state.page, pages);
-    const offset = (state.page - 1) * state.pageSize,
-      visible = filtered.slice(offset, offset + state.pageSize);
-    $('list').innerHTML = visible.length
-      ? `<div class="table-scroll" tabindex="0" role="region" aria-label="Projects table, scroll horizontally to see all columns"><table class="project-table"><thead><tr><th scope="col">#</th><th scope="col">Project</th><th scope="col">Category</th><th scope="col">Type</th><th scope="col">TGE</th><th scope="col">Status</th><th scope="col">Added</th><th scope="col">Actions</th></tr></thead><tbody>${visible.map((project, index) => `<tr><td>${offset + index + 1}</td><td><button type="button" class="project-identity" data-edit-project="${esc(project.id)}">${avatar(project)}<span class="project-copy"><strong>${esc(project.name)}</strong><small>${esc(project.displayTag || project.ecosystem || 'No custom tag')}</small></span></button></td><td><span class="badge ${badgeClass(categoryOf(project))}">${esc(categoryOf(project))}</span></td><td><span class="badge ${badgeClass(project.task)}">${esc(project.task || '—')}</span></td><td>${esc(project.tge || 'TBA')}</td><td><span class="badge ${badgeClass(statusOf(project))}">${esc(statusOf(project))}</span></td><td>${esc(formatDate(project.addedOn))}</td><td><div class="row-actions"><button type="button" class="icon-button" data-edit-project="${esc(project.id)}" aria-label="Edit ${esc(project.name)}" title="Edit project">${icon('pencil')}</button><a class="icon-button" href="project.html?id=${encodeURIComponent(project.id)}" target="_blank" rel="noopener noreferrer" aria-label="Preview ${esc(project.name)}" title="Preview project">${icon('eye')}</a><button type="button" class="icon-button danger" data-delete-project="${esc(project.id)}" aria-label="Delete ${esc(project.name)}" title="Delete project">${icon('trash-2')}</button></div></td></tr>`).join('')}</tbody></table></div>`
-      : `<div class="empty-state">${icon('search-x')}<h3>${state.projects.length ? 'No projects found' : 'Your projects start here'}</h3><p>${state.projects.length ? 'Try a different search or filter.' : 'No projects match your filters.'}</p></div>`;
-    $('tableCount').textContent = filtered.length
-      ? `Showing ${offset + 1}–${Math.min(offset + state.pageSize, filtered.length)} of ${filtered.length} projects`
-      : '0 projects';
-    const candidates = [...new Set([1, state.page - 1, state.page, state.page + 1, pages])]
-      .filter((value) => value >= 1 && value <= pages)
-      .sort((a, b) => a - b);
-    let last = 0;
-    $('pagination').innerHTML =
-      `<button type="button" data-page="${state.page - 1}" ${state.page === 1 ? 'disabled' : ''} aria-label="Previous page">${icon('chevron-left')}</button>` +
-      candidates
-        .map((page) => {
-          const gap = page - last > 1 ? '<span aria-hidden="true">…</span>' : '';
-          last = page;
-          return `${gap}<button type="button" data-page="${page}" class="${page === state.page ? 'is-active' : ''}" ${page === state.page ? 'aria-current="page"' : ''}>${page}</button>`;
-        })
-        .join('') +
-      `<button type="button" data-page="${state.page + 1}" ${state.page === pages ? 'disabled' : ''} aria-label="Next page">${icon('chevron-right')}</button>`;
-    icons();
-  }
   function renderDashboard() {
-    renderTable();
     icons();
   }
   function mediaItems() {
@@ -792,12 +733,6 @@
       const tab = event.target.closest('[data-editor-tab]');
       if (tab) {
         setEditorTab(tab.dataset.editorTab);
-        return;
-      }
-      const page = event.target.closest('[data-page]');
-      if (page) {
-        state.page = Number(page.dataset.page);
-        renderTable();
         return;
       }
       const topAdd = event.target.closest('[data-top-add]');
