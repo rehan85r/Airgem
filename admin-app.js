@@ -468,7 +468,7 @@
     const endedCount = state.projects.filter((project) => statusOf(project).toLowerCase() === 'ended').length;
     $('agStatActive').textContent = activeCount;
     $('agStatEnded').textContent = endedCount;
-    if ($('statProjectsNote')) $('statProjectsNote').textContent = `${activeCount} active projects`;
+    if ($('statProjectsNote')) $('statProjectsNote').textContent = 'All listed projects';
     if ($('statActiveNote')) $('statActiveNote').textContent = 'Active projects';
     if ($('statEndedNote')) $('statEndedNote').textContent = 'Ended projects';
     renderCategoryTabs();
