@@ -449,48 +449,6 @@ main {
   color: #64748b;
   background: #f0f4f8;
 }
-.category-tabs {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  overflow-x: auto;
-  padding: 3px 0 4px;
-  scrollbar-width: thin;
-}
-.category-tab {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  background: #f0f4f9;
-  color: #405777;
-  border: 2px solid white;
-  border-radius: 24px;
-  min-height: 39px;
-  padding: 7px 14px;
-  font-size: 11px;
-  white-space: nowrap;
-}
-.category-tab > span {
-  display: inline-grid;
-  place-items: center;
-  min-width: 19px;
-  height: 19px;
-  border-radius: 20px;
-  background: #e3eaf4;
-  color: #405777;
-  font-size: 10px;
-  padding: 0 5px;
-}
-.category-tab.is-active {
-  background: var(--blue);
-  color: white;
-  box-shadow: 0 2px 5px #1e90ff20;
-}
-.category-tab.is-active > span {
-  color: white;
-  background: #ffffff30;
-}
 .projects-card {
   padding: 0;
   overflow: hidden;
@@ -1545,14 +1503,6 @@ dialog .guide-editor {
     font-size: 12px;
     line-height: 1.7;
     margin-top: 6px;
-  }
-  .category-tabs {
-    margin-right: -16px;
-    padding-right: 16px;
-  }
-  .category-tab {
-    font-size: 10px;
-    padding: 7px 12px;
   }
   .table-toolbar {
     padding: 12px;
