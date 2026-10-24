@@ -1747,7 +1747,7 @@ main{padding-top:15px}
 #projectsView .top-airdrops-heading h2 svg{width:18px;height:18px;padding:6px;border-radius:8px}
 
 /* Top Airdrops card: 15px top and left inset */
-#projectsView .collection-card{padding-top:15px;padding-left:15px}
+#projectsView .collection-card{padding-top:15px;padding-left:20px;padding-right:20px}
 
 /* Keep the amber star tile 30x30 while enlarging the star to 20x20 */
 #projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:7.5px}
