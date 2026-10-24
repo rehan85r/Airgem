@@ -174,7 +174,7 @@
     if (view === 'projects') {
       $('projectsView').hidden = false;
       $('pageTitle').textContent = 'Admin Panel';
-      $('pageDescription').textContent = 'Organize, update and publish your Web3 opportunities.';
+      $('pageDescription').textContent = 'Add Edit And Manage Your Projects Details';
     } else if (view === 'editor') $('editorView').hidden = false;
     else if (view === 'top') {
       $('trendingManager').hidden = false;
