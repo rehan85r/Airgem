@@ -1810,3 +1810,6 @@ main{padding-top:15px}
 
 /* Match publish feedback typography to Select Project label */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}
+
+/* Balanced inset for Select Project and selection count */
+#projectsView .trending-search-label-row{padding-left:25px;padding-right:25px}
