@@ -2504,3 +2504,6 @@ main{padding-top:15px}
 
 /* Compact mobile dashboard metric icon backgrounds */
 @media(max-width:600px){.stat-card .stat-icon{width:25px;height:25px;border-radius:7px}}
+
+/* Dashboard metric headings: readable across all screen sizes */
+.stat-card h2{font-size:15px;font-weight:600}
