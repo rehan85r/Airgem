@@ -1801,7 +1801,7 @@ main{padding-top:15px}
 #projectsView .trending-publish-message.is-error{color:#DC2626}
 
 /* Replace project count with publish result in the same label row */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 25px 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
+#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 8px 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}
 
 /* Reference-style icon and message beside Select Project */
