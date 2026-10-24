@@ -415,82 +415,9 @@
       )
       .join('');
   }
-  const palette = ['#1E90FF', '#57ACFF', '#FFC545', '#FB7C7C', '#9B80F5', '#34C394', '#94A3B8'];
-  function renderDonut(id, entries, total) {
-    const root = $(id);
-    let cursor = 0;
-    const colorFor = (label, index) =>
-      id === 'statusChart'
-        ? { active: '#34C394', ended: '#94A3B8', upcoming: '#FFC545' }[
-            String(label).toLowerCase()
-          ] || palette[index % palette.length]
-        : palette[index % palette.length];
-    const segments = entries.map((entry, index) => {
-      const start = cursor;
-      cursor += total ? (entry[1] / total) * 100 : 0;
-      return `${colorFor(entry[0], index)} ${start}% ${cursor}%`;
-    });
-    root.innerHTML = `<div class="donut" style="--segments:conic-gradient(${segments.length ? segments.join(',') : '#E2E8F0 0% 100%'})" role="img" aria-label="${esc(entries.map(([label, count]) => `${label}: ${count}`).join(', ') || 'No projects')}"><div class="donut-total"><strong>${total}</strong><span>Projects</span></div></div><ul class="chart-legend">${entries.map(([label, count], index) => `<li><span class="legend-dot" style="background:${colorFor(label, index)}"></span><span>${esc(label)}</span><strong>${count}</strong></li>`).join('') || '<li>No records yet</li>'}</ul>`;
-  }
-  function renderOverview() {
-    const months = Number($('chartRange').value) || 6,
-      now = new Date();
-    const buckets = Array.from({ length: months }, (_, index) => {
-      const date = new Date(now.getFullYear(), now.getMonth() - months + index + 1, 1);
-      return {
-        year: date.getFullYear(),
-        month: date.getMonth(),
-        label: date.toLocaleDateString('en-US', { month: 'short' }),
-        count: 0,
-      };
-    });
-    let undated = 0;
-    state.projects.forEach((project) => {
-      const raw = project.addedOn || project.created_at;
-      const date = raw ? new Date(raw) : null;
-      if (!date || Number.isNaN(date.getTime())) {
-        undated++;
-        return;
-      }
-      const bucket = buckets.find(
-        (item) => item.year === date.getFullYear() && item.month === date.getMonth(),
-      );
-      if (bucket) bucket.count++;
-    });
-    const max = Math.max(1, ...buckets.map((bucket) => bucket.count));
-    $('overviewChart').innerHTML =
-      `<div class="bar-chart" role="img" aria-label="Projects added by month: ${esc(buckets.map((item) => `${item.label} ${item.year}: ${item.count}`).join(', '))}">${buckets.map((bucket) => `<div class="bar-column"><div class="bar" style="height:${(bucket.count / max) * 100}%" title="${bucket.count} projects added in ${bucket.label} ${bucket.year}"><span class="bar-value">${bucket.count}</span></div><span class="bar-label">${bucket.label}</span></div>`).join('')}</div><p class="chart-note">Projects by added date${undated ? ` · ${undated} without a date` : ''}</p>`;
-  }
   function renderDashboard() {
-    $('agStatProjects').textContent = state.projects.length;
-    $('agStatTop').textContent = state.trendingLoaded ? `${state.savedTrending.length} / 10` : '—';
-    const activeCount = state.projects.filter((project) => statusOf(project).toLowerCase() === 'active').length;
-    const endedCount = state.projects.filter((project) => statusOf(project).toLowerCase() === 'ended').length;
-    $('agStatActive').textContent = activeCount;
-    $('agStatEnded').textContent = endedCount;
-    if ($('statProjectsNote')) $('statProjectsNote').textContent = 'All listed projects';
-    if ($('statActiveNote')) $('statActiveNote').textContent = 'Active projects';
-    if ($('statEndedNote')) $('statEndedNote').textContent = 'Ended projects';
     renderCategoryTabs();
     renderTable();
-    renderOverview();
-    renderDonut(
-      'categoryChart',
-      groupCounts(state.projects.map(categoryOf)),
-      state.projects.length,
-    );
-    renderDonut('statusChart', groupCounts(state.projects.map(statusOf)), state.projects.length);
-    const recent = [...state.projects]
-      .filter((project) => project.addedOn || project.created_at)
-      .sort((a, b) => new Date(b.addedOn || b.created_at) - new Date(a.addedOn || a.created_at))
-      .slice(0, 5);
-    $('recentProjects').innerHTML =
-      recent
-        .map(
-          (project) =>
-            `<li><button type="button" class="recent-item" data-edit-project="${esc(project.id)}"><span class="recent-icon">${icon('file-plus-2')}</span><span><strong>${esc(project.name)}</strong><small>Added ${esc(formatDate(project.addedOn || project.created_at))}</small></span></button></li>`,
-        )
-        .join('') || '<li class="empty-state">No dated projects yet.</li>';
     icons();
   }
   function mediaItems() {
@@ -733,7 +660,6 @@
       .order('position', { ascending: true });
     if (error) {
       state.trendingLoaded = false;
-      $('agStatTop').textContent = '—';
       $('trendingMessage').textContent = `Unable to load top airdrops: ${error.message}`;
       updateBusy();
       return;
@@ -1029,7 +955,6 @@
       state.page = 1;
       renderTable();
     };
-    $('chartRange').onchange = renderOverview;
     $('add').onclick = addProject;
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
