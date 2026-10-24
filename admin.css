@@ -1734,3 +1734,6 @@ main{padding-top:15px}
  #projectsView .collection-footer{flex-wrap:wrap}
  #projectsView .collection-footer .button{flex:1 1 auto}
 }
+
+#projectsView .top-airdrops-heading h2{display:flex;align-items:center;gap:10px}
+#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;flex-shrink:0;color:#1E90FF;stroke-width:2}
