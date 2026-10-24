@@ -1189,7 +1189,7 @@ input::placeholder {
   font-size: 11px;
   font-weight: 400;
   letter-spacing: normal;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 .collection-footer {
   display: flex;
