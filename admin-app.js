@@ -73,7 +73,7 @@
     return {
       name: project.name,
       display_tag: project.displayTag || null,
-      category: project.category,
+      category: project.task || project.category,
       task: project.task || '',
       status: project.status || '',
       activity_status: project.activityStatus || 'Active',
@@ -212,7 +212,7 @@
     editor.load({
       name: '',
       displayTag: '',
-      category: 'Airdrop',
+      category: '',
       task: '',
       status: 'Potential',
       activityStatus: 'Active',
@@ -372,7 +372,7 @@
     if (state.busy || state.uploads) return;
     for (const [id, label] of [
       ['name', 'project name'],
-      ['category', 'project category'],
+      ['task', 'project type'],
     ]) {
       $(id).setCustomValidity($(id).value.trim() ? '' : `Enter a ${label}.`);
     }
@@ -773,7 +773,7 @@
       const query = $('adminProjectPickerSearch').value.trim().toLowerCase();
       const projects = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
       pickerList.innerHTML = projects.map((project) =>
-        `<button type="button" class="admin-project-picker-item" data-edit-project="${esc(String(project.id))}" data-editor-section="${projectPickerTab}"><strong>${esc(project.name)}</strong><span>${esc(project.category || 'Project')}</span>${icon('chevron-right')}</button>`
+        `<button type="button" class="admin-project-picker-item" data-edit-project="${esc(String(project.id))}" data-editor-section="${projectPickerTab}"><strong>${esc(project.name)}</strong><span>${esc(project.task || project.category || 'Project')}</span>${icon('chevron-right')}</button>`
       ).join('') || '<p class="trending-empty">No matching projects.</p>';
       icons();
     };
