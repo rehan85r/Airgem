@@ -1730,7 +1730,7 @@ main{padding-top:15px}
 @media(max-width:600px){
  #projectsView .collection-card{padding:15px}
  #projectsView .top-airdrops-heading h2{font-size:20px}
- #projectsView .trending-item{gap:8px;padding:10px 8px}
+ #projectsView .trending-item{gap:8px;padding:10px 10px}
  #projectsView .trending-item .actions{gap:10px}
  #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
 #projectsView .trending-item .icon-button{border-radius:8px}
