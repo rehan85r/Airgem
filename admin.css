@@ -1732,7 +1732,7 @@ main{padding-top:15px}
  #projectsView .top-airdrops-heading h2{font-size:20px}
  #projectsView .trending-item{gap:8px;padding:10px 8px}
  #projectsView .trending-item .actions{gap:4px}
- #projectsView .trending-item .icon-button{width:32px;height:32px;min-width:32px}
+ #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
  #projectsView .collection-footer{flex-wrap:wrap}
  #projectsView .collection-footer .button{flex:1 1 auto}
 }
