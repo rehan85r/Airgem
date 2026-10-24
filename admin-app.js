@@ -766,6 +766,31 @@
         renderTrending();
       }
     });
+    let projectPickerTab = 'basic';
+    const picker = $('adminProjectPicker');
+    const pickerList = $('adminProjectPickerList');
+    const renderProjectPicker = () => {
+      const query = $('adminProjectPickerSearch').value.trim().toLowerCase();
+      const projects = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
+      pickerList.innerHTML = projects.map((project) =>
+        `<button type="button" class="admin-project-picker-item" data-edit-project="${esc(String(project.id))}" data-editor-section="${projectPickerTab}"><strong>${esc(project.name)}</strong><span>${esc(project.category || 'Project')}</span>${icon('chevron-right')}</button>`
+      ).join('') || '<p class="trending-empty">No matching projects.</p>';
+      icons();
+    };
+    $('[data-project-section]').forEach((button, index) => {
+      button.addEventListener('click', () => {
+        projectPickerTab = button.dataset.projectSection;
+        $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic Info', 'Details', 'Task & Guide'][index];
+        $('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
+        picker.hidden = false;
+        renderProjectPicker();
+      });
+    });
+    $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
+    $('closeAdminProjectPicker').onclick = () => {
+      picker.hidden = true;
+      $('[data-project-section]').forEach((button) => button.classList.remove('active'));
+    };
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
