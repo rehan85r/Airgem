@@ -129,14 +129,17 @@
               </div>
               <div class="field trending-search">
                 <div class="trending-search-label-row"><label for="trendingSelect">Select Project</label><p id="trendingMessage" class="inline-message trending-publish-message" role="status"></p><span id="trendingSelectionCount" class="trending-selection-count">0/10</span></div>
+                <div class="trending-search-input-wrap">
                 <input
                   id="trendingSelect"
-                  type="search"
+                  type="text"
                   placeholder="Search Project…"
                   autocomplete="off"
                   aria-controls="trendingSearchResults"
                   aria-expanded="false"
                 />
+                  <button type="button" id="trendingSearchClear" class="trending-search-clear" aria-label="Clear project search" hidden><i data-lucide="x" aria-hidden="true"></i></button>
+                </div>
                 <div id="trendingSearchResults" class="search-results" hidden></div>
               </div>
               <div id="trendingCurrent" class="trending-list" aria-live="polite"></div>
