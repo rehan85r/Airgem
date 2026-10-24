@@ -453,45 +453,6 @@ main {
   padding: 0;
   overflow: hidden;
 }
-.table-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 13px 15px;
-}
-.table-search {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #f7f9fc;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0 11px;
-  height: 38px;
-  width: min(42%, 330px);
-}
-.table-search svg {
-  width: 17px;
-  height: 17px;
-}
-.table-search input {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  font-size: 12px;
-}
-.table-search input:focus {
-  outline: none;
-}
-.table-search:focus-within {
-  outline: 2px solid #b9ddff;
-}
-.table-filters {
-  display: flex;
-  gap: 8px;
-}
 select {
   appearance: none;
   background: #fff
@@ -1417,9 +1378,6 @@ dialog .guide-editor {
     font-size: 10px;
     padding-left: 8px;
   }
-  .table-toolbar {
-    gap: 8px;
-  }
 }
 @media (max-width: 1150px) {
   .workspace-grid {
@@ -1462,9 +1420,6 @@ dialog .guide-editor {
   }
   .table-toolbar {
     flex-wrap: wrap;
-  }
-  .table-search {
-    width: 100%;
   }
   .table-filters {
     flex: 1;
