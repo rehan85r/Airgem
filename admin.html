@@ -272,22 +272,7 @@
                     <label for="displayTag">Custom tag</label
                     ><input id="displayTag" placeholder="e.g. Mainnet Trading" maxlength="150" />
                   </div>
-                  <div class="field">
-                    <label for="category">Category <span class="required">*</span></label
-                    ><input
-                      id="category"
-                      list="categoryOptions"
-                      required
-                      placeholder="Select or enter a category"
-                    /><datalist id="categoryOptions">
-                      <option value="Airdrop"></option>
-                      <option value="Testnet"></option>
-                      <option value="Mainnet"></option>
-                      <option value="Whitelist"></option>
-                      <option value="Points"></option>
-                      <option value="Dex"></option>
-                    </datalist>
-                  </div>
+
 
 
                   <div class="field">
@@ -319,8 +304,8 @@
                     ><input id="status" placeholder="e.g. Confirmed, Potential" />
                   </div>
                   <div class="field">
-                    <label for="task">Type</label
-                    ><input id="task" placeholder="e.g. Perp Dex, Testnet, Points" />
+                    <label for="task">Type <span class="required">*</span></label
+                    ><select id="task" required><option value="">Select Type</option><option value="Points">Points</option><option value="Mainnet">Mainnet</option><option value="Testnet">Testnet</option><option value="Whitelist">Whitelist</option></select>
                   </div>
                   <div class="field">
                     <label for="tge">TGE</label><input id="tge" placeholder="e.g. Q4 2026 or TBA" />
