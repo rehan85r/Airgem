@@ -347,7 +347,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   flex-shrink: 0;
 }
 .app-shell {
-  margin-left: var(--sidebar-width);
+  margin-left: 0;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -360,7 +360,8 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 0 26px;
+  padding: 0 20px;
+  justify-content: space-between;
   background: rgb(255 255 255 / 97%);
   border-bottom: 1px solid var(--soft-border);
 }
@@ -1781,10 +1782,6 @@ dialog .guide-editor {
   }
 }
 
-
-
-
-
 .topbar .admin-header-logo{display:flex;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;order:-1;text-decoration:none}
 .topbar .admin-header-logo img{display:block;width:40px;height:40px;object-fit:contain;border-radius:12px}
 
@@ -1794,15 +1791,6 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-.sidebar-account-label{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:#1B2E50}
-.sidebar-account-label svg{width:18px;height:18px}
-.sidebar-account-email{font-size:11px;color:#64748B;overflow-wrap:anywhere}
-.sidebar-account-email:empty{display:none}
-
-.sidebar-account-email{display:none!important}
-.sidebar-account-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
-.sidebar-account-row .sidebar-account-label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
-
 #projectsView .page-heading h1{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:-.5px;color:#1B2E50}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
@@ -1812,18 +1800,10 @@ dialog .guide-editor {
 
 main{padding-top:15px}
 
-
-
-
-
-
-
 #projectsView .workspace-grid{display:block}
 #projectsView .workspace-main{width:100%;min-width:0}
 #projectsView .projects-card{width:100%}
 
-#dashboard .app-shell{margin-left:0!important;width:100%;max-width:none}
-#dashboard .topbar{justify-content:space-between;padding-left:20px;padding-right:20px}
 #dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
 #dashboard .header-logout svg{width:20px;height:20px}
 @media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .topbar{padding:0 15px}}
