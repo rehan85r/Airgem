@@ -1750,7 +1750,7 @@ main{padding-top:15px}
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
 
 /* Top Airdrops icon tile: 30x30px with a centered 20px star */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:5px}
+#projectsView .top-airdrops-heading h2 svg{width:15px;height:15px;padding:7.5px}
 
 /* Higher contrast amber star for Top Airdrops */
 #projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
