@@ -1764,9 +1764,11 @@ main{padding-top:15px}
 #projectsView .trending-list-navigation svg{width:18px;height:18px}
 
 /* Project management shortcuts below the Admin Panel subtitle */
-#projectsView .admin-project-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 0 20px}
-#projectsView .admin-project-nav-button{min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;font:600 13px Manrope,sans-serif;letter-spacing:-.5px;cursor:pointer}
-#projectsView .admin-project-nav-button:hover,#projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#1E90FF;background:#EFF6FF}
+#projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
+#projectsView .admin-project-nav::-webkit-scrollbar{display:none}
+#projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
+#projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
+#projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
 #projectsView .admin-project-picker{margin:0 0 20px;padding:20px;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px}
 #projectsView .admin-project-picker[hidden]{display:none}
 #projectsView .admin-project-picker-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;color:#1B2E50}
@@ -1777,4 +1779,4 @@ main{padding-top:15px}
 #projectsView .admin-project-picker-item strong{font-size:13px;flex:1}
 #projectsView .admin-project-picker-item span{font-size:11px;color:#64748B}
 #projectsView .admin-project-picker-item svg{width:16px;height:16px}
-@media(max-width:600px){#projectsView .admin-project-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#projectsView .admin-project-nav-button{padding:0 8px;font-size:12px}}
+@media(max-width:650px){#projectsView .admin-project-nav{gap:8px}#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}}
