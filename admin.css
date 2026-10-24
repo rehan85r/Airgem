@@ -1,4 +1,4 @@
-/* Airgem Admin. This stylesheet is intentionally independent of the public site. */
+
 :root {
   --blue: #1e90ff;
   --navy: #1b2e50;
@@ -246,7 +246,6 @@ svg {
   color: #bc3c4b;
 }
 
-/* Authentication stays separate from the authenticated application shell. */
 .auth-shell {
   min-height: 100dvh;
   display: flex;
@@ -338,19 +337,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 #turnstileContainer {
   min-height: 65px;
   overflow: hidden;
-}
-
-/* Desktop shell follows the reference's full-height, quiet navigation rail. */
-.sidebar {
-  position: fixed;
-  inset: 0 auto 0 0;
-  width: var(--sidebar-width);
-  z-index: 40;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-right: 1px solid var(--soft-border);
-  padding: 20px 15px 15px;
 }
 .status-dot {
   display: inline-block;
@@ -809,7 +795,6 @@ select {
   padding: 5px 25px 5px 8px;
 }
 
-/* Project editor: one focused section at a time, with a persistent publish action. */
 .section-view {
   max-width: 1200px;
   margin: 0 auto;
@@ -1207,7 +1192,6 @@ input::placeholder {
   margin-bottom: 7px;
 }
 
-/* Collections and libraries show database-backed information only. */
 .collection-card {
   max-width: 850px;
   padding: 26px;
@@ -1446,7 +1430,6 @@ dialog .guide-editor {
   min-height: 120px;
 }
 
-/* Intermediate widths retain the desktop composition without squeezing controls. */
 @media (min-width: 1151px) {
   #projectsView > .page-heading {
     margin-right: 288px;
@@ -1798,43 +1781,24 @@ dialog .guide-editor {
   }
 }
 
-/* Header navigation and account placement */
-.topbar .mobile-menu{margin-left:auto;order:3}
-.account-strip{display:flex;justify-content:flex-end;align-items:center;padding:8px 26px;background:#F8FAFC}
-@media(max-width:760px){
- .account-strip{padding:10px 16px 0}
-}
 
-/* Mobile navigation opens from the same side as the right-aligned menu trigger. */
-@media(max-width:600px){
-}
 
-/* Drawer dismiss control */
-.sidebar-close{display:none!important}
-@media(max-width:640px){
-}
 
-/* Brand mark in the 60px admin header */
+
 .topbar .admin-header-logo{display:flex;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;order:-1;text-decoration:none}
 .topbar .admin-header-logo img{display:block;width:40px;height:40px;object-fit:contain;border-radius:12px}
 
-/* Consistent 15px right inset for header actions */
 .topbar{padding-right:15px}
 
-/* Match the public homepage header: 60px, brand left, menu right */
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-
-/* Account and logout live inside the navigation drawer */
-.sidebar-account{display:flex;flex-direction:column;gap:8px;padding:14px 0 0;margin-top:14px;border-top:1px solid #E2E8F0}
 .sidebar-account-label{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:#1B2E50}
 .sidebar-account-label svg{width:18px;height:18px}
 .sidebar-account-email{font-size:11px;color:#64748B;overflow-wrap:anywhere}
 .sidebar-account-email:empty{display:none}
 
-/* Compact single-line account actions; keep email hidden */
 .sidebar-account-email{display:none!important}
 .sidebar-account-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
 .sidebar-account-row .sidebar-account-label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
@@ -1843,35 +1807,22 @@ dialog .guide-editor {
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
 
-/* Center dashboard and projects page headings */
 #projectsView .page-heading{justify-content:center;text-align:center}
 #projectsView .page-heading>div{width:100%;text-align:center}
 
-/* Match homepage's compact 15px top spacing across breakpoints */
 main{padding-top:15px}
 
-@media(max-width:600px){}
 
-/* Compact mobile spacing between dashboard icon and heading */
-@media(max-width:600px){}
-@media(max-width:600px){}
 
-/* Unified dashboard metric icon sizing across mobile and desktop */
-.stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px;border-radius:8px}
-@media(max-width:600px){}
-@media(max-width:600px){}
 
-/* Compact dashboard icon backgrounds on every breakpoint */
-.stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px}
-@media(max-width:600px){}
-@media(max-width:600px){}
+
+
 
 #projectsView .stats-grid,#projectsView .analytics-grid,#projectsView .workspace-aside{display:none!important}
 #projectsView .workspace-grid{display:block}
 #projectsView .workspace-main{width:100%;min-width:0}
 #projectsView .projects-card{width:100%}
 
-/* Sidebar-free admin editor navigation */
 #dashboard .app-shell{margin-left:0!important;width:100%;max-width:none}
 #dashboard .topbar{justify-content:space-between;padding-left:20px;padding-right:20px}
 #dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
