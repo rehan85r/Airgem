@@ -2519,3 +2519,8 @@ main{padding-top:15px}
 
 /* Uniform dashboard icon-to-heading spacing on all screen sizes */
 .stat-card{gap:10px}
+
+/* Vertically center metric headings against their icon backgrounds */
+.stat-card > div{min-width:0}
+.stat-card h2{display:flex;align-items:center;min-height:46px;margin-bottom:0}
+@media(max-width:600px){.stat-card h2{min-height:25px}}
