@@ -464,32 +464,13 @@
   function renderDashboard() {
     $('agStatProjects').textContent = state.projects.length;
     $('agStatTop').textContent = state.trendingLoaded ? `${state.savedTrending.length} / 10` : '—';
-    $('agStatGuides').textContent = state.projects.reduce(
-      (sum, project) =>
-        sum +
-        (Array.isArray(project.guide)
-          ? project.guide.filter((task) => {
-              const doc = new DOMParser().parseFromString(
-                window.AirgemEditor.cleanHTML(task.html || task.text || ''),
-                'text/html',
-              );
-              return doc.body.textContent.trim() || doc.querySelector('img');
-            }).length
-          : 0),
-      0,
-    );
-    const investorNames = new Set(
-      state.projects
-        .flatMap((project) => window.AirgemEditor.parseInvestors(project.investors))
-        .map((item) => item.title.trim().toLowerCase())
-        .filter(Boolean),
-    );
-    $('agStatInvestors').textContent = investorNames.size;
-    if ($('statProjectsNote'))
-      $('statProjectsNote').textContent =
-        `${state.projects.filter((project) => statusOf(project).toLowerCase() === 'active').length} active projects`;
-    if ($('statGuidesNote')) $('statGuidesNote').textContent = 'Tasks with guide content';
-    if ($('statInvestorsNote')) $('statInvestorsNote').textContent = 'Total unique investors';
+    const activeCount = state.projects.filter((project) => statusOf(project).toLowerCase() === 'active').length;
+    const endedCount = state.projects.filter((project) => statusOf(project).toLowerCase() === 'ended').length;
+    $('agStatActive').textContent = activeCount;
+    $('agStatEnded').textContent = endedCount;
+    if ($('statProjectsNote')) $('statProjectsNote').textContent = `${activeCount} active projects`;
+    if ($('statActiveNote')) $('statActiveNote').textContent = 'Active projects';
+    if ($('statEndedNote')) $('statEndedNote').textContent = 'Ended projects';
     renderCategoryTabs();
     renderTable();
     renderOverview();
