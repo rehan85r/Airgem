@@ -151,7 +151,6 @@
       for (const key of [
         'name',
         'displayTag',
-        'category',
         'task',
         'status',
         'activityStatus',
@@ -211,7 +210,6 @@
       for (const key of [
         'name',
         'displayTag',
-        'category',
         'task',
         'status',
         'activityStatus',
@@ -227,7 +225,8 @@
       ])
         if ($(key)) project[key] = $(key).value.trim();
       if (!project.name) throw Error('Enter a project name.');
-      if (!project.category) throw Error('Choose a project category.');
+      if (!project.task) throw Error('Choose a project type.');
+      project.category = project.task;
       project.investors = $('agInvestorsNA').checked
         ? 'N/A'
         : JSON.stringify(
