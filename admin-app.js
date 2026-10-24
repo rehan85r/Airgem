@@ -114,7 +114,6 @@
         (button.hasAttribute('data-top-move') &&
           (index + direction < 0 || index + direction >= state.trending.length));
     });
-    $('add').disabled = state.busy;
     $('editorProjectMeta').textContent = state.isNew
       ? 'New project · not published'
       : state.dirty
