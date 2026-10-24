@@ -1383,7 +1383,7 @@ input::placeholder {
 .toast {
   position: fixed;
   bottom: 24px;
-  left: calc(50% + var(--sidebar-width) / 2);
+  left: 50%;
   transform: translateX(-50%);
   z-index: 90;
   max-width: min(580px, calc(100% - 32px));
