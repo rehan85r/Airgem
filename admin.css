@@ -1783,3 +1783,7 @@ main{padding-top:15px}
 
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:20px;border-bottom:1px solid #E2E8F0;margin-bottom:20px}
+
+/* Compact header publishing action in place of the selection count */
+#projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:0 12px;border-radius:9px;font:600 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0}
+#projectsView .top-airdrops-publish svg{width:15px;height:15px}
