@@ -2486,3 +2486,8 @@ dialog .guide-editor {
 .sidebar-account-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
 .sidebar-account-row .sidebar-account-label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
 .sidebar-account-row .sidebar-logout{width:auto;min-height:38px;flex:0 0 auto;padding:8px 10px;white-space:nowrap}
+
+/* Homepage-aligned compact dashboard typography */
+#projectsView .page-heading h1{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
+#projectsView .page-heading{margin-bottom:15px}
