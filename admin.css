@@ -1745,3 +1745,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
 
 #projectsView .top-airdrops-heading h2 svg{width:18px;height:18px;padding:6px;border-radius:8px}
+
+/* Top Airdrops card: 15px top and left inset */
+#projectsView .collection-card{padding-top:15px;padding-left:15px}
