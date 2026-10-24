@@ -933,7 +933,7 @@
       state.page = 1;
       renderTable();
     };
-    $('add').onclick = addProject;
+
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
