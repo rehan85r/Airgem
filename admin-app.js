@@ -166,7 +166,6 @@
     for (const id of [
       'projectsView',
       'editorView',
-      'trendingManager',
       'settingsView',
       'libraryView',
     ])
@@ -177,7 +176,7 @@
       $('pageDescription').textContent = 'Add Edit And Manage Your Projects Details';
     } else if (view === 'editor') $('editorView').hidden = false;
     else if (view === 'top') {
-      $('trendingManager').hidden = false;
+      $('projectsView').hidden = false;
       renderTrending();
     } else if (view === 'settings') $('settingsView').hidden = false;
     else {
