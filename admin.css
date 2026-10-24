@@ -2552,3 +2552,11 @@ main{padding-top:15px}
 .stat-card strong{font-size:24px;font-weight:700;line-height:1.2}
 .stat-card p{font-size:11px;line-height:1.4;margin-top:5px}
 .stat-card h2{font-size:12px;font-weight:600;margin-bottom:0}
+
+/* Compact metric cards: remove excess empty space while retaining icon/heading alignment */
+.stat-card{min-height:112px;padding:15px;gap:10px}
+.stat-card > div{min-width:0}
+.stat-card h2{min-height:30px;line-height:1.25}
+.stat-card strong{margin-top:5px}
+.stat-card p{margin-top:5px;overflow-wrap:break-word}
+@media(max-width:600px){.stat-card{min-height:112px;padding:15px;gap:10px}}
