@@ -491,7 +491,7 @@
     icons();
   }
   function renderTrending() {
-    $('trendingState').textContent = `${state.trending.length} / 10 selected`;
+    // The selection count is no longer shown in the header.
     if ($('trendingDisclosureLabel'))
       $('trendingDisclosureLabel').textContent = `Selected projects (${state.trending.length}/10)`;
     $('trendingCurrent').innerHTML =
