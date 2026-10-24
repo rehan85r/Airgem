@@ -1751,3 +1751,6 @@ main{padding-top:15px}
 
 /* Keep the amber star tile 30x30 while enlarging the star to 20x20 */
 #projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:5px}
+
+/* Higher contrast amber star for Top Airdrops */
+#projectsView .top-airdrops-heading h2 svg{background:#FFF0C2;color:#B86E00}
