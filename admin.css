@@ -610,61 +610,6 @@ body[data-admin-view='projects'] .heading-add {
 .workspace-main {
   min-width: 0;
 }
-.workspace-aside {
-  display: grid;
-  gap: 14px;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 17px;
-}
-.stat-card {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  background: white;
-  border: 1px solid var(--soft-border);
-  border-radius: var(--radius);
-  padding: 18px 15px;
-  min-height: 139px;
-  box-shadow: var(--shadow);
-}
-.stat-card h2 {
-  font-weight: 400;
-  font-size: 12px;
-  color: var(--slate);
-  margin-bottom: 7px;
-  white-space: nowrap;
-  letter-spacing: 0;
-}
-.stat-card strong {
-  display: block;
-  font-size: 26px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -0.8px;
-}
-.stat-card p {
-  margin-top: 9px;
-  color: var(--slate);
-  font-size: 10px;
-  line-height: 1.5;
-}
-.stat-icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  flex-shrink: 0;
-  border-radius: 12px;
-}
-.stat-icon svg {
-  width: 26px;
-  height: 26px;
-}
 .blue {
   color: #0783fb;
   background: #e8f3ff;
@@ -684,39 +629,6 @@ body[data-admin-view='projects'] .heading-add {
 .slate {
   color: #64748b;
   background: #f0f4f8;
-}
-.quick-actions {
-  padding: 18px 16px 16px;
-}
-.quick-actions h2 {
-  margin-bottom: 14px;
-}
-.quick-actions > button,
-.quick-actions > a {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: white;
-  padding: 12px 15px;
-  min-height: 44px;
-  margin-top: 9px;
-  font-size: 13px;
-  text-align: left;
-}
-.quick-actions > button:first-of-type {
-  color: #087bea;
-}
-.quick-actions > button:hover,
-.quick-actions > a:hover {
-  background: #f7fbff;
-  border-color: #c7e3ff;
-}
-.quick-actions svg {
-  width: 19px;
-  height: 19px;
 }
 .category-tabs {
   display: flex;
@@ -1020,15 +932,6 @@ select {
     transform: rotate(360deg);
   }
 }
-.recent-card {
-  padding: 17px 17px 10px;
-}
-.recent-projects {
-  display: grid;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-}
 .recent-item {
   display: flex;
   align-items: center;
@@ -1068,27 +971,10 @@ select {
   font-size: 11px;
   color: var(--slate);
 }
-.analytics-grid {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  gap: 14px;
-}
-.analytics-grid .card {
-  min-height: 199px;
-  padding: 15px 17px;
-}
-.analytics-grid h2 {
-  font-size: 14px;
-}
 .card-heading select {
   font-size: 9px;
   min-height: 28px;
   padding: 5px 25px 5px 8px;
-}
-.overview-chart {
-  margin-top: 14px;
-  min-height: 125px;
 }
 .bar-chart {
   display: flex;
@@ -1138,19 +1024,6 @@ select {
   padding-top: 7px;
   font-size: 9px;
   color: var(--slate);
-}
-.chart-note {
-  color: var(--slate);
-  font-size: 9px;
-  margin-top: 23px;
-  line-height: 1.5;
-}
-.distribution-chart {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 24px;
-  margin-top: 18px;
 }
 .donut {
   width: 119px;
@@ -1851,17 +1724,11 @@ dialog .guide-editor {
 
 /* Intermediate widths retain the desktop composition without squeezing controls. */
 @media (min-width: 1151px) {
-  .workspace-aside {
-    margin-top: -82px;
-  }
   #projectsView > .page-heading {
     margin-right: 288px;
   }
 }
 @media (min-width: 1600px) {
-  .stat-card {
-    min-height: 138px;
-  }
   .project-table td {
     height: 64px;
   }
@@ -1876,28 +1743,6 @@ dialog .guide-editor {
   .workspace-grid {
     grid-template-columns: minmax(0, 1fr) 240px;
   }
-  .stat-card {
-    gap: 10px;
-    padding: 16px 12px;
-  }
-  .stat-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-  .stat-icon svg {
-    width: 22px;
-    height: 22px;
-  }
-  .stat-card strong {
-    font-size: 23px;
-  }
-  .stat-card h2 {
-    font-size: 11px;
-  }
-  .distribution-chart {
-    gap: 15px;
-  }
   .donut {
     width: 100px;
     height: 100px;
@@ -1905,9 +1750,6 @@ dialog .guide-editor {
   }
   .donut::before {
     inset: 16px;
-  }
-  .analytics-grid {
-    grid-template-columns: 1.2fr 1fr 1fr;
   }
   .table-filters {
     gap: 5px;
@@ -1925,28 +1767,11 @@ dialog .guide-editor {
   .workspace-grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .workspace-aside {
-    grid-row: 3;
-    grid-template-columns: 1fr 1fr;
-  }
-  .analytics-grid {
-    grid-row: 2;
-  }
-  .stats-grid {
-    gap: 12px;
-  }
-  .stat-card {
-    min-height: 112px;
-  }
   .library-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .media-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .distribution-chart {
-    gap: 12px;
-    flex-wrap: wrap;
   }
   .chart-legend {
     flex-basis: 90px;
@@ -1975,19 +1800,6 @@ dialog .guide-editor {
     padding: 11px;
     gap: 11px;
     font-size: 12px;
-  }
-  .stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .analytics-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .overview-card {
-    grid-column: 1 / -1;
-  }
-  .distribution-chart {
-    flex-wrap: nowrap;
-    gap: 15px;
   }
   main {
     padding: 24px 20px;
@@ -2112,35 +1924,6 @@ dialog .guide-editor {
     padding: 9px;
     font-size: 11px;
   }
-  .stats-grid {
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  .stat-card {
-    padding: 15px 12px;
-    gap: 11px;
-    min-height: 111px;
-  }
-  .stat-card strong {
-    font-size: 24px;
-  }
-  .stat-card h2 {
-    font-size: 10px;
-    margin-bottom: 6px;
-  }
-  .stat-card p {
-    font-size: 9px;
-    margin-top: 7px;
-  }
-  .stat-icon {
-    width: 33px;
-    height: 33px;
-    border-radius: 9px;
-  }
-  .stat-icon svg {
-    width: 21px;
-    height: 21px;
-  }
   .category-tabs {
     margin-right: -16px;
     padding-right: 16px;
@@ -2187,20 +1970,6 @@ dialog .guide-editor {
   .pagination {
     margin-left: auto;
   }
-  .analytics-grid {
-    gap: 12px;
-  }
-  .analytics-grid .card {
-    padding: 15px;
-  }
-  .analytics-grid > .card:not(.overview-card) {
-    grid-column: 1 / -1;
-  }
-  .distribution-chart {
-    justify-content: center;
-    gap: 32px;
-    margin: 20px 0 5px;
-  }
   .chart-legend {
     flex: 0 1 150px;
     gap: 11px;
@@ -2215,26 +1984,6 @@ dialog .guide-editor {
   }
   .donut::before {
     inset: 20px;
-  }
-  .workspace-aside {
-    grid-template-columns: 1fr;
-  }
-  .quick-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
-  }
-  .quick-actions h2 {
-    grid-column: 1 / -1;
-    margin-bottom: 3px;
-  }
-  .quick-actions > button,
-  .quick-actions > a {
-    margin-top: 0;
-    gap: 10px;
-    font-size: 10px;
-    padding: 12px;
-    min-height: 48px;
   }
   .recent-item {
     padding: 12px 0;
@@ -2487,7 +2236,6 @@ dialog .guide-editor {
 .sidebar-account-row .sidebar-account-label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
 .sidebar-account-row .sidebar-logout{width:auto;min-height:38px;flex:0 0 auto;padding:8px 10px;white-space:nowrap}
 
-/* Homepage-aligned compact dashboard typography */
 #projectsView .page-heading h1{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:-.5px;color:#1B2E50}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
@@ -2499,69 +2247,44 @@ dialog .guide-editor {
 /* Match homepage's compact 15px top spacing across breakpoints */
 main{padding-top:15px}
 
-/* Dashboard metric icons: consistent 15px on mobile and desktop */
 .stat-card .stat-icon svg{width:15px;height:15px}
 
-/* Compact mobile dashboard metric icon backgrounds */
-@media(max-width:600px){.stat-card .stat-icon{width:25px;height:25px;border-radius:7px}}
+@media(max-width:600px){}
 
-/* Dashboard metric headings: readable across all screen sizes */
 .stat-card h2{font-size:12px;font-weight:600}
 
-/* Dashboard metric icons: 20px inset from card top and left */
 .stat-card{padding-top:15px;padding-left:15px}
 
-/* Consistent compact dashboard counters */
 .stat-card strong{font-size:20px;font-weight:700;letter-spacing:-0.5px}
 
 /* Compact mobile spacing between dashboard icon and heading */
-@media(max-width:600px){.stat-card{gap:10px}}
+@media(max-width:600px){}
 
-/* Uniform dashboard icon-to-heading spacing on all screen sizes */
 .stat-card{gap:10px}
 
-/* Vertically center metric headings against their icon backgrounds */
 .stat-card > div{min-width:0}
-.stat-card h2{display:flex;align-items:center;min-height:46px;margin-bottom:0}
-@media(max-width:600px){.stat-card h2{min-height:25px}}
+@media(max-width:600px){}
 
-/* Airgem brand blue for Total Projects dashboard icon */
 .stat-card .stat-icon.blue{color:#1E90FF}
 
 /* Unified dashboard metric icon sizing across mobile and desktop */
 .stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px;border-radius:8px}
-.stat-card .stat-icon svg{width:20px;height:20px}
-.stat-card h2{min-height:30px}
-@media(max-width:600px){.stat-card .stat-icon{width:30px;height:30px;flex-basis:30px;border-radius:8px}.stat-card h2{min-height:30px}}
+@media(max-width:600px){}
 
-/* Ended projects metric: soft red status theme */
 .stat-card .stat-icon.red{color:#DC2626;background:#FEE2E2}
 
-/* Dashboard metric icon backgrounds: 40px on all devices */
 .stat-card .stat-icon{width:40px;height:40px;flex:0 0 40px}
-.stat-card h2{min-height:40px}
-@media(max-width:600px){.stat-card .stat-icon{width:40px;height:40px;flex-basis:40px}.stat-card h2{min-height:40px}}
+@media(max-width:600px){}
 
 /* Compact dashboard icon backgrounds on every breakpoint */
 .stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px}
-.stat-card h2{min-height:30px}
-@media(max-width:600px){.stat-card .stat-icon{width:30px;height:30px;flex-basis:30px}.stat-card h2{min-height:30px}}
+@media(max-width:600px){}
 
-/* Refined dashboard metrics typography and vertical rhythm */
 .stat-card .stat-icon svg{width:18px;height:18px}
-.stat-card strong{font-size:24px;font-weight:700;line-height:1.2}
-.stat-card p{font-size:11px;line-height:1.4;margin-top:5px}
-.stat-card h2{font-size:12px;font-weight:600;margin-bottom:0}
 
-/* Compact metric cards: remove excess empty space while retaining icon/heading alignment */
 .stat-card{min-height:112px;padding:15px;gap:10px}
-.stat-card > div{min-width:0}
-.stat-card h2{min-height:30px;line-height:1.25}
-.stat-card strong{margin-top:5px}
-.stat-card p{margin-top:5px;overflow-wrap:break-word}
-@media(max-width:600px){.stat-card{min-height:112px;padding:15px;gap:10px}}
+@media(max-width:600px){}
 
-/* Editor-first admin workspace: preserve existing data logic, hide analytics-only UI */
 #projectsView .stats-grid,#projectsView .analytics-grid,#projectsView .workspace-aside{display:none!important}
 #projectsView .workspace-grid{display:block}
 #projectsView .workspace-main{width:100%;min-width:0}
