@@ -782,14 +782,18 @@
         projectPickerTab = button.dataset.projectSection;
         $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic Info', 'Details', 'Task & Guide'][index];
         document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
-        picker.hidden = false;
-        renderProjectPicker();
+        const allProjects = index === 0;
+        $('trendingManager').hidden = !allProjects;
+        picker.hidden = allProjects;
+        if (!allProjects) renderProjectPicker();
       });
     });
+    document.querySelector('[data-project-section]').classList.add('active');
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
     $('closeAdminProjectPicker').onclick = () => {
       picker.hidden = true;
-      document.querySelectorAll('[data-project-section]').forEach((button) => button.classList.remove('active'));
+      $('trendingManager').hidden = false;
+      document.querySelectorAll('[data-project-section]').forEach((button, index) => button.classList.toggle('active', index === 0));
     };
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
