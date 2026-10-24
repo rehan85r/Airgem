@@ -897,6 +897,21 @@
       uploadImage: (file) => uploadFile(file, false),
     });
     bindEvents();
+    const topList = $('trendingCurrent');
+    const topUp = $('trendingScrollUp');
+    const topDown = $('trendingScrollDown');
+    const syncTopArrows = () => {
+      const canScroll = topList.scrollHeight > topList.clientHeight + 2;
+      topUp.disabled = !canScroll || topList.scrollTop <= 2;
+      topDown.disabled = !canScroll || topList.scrollTop + topList.clientHeight >= topList.scrollHeight - 2;
+      topUp.parentElement.hidden = !canScroll;
+    };
+    topUp.addEventListener('click', () => topList.scrollBy({ top: -130, behavior: 'smooth' }));
+    topDown.addEventListener('click', () => topList.scrollBy({ top: 130, behavior: 'smooth' }));
+    topList.addEventListener('scroll', syncTopArrows, { passive: true });
+    new MutationObserver(syncTopArrows).observe(topList, { childList: true });
+    window.addEventListener('resize', syncTopArrows);
+    syncTopArrows();
     configureTurnstile();
     icons();
     dropyClient.auth.onAuthStateChange?.((event) => {
