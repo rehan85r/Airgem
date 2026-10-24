@@ -93,47 +93,12 @@
     </div>
 
     <div id="dashboard" hidden>
-      <button
-        id="sidebarBackdrop"
-        class="sidebar-backdrop"
-        type="button"
-        aria-label="Close navigation"
-        hidden
-      ></button>
-      <aside id="sidebar" class="sidebar" aria-label="Main navigation">
-        <button type="button" id="closeSidebar" class="icon-button sidebar-close" aria-label="Close navigation"><i data-lucide="x" aria-hidden="true"></i></button>
-        <a class="brand sidebar-brand" href="index.html"
-          ><img src="airgem-logo.png" width="38" height="38" alt="" /><span>Airgem</span></a
-        >
-        <span class="nav-caption">WORKSPACE</span>
-        <nav class="side-nav">
-          <button type="button" data-nav="projects" class="is-active" aria-current="page"><i data-lucide="box" aria-hidden="true"></i><span>Projects</span></button>
-          <button type="button" data-nav="top"><i data-lucide="star" aria-hidden="true"></i><span>Top Airdrops</span></button>
-          <button type="button" data-nav="settings"><i data-lucide="settings" aria-hidden="true"></i><span>Settings</span></button>
-        </nav>
-        <div class="sidebar-bottom">
-          <div class="sidebar-account">
-            <span id="accountEmail" class="sidebar-account-email" hidden></span>
-            <div class="sidebar-account-row"><span class="sidebar-account-label"><i data-lucide="user-round" aria-hidden="true"></i><span>Admin</span></span><button type="button" id="logout" class="sidebar-logout"><i data-lucide="log-out" aria-hidden="true"></i><span>Log Out</span></button></div>
-          </div>
-        </div>
-      </aside>
       <div class="app-shell">
         <header class="topbar">
           <a class="admin-header-brand" href="index.html" aria-label="Airgem homepage"><img src="airgem-logo.png" alt="" width="40" height="40" /><span>Airgem</span></a>
-          <button
-            id="mobileMenu"
-            class="icon-button mobile-menu"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-            aria-controls="sidebar"
-          >
-            <i data-lucide="menu" aria-hidden="true"></i>
-          </button>
-
-
+          <button type="button" id="logout" class="header-logout" aria-label="Log out" title="Log out"><i data-lucide="log-out" aria-hidden="true"></i><span>Log Out</span></button>
         </header>
+        <nav class="editor-navigation" aria-label="Admin sections"><button type="button" data-nav="projects" class="is-active" aria-current="page">Projects</button><button type="button" data-nav="top">Top Airdrops</button><button type="button" data-nav="settings">Settings</button></nav>
         <main id="mainContent" tabindex="-1">
           <section id="projectsView">
             <div class="page-heading">
