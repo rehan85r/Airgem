@@ -1712,3 +1712,25 @@ main{padding-top:15px}
 #dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
 #dashboard .header-logout svg{width:20px;height:20px}
 @media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .topbar{padding:0 15px}}
+
+/* Compact embedded Top Airdrops manager */
+#projectsView .top-airdrops-section{width:100%;margin-top:20px}
+#projectsView .collection-card{max-width:none;width:100%;padding:20px}
+#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+#projectsView .top-airdrops-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .selection-count{flex-shrink:0;background:#eff6ff;color:#1E90FF;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px}
+#projectsView .trending-search{margin-bottom:15px}
+#projectsView .trending-search label{font-size:13px;font-weight:600;color:#1B2E50}
+#projectsView .trending-search input{min-height:45px;font-size:13px}
+#projectsView .trending-list{gap:10px}
+#projectsView .trending-item{gap:10px;padding:10px;border-radius:10px}
+#projectsView .collection-footer{margin-top:18px;padding-top:15px}
+@media(max-width:600px){
+ #projectsView .collection-card{padding:15px}
+ #projectsView .top-airdrops-heading h2{font-size:20px}
+ #projectsView .trending-item{gap:8px;padding:10px 8px}
+ #projectsView .trending-item .actions{gap:4px}
+ #projectsView .trending-item .icon-button{width:32px;height:32px;min-width:32px}
+ #projectsView .collection-footer{flex-wrap:wrap}
+ #projectsView .collection-footer .button{flex:1 1 auto}
+}
