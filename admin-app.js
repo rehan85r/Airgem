@@ -205,7 +205,7 @@
       $('pageTitle').textContent = view === 'dashboard' ? 'Dashboard' : 'Projects';
       $('pageDescription').textContent =
         view === 'dashboard'
-          ? 'Manage your projects, guides, investors and everything in one place.'
+          ? 'Organize And Manage Your Projects'
           : 'Organize, update and publish your Web3 opportunities.';
     } else if (view === 'editor') $('editorView').hidden = false;
     else if (view === 'top') {
