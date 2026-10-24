@@ -505,6 +505,23 @@
     renderTrendingSearch();
     updateBusy();
   }
+  let trendingStatusTimer;
+  function showTrendingStatus(message, kind, detail = '') {
+    clearTimeout(trendingStatusTimer);
+    const status = $('trendingMessage');
+    status.textContent = message;
+    status.classList.remove('is-success', 'is-error');
+    if (kind) status.classList.add(kind);
+    if (detail) status.title = detail;
+    else status.removeAttribute('title');
+    if (message) {
+      trendingStatusTimer = setTimeout(() => {
+        status.textContent = '';
+        status.classList.remove('is-success', 'is-error');
+        status.removeAttribute('title');
+      }, 5000);
+    }
+  }
   async function loadTrending() {
     const { data, error } = await dropyClient
       .from('site_trending_items')
@@ -512,19 +529,14 @@
       .order('position', { ascending: true });
     if (error) {
       state.trendingLoaded = false;
-      $('trendingMessage').textContent = 'Error Not Saved ×';
-      $('trendingMessage').classList.remove('is-success');
-      $('trendingMessage').classList.add('is-error');
-      $('trendingMessage').title = `Unable to load top airdrops: ${error.message}`;
+      showTrendingStatus('Error Not Saved ×', 'is-error', `Unable to load top airdrops: ${error.message}`);
       updateBusy();
       return;
     }
     state.trending = (data || []).map((item) => item.project_id);
     state.savedTrending = [...state.trending];
     state.trendingLoaded = true;
-    $('trendingMessage').textContent = '';
-    $('trendingMessage').classList.remove('is-success', 'is-error');
-    $('trendingMessage').removeAttribute('title');
+    showTrendingStatus('', '');
     renderTrending();
     renderDashboard();
   }
@@ -565,10 +577,7 @@
         throw Error('The saved collection does not match your selection');
       }
       state.savedTrending = [...state.trending];
-      $('trendingMessage').textContent = 'Update Saved ✓';
-      $('trendingMessage').classList.remove('is-error');
-      $('trendingMessage').classList.add('is-success');
-      $('trendingMessage').removeAttribute('title');
+      showTrendingStatus('Update Saved ✓', 'is-success');
       renderDashboard();
     } catch (error) {
       let restoration = '';
@@ -586,10 +595,7 @@
           ? ' Previous selection could not be restored; reload and check before retrying.'
           : ' Previous selection was restored.';
       }
-      $('trendingMessage').textContent = 'Error Not Saved ×';
-      $('trendingMessage').classList.remove('is-success');
-      $('trendingMessage').classList.add('is-error');
-      $('trendingMessage').title = `Unable to save: ${error.message}.${restoration}`;
+      showTrendingStatus('Error Not Saved ×', 'is-error', `Unable to save: ${error.message}.${restoration}`);
     } finally {
       state.busy = false;
       updateBusy();
