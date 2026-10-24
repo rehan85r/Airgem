@@ -2507,3 +2507,6 @@ main{padding-top:15px}
 
 /* Dashboard metric headings: readable across all screen sizes */
 .stat-card h2{font-size:13px;font-weight:600}
+
+/* Dashboard metric icons: 20px inset from card top and left */
+.stat-card{padding-top:20px;padding-left:20px}
