@@ -1740,3 +1740,6 @@ main{padding-top:15px}
 
 /* Warm amber icon treatment for Top Airdrops */
 #projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;box-sizing:content-box;padding:9px;border-radius:10px;background:#FFF7E2;color:#CA8B00;stroke-width:2}
+
+/* Match the original Top Airdrops dashboard tile icon */
+#projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
