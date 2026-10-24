@@ -135,28 +135,7 @@
   }
   const trendingDirty = () =>
     JSON.stringify(state.trending.map(String)) !== JSON.stringify(state.savedTrending.map(String));
-  const mobileSidebar = window.matchMedia('(max-width: 640px)');
-  function closeSidebar() {
-    const wasOpen = $('sidebar').classList.contains('is-open');
-    $('sidebar').classList.remove('is-open');
-    $('sidebar').inert = mobileSidebar.matches;
-    $('sidebar').removeAttribute('role');
-    $('sidebar').removeAttribute('aria-modal');
-    document.querySelector('.app-shell').inert = false;
-    $('sidebarBackdrop').hidden = true;
-    $('mobileMenu').setAttribute('aria-expanded', 'false');
-    if (wasOpen && mobileSidebar.matches) $('mobileMenu').focus();
-  }
-  function openSidebar() {
-    $('sidebar').inert = false;
-    $('sidebar').classList.add('is-open');
-    $('sidebar').setAttribute('role', 'dialog');
-    $('sidebar').setAttribute('aria-modal', 'true');
-    document.querySelector('.app-shell').inert = true;
-    $('sidebarBackdrop').hidden = false;
-    $('mobileMenu').setAttribute('aria-expanded', 'true');
-    $('sidebar').querySelector('[data-nav]').focus();
-  }
+  function closeSidebar() {}
   function setEditorTab(tab) {
     $$('[data-editor-tab]').forEach((button) => {
       const active = button.dataset.editorTab === tab;
@@ -973,12 +952,6 @@
     };
     $('logout').onclick = signOut;
     $('mfaSetup').onclick = startMfaSetup;
-    $('mobileMenu').onclick = () =>
-      $('sidebar').classList.contains('is-open') ? closeSidebar() : openSidebar();
-    mobileSidebar.addEventListener('change', closeSidebar);
-    $('sidebar').inert = mobileSidebar.matches;
-    $('sidebarBackdrop').onclick = closeSidebar;
-    $('closeSidebar').onclick = closeSidebar;
     document.addEventListener('keydown', (event) => {
       const tab = event.target.closest('[data-editor-tab]');
       if (tab && ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
