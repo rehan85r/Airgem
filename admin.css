@@ -9,7 +9,7 @@
   --soft-border: #edf1f6;
   --radius: 12px;
   --shadow: 0 3px 18px rgb(27 46 80 / 3%);
-  --sidebar-width: 232px;
+
   color-scheme: light;
   font-family:
     Inter,
@@ -352,100 +352,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   border-right: 1px solid var(--soft-border);
   padding: 20px 15px 15px;
 }
-.sidebar-brand {
-  padding: 0 16px 30px;
-}
-.nav-caption {
-  color: #94a3b8;
-  font-size: 9px;
-  letter-spacing: 1.4px;
-  font-weight: 600;
-  padding: 0 17px 12px;
-}
-.side-nav {
-  display: grid;
-  gap: 5px;
-}
-.side-nav button {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  min-height: 47px;
-  width: 100%;
-  text-align: left;
-  padding: 12px 17px;
-  border: 0;
-  background: transparent;
-  border-radius: 9px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.side-nav button svg {
-  width: 20px;
-  height: 20px;
-}
-.side-nav button:hover {
-  background: #f5f8fc;
-}
-.side-nav button.is-active {
-  background: #e8f3ff;
-  color: #0780f8;
-  font-weight: 600;
-}
-.side-nav .nav-chevron {
-  margin-left: auto;
-  width: 14px;
-  color: #94a3b8;
-}
-.sidebar-bottom {
-  margin-top: auto;
-  padding-top: 30px;
-}
-.brand-card {
-  text-align: center;
-  background: #fbfdff;
-  border: 1px solid var(--soft-border);
-  border-radius: 10px;
-  padding: 22px 10px 18px;
-}
-.brand-card img {
-  display: block;
-  margin: 0 auto 12px;
-  border-radius: 12px;
-}
-.brand-card strong {
-  display: block;
-  font-size: 21px;
-  letter-spacing: -0.75px;
-}
-.brand-card p {
-  margin-top: 7px;
-  font-size: 12px;
-  color: var(--slate);
-  line-height: 1.7;
-}
-.brand-card a {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 15px;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--blue);
-}
-.brand-card a svg {
-  width: 14px;
-  height: 14px;
-}
-.workspace-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 19px;
-  color: var(--slate);
-  font-size: 10px;
-}
 .status-dot {
   display: inline-block;
   width: 6px;
@@ -472,74 +378,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   background: rgb(255 255 255 / 97%);
   border-bottom: 1px solid var(--soft-border);
 }
-.website-shortcut {
-  margin-left: auto;
-  background: transparent;
-}
-.account-menu {
-  position: relative;
-}
-.account-menu summary {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  list-style: none;
-  font-size: 13px;
-}
-.account-menu summary::-webkit-details-marker {
-  display: none;
-}
-.account-menu summary > svg {
-  width: 14px;
-}
-.account-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: #f0f4fa;
-  border-radius: 50%;
-}
-.account-avatar svg {
-  width: 23px;
-  height: 23px;
-}
-.account-dropdown {
-  position: absolute;
-  right: 0;
-  top: 49px;
-  width: 230px;
-  padding: 8px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: 0 8px 30px #1b2e5012;
-}
-.account-dropdown > span {
-  display: block;
-  overflow-wrap: anywhere;
-  color: var(--slate);
-  font-size: 11px;
-  padding: 10px;
-}
-.account-dropdown button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  padding: 10px;
-  border: 0;
-  border-radius: 6px;
-  background: #f8fafc;
-  text-align: left;
-}
-.account-dropdown svg {
-  width: 16px;
-}
-.mobile-menu {
-  display: none;
-}
 main {
   flex: 1;
   width: 100%;
@@ -559,12 +397,6 @@ main {
   font-size: 13px;
   line-height: 1.6;
   margin-top: 5px;
-}
-.heading-add {
-  display: none;
-}
-body[data-admin-view='projects'] .heading-add {
-  display: inline-flex;
 }
 .eyebrow {
   display: block;
@@ -975,114 +807,6 @@ select {
   font-size: 9px;
   min-height: 28px;
   padding: 5px 25px 5px 8px;
-}
-.bar-chart {
-  display: flex;
-  align-items: flex-end;
-  height: 90px;
-  gap: 14px;
-  padding: 0 6px;
-  border-bottom: 1px solid var(--border);
-  background: repeating-linear-gradient(
-    to top,
-    transparent 0,
-    transparent 30px,
-    #f0f4f8 31px,
-    transparent 32px
-  );
-}
-.bar-column {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
-  position: relative;
-}
-.bar-column .bar {
-  display: block;
-  width: 74%;
-  max-width: 43px;
-  min-height: 0;
-  background: var(--blue);
-  border-radius: 4px 4px 0 0;
-  position: relative;
-}
-.bar-column .bar-value {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-bottom: 4px;
-  font-size: 9px;
-  color: var(--slate);
-}
-.bar-column > span:last-child {
-  position: absolute;
-  top: 100%;
-  padding-top: 7px;
-  font-size: 9px;
-  color: var(--slate);
-}
-.donut {
-  width: 119px;
-  height: 119px;
-  flex: 0 0 119px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--segments, conic-gradient(#e2e8f0 0 100%));
-  position: relative;
-}
-.donut::before {
-  content: '';
-  position: absolute;
-  inset: 20px;
-  border-radius: 50%;
-  background: white;
-}
-.donut-total {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  font-size: 10px;
-  color: var(--slate);
-}
-.donut-total strong {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: -0.5px;
-}
-.chart-legend {
-  display: grid;
-  gap: 9px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  flex: 1;
-  min-width: 0;
-}
-.chart-legend li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 10px;
-  color: var(--slate);
-}
-.legend-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.chart-legend strong {
-  margin-left: auto;
-  color: var(--navy);
-  font-weight: 500;
 }
 
 /* Project editor: one focused section at a time, with a persistent publish action. */
@@ -1743,14 +1467,6 @@ dialog .guide-editor {
   .workspace-grid {
     grid-template-columns: minmax(0, 1fr) 240px;
   }
-  .donut {
-    width: 100px;
-    height: 100px;
-    flex-basis: 100px;
-  }
-  .donut::before {
-    inset: 16px;
-  }
   .table-filters {
     gap: 5px;
   }
@@ -1773,9 +1489,6 @@ dialog .guide-editor {
   .media-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .chart-legend {
-    flex-basis: 90px;
-  }
   .task-fields {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1784,35 +1497,12 @@ dialog .guide-editor {
   :root {
     --sidebar-width: 182px;
   }
-  .sidebar {
-    padding-inline: 10px;
-  }
-  .sidebar-brand {
-    padding-inline: 10px;
-    font-size: 24px;
-    gap: 9px;
-  }
-  .sidebar-brand img {
-    width: 31px;
-    height: 31px;
-  }
-  .side-nav button {
-    padding: 11px;
-    gap: 11px;
-    font-size: 12px;
-  }
   main {
     padding: 24px 20px;
   }
   .topbar {
     padding-inline: 20px;
     gap: 12px;
-  }
-  .website-shortcut {
-    display: none;
-  }
-  .account-menu {
-    margin-left: auto;
   }
   .editor-tabs {
     gap: 20px;
@@ -1854,58 +1544,10 @@ dialog .guide-editor {
   h1 {
     font-size: 27px;
   }
-  .sidebar {
-    width: 240px;
-    transform: translateX(-100%);
-    transition: transform 0.2s ease;
-  }
-  .sidebar.is-open {
-    transform: translateX(0);
-  }
-  .sidebar-brand {
-    padding: 4px 14px 30px;
-    font-size: 26px;
-  }
-  .sidebar-brand img {
-    width: 36px;
-    height: 36px;
-  }
-  .side-nav button {
-    font-size: 13px;
-    min-height: 46px;
-    padding-inline: 15px;
-  }
-  .sidebar-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 35;
-    background: #15294366;
-    border: 0;
-    width: 100%;
-  }
   .topbar {
     height: 61px;
     padding: 0 16px;
     gap: 10px;
-  }
-  .mobile-menu {
-    display: flex;
-    background: white;
-    width: 32px;
-  }
-  .account-menu summary {
-    gap: 6px;
-  }
-  .account-menu summary > span:not(.account-avatar),
-  .account-menu summary > svg {
-    display: none;
-  }
-  .account-avatar {
-    width: 33px;
-    height: 33px;
-  }
-  .account-dropdown {
-    top: 44px;
   }
   main {
     padding: 22px 16px;
@@ -1919,10 +1561,6 @@ dialog .guide-editor {
     font-size: 12px;
     line-height: 1.7;
     margin-top: 6px;
-  }
-  .heading-add {
-    padding: 9px;
-    font-size: 11px;
   }
   .category-tabs {
     margin-right: -16px;
@@ -1969,21 +1607,6 @@ dialog .guide-editor {
   }
   .pagination {
     margin-left: auto;
-  }
-  .chart-legend {
-    flex: 0 1 150px;
-    gap: 11px;
-  }
-  .chart-legend li {
-    font-size: 11px;
-  }
-  .donut {
-    width: 120px;
-    height: 120px;
-    flex-basis: 120px;
-  }
-  .donut::before {
-    inset: 20px;
   }
   .recent-item {
     padding: 12px 0;
@@ -2157,9 +1780,6 @@ dialog .guide-editor {
     padding: 22px 18px;
     gap: 15px;
   }
-  .settings-card .stat-icon {
-    display: none;
-  }
   .toast {
     bottom: 18px;
     font-size: 11px;
@@ -2181,28 +1801,17 @@ dialog .guide-editor {
 /* Header navigation and account placement */
 .topbar .mobile-menu{margin-left:auto;order:3}
 .account-strip{display:flex;justify-content:flex-end;align-items:center;padding:8px 26px;background:#F8FAFC}
-.account-strip .account-menu{margin-left:auto}
-.account-strip .account-menu summary{cursor:pointer}
-.account-strip .account-dropdown{top:calc(100% + 8px);z-index:45}
 @media(max-width:760px){
- .topbar .mobile-menu{display:flex;margin-left:auto;order:3}
  .account-strip{padding:10px 16px 0}
- .account-strip .account-menu summary{min-height:40px}
 }
 
 /* Mobile navigation opens from the same side as the right-aligned menu trigger. */
 @media(max-width:600px){
- .sidebar{left:auto!important;right:0!important;transform:translateX(100%)!important;border-right:0!important;border-left:1px solid var(--soft-border)!important}
- .sidebar.is-open{transform:translateX(0)!important}
 }
 
 /* Drawer dismiss control */
 .sidebar-close{display:none!important}
 @media(max-width:640px){
- .sidebar{position:fixed}
- .sidebar-close{display:flex!important;position:absolute;top:16px;right:14px;width:40px;height:40px;align-items:center;justify-content:center;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;color:#1B2E50;z-index:2;cursor:pointer}
- .sidebar-close svg{width:22px;height:22px}
- .sidebar-brand{padding-right:48px!important}
 }
 
 /* Brand mark in the 60px admin header */
@@ -2217,8 +1826,6 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-.topbar .mobile-menu{display:flex;margin-left:auto;order:1;width:40px;height:40px;min-width:40px;padding:0;border:0;border-radius:12px;background:transparent;box-shadow:none;color:#1B2E50;align-items:center;justify-content:center}
-.topbar .mobile-menu svg{width:30px;height:30px}
 
 /* Account and logout live inside the navigation drawer */
 .sidebar-account{display:flex;flex-direction:column;gap:8px;padding:14px 0 0;margin-top:14px;border-top:1px solid #E2E8F0}
@@ -2226,15 +1833,11 @@ dialog .guide-editor {
 .sidebar-account-label svg{width:18px;height:18px}
 .sidebar-account-email{font-size:11px;color:#64748B;overflow-wrap:anywhere}
 .sidebar-account-email:empty{display:none}
-.sidebar-logout{display:flex;align-items:center;gap:10px;width:100%;min-height:42px;padding:10px 12px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;color:#1B2E50;font-size:13px;font-weight:600;text-align:left}
-.sidebar-logout svg{width:18px;height:18px}
-.sidebar-logout:hover{background:#F8FAFC}
 
 /* Compact single-line account actions; keep email hidden */
 .sidebar-account-email{display:none!important}
 .sidebar-account-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
 .sidebar-account-row .sidebar-account-label{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:0 0 auto}
-.sidebar-account-row .sidebar-logout{width:auto;min-height:38px;flex:0 0 auto;padding:8px 10px;white-space:nowrap}
 
 #projectsView .page-heading h1{font-size:25px;font-weight:700;line-height:1.25;letter-spacing:-.5px;color:#1B2E50}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
@@ -2247,42 +1850,20 @@ dialog .guide-editor {
 /* Match homepage's compact 15px top spacing across breakpoints */
 main{padding-top:15px}
 
-.stat-card .stat-icon svg{width:15px;height:15px}
-
 @media(max-width:600px){}
-
-.stat-card h2{font-size:12px;font-weight:600}
-
-.stat-card{padding-top:15px;padding-left:15px}
-
-.stat-card strong{font-size:20px;font-weight:700;letter-spacing:-0.5px}
 
 /* Compact mobile spacing between dashboard icon and heading */
 @media(max-width:600px){}
-
-.stat-card{gap:10px}
-
-.stat-card > div{min-width:0}
 @media(max-width:600px){}
-
-.stat-card .stat-icon.blue{color:#1E90FF}
 
 /* Unified dashboard metric icon sizing across mobile and desktop */
 .stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px;border-radius:8px}
 @media(max-width:600px){}
-
-.stat-card .stat-icon.red{color:#DC2626;background:#FEE2E2}
-
-.stat-card .stat-icon{width:40px;height:40px;flex:0 0 40px}
 @media(max-width:600px){}
 
 /* Compact dashboard icon backgrounds on every breakpoint */
 .stat-card .stat-icon{width:30px;height:30px;flex:0 0 30px}
 @media(max-width:600px){}
-
-.stat-card .stat-icon svg{width:18px;height:18px}
-
-.stat-card{min-height:112px;padding:15px;gap:10px}
 @media(max-width:600px){}
 
 #projectsView .stats-grid,#projectsView .analytics-grid,#projectsView .workspace-aside{display:none!important}
@@ -2295,7 +1876,4 @@ main{padding-top:15px}
 #dashboard .topbar{justify-content:space-between;padding-left:20px;padding-right:20px}
 #dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
 #dashboard .header-logout svg{width:20px;height:20px}
-#dashboard .editor-navigation{display:flex;gap:6px;align-items:center;padding:10px 20px;background:#fff;border-bottom:1px solid #E2E8F0;overflow-x:auto}
-#dashboard .editor-navigation button{flex-shrink:0;border:0;background:transparent;color:#64748B;padding:10px 14px;border-radius:9px;font:600 13px Manrope,sans-serif;cursor:pointer}
-#dashboard .editor-navigation button.is-active{background:#EAF3FF;color:#1E90FF}
-@media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .editor-navigation{padding:8px 15px}#dashboard .topbar{padding:0 15px}}
+@media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .topbar{padding:0 15px}}
