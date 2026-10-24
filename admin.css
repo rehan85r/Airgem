@@ -1790,7 +1790,7 @@ main{padding-top:15px}
 
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-#projectsView .trending-search-label-row label{margin-bottom:0}
+#projectsView .trending-search-label-row label{margin:0;padding:0}
 #projectsView .trending-selection-count{font:500 13px Manrope,sans-serif;color:#64748B;white-space:nowrap}
 
 /* Publish feedback directly below the Top Airdrops action */
@@ -1801,7 +1801,7 @@ main{padding-top:15px}
 #projectsView .trending-publish-message.is-error{color:#DC2626}
 
 /* Replace project count with publish result in the same label row */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 25px 0 auto;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
+#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 25px 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}
 
 /* Reference-style icon and message beside Select Project */
