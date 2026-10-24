@@ -18,7 +18,7 @@
     page: 1,
     pageSize: 5,
     category: '',
-    view: 'dashboard',
+    view: 'projects',
     dataLoaded: false,
   };
   let editor,
@@ -856,12 +856,12 @@
         $('mfaStatus').textContent = verified.length
           ? 'Two-factor authentication is enabled.'
           : 'Add an authenticator app for another layer of security.';
-      navigate('dashboard', { skipGuard: true });
+      navigate('projects', { skipGuard: true });
       try {
         await refreshProjects();
         await loadTrending();
       } catch (error) {
-        message(`Unable to load dashboard: ${error.message}`, true);
+        message(`Unable to load projects: ${error.message}`, true);
         renderTable();
         if ($('dataError')) {
           $('dataError').hidden = false;
