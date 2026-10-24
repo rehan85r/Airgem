@@ -512,7 +512,10 @@
       .order('position', { ascending: true });
     if (error) {
       state.trendingLoaded = false;
-      $('trendingMessage').textContent = `Unable to load top airdrops: ${error.message}`;
+      $('trendingMessage').textContent = 'Error Not Saved ×';
+      $('trendingMessage').classList.remove('is-success');
+      $('trendingMessage').classList.add('is-error');
+      $('trendingMessage').title = `Unable to load top airdrops: ${error.message}`;
       updateBusy();
       return;
     }
@@ -520,6 +523,8 @@
     state.savedTrending = [...state.trending];
     state.trendingLoaded = true;
     $('trendingMessage').textContent = '';
+    $('trendingMessage').classList.remove('is-success', 'is-error');
+    $('trendingMessage').removeAttribute('title');
     renderTrending();
     renderDashboard();
   }
@@ -560,7 +565,10 @@
         throw Error('The saved collection does not match your selection');
       }
       state.savedTrending = [...state.trending];
-      $('trendingMessage').textContent = 'Top airdrops saved.';
+      $('trendingMessage').textContent = 'Update Saved ✓';
+      $('trendingMessage').classList.remove('is-error');
+      $('trendingMessage').classList.add('is-success');
+      $('trendingMessage').removeAttribute('title');
       renderDashboard();
     } catch (error) {
       let restoration = '';
@@ -578,7 +586,10 @@
           ? ' Previous selection could not be restored; reload and check before retrying.'
           : ' Previous selection was restored.';
       }
-      $('trendingMessage').textContent = `Unable to save: ${error.message}.${restoration}`;
+      $('trendingMessage').textContent = 'Error Not Saved ×';
+      $('trendingMessage').classList.remove('is-success');
+      $('trendingMessage').classList.add('is-error');
+      $('trendingMessage').title = `Unable to save: ${error.message}.${restoration}`;
     } finally {
       state.busy = false;
       updateBusy();
