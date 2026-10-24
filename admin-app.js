@@ -261,64 +261,24 @@
     if ($('dataError')) $('dataError').hidden = true;
   }
   function renderFilters() {
-    const category = $('categoryFilter').value,
-      status = $('statusFilter').value;
     const categories = [...new Set(state.projects.map(categoryOf))].sort();
-    $('categoryFilter').innerHTML =
-      '<option value="">Category</option>' +
-      categories.map((value) => `<option value="${esc(value)}">${esc(value)}</option>`).join('');
-    $('statusFilter').innerHTML =
-      '<option value="">Status</option>' +
-      [...new Set(state.projects.map(statusOf))]
-        .sort()
-        .map((value) => `<option value="${esc(value)}">${esc(value)}</option>`)
-        .join('');
-    if (state.category && !categories.includes(state.category)) state.category = '';
-    $('categoryFilter').value = categories.includes(category) ? category : '';
-    $('statusFilter').value = status;
     if ($('categoryOptions'))
       $('categoryOptions').innerHTML = [
         ...new Set(['Airdrop', 'Testnet', 'Mainnet', 'Whitelist', 'Points', 'Dex', ...categories]),
-      ]
-        .map((value) => `<option value="${esc(value)}"></option>`)
-        .join('');
+      ].map((value) => `<option value="${esc(value)}"></option>`).join('');
   }
   function filteredProjects() {
-    const query = $('search').value.trim().toLowerCase();
-    const category = $('categoryFilter').value || state.category,
-      status = $('statusFilter').value;
-    const rows = state.projects.filter(
-      (project) =>
-        (!query ||
-          [
-            project.name,
-            project.displayTag,
-            project.task,
-            project.category,
-            project.status,
-            project.ecosystem,
-          ].some((value) =>
-            String(value || '')
-              .toLowerCase()
-              .includes(query),
-          )) &&
-        (!category || categoryOf(project) === category) &&
-        (!status || statusOf(project) === status),
-    );
-    const sort = $('sortBy').value;
+    const rows = [...state.projects];
     const timestamp = (project) => {
       const added = Date.parse(project.addedOn || ''),
         created = Date.parse(project.created_at || '');
       return Number.isNaN(added) ? (Number.isNaN(created) ? null : created) : added;
     };
     rows.sort((a, b) => {
-      if (sort === 'name') return a.name.localeCompare(b.name);
-      const left = timestamp(a),
-        right = timestamp(b);
+      const left = timestamp(a), right = timestamp(b);
       if (left === null && right !== null) return 1;
       if (right === null && left !== null) return -1;
-      const difference = (left ?? 0) - (right ?? 0) || Number(a.id) - Number(b.id);
-      return sort === 'oldest' ? difference : -difference;
+      return -((left ?? 0) - (right ?? 0) || Number(a.id) - Number(b.id));
     });
     return rows;
   }
@@ -873,20 +833,6 @@
         renderTrending();
       }
     });
-    $('search').oninput = () => {
-      state.page = 1;
-      renderTable();
-    };
-    $('categoryFilter').onchange = () => {
-      state.category = $('categoryFilter').value;
-      state.page = 1;
-        renderTable();
-    };
-    $('statusFilter').onchange = $('sortBy').onchange = () => {
-      state.page = 1;
-      renderTable();
-    };
-
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
