@@ -134,7 +134,6 @@
   }
   const trendingDirty = () =>
     JSON.stringify(state.trending.map(String)) !== JSON.stringify(state.savedTrending.map(String));
-  function closeSidebar() {}
   function setEditorTab(tab) {
     $$('[data-editor-tab]').forEach((button) => {
       const active = button.dataset.editorTab === tab;
@@ -172,19 +171,10 @@
       'libraryView',
     ])
       $(id).hidden = true;
-    $$('[data-nav]').forEach((button) => {
-      const active = button.dataset.nav === view;
-      button.classList.toggle('is-active', active);
-      if (active) button.setAttribute('aria-current', 'page');
-      else button.removeAttribute('aria-current');
-    });
-    if (view === 'dashboard' || view === 'projects') {
+    if (view === 'projects') {
       $('projectsView').hidden = false;
-      $('pageTitle').textContent = view === 'dashboard' ? 'Dashboard' : 'Projects';
-      $('pageDescription').textContent =
-        view === 'dashboard'
-          ? 'Manage And Organize Your Projects Details'
-          : 'Organize, update and publish your Web3 opportunities.';
+      $('pageTitle').textContent = 'Projects';
+      $('pageDescription').textContent = 'Organize, update and publish your Web3 opportunities.';
     } else if (view === 'editor') $('editorView').hidden = false;
     else if (view === 'top') {
       $('trendingManager').hidden = false;
@@ -194,7 +184,6 @@
       $('libraryView').hidden = false;
       renderLibrary(view);
     }
-    closeSidebar();
     window.scrollTo({ top: 0, behavior: 'instant' });
     return true;
   }
@@ -364,7 +353,7 @@
       visible = filtered.slice(offset, offset + state.pageSize);
     $('list').innerHTML = visible.length
       ? `<div class="table-scroll" tabindex="0" role="region" aria-label="Projects table, scroll horizontally to see all columns"><table class="project-table"><thead><tr><th scope="col">#</th><th scope="col">Project</th><th scope="col">Category</th><th scope="col">Type</th><th scope="col">TGE</th><th scope="col">Status</th><th scope="col">Added</th><th scope="col">Actions</th></tr></thead><tbody>${visible.map((project, index) => `<tr><td>${offset + index + 1}</td><td><button type="button" class="project-identity" data-edit-project="${esc(project.id)}">${avatar(project)}<span class="project-copy"><strong>${esc(project.name)}</strong><small>${esc(project.displayTag || project.ecosystem || 'No custom tag')}</small></span></button></td><td><span class="badge ${badgeClass(categoryOf(project))}">${esc(categoryOf(project))}</span></td><td><span class="badge ${badgeClass(project.task)}">${esc(project.task || '—')}</span></td><td>${esc(project.tge || 'TBA')}</td><td><span class="badge ${badgeClass(statusOf(project))}">${esc(statusOf(project))}</span></td><td>${esc(formatDate(project.addedOn))}</td><td><div class="row-actions"><button type="button" class="icon-button" data-edit-project="${esc(project.id)}" aria-label="Edit ${esc(project.name)}" title="Edit project">${icon('pencil')}</button><a class="icon-button" href="project.html?id=${encodeURIComponent(project.id)}" target="_blank" rel="noopener noreferrer" aria-label="Preview ${esc(project.name)}" title="Preview project">${icon('eye')}</a><button type="button" class="icon-button danger" data-delete-project="${esc(project.id)}" aria-label="Delete ${esc(project.name)}" title="Delete project">${icon('trash-2')}</button></div></td></tr>`).join('')}</tbody></table></div>`
-      : `<div class="empty-state">${icon('search-x')}<h3>${state.projects.length ? 'No projects found' : 'Your projects start here'}</h3><p>${state.projects.length ? 'Try a different search or filter.' : 'Add your first project to build your dashboard.'}</p></div>`;
+      : `<div class="empty-state">${icon('search-x')}<h3>${state.projects.length ? 'No projects found' : 'Your projects start here'}</h3><p>${state.projects.length ? 'Try a different search or filter.' : 'No projects match your filters.'}</p></div>`;
     $('tableCount').textContent = filtered.length
       ? `Showing ${offset + 1}–${Math.min(offset + state.pageSize, filtered.length)} of ${filtered.length} projects`
       : '0 projects';
@@ -537,7 +526,7 @@
         message('Project published successfully.');
       } catch (refreshError) {
         message(
-          `Project was published, but the dashboard could not refresh: ${refreshError.message}`,
+          `Project was published, but the project list could not refresh: ${refreshError.message}`,
           true,
         );
       }
@@ -856,16 +845,6 @@
         removeProject(remove.dataset.deleteProject);
         return;
       }
-      const nav = event.target.closest('[data-nav]');
-      if (nav) {
-        navigate(nav.dataset.nav);
-        return;
-      }
-      const action = event.target.closest('[data-action]');
-      if (action) {
-        action.dataset.action === 'add' ? addProject() : navigate(action.dataset.action);
-        return;
-      }
       const tab = event.target.closest('[data-editor-tab]');
       if (tab) {
         setEditorTab(tab.dataset.editorTab);
@@ -966,7 +945,6 @@
         tabs[index].focus();
         tabs[index].scrollIntoView({ block: 'nearest', inline: 'nearest' });
       }
-      if (event.key === 'Escape') closeSidebar();
     });
     window.addEventListener('beforeunload', (event) => {
       if (state.dirty || trendingDirty() || state.uploads) {
