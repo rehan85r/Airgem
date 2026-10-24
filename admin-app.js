@@ -777,11 +777,11 @@
       ).join('') || '<p class="trending-empty">No matching projects.</p>';
       icons();
     };
-    $('[data-project-section]').forEach((button, index) => {
+    document.querySelectorAll('[data-project-section]').forEach((button, index) => {
       button.addEventListener('click', () => {
         projectPickerTab = button.dataset.projectSection;
         $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic Info', 'Details', 'Task & Guide'][index];
-        $('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
+        document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
         picker.hidden = false;
         renderProjectPicker();
       });
@@ -789,7 +789,7 @@
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
     $('closeAdminProjectPicker').onclick = () => {
       picker.hidden = true;
-      $('[data-project-section]').forEach((button) => button.classList.remove('active'));
+      document.querySelectorAll('[data-project-section]').forEach((button) => button.classList.remove('active'));
     };
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
