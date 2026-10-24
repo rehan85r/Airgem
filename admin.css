@@ -2495,3 +2495,6 @@ dialog .guide-editor {
 /* Center dashboard and projects page headings */
 #projectsView .page-heading{justify-content:center;text-align:center}
 #projectsView .page-heading>div{width:100%;text-align:center}
+
+/* Match homepage's compact 15px top spacing across breakpoints */
+main{padding-top:15px}
