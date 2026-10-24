@@ -509,7 +509,9 @@
   function showTrendingStatus(message, kind, detail = '') {
     clearTimeout(trendingStatusTimer);
     const status = $('trendingMessage');
-    status.textContent = message;
+    if (message === 'Update Saved ✓') status.innerHTML = `${icon('circle-check')}<span>Update Saved ✓</span>`;
+    else if (message === 'Error Not Saved ×') status.innerHTML = `${icon('circle-x')}<span>Error Not Saved ×</span>`;
+    else status.textContent = message;
     status.classList.remove('is-success', 'is-error');
     if (kind) status.classList.add(kind);
     if (detail) status.title = detail;
