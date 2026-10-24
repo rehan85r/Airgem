@@ -755,7 +755,6 @@
         return;
       }
       showAuth('dashboard');
-      $('accountEmail').textContent = user.email || 'Admin';
       $('mfaSetup').hidden = verified.length > 0;
       if ($('mfaStatus'))
         $('mfaStatus').textContent = verified.length
@@ -967,22 +966,6 @@
         setEditorTab(tabs[index].dataset.editorTab);
         tabs[index].focus();
         tabs[index].scrollIntoView({ block: 'nearest', inline: 'nearest' });
-      }
-      if (
-        event.key === 'Tab' &&
-        mobileSidebar.matches &&
-        $('sidebar').classList.contains('is-open')
-      ) {
-        const focusable = [...$('sidebar').querySelectorAll('a[href],button:not([disabled])')],
-          first = focusable[0],
-          last = focusable.at(-1);
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
       }
       if (event.key === 'Escape') closeSidebar();
     });
