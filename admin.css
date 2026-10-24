@@ -1774,12 +1774,7 @@ main{padding-top:15px}
 #projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
-#projectsView .trending-list-viewport{position:relative}
-#projectsView .trending-list{max-height:250px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:3px}
-#projectsView .trending-list-navigation{display:flex;justify-content:center;gap:10px;margin-top:10px}
-#projectsView .trending-list-navigation button{display:grid;place-items:center;width:34px;height:30px;border:1px solid #E2E8F0;border-radius:9px;background:#FFFFFF;color:#1B2E50;cursor:pointer}
-#projectsView .trending-list-navigation button:disabled{opacity:.35;cursor:default}
-#projectsView .trending-list-navigation svg{width:18px;height:18px}
+#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:3px}
 
 /* Project management shortcuts below the Admin Panel subtitle */
 #projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
