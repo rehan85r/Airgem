@@ -110,6 +110,17 @@
               </div>
               
             </div>
+          <nav class="admin-project-nav" aria-label="Project management">
+            <button type="button" class="admin-project-nav-button" data-project-section="basic">All Projects</button>
+            <button type="button" class="admin-project-nav-button" data-project-section="basic">Basic Info</button>
+            <button type="button" class="admin-project-nav-button" data-project-section="details">Details</button>
+            <button type="button" class="admin-project-nav-button" data-project-section="guide">Task &amp; Guide</button>
+          </nav>
+          <section id="adminProjectPicker" class="admin-project-picker" hidden aria-label="Choose a project to edit">
+            <div class="admin-project-picker-heading"><strong id="adminProjectPickerTitle">All Projects</strong><button type="button" id="closeAdminProjectPicker" aria-label="Close project list"><i data-lucide="x" aria-hidden="true"></i></button></div>
+            <input type="search" id="adminProjectPickerSearch" placeholder="Search Projects…" aria-label="Search projects to edit" />
+            <div id="adminProjectPickerList" class="admin-project-picker-list"></div>
+          </section>
           <section id="trendingManager" class="top-airdrops-section" aria-labelledby="trendingHeading">
             <div class="card collection-card">
               <div class="top-airdrops-heading">
