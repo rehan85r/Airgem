@@ -1818,7 +1818,6 @@ main{padding-top:15px}
 
 
 
-#projectsView .stats-grid,#projectsView .analytics-grid,#projectsView .workspace-aside{display:none!important}
 #projectsView .workspace-grid{display:block}
 #projectsView .workspace-main{width:100%;min-width:0}
 #projectsView .projects-card{width:100%}
