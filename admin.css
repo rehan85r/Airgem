@@ -1750,7 +1750,7 @@ main{padding-top:15px}
 #projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}
 #projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}
 #projectsView .trending-search-clear[hidden]{display:none}
-#projectsView .trending-search-clear svg{width:15px;height:15px;stroke-width:2.5}
+#projectsView .trending-search-clear svg{width:20px;height:20px;stroke-width:2.5}
 #projectsView .trending-list{gap:10px}
 #projectsView .trending-item{gap:10px;padding:10px;border-radius:12px;min-height:55px;box-sizing:border-box}
 #projectsView .trending-item .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
