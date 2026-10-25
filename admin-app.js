@@ -488,7 +488,11 @@
     renderAllAirdrops();
   }
   async function publishAllAirdrops() {
-    if (state.busy || state.uploads || !state.pendingProjectDeletes.length) return;
+    if (state.busy || state.uploads) return;
+    if (!state.pendingProjectDeletes.length) {
+      showPublishStatus('allAirdropsMessage', 'Update Saved ✓', 'is-success');
+      return;
+    }
     const names = state.pendingProjectDeletes.map((id) =>
       state.projects.find((item) => String(item.id) === String(id))?.name || String(id));
     if (!confirm(`Permanently delete ${names.length} project${names.length === 1 ? '' : 's'} from Airgem and all categories? This cannot be undone.\n\n${names.join(', ')}`)) return;
@@ -505,9 +509,9 @@
       }
       await refreshProjects();
       await loadTrending();
-      message('All Airdrops changes published. Projects permanently deleted.');
+      showPublishStatus('allAirdropsMessage', 'Update Saved ✓', 'is-success');
     } catch (error) {
-      message(`Publish incomplete: ${error.message}. Check remaining pending projects.`, true);
+      showPublishStatus('allAirdropsMessage', 'Error Not Saved ×', 'is-error', `Publish incomplete: ${error.message}. Check remaining pending projects.`);
       await refreshProjects().catch(() => {});
       await loadTrending().catch(() => {});
     } finally {
@@ -555,10 +559,10 @@
     renderTrendingSearch();
     updateBusy();
   }
-  let trendingStatusTimer;
-  function showTrendingStatus(message, kind, detail = '') {
-    clearTimeout(trendingStatusTimer);
-    const status = $('trendingMessage');
+  const publishStatusTimers = new Map();
+  function showPublishStatus(targetId, message, kind, detail = '') {
+    clearTimeout(publishStatusTimers.get(targetId));
+    const status = $(targetId);
     if (message === 'Update Saved ✓') status.innerHTML = `${icon('circle-check')}<span>Update Saved ✓</span>`;
     else if (message === 'Error Not Saved ×') status.innerHTML = `${icon('circle-x')}<span>Error Not Saved ×</span>`;
     else status.textContent = message;
@@ -567,12 +571,16 @@
     if (detail) status.title = detail;
     else status.removeAttribute('title');
     if (message) {
-      trendingStatusTimer = setTimeout(() => {
+      publishStatusTimers.set(targetId, setTimeout(() => {
         status.textContent = '';
         status.classList.remove('is-success', 'is-error');
         status.removeAttribute('title');
-      }, 5000);
+      }, 5000));
     }
+    icons();
+  }
+  function showTrendingStatus(message, kind, detail = '') {
+    showPublishStatus('trendingMessage', message, kind, detail);
   }
   async function loadTrending() {
     const { data, error } = await dropyClient
