@@ -2016,3 +2016,9 @@ main{padding-top:15px}
 /* Consistent Basic Editor field dimensions across mobile and desktop. */
 #editorView #panel-basic .form-grid .field input,
 #editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}
+
+/* Mobile editor: consistent 20px left/right spacing for Basic, Details and Guide cards. */
+@media(max-width:767px){
+  body[data-admin-view="editor"] #editorView #form{padding-left:20px;padding-right:20px}
+  body[data-admin-view="editor"] #editorView .editor-footer{margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
+}
