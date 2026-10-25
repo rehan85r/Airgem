@@ -565,7 +565,7 @@
     const status = $(targetId);
     if (message === 'Update Saved ✓') status.innerHTML = `${icon('circle-check')}<span>Update Saved ✓</span>`;
     else if (message === 'Error Not Saved ×') status.innerHTML = `${icon('circle-x')}<span>Error Not Saved ×</span>`;
-    else if (message === 'Click Publish To Save') status.innerHTML = `${icon('circle-check')}<span>Click Publish To Save</span>`;
+    else if (message === 'Click Publish To Save') status.innerHTML = `<span>Click Publish To Save</span>${icon('circle-check')}`;
     else status.textContent = message;
     status.classList.remove('is-success', 'is-error');
     if (kind) status.classList.add(kind);
