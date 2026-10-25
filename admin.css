@@ -1836,7 +1836,7 @@ main{padding-top:15px}
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 /* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
+#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
 #projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
 
 /* Compact header publishing action in place of the selection count */
