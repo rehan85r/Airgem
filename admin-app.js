@@ -169,8 +169,8 @@
       $(id).hidden = true;
     if (view === 'projects') {
       $('projectsView').hidden = false;
-      $('pageTitle').textContent = 'Admin Panel';
-      $('pageDescription').textContent = 'Add Edit And Manage Your Projects Details';
+      $('pageTitle').innerHTML = 'Admin <span class="admin-panel-accent">Panel</span>';
+      $('pageDescription').textContent = 'Manage Your Projects In One Place';
     } else if (view === 'editor') $('editorView').hidden = false;
     else if (view === 'top') {
       $('projectsView').hidden = false;
