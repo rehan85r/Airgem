@@ -1941,3 +1941,7 @@ main{padding-top:15px}
   #editorView #panel-basic{padding:15px}
 }
 @media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
+
+/* Basic editor project logo size */
+#panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
+#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}
