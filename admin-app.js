@@ -541,7 +541,7 @@
       ? matches
           .map(
             (project) =>
-              `<button type="button" data-top-add="${esc(project.id)}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span>${icon('plus')}</button>`,
+              `<button type="button" data-top-add="${esc(project.id)}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong></span>${icon('plus')}</button>`,
           )
           .join('')
       : '';
