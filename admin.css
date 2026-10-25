@@ -1964,3 +1964,9 @@ main{padding-top:15px}
 .admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}
 .admin-boot img{width:40px;height:40px;object-fit:contain}
 .admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}
+
+/* Basic editor: center Upload Logo control beside 40px logo, with 10px horizontal spacing. */
+@media(max-width:767px){
+ #editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}
+ #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
+}
