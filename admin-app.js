@@ -896,7 +896,7 @@
       if (order.some((id, index) => String(id) !== String(originalOrder[index]))) {
         state.trending = order;
         renderTrending();
-        $('trendingMessage').textContent = 'Order changed. Save top airdrops to publish.';
+        $('trendingMessage').textContent = 'Click Publish To Save √';
         const moved = list.querySelector('[data-top-row="' + order.findIndex((id) => String(id) === String(originalOrder[Number(row.dataset.topRow)])) + '"]');
         if (moved) moved.classList.add('drag-recent');
         scheduleDragHighlightClear();
