@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="admin.css?v=search-results-compact-20261025" />
+    <link rel="stylesheet" href="admin.css?v=unified-editor-picker-20261025" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   </head>
   <body>
@@ -119,13 +119,13 @@
           <section id="adminProjectPicker" class="top-airdrops-section" hidden aria-label="Choose a project to edit">
             <div class="card collection-card">
               <div class="top-airdrops-heading">
-                <h2><i data-lucide="box" aria-hidden="true"></i><span id="adminProjectPickerTitle">Basic</span></h2>
-                <button type="button" id="closeAdminProjectPicker" class="icon-button" aria-label="Back to all projects"><i data-lucide="x" aria-hidden="true"></i></button>
+                <h2><i data-lucide="layers" aria-hidden="true"></i><span id="adminProjectPickerTitle">Basic</span></h2>
               </div>
               <div class="field trending-search">
-                <label for="adminProjectPickerSearch">Select Project</label>
                 <div class="trending-search-input-wrap">
+                  <svg class="trending-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
                   <input type="search" id="adminProjectPickerSearch" placeholder="Search Project…" autocomplete="off" aria-label="Search projects to edit" />
+                  <button type="button" id="adminProjectPickerSearchClear" class="trending-search-clear" aria-label="Clear project search" hidden><i data-lucide="x" aria-hidden="true"></i></button>
                 </div>
               </div>
               <div id="adminProjectPickerList" class="trending-list admin-project-picker-list"></div>
@@ -649,6 +649,6 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="admin-editor.js" defer></script>
-    <script src="admin-app.js?v=independent-publish-buttons-20261025" defer></script>
+    <script src="admin-app.js?v=unified-editor-picker-20261025" defer></script>
   </body>
 </html>
