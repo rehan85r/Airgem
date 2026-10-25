@@ -93,6 +93,7 @@
       guide: project.guide || [],
     };
   }
+  let activePublishAction = null;
   function updateBusy() {
     const blocked = state.busy || state.uploads > 0;
     // Keep the captured draft stable until a save or upload has completed.
@@ -104,8 +105,8 @@
       icon(state.busy ? 'loader-circle' : 'check') +
       (state.busy ? 'Saving…' : state.isNew ? 'Publish Project' : 'Publish Changes');
     $('remove').disabled = blocked || state.isNew;
-    $('saveTrending').disabled = state.busy || !state.trendingLoaded;
-    $('publishAllAirdrops').disabled = state.busy;
+    $('saveTrending').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'top') || !state.trendingLoaded;
+    $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
     $('trendingSelect').disabled = state.busy || !state.trendingLoaded;
     document.querySelectorAll('[data-top-add], [data-top-remove], [data-top-drag]').forEach((button) => {
       button.disabled = state.busy;
@@ -472,7 +473,7 @@
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
     const pending = state.pendingProjectDeletes.length;
     $('allAirdropsPending').textContent = '';
-    $('publishAllAirdrops').disabled = state.busy;
+    $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
     $('allAirdropsList').innerHTML = matches.map((project) => {
       const staged = state.pendingProjectDeletes.some((id) => String(id) === String(project.id));
       return `<div class="trending-item${staged ? ' is-pending-delete' : ''}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong>${staged ? '<small>Pending Deletion · Not Published</small>' : ''}</span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
@@ -494,6 +495,7 @@
     const names = state.pendingProjectDeletes.map((id) =>
       state.projects.find((item) => String(item.id) === String(id))?.name || String(id));
     if (!confirm(`Permanently delete ${names.length} project${names.length === 1 ? '' : 's'} from Airgem and all categories? This cannot be undone.\n\n${names.join(', ')}`)) return;
+    activePublishAction = 'all';
     state.busy = true;
     updateBusy();
     try {
@@ -514,6 +516,7 @@
       await loadTrending().catch(() => {});
     } finally {
       state.busy = false;
+      activePublishAction = null;
       updateBusy();
       renderAllAirdrops();
     }
@@ -605,6 +608,7 @@
   }
   async function saveTrending() {
     if (state.busy || !state.trendingLoaded) return;
+    activePublishAction = 'top';
     state.busy = true;
     updateBusy();
     const previous = [...state.savedTrending];
@@ -661,6 +665,7 @@
       showTrendingStatus('Error Not Saved ×', 'is-error', `Unable to save: ${error.message}.${restoration}`);
     } finally {
       state.busy = false;
+      activePublishAction = null;
       updateBusy();
     }
   }
