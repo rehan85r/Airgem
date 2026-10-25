@@ -116,10 +116,20 @@
             <button type="button" class="admin-project-nav-button" data-project-section="details">Details</button>
             <button type="button" class="admin-project-nav-button" data-project-section="guide">Guide</button>
           </nav>
-          <section id="adminProjectPicker" class="admin-project-picker" hidden aria-label="Choose a project to edit">
-            <div class="admin-project-picker-heading"><strong id="adminProjectPickerTitle">All Projects</strong><button type="button" id="closeAdminProjectPicker" aria-label="Close project list"><i data-lucide="x" aria-hidden="true"></i></button></div>
-            <input type="search" id="adminProjectPickerSearch" placeholder="Search Projects…" aria-label="Search projects to edit" />
-            <div id="adminProjectPickerList" class="admin-project-picker-list"></div>
+          <section id="adminProjectPicker" class="top-airdrops-section" hidden aria-label="Choose a project to edit">
+            <div class="card collection-card">
+              <div class="top-airdrops-heading">
+                <h2><i data-lucide="box" aria-hidden="true"></i><span id="adminProjectPickerTitle">Basic</span></h2>
+                <button type="button" id="closeAdminProjectPicker" class="icon-button" aria-label="Back to all projects"><i data-lucide="x" aria-hidden="true"></i></button>
+              </div>
+              <div class="field trending-search">
+                <label for="adminProjectPickerSearch">Select Project</label>
+                <div class="trending-search-input-wrap">
+                  <input type="search" id="adminProjectPickerSearch" placeholder="Search Project…" autocomplete="off" aria-label="Search projects to edit" />
+                </div>
+              </div>
+              <div id="adminProjectPickerList" class="trending-list admin-project-picker-list"></div>
+            </div>
           </section>
           <section id="trendingManager" class="top-airdrops-section" aria-labelledby="trendingHeading">
             <div class="card collection-card">
