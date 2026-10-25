@@ -1803,16 +1803,14 @@ main{padding-top:15px}
 #projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
 #projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
 #projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView .admin-project-picker{margin:0 0 20px;padding:20px;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px}
 #projectsView .admin-project-picker[hidden]{display:none}
-#projectsView .admin-project-picker-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;color:#1B2E50}
-#projectsView .admin-project-picker-heading button{display:grid;place-items:center;width:30px;height:30px;border:0;background:transparent;color:#64748B;cursor:pointer}
-#projectsView #adminProjectPickerSearch{width:100%;height:45px;padding:0 12px;border:1px solid #E2E8F0;border-radius:12px;font-size:13px}
-#projectsView .admin-project-picker-list{max-height:270px;overflow:auto;margin-top:12px}
-#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;padding:12px;border:0;border-bottom:1px solid #E2E8F0;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
-#projectsView .admin-project-picker-item strong{font-size:13px;flex:1}
-#projectsView .admin-project-picker-item span{font-size:11px;color:#64748B}
-#projectsView .admin-project-picker-item svg{width:16px;height:16px}
+#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
+#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
+#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
+#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}
+#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
+#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}
+#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}
 @media(max-width:650px){#projectsView .admin-project-nav{gap:8px}#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}}
 
 /* Subtle divider 20px below the Top Airdrops heading */
