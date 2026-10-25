@@ -763,7 +763,9 @@
         $('mfaStatus').textContent = verified.length
           ? 'Two-factor authentication is enabled.'
           : 'Add an authenticator app for another layer of security.';
+      restoringLocation = true;
       navigate('projects', { skipGuard: true });
+      restoringLocation = false;
       try {
         await Promise.all([refreshProjects(), loadTrending()]);
         restoreLocation();
