@@ -479,8 +479,8 @@
           )
           .slice(0, 20)
       : [];
-    $('trendingSearchResults').hidden = !query;
-    $('trendingSelect').setAttribute('aria-expanded', String(Boolean(query)));
+    $('trendingSearchResults').hidden = !query || matches.length === 0;
+    $('trendingSelect').setAttribute('aria-expanded', String(Boolean(query && matches.length)));
     $('trendingSearchResults').innerHTML = matches.length
       ? matches
           .map(
@@ -488,7 +488,7 @@
               `<button type="button" data-top-add="${esc(project.id)}">${esc(project.name)}${icon('plus')}</button>`,
           )
           .join('')
-      : '<p>No matching projects.</p>';
+      : '';
     icons();
   }
   function renderTrending() {
