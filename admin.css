@@ -1158,7 +1158,10 @@ input::placeholder {
   font: 600 14px Manrope, sans-serif;
   border-radius: 12px;
 }
-#projectsView .search-results .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
+#projectsView #trendingSearchResults button{height:50px;min-height:50px;padding:5px 10px;box-sizing:border-box;border-radius:12px;gap:10px}
+#projectsView .search-results .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
+#projectsView #trendingSearchResults .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
+#projectsView #trendingSearchResults .trending-item-copy strong{font-size:13px;font-weight:600}
 #projectsView .search-results .trending-item-copy{flex:1;min-width:0}
 #projectsView .search-results button > svg{display:block;width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50;margin-right:5px}
 .search-results button:hover {
