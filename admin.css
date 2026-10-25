@@ -2023,9 +2023,7 @@ main{padding-top:15px}
   body[data-admin-view="editor"] #editorView .editor-footer{margin-left:-15px;margin-right:-15px;padding-left:15px;padding-right:15px}
 }
 
-/* Align Basic Editor Name, Category and Status labels 20px from the left of their fields. */
-#editorView #panel-basic .form-grid .field > label{padding-left:20px}
-
-/* Match the 20px left inset for field values and placeholders. */
+/* Remove extra left padding from Basic Editor Name, Category and Status labels and fields. */
+#editorView #panel-basic .form-grid .field > label{padding-left:0;margin-left:0}
 #editorView #panel-basic .form-grid .field > input,
-#editorView #panel-basic .form-grid .field > select{padding-left:20px}
+#editorView #panel-basic .form-grid .field > select{padding-left:12px;margin-left:0}
