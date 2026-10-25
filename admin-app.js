@@ -105,13 +105,8 @@
     $('remove').disabled = blocked || state.isNew;
     $('saveTrending').disabled = state.busy || !state.trendingLoaded;
     $('trendingSelect').disabled = state.busy || !state.trendingLoaded;
-    $$('[data-top-add],[data-top-remove],[data-top-move]').forEach((button) => {
-      const index = Number(button.dataset.topMove),
-        direction = Number(button.dataset.direction);
-      button.disabled =
-        state.busy ||
-        (button.hasAttribute('data-top-move') &&
-          (index + direction < 0 || index + direction >= state.trending.length));
+    $('[data-top-add],[data-top-remove],[data-top-drag]').forEach((button) => {
+      button.disabled = state.busy;
     });
     $('editorProjectMeta').textContent = state.isNew
       ? 'New project · not published'
@@ -510,7 +505,7 @@
       state.trending
         .map((id, index) => {
           const project = state.projects.find((item) => String(item.id) === String(id));
-          return `<div class="trending-item">${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong><small>${esc(project?.category || 'Remove this unavailable record')}</small></span><div class="actions"><button type="button" class="icon-button" data-top-move="${index}" data-direction="-1" ${index === 0 ? 'disabled' : ''} aria-label="Move ${esc(project?.name || 'project')} up">${icon('arrow-up')}</button><button type="button" class="icon-button" data-top-move="${index}" data-direction="1" ${index === state.trending.length - 1 ? 'disabled' : ''} aria-label="Move ${esc(project?.name || 'project')} down">${icon('arrow-down')}</button><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from top airdrops">${icon('trash-2')}</button></div></div>`;
+          return `<div class="trending-item" data-top-row="${index}"><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button>${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong><small>${esc(project?.category || 'Remove this unavailable record')}</small></span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from top airdrops">${icon('trash-2')}</button></div></div>`;
         })
         .join('') ||
       '<div class="empty-state"><h3>No top airdrops selected</h3><p>Search above to choose up to 10 projects.</p></div>';
@@ -787,16 +782,49 @@
         renderTrending();
         return;
       }
-      const topMove = event.target.closest('[data-top-move]');
-      if (topMove) {
-        if (state.busy) return;
-        const from = Number(topMove.dataset.topMove),
-          to = from + Number(topMove.dataset.direction);
-        if (to >= 0 && to < state.trending.length)
-          [state.trending[from], state.trending[to]] = [state.trending[to], state.trending[from]];
-        renderTrending();
-      }
     });
+    // Pointer-based drag works with both touch screens and desktop mice.
+    let dragState = null;
+    const list = $('trendingCurrent');
+    list.addEventListener('pointerdown', (event) => {
+      const handle = event.target.closest('[data-top-drag]');
+      if (!handle || state.busy || !state.trendingLoaded || event.button !== 0) return;
+      const row = handle.closest('[data-top-row]');
+      dragState = { from: Number(row.dataset.topRow), pointerId: event.pointerId, row, handle };
+      handle.setPointerCapture(event.pointerId);
+      row.classList.add('is-dragging');
+      event.preventDefault();
+    });
+    list.addEventListener('pointermove', (event) => {
+      if (!dragState || event.pointerId !== dragState.pointerId) return;
+      const rows = [...list.querySelectorAll('[data-top-row]')];
+      const target = rows.find((row) => {
+        const bounds = row.getBoundingClientRect();
+        return event.clientY >= bounds.top && event.clientY <= bounds.bottom;
+      });
+      rows.forEach((row) => row.classList.toggle('drag-target', row === target && row !== dragState.row));
+    });
+    const finishDrag = (event) => {
+      if (!dragState || event.pointerId !== dragState.pointerId) return;
+      const { from, row, handle } = dragState;
+      const target = [...list.querySelectorAll('[data-top-row]')].find((item) => {
+        const rect = item.getBoundingClientRect();
+        return event.clientY >= rect.top && event.clientY <= rect.bottom;
+      });
+      dragState = null;
+      row.classList.remove('is-dragging');
+      list.querySelectorAll('.drag-target').forEach((item) => item.classList.remove('drag-target'));
+      if (handle.hasPointerCapture(event.pointerId)) handle.releasePointerCapture(event.pointerId);
+      if (event.type === 'pointercancel' || !target) return;
+      const to = Number(target.dataset.topRow);
+      if (from === to) return;
+      const [item] = state.trending.splice(from, 1);
+      state.trending.splice(to, 0, item);
+      renderTrending();
+      $('trendingMessage').textContent = 'Order changed. Save top airdrops to publish.';
+    };
+    list.addEventListener('pointerup', finishDrag);
+    list.addEventListener('pointercancel', finishDrag);
     let projectPickerTab = 'basic';
     const picker = $('adminProjectPicker');
     const pickerList = $('adminProjectPickerList');
