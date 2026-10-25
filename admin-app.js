@@ -565,6 +565,7 @@
     const status = $(targetId);
     if (message === 'Update Saved ✓') status.innerHTML = `${icon('circle-check')}<span>Update Saved ✓</span>`;
     else if (message === 'Error Not Saved ×') status.innerHTML = `${icon('circle-x')}<span>Error Not Saved ×</span>`;
+    else if (message === 'Click Publish To Save') status.innerHTML = `${icon('circle-check')}<span>Click Publish To Save</span>`;
     else status.textContent = message;
     status.classList.remove('is-success', 'is-error');
     if (kind) status.classList.add(kind);
@@ -896,7 +897,7 @@
       if (order.some((id, index) => String(id) !== String(originalOrder[index]))) {
         state.trending = order;
         renderTrending();
-        $('trendingMessage').textContent = 'Click Publish To Save √';
+        showTrendingStatus('Click Publish To Save', 'is-success');
         const moved = list.querySelector('[data-top-row="' + order.findIndex((id) => String(id) === String(originalOrder[Number(row.dataset.topRow)])) + '"]');
         if (moved) moved.classList.add('drag-recent');
         scheduleDragHighlightClear();
