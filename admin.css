@@ -1730,9 +1730,7 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
 #projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 #projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
-#projectsView .all-airdrops-list .icon-button:nth-child(1){background:#EFF6FF;color:#1E90FF}
-#projectsView .all-airdrops-list .icon-button:nth-child(2){background:#FFFBEB;color:#D97706}
-#projectsView .all-airdrops-list .icon-button:nth-child(3){background:#FEF2F2;color:#DC2626}
+#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
 #projectsView .all-airdrops-list .actions{gap:10px}
 #projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
 @media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}}
