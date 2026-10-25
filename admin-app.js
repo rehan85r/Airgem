@@ -835,7 +835,7 @@
         if (project && !state.trending.some((id) => String(id) === String(project.id)))
           state.trending.push(project.id);
         $('trendingSelect').value = '';
-        $('trendingMessage').textContent = 'Selection changed. Save top airdrops to publish.';
+        showTrendingStatus('Click Publish To Save', 'is-success');
         renderTrending();
         return;
       }
@@ -844,6 +844,7 @@
         if (state.busy) return;
         state.trending.splice(Number(topRemove.dataset.topRemove), 1);
         renderTrending();
+        showTrendingStatus('Click Publish To Save', 'is-success');
         return;
       }
     });
