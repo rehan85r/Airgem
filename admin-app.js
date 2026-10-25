@@ -242,6 +242,7 @@
       const { data, error } = await dropyClient
         .from('projects')
         .select('*')
+        .order('display_position', { ascending: true, nullsFirst: false })
         .order('id', { ascending: true })
         .range(from, from + batchSize - 1);
       if (error) throw error;
@@ -471,10 +472,44 @@
     const query = $('allAirdropsSearch').value.trim().toLowerCase();
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
     $('allAirdropsCount').textContent = String(matches.length);
-    $('allAirdropsList').innerHTML = matches.map((project) =>
-      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-edit-project="${esc(String(project.id))}" data-editor-section="basic" aria-label="Edit ${esc(project.name)} basic information" title="Basic">${icon('box')}</button><button type="button" class="icon-button" data-edit-project="${esc(String(project.id))}" data-editor-section="details" aria-label="Edit ${esc(project.name)} details" title="Details">${icon('sliders-horizontal')}</button><button type="button" class="icon-button" data-edit-project="${esc(String(project.id))}" data-editor-section="guide" aria-label="Edit ${esc(project.name)} guide" title="Guide">${icon('notebook-text')}</button></div></div>`
-    ).join('') || '<div class="trending-empty">No matching projects.</div>';
+    $('allAirdropsList').innerHTML = matches.map((project) => {
+      const position = state.projects.findIndex((item) => String(item.id) === String(project.id));
+      const disabledUp = position === 0 || state.busy ? 'disabled' : '';
+      const disabledDown = position === state.projects.length - 1 || state.busy ? 'disabled' : '';
+      return `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-all-move="${esc(String(project.id))}" data-direction="-1" ${disabledUp} aria-label="Move ${esc(project.name)} up" title="Move up">${icon('arrow-up')}</button><button type="button" class="icon-button" data-all-move="${esc(String(project.id))}" data-direction="1" ${disabledDown} aria-label="Move ${esc(project.name)} down" title="Move down">${icon('arrow-down')}</button><button type="button" class="icon-button" data-delete-project="${esc(String(project.id))}" aria-label="Permanently delete ${esc(project.name)}" title="Delete project">${icon('x')}</button></div></div>`;
+    }).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
+  }
+  async function moveAllProject(id, direction) {
+    if (state.busy || state.uploads) return;
+    const index = state.projects.findIndex((project) => String(project.id) === String(id));
+    const nextIndex = index + direction;
+    if (index < 0 || nextIndex < 0 || nextIndex >= state.projects.length) return;
+    state.busy = true;
+    updateBusy();
+    try {
+      const ordered = [...state.projects];
+      [ordered[index], ordered[nextIndex]] = [ordered[nextIndex], ordered[index]];
+      // Persist every rank so the homepage and all category filters share one order.
+      for (let position = 0; position < ordered.length; position++) {
+        const project = ordered[position];
+        if (Number(project.display_position) === position + 1) continue;
+        const { data, error } = await dropyClient.from('projects')
+          .update({ display_position: position + 1 }).eq('id', project.id)
+          .select('id');
+        if (error) throw error;
+        if (!data?.length) throw Error('Project order update was not authorized.');
+      }
+      await refreshProjects();
+      message('Project position updated.');
+    } catch (error) {
+      await refreshProjects().catch(() => {});
+      message(`Unable to update project position: ${error.message}`, true);
+    } finally {
+      state.busy = false;
+      updateBusy();
+      renderAllAirdrops();
+    }
   }
   function renderTrendingSearch() {
     const query = $('trendingSelect').value.trim().toLowerCase();
@@ -751,6 +786,11 @@
       const edit = event.target.closest('[data-edit-project]');
       if (edit) {
         editProject(edit.dataset.editProject, edit.dataset.editorSection || 'basic');
+        return;
+      }
+      const allMove = event.target.closest('[data-all-move]');
+      if (allMove) {
+        moveAllProject(allMove.dataset.allMove, Number(allMove.dataset.direction));
         return;
       }
       const remove = event.target.closest('[data-delete-project]');
