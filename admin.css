@@ -1849,6 +1849,9 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
 
 #projectsView #trendingCurrent .trending-item{padding-left:5px;gap:5px}
+#projectsView #trendingCurrent .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
+#projectsView #trendingCurrent .trending-item-copy strong{font-size:13px;font-weight:600}
+#projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:25px;height:25px;stroke-width:2}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
