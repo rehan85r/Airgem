@@ -1862,7 +1862,7 @@ main{padding-top:15px}
 #projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
-#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:400;color:#64748B;pointer-events:none;z-index:1}
+#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#94A3B8;pointer-events:none;z-index:1}
 #projectsView #trendingManager .trending-search input{padding-right:100px}
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
