@@ -105,7 +105,7 @@
       (state.busy ? 'Saving…' : state.isNew ? 'Publish Project' : 'Publish Changes');
     $('remove').disabled = blocked || state.isNew;
     $('saveTrending').disabled = state.busy || !state.trendingLoaded;
-    $('publishAllAirdrops').disabled = state.busy || !state.pendingProjectDeletes.length;
+    $('publishAllAirdrops').disabled = state.busy;
     $('trendingSelect').disabled = state.busy || !state.trendingLoaded;
     document.querySelectorAll('[data-top-add], [data-top-remove], [data-top-drag]').forEach((button) => {
       button.disabled = state.busy;
@@ -471,7 +471,7 @@
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
     const pending = state.pendingProjectDeletes.length;
     $('allAirdropsPending').textContent = pending ? `${pending} pending deletion${pending === 1 ? '' : 's'} · Not published` : '';
-    $('publishAllAirdrops').disabled = state.busy || !pending;
+    $('publishAllAirdrops').disabled = state.busy;
     $('allAirdropsList').innerHTML = matches.map((project) => {
       const staged = state.pendingProjectDeletes.some((id) => String(id) === String(project.id));
       return `<div class="trending-item${staged ? ' is-pending-delete' : ''}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(staged ? 'Pending deletion · Not published' : project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
