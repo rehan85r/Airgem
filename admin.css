@@ -1904,3 +1904,11 @@ main{padding-top:15px}
 /* Center project names vertically against their logos in Basic, Details and Guide. */
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{display:flex;align-items:center;min-height:30px;line-height:1.3;flex:0 1 auto}
+
+/* Focused premium Basic editor, retaining the existing form and save flow. */
+#editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}
+#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}
+#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}
+#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}
+#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}
+@media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}
