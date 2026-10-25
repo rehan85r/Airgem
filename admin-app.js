@@ -104,7 +104,6 @@
       (state.busy ? 'Saving…' : state.isNew ? 'Publish Project' : 'Publish Changes');
     $('remove').disabled = blocked || state.isNew;
     $('saveTrending').disabled = state.busy || !state.trendingLoaded;
-    $('clearTrending').disabled = state.busy || !state.trendingLoaded;
     $('trendingSelect').disabled = state.busy || !state.trendingLoaded;
     $$('[data-top-add],[data-top-remove],[data-top-move]').forEach((button) => {
       const index = Number(button.dataset.topMove),
@@ -825,16 +824,6 @@
       $('trendingSelect').focus();
     };
     $('saveTrending').onclick = saveTrending;
-    $('clearTrending').onclick = () => {
-      if (state.busy || !state.trendingLoaded) return;
-      if (
-        !state.trending.length ||
-        !confirm('Remove all selected top airdrops? Save to publish this change.')
-      )
-        return;
-      state.trending = [];
-      renderTrending();
-    };
     $('logout').onclick = signOut;
     $('mfaSetup').onclick = startMfaSetup;
     document.addEventListener('keydown', (event) => {
