@@ -522,7 +522,9 @@
   }
   function renderTrendingSearch() {
     const query = $('trendingSelect').value.trim().toLowerCase();
-    $('trendingSearchClear').hidden = !$('trendingSelect').value;
+    const hasSearchText = $('trendingSelect').value.length > 0;
+    $('trendingSearchClear').hidden = !hasSearchText;
+    $('trendingSelectionCount').hidden = hasSearchText;
     const matches = query
       ? state.projects
           .filter(
