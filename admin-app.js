@@ -475,7 +475,7 @@
     $('publishAllAirdrops').disabled = state.busy;
     $('allAirdropsList').innerHTML = matches.map((project) => {
       const staged = state.pendingProjectDeletes.some((id) => String(id) === String(project.id));
-      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(staged ? 'Pending Deletion · Not Published' : project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
+      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong>${staged ? '<small>Pending Deletion · Not Published</small>' : ''}</span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
     }).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
   }
@@ -555,7 +555,7 @@
       state.trending
         .map((id, index) => {
           const project = state.projects.find((item) => String(item.id) === String(id));
-          return `<div class="trending-item" data-top-row="${index}"><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button>${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong><small>${esc(project?.category || 'Remove this unavailable record')}</small></span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from Top Airdrops" title="Remove from Top">${icon('trash-2')}</button></div></div>`;
+          return `<div class="trending-item" data-top-row="${index}"><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button>${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong>${!project ? '<small>Remove this unavailable record</small>' : ''}</span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from Top Airdrops" title="Remove from Top">${icon('trash-2')}</button></div></div>`;
         })
         .join('') ||
       '<div class="empty-state"><h3>No top airdrops selected</h3><p>Search above to choose up to 10 projects.</p></div>';
