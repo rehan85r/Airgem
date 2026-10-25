@@ -132,7 +132,9 @@
   const trendingDirty = () =>
     JSON.stringify(state.trending.map(String)) !== JSON.stringify(state.savedTrending.map(String));
   function setEditorTab(tab) {
-    $$('[data-editor-tab]').forEach((button) => {
+    const mobileTitle = $('mobileEditorSectionTitle');
+    if (mobileTitle) mobileTitle.textContent = ({ basic: 'Basic Info', details: 'Details', links: 'Social Links', investors: 'Investors', guide: 'Guide' })[tab] || 'Edit Project';
+    $('[data-editor-tab]').forEach((button) => {
       const active = button.dataset.editorTab === tab;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-selected', String(active));
@@ -995,6 +997,7 @@
       page.addEventListener('animationend', finish, { once: true });
     };
     $('backToProjects').onclick = $('cancelEdit').onclick = closeEditorWithMotion;
+    $('mobileEditorBack').onclick = $('mobileEditorClose').onclick = closeEditorWithMotion;
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
     $('trendingSelect').oninput = renderTrendingSearch;
