@@ -133,7 +133,7 @@
     JSON.stringify(state.trending.map(String)) !== JSON.stringify(state.savedTrending.map(String));
   function setEditorTab(tab) {
     const mobileTitle = $('mobileEditorSectionTitle');
-    if (mobileTitle) mobileTitle.textContent = ({ basic: 'Basic Info', details: 'Details', links: 'Social Links', investors: 'Investors', guide: 'Guide' })[tab] || 'Edit Project';
+    if (mobileTitle) mobileTitle.textContent = ({ basic: 'Basic', details: 'Details', links: 'Social Links', investors: 'Investors', guide: 'Guide' })[tab] || 'Edit Project';
     $('[data-editor-tab]').forEach((button) => {
       const active = button.dataset.editorTab === tab;
       button.classList.toggle('is-active', active);
