@@ -197,8 +197,12 @@
     $('title').textContent = `Edit ${project.name}`;
     $('previewProject').hidden = false;
     $('previewProject').href = `project.html?id=${encodeURIComponent(project.id)}`;
-    navigate('editor', { skipGuard: true });
+    // Keep the selected editor visible even if a previous view left stale hidden states.
+    if (!navigate('editor', { skipGuard: true })) return;
     setEditorTab(tab);
+    $('projectsView').hidden = true;
+    $('editorView').hidden = false;
+    $('panel-' + tab)?.removeAttribute('hidden');
     updateBusy();
   }
   function addProject() {
@@ -811,6 +815,7 @@
     document.addEventListener('click', (event) => {
       const edit = event.target.closest('[data-edit-project]');
       if (edit) {
+        event.preventDefault();
         editProject(edit.dataset.editProject, edit.dataset.editorSection || 'basic');
         return;
       }
