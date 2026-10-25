@@ -469,7 +469,6 @@
   function renderAllAirdrops() {
     const query = $('allAirdropsSearch').value.trim().toLowerCase();
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
-    $('allAirdropsCount').textContent = String(state.projects.length);
     const pending = state.pendingProjectDeletes.length;
     $('allAirdropsPending').textContent = pending ? `${pending} pending deletion${pending === 1 ? '' : 's'} · Not published` : '';
     $('publishAllAirdrops').disabled = state.busy || !pending;
