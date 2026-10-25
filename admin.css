@@ -1871,6 +1871,8 @@ main{padding-top:15px}
 
 #projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}
 #projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}
+#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}
+#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
 #projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
