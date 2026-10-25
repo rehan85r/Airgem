@@ -199,6 +199,10 @@
     $('previewProject').href = `project.html?id=${encodeURIComponent(project.id)}`;
     // Keep the selected editor visible even if a previous view left stale hidden states.
     if (!navigate('editor', { skipGuard: true })) return;
+    const editorPage = $('editorView');
+    editorPage.classList.remove('airgem-editor-enter', 'airgem-editor-exit');
+    void editorPage.offsetWidth;
+    editorPage.classList.add('airgem-editor-enter');
     setEditorTab(tab);
     $('projectsView').hidden = true;
     $('editorView').hidden = false;
@@ -975,7 +979,22 @@
       $('allAirdropsManager').hidden = false;
       document.querySelectorAll('[data-project-section]').forEach((button, index) => button.classList.toggle('active', index === 0));
     });
-    $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
+    const closeEditorWithMotion = () => {
+      if (!canLeaveView('projects')) return;
+      const page = $('editorView');
+      const finish = () => {
+        page.classList.remove('airgem-editor-exit', 'airgem-editor-enter');
+        navigate('projects', { skipGuard: true });
+      };
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        finish();
+        return;
+      }
+      page.classList.remove('airgem-editor-enter');
+      page.classList.add('airgem-editor-exit');
+      page.addEventListener('animationend', finish, { once: true });
+    };
+    $('backToProjects').onclick = $('cancelEdit').onclick = closeEditorWithMotion;
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
     $('trendingSelect').oninput = renderTrendingSearch;
