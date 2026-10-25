@@ -1141,7 +1141,7 @@ input::placeholder {
   background: white;
   box-shadow: var(--shadow);
   padding: 5px;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 .search-results button {
   width: 100%;
