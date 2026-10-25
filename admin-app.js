@@ -766,16 +766,30 @@
       restoringLocation = true;
       navigate('projects', { skipGuard: true });
       restoringLocation = false;
+      // Load projects first: Top Airdrops and editor restoration both depend on them.
+      // Keep optional Top Airdrops failures from falsely reporting that projects failed.
       try {
-        await Promise.all([refreshProjects(), loadTrending()]);
-        restoreLocation();
+        await refreshProjects();
       } catch (error) {
+        console.error('Airgem project loading failed:', error);
         message(`Unable to load projects: ${error.message}`, true);
         if ($('dataError')) {
           $('dataError').hidden = false;
           $('dataError').textContent =
             `Projects could not load. ${error.message} Reload to try again.`;
         }
+      }
+      if (state.dataLoaded) {
+        try { restoreLocation(); }
+        catch (error) {
+          console.error('Airgem editor restoration failed:', error);
+          message('Unable to restore the previous editor. Please select the project again.', true);
+        }
+      }
+      try { await loadTrending(); }
+      catch (error) {
+        console.error('Airgem Top Airdrops loading failed:', error);
+        showTrendingStatus('Unable to load Top Airdrops', 'is-error', error.message);
       }
       showAuth('dashboard');
     } catch (error) {
