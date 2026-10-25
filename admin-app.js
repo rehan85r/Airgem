@@ -683,11 +683,13 @@
     }
   }
   function showAuth(view) {
+    if ($('adminBoot')) $('adminBoot').hidden = true;
     $('loginBox').hidden = view !== 'login';
     $('mfaBox').hidden = view !== 'mfa';
     $('dashboard').hidden = view !== 'dashboard';
     if ($('authShell')) $('authShell').hidden = view === 'dashboard';
     $('logout').hidden = view === 'login';
+    if (view === 'login' && siteKey && !turnstileWidget && !document.querySelector('script[data-airgem-turnstile]')) configureTurnstile();
   }
   async function initialize() {
     try {
@@ -733,8 +735,7 @@
           : 'Add an authenticator app for another layer of security.';
       navigate('projects', { skipGuard: true });
       try {
-        await refreshProjects();
-        await loadTrending();
+        await Promise.all([refreshProjects(), loadTrending()]);
       } catch (error) {
         message(`Unable to load projects: ${error.message}`, true);
         if ($('dataError')) {
@@ -797,6 +798,7 @@
     $('turnstileContainer').hidden = false;
     const script = document.createElement('script');
     script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.dataset.airgemTurnstile = 'true';
     script.async = true;
     script.onload = () => {
       turnstileWidget = window.turnstile.render('#airgemTurnstile', {
@@ -1124,7 +1126,6 @@
       uploadImage: (file) => uploadFile(file, false),
     });
     bindEvents();
-    configureTurnstile();
     icons();
     dropyClient.auth.onAuthStateChange?.((event) => {
       // Revoke the visible workspace immediately if the SDK signs the user out.
