@@ -1129,6 +1129,8 @@ input::placeholder {
   margin-bottom: 25px;
 }
 .search-results {
+  display: grid;
+  gap: 10px;
   position: absolute;
   top: 100%;
   left: 0;
@@ -1144,6 +1146,7 @@ input::placeholder {
 .search-results button {
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: space-between;
   width: 100%;
   min-height: 55px;
@@ -1155,6 +1158,9 @@ input::placeholder {
   font: 600 14px Manrope, sans-serif;
   border-radius: 12px;
 }
+#projectsView .search-results .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
+#projectsView .search-results .trending-item-copy{flex:1;min-width:0}
+#projectsView .search-results button > svg{width:20px;height:20px;flex-shrink:0}
 .search-results button:hover {
   background: #eef6ff;
 }
