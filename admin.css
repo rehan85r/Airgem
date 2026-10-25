@@ -1812,7 +1812,7 @@ main{padding-top:15px}
 @media(max-width:650px){#projectsView .admin-project-nav{gap:8px}#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}}
 
 /* Subtle divider 20px below the Top Airdrops heading */
-#projectsView .top-airdrops-heading{padding-bottom:20px;border-bottom:1px solid #E2E8F0;margin-bottom:20px}
+#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 
 /* Compact header publishing action in place of the selection count */
 #projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:35px;padding:0 10px;border-radius:10px;font:500 15px Manrope,sans-serif;white-space:nowrap;flex-shrink:0}
