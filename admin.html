@@ -138,10 +138,11 @@
                 <button class="button primary top-airdrops-publish" id="saveTrending" type="button"><i data-lucide="check" aria-hidden="true"></i> Publish</button>
               </div>
               <div class="field trending-search">
-                <div class="trending-search-label-row"><label for="trendingSelect">Select Project</label><p id="trendingMessage" class="inline-message trending-publish-message" role="status"></p><span id="trendingSelectionCount" class="trending-selection-count">0/10</span></div>
+                <div class="trending-search-label-row"><p id="trendingMessage" class="inline-message trending-publish-message" role="status"></p><span id="trendingSelectionCount" class="trending-selection-count">0/10</span></div>
                 <div class="trending-search-input-wrap">
                 <input
                   id="trendingSelect"
+                  aria-label="Search projects for Top Airdrops"
                   type="text"
                   placeholder="Search Project…"
                   autocomplete="off"
@@ -159,9 +160,9 @@
             <div class="card collection-card">
               <div class="top-airdrops-heading"><h2 id="allAirdropsHeading"><i data-lucide="layers" aria-hidden="true"></i> All Airdrops</h2><button class="button primary top-airdrops-publish" id="publishAllAirdrops" type="button"><i data-lucide="check" aria-hidden="true"></i> Publish</button></div><div class="all-airdrops-meta"><span id="allAirdropsPending" role="status"></span></div>
               <div class="field trending-search">
-                <div class="trending-search-label-row"><label for="allAirdropsSearch">Search Project</label><p id="allAirdropsMessage" class="inline-message trending-publish-message" role="status"></p></div>
+                <div class="trending-search-label-row"><p id="allAirdropsMessage" class="inline-message trending-publish-message" role="status"></p></div>
                 <div class="trending-search-input-wrap">
-                  <input id="allAirdropsSearch" type="search" placeholder="Search Project…" autocomplete="off" />
+                  <input id="allAirdropsSearch" aria-label="Search All Airdrops projects" type="search" placeholder="Search Project…" autocomplete="off" />
                 </div>
               </div>
               <div id="allAirdropsList" class="trending-list all-airdrops-list" aria-live="polite"></div>
