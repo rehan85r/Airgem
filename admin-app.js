@@ -256,6 +256,7 @@
     state.dataLoaded = true;
     renderFilters();
     renderDashboard();
+    renderAllAirdrops();
     if ($('dataError')) $('dataError').hidden = true;
   }
   function renderFilters() {
@@ -465,6 +466,15 @@
       state.uploads--;
       updateBusy();
     }
+  }
+  function renderAllAirdrops() {
+    const query = $('allAirdropsSearch').value.trim().toLowerCase();
+    const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
+    $('allAirdropsCount').textContent = String(matches.length);
+    $('allAirdropsList').innerHTML = matches.map((project) =>
+      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-edit-project="${esc(String(project.id))}" data-editor-section="basic" aria-label="Edit ${esc(project.name)} basic information" title="Basic">${icon('box')}</button><button type="button" class="icon-button" data-edit-project="${esc(String(project.id))}" data-editor-section="details" aria-label="Edit ${esc(project.name)} details" title="Details">${icon('sliders-horizontal')}</button><button type="button" class="icon-button" data-edit-project="${esc(String(project.id))}" data-editor-section="guide" aria-label="Edit ${esc(project.name)} guide" title="Guide">${icon('notebook-text')}</button></div></div>`
+    ).join('') || '<div class="trending-empty">No matching projects.</div>';
+    icons();
   }
   function renderTrendingSearch() {
     const query = $('trendingSelect').value.trim().toLowerCase();
@@ -809,6 +819,7 @@
     });
     document.querySelector('[data-project-section]').classList.add('active');
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
+    $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
     $('closeAdminProjectPicker').onclick = () => {
       picker.hidden = true;
       $('trendingManager').hidden = false;
