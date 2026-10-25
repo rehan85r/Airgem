@@ -14,6 +14,7 @@
     uploads: 0,
     trending: [],
     savedTrending: [],
+    pendingProjectDeletes: [],
     trendingLoaded: false,
     page: 1,
     pageSize: 5,
@@ -104,6 +105,7 @@
       (state.busy ? 'Saving…' : state.isNew ? 'Publish Project' : 'Publish Changes');
     $('remove').disabled = blocked || state.isNew;
     $('saveTrending').disabled = state.busy || !state.trendingLoaded;
+    $('publishAllAirdrops').disabled = state.busy || !state.pendingProjectDeletes.length;
     $('trendingSelect').disabled = state.busy || !state.trendingLoaded;
     document.querySelectorAll('[data-top-add], [data-top-remove], [data-top-drag]').forEach((button) => {
       button.disabled = state.busy;
@@ -467,11 +469,53 @@
   function renderAllAirdrops() {
     const query = $('allAirdropsSearch').value.trim().toLowerCase();
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
-    $('allAirdropsCount').textContent = String(matches.length);
-    $('allAirdropsList').innerHTML = matches.map((project) =>
-      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-delete-project="${esc(String(project.id))}" aria-label="Permanently delete ${esc(project.name)}" title="Delete Project">${icon('trash-2')}</button></div></div>`
-    ).join('') || '<div class="trending-empty">No matching projects.</div>';
+    $('allAirdropsCount').textContent = String(state.projects.length);
+    const pending = state.pendingProjectDeletes.length;
+    $('allAirdropsPending').textContent = pending ? `${pending} pending deletion${pending === 1 ? '' : 's'} · Not published` : '';
+    $('publishAllAirdrops').disabled = state.busy || !pending;
+    $('allAirdropsList').innerHTML = matches.map((project) => {
+      const staged = state.pendingProjectDeletes.some((id) => String(id) === String(project.id));
+      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(staged ? 'Pending deletion · Not published' : project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
+    }).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
+  }
+  function toggleProjectDeletion(id) {
+    if (state.busy || state.uploads) return;
+    const project = state.projects.find((item) => String(item.id) === String(id));
+    if (!project) return;
+    const index = state.pendingProjectDeletes.findIndex((item) => String(item) === String(id));
+    if (index >= 0) state.pendingProjectDeletes.splice(index, 1);
+    else state.pendingProjectDeletes.push(project.id);
+    renderAllAirdrops();
+  }
+  async function publishAllAirdrops() {
+    if (state.busy || state.uploads || !state.pendingProjectDeletes.length) return;
+    const names = state.pendingProjectDeletes.map((id) =>
+      state.projects.find((item) => String(item.id) === String(id))?.name || String(id));
+    if (!confirm(`Permanently delete ${names.length} project${names.length === 1 ? '' : 's'} from Airgem and all categories? This cannot be undone.\n\n${names.join(', ')}`)) return;
+    state.busy = true;
+    updateBusy();
+    try {
+      // Keep failed IDs staged; a partial success is never reported as a full publish.
+      const ids = [...state.pendingProjectDeletes];
+      for (const id of ids) {
+        const { data, error } = await dropyClient.from('projects').delete().eq('id', id).select('id');
+        if (error) throw error;
+        if (!data?.length) throw Error(`Project ${id} was not deleted. Check permissions.`);
+        state.pendingProjectDeletes = state.pendingProjectDeletes.filter((item) => String(item) !== String(id));
+      }
+      await refreshProjects();
+      await loadTrending();
+      message('All Airdrops changes published. Projects permanently deleted.');
+    } catch (error) {
+      message(`Publish incomplete: ${error.message}. Check remaining pending projects.`, true);
+      await refreshProjects().catch(() => {});
+      await loadTrending().catch(() => {});
+    } finally {
+      state.busy = false;
+      updateBusy();
+      renderAllAirdrops();
+    }
   }
   function renderTrendingSearch() {
     const query = $('trendingSelect').value.trim().toLowerCase();
@@ -679,6 +723,7 @@
   async function signOut() {
     if (state.view === 'editor' && !canLeaveEditor()) return;
     if (trendingDirty() && !confirm('Sign out and discard unsaved top airdrop changes?')) return;
+    if (state.pendingProjectDeletes.length && !confirm('Sign out and discard pending All Airdrops deletions?')) return;
     const { error } = await dropyClient.auth.signOut();
     if (error) {
       message(`Unable to sign out: ${error.message}`, true);
@@ -689,6 +734,7 @@
     state.dataLoaded = false;
     state.trending = [];
     state.savedTrending = [];
+    state.pendingProjectDeletes = [];
     state.trendingLoaded = false;
     $('password').value = '';
     showAuth('login');
@@ -748,6 +794,11 @@
       const edit = event.target.closest('[data-edit-project]');
       if (edit) {
         editProject(edit.dataset.editProject, edit.dataset.editorSection || 'basic');
+        return;
+      }
+      const stagedDelete = event.target.closest('[data-stage-delete]');
+      if (stagedDelete) {
+        toggleProjectDeletion(stagedDelete.dataset.stageDelete);
         return;
       }
       const remove = event.target.closest('[data-delete-project]');
@@ -870,6 +921,7 @@
       $('trendingSelect').focus();
     };
     $('saveTrending').onclick = saveTrending;
+    $('publishAllAirdrops').onclick = publishAllAirdrops;
     $('logout').onclick = signOut;
     $('mfaSetup').onclick = startMfaSetup;
     document.addEventListener('keydown', (event) => {
