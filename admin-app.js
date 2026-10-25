@@ -1062,7 +1062,7 @@
       if (editorScroll.scrollTop > 0 || !event.changedTouches.length) return;
       const deltaY = event.changedTouches[0].clientY - start.y;
       const deltaX = Math.abs(event.changedTouches[0].clientX - start.x);
-      if (deltaY < 100 || deltaY < deltaX * 1.5) return;
+      if (deltaY < 50 || deltaY < deltaX * 1.5) return;
       if (state.busy || state.uploads) {
         message('Please wait until the current operation finishes.', true);
         return;
