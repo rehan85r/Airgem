@@ -1952,3 +1952,7 @@ main{padding-top:15px}
  #editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}
  #editorView #panel-basic{padding-top:15px!important;padding-left:15px!important}
 }
+
+/* Basic logo: clean 12px corners with no dashed outline. */
+#editorView #panel-basic .logo-preview{border-radius:12px;border:none;outline:none;box-shadow:none}
+#editorView #panel-basic .logo-preview img{border-radius:12px}
