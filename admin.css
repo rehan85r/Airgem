@@ -1984,3 +1984,8 @@ main{padding-top:15px}
 
 /* Basic Editor logo preview: 30 x 30px. */
 #editorView #panel-basic .logo-preview{width:30px;height:30px;min-width:30px;min-height:30px}
+
+/* Basic Editor logo upload sizing */
+#editorView #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
+#editorView #panel-basic label.button[for="logoFile"]{gap:10px}
+#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}
