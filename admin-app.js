@@ -79,15 +79,6 @@
         $('message').hidden = true;
       }, 6500);
   };
-  const statusOf = (project) => project.activityStatus || project.activity_status || 'Active';
-  const categoryOf = (project) => project.category || 'Uncategorized';
-  const formatDate = (value) => {
-    if (!value) return '—';
-    const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T12:00:00` : value);
-    return Number.isNaN(date.getTime())
-      ? String(value)
-      : date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  };
   const mappedProject = (row) => ({
     ...row,
     addedOn: row.added_on || '',
@@ -241,38 +232,6 @@
     $('panel-' + tab)?.removeAttribute('hidden');
     updateBusy();
   }
-  function addProject() {
-    if (!canLeaveView('editor')) return;
-    state.selected = null;
-    state.isNew = true;
-    state.dirty = false;
-    editor.load({
-      name: '',
-      displayTag: '',
-      category: '',
-      task: '',
-      status: 'Potential',
-      activityStatus: 'Active',
-      funding: '',
-      cost: '',
-      timeEstimate: '',
-      addedOn: '',
-      tge: '',
-      ecosystem: '',
-      started: '',
-      color: '#1E90FF',
-      logoUrl: '',
-      links: [],
-      investors: '',
-      guide: [],
-    });
-    $('title').textContent = 'Add New Project';
-    $('previewProject').hidden = true;
-    navigate('editor', { skipGuard: true });
-    setEditorTab('basic');
-    updateBusy();
-    $('name').focus();
-  }
   async function getProjects() {
     const projects = [];
     const batchSize = 1000;
@@ -294,17 +253,9 @@
     const projects = await getProjects();
     state.projects = projects;
     state.dataLoaded = true;
-    renderFilters();
     renderDashboard();
     renderAllAirdrops();
     if ($('dataError')) $('dataError').hidden = true;
-  }
-  function renderFilters() {
-    const categories = [...new Set(state.projects.map(categoryOf))].sort();
-    if ($('categoryOptions'))
-      $('categoryOptions').innerHTML = [
-        ...new Set(['Airdrop', 'Testnet', 'Mainnet', 'Whitelist', 'Points', 'Dex', ...categories]),
-      ].map((value) => `<option value="${esc(value)}"></option>`).join('');
   }
   function avatar(project) {
     return `<span class="project-avatar">${safeURL(project.logoUrl) ? `<img src="${esc(project.logoUrl)}" alt="" loading="lazy">` : esc((project.name || 'A').slice(0, 1).toUpperCase())}</span>`;
@@ -513,7 +464,6 @@
     const matches = state.projects.filter((project) =>
       !state.trending.some((id) => String(id) === String(project.id)) &&
       (project.name || '').toLowerCase().includes(query));
-    const pending = state.pendingProjectDeletes.length;
     $('allAirdropsPending').textContent = '';
     $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
     $('allAirdropsList').innerHTML = matches.map((project) => {
@@ -591,8 +541,6 @@
   }
   function renderTrending() {
     if ($('trendingSelectionCount')) $('trendingSelectionCount').textContent = `${state.trending.length}/10`;
-    if ($('trendingDisclosureLabel'))
-      $('trendingDisclosureLabel').textContent = `Selected projects (${state.trending.length}/10)`;
     $('trendingCurrent').innerHTML =
       state.trending
         .map((id, index) => {
@@ -1028,14 +976,6 @@
       renderAllAirdrops();
       $('allAirdropsSearch').focus();
     };
-    $('closeAdminProjectPicker')?.addEventListener('click', () => {
-      picker.hidden = true;
-      currentPickerSection = 'dashboard';
-      saveLocation({ section: 'dashboard' });
-      $('trendingManager').hidden = false;
-      $('allAirdropsManager').hidden = false;
-      document.querySelectorAll('[data-project-section]').forEach((button, index) => button.classList.toggle('active', index === 0));
-    });
     const closeEditorWithMotion = () => {
       if (!canLeaveView('projects')) return;
       const page = $('editorView');

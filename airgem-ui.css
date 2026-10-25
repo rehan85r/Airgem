@@ -43,7 +43,6 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="home"] .ag-card .ag-join{height:48px!important;min-height:48px!important;font-size:14px!important;font-weight:700!important}
 [data-view="home"] .trending-controls button{width:30px!important;height:30px!important;min-width:30px!important}
 [data-view="home"] .trending-controls{gap:10px!important}
-[data-view="home"] .ag-score-entry a{height:44px!important;min-height:44px!important}
 [data-view="home"] .foot{padding:24px 0;font-size:12px;color:#66758a;line-height:1.7}
 [data-view="home"] .drawer{max-width:380px;padding:24px}
 [data-view="home"] .drawer .nav-item{min-height:48px;font-size:14px}
@@ -62,29 +61,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view="project"] .links .social-link{width:48px;min-height:48px;justify-self:center;margin:0!important;background:#f4f8fd;border:1px solid #e8eff6;border-radius:12px}
 [data-view="project"] .links .social-link svg{width:23px;height:23px}
 /* Research: same brand, type scale, controls, and report hierarchy. */
-[data-view="research"] main{max-width:900px;padding:32px 24px 56px}
-[data-view="research"] .intro{margin:28px auto;text-align:center;max-width:660px}
-[data-view="research"] h1{font-size:clamp(28px,4vw,38px);line-height:1.25;letter-spacing:-1.2px;margin:10px 0 14px}
-[data-view="research"] h2{font-size:20px;line-height:1.4;letter-spacing:-.5px;margin-bottom:20px}
-[data-view="research"] p{font-size:14px;color:var(--ag-muted);line-height:1.75}
-[data-view="research"] .panel{padding:28px;margin-bottom:24px}
-[data-view="research"] label{font-size:15px;font-weight:500;color:#43536a;line-height:1.5;margin-bottom:9px}
-[data-view="research"] .field{margin-bottom:20px}
-[data-view="research"] :is(input,select){font:500 16px/1.5 'Manrope',system-ui,sans-serif;min-height:50px;padding:12px 14px;border:1px solid #dce4ee;border-radius:12px}
-[data-view="research"] .action{min-height:50px;font:700 14px/1.5 'Manrope',system-ui,sans-serif;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px}
-[data-view="research"] .action svg{width:19px;height:19px}
-[data-view="research"] .status{font-size:13px;margin-top:16px}
-[data-view="research"] .ranktitle{display:flex;align-items:center;gap:7px;font-size:13px;color:#43536a}
-[data-view="research"] .ranktitle svg{width:19px;height:19px;color:#1e90ff}
-[data-view="research"] .rankvalue{font-size:14px}
-[data-view="research"] .rankmeta{font-size:12px;color:var(--ag-muted)}
-[data-view="research"] :is(.cathead,.catdesc,.source,.note,.muted){font-size:13px;line-height:1.75}
-[data-view="research"] .source{text-decoration:underline;text-underline-offset:3px}
-[data-view="research"] .metricgrid{gap:12px}
-[data-view="research"] .metric{padding:16px;border:1px solid #e9eff6;border-radius:12px}
-[data-view="research"] .metric .val{font-size:16px}
-[data-view="research"] .service{font-size:12px}
-@media(hover:hover){[data-view] .back:hover{background:#f1f7ff}[data-view="research"] .action:not(:disabled):hover{background:#1879d8}[data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px #1428460c!important}}
+@media(hover:hover){[data-view] .back:hover{background:#f1f7ff}[data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px #1428460c!important}}
 @media(max-width:650px){
  [data-view] :is(.wrap,.head){padding-left:18px;padding-right:18px}
  [data-view] .header{height:68px}[data-view] .head{min-height:68px}
@@ -110,10 +87,6 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
  [data-view="project"] .identity h1{font-size:24px}
  [data-view="project"] #details .item small{font-size:11px}
  [data-view="project"] #details .item strong{font-size:13px}
- [data-view="research"] main{padding:24px 16px 40px}
- [data-view="research"] .panel{padding:22px 20px;border-radius:18px}
- [data-view="research"] .intro{margin:24px 0}
- [data-view="research"] .metricgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:360px){[data-view="home"] .ag-card{padding:16px!important}[data-view="home"] .ag-card .ag-stat-label{font-size:10px!important}[data-view="home"] .ag-card .ag-stat strong{font-size:12px!important}}
 @media(prefers-reduced-motion:reduce){[data-view] *,[data-view] *:before,[data-view] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -123,9 +96,6 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view] :is(input,select){transition:border-color 180ms ease,box-shadow 180ms ease}
 [data-view] :is(a,button){-webkit-tap-highlight-color:transparent}
 @media(hover:hover) and (pointer:fine){
- [data-view="research"] header .back:hover{color:#1e90ff!important;background:transparent!important}
- [data-view="research"] header .back:hover span{color:#1e90ff}
- [data-view="research"] .action:not(:disabled):hover{background:#1879d8}
  [data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px rgba(20,40,70,.07)!important}
  [data-view="home"] .ag-category-tab:not(:disabled):hover{border-color:#bfdaff;background:#f0f7ff}
  [data-view="home"] .ag-join:not(:disabled):hover{filter:brightness(.95)}
@@ -133,7 +103,6 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
  [data-view] :is(.nav-item,.social-link):hover{background:#eef6ff;color:#1879d8;border-color:#d1e5ff}
  [data-view] a:not(.ag-card):not(.ag-join):not(.back):hover{text-decoration-color:currentColor}
 }
-[data-view="research"] header .back:active{color:#172b4c!important;background:transparent!important}
 [data-view] :is(button,a):focus-visible{outline:3px solid #86c5ff;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link,input,select){transition:none!important}}
 
