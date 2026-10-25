@@ -1993,3 +1993,6 @@ main{padding-top:15px}
 /* Icon-only Upload Logo control, including protection against stale label text. */
 #editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}
 #editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}
+
+/* Restore labeled Upload Logo button: 15px icon and 10px gap. */
+#editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}
