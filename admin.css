@@ -1958,4 +1958,4 @@ main{padding-top:15px}
 #editorView #panel-basic .logo-preview img{border-radius:12px}
 
 /* Compact Basic editor Upload Logo button: 35px high, natural width. */
-#editorView #panel-basic label.button[for="logoFile"]{height:35px;min-height:35px;box-sizing:border-box;padding:0 12px}
+#editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}
