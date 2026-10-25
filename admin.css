@@ -1861,7 +1861,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .top-drag-handle svg{width:25px;height:25px;stroke-width:2}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
-#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:12.5px}
+#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
 #projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}
