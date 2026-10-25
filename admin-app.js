@@ -139,7 +139,7 @@
       button.tabIndex = active ? 0 : -1;
     });
     $$('[data-editor-panel]').forEach((panel) => {
-      panel.hidden = panel.dataset.editorPanel !== tab && !(tab === 'basic' && panel.dataset.editorPanel === 'investors');
+      panel.hidden = panel.dataset.editorPanel !== tab;
     });
   }
   function canLeaveView(nextView) {
