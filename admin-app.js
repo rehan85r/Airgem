@@ -841,45 +841,56 @@
         return;
       }
     });
-    // Pointer-based drag works with both touch screens and desktop mice.
+    // Reorder rows immediately while dragging; Publish persists the final order.
     let dragState = null;
     const list = $('trendingCurrent');
     list.addEventListener('pointerdown', (event) => {
       const handle = event.target.closest('[data-top-drag]');
       if (!handle || state.busy || !state.trendingLoaded || event.button !== 0) return;
       const row = handle.closest('[data-top-row]');
-      dragState = { from: Number(row.dataset.topRow), pointerId: event.pointerId, row, handle };
+      dragState = {
+        pointerId: event.pointerId,
+        row,
+        handle,
+        originalOrder: [...state.trending],
+        changed: false,
+      };
       handle.setPointerCapture(event.pointerId);
       row.classList.add('is-dragging');
       event.preventDefault();
     });
     list.addEventListener('pointermove', (event) => {
       if (!dragState || event.pointerId !== dragState.pointerId) return;
-      const rows = [...list.querySelectorAll('[data-top-row]')];
-      const target = rows.find((row) => {
-        const bounds = row.getBoundingClientRect();
-        return event.clientY >= bounds.top && event.clientY <= bounds.bottom;
-      });
-      rows.forEach((row) => row.classList.toggle('drag-target', row === target && row !== dragState.row));
+      const { row } = dragState;
+      const others = [...list.querySelectorAll('[data-top-row]')].filter((item) => item !== row);
+      const next = others.find((item) => event.clientY < item.getBoundingClientRect().top + item.getBoundingClientRect().height / 2);
+      if (next) {
+        if (row.nextElementSibling !== next) {
+          list.insertBefore(row, next);
+          dragState.changed = true;
+        }
+      } else if (others.length && list.lastElementChild !== row) {
+        list.appendChild(row);
+        dragState.changed = true;
+      }
     });
     const finishDrag = (event) => {
       if (!dragState || event.pointerId !== dragState.pointerId) return;
-      const { from, row, handle } = dragState;
-      const target = [...list.querySelectorAll('[data-top-row]')].find((item) => {
-        const rect = item.getBoundingClientRect();
-        return event.clientY >= rect.top && event.clientY <= rect.bottom;
-      });
+      const { row, handle, originalOrder } = dragState;
       dragState = null;
       row.classList.remove('is-dragging');
-      list.querySelectorAll('.drag-target').forEach((item) => item.classList.remove('drag-target'));
       if (handle.hasPointerCapture(event.pointerId)) handle.releasePointerCapture(event.pointerId);
-      if (event.type === 'pointercancel' || !target) return;
-      const to = Number(target.dataset.topRow);
-      if (from === to) return;
-      const [item] = state.trending.splice(from, 1);
-      state.trending.splice(to, 0, item);
-      renderTrending();
-      $('trendingMessage').textContent = 'Order changed. Save top airdrops to publish.';
+      if (event.type === 'pointercancel') {
+        state.trending = originalOrder;
+        renderTrending();
+        return;
+      }
+      const order = [...list.querySelectorAll('[data-top-row]')].map((item) => originalOrder[Number(item.dataset.topRow)]);
+      if (order.some((id, index) => String(id) !== String(originalOrder[index]))) {
+        state.trending = order;
+        renderTrending();
+        $('trendingMessage').textContent = 'Order changed. Save top airdrops to publish.';
+      }
     };
     list.addEventListener('pointerup', finishDrag);
     list.addEventListener('pointercancel', finishDrag);
