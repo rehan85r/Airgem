@@ -470,7 +470,9 @@
   function renderAllAirdrops() {
     $('allAirdropsSearchClear').hidden = $('allAirdropsSearch').value.length === 0;
     const query = $('allAirdropsSearch').value.trim().toLowerCase();
-    const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
+    const matches = state.projects.filter((project) =>
+      !state.trending.some((id) => String(id) === String(project.id)) &&
+      (project.name || '').toLowerCase().includes(query));
     const pending = state.pendingProjectDeletes.length;
     $('allAirdropsPending').textContent = '';
     $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
@@ -560,6 +562,7 @@
         .join('') ||
       '<div class="empty-state"><h3>No top airdrops selected</h3><p>Search above to choose up to 10 projects.</p></div>';
     renderTrendingSearch();
+    renderAllAirdrops();
     updateBusy();
   }
   const publishStatusTimers = new Map();
