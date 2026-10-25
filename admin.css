@@ -1956,3 +1956,6 @@ main{padding-top:15px}
 /* Basic logo: clean 12px corners with no dashed outline. */
 #editorView #panel-basic .logo-preview{border-radius:12px;border:none;outline:none;box-shadow:none}
 #editorView #panel-basic .logo-preview img{border-radius:12px}
+
+/* Compact Basic editor Upload Logo button: 35px high, natural width. */
+#editorView #panel-basic label.button[for="logoFile"]{height:35px;min-height:35px;box-sizing:border-box;padding:0 12px}
