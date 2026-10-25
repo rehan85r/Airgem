@@ -1150,7 +1150,7 @@ input::placeholder {
   justify-content: space-between;
   width: 100%;
   min-height: 55px;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   text-align: left;
   border: 1px solid var(--border);
   background: #FFFFFF;
