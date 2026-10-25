@@ -2023,7 +2023,7 @@ main{padding-top:15px}
   body[data-admin-view="editor"] #editorView .editor-footer{margin-left:-15px;margin-right:-15px;padding-left:15px;padding-right:15px}
 }
 
-/* Remove extra left padding from Basic Editor Name, Category and Status labels and fields. */
-#editorView #panel-basic .form-grid .field > label{padding-left:0;margin-left:0}
+/* Exact 20px left gap for Basic Editor Name, Category and Status labels only. */
+#editorView #panel-basic .form-grid .field > label{padding-left:20px;margin-left:0}
 #editorView #panel-basic .form-grid .field > input,
 #editorView #panel-basic .form-grid .field > select{padding-left:12px;margin-left:0}
