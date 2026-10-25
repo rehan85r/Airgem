@@ -162,7 +162,7 @@
   function setEditorTab(tab) {
     const mobileTitle = $('mobileEditorSectionTitle');
     if (mobileTitle) mobileTitle.textContent = ({ basic: 'Basic', details: 'Details', links: 'Social Links', investors: 'Investors', guide: 'Guide' })[tab] || 'Edit Project';
-    $('[data-editor-tab]').forEach((button) => {
+    $$('[data-editor-tab]').forEach((button) => {
       const active = button.dataset.editorTab === tab;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-selected', String(active));
