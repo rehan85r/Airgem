@@ -490,10 +490,7 @@
   }
   async function publishAllAirdrops() {
     if (state.busy || state.uploads) return;
-    if (!state.pendingProjectDeletes.length) {
-      showPublishStatus('allAirdropsMessage', 'Update Saved ✓', 'is-success');
-      return;
-    }
+    if (!state.pendingProjectDeletes.length) return;
     const names = state.pendingProjectDeletes.map((id) =>
       state.projects.find((item) => String(item.id) === String(id))?.name || String(id));
     if (!confirm(`Permanently delete ${names.length} project${names.length === 1 ? '' : 's'} from Airgem and all categories? This cannot be undone.\n\n${names.join(', ')}`)) return;
