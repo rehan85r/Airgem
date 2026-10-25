@@ -1864,5 +1864,5 @@ main{padding-top:15px}
 
 #projectsView #trendingManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:400;color:#64748B;pointer-events:none;z-index:1}
 #projectsView #trendingManager .trending-search input{padding-right:100px}
-#projectsView #trendingManager .trending-search-clear{right:53px}
+#projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
