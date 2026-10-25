@@ -1160,7 +1160,7 @@ input::placeholder {
 }
 #projectsView .search-results .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
 #projectsView .search-results .trending-item-copy{flex:1;min-width:0}
-#projectsView .search-results button > svg{width:15px;height:15px;flex:0 0 30px;stroke-width:2.5}
+#projectsView .search-results button > svg{display:block;width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50;margin-right:5px}
 .search-results button:hover {
   background: #eef6ff;
 }
