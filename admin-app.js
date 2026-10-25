@@ -469,7 +469,7 @@
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
     $('allAirdropsCount').textContent = String(matches.length);
     $('allAirdropsList').innerHTML = matches.map((project) =>
-      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-delete-project="${esc(String(project.id))}" aria-label="Permanently delete ${esc(project.name)}" title="Delete project">${icon('trash-2')}</button></div></div>`
+      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-delete-project="${esc(String(project.id))}" aria-label="Permanently delete ${esc(project.name)}" title="Delete Project">${icon('trash-2')}</button></div></div>`
     ).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
   }
@@ -505,7 +505,7 @@
       state.trending
         .map((id, index) => {
           const project = state.projects.find((item) => String(item.id) === String(id));
-          return `<div class="trending-item" data-top-row="${index}"><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button>${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong><small>${esc(project?.category || 'Remove this unavailable record')}</small></span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from top airdrops">${icon('trash-2')}</button></div></div>`;
+          return `<div class="trending-item" data-top-row="${index}"><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button>${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong><small>${esc(project?.category || 'Remove this unavailable record')}</small></span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from Top Airdrops" title="Remove from Top">${icon('trash-2')}</button></div></div>`;
         })
         .join('') ||
       '<div class="empty-state"><h3>No top airdrops selected</h3><p>Search above to choose up to 10 projects.</p></div>';
