@@ -1919,3 +1919,25 @@ main{padding-top:15px}
 #editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}
 #editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
 @media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
+
+/* Airgem mobile-first full-screen project editor. */
+.mobile-editor-toolbar{display:none}
+@media(max-width:767px){
+  body[data-admin-view="editor"]{overflow:hidden}
+  #editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}
+  #editorView .mobile-editor-toolbar{display:flex;flex:0 0 60px;align-items:center;justify-content:space-between;padding:0 15px;gap:12px;background:#fff;border-bottom:1px solid #E2E8F0}
+  #editorView .mobile-editor-toolbar strong{font:700 17px/1.3 Manrope,sans-serif;color:#1B2E50;text-align:center;min-width:0}
+  #editorView .mobile-editor-nav{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border:0;border-radius:12px;background:transparent;color:#1B2E50;cursor:pointer}
+  #editorView .mobile-editor-nav svg{width:22px;height:22px}
+  #editorView>.back-link,#editorView>.editor-heading{display:none}
+  #editorView .editor-tabs{display:none!important}
+  #editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}
+  #editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}
+  #editorView #form>.editor-panel[hidden]{display:none!important}
+  #editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}
+  #editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}
+  #editorView .editor-footer .actions{width:100%}
+  #editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
+  #editorView #panel-basic{padding:15px}
+}
+@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
