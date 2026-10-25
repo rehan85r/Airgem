@@ -757,7 +757,7 @@
         showAuth('mfa');
         return;
       }
-      showAuth('dashboard');
+      // Keep the boot screen visible until the saved page/editor is restored.
       $('mfaSetup').hidden = verified.length > 0;
       if ($('mfaStatus'))
         $('mfaStatus').textContent = verified.length
@@ -777,6 +777,7 @@
             `Projects could not load. ${error.message} Reload to try again.`;
         }
       }
+      showAuth('dashboard');
     } catch (error) {
       showAuth('login');
       $('loginError').textContent = error.message;
