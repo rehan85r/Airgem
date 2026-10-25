@@ -1959,3 +1959,8 @@ main{padding-top:15px}
 
 /* Compact Basic editor Upload Logo button: 35px high, natural width. */
 #editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}
+
+/* Neutral auth boot state prevents a login-form flash on refresh. */
+.admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}
+.admin-boot img{width:40px;height:40px;object-fit:contain}
+.admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}
