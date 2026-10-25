@@ -919,10 +919,11 @@
     const picker = $('adminProjectPicker');
     const pickerList = $('adminProjectPickerList');
     const renderProjectPicker = () => {
+      $('adminProjectPickerSearchClear').hidden = !$('adminProjectPickerSearch').value.length;
       const query = $('adminProjectPickerSearch').value.trim().toLowerCase();
       const projects = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
       pickerList.innerHTML = projects.map((project) =>
-        `<button type="button" class="admin-project-picker-item" data-edit-project="${esc(String(project.id))}" data-editor-section="${projectPickerTab}"><strong>${esc(project.name)}</strong><span>${esc(project.task || project.category || 'Project')}</span>${icon('chevron-right')}</button>`
+        `<button type="button" class="admin-project-picker-item trending-item" data-edit-project="${esc(String(project.id))}" data-editor-section="${projectPickerTab}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong></span>${icon('chevron-right')}</button>`
       ).join('') || '<p class="trending-empty">No matching projects.</p>';
       icons();
     };
@@ -943,18 +944,23 @@
     });
     document.querySelector('[data-project-section]').classList.add('active');
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
+    $('adminProjectPickerSearchClear').onclick = () => {
+      $('adminProjectPickerSearch').value = '';
+      renderProjectPicker();
+      $('adminProjectPickerSearch').focus();
+    };
     $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
     $('allAirdropsSearchClear').onclick = () => {
       $('allAirdropsSearch').value = '';
       renderAllAirdrops();
       $('allAirdropsSearch').focus();
     };
-    $('closeAdminProjectPicker').onclick = () => {
+    $('closeAdminProjectPicker')?.addEventListener('click', () => {
       picker.hidden = true;
       $('trendingManager').hidden = false;
       $('allAirdropsManager').hidden = false;
       document.querySelectorAll('[data-project-section]').forEach((button, index) => button.classList.toggle('active', index === 0));
-    };
+    });
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
