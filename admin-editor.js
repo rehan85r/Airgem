@@ -288,6 +288,7 @@
       const url = safeURL($('logoUrl').value.trim());
       if (!url) {
         root.textContent = ($('name').value || 'A').slice(0, 1).toUpperCase();
+        this.syncSharedLogoPreviews();
         return;
       }
       const img = document.createElement('img');
@@ -297,6 +298,14 @@
         root.textContent = 'A';
       };
       root.append(img);
+      this.syncSharedLogoPreviews();
+    }
+    syncSharedLogoPreviews() {
+      const source = $('logoPreview');
+      for (const id of ['detailsLogoPreview', 'guideLogoPreview']) {
+        const target = $(id);
+        if (target && source) target.replaceChildren(...Array.from(source.childNodes, node => node.cloneNode(true)));
+      }
     }
     saveTask() {
       const task = this.tasks[this.taskIndex];
