@@ -105,7 +105,7 @@
     $('remove').disabled = blocked || state.isNew;
     $('saveTrending').disabled = state.busy || !state.trendingLoaded;
     $('trendingSelect').disabled = state.busy || !state.trendingLoaded;
-    $('[data-top-add],[data-top-remove],[data-top-drag]').forEach((button) => {
+    document.querySelectorAll('[data-top-add], [data-top-remove], [data-top-drag]').forEach((button) => {
       button.disabled = state.busy;
     });
     $('editorProjectMeta').textContent = state.isNew
