@@ -474,7 +474,7 @@
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
     $('allAirdropsCount').textContent = String(matches.length);
     $('allAirdropsList').innerHTML = matches.map((project) =>
-      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-delete-project="${esc(String(project.id))}" aria-label="Permanently delete ${esc(project.name)}" title="Delete project">${icon('x')}</button></div></div>`
+      `<div class="trending-item">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong><small>${esc(project.category || '')}</small></span><div class="actions"><button type="button" class="icon-button" data-delete-project="${esc(String(project.id))}" aria-label="Permanently delete ${esc(project.name)}" title="Delete project">${icon('trash-2')}</button></div></div>`
     ).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
   }
