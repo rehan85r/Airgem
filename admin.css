@@ -1744,7 +1744,6 @@ main{padding-top:15px}
 #projectsView .trending-list{gap:10px}
 #projectsView .trending-item{gap:10px;padding:10px;border-radius:12px;min-height:55px;box-sizing:border-box}
 #projectsView .trending-item .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
-#projectsView .collection-footer{margin-top:18px;padding-top:15px}
 @media(max-width:600px){
  #projectsView .collection-card{padding:15px}
  #projectsView .top-airdrops-heading h2{font-size:20px}
@@ -1762,8 +1761,6 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 
- #projectsView .collection-footer{flex-wrap:wrap}
- #projectsView .collection-footer .button{flex:1 1 auto}
 }
 
 #projectsView .top-airdrops-heading h2{display:flex;align-items:center;gap:10px}
