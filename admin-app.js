@@ -28,6 +28,34 @@
     turnstileWidget = null,
     turnstileToken = '';
   const siteKey = String(window.AIRGEM_TURNSTILE_SITE_KEY || '').trim();
+  const locationKey = 'airgem-admin-location-v1';
+  const saveLocation = (location) => {
+    try { sessionStorage.setItem(locationKey, JSON.stringify(location)); } catch {}
+  };
+  const readLocation = () => {
+    try { return JSON.parse(sessionStorage.getItem(locationKey) || 'null'); } catch { return null; }
+  };
+  const clearLocation = () => {
+    try { sessionStorage.removeItem(locationKey); } catch {}
+  };
+  let currentPickerSection = 'dashboard';
+  let restoringLocation = false;
+  function restoreLocation() {
+    const saved = readLocation();
+    if (!saved || !state.dataLoaded) return;
+    restoringLocation = true;
+    try {
+      const section = ['basic', 'details', 'guide'].includes(saved.section) ? saved.section : 'dashboard';
+      if (section !== 'dashboard') {
+        document.querySelector('[data-project-section="' + section + '"]')?.click();
+      }
+      if (saved.editor && saved.projectId != null) {
+        const project = state.projects.find(item => String(item.id) === String(saved.projectId));
+        if (project) editProject(project.id, section === 'dashboard' ? 'basic' : section);
+      }
+    } finally { restoringLocation = false; }
+  }
+
   const esc = (value) =>
     String(value ?? '').replace(
       /[&<>"']/g,
@@ -161,6 +189,7 @@
     if (!skipGuard && !canLeaveView(view)) return false;
     if (state.view === 'editor') state.dirty = false;
     state.view = view;
+    if (!restoringLocation && view === 'projects') saveLocation({ section: currentPickerSection });
     document.body.dataset.adminView = view;
     for (const id of [
       'projectsView',
@@ -193,6 +222,7 @@
       return;
     }
     state.selected = project.id;
+    if (!restoringLocation) saveLocation({ section: tab, editor: true, projectId: String(project.id) });
     state.isNew = false;
     state.dirty = false;
     editor.load(project);
@@ -736,6 +766,7 @@
       navigate('projects', { skipGuard: true });
       try {
         await Promise.all([refreshProjects(), loadTrending()]);
+        restoreLocation();
       } catch (error) {
         message(`Unable to load projects: ${error.message}`, true);
         if ($('dataError')) {
@@ -758,6 +789,7 @@
       message(`Unable to sign out: ${error.message}`, true);
       return;
     }
+    clearLocation();
     state.dirty = false;
     state.projects = [];
     state.dataLoaded = false;
@@ -946,6 +978,8 @@
     document.querySelectorAll('[data-project-section]').forEach((button, index) => {
       button.addEventListener('click', () => {
         projectPickerTab = button.dataset.projectSection;
+        currentPickerSection = projectPickerTab === 'basic' || projectPickerTab === 'details' || projectPickerTab === 'guide' ? projectPickerTab : 'dashboard';
+        if (!restoringLocation) saveLocation({ section: currentPickerSection });
         $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic', 'Details', 'Guide'][index];
         const pickerIcon = picker.querySelector('.top-airdrops-heading h2 svg, .top-airdrops-heading h2 i');
         if (pickerIcon) {
@@ -979,6 +1013,8 @@
     };
     $('closeAdminProjectPicker')?.addEventListener('click', () => {
       picker.hidden = true;
+      currentPickerSection = 'dashboard';
+      saveLocation({ section: 'dashboard' });
       $('trendingManager').hidden = false;
       $('allAirdropsManager').hidden = false;
       document.querySelectorAll('[data-project-section]').forEach((button, index) => button.classList.toggle('active', index === 0));
@@ -989,6 +1025,7 @@
       const finish = () => {
         page.classList.remove('airgem-editor-exit', 'airgem-editor-enter');
         navigate('projects', { skipGuard: true });
+        if (currentPickerSection !== 'dashboard') document.querySelector('[data-project-section="' + currentPickerSection + '"]')?.click();
       };
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         finish();
@@ -1162,6 +1199,7 @@
     dropyClient.auth.onAuthStateChange?.((event) => {
       // Revoke the visible workspace immediately if the SDK signs the user out.
       if (event === 'SIGNED_OUT') {
+        clearLocation();
         state.dirty = false;
         showAuth('login');
       }
