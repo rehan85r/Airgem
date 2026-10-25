@@ -1817,6 +1817,18 @@ main{padding-top:15px}
 #projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}
 #projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
 #projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}
+/* Editor project picker uses the same compact card geometry as All Airdrops. */
+#projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
+#projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}
+#projectsView #adminProjectPicker .admin-project-picker-item .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
+#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}
+#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{font:600 13px Manrope,sans-serif;color:#1B2E50}
+#projectsView #adminProjectPicker .admin-project-picker-item>svg{width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50}
+#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}
+#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
+#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}
+#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}
+#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}
 #projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}
 @media(max-width:650px){#projectsView .admin-project-nav{gap:8px}#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}}
 
