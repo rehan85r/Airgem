@@ -1797,7 +1797,9 @@ main{padding-top:15px}
 #projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
-#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:3px}
+#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
+#projectsView .trending-list::-webkit-scrollbar{display:none}
+#projectsView #trendingManager .trending-search-input-wrap,#projectsView #allAirdropsManager .trending-search-input-wrap,#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{width:100%;box-sizing:border-box}
 
 /* Project management shortcuts below the Admin Panel subtitle */
 #projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
