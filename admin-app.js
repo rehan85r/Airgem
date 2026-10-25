@@ -467,6 +467,7 @@
     }
   }
   function renderAllAirdrops() {
+    $('allAirdropsSearchClear').hidden = $('allAirdropsSearch').value.length === 0;
     const query = $('allAirdropsSearch').value.trim().toLowerCase();
     const matches = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
     const pending = state.pendingProjectDeletes.length;
@@ -940,6 +941,11 @@
     document.querySelector('[data-project-section]').classList.add('active');
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
     $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
+    $('allAirdropsSearchClear').onclick = () => {
+      $('allAirdropsSearch').value = '';
+      renderAllAirdrops();
+      $('allAirdropsSearch').focus();
+    };
     $('closeAdminProjectPicker').onclick = () => {
       picker.hidden = true;
       $('trendingManager').hidden = false;
