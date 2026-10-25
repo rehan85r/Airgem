@@ -937,7 +937,7 @@
         const pickerIcon = picker.querySelector('.top-airdrops-heading h2 svg');
         if (pickerIcon) {
           pickerIcon.innerHTML = projectPickerTab === 'basic'
-            ? '<path d="M4 7h16M4 12h16M4 17h16"/><circle cx="8" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="10" cy="17" r="2" fill="currentColor" stroke="none"/>'
+            ? '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>'
             : '<path d="m12 2 8 4.5v9L12 20l-8-4.5v-9L12 2Z"/><path d="m4 6.5 8 4.5 8-4.5M12 11v9"/>';
         }
         document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
