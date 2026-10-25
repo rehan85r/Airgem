@@ -2025,3 +2025,7 @@ main{padding-top:15px}
 
 /* Align Basic Editor Name, Category and Status labels 20px from the left of their fields. */
 #editorView #panel-basic .form-grid .field > label{padding-left:20px}
+
+/* Match the 20px left inset for field values and placeholders. */
+#editorView #panel-basic .form-grid .field > input,
+#editorView #panel-basic .form-grid .field > select{padding-left:20px}
