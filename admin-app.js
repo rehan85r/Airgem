@@ -841,21 +841,31 @@
         return;
       }
     });
-    // Reorder rows immediately while dragging; Publish persists the final order.
+    // Move boxes live while dragging, with a short-lived visual highlight.
     let dragState = null;
+    let dragHighlightTimer = null;
     const list = $('trendingCurrent');
+    const clearDragHighlight = () => {
+      clearTimeout(dragHighlightTimer);
+      list.querySelectorAll('.is-dragging,.drag-target,.drag-recent').forEach((row) =>
+        row.classList.remove('is-dragging', 'drag-target', 'drag-recent'));
+    };
+    const scheduleDragHighlightClear = () => {
+      clearTimeout(dragHighlightTimer);
+      dragHighlightTimer = setTimeout(clearDragHighlight, 5000);
+    };
+    document.addEventListener('pointerdown', (event) => {
+      if (!event.target.closest('#trendingCurrent [data-top-drag]') && !dragState)
+        clearDragHighlight();
+    }, true);
     list.addEventListener('pointerdown', (event) => {
       const handle = event.target.closest('[data-top-drag]');
       if (!handle || state.busy || !state.trendingLoaded || event.button !== 0) return;
+      clearDragHighlight();
       const row = handle.closest('[data-top-row]');
-      dragState = {
-        pointerId: event.pointerId,
-        row,
-        handle,
-        originalOrder: [...state.trending],
-        changed: false,
-      };
-      handle.setPointerCapture(event.pointerId);
+      dragState = { pointerId: event.pointerId, row, originalOrder: [...state.trending] };
+      // Capture on the stable list, not on a row that gets moved in the DOM.
+      list.setPointerCapture(event.pointerId);
       row.classList.add('is-dragging');
       event.preventDefault();
     });
@@ -865,24 +875,21 @@
       const others = [...list.querySelectorAll('[data-top-row]')].filter((item) => item !== row);
       const next = others.find((item) => event.clientY < item.getBoundingClientRect().top + item.getBoundingClientRect().height / 2);
       if (next) {
-        if (row.nextElementSibling !== next) {
-          list.insertBefore(row, next);
-          dragState.changed = true;
-        }
+        if (row.nextElementSibling !== next) list.insertBefore(row, next);
       } else if (others.length && list.lastElementChild !== row) {
         list.appendChild(row);
-        dragState.changed = true;
       }
     });
     const finishDrag = (event) => {
       if (!dragState || event.pointerId !== dragState.pointerId) return;
-      const { row, handle, originalOrder } = dragState;
+      const { row, originalOrder } = dragState;
       dragState = null;
+      if (list.hasPointerCapture(event.pointerId)) list.releasePointerCapture(event.pointerId);
       row.classList.remove('is-dragging');
-      if (handle.hasPointerCapture(event.pointerId)) handle.releasePointerCapture(event.pointerId);
       if (event.type === 'pointercancel') {
         state.trending = originalOrder;
         renderTrending();
+        clearDragHighlight();
         return;
       }
       const order = [...list.querySelectorAll('[data-top-row]')].map((item) => originalOrder[Number(item.dataset.topRow)]);
@@ -890,6 +897,11 @@
         state.trending = order;
         renderTrending();
         $('trendingMessage').textContent = 'Order changed. Save top airdrops to publish.';
+        const moved = list.querySelector('[data-top-row="' + order.findIndex((id) => String(id) === String(originalOrder[Number(row.dataset.topRow)])) + '"]');
+        if (moved) moved.classList.add('drag-recent');
+        scheduleDragHighlightClear();
+      } else {
+        clearDragHighlight();
       }
     };
     list.addEventListener('pointerup', finishDrag);
