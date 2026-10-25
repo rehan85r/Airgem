@@ -1000,6 +1000,38 @@
     };
     $('backToProjects').onclick = $('cancelEdit').onclick = closeEditorWithMotion;
     $('mobileEditorBack').onclick = $('mobileEditorClose').onclick = closeEditorWithMotion;
+    // Mobile editor uses an internal scroller, so native browser pull-to-refresh
+    // cannot reach the page. Refresh only on a deliberate top-edge downward swipe.
+    const editorScroll = $('form');
+    let pullStart = null;
+    editorScroll.addEventListener('touchstart', (event) => {
+      if (state.view !== 'editor' || event.touches.length !== 1 || editorScroll.scrollTop > 0) {
+        pullStart = null;
+        return;
+      }
+      const target = event.target;
+      if (target.closest('input, textarea, select, button, label, [contenteditable]')) {
+        pullStart = null;
+        return;
+      }
+      pullStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    }, { passive: true });
+    editorScroll.addEventListener('touchend', (event) => {
+      if (!pullStart || state.view !== 'editor') return;
+      const start = pullStart;
+      pullStart = null;
+      if (editorScroll.scrollTop > 0 || !event.changedTouches.length) return;
+      const deltaY = event.changedTouches[0].clientY - start.y;
+      const deltaX = Math.abs(event.changedTouches[0].clientX - start.x);
+      if (deltaY < 100 || deltaY < deltaX * 1.5) return;
+      if (state.busy || state.uploads) {
+        message('Please wait until the current operation finishes.', true);
+        return;
+      }
+      if (state.dirty && !confirm('Refresh and discard your unpublished project changes?')) return;
+      window.location.reload();
+    }, { passive: true });
+
     $('remove').onclick = () => removeProject(state.selected);
     $('form').onsubmit = publish;
     $('trendingSelect').oninput = renderTrendingSearch;
