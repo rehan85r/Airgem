@@ -813,8 +813,12 @@
         document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
         const allProjects = index === 0;
         $('trendingManager').hidden = !allProjects;
+        $('allAirdropsManager').hidden = !allProjects;
         picker.hidden = allProjects;
-        if (!allProjects) renderProjectPicker();
+        if (!allProjects) {
+          $('adminProjectPickerSearch').value = '';
+          renderProjectPicker();
+        }
       });
     });
     document.querySelector('[data-project-section]').classList.add('active');
@@ -823,6 +827,7 @@
     $('closeAdminProjectPicker').onclick = () => {
       picker.hidden = true;
       $('trendingManager').hidden = false;
+      $('allAirdropsManager').hidden = false;
       document.querySelectorAll('[data-project-section]').forEach((button, index) => button.classList.toggle('active', index === 0));
     };
     $('backToProjects').onclick = $('cancelEdit').onclick = () => navigate('projects');
