@@ -934,11 +934,11 @@
       button.addEventListener('click', () => {
         projectPickerTab = button.dataset.projectSection;
         $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic', 'Details', 'Guide'][index];
-        const pickerIcon = picker.querySelector('.top-airdrops-heading h2 svg');
+        const pickerIcon = picker.querySelector('.top-airdrops-heading h2 svg, .top-airdrops-heading h2 i');
         if (pickerIcon) {
-          pickerIcon.innerHTML = projectPickerTab === 'basic'
-            ? '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>'
-            : '<path d="m12 2 8 4.5v9L12 20l-8-4.5v-9L12 2Z"/><path d="m4 6.5 8 4.5 8-4.5M12 11v9"/>';
+          const iconName = { basic: 'info', details: 'list-checks', guide: 'book-open' }[projectPickerTab] || 'layers';
+          pickerIcon.outerHTML = '<i data-lucide="' + iconName + '" aria-hidden="true"></i>';
+          icons();
         }
         document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
         const allProjects = index === 0;
