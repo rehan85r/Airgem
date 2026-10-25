@@ -1912,3 +1912,10 @@ main{padding-top:15px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}
 @media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}
+
+/* Lightweight full-page slide-up entrance for Basic, Details and Guide editors. */
+@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}
+#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}
+#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
+@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
