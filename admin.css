@@ -1850,6 +1850,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
+#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}
 
 #projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}
 #projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}
