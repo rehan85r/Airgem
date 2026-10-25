@@ -566,9 +566,9 @@
     if (message === 'Update Saved ✓') status.innerHTML = `${icon('circle-check')}<span>Update Saved ✓</span>`;
     else if (message === 'Error Not Saved ×') status.innerHTML = `${icon('circle-x')}<span>Error Not Saved ×</span>`;
     else if (message === 'Click Publish To Save') status.innerHTML = `<span>Click Publish To Save</span>${icon('circle-check')}`;
+    else status.textContent = message;
     if (message === 'Click Publish To Save') status.style.color = '#1E90FF';
     else status.style.removeProperty('color');
-    else status.textContent = message;
     status.classList.remove('is-success', 'is-error');
     if (kind) status.classList.add(kind);
     if (detail) status.title = detail;
