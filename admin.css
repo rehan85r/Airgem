@@ -1989,3 +1989,7 @@ main{padding-top:15px}
 #editorView #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
 #editorView #panel-basic label.button[for="logoFile"]{gap:10px}
 #editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}
+
+/* Icon-only Upload Logo control, including protection against stale label text. */
+#editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}
+#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}
