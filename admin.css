@@ -2012,3 +2012,7 @@ main{padding-top:15px}
  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{height:50px;min-height:50px;flex:0 0 50px}
  body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
 }
+
+/* Consistent Basic Editor field dimensions across mobile and desktop. */
+#editorView #panel-basic .form-grid .field input,
+#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}
