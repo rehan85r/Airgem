@@ -1137,20 +1137,25 @@ input::placeholder {
   overflow-y: auto;
   z-index: 10;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
   background: white;
-  box-shadow: var(--shadow);
-  padding: 5px;
+  box-shadow: none;
+  padding: 0;
   margin-top: 15px;
 }
 .search-results button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  padding: 11px;
+  min-height: 55px;
+  padding: 10px;
   text-align: left;
   border: 0;
   background: none;
-  font-size: 12px;
-  border-radius: 5px;
+  color: #1B2E50;
+  font: 600 14px Manrope, sans-serif;
+  border-radius: 12px;
 }
 .search-results button:hover {
   background: #eef6ff;
