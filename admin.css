@@ -2081,22 +2081,21 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Basic Editor: keep Add Project aligned to the right of Upload Logo. */
-#editorView #panel-basic .basic-logo-upload {
+/* Add Project belongs in the Projects page heading, not inside the editor. */
+#projectsView .projects-page-heading {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
 }
-#editorView #panel-basic .basic-logo-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
+#projectsView .projects-page-heading > div {
+  width: auto;
   min-width: 0;
+  text-align: left;
 }
-#editorView #panel-basic .basic-add-project {
-  margin-left: auto;
-  align-self: center;
+#projectsView .dashboard-add-project {
+  flex: 0 0 auto;
   min-height: 40px;
   padding: 0 15px;
   border-color: #1E90FF;
@@ -2104,17 +2103,13 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   color: #fff;
   white-space: nowrap;
 }
-#editorView #panel-basic .basic-add-project:hover {
+#projectsView .dashboard-add-project:hover {
   background: #187DE0;
   border-color: #187DE0;
 }
 @media (max-width: 640px) {
-  #editorView #panel-basic .basic-logo-upload {
-    gap: 12px;
-  }
-  #editorView #panel-basic .basic-add-project {
-    min-height: 36px;
-    padding: 0 10px;
-    font-size: 12px;
-  }
+  #projectsView .projects-page-heading { gap: 10px; }
+  #projectsView .projects-page-heading h1 { font-size: 22px; }
+  #projectsView .dashboard-add-project { min-height: 36px; padding: 0 10px; font-size: 12px; }
 }
+
