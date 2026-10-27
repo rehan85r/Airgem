@@ -302,6 +302,16 @@
                   </div>
                   <div id="basicLinks" class="form-grid" style="grid-column:1 / -1; width:100%; max-width:none;"></div>
                 </div>
+                <div class="section-heading basic-investors-heading">
+                  <div><h2>Investors</h2><p>Manage investor names, tiers and logos.</p></div>
+                  <div class="actions">
+                    <button type="button" id="agBasicSetInvestorsNA" class="button" aria-pressed="false">N/A</button>
+                    <button type="button" id="agBasicAddInvestor" class="button"><i data-lucide="plus" aria-hidden="true"></i> Add investor</button>
+                  </div>
+                </div>
+                <input id="agBasicInvestorsNA" type="checkbox" hidden aria-label="Investors not applicable" />
+                <div id="agBasicInvestorList" class="investor-list"></div>
+                <p id="agBasicInvestorsNAHelp" class="investor-na-note" hidden>Investors are marked as N/A for this project. Add an investor to change this.</p>
               </section>
               <section
                 class="card editor-panel"
