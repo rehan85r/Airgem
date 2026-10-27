@@ -377,21 +377,26 @@
       this.investors.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'ag-investor-editor-item';
-        const photo = document.createElement('label');
-        photo.className = 'ag-investor-photo';
-        const file = document.createElement('input');
-        file.type = 'file';
-        file.accept = 'image/png,image/jpeg,image/webp,image/gif';
-        file.className = 'sr-only';
-        file.setAttribute('aria-label', `Upload logo for investor ${index + 1}`);
-        const preview = document.createElement('span');
+        const photo = document.createElement('div');
+        photo.className = 'ag-investor-photo-wrap';
+        const preview = document.createElement('div');
+        preview.className = 'ag-investor-photo';
         if (safeURL(item.logo)) {
           const img = document.createElement('img');
           img.src = item.logo;
           img.alt = '';
           preview.append(img);
-        } else preview.textContent = '+ Logo';
-        photo.append(preview, file);
+        } else preview.textContent = '?';
+        const uploadLabel = document.createElement('label');
+        uploadLabel.className = 'button ag-investor-upload-button';
+        uploadLabel.innerHTML = '<i data-lucide="upload" aria-hidden="true"></i> Upload Logo';
+        const file = document.createElement('input');
+        file.type = 'file';
+        file.accept = 'image/png,image/jpeg,image/webp,image/gif';
+        file.className = 'sr-only';
+        file.setAttribute('aria-label', `Upload logo for investor ${index + 1}`);
+        uploadLabel.append(file);
+        photo.append(preview, uploadLabel);
         file.onchange = async () => {
           const chosen = file.files?.[0];
           if (!chosen) return;
