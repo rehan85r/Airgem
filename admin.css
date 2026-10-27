@@ -2117,3 +2117,30 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
+
+
+/* Keep investor inputs centered in the available space between logo and delete control. */
+#editorView #panel-basic .ag-investor-editor-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#editorView #panel-basic .ag-investor-editor-item > .ag-investor-photo-wrap {
+  flex: 0 0 50px;
+  min-width: 50px;
+}
+#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  position: static;
+  left: auto;
+  margin: 0 !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+#editorView #panel-basic .ag-investor-editor-item > .icon-button {
+  flex: 0 0 36px;
+  margin-left: 0;
+}
