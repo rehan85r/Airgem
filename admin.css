@@ -2086,3 +2086,18 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
+
+
+/* Enforce the intended visual order: logo, input, delete button. */
+#editorView #panel-basic .ag-investor-editor-item > .ag-investor-photo-wrap {
+  order: 0 !important;
+}
+#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
+  order: 1 !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+#editorView #panel-basic .ag-investor-editor-item > .icon-button {
+  order: 2 !important;
+  margin-left: 0 !important;
+}
