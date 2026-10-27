@@ -1851,3 +1851,6 @@ main{padding-top:15px}
 /* Basic Editor Investors heading icon and spacing. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title{display:flex;align-items:center;gap:10px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title>svg{width:15px;height:15px;flex:0 0 15px;color:#1B2E50;stroke-width:2}
+
+/* Hide the admin copyright footer while the Basic Editor is open. */
+body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none}
