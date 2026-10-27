@@ -1826,3 +1826,11 @@ main{padding-top:15px}
 /* Basic Editor: align Website, Discord and X fields with the main two-column form. */
 #editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
 @media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}
+
+/* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
+#projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
+#projectsView .trending-search input{font-weight:400;letter-spacing:0}
+.app-footer{font-size:11px}
+@media(max-width:650px){
+  #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
+}
