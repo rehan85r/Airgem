@@ -1854,3 +1854,6 @@ main{padding-top:15px}
 
 /* Hide the admin copyright footer while the Basic Editor is open. */
 body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none}
+
+/* Keep a 10px gap between the plus icon and Add Investors text. */
+#editorView:has(#panel-basic:not([hidden])) #panel-basic #agBasicAddInvestor{display:inline-flex;align-items:center;gap:10px}
