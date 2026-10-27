@@ -1843,3 +1843,7 @@ main{padding-top:15px}
 #editorView .ag-investor-upload-button svg{width:15px;height:15px;flex:0 0 15px}
 #editorView .ag-investor-upload-button input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
 @media(max-width:650px){#editorView .ag-investor-editor-item{gap:10px;padding:12px}#editorView .ag-investor-fields{gap:10px}}
+
+/* Basic Editor Investors heading typography and spacing. */
+#editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-heading{margin-top:20px;margin-bottom:15px}
+#editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-heading h2{font-weight:500}
