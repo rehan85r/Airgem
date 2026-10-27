@@ -1707,17 +1707,6 @@ main{padding-top:15px}
  #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
 }
 
-/* Let mobile editor scroll at document level so Android browser native pull-to-refresh works. */
-@media(max-width:767px){
-  html:has(body[data-admin-view="editor"]),body[data-admin-view="editor"]{overflow-y:auto!important;overscroll-behavior-y:auto!important;height:auto!important}
-  body[data-admin-view="editor"] .topbar{display:none}
-  body[data-admin-view="editor"] .app-shell,body[data-admin-view="editor"] #mainContent{height:auto!important;min-height:0!important;overflow:visible!important;padding:0!important;margin:0!important;max-width:none!important}
-  #editorView:not([hidden]){position:relative!important;inset:auto!important;width:100%!important;height:auto!important;min-height:100dvh!important;overflow:visible!important;display:block!important;padding:0!important;margin:0!important}
-  #editorView .mobile-editor-toolbar{position:sticky;top:0;z-index:10;display:flex}
-  #editorView #form{display:flex;flex-direction:column;overflow:visible!important;min-height:calc(100dvh - 60px);height:auto!important;overscroll-behavior-y:auto!important;padding-bottom:0}
-  #editorView .editor-footer{position:sticky;bottom:0;z-index:5}
-}
-
 /* Basic Editor logo preview: 30 x 30px. */
 #editorView #panel-basic .logo-preview{width:30px;height:30px;min-width:30px;min-height:30px}
 
@@ -1858,119 +1847,101 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 /* Keep a 10px gap between the plus icon and Add Investors text. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic #agBasicAddInvestor{display:inline-flex;align-items:center;gap:10px}
 
-/* Keep the editor Publish action fixed to the mobile viewport while the form scrolls. */
-@media(max-width:767px){
-  body[data-admin-view="editor"] #editorView .editor-footer{
-    position:fixed!important;
-    left:0!important;
-    right:0!important;
-    bottom:0!important;
-    z-index:1002!important;
-    box-sizing:border-box;
-    margin:0!important;
-    width:100%!important;
-    padding:12px 15px calc(12px + env(safe-area-inset-bottom))!important;
-    background:#fff;
-    border-top:1px solid #E2E8F0;
-  }
-  body[data-admin-view="editor"] #editorView #form{
-    padding-bottom:100px!important;
-  }
-}
-
-/* Pin the mobile Basic Editor header to the viewport like the site header. */
-@media(max-width:767px){
-  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{
-    position:fixed!important;
-    top:0!important;
-    left:0!important;
-    right:0!important;
-    width:100%!important;
-    box-sizing:border-box;
-    z-index:1003!important;
-  }
-  body[data-admin-view="editor"] #editorView #form{
-    padding-top:50px!important;
-  }
-}
-
-/* Restore the breathing room below the fixed mobile editor header. */
-@media(max-width:767px){
-  body[data-admin-view="editor"] #editorView #form>.editor-panel:not([hidden]){
-    margin-top:25px!important;
-  }
-}
-
-@media(max-width:767px){body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{position:sticky!important;top:0!important;left:auto!important;right:auto!important;width:100%!important;z-index:1003!important}body[data-admin-view="editor"] #editorView #form{padding-top:0!important}}
-
-/* Final override: keep the mobile editor header fixed while the page scrolls. */
-@media(max-width:767px){body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;z-index:1003!important}body[data-admin-view="editor"] #editorView #form{padding-top:50px!important}}
-
-/* Stable mobile editor layout: only the form scrolls; header stays in the fixed editor shell. */
-@media(max-width:767px){
+/* Single source of truth for the mobile editor layout. */
+@media (max-width: 767px) {
   html:has(body[data-admin-view="editor"]),
-  body[data-admin-view="editor"]{
-    height:100%;
-    overflow:hidden!important;
+  body[data-admin-view="editor"] {
+    height: 100%;
+    overflow: hidden;
   }
+
+  body[data-admin-view="editor"] .topbar {
+    display: none;
+  }
+
   body[data-admin-view="editor"] .app-shell,
-  body[data-admin-view="editor"] #mainContent{
-    height:100%!important;
-    min-height:0!important;
-    overflow:hidden!important;
+  body[data-admin-view="editor"] #mainContent {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    max-width: none;
   }
-  body[data-admin-view="editor"] #editorView:not([hidden]){
-    position:fixed!important;
-    inset:0!important;
-    width:100%!important;
-    height:100dvh!important;
-    min-height:0!important;
-    display:flex!important;
-    flex-direction:column!important;
-    overflow:hidden!important;
-    padding:0!important;
-    margin:0!important;
-    box-sizing:border-box!important;
-    z-index:1000!important;
+
+  body[data-admin-view="editor"] #editorView:not([hidden]) {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    max-width: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #F8FAFC;
   }
-  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{
-    position:relative!important;
-    inset:auto!important;
-    top:auto!important;
-    left:auto!important;
-    right:auto!important;
-    width:100%!important;
-    height:50px!important;
-    min-height:50px!important;
-    flex:0 0 50px!important;
-    display:flex!important;
-    box-sizing:border-box!important;
-    z-index:1003!important;
+
+  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar {
+    position: relative;
+    inset: auto;
+    z-index: 1003;
+    display: flex;
+    flex: 0 0 50px;
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #E2E8F0;
   }
-  body[data-admin-view="editor"] #editorView #form{
-    display:flex!important;
-    flex:1 1 auto!important;
-    min-height:0!important;
-    height:auto!important;
-    overflow-x:hidden!important;
-    overflow-y:auto!important;
-    overscroll-behavior:contain!important;
-    -webkit-overflow-scrolling:touch;
-    padding:15px 15px 100px!important;
-    margin:0!important;
-    box-sizing:border-box!important;
+
+  body[data-admin-view="editor"] #editorView #form {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 15px 15px 100px;
+    margin: 0;
+    box-sizing: border-box;
   }
-  body[data-admin-view="editor"] #editorView #form>.editor-panel:not([hidden]){
-    margin-top:0!important;
+
+  body[data-admin-view="editor"] #editorView #form > .editor-panel:not([hidden]) {
+    flex: 0 0 auto;
+    min-height: 0;
+    margin: 0 0 15px;
   }
-  body[data-admin-view="editor"] #editorView .editor-footer{
-    position:fixed!important;
-    left:0!important;
-    right:0!important;
-    bottom:0!important;
-    width:100%!important;
-    margin:0!important;
-    z-index:1004!important;
-    box-sizing:border-box!important;
+
+  body[data-admin-view="editor"] #editorView #form > .editor-panel[hidden] {
+    display: none !important;
+  }
+
+  body[data-admin-view="editor"] #editorView .editor-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1004;
+    width: 100%;
+    margin: 0;
+    padding: 12px 15px calc(12px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+    background: #fff;
+    border-top: 1px solid #E2E8F0;
+    border-radius: 0;
+    box-shadow: 0 -5px 18px rgba(27, 46, 80, 0.06);
   }
 }
