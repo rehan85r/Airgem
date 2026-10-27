@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="admin.css?v=basic-add-project-20261027" />
+    <link rel="stylesheet" href="admin.css?v=dashboard-add-project-20261027" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   </head>
   <body>
@@ -102,14 +102,14 @@
         
         <main id="mainContent" tabindex="-1">
           <section id="projectsView">
-            <div class="page-heading">
+            <div class="page-heading projects-page-heading">
               <div>
                 <h1 id="pageTitle">Admin <span class="admin-panel-accent">Panel</span></h1>
                 <p id="pageDescription">
                   Manage Your Projects In One Place
                 </p>
               </div>
-              
+              <button id="addProjectButton" type="button" class="button primary dashboard-add-project"><i data-lucide="plus" aria-hidden="true"></i> Add Project</button>
             </div>
           <nav class="admin-project-nav" aria-label="Project management">
             <button type="button" class="admin-project-nav-button" data-project-section="all">Dashboard</button>
@@ -268,7 +268,6 @@
                     <input id="logoFile" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
                     <button id="clearLogo" type="button" class="text-button" hidden>Remove logo</button>
                   </div>
-                  <button id="basicAddProject" type="button" class="button basic-add-project"><i data-lucide="plus" aria-hidden="true"></i> Add Project</button>
                 </div>
                 <input id="logoUrl" type="hidden" /><input
                   id="color"
@@ -664,6 +663,6 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="admin-editor.js?v=optional-type-publish-20261027" defer></script>
-    <script src="admin-app.js?v=name-only-publish-20261027" defer></script>
+    <script src="admin-app.js?v=dashboard-add-project-20261027" defer></script>
   </body>
 </html>
