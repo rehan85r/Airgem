@@ -2057,3 +2057,20 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     box-sizing: border-box;
   }
 }
+
+
+/* Keep long investor lists scrollable without extending the whole editor page. */
+#editorView #panel-basic #agBasicInvestorList,
+#editorView #agInvestorList {
+  max-height: 450px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding-right: 4px;
+}
+@media (max-width: 767px) {
+  #editorView #panel-basic #agBasicInvestorList,
+  #editorView #agInvestorList {
+    max-height: 400px;
+  }
+}
