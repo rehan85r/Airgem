@@ -2061,26 +2061,34 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 /* Mobile investor fields stay inside the card with a 20px label inset. */
 @media (max-width: 767px) {
   #editorView #panel-basic .ag-investor-editor-item {
-    flex-wrap: wrap;
-    align-items: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
   }
   #editorView #panel-basic .ag-investor-editor-item > .ag-investor-photo-wrap {
-    flex: 1 1 calc(100% - 56px);
-    min-width: 0;
+    flex: 0 0 50px;
+    min-width: 50px;
   }
   #editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
     position: static;
     left: auto;
-    width: 100%;
-    max-width: 100%;
-    flex: 1 0 100%;
-    padding-left: 5px;
+    width: auto;
+    max-width: none;
+    flex: 1 1 0;
+    min-width: 0;
+    align-self: center;
+    padding-left: 0;
     margin-left: 0 !important;
     box-sizing: border-box;
   }
+  #editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields input {
+    width: 100%;
+    min-width: 0;
+  }
   #editorView #panel-basic .ag-investor-editor-item > .icon-button {
     flex: 0 0 36px;
-    margin-left: auto;
+    margin-left: 0;
+    align-self: center;
   }
 }
 
