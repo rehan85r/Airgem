@@ -2112,21 +2112,39 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #projectsView .projects-page-heading > div { width: 100%; text-align: center; }
   #projectsView .projects-page-heading h1 { font-size: 25px; }
 }
+#projectsView .admin-project-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
 #projectsView .admin-project-nav .dashboard-add-project {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-left: auto;
+  margin-left: 0;
   min-height: 40px;
   padding: 0 14px;
   font-size: 13px;
   border-radius: 12px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  color: #475569;
+  box-shadow: none;
+  white-space: nowrap;
 }
 #projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
+#projectsView .admin-project-nav .dashboard-add-project:hover,
+#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
+  background: #1E90FF;
+  border-color: #1E90FF;
+  color: #fff;
+}
 @media (max-width: 640px) {
-  #projectsView .admin-project-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  #projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
-  #projectsView .admin-project-nav .dashboard-add-project { margin-left: 0; min-height: 36px; padding: 0 10px; font-size: 12px; }
+  #projectsView .admin-project-nav { gap: 8px; }
+  #projectsView .admin-project-nav .dashboard-add-project { min-height: 40px; padding: 0 14px; font-size: 13px; }
 }
 
