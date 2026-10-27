@@ -278,14 +278,14 @@
       const fields = ['Website', 'Discord', 'X']
         .map((type) => {
           const link = links.find((item) => this.socialType(item.label) === type);
-          return `<div class="field"><label for="link${type}">${type}</label><input id="link${type}" class="link-url" data-type="${type}" type="url" placeholder="https://" value="${escape(link?.url || '')}"></div>`;
+          return `<div class="field"><label for="link${type}">${type}</label><input id="link${type}" class="link-url" data-type="${type}" type="url" placeholder="http://example.com" value="${escape(link?.url || '')}"></div>`;
         })
         .join('');
       $('links').innerHTML = fields;
       $('basicLinks').innerHTML = ['Website', 'Discord', 'X']
         .map((type) => {
           const link = links.find((item) => this.socialType(item.label) === type);
-          return `<div class="field"><label for="basicLink${type}">${type}</label><input id="basicLink${type}" class="link-url" data-type="${type}" type="url" placeholder="https://" value="${escape(link?.url || '')}"></div>`;
+          return `<div class="field"><label for="basicLink${type}">${type}</label><input id="basicLink${type}" class="link-url" data-type="${type}" type="url" placeholder="http://example.com" value="${escape(link?.url || '')}"></div>`;
         })
         .join('');
       for (const root of [$('links'), $('basicLinks')]) {
