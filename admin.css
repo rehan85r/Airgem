@@ -2019,8 +2019,16 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Explicitly set the left offset for the Investor and Tier field group. */
-#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields,
+/* Keep investor cards centered with 15px side padding and match the field-label spacing. */
+#editorView .ag-investor-editor-item {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 #editorView .ag-investor-editor-item > .ag-investor-fields {
-  margin-left: 20px !important;
+  margin-left: 0 !important;
+  min-width: 0;
+}
+#editorView .ag-investor-fields label {
+  gap: 20px;
 }
