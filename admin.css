@@ -2017,3 +2017,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 @media (max-width: 650px) {
   #editorView .ag-investor-editor-item { gap: 20px; }
 }
+
+
+/* Explicitly set the left offset for the Investor and Tier field group. */
+#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields,
+#editorView .ag-investor-editor-item > .ag-investor-fields {
+  margin-left: 20px !important;
+}
