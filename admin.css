@@ -1790,6 +1790,6 @@ main{padding-top:15px}
 }
 #editorView #panel-basic .form-grid .field input::placeholder{
   color:var(--navy);
-  font-weight:500;
+  font-weight:400;
   opacity:1;
 }
