@@ -2029,6 +2029,3 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   margin-left: 0 !important;
   min-width: 0;
 }
-#editorView .ag-investor-fields label {
-  gap: 20px;
-}
