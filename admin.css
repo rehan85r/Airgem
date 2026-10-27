@@ -1767,3 +1767,17 @@ main{padding-top:15px}
 
 /* Basic Editor: set Name, Category and Status labels to 15px. */
 #editorView #panel-basic .form-grid .field > label{font-size:15px}
+
+
+/* Basic Editor: remove blue focus highlight from all form boxes. */
+#editorView #panel-basic input:focus,
+#editorView #panel-basic input:focus-visible,
+#editorView #panel-basic select:focus,
+#editorView #panel-basic select:focus-visible,
+#editorView #panel-basic textarea:focus,
+#editorView #panel-basic textarea:focus-visible{
+  outline:none;
+  outline-offset:0;
+  box-shadow:none;
+  border-color:#E2E8F0;
+}
