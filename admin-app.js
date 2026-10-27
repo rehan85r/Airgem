@@ -813,7 +813,7 @@
   }
   function bindEvents() {
     document.addEventListener('click', (event) => {
-      const addProject = event.target.closest('#basicAddProject');
+      const addProject = event.target.closest('#addProjectButton');
       if (addProject) {
         if (!canLeaveView('editor')) return;
         state.selected = null;
