@@ -1877,3 +1877,19 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     padding-bottom:100px!important;
   }
 }
+
+/* Pin the mobile Basic Editor header to the viewport like the site header. */
+@media(max-width:767px){
+  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    right:0!important;
+    width:100%!important;
+    box-sizing:border-box;
+    z-index:1003!important;
+  }
+  body[data-admin-view="editor"] #editorView #form{
+    padding-top:50px!important;
+  }
+}
