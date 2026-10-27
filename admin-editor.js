@@ -387,16 +387,24 @@
           img.alt = '';
           preview.append(img);
         } else preview.textContent = '?';
-        const uploadLabel = document.createElement('label');
-        uploadLabel.className = 'button ag-investor-upload-button';
-        uploadLabel.innerHTML = '<i data-lucide="upload" aria-hidden="true"></i> Upload Logo';
         const file = document.createElement('input');
         file.type = 'file';
         file.accept = 'image/png,image/jpeg,image/webp,image/gif';
         file.className = 'sr-only';
         file.setAttribute('aria-label', `Upload logo for investor ${index + 1}`);
-        uploadLabel.append(file);
-        photo.append(preview, uploadLabel);
+        preview.setAttribute('role', 'button');
+        preview.setAttribute('tabindex', '0');
+        preview.setAttribute('aria-label', `Choose logo for investor ${index + 1}`);
+        preview.title = 'Click to upload investor logo';
+        preview.append(file);
+        preview.onclick = () => file.click();
+        preview.onkeydown = (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            file.click();
+          }
+        };
+        photo.append(preview);
         file.onchange = async () => {
           const chosen = file.files?.[0];
           if (!chosen) return;
@@ -465,8 +473,15 @@
             } finally { file.disabled = false; }
           };
           const inputs = card.querySelectorAll('.ag-investor-fields input');
-          inputs[0].oninput = () => { item.title = inputs[0].value; this.changed(); };
-          inputs[1].oninput = () => { item.subtitle = inputs[1].value; this.changed(); };
+          if (inputs[0]) inputs[0].oninput = () => { item.title = inputs[0].value; this.changed(); };
+          const preview = card.querySelector('.ag-investor-photo');
+          preview.onclick = () => file.click();
+          preview.onkeydown = (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              file.click();
+            }
+          };
           card.querySelector('button[aria-label^="Remove investor"]').onclick = () => {
             this.investors.splice(index, 1);
             this.renderInvestors();
