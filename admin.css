@@ -2079,3 +2079,42 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
+
+
+/* Basic Editor: keep Add Project aligned to the right of Upload Logo. */
+#editorView #panel-basic .basic-logo-upload {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#editorView #panel-basic .basic-logo-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+#editorView #panel-basic .basic-add-project {
+  margin-left: auto;
+  align-self: center;
+  min-height: 40px;
+  padding: 0 15px;
+  border-color: #1E90FF;
+  background: #1E90FF;
+  color: #fff;
+  white-space: nowrap;
+}
+#editorView #panel-basic .basic-add-project:hover {
+  background: #187DE0;
+  border-color: #187DE0;
+}
+@media (max-width: 640px) {
+  #editorView #panel-basic .basic-logo-upload {
+    gap: 12px;
+  }
+  #editorView #panel-basic .basic-add-project {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
