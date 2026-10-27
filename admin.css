@@ -1973,58 +1973,57 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   }
 }
 
-/* Investor editor layout — one rule set for logo, input, and delete button. */
-#editorView .ag-investor-photo-wrap {
-  display: flex;
-  flex: 0 0 50px;
-  flex-direction: row;
-  align-items: center;
-  gap: 0;
-  width: 50px;
-  min-width: 50px;
-  margin: 0;
-  padding: 0;
-}
-#editorView .ag-investor-upload-button {
-  margin: 0;
-  align-self: center;
-}
+/* Investor editor layout: grid guarantees exact logo | input | delete columns. */
 #editorView .ag-investor-editor-item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) 36px;
   align-items: center;
-  gap: 12px;
+  column-gap: 12px;
   padding: 15px;
   box-sizing: border-box;
 }
 #editorView .ag-investor-editor-item > .ag-investor-photo-wrap {
-  order: 1;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  width: 50px;
+  min-width: 0;
+  max-width: 50px;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  align-items: center;
+  justify-self: start;
+}
+#editorView .ag-investor-editor-item > .ag-investor-photo-wrap .ag-investor-photo {
+  margin: 0;
 }
 #editorView .ag-investor-editor-item > .ag-investor-fields {
-  order: 2;
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
-  flex: 1 1 0%;
-  width: 0;
+  width: 100%;
   min-width: 0;
   max-width: none;
   margin: 0;
   padding: 0;
+  gap: 10px;
   position: static;
   box-sizing: border-box;
+  justify-self: stretch;
 }
 #editorView .ag-investor-editor-item > .ag-investor-fields input {
   display: block;
-  flex: 1 1 auto;
   width: 100%;
   min-width: 0;
+  max-width: 100%;
   margin: 0;
   box-sizing: border-box;
 }
 #editorView .ag-investor-editor-item > button.icon-button {
-  order: 3;
+  grid-column: 3;
+  grid-row: 1;
   display: inline-flex;
-  flex: 0 0 36px;
   align-items: center;
   justify-content: center;
   width: 36px;
@@ -2032,8 +2031,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   height: 36px;
   margin: 0;
   padding: 0;
+  justify-self: end;
   align-self: center;
-  line-height: 1;
   background: #FEF2F2;
   color: #DC2626;
 }
@@ -2062,8 +2061,18 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 @media (max-width: 767px) {
   #editorView .ag-investor-editor-item {
-    gap: 12px;
+    grid-template-columns: 40px minmax(0, 1fr) 36px;
+    column-gap: 12px;
     padding: 12px;
+  }
+  #editorView .ag-investor-editor-item > .ag-investor-photo-wrap {
+    width: 40px;
+    max-width: 40px;
+  }
+  #editorView .ag-investor-editor-item > .ag-investor-photo-wrap .ag-investor-photo {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
   }
   #editorView #panel-basic #agBasicInvestorList,
   #editorView #agInvestorList {
