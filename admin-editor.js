@@ -225,8 +225,7 @@
       ])
         if ($(key)) project[key] = $(key).value.trim();
       if (!project.name) throw Error('Enter a project name.');
-      if (!project.task) throw Error('Choose a project type.');
-      project.category = project.task;
+      project.category = project.task || project.category || '';
       project.investors = $('agInvestorsNA').checked
         ? 'N/A'
         : JSON.stringify(
