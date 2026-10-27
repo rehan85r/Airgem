@@ -2029,3 +2029,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   margin-left: 0 !important;
   min-width: 0;
 }
+
+/* Consistent 10px spacing between all Basic Editor labels and their inputs. */
+#editorView #panel-basic .field,
+#editorView #panel-basic .ag-investor-fields label {
+  gap: 10px;
+}
