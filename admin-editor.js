@@ -238,7 +238,7 @@
                 subtitle: item.subtitle.trim(),
               })),
           );
-      const editedLinks = [...$('links').querySelectorAll('.link-url')]
+      const editedLinks = [...$('basicLinks').querySelectorAll('.link-url')]
         .filter((input) => input.value.trim())
         .map((input) => {
           const url = safeURL(input.value.trim());
@@ -275,12 +275,28 @@
       return null;
     }
     renderLinks(links) {
-      $('links').innerHTML = ['Website', 'Discord', 'X']
+      const fields = ['Website', 'Discord', 'X']
         .map((type) => {
           const link = links.find((item) => this.socialType(item.label) === type);
           return `<div class="field"><label for="link${type}">${type}</label><input id="link${type}" class="link-url" data-type="${type}" type="url" placeholder="https://" value="${escape(link?.url || '')}"></div>`;
         })
         .join('');
+      $('links').innerHTML = fields;
+      $('basicLinks').innerHTML = ['Website', 'Discord', 'X']
+        .map((type) => {
+          const link = links.find((item) => this.socialType(item.label) === type);
+          return `<div class="field"><label for="basicLink${type}">${type}</label><input id="basicLink${type}" class="link-url" data-type="${type}" type="url" placeholder="https://" value="${escape(link?.url || '')}"></div>`;
+        })
+        .join('');
+      for (const root of [$('links'), $('basicLinks')]) {
+        root.querySelectorAll('.link-url').forEach((input) => {
+          input.addEventListener('input', () => {
+            const otherRoot = root.id === 'links' ? $('basicLinks') : $('links');
+            const other = otherRoot.querySelector(`.link-url[data-type="${input.dataset.type}"]`);
+            if (other && other.value !== input.value) other.value = input.value;
+          });
+        });
+      }
     }
     logoPreview() {
       const root = $('logoPreview');
