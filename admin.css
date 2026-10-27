@@ -1798,3 +1798,26 @@ main{padding-top:15px}
   color:#64748B;
   font-weight:400;
 }
+
+/* Basic Editor typography: clear hierarchy with premium, consistent colors. */
+#editorView #panel-basic .form-grid .field > label{
+  color:#1B2E50;
+  font-weight:600;
+}
+#editorView #panel-basic .form-grid .field input,
+#editorView #panel-basic .form-grid .field select{
+  color:#1B2E50;
+  font-size:13px;
+  font-weight:400;
+}
+#editorView #panel-basic .form-grid .field input::placeholder,
+#editorView #panel-basic .form-grid .field select:invalid{
+  color:#64748B;
+  font-size:13px;
+  font-weight:400;
+  opacity:1;
+}
+#editorView #panel-basic .form-grid .field select option[value=""]{
+  color:#64748B;
+  font-weight:400;
+}
