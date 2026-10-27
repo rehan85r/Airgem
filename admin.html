@@ -261,19 +261,14 @@
                 role="tabpanel"
                 aria-labelledby="tab-basic"
               >
-                <div class="logo-upload">
+                <div class="logo-upload basic-logo-upload">
                   <div id="logoPreview" class="logo-preview">?</div>
-                  <div>
-                    <label class="button" for="logoFile"
-                       aria-label="Upload Logo"><i data-lucide="upload" aria-hidden="true"></i> Upload Logo</label
-                    ><input
-                      id="logoFile"
-                      class="visually-hidden"
-                      type="file"
-                      accept="image/png,image/jpeg,image/webp,image/gif"
-                    />
+                  <div class="basic-logo-actions">
+                    <label class="button" for="logoFile" aria-label="Upload Logo"><i data-lucide="upload" aria-hidden="true"></i> Upload Logo</label>
+                    <input id="logoFile" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
                     <button id="clearLogo" type="button" class="text-button" hidden>Remove logo</button>
                   </div>
+                  <button id="basicAddProject" type="button" class="button basic-add-project"><i data-lucide="plus" aria-hidden="true"></i> Add Project</button>
                 </div>
                 <input id="logoUrl" type="hidden" /><input
                   id="color"
