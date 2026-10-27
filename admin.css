@@ -1789,7 +1789,7 @@ main{padding-top:15px}
 }
 
 
-/* Match Investor Name and Tier labels, placeholders, and typed text to Basic fields. */
+/* Match investor labels, placeholders, and typed text to Basic fields. */
 #editorView #panel-basic .ag-investor-fields label{
   font-family:Manrope,sans-serif;
   font-size:15px;
@@ -2037,7 +2037,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Set 20px inset from the investor card's left border to Investor and Tier labels. */
+/* Keep a consistent inset from the investor card's left border to its fields. */
 #editorView #panel-basic .ag-investor-fields {
   padding-left: 5px;
   box-sizing: border-box;
