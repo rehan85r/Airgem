@@ -818,6 +818,46 @@
   }
   function bindEvents() {
     document.addEventListener('click', (event) => {
+      const addProject = event.target.closest('#basicAddProject');
+      if (addProject) {
+        if (!canLeaveView('editor')) return;
+        state.selected = null;
+        state.isNew = true;
+        state.dirty = false;
+        const draft = {
+          name: '',
+          displayTag: '',
+          task: '',
+          status: '',
+          activityStatus: 'Active',
+          funding: '',
+          cost: '',
+          investors: '[]',
+          timeEstimate: '',
+          addedOn: '',
+          tge: '',
+          ecosystem: '',
+          started: '',
+          color: '#1E90FF',
+          logoUrl: '',
+          links: [],
+          guide: [],
+        };
+        editor.load(draft);
+        $('title').textContent = 'Add Project';
+        $('previewProject').hidden = true;
+        if (!navigate('editor', { skipGuard: true })) return;
+        const editorPage = $('editorView');
+        editorPage.classList.remove('airgem-editor-enter', 'airgem-editor-exit');
+        void editorPage.offsetWidth;
+        editorPage.classList.add('airgem-editor-enter');
+        setEditorTab('basic');
+        $('projectsView').hidden = true;
+        $('editorView').hidden = false;
+        $('panel-basic')?.removeAttribute('hidden');
+        updateBusy();
+        return;
+      }
       const edit = event.target.closest('[data-edit-project]');
       if (edit) {
         event.preventDefault();
