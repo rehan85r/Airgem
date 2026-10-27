@@ -1797,8 +1797,8 @@ main{padding-top:15px}
   color:#1B2E50;
 }
 #editorView #panel-basic .ag-investor-fields input{
-  height:50px;
-  min-height:50px;
+  height:40px;
+  min-height:40px;
   box-sizing:border-box;
   border-radius:12px;
   padding:11px 12px;
