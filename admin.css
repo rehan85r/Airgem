@@ -1786,7 +1786,7 @@ main{padding-top:15px}
 /* Basic Editor: keep placeholder and entered text visually consistent. */
 #editorView #panel-basic .form-grid .field input{
   color:#1B2E50;
-  font-weight:500;
+  font-weight:400;
 }
 #editorView #panel-basic .form-grid .field input::placeholder,
 #editorView #panel-basic .form-grid .field select:invalid{
