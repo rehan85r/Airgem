@@ -436,6 +436,7 @@
         remove.className = 'icon-button danger';
         remove.innerHTML = '<i data-lucide="trash-2" aria-hidden="true"></i>';
         remove.setAttribute('aria-label', `Remove investor ${index + 1}`);
+        remove.title = 'Remove investor';
         remove.onclick = () => {
           this.investors.splice(index, 1);
           this.renderInvestors();
