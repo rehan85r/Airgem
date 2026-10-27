@@ -423,21 +423,17 @@
         };
         const fields = document.createElement('div');
         fields.className = 'ag-investor-fields';
-        for (const [key, label, placeholder] of [
-          ['title', 'Investor', 'Name...'],
-        ]) {
-          const wrap = document.createElement('label');
-          wrap.textContent = label;
+        {
           const input = document.createElement('input');
           input.type = 'text';
-          input.placeholder = placeholder;
-          input.value = item[key];
+          input.setAttribute('aria-label', 'Investor name');
+          input.placeholder = 'Name...';
+          input.value = item.title || '';
           input.oninput = () => {
-            item[key] = input.value;
+            item.title = input.value;
             this.changed();
           };
-          wrap.append(input);
-          fields.append(wrap);
+          fields.append(input);
         }
         const remove = document.createElement('button');
         remove.type = 'button';
