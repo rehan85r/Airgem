@@ -416,8 +416,8 @@
         const fields = document.createElement('div');
         fields.className = 'ag-investor-fields';
         for (const [key, label, placeholder] of [
-          ['title', 'Investor name', 'e.g. Paradigm'],
-          ['subtitle', 'Tier', 'e.g. Tier 1'],
+          ['title', 'Investor', 'Name...'],
+          ['subtitle', 'Tier', 'Tier...'],
         ]) {
           const wrap = document.createElement('label');
           wrap.textContent = label;
