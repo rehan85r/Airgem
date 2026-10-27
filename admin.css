@@ -1763,3 +1763,7 @@ main{padding-top:15px}
 #editorView #panel-basic .form-grid .field > label{padding-left:5px;margin-left:0;box-sizing:border-box}
 #editorView #panel-basic .form-grid .field > input,
 #editorView #panel-basic .form-grid .field > select{padding-left:12px;margin-left:0}
+
+
+/* Basic Editor: set Name, Category and Status labels to 15px. */
+#editorView #panel-basic .form-grid .field > label{font-size:15px}
