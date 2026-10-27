@@ -1962,3 +1962,12 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   padding-top:15px;
   padding-left:15px;
 }
+
+/* Investor delete button: 15px top and right inset inside its card. */
+#editorView .ag-investor-editor-item{
+  padding-right:15px;
+}
+#editorView .ag-investor-editor-item > .icon-button,
+#editorView .ag-investor-editor-item > button{
+  align-self:flex-start;
+}
