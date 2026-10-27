@@ -2108,8 +2108,25 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   border-color: #187DE0;
 }
 @media (max-width: 640px) {
-  #projectsView .projects-page-heading { gap: 10px; }
-  #projectsView .projects-page-heading h1 { font-size: 22px; }
-  #projectsView .dashboard-add-project { min-height: 36px; padding: 0 10px; font-size: 12px; }
+  #projectsView .projects-page-heading { justify-content: center; text-align: center; }
+  #projectsView .projects-page-heading > div { width: 100%; text-align: center; }
+  #projectsView .projects-page-heading h1 { font-size: 25px; }
+}
+#projectsView .admin-project-nav .dashboard-add-project {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: auto;
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 13px;
+  border-radius: 12px;
+}
+#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
+@media (max-width: 640px) {
+  #projectsView .admin-project-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  #projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
+  #projectsView .admin-project-nav .dashboard-add-project { margin-left: 0; min-height: 36px; padding: 0 10px; font-size: 12px; }
 }
 
