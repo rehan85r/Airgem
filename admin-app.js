@@ -361,12 +361,7 @@
   async function publish(event) {
     event.preventDefault();
     if (state.busy || state.uploads) return;
-    for (const [id, label] of [
-      ['name', 'project name'],
-      ['task', 'project type'],
-    ]) {
-      $(id).setCustomValidity($(id).value.trim() ? '' : `Enter a ${label}.`);
-    }
+    $('name').setCustomValidity($('name').value.trim() ? '' : 'Enter a project name.');
     const invalid = $('form').querySelector('input:invalid, select:invalid');
     if (invalid) {
       const panel = invalid.closest('[data-editor-panel]');
