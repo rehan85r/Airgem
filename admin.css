@@ -1821,3 +1821,8 @@ main{padding-top:15px}
   color:#64748B;
   font-weight:400;
 }
+
+
+/* Basic Editor: align Website, Discord and X fields with the main two-column form. */
+#editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
+@media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}
