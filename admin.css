@@ -1973,109 +1973,85 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   }
 }
 
-/* Investor card: place Upload Logo beside the logo preview and vertically center it. */
-#editorView .ag-investor-photo-wrap{
-  flex-direction:row;
-  align-items:center;
-  gap:10px;
+/* Investor editor layout — one rule set for logo, input, and delete button. */
+#editorView .ag-investor-photo-wrap {
+  display: flex;
+  flex: 0 0 50px;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  width: 50px;
+  min-width: 50px;
+  margin: 0;
+  padding: 0;
 }
-#editorView .ag-investor-upload-button{
-  margin:0;
-  align-self:center;
+#editorView .ag-investor-upload-button {
+  margin: 0;
+  align-self: center;
 }
-
-/* Investor logo preview: 15px top and left inset inside its card. */
-#editorView .ag-investor-editor-item{
-  padding-top:15px;
-  padding-left:15px;
-}
-
-/* Investor delete button: 15px top and right inset inside its card. */
-#editorView .ag-investor-editor-item{
-  padding-right:15px;
-}
-#editorView .ag-investor-editor-item > .icon-button,
-#editorView .ag-investor-editor-item > button{
-  align-self:flex-start;
-}
-
-/* Investor delete action: keep a compact square button and visible trash icon. */
-#editorView .ag-investor-editor-item > .icon-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 36px;
-  width:36px;
-  min-width:36px;
-  height:36px;
-  padding:0;
-  line-height:1;
-  background:#FEF2F2;
-  color:#DC2626;
-}
-#editorView .ag-investor-editor-item > .icon-button svg{
-  display:block;
-  width:17px;
-  height:17px;
-  stroke:currentColor;
-}
-#editorView .ag-investor-editor-item > .icon-button:hover{
-  background:#FEE2E2;
-  color:#B91C1C;
-}
-
-
-/* Investor card layout — one authoritative rule set. */
 #editorView .ag-investor-editor-item {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  align-items: center !important;
-  gap: 12px !important;
-  padding: 15px !important;
-  box-sizing: border-box !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 #editorView .ag-investor-editor-item > .ag-investor-photo-wrap {
-  order: 1 !important;
-  flex: 0 0 50px !important;
-  width: 50px !important;
-  min-width: 50px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  order: 1;
 }
 #editorView .ag-investor-editor-item > .ag-investor-fields {
-  order: 2 !important;
-  display: flex !important;
-  flex: 1 1 0% !important;
-  width: 0 !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  position: static !important;
-  left: auto !important;
-  box-sizing: border-box !important;
+  order: 2;
+  display: flex;
+  flex: 1 1 0%;
+  width: 0;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  position: static;
+  box-sizing: border-box;
 }
 #editorView .ag-investor-editor-item > .ag-investor-fields input {
-  display: block !important;
-  flex: 1 1 auto !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 #editorView .ag-investor-editor-item > button.icon-button {
-  order: 3 !important;
-  flex: 0 0 36px !important;
-  width: 36px !important;
-  min-width: 36px !important;
-  margin: 0 !important;
+  order: 3;
+  display: inline-flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  line-height: 1;
+  background: #FEF2F2;
+  color: #DC2626;
+}
+#editorView .ag-investor-editor-item > button.icon-button svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+}
+#editorView .ag-investor-editor-item > button.icon-button:hover {
+  background: #FEE2E2;
+  color: #B91C1C;
 }
 #editorView .ag-investor-fields label {
   gap: 10px;
 }
 
-/* Scroll long investor lists inside the list area. */
+/* Keep long investor lists independently scrollable. */
 #editorView #panel-basic #agBasicInvestorList,
 #editorView #agInvestorList {
   max-height: 450px;
@@ -2086,7 +2062,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 @media (max-width: 767px) {
   #editorView .ag-investor-editor-item {
-    gap: 12px !important;
+    gap: 12px;
+    padding: 12px;
   }
   #editorView #panel-basic #agBasicInvestorList,
   #editorView #agInvestorList {
