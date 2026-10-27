@@ -1834,3 +1834,12 @@ main{padding-top:15px}
 @media(max-width:650px){
   #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
 }
+
+/* Match investor logos and Upload Logo controls to the project logo controls. */
+#editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
+#editorView .ag-investor-photo{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;box-sizing:border-box;overflow:hidden;border:0;border-radius:12px;background:#F5F8FC;color:#A6B6CB;font:600 15px Manrope,sans-serif}
+#editorView .ag-investor-photo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
+#editorView .ag-investor-upload-button{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin:0;padding:0 12px;gap:10px;border-radius:10px;font:500 13px/1.4 Manrope,sans-serif;color:#1B2E50;white-space:nowrap;cursor:pointer}
+#editorView .ag-investor-upload-button svg{width:15px;height:15px;flex:0 0 15px}
+#editorView .ag-investor-upload-button input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
+@media(max-width:650px){#editorView .ag-investor-editor-item{gap:10px;padding:12px}#editorView .ag-investor-fields{gap:10px}}
