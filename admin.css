@@ -1999,14 +1999,27 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   align-self:flex-start;
 }
 
-/* Investor delete action: red background with a clear destructive-action affordance. */
-#editorView .ag-investor-editor-item > .icon-button,
-#editorView .ag-investor-editor-item > button{
+/* Investor delete action: keep a compact square button and visible trash icon. */
+#editorView .ag-investor-editor-item > .icon-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 36px;
+  width:36px;
+  min-width:36px;
+  height:36px;
+  padding:0;
+  line-height:1;
   background:#FEF2F2;
   color:#DC2626;
 }
-#editorView .ag-investor-editor-item > .icon-button:hover,
-#editorView .ag-investor-editor-item > button:hover{
+#editorView .ag-investor-editor-item > .icon-button svg{
+  display:block;
+  width:17px;
+  height:17px;
+  stroke:currentColor;
+}
+#editorView .ag-investor-editor-item > .icon-button:hover{
   background:#FEE2E2;
   color:#B91C1C;
 }
@@ -2046,15 +2059,27 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 
 /* Mobile investor fields stay inside the card with a 20px label inset. */
 @media (max-width: 767px) {
+  #editorView #panel-basic .ag-investor-editor-item {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  #editorView #panel-basic .ag-investor-editor-item > .ag-investor-photo-wrap {
+    flex: 1 1 calc(100% - 56px);
+    min-width: 0;
+  }
   #editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
     position: static;
     left: auto;
     width: 100%;
     max-width: 100%;
-    flex-basis: 100%;
+    flex: 1 0 100%;
     padding-left: 5px;
     margin-left: 0 !important;
     box-sizing: border-box;
+  }
+  #editorView #panel-basic .ag-investor-editor-item > .icon-button {
+    flex: 0 0 36px;
+    margin-left: auto;
   }
 }
 
