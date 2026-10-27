@@ -1945,3 +1945,14 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     box-shadow: 0 -5px 18px rgba(27, 46, 80, 0.06);
   }
 }
+
+/* Investor card: place Upload Logo beside the logo preview and vertically center it. */
+#editorView .ag-investor-photo-wrap{
+  flex-direction:row;
+  align-items:center;
+  gap:10px;
+}
+#editorView .ag-investor-upload-button{
+  margin:0;
+  align-self:center;
+}
