@@ -1781,3 +1781,15 @@ main{padding-top:15px}
   box-shadow:none;
   border-color:#E2E8F0;
 }
+
+
+/* Basic Editor: keep placeholder and entered text visually consistent. */
+#editorView #panel-basic .form-grid .field input{
+  color:#1B2E50;
+  font-weight:500;
+}
+#editorView #panel-basic .form-grid .field input::placeholder{
+  color:#1B2E50;
+  font-weight:500;
+  opacity:1;
+}
