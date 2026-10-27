@@ -2035,3 +2035,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #panel-basic .ag-investor-fields label {
   gap: 10px;
 }
+
+
+/* Set 20px inset from the investor card's left border to Investor and Tier labels. */
+#editorView #panel-basic .ag-investor-fields {
+  padding-left: 5px;
+  box-sizing: border-box;
+}
