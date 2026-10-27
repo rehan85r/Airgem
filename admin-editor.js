@@ -415,6 +415,7 @@
         };
         const fields = document.createElement('div');
         fields.className = 'ag-investor-fields';
+        fields.style.marginLeft = '20px';
         for (const [key, label, placeholder] of [
           ['title', 'Investor', 'Name...'],
           ['subtitle', 'Tier', 'Tier...'],
