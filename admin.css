@@ -8623,3 +8623,34 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #projectsView .admin-project-nav .dashboard-add-project { min-height: 40px; padding: 0 14px; font-size: 13px; }
 }
 
+
+
+/* Final mobile navigation fix: keep Add Project on the same row and swipe horizontally. */
+#projectsView nav.admin-project-nav {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  gap: 8px !important;
+  touch-action: pan-x pan-y;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+#projectsView nav.admin-project-nav::-webkit-scrollbar {
+  display: none;
+}
+#projectsView nav.admin-project-nav > .admin-project-nav-button {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+#projectsView nav.admin-project-nav > #addProjectButton {
+  flex: 0 0 auto !important;
+  margin-left: 0 !important;
+}
