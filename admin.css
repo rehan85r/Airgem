@@ -1788,6 +1788,33 @@ main{padding-top:15px}
   font-weight:400;
 }
 
+
+/* Match Investor Name and Tier labels, placeholders, and typed text to Basic fields. */
+#editorView #panel-basic .ag-investor-fields label{
+  font-family:Manrope,sans-serif;
+  font-size:15px;
+  font-weight:500;
+  color:#1B2E50;
+}
+#editorView #panel-basic .ag-investor-fields input{
+  height:50px;
+  min-height:50px;
+  box-sizing:border-box;
+  border-radius:12px;
+  padding:11px 12px;
+  font-family:Manrope,sans-serif;
+  font-size:13px;
+  font-weight:400;
+  color:#1B2E50;
+}
+#editorView #panel-basic .ag-investor-fields input::placeholder{
+  color:#64748B;
+  font-family:Manrope,sans-serif;
+  font-size:13px;
+  font-weight:400;
+  opacity:1;
+}
+
 /* Basic Editor typography: clear hierarchy with premium, consistent colors. */
 #editorView #panel-basic .form-grid .field > label{
   color:#1B2E50;
