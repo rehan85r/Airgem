@@ -2044,14 +2044,15 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Mobile investor labels: align exactly 20px from the card's inner left border. */
+/* Mobile investor fields stay inside the card with a 20px label inset. */
 @media (max-width: 767px) {
   #editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
-    position: relative;
-    left: -30px;
-    width: calc(100% + 30px);
-    max-width: calc(100% + 30px);
-    padding-left: 0;
+    position: static;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    padding-left: 5px;
     margin-left: 0 !important;
     box-sizing: border-box;
   }
