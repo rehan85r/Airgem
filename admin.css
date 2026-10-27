@@ -2101,3 +2101,47 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   order: 2 !important;
   margin-left: 0 !important;
 }
+
+
+/* Final investor row layout for both editor panels: logo | input | delete. */
+#editorView .ag-investor-editor-item {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 15px !important;
+}
+#editorView .ag-investor-editor-item > .ag-investor-photo-wrap {
+  order: 1 !important;
+  flex: 0 0 50px !important;
+  width: 50px !important;
+  min-width: 50px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#editorView .ag-investor-editor-item > .ag-investor-fields {
+  order: 2 !important;
+  display: flex !important;
+  flex: 1 1 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  left: auto !important;
+  box-sizing: border-box !important;
+}
+#editorView .ag-investor-editor-item > .ag-investor-fields input {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+#editorView .ag-investor-editor-item > .icon-button {
+  order: 3 !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  margin: 0 !important;
+}
