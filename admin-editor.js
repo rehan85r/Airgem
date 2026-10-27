@@ -364,13 +364,16 @@
     }
     syncNA() {
       const selected = $('agInvestorsNA').checked;
-      $('agInvestorList').hidden = selected;
-      $('agSetInvestorsNA').setAttribute('aria-pressed', String(selected));
-      if ($('investorsNAHelp')) $('investorsNAHelp').hidden = !selected;
+      $('agBasicInvestorsNA').checked = selected;
+      [['agInvestorList', 'agSetInvestorsNA', 'investorsNAHelp'], ['agBasicInvestorList', 'agBasicSetInvestorsNA', 'agBasicInvestorsNAHelp']].forEach(([listId, buttonId, helpId]) => {
+        $(listId).hidden = selected;
+        $(buttonId).setAttribute('aria-pressed', String(selected));
+        if ($(helpId)) $(helpId).hidden = !selected;
+      });
     }
     renderInvestors() {
-      const root = $('agInvestorList');
-      root.replaceChildren();
+      const roots = [$('agInvestorList'), $('agBasicInvestorList')];
+      roots.forEach((root) => root.replaceChildren());
       this.investors.forEach((item, index) => {
         const card = document.createElement('div');
         card.className = 'ag-investor-editor-item';
@@ -435,7 +438,36 @@
           this.changed();
         };
         card.append(photo, fields, remove);
-        root.append(card);
+        roots.forEach((root) => root.append(card.cloneNode(true)));
+      });
+      // Bind identical controls in both locations to the same investor data.
+      roots.forEach((root) => {
+        [...root.children].forEach((card, index) => {
+          const item = this.investors[index];
+          const file = card.querySelector('input[type="file"]');
+          file.onchange = async () => {
+            const chosen = file.files?.[0];
+            if (!chosen) return;
+            try {
+              file.disabled = true;
+              this.message('Uploading investor logo…');
+              item.logo = await this.uploadLogo(chosen);
+              this.changed();
+              this.renderInvestors();
+              this.message('Logo uploaded. Publish changes to save.');
+            } catch (error) {
+              this.message(error.message, true);
+            } finally { file.disabled = false; }
+          };
+          const inputs = card.querySelectorAll('.ag-investor-fields input');
+          inputs[0].oninput = () => { item.title = inputs[0].value; this.changed(); };
+          inputs[1].oninput = () => { item.subtitle = inputs[1].value; this.changed(); };
+          card.querySelector('button[aria-label^="Remove investor"]').onclick = () => {
+            this.investors.splice(index, 1);
+            this.renderInvestors();
+            this.changed();
+          };
+        });
       });
       window.lucide?.createIcons();
     }
@@ -542,19 +574,28 @@
         this.showTask();
         this.changed();
       };
-      $('agAddInvestor').onclick = () => {
+      const addInvestor = () => {
         $('agInvestorsNA').checked = false;
         this.syncNA();
         this.investors.push({ title: '', subtitle: '', logo: '' });
         this.renderInvestors();
         this.changed();
       };
-      $('agSetInvestorsNA').onclick = () => {
+      const toggleInvestorsNA = () => {
         $('agInvestorsNA').checked = !$('agInvestorsNA').checked;
         this.syncNA();
         this.changed();
       };
+      $('agAddInvestor').onclick = addInvestor;
+      $('agBasicAddInvestor').onclick = addInvestor;
+      $('agSetInvestorsNA').onclick = toggleInvestorsNA;
+      $('agBasicSetInvestorsNA').onclick = toggleInvestorsNA;
       $('agInvestorsNA').onchange = () => {
+        this.syncNA();
+        this.changed();
+      };
+      $('agBasicInvestorsNA').onchange = () => {
+        $('agInvestorsNA').checked = $('agBasicInvestorsNA').checked;
         this.syncNA();
         this.changed();
       };
