@@ -2025,84 +2025,50 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Keep the investor and tier fields 20px from the logo preview. */
-#editorView .ag-investor-editor-item { gap: 20px; }
-@media (max-width: 650px) {
-  #editorView .ag-investor-editor-item { gap: 20px; }
-}
-
-
-/* Keep investor cards centered with 15px side padding and match the field-label spacing. */
+/* Investor card layout: input fills the space between logo and delete button. */
 #editorView .ag-investor-editor-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
   box-sizing: border-box;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
+}
+#editorView .ag-investor-editor-item > .ag-investor-photo-wrap {
+  flex: 0 0 50px;
+  width: 50px;
+  min-width: 50px;
 }
 #editorView .ag-investor-editor-item > .ag-investor-fields {
-  margin-left: 0 !important;
+  display: flex;
+  flex: 1 1 0;
+  width: 0;
   min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  position: static;
+  box-sizing: border-box;
 }
-
-/* Consistent 10px spacing between all Basic Editor labels and their inputs. */
-#editorView #panel-basic .field,
-#editorView #panel-basic .ag-investor-fields label {
+#editorView .ag-investor-editor-item > .ag-investor-fields input {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+#editorView .ag-investor-editor-item > .icon-button {
+  flex: 0 0 36px;
+  width: 36px;
+  min-width: 36px;
+  margin: 0;
+  align-self: center;
+}
+#editorView .ag-investor-fields label {
   gap: 10px;
 }
 
-
-/* Center the investor name input vertically between the logo and delete button. */
-#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
-  align-self: center;
-  padding-left: 5px;
-  box-sizing: border-box;
-}
-
-
-/* Mobile investor fields stay inside the card with a 20px label inset. */
-@media (max-width: 767px) {
-  #editorView #panel-basic .ag-investor-editor-item {
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 12px;
-  }
-  #editorView #panel-basic .ag-investor-editor-item > .ag-investor-photo-wrap {
-    flex: 0 0 50px;
-    min-width: 50px;
-  }
-  #editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
-    position: static;
-    order: 0;
-    left: auto;
-    width: auto !important;
-    max-width: none;
-    flex: 1 1 0%;
-    flex-basis: 0 !important;
-    min-width: 0;
-    align-self: center;
-    padding-left: 0;
-    margin-left: 0 !important;
-    box-sizing: border-box;
-  }
-  #editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields input {
-    width: 100%;
-    height: 40px !important;
-    min-height: 40px !important;
-    max-height: 40px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-  #editorView #panel-basic .ag-investor-editor-item > .icon-button {
-    order: 3;
-    flex: 0 0 36px;
-    margin-left: auto;
-    align-self: center;
-  }
-}
-
-
-/* Keep long investor lists scrollable without extending the whole editor page. */
+/* Keep long investor lists independently scrollable. */
 #editorView #panel-basic #agBasicInvestorList,
 #editorView #agInvestorList {
   max-height: 450px;
@@ -2112,35 +2078,11 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   padding-right: 4px;
 }
 @media (max-width: 767px) {
+  #editorView .ag-investor-editor-item {
+    gap: 12px;
+  }
   #editorView #panel-basic #agBasicInvestorList,
   #editorView #agInvestorList {
     max-height: 400px;
   }
-}
-
-
-/* Keep investor inputs centered in the available space between logo and delete control. */
-#editorView #panel-basic .ag-investor-editor-item {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-#editorView #panel-basic .ag-investor-editor-item > .ag-investor-photo-wrap {
-  flex: 0 0 50px;
-  min-width: 50px;
-}
-#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
-  flex: 1 1 0;
-  width: auto;
-  min-width: 0;
-  max-width: none;
-  position: static;
-  left: auto;
-  margin: 0 !important;
-  padding: 0;
-  box-sizing: border-box;
-}
-#editorView #panel-basic .ag-investor-editor-item > .icon-button {
-  flex: 0 0 36px;
-  margin-left: 0;
 }
