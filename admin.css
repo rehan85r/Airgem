@@ -2010,3 +2010,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   background:#FEE2E2;
   color:#B91C1C;
 }
+
+
+/* Keep the investor and tier fields 20px from the logo preview. */
+#editorView .ag-investor-editor-item { gap: 20px; }
+@media (max-width: 650px) {
+  #editorView .ag-investor-editor-item { gap: 20px; }
+}
