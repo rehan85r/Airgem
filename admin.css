@@ -1790,11 +1790,11 @@ main{padding-top:15px}
 }
 #editorView #panel-basic .form-grid .field input::placeholder,
 #editorView #panel-basic .form-grid .field select:invalid{
-  color:var(--navy);
+  color:#64748B;
   font-weight:400;
   opacity:1;
 }
 #editorView #panel-basic .form-grid .field select option[value=""]{
-  color:var(--navy);
+  color:#64748B;
   font-weight:400;
 }
