@@ -2050,8 +2050,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Keep a consistent inset from the investor card's left border to its fields. */
-#editorView #panel-basic .ag-investor-fields {
+/* Center the investor name input vertically between the logo and delete button. */
+#editorView #panel-basic .ag-investor-editor-item > .ag-investor-fields {
+  align-self: center;
   padding-left: 5px;
   box-sizing: border-box;
 }
