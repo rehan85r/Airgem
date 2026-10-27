@@ -1846,4 +1846,4 @@ main{padding-top:15px}
 
 /* Basic Editor Investors heading typography and spacing. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-heading{margin-top:20px;margin-bottom:15px}
-#editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-heading h2{font-size:15px;font-weight:500}
+#editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-heading h2{font-size:15px;font-weight:600}
