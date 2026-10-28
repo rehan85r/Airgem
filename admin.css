@@ -8654,3 +8654,153 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   flex: 0 0 auto !important;
   margin-left: 0 !important;
 }
+
+
+/* Airgem Admin Dashboard — refined premium UI hierarchy */
+#projectsView .page-heading {
+  margin-bottom: 18px;
+}
+#projectsView .page-heading h1 {
+  font-family: Manrope, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.65px;
+}
+#projectsView .page-heading p {
+  margin-top: 6px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #64748B;
+}
+#projectsView nav.admin-project-nav {
+  gap: 8px !important;
+  margin-bottom: 18px;
+  padding: 0 0 3px;
+}
+#projectsView nav.admin-project-nav > .admin-project-nav-button {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font: 600 12px/1.2 Manrope, sans-serif;
+  letter-spacing: 0;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+#projectsView nav.admin-project-nav > #addProjectButton {
+  min-height: 38px;
+  padding: 0 13px;
+  gap: 7px;
+  font-size: 12px;
+}
+#projectsView .top-airdrops-section { margin-top: 0; }
+#projectsView .top-airdrops-section + .top-airdrops-section { margin-top: 16px; }
+#projectsView .collection-card {
+  padding: 16px;
+  border: 1px solid #E7ECF2;
+  border-radius: 16px;
+  background: #FFFFFF;
+  box-shadow: 0 3px 14px rgba(27,46,80,.035);
+}
+#projectsView .top-airdrops-heading {
+  gap: 10px;
+  margin-bottom: 15px;
+}
+#projectsView .top-airdrops-heading h2 {
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -.4px;
+}
+#projectsView .top-airdrops-heading h2 svg {
+  width: 20px;
+  height: 20px;
+  padding: 8px;
+  border-radius: 10px;
+}
+#projectsView #trendingManager .top-airdrops-heading h2 svg,
+#projectsView #allAirdropsManager .top-airdrops-heading h2 svg {
+  flex: 0 0 20px;
+}
+#projectsView .top-airdrops-publish {
+  min-height: 38px;
+  padding: 0 13px;
+  border-radius: 10px;
+  font: 600 12.5px/1.2 Manrope, sans-serif;
+  gap: 7px;
+  box-shadow: none;
+}
+#projectsView .top-airdrops-publish svg {
+  width: 15px;
+  height: 15px;
+}
+#projectsView .trending-search { margin-bottom: 13px; }
+#projectsView .trending-search input {
+  min-height: 44px;
+  height: 44px;
+  border-radius: 11px;
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-left: 42px;
+}
+#projectsView .trending-search-input-wrap > .trending-search-icon {
+  width: 18px;
+  height: 18px;
+  left: 13px;
+}
+#projectsView .trending-search-input-wrap .trending-selection-count {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+#projectsView .trending-list { gap: 8px; }
+#projectsView .trending-item {
+  min-height: 52px;
+  padding: 8px 10px;
+  gap: 10px;
+  border-radius: 11px;
+}
+#projectsView .trending-item .project-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+}
+#projectsView .trending-item .trending-item-copy,
+#projectsView .trending-item strong,
+#projectsView .all-airdrops-list .trending-item strong {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.15px;
+}
+#projectsView .trending-item .icon-button,
+#projectsView .all-airdrops-list .icon-button {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 9px;
+}
+@media (max-width: 650px) {
+  #projectsView .page-heading { margin-bottom: 16px; }
+  #projectsView .page-heading h1 { font-size: 22px; letter-spacing: -.5px; }
+  #projectsView .page-heading p { font-size: 12px; }
+  #projectsView nav.admin-project-nav { margin-bottom: 16px; }
+  #projectsView nav.admin-project-nav > .admin-project-nav-button,
+  #projectsView nav.admin-project-nav > #addProjectButton {
+    min-height: 38px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+  #projectsView .collection-card { padding: 14px; border-radius: 15px; }
+  #projectsView .top-airdrops-heading { margin-bottom: 14px; gap: 8px; }
+  #projectsView .top-airdrops-heading h2 { font-size: 17px; letter-spacing: -.3px; }
+  #projectsView .top-airdrops-heading h2 svg { padding: 7px; border-radius: 9px; }
+  #projectsView .top-airdrops-publish { min-height: 36px; padding: 0 11px; font-size: 12px; }
+  #projectsView .trending-search input { min-height: 42px; height: 42px; font-size: 12px; }
+  #projectsView .trending-item { min-height: 50px; padding: 7px 9px; }
+  #projectsView .trending-item .project-avatar { width: 34px; height: 34px; }
+  #projectsView .trending-item .trending-item-copy,
+  #projectsView .trending-item strong,
+  #projectsView .all-airdrops-list .trending-item strong { font-size: 13.5px; }
+}
