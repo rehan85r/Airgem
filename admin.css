@@ -8913,3 +8913,144 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #projectsView .trending-item { min-height: 46px; }
   #projectsView .trending-item .project-avatar { width: 31px; height: 31px; }
 }
+
+
+/* Consistent premium styling across Basic, Details and Guide navigation/editors. */
+#projectsView nav.admin-project-nav > .admin-project-nav-button,
+#projectsView nav.admin-project-nav > #addProjectButton {
+  min-height: 36px;
+  border-radius: 9px;
+  font: 600 11.5px/1.2 Manrope,sans-serif;
+  letter-spacing: 0;
+}
+#editorView .editor-heading {
+  margin-bottom: 16px;
+}
+#editorView .editor-heading h1 {
+  font: 700 21px/1.25 Manrope,sans-serif;
+  letter-spacing: -.5px;
+  color: #1B2E50;
+}
+#editorView .editor-heading p,
+#editorView .section-heading p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #64748B;
+}
+#editorView .editor-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 7px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 15px;
+  padding: 0 0 3px;
+  border-bottom: 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+#editorView .editor-tabs::-webkit-scrollbar { display: none; }
+#editorView .editor-tabs button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #E2E8F0;
+  border-radius: 9px;
+  background: #fff;
+  color: #475569;
+  font: 600 11.5px/1.2 Manrope,sans-serif;
+  white-space: nowrap;
+  transition: background-color 120ms ease,border-color 120ms ease,color 120ms ease;
+}
+#editorView .editor-tabs button[aria-selected='true'] {
+  border-color: #1E90FF;
+  background: #1E90FF;
+  color: #fff;
+}
+#editorView .editor-tabs button svg {
+  width: 14px;
+  height: 14px;
+}
+#editorView .editor-panel {
+  min-height: 0;
+  padding: 16px;
+  border: 1px solid #E7ECF2;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(27,46,80,.025);
+}
+#editorView .section-heading {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+#editorView .section-heading h2,
+#editorView .editor-panel h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -.25px;
+  color: #1B2E50;
+}
+#editorView .section-heading p { margin-top: 4px; }
+#editorView .editor-panel .field {
+  gap: 6px;
+}
+#editorView .editor-panel .field > label,
+#editorView .editor-panel .ag-investor-fields label {
+  font: 600 12px/1.4 Manrope,sans-serif;
+  color: #1B2E50;
+}
+#editorView .editor-panel .field input,
+#editorView .editor-panel .field select,
+#editorView .editor-panel .field textarea,
+#editorView .editor-panel .ag-investor-fields input {
+  min-height: 40px;
+  border: 1px solid #E6EAF0;
+  border-radius: 10px;
+  padding: 10px 11px;
+  font: 400 12px/1.4 Manrope,sans-serif;
+  color: #1B2E50;
+  box-shadow: none;
+}
+#editorView .editor-panel .field input::placeholder,
+#editorView .editor-panel .field textarea::placeholder,
+#editorView .editor-panel .ag-investor-fields input::placeholder {
+  color: #94A3B8;
+  font-weight: 400;
+}
+#editorView .editor-panel .field input:focus,
+#editorView .editor-panel .field select:focus,
+#editorView .editor-panel .field textarea:focus {
+  outline: none;
+  border-color: #B8D9FA;
+  box-shadow: 0 0 0 2px rgba(30,144,255,.07);
+}
+#editorView .editor-panel .form-grid {
+  column-gap: 18px;
+  row-gap: 16px;
+}
+#editorView .editor-footer {
+  padding: 12px 14px;
+  border: 1px solid #E7ECF2;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(27,46,80,.04);
+}
+#editorView .editor-footer #publish {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font: 600 12px/1.2 Manrope,sans-serif;
+}
+@media (max-width: 767px) {
+  #editorView .editor-heading h1 { font-size: 20px; }
+  #editorView .editor-panel { padding: 14px; border-radius: 13px; }
+  #editorView .editor-tabs { gap: 7px; }
+  #editorView .editor-tabs button { min-height: 36px; padding: 0 11px; font-size: 11.5px; }
+  #editorView .editor-panel .form-grid { row-gap: 14px; }
+  #editorView .editor-footer #publish { min-height: 40px; }
+}
