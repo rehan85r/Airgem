@@ -9161,13 +9161,13 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #form #guideLogoPreview {
   display: grid !important;
   place-items: center !important;
-  flex: 0 0 48px !important;
-  width: 48px !important;
-  min-width: 48px !important;
-  max-width: 48px !important;
-  height: 48px !important;
-  min-height: 48px !important;
-  max-height: 48px !important;
+  flex: 0 0 50px !important;
+  width: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
   box-sizing: border-box !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -9213,9 +9213,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #form .shared-editor-logo-upload label.button[for="logoFile"] svg,
 #editorView #form .basic-logo-upload label.button[for="logoFile"] svg {
   display: block !important;
-  flex: 0 0 16px !important;
-  width: 16px !important;
-  height: 16px !important;
+  flex: 0 0 15px !important;
+  width: 15px !important;
+  height: 15px !important;
 }
 #editorView #form .logo-upload label.button[for="logoFile"]:hover,
 #editorView #form .shared-editor-logo-upload label.button[for="logoFile"]:hover,
