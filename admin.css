@@ -9336,14 +9336,14 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Basic Editor investor row: logo/upload on top, delete at right, full-width name field below. */
+/* Basic Editor investor row: logo, name input and delete control aligned in one row. */
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item {
   display: grid !important;
   grid-template-columns: 50px minmax(0, 1fr) 36px !important;
-  grid-template-rows: auto auto !important;
+  grid-template-rows: auto !important;
   align-items: center !important;
   column-gap: 10px !important;
-  row-gap: 12px !important;
+  row-gap: 0 !important;
   padding: 12px 0 0 !important;
   border: 0 !important;
   border-top: 1px solid #E6EAF0 !important;
@@ -9362,52 +9362,33 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   min-height: 50px !important;
   border-radius: 10px !important;
 }
-#editorView #panel-basic #agBasicInvestorList .ag-investor-upload-button {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-height: 40px;
-  padding: 0 12px;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
-  background: #fff;
-  color: #1B2E50;
-  font: 600 12px/1.2 Manrope,sans-serif;
-  white-space: nowrap;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-upload-button svg {
-  width: 15px;
-  height: 15px;
-  flex: 0 0 15px;
-}
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields {
-  grid-column: 1 / -1 !important;
-  grid-row: 2;
+  grid-column: 2 !important;
+  grid-row: 1 !important;
   width: 100% !important;
   min-width: 0 !important;
+  gap: 0 !important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields label {
   display: none !important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields input {
+  display: block !important;
   width: 100% !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
-  min-height: 48px !important;
-  height: 48px !important;
+  min-height: 44px !important;
+  height: 44px !important;
   padding: 10px 12px !important;
   border: 1px solid #E6EAF0 !important;
   border-radius: 10px !important;
-  font: 400 14px/1.4 Manrope,sans-serif !important;
+  font: 400 13px/1.4 Manrope,sans-serif !important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > button.icon-button {
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: end;
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  align-self: center !important;
   width: 36px !important;
   min-width: 36px !important;
   height: 36px !important;
@@ -9417,15 +9398,19 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item {
     grid-template-columns: 50px minmax(0, 1fr) 34px !important;
     column-gap: 9px !important;
-    row-gap: 10px !important;
   }
-  #editorView #panel-basic #agBasicInvestorList .ag-investor-upload-button {
-    min-height: 38px;
-    padding: 0 10px;
-    font-size: 11.5px;
+  #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields input {
+    min-height: 42px !important;
+    height: 42px !important;
+    padding: 9px 10px !important;
+    font-size: 12.5px !important;
+  }
+  #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > button.icon-button {
+    width: 34px !important;
+    min-width: 34px !important;
+    height: 34px !important;
   }
 }
-
 
 /* Investor rows no longer render a separate Upload Logo button. */
 #editorView .ag-investor-upload-button { display: none !important; }
