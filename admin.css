@@ -9054,3 +9054,91 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #editorView .editor-panel .form-grid { row-gap: 14px; }
   #editorView .editor-footer #publish { min-height: 40px; }
 }
+
+
+/* Shared compact field rhythm for Basic, Details and Guide editors. */
+#editorView #form > .editor-panel .field {
+  gap: 5px !important;
+  margin-bottom: 0;
+}
+#editorView #form > .editor-panel .field > label,
+#editorView #form > .editor-panel .ag-investor-fields label {
+  font-family: Manrope,sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  letter-spacing: -.1px;
+  color: #1B2E50 !important;
+}
+#editorView #form > .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+#editorView #form > .editor-panel select,
+#editorView #form > .editor-panel textarea,
+#editorView #form > .editor-panel .ag-investor-fields input {
+  min-height: 48px !important;
+  height: auto;
+  padding: 10px 12px !important;
+  border-radius: 10px !important;
+  border-color: #E6EAF0 !important;
+  font-family: Manrope,sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
+  color: #1B2E50 !important;
+  box-shadow: none;
+}
+#editorView #form > .editor-panel textarea {
+  min-height: 100px !important;
+  resize: vertical;
+}
+#editorView #form > .editor-panel .form-grid {
+  row-gap: 14px !important;
+}
+#editorView #form > .editor-panel .section-heading {
+  margin-bottom: 14px !important;
+}
+#editorView #form > .editor-panel .section-heading h2,
+#editorView #form > .editor-panel > h2 {
+  font-size: 17px !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.25px;
+}
+#editorView #form > .editor-panel .field small,
+#editorView #form > .editor-panel .field .hint {
+  font-size: 11px !important;
+  line-height: 1.45;
+  color: #64748B;
+}
+#editorView .editor-footer {
+  padding: 10px 12px !important;
+  gap: 10px;
+}
+#editorView .editor-footer #publish {
+  min-height: 48px !important;
+  border-radius: 10px !important;
+  font-family: Manrope,sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+@media (max-width: 767px) {
+  #editorView #form > .editor-panel {
+    padding: 14px !important;
+    margin-bottom: 12px !important;
+    border-radius: 13px !important;
+  }
+  #editorView #form > .editor-panel .field > label,
+  #editorView #form > .editor-panel .ag-investor-fields label {
+    font-size: 13px !important;
+  }
+  #editorView #form > .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  #editorView #form > .editor-panel select,
+  #editorView #form > .editor-panel .ag-investor-fields input {
+    min-height: 48px !important;
+    font-size: 14px !important;
+  }
+  #editorView .editor-footer {
+    padding: 9px 12px !important;
+  }
+  #editorView .editor-footer #publish {
+    min-height: 48px !important;
+  }
+}
