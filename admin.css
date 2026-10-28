@@ -9142,3 +9142,84 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     min-height: 48px !important;
   }
 }
+
+
+/* Match project logo preview and Upload Logo control across Basic, Details and Guide. */
+#editorView #form .logo-upload,
+#editorView #form .shared-editor-logo-upload,
+#editorView #form .basic-logo-upload {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 0 16px !important;
+}
+#editorView #form .logo-upload .logo-preview,
+#editorView #form .shared-editor-logo-upload .logo-preview,
+#editorView #form .basic-logo-upload .logo-preview,
+#editorView #form #logoPreview,
+#editorView #form #detailsLogoPreview,
+#editorView #form #guideLogoPreview {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 48px !important;
+  width: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid #E6EAF0 !important;
+  border-radius: 11px !important;
+  background: #F8FAFC !important;
+  box-shadow: none !important;
+}
+#editorView #form .logo-upload .logo-preview img,
+#editorView #form #logoPreview img,
+#editorView #form #detailsLogoPreview img,
+#editorView #form #guideLogoPreview img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  border-radius: 10px !important;
+}
+#editorView #form .logo-upload label.button[for="logoFile"],
+#editorView #form .shared-editor-logo-upload label.button[for="logoFile"],
+#editorView #form .basic-logo-upload label.button[for="logoFile"] {
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 13px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+  background: #FFFFFF !important;
+  color: #1B2E50 !important;
+  font: 600 13px/1.2 Manrope,sans-serif !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}
+#editorView #form .logo-upload label.button[for="logoFile"] svg,
+#editorView #form .shared-editor-logo-upload label.button[for="logoFile"] svg,
+#editorView #form .basic-logo-upload label.button[for="logoFile"] svg {
+  display: block !important;
+  flex: 0 0 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+#editorView #form .logo-upload label.button[for="logoFile"]:hover,
+#editorView #form .shared-editor-logo-upload label.button[for="logoFile"]:hover,
+#editorView #form .basic-logo-upload label.button[for="logoFile"]:hover {
+  border-color: #B8D9FA !important;
+  background: #F8FBFF !important;
+}
