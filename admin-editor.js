@@ -404,6 +404,12 @@
           }
         };
         photo.append(preview);
+        const uploadButton = document.createElement('button');
+        uploadButton.type = 'button';
+        uploadButton.className = 'ag-investor-upload-button';
+        uploadButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M20 16.5v2A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5v-2"/></svg><span>Upload Logo</span>';
+        uploadButton.onclick = () => file.click();
+        photo.append(uploadButton);
         file.onchange = async () => {
           const chosen = file.files?.[0];
           if (!chosen) return;
