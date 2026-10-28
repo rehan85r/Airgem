@@ -9377,8 +9377,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   width: 100% !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
-  min-height: 44px !important;
-  height: 44px !important;
+  min-height: 40px !important;
+  height: 40px !important;
   padding: 10px 12px !important;
   border: 1px solid #E6EAF0 !important;
   border-radius: 10px !important;
@@ -9400,8 +9400,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     column-gap: 9px !important;
   }
   #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields input {
-    min-height: 42px !important;
-    height: 42px !important;
+    min-height: 40px !important;
+    height: 40px !important;
     padding: 9px 10px !important;
     font-size: 12.5px !important;
   }
