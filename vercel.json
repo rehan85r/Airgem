@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/admin",
-      "destination": "/admin.html"
+      "destination": "/admin-panel.html"
     }
   ],
   "headers": [
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "source": "/admin.html",
+      "source": "/admin",
       "headers": [
         {
           "key": "Cache-Control",
@@ -45,20 +45,13 @@
       ]
     },
     {
-      "source": "/admin",
+      "source": "/admin-panel.html",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "no-store"
         }
       ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/admin.html",
-      "destination": "/",
-      "permanent": false
     }
   ]
 }
