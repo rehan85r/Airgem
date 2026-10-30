@@ -371,8 +371,8 @@ body:not([data-view]) #loginBox.auth-card {
 body:not([data-view]) .auth-back-button {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 35px;
+  height: 35px;
   margin: 0 0 24px;
   border: 1px solid #E8EDF3;
   border-radius: 50%;
