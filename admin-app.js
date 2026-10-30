@@ -1003,13 +1003,13 @@
     });
     document.querySelector('[data-project-section]').classList.add('active');
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
-    $('adminProjectPickerSearchClear')?.onclick = () => {
+    if ($('adminProjectPickerSearchClear')) $('adminProjectPickerSearchClear').onclick = () => {
       $('adminProjectPickerSearch').value = '';
       renderProjectPicker();
       $('adminProjectPickerSearch').focus();
     };
     $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
-    $('allAirdropsSearchClear')?.onclick = () => {
+    if ($('allAirdropsSearchClear')) $('allAirdropsSearchClear').onclick = () => {
       $('allAirdropsSearch').value = '';
       renderAllAirdrops();
       $('allAirdropsSearch').focus();
@@ -1034,18 +1034,18 @@
     if ($('cancelEdit')) $('cancelEdit').onclick = closeEditorWithMotion;
     if ($('mobileEditorBack')) $('mobileEditorBack').onclick = closeEditorWithMotion;
     if ($('mobileEditorClose')) $('mobileEditorClose').onclick = closeEditorWithMotion;
-    $('remove')?.onclick = () => removeProject(state.selected);
-    $('form')?.onsubmit = publish;
-    $('trendingSelect')?.oninput = renderTrendingSearch;
-    $('trendingSearchClear')?.onclick = () => {
+    if ($('remove')) $('remove').onclick = () => removeProject(state.selected);
+    if ($('form')) $('form').onsubmit = publish;
+    if ($('trendingSelect')) $('trendingSelect').oninput = renderTrendingSearch;
+    if ($('trendingSearchClear')) $('trendingSearchClear').onclick = () => {
       $('trendingSelect').value = '';
       renderTrendingSearch();
       $('trendingSelect').focus();
     };
-    $('saveTrending')?.onclick = saveTrending;
-    $('publishAllAirdrops')?.onclick = publishAllAirdrops;
-    $('logout')?.onclick = signOut;
-    $('mfaSetup')?.onclick = startMfaSetup;
+    if ($('saveTrending')) $('saveTrending').onclick = saveTrending;
+    if ($('publishAllAirdrops')) $('publishAllAirdrops').onclick = publishAllAirdrops;
+    if ($('logout')) $('logout').onclick = signOut;
+    if ($('mfaSetup')) $('mfaSetup').onclick = startMfaSetup;
     document.addEventListener('keydown', (event) => {
       const tab = event.target.closest('[data-editor-tab]');
       if (tab && ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
@@ -1089,7 +1089,7 @@
       $('loginError').textContent = 'Passkey sign-in is not configured yet.';
     });
     let emailOtpSent = false;
-    $('loginForm')?.onsubmit = async (event) => {
+    if ($('loginForm')) $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
       const email = $('email').value.trim();
       if (!email) {
@@ -1148,7 +1148,7 @@
         await initialize();
       } else await signOut();
     });
-    $('mfaForm')?.onsubmit = async (event) => {
+    if ($('mfaForm')) $('mfaForm').onsubmit = async (event) => {
       event.preventDefault();
       const code = $('mfaCode').value.trim();
       if (!/^[0-9]{6}$/.test(code)) {
