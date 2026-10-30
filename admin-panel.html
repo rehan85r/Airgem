@@ -28,12 +28,16 @@
         
         <form id="loginForm">
           <div class="field">
-            
-            <input id="email" type="email" autocomplete="username" placeholder="you@example.com" autocapitalize="none" spellcheck="false" required />
+            <div class="auth-input-wrap">
+              <i data-lucide="mail" aria-hidden="true"></i>
+              <input id="email" type="email" autocomplete="username" placeholder="you@example.com" autocapitalize="none" spellcheck="false" required />
+            </div>
           </div>
           <div class="field">
-            
-            <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+            <div class="auth-input-wrap">
+              <i data-lucide="lock-keyhole" aria-hidden="true"></i>
+              <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+            </div>
           </div>
           <div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div></div>
           <button class="button primary full-width" type="submit">Sign in <i data-lucide="arrow-right" aria-hidden="true"></i></button>
