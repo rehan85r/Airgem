@@ -722,7 +722,7 @@ body:not([data-view]) #loginBox .auth-input-wrap > :is(i, svg) {
   display: block;
   width: 18px;
   height: 18px;
-  color: #94A3B8;
+  color: #1B2E50;
   stroke-width: 1.8;
   transform: translateY(-50%);
   pointer-events: none;
