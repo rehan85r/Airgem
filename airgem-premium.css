@@ -478,7 +478,7 @@ body:not([data-view]) #loginBox .field input {
   height: 50px;
   padding: 0 16px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 999px;
   background: #FFFFFF;
   color: var(--airgem-navy);
   box-shadow: none;
@@ -496,6 +496,7 @@ body:not([data-view]) #loginBox .field input::placeholder {
 }
 body:not([data-view]) #loginBox .button.primary {
   min-height: 52px;
+  border-radius: 999px !important;
 }
 body:not([data-view]) .auth-copyright {
   margin-top: 0;
@@ -730,4 +731,11 @@ body:not([data-view]) #loginBox .auth-input-wrap > :is(i, svg) {
 body:not([data-view]) #loginBox .auth-input-wrap input {
   width: 100%;
   padding-left: 46px !important;
+}
+
+
+/* Enforce pill radius for both admin login inputs and Log In button. */
+body:not([data-view]) #loginBox .auth-input-wrap input,
+body:not([data-view]) #loginBox .button.primary {
+  border-radius: 999px !important;
 }
