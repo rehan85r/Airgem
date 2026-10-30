@@ -789,3 +789,52 @@ body:not([data-view]) #loginBox .auth-password-toggle:focus-visible {
   outline: 2px solid #1B2E50;
   outline-offset: 2px;
 }
+
+
+/* Compact remember-me and password-recovery row on admin sign-in. */
+body:not([data-view]) #loginBox .auth-login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: -6px;
+  color: #64748B;
+  font-size: 12px;
+}
+body:not([data-view]) #loginBox .auth-remember-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #64748B;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+body:not([data-view]) #loginBox .auth-remember-option input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #1E90FF;
+  cursor: pointer;
+}
+body:not([data-view]) #loginBox .auth-forgot-link {
+  padding: 3px 0;
+  border: 0;
+  background: transparent;
+  color: #1E90FF;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+body:not([data-view]) #loginBox .auth-forgot-link:hover {
+  color: #1B2E50;
+  text-decoration: underline;
+}
+body:not([data-view]) #loginBox .auth-forgot-link:focus-visible,
+body:not([data-view]) #loginBox .auth-remember-option input:focus-visible {
+  outline: 2px solid #1B2E50;
+  outline-offset: 3px;
+}
