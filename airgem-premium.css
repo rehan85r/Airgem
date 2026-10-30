@@ -399,7 +399,7 @@ body:not([data-view]) #loginBox > p.muted {
   line-height: 1.6;
 }
 body:not([data-view]) #loginBox form {
-  gap: 16px;
+  gap: 20px;
   margin-top: 26px;
 }
 body:not([data-view]) #loginBox .field {
