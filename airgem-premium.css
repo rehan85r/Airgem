@@ -881,3 +881,12 @@ body:not([data-view]) #loginBox .auth-login-options {
   margin-right: 16px !important;
   box-sizing: border-box;
 }
+
+
+/* Set remember and recovery links to 15px inside the login form edges. */
+body:not([data-view]) #loginBox .auth-login-options {
+  width: calc(100% - 30px) !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+  box-sizing: border-box;
+}
