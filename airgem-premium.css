@@ -838,3 +838,12 @@ body:not([data-view]) #loginBox .auth-remember-option input:focus-visible {
   outline: 2px solid #1B2E50;
   outline-offset: 3px;
 }
+
+
+/* Consistent 15px side inset for both login inputs and the Log In button. */
+body:not([data-view]) #loginBox .auth-input-wrap,
+body:not([data-view]) #loginBox form > .button.primary {
+  width: calc(100% - 30px) !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
