@@ -795,6 +795,9 @@
     script.onload = () => {
       turnstileWidget = window.turnstile.render('#airgemTurnstile', {
         sitekey: siteKey,
+        theme: 'light',
+        size: 'compact',
+        appearance: 'interaction-only',
         callback: (token) => {
           turnstileToken = token;
         },
