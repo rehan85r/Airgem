@@ -739,3 +739,12 @@ body:not([data-view]) #loginBox .auth-input-wrap input,
 body:not([data-view]) #loginBox .button.primary {
   border-radius: 999px !important;
 }
+
+
+/* Admin login inputs: no blue focus border or glow when clicked. */
+body:not([data-view]) #loginBox .auth-input-wrap input:focus,
+body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
