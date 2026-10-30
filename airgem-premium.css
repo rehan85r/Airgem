@@ -193,3 +193,150 @@ body:not([data-view]) .icon-button {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Admin dashboard + editor: complete the same Airgem design system. */
+body:not([data-view]) {
+  color: var(--airgem-navy);
+  font-family: Manrope, Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body:not([data-view]) .app-shell {
+  background: var(--airgem-bg);
+}
+body:not([data-view]) .topbar {
+  min-height: 60px;
+  border-bottom: 1px solid var(--airgem-border);
+  background: rgba(255,255,255,.98);
+}
+body:not([data-view]) .admin-header-brand {
+  color: var(--airgem-navy);
+  font-weight: 750;
+  letter-spacing: -.45px;
+}
+body:not([data-view]) .admin-header-brand img {
+  border-radius: 10px;
+}
+body:not([data-view]) main {
+  max-width: 1160px;
+}
+body:not([data-view]) .projects-page-heading h1,
+body:not([data-view]) .editor-heading h1 {
+  color: var(--airgem-navy);
+  font-weight: 800;
+  letter-spacing: -.8px;
+}
+body:not([data-view]) .page-heading p,
+body:not([data-view]) .muted {
+  color: var(--airgem-slate);
+}
+body:not([data-view]) .admin-project-nav {
+  gap: 8px;
+}
+body:not([data-view]) .admin-project-nav-button {
+  min-height: 40px;
+  border: 1px solid var(--airgem-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--airgem-slate);
+  font: 650 12px/1.2 Manrope,sans-serif;
+  transition: background .16s ease,border-color .16s ease,color .16s ease;
+}
+body:not([data-view]) .admin-project-nav-button.active {
+  border-color: var(--airgem-blue);
+  background: var(--airgem-blue);
+  color: #fff;
+}
+body:not([data-view]) .admin-project-nav-button:not(.active):hover {
+  border-color: #BBD9F8;
+  background: #F5F9FF;
+  color: var(--airgem-navy);
+}
+body:not([data-view]) .collection-card,
+body:not([data-view]) .auth-card,
+body:not([data-view]) .editor-panel {
+  border: 1px solid var(--airgem-border);
+  border-radius: var(--airgem-radius);
+  background: #fff;
+  box-shadow: var(--airgem-shadow);
+}
+body:not([data-view]) .top-airdrops-heading h2,
+body:not([data-view]) .section-heading h2 {
+  color: var(--airgem-navy);
+  letter-spacing: -.35px;
+}
+body:not([data-view]) .trending-search-input-wrap input,
+body:not([data-view]) .field input,
+body:not([data-view]) .field select,
+body:not([data-view]) .field textarea,
+body:not([data-view]) .ag-investor-fields input {
+  border-color: var(--airgem-border);
+  border-radius: 10px;
+  color: var(--airgem-navy);
+  box-shadow: none;
+}
+body:not([data-view]) .trending-search-input-wrap input:focus,
+body:not([data-view]) .field input:focus,
+body:not([data-view]) .field select:focus,
+body:not([data-view]) .field textarea:focus,
+body:not([data-view]) .ag-investor-fields input:focus {
+  border-color: #9CCBFA;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30,144,255,.08);
+}
+body:not([data-view]) .trending-item,
+body:not([data-view]) .admin-project-picker-item,
+body:not([data-view]) .search-results button {
+  border-color: var(--airgem-border);
+  border-radius: 10px;
+  background: #fff;
+}
+body:not([data-view]) .button.primary,
+body:not([data-view]) .editor-footer #publish {
+  background: var(--airgem-blue);
+  border-color: var(--airgem-blue);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: none;
+}
+body:not([data-view]) .button:not(.primary):not(.danger-quiet),
+body:not([data-view]) .icon-button {
+  border-radius: 10px;
+}
+body:not([data-view]) .editor-tabs {
+  border-color: var(--airgem-border);
+}
+body:not([data-view]) .editor-tabs button[aria-selected="true"] {
+  color: var(--airgem-blue);
+  border-bottom-color: var(--airgem-blue);
+}
+body:not([data-view]) .editor-footer {
+  border: 1px solid var(--airgem-border);
+  border-radius: 12px;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 4px 16px rgba(27,46,80,.06);
+}
+body:not([data-view]) .app-footer {
+  color: var(--airgem-slate);
+}
+@media (max-width: 767px) {
+  body:not([data-view]) main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  body:not([data-view]) .collection-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+  body:not([data-view]) .top-airdrops-heading h2 {
+    font-size: 16px;
+  }
+  body:not([data-view]) .mobile-editor-toolbar {
+    background: #fff;
+    border-bottom-color: var(--airgem-border);
+  }
+  body:not([data-view]) .editor-footer {
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -3px 16px rgba(27,46,80,.05);
+  }
+}
