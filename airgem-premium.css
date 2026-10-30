@@ -475,8 +475,22 @@ body:not([data-view]) #loginBox form {
 }
 body:not([data-view]) #loginBox .field input {
   min-height: 54px;
+  padding: 0 14px;
+  border: 1px solid transparent;
   border-radius: 10px;
+  background: #F1F5F9;
+  color: var(--airgem-navy);
+  box-shadow: none;
+  transition: background .16s ease, box-shadow .16s ease;
+}
+body:not([data-view]) #loginBox .field input:focus {
+  border-color: transparent;
+  outline: none;
   background: #fff;
+  box-shadow: 0 0 0 3px rgba(30,144,255,.12);
+}
+body:not([data-view]) #loginBox .field input::placeholder {
+  color: #94A3B8;
 }
 body:not([data-view]) #loginBox .button.primary {
   min-height: 52px;
