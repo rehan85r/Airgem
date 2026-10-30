@@ -712,19 +712,20 @@ body:not([data-view]) #loginBox .auth-input-wrap {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
-body:not([data-view]) #loginBox .auth-input-wrap > i {
+body:not([data-view]) #loginBox .auth-input-wrap > :is(i, svg) {
   position: absolute;
   left: 17px;
-  z-index: 1;
-  display: inline-flex;
-  color: #94A3B8;
-  pointer-events: none;
-}
-body:not([data-view]) #loginBox .auth-input-wrap > i svg {
+  top: 50%;
+  z-index: 2;
+  display: block;
   width: 18px;
   height: 18px;
+  color: #94A3B8;
   stroke-width: 1.8;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 body:not([data-view]) #loginBox .auth-input-wrap input {
   width: 100%;
