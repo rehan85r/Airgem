@@ -797,7 +797,7 @@
         sitekey: siteKey,
         theme: 'light',
         size: 'compact',
-        appearance: 'interaction-only',
+        appearance: 'always',
         callback: (token) => {
           turnstileToken = token;
         },
