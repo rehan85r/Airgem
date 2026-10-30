@@ -1008,3 +1008,12 @@ body:not([data-view]) .auth-shell {
 body:not([data-view]) #loginBox.auth-card {
   margin-top: 0 !important;
 }
+
+
+/* Set a clean 30px gap from the welcome subtitle to the first login input. */
+body:not([data-view]) #loginBox #loginHeading + p.muted {
+  margin-bottom: 0 !important;
+}
+body:not([data-view]) #loginBox form {
+  margin-top: 30px !important;
+}
