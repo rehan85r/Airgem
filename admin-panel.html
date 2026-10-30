@@ -21,40 +21,28 @@
     <a class="skip-link" href="#mainContent">Skip to content</a>
     <div id="adminBoot" class="admin-boot" role="status" aria-live="polite" hidden><img src="airgem-logo.png" width="40" height="40" alt="" /><span>Loading Airgem…</span></div>
     <div class="auth-shell" id="authShell">
-        <h1 id="loginHeading">Sign In</h1>
-        <p class="muted">Sign in to your Airgem workspace.</p>
+      <div class="auth-brand" aria-label="Airgem Admin">
+        <img src="airgem-logo.png" width="40" height="40" alt="Airgem" />
+        <span>Airgem</span>
+        <span class="brand-label">ADMIN</span>
+      </div>
+      <section id="loginBox" class="auth-card" aria-labelledby="loginHeading">
+        <h1 id="loginHeading">Welcome Back!</h1>
+        <p class="muted">Please Enter Your Details.</p>
         <form id="loginForm">
           <div class="field">
-            <label for="email">Email address</label
-            ><input
-              id="email"
-              type="email"
-              autocomplete="username"
-              placeholder="you@example.com"
-              autocapitalize="none"
-              spellcheck="false"
-              required
-            />
+            <label for="email">Email address</label>
+            <input id="email" type="email" autocomplete="username" placeholder="you@example.com" autocapitalize="none" spellcheck="false" required />
           </div>
           <div class="field">
-            <label for="password">Password</label
-            ><input
-              id="password"
-              type="password"
-              autocomplete="current-password"
-              placeholder="Enter your password"
-              required
-            />
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
           </div>
           <div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div></div>
-          <button class="button primary full-width" type="submit">
-            Sign in <i data-lucide="arrow-right" aria-hidden="true"></i>
-          </button>
+          <button class="button primary full-width" type="submit">Sign in <i data-lucide="arrow-right" aria-hidden="true"></i></button>
           <p id="loginError" class="error-message" role="alert" aria-live="polite"></p>
         </form>
-        <p class="auth-footnote">
-          <i data-lucide="lock-keyhole" aria-hidden="true"></i> Authorized administrators only
-        </p>
+        <p class="auth-footnote"><i data-lucide="lock-keyhole" aria-hidden="true"></i> Authorized Personal Only</p>
       </section>
       <section id="mfaBox" class="auth-card" hidden aria-labelledby="mfaHeading">
         <div class="auth-icon"><i data-lucide="smartphone" aria-hidden="true"></i></div>
