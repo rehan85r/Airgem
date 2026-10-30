@@ -889,10 +889,10 @@ body:not([data-view]) #loginBox .button.primary {
 }
 
 
-/* Fix login content 50px below the centered Airgem header brand. */
+/* Set 70px visual separation between the Airgem header brand and Login heading. */
 body:not([data-view]) .auth-shell {
   justify-content: flex-start !important;
-  padding-top: 92px !important;
+  padding-top: 162px !important;
 }
 body:not([data-view]) #loginBox.auth-card {
   margin-top: 0 !important;
