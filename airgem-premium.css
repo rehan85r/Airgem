@@ -476,15 +476,16 @@ body:not([data-view]) #loginBox form {
 body:not([data-view]) #loginBox .field input {
   min-height: 54px;
   padding: 0 14px;
-  border: 1px solid transparent;
+  border: 0;
   border-radius: 10px;
   background: #F1F5F9;
   color: var(--airgem-navy);
   box-shadow: none;
+  outline: none;
   transition: background .16s ease, box-shadow .16s ease;
 }
 body:not([data-view]) #loginBox .field input:focus {
-  border-color: transparent;
+  border: 0;
   outline: none;
   background: #fff;
   box-shadow: 0 0 0 3px rgba(30,144,255,.12);
