@@ -340,3 +340,104 @@ body:not([data-view]) .app-footer {
     box-shadow: 0 -3px 16px rgba(27,46,80,.05);
   }
 }
+
+
+/* Admin sign-in: quiet, minimal authentication surface. */
+body:not([data-view]) .auth-shell {
+  position: relative;
+  min-height: 100dvh;
+  padding: 32px 20px;
+  gap: 22px;
+  background: #F8FAFC;
+}
+body:not([data-view]) .auth-brand {
+  gap: 9px;
+  font-size: 21px;
+  letter-spacing: -.65px;
+}
+body:not([data-view]) .auth-brand img {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+}
+body:not([data-view]) #loginBox.auth-card {
+  position: relative;
+  max-width: 410px;
+  padding: 34px 32px 30px;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(27,46,80,.035);
+}
+body:not([data-view]) .auth-back-button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 0 24px;
+  border: 1px solid #E8EDF3;
+  border-radius: 50%;
+  background: #fff;
+  color: #1B2E50;
+  box-shadow: 0 2px 8px rgba(27,46,80,.06);
+  transition: background .15s ease, border-color .15s ease;
+}
+body:not([data-view]) .auth-back-button:hover {
+  background: #F5F9FF;
+  border-color: #C7DDF4;
+}
+body:not([data-view]) .auth-back-button svg {
+  width: 19px;
+  height: 19px;
+}
+body:not([data-view]) #loginBox h1 {
+  margin: 0 0 7px;
+  font-size: 25px;
+  letter-spacing: -.8px;
+}
+body:not([data-view]) #loginBox > p.muted {
+  font-size: 12px;
+  line-height: 1.6;
+}
+body:not([data-view]) #loginBox form {
+  gap: 16px;
+  margin-top: 26px;
+}
+body:not([data-view]) #loginBox .field {
+  gap: 7px;
+}
+body:not([data-view]) #loginBox .field label {
+  color: #334155;
+  font-size: 11px;
+  font-weight: 650;
+}
+body:not([data-view]) #loginBox .field input {
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  background: #fff;
+  color: #1B2E50;
+  font-size: 13px;
+  box-shadow: none;
+}
+body:not([data-view]) #loginBox .field input:focus {
+  border-color: #9CCBFA;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30,144,255,.08);
+}
+body:not([data-view]) #loginBox .button.primary {
+  min-height: 46px;
+  margin-top: 2px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+body:not([data-view]) #loginBox .auth-footnote {
+  margin-top: 22px;
+  color: #94A3B8;
+  font-size: 10px;
+}
+@media (max-width: 480px) {
+  body:not([data-view]) #loginBox.auth-card {
+    padding: 26px 22px 24px;
+  }
+}
