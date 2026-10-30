@@ -863,3 +863,12 @@ body:not([data-view]) #loginBox form > .button.primary {
 body:not([data-view]) #loginBox.auth-card {
   box-sizing: border-box;
 }
+
+
+/* Align remember and recovery links 20px inside the login form edges. */
+body:not([data-view]) #loginBox .auth-login-options {
+  width: calc(100% - 40px) !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  box-sizing: border-box;
+}
