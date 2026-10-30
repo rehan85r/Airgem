@@ -847,3 +847,19 @@ body:not([data-view]) #loginBox form > .button.primary {
   margin-left: 15px !important;
   margin-right: 15px !important;
 }
+
+
+/* Fix login controls to a true 15px viewport inset; remove nested spacing. */
+body:not([data-view]) .auth-shell {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+body:not([data-view]) #loginBox .auth-input-wrap,
+body:not([data-view]) #loginBox form > .button.primary {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body:not([data-view]) #loginBox.auth-card {
+  box-sizing: border-box;
+}
