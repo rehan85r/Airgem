@@ -1147,7 +1147,7 @@
   }
   try {
     const missingResources = [];
-    if (typeof dropyClient === 'undefined') missingResources.push('Supabase client');
+    if (!window.dropyClient) missingResources.push('Supabase client');
     if (!window.AirgemEditor) missingResources.push('project editor module');
     if (missingResources.length)
       throw Error(`Admin resource unavailable: ${missingResources.join(' and ')}. Reload the page; if this continues, check the network or deployment files.`);
