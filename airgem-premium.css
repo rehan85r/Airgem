@@ -938,3 +938,31 @@ body:not([data-view]) #loginBox #loginHeading {
   font-size: 25px !important;
   font-weight: 700 !important;
 }
+
+
+/* Centered Airgem brand between admin login header controls. */
+body:not([data-view]) .auth-brand {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #1B2E50;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+body:not([data-view]) .auth-brand img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+body:not([data-view]) .auth-brand span {
+  color: #1B2E50;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
