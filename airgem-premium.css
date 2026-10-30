@@ -548,3 +548,9 @@ body:not([data-view]) #loginBox .field input:focus {
   background: #FFFFFF !important;
   box-shadow: 0 0 0 3px rgba(30,144,255,.12) !important;
 }
+
+
+/* Match the sign-in action button to the pill-shaped input fields. */
+body:not([data-view]) #loginBox .button.primary {
+  border-radius: 999px !important;
+}
