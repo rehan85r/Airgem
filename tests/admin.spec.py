@@ -68,7 +68,7 @@ class AdminBrowserTests(unittest.TestCase):
         self.page = self.context.new_page()
         self.js_errors = []
         self.page.on('pageerror', lambda error:self.js_errors.append(str(error)))
-        self.page.goto(self.base+'/admin.html', wait_until='networkidle')
+        self.page.goto(self.base+'/admin-panel.html', wait_until='networkidle')
         self.dialog_handler = lambda dialog:dialog.accept()
         self.page.on('dialog', self.dialog_handler)
         return self.page
