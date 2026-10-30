@@ -698,3 +698,9 @@ body:not([data-view]) #loginBox #loginHeading,
 body:not([data-view]) #loginBox > p.muted {
   text-align: center !important;
 }
+
+
+/* Center the admin login welcome subtitle under Sign In. */
+body:not([data-view]) #loginBox #loginHeading + p.muted {
+  text-align: center !important;
+}
