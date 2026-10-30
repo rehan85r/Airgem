@@ -1108,3 +1108,44 @@ body:not([data-view]) #loginBox .auth-footnote {
   box-shadow: none !important;
   text-align: center !important;
 }
+
+
+/* Circular secondary sign-in actions below the primary Login button. */
+body:not([data-view]) #loginBox .auth-social-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin: 8px auto 0 !important;
+  width: 100% !important;
+}
+body:not([data-view]) #loginBox .auth-social-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  padding: 0 !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  color: #1B2E50 !important;
+  box-shadow: 0 2px 6px rgba(27,46,80,.06) !important;
+  cursor: pointer !important;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease !important;
+}
+body:not([data-view]) #loginBox .auth-social-button:hover {
+  border-color: #1E90FF !important;
+  box-shadow: 0 3px 10px rgba(30,144,255,.12) !important;
+  transform: translateY(-1px);
+}
+body:not([data-view]) #loginBox .auth-social-button svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+body:not([data-view]) #loginBox .auth-social-button i,
+body:not([data-view]) #loginBox .auth-social-button i svg {
+  width: 22px !important;
+  height: 22px !important;
+}
