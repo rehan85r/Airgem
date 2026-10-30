@@ -1072,6 +1072,33 @@
       },
       true,
     );
+    const rememberedEmail = localStorage.getItem('airgem-admin-remembered-email') || '';
+    if ($('rememberMe') && rememberedEmail) {
+      $('email').value = rememberedEmail;
+      $('rememberMe').checked = true;
+    }
+    $('forgotPassword').onclick = async () => {
+      const email = $('email').value.trim();
+      if (!email) {
+        $('loginError').textContent = 'Enter your email address first.';
+        $('email').focus();
+        return;
+      }
+      const button = $('forgotPassword');
+      button.disabled = true;
+      $('loginError').textContent = 'Sending password reset email…';
+      try {
+        const { error } = await dropyClient.auth.resetPasswordForEmail(email, {
+          redirectTo: window.location.origin + '/admin',
+        });
+        if (error) throw error;
+        $('loginError').textContent = 'If an account exists for this email, a password reset link has been sent.';
+      } catch (error) {
+        $('loginError').textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
+    };
     $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
       if (siteKey && !turnstileToken) {
@@ -1087,6 +1114,8 @@
         const { error } = await dropyClient.auth.signInWithPassword(options);
         if (error) throw error;
         $('password').value = '';
+        if ($('rememberMe')?.checked) localStorage.setItem('airgem-admin-remembered-email', $('email').value.trim());
+        else localStorage.removeItem('airgem-admin-remembered-email');
         $('loginError').textContent = '';
         await initialize();
       } catch (error) {
