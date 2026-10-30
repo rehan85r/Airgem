@@ -754,3 +754,38 @@ body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
 body:not([data-view]) #loginBox form {
   margin-top: 30px !important;
 }
+
+
+/* Password visibility control inside the admin login field. */
+body:not([data-view]) #loginBox .auth-input-wrap:has(#password) {
+  position: relative;
+}
+body:not([data-view]) #loginBox .auth-input-wrap #password {
+  padding-right: 48px !important;
+}
+body:not([data-view]) #loginBox .auth-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #1B2E50;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+body:not([data-view]) #loginBox .auth-password-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.8;
+}
+body:not([data-view]) #loginBox .auth-password-toggle:focus-visible {
+  outline: 2px solid #1B2E50;
+  outline-offset: 2px;
+}
