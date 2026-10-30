@@ -757,7 +757,6 @@
     state.savedTrending = [];
     state.pendingProjectDeletes = [];
     state.trendingLoaded = false;
-    $('password').value = '';
     showAuth('login');
   }
   async function startMfaSetup() {
@@ -1077,11 +1076,6 @@
       },
       true,
     );
-    const rememberedEmail = localStorage.getItem('airgem-admin-remembered-email') || '';
-    if ($('rememberMe') && rememberedEmail) {
-      $('email').value = rememberedEmail;
-      $('rememberMe').checked = true;
-    }
     $('googleSignIn')?.addEventListener('click', () => {
       $('loginError').textContent = 'Google sign-in is not configured yet.';
     });
