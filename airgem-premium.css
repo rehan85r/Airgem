@@ -399,7 +399,7 @@ body:not([data-view]) .auth-menu-button {
   box-shadow: 0 2px 8px rgba(27,46,80,.06);
 }
 body:not([data-view]) .auth-back-button { left: 15px; }
-body:not([data-view]) .auth-menu-button { right: 15px; cursor: default; }
+body:not([data-view]) .auth-menu-button { right: 15px; cursor: default; opacity: 1; -webkit-appearance: none; appearance: none; }
 body:not([data-view]) .auth-back-button svg,
 body:not([data-view]) .auth-menu-button svg {
   display: block;
