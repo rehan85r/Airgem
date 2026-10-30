@@ -1080,6 +1080,12 @@
       $('email').value = rememberedEmail;
       $('rememberMe').checked = true;
     }
+    $('googleSignIn').onclick = () => {
+      $('loginError').textContent = 'Google sign-in is not configured yet.';
+    };
+    $('passkeySignIn').onclick = () => {
+      $('loginError').textContent = 'Passkey sign-in is not configured yet.';
+    };
     $('forgotPassword').onclick = async () => {
       const email = $('email').value.trim();
       if (!email) {
