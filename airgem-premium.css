@@ -661,3 +661,33 @@ body:not([data-view]) .auth-copyright {
   body:not([data-view]) .auth-shell { padding: 28px 20px; gap: 18px; }
   body:not([data-view]) #loginBox.auth-card { padding: 26px 22px 24px; }
 }
+
+
+/* Admin login: remove the outer card while keeping the centered form layout. */
+body:not([data-view]) #loginBox.auth-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+body:not([data-view]) #loginBox h1,
+body:not([data-view]) #loginBox > p.muted,
+body:not([data-view]) #loginBox form,
+body:not([data-view]) #loginBox .auth-footnote {
+  width: 100%;
+}
+body:not([data-view]) .auth-shell {
+  gap: 24px;
+}
+@media (max-width: 480px) {
+  body:not([data-view]) .auth-shell {
+    padding: 36px 24px;
+    gap: 26px;
+  }
+  body:not([data-view]) #loginBox.auth-card {
+    max-width: 100%;
+  }
+}
