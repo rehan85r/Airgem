@@ -1003,7 +1003,7 @@ body:not([data-view]) #loginBox .button.primary {
 /* Fix login content 50px below the centered Airgem header brand. */
 body:not([data-view]) .auth-shell {
   justify-content: flex-start !important;
-  padding-top: 95px !important;
+  padding-top: 115px !important;
 }
 body:not([data-view]) #loginBox.auth-card {
   margin-top: 0 !important;
