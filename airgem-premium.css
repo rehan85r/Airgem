@@ -526,7 +526,7 @@ body:not([data-view]) .auth-back-button {
 /* Center the admin sign-in title and supporting line. */
 body:not([data-view]) #loginBox #loginHeading,
 body:not([data-view]) #loginBox > p.muted {
-  text-align: center;
+  text-align: center !important;
 }
 
 
