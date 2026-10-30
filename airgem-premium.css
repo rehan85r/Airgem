@@ -748,3 +748,9 @@ body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
   outline: none !important;
   box-shadow: none !important;
 }
+
+
+/* Set spacing between the welcome subtitle and login fields. */
+body:not([data-view]) #loginBox form {
+  margin-top: 30px !important;
+}
