@@ -657,21 +657,6 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
-    <script src="/admin-app.js?v=handler-syntax-fix-20261030" defer></script>
-    <script>
-      (() => {
-        const password = document.getElementById('password');
-        const toggle = document.getElementById('togglePassword');
-        if (!password || !toggle) return;
-        toggle.addEventListener('click', () => {
-          const show = password.type === 'password';
-          password.type = show ? 'text' : 'password';
-          toggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
-          toggle.setAttribute('aria-pressed', String(show));
-          toggle.innerHTML = '<i data-lucide="' + (show ? 'eye' : 'eye-off') + '" aria-hidden="true"></i>';
-          window.lucide?.createIcons({ attrs: { 'stroke-width': 1.8 } });
-        });
-      })();
-    </script>
+    <script src="/admin-app.js?v=otp-cleanup-20261030" defer></script>
   </body>
 </html>
