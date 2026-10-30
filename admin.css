@@ -9412,5 +9412,3 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   }
 }
 
-/* Investor rows no longer render a separate Upload Logo button. */
-#editorView .ag-investor-upload-button { display: none !important; }
