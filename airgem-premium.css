@@ -474,11 +474,11 @@ body:not([data-view]) #loginBox form {
   gap: 20px;
 }
 body:not([data-view]) #loginBox .field input {
-  min-height: 54px;
-  padding: 0 14px;
+  min-height: 56px;
+  padding: 0 16px;
   border: 0;
-  border-radius: 10px;
-  background: #F1F5F9;
+  border-radius: 15px;
+  background: #FFFFFF;
   color: var(--airgem-navy);
   box-shadow: none;
   outline: none;
