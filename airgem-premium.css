@@ -890,3 +890,10 @@ body:not([data-view]) #loginBox .auth-login-options {
   margin-right: 15px !important;
   box-sizing: border-box;
 }
+
+
+/* Set admin login back button 15px from the top and left edges. */
+body:not([data-view]) .auth-back-button {
+  top: 15px !important;
+  left: 15px !important;
+}
