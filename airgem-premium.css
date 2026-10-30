@@ -993,7 +993,7 @@ body:not([data-view]) #airgemTurnstile > div {
 
 /* Tighten the Turnstile spacing: 20px total including the form grid gap. */
 body:not([data-view]) #loginBox #turnstileContainer {
-  margin: 4px auto !important;
+  margin: 10px auto !important;
 }
 body:not([data-view]) #loginBox .button.primary {
   margin-top: 0 !important;
