@@ -1017,3 +1017,17 @@ body:not([data-view]) #loginBox #loginHeading + p.muted {
 body:not([data-view]) #loginBox form {
   margin-top: 30px !important;
 }
+
+
+/* Explicitly control subtitle-to-form spacing; remove browser paragraph margins. */
+body:not([data-view]) #loginBox > p.muted {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body:not([data-view]) #loginBox > form#loginForm {
+  display: grid !important;
+  margin: 30px 0 0 !important;
+  padding: 0 !important;
+  row-gap: 16px !important;
+}
