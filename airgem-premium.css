@@ -1006,5 +1006,5 @@ body:not([data-view]) .auth-shell {
   padding-top: 95px !important;
 }
 body:not([data-view]) #loginBox.auth-card {
-  margin-top: 50px !important;
+  margin-top: 0 !important;
 }
