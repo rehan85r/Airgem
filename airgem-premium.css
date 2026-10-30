@@ -342,494 +342,21 @@ body:not([data-view]) .app-footer {
 }
 
 
-/* Admin sign-in: quiet, minimal authentication surface. */
+/* Admin login — single source of truth. */
 body:not([data-view]) .auth-shell {
   position: relative;
-  min-height: 100dvh;
-  padding: 32px 20px;
-  gap: 22px;
-  background: #F8FAFC;
-}
-body:not([data-view]) .auth-brand {
-  gap: 9px;
-  font-size: 21px;
-  letter-spacing: -.65px;
-}
-body:not([data-view]) .auth-brand img {
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-}
-body:not([data-view]) #loginBox.auth-card {
-  position: relative;
-  max-width: 410px;
-  padding: 34px 32px 30px;
-  border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(27,46,80,.035);
-}
-body:not([data-view]) .auth-back-button {
-  display: grid;
-  place-items: center;
-  width: 35px;
-  height: 35px;
-  margin: 0 0 24px;
-  border: 1px solid #E8EDF3;
-  border-radius: 50%;
-  background: #fff;
-  color: #1B2E50;
-  box-shadow: 0 2px 8px rgba(27,46,80,.06);
-  transition: background .15s ease, border-color .15s ease;
-}
-body:not([data-view]) .auth-back-button:hover {
-  background: #F5F9FF;
-  border-color: #C7DDF4;
-}
-body:not([data-view]) .auth-back-button svg {
-  width: 19px;
-  height: 19px;
-}
-body:not([data-view]) #loginBox h1 {
-  margin: 0 0 7px;
-  font-size: 25px;
-  letter-spacing: -.8px;
-}
-body:not([data-view]) #loginBox > p.muted {
-  font-size: 12px;
-  line-height: 1.6;
-}
-body:not([data-view]) #loginBox form {
-  gap: 20px;
-  margin-top: 26px;
-}
-body:not([data-view]) #loginBox .field {
-  gap: 7px;
-}
-body:not([data-view]) #loginBox .field label {
-  color: #334155;
-  font-size: 11px;
-  font-weight: 650;
-}
-body:not([data-view]) #loginBox .field input {
-  min-height: 48px;
-  padding: 0 14px;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
-  background: #fff;
-  color: #1B2E50;
-  font-size: 13px;
-  box-shadow: none;
-}
-body:not([data-view]) #loginBox .field input:focus {
-  border-color: #9CCBFA;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(30,144,255,.08);
-}
-body:not([data-view]) #loginBox .button.primary {
-  min-height: 46px;
-  margin-top: 2px;
-  border-radius: 10px;
-  font-weight: 700;
-}
-body:not([data-view]) #loginBox .auth-footnote {
-  margin-top: 22px;
-  color: #94A3B8;
-  font-size: 10px;
-}
-@media (max-width: 480px) {
-  body:not([data-view]) #loginBox.auth-card {
-    padding: 26px 22px 24px;
-  }
-}
-
-
-/* Login page: remove the card container for a clean, open layout. */
-body:not([data-view]) .auth-shell {
-  justify-content: center;
-  gap: 34px;
-  padding: 42px 24px;
-  background: #F8FAFC;
-}
-body:not([data-view]) #loginBox.auth-card {
-  width: 100%;
-  max-width: 440px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-body:not([data-view]) .auth-back-button {
-  margin-bottom: 34px;
-}
-body:not([data-view]) #loginBox h1 {
-  font-size: 29px;
-  letter-spacing: -1px;
-}
-body:not([data-view]) #loginBox > p.muted {
-  font-size: 14px;
-}
-body:not([data-view]) #loginBox form {
-  margin-top: 32px;
-  gap: 20px;
-}
-body:not([data-view]) #loginBox .field input {
-  min-height: 50px;
-  height: 50px;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 999px;
-  background: #FFFFFF;
-  color: var(--airgem-navy);
-  box-shadow: none;
-  outline: none;
-  transition: background .16s ease, box-shadow .16s ease;
-}
-body:not([data-view]) #loginBox .field input:focus {
-  border: 0;
-  outline: none;
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(30,144,255,.12);
-}
-body:not([data-view]) #loginBox .field input::placeholder {
-  color: #94A3B8;
-}
-body:not([data-view]) #loginBox .button.primary {
-  min-height: 52px;
-  border-radius: 999px !important;
-}
-body:not([data-view]) .auth-copyright {
-  margin-top: 0;
-}
-@media (max-width: 480px) {
-  body:not([data-view]) .auth-shell {
-    padding: 30px 24px;
-    gap: 30px;
-  }
-  body:not([data-view]) .auth-back-button {
-    margin-bottom: 30px;
-  }
-}
-
-
-/* Anchor the sign-in back control to the page shell, not the login content. */
-body:not([data-view]) #loginBox.auth-card {
-  position: static;
-}
-body:not([data-view]) .auth-back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  margin: 0;
-  z-index: 2;
-}
-
-
-/* Center the admin sign-in title and supporting line. */
-body:not([data-view]) #loginBox #loginHeading,
-body:not([data-view]) #loginBox > p.muted {
-  text-align: center !important;
-}
-
-
-/* Explicitly separate the off-white login page from white input fields. */
-html:has(body:not([data-view])),
-body:not([data-view]) {
-  background: #F8FAFC !important;
-}
-body:not([data-view]) .auth-shell {
-  background: #F8FAFC !important;
-}
-body:not([data-view]) #loginBox .field input {
-  background: #FFFFFF !important;
-  border: 0 !important;
-  border-radius: 999px !important;
-  box-shadow: none !important;
-}
-body:not([data-view]) #loginBox .field input:focus {
-  background: #FFFFFF !important;
-  box-shadow: 0 0 0 3px rgba(30,144,255,.12) !important;
-}
-
-
-/* Match the sign-in action button to the pill-shaped input fields. */
-body:not([data-view]) #loginBox .button.primary {
-  border-radius: 999px !important;
-}
-
-
-/* Restore the previous centered Airgem Admin sign-in card. */
-body:not([data-view]) .auth-shell {
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 40px 20px;
+  justify-content: flex-start;
+  min-height: 100dvh;
+  gap: 0;
+  padding: 112px 15px 40px;
   background: #F8FAFC !important;
-}
-body:not([data-view]) .auth-brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   color: #1B2E50;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -.6px;
+  font-family: Manrope, Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
-body:not([data-view]) .auth-brand img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-body:not([data-view]) .auth-brand .brand-label {
-  margin-left: 2px;
-  color: #64748B;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-}
-body:not([data-view]) #loginBox.auth-card {
-  display: block;
-  width: 100%;
-  max-width: 410px;
-  padding: 32px;
-  border: 1px solid #E2E8F0;
-  border-radius: 16px;
-  background: #FFFFFF;
-  box-shadow: 0 4px 18px rgba(27,46,80,.035);
-}
-body:not([data-view]) #loginBox h1 {
-  margin: 0 0 8px;
-  color: #1B2E50;
-  font-size: 26px;
-  line-height: 1.25;
-  font-weight: 800;
-  letter-spacing: -.8px;
-  text-align: left;
-}
-body:not([data-view]) #loginBox > p.muted {
-  color: #64748B;
-  font-size: 13px;
-  line-height: 1.6;
-  text-align: left;
-}
-body:not([data-view]) #loginBox form {
-  display: grid;
-  gap: 16px;
-  margin-top: 26px;
-}
-body:not([data-view]) #loginBox .field { gap: 7px; }
-body:not([data-view]) #loginBox .field label {
-  color: #334155;
-  font-size: 12px;
-  font-weight: 650;
-}
-body:not([data-view]) #loginBox .field input {
-  min-height: 48px;
-  padding: 0 14px;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 10px !important;
-  background: #FFFFFF !important;
-  color: #1B2E50;
-  font-size: 14px;
-  box-shadow: none !important;
-}
-body:not([data-view]) #loginBox .field input:focus {
-  border-color: #9CCBFA !important;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(30,144,255,.08) !important;
-}
-body:not([data-view]) #loginBox .button.primary {
-  min-height: 48px;
-  margin-top: 2px;
-  border-radius: 10px !important;
-  font-weight: 700;
-}
-body:not([data-view]) #loginBox .auth-footnote {
-  margin-top: 22px;
-  color: #64748B;
-  font-size: 11px;
-}
-body:not([data-view]) .auth-copyright {
-  margin-top: 2px;
-  color: #64748B;
-  font-size: 12px;
-}
-@media (max-width: 480px) {
-  body:not([data-view]) .auth-shell { padding: 28px 20px; gap: 18px; }
-  body:not([data-view]) #loginBox.auth-card { padding: 26px 22px 24px; }
-}
-
-
-/* Admin login: remove the outer card while keeping the centered form layout. */
-body:not([data-view]) #loginBox.auth-card {
-  width: 100%;
-  max-width: 480px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-body:not([data-view]) #loginBox h1,
-body:not([data-view]) #loginBox > p.muted,
-body:not([data-view]) #loginBox form,
-body:not([data-view]) #loginBox .auth-footnote {
-  width: 100%;
-}
-body:not([data-view]) .auth-shell {
-  gap: 24px;
-}
-@media (max-width: 480px) {
-  body:not([data-view]) .auth-shell {
-    padding: 36px 24px;
-    gap: 26px;
-  }
-  body:not([data-view]) #loginBox.auth-card {
-    max-width: 100%;
-  }
-}
-
-
-/* Keep the admin sign-in heading and welcome line centered. */
-body:not([data-view]) #loginBox #loginHeading,
-body:not([data-view]) #loginBox > p.muted {
-  text-align: center !important;
-}
-
-
-/* Center the admin login welcome subtitle under Sign In. */
-body:not([data-view]) #loginBox #loginHeading + p.muted {
-  text-align: center !important;
-}
-
-
-/* Icons inside admin login input fields. */
-body:not([data-view]) #loginBox .auth-input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-body:not([data-view]) #loginBox .auth-input-wrap > :is(i, svg) {
-  position: absolute;
-  left: 17px;
-  top: 50%;
-  z-index: 2;
-  display: block;
-  width: 18px;
-  height: 18px;
-  color: #1B2E50;
-  stroke-width: 1.8;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-body:not([data-view]) #loginBox .auth-input-wrap input {
-  width: 100%;
-  padding-left: 46px !important;
-}
-
-
-/* Enforce pill radius for both admin login inputs and Log In button. */
-body:not([data-view]) #loginBox .auth-input-wrap input,
-body:not([data-view]) #loginBox .button.primary {
-  border-radius: 999px !important;
-}
-
-
-/* Admin login inputs: no blue focus border or glow when clicked. */
-body:not([data-view]) #loginBox .auth-input-wrap input:focus,
-body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
-  border-color: transparent !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-
-/* Set spacing between the welcome subtitle and login fields. */
-body:not([data-view]) #loginBox form {
-  margin-top: 30px !important;
-}
-
-
-/* Consistent 15px side inset for both login inputs and the Log In button. */
-body:not([data-view]) #loginBox .auth-input-wrap,
-body:not([data-view]) #loginBox form > .button.primary {
-  width: calc(100% - 30px) !important;
-  margin-left: 15px !important;
-  margin-right: 15px !important;
-}
-
-
-/* Fix login controls to a true 15px viewport inset; remove nested spacing. */
-body:not([data-view]) .auth-shell {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-}
-body:not([data-view]) #loginBox .auth-input-wrap,
-body:not([data-view]) #loginBox form > .button.primary {
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-body:not([data-view]) #loginBox.auth-card {
-  box-sizing: border-box;
-}
-
-
-/* Set admin login back button 15px from the top and left edges. */
-body:not([data-view]) .auth-back-button {
-  top: 15px !important;
-  left: 15px !important;
-}
-
-
-/* Set admin login back arrow icon to 20px. */
-body:not([data-view]) .auth-back-button svg {
-  width: 20px !important;
-  height: 20px !important;
-}
-
-
-/* Admin login top-right menu button. */
-body:not([data-view]) .auth-menu-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  border: 1px solid #E8EDF3;
-  border-radius: 50%;
-  background: #FFFFFF;
-  color: #1B2E50;
-  box-shadow: 0 2px 8px rgba(27,46,80,.06);
-  opacity: 1;
-  cursor: default;
-}
-
-body:not([data-view]) .auth-menu-button svg {
-  width: 20px;
-  height: 20px;
-}
-
-
-/* Admin login heading: premium navy, 25px, bold. */
-body:not([data-view]) #loginBox #loginHeading {
-  color: #1B2E50 !important;
-  font-size: 25px !important;
-  font-weight: 700 !important;
-}
-
-
-/* Centered Airgem brand between admin login header controls. */
 body:not([data-view]) .auth-brand {
   position: absolute;
   top: 15px;
@@ -855,217 +382,222 @@ body:not([data-view]) .auth-brand span {
   font-weight: 700;
   line-height: 1;
 }
-
-
-/* Position Cloudflare verification directly above the authorization note. */
-body:not([data-view]) #loginBox #turnstileContainer[hidden] {
-  display: none !important;
+body:not([data-view]) .auth-back-button,
+body:not([data-view]) .auth-menu-button {
+  position: absolute;
+  top: 15px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: 1px solid #E8EDF3;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #1B2E50;
+  box-shadow: 0 2px 8px rgba(27,46,80,.06);
 }
-body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
-  position: fixed !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 43px !important;
-  z-index: 6 !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  min-height: 65px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: visible !important;
-  text-align: center !important;
-}
-body:not([data-view]) #airgemTurnstile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-body:not([data-view]) #airgemTurnstile > div {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-
-body:not([data-view]) #loginBox .button.primary {
-  margin-top: 0 !important;
-}
-
-
-/* Set 70px visual separation between the Airgem header brand and Login heading. */
-body:not([data-view]) .auth-shell {
-  justify-content: flex-start !important;
-  padding-top: 112px !important;
-}
-body:not([data-view]) #loginBox.auth-card {
-  margin-top: 0 !important;
-}
-
-
-/* Set a clean 30px gap from the welcome subtitle to the first login input. */
-body:not([data-view]) #loginBox #loginHeading + p.muted {
-  margin-bottom: 0 !important;
-}
-body:not([data-view]) #loginBox form {
-  margin-top: 30px !important;
-}
-
-
-/* Explicitly control subtitle-to-form spacing; remove browser paragraph margins. */
-body:not([data-view]) #loginBox > p.muted {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-body:not([data-view]) #loginBox > form#loginForm {
-  display: grid !important;
-  margin: 30px 0 0 !important;
-  padding: 0 !important;
-  row-gap: 16px !important;
-}
-
-
-/* Final override: 30px from Welcome subtitle to the first login input. */
-body:not([data-view]) #loginBox > p.muted + form#loginForm {
-  margin-block-start: 30px !important;
-  margin-top: 30px !important;
-  padding-top: 0 !important;
-}
-body:not([data-view]) #loginBox > p.muted {
-  margin-block-end: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-
-/* Static button-style authorization notice below the login action. */
-body:not([data-view]) #loginBox .auth-authorized-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  min-height: 42px !important;
-  margin: 20px auto 0 !important;
-  padding: 0 18px !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 999px !important;
-  background: #FFFFFF !important;
-  color: #64748B !important;
-  font: 500 13px/1.2 Inter, sans-serif !important;
-  box-shadow: 0 1px 2px rgba(15,23,42,.04) !important;
-}
-body:not([data-view]) #loginBox .auth-authorized-button svg {
-  width: 16px !important;
-  height: 16px !important;
-  flex: 0 0 16px !important;
-  color: #64748B !important;
-}
-
-
-/* Restore authorization notice as plain text with a 20px gap below Login. */
-body:not([data-view]) #loginBox .auth-footnote {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  min-height: 0 !important;
-  margin: 20px auto 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  color: #64748B !important;
-  font: 500 13px/1.4 Inter, sans-serif !important;
-  box-shadow: none !important;
-}
-body:not([data-view]) #loginBox .auth-footnote svg {
-  width: 16px !important;
-  height: 16px !important;
-  flex: 0 0 16px !important;
-  color: #64748B !important;
-}
-
-
-/* Pin the plain authorization note to the bottom center with a 20px inset. */
-body:not([data-view]) #loginBox .auth-footnote {
-  position: fixed !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 10px !important;
-  z-index: 5 !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  text-align: center !important;
-}
-
-
-/* Circular secondary sign-in actions below the primary Login button. */
-body:not([data-view]) #loginBox .auth-social-actions {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 16px !important;
-  margin: 8px auto 0 !important;
-  width: 100% !important;
-}
-body:not([data-view]) #loginBox .auth-social-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  padding: 0 !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 50% !important;
-  background: #FFFFFF !important;
-  color: #1B2E50 !important;
-  box-shadow: 0 2px 6px rgba(27,46,80,.06) !important;
-  cursor: pointer !important;
-  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease !important;
-}
-body:not([data-view]) #loginBox .auth-social-button:hover {
-  border-color: #1E90FF !important;
-  box-shadow: 0 3px 10px rgba(30,144,255,.12) !important;
-  transform: translateY(-1px);
-}
-body:not([data-view]) #loginBox .auth-social-button svg {
-  width: 22px !important;
-  height: 22px !important;
-}
-body:not([data-view]) #loginBox .auth-social-button i,
-body:not([data-view]) #loginBox .auth-social-button i svg {
-  width: 22px !important;
-  height: 22px !important;
-}
-
-
-/* Ensure core login icons remain visible without an external icon font. */
-body:not([data-view]) .auth-back-button > svg,
-body:not([data-view]) .auth-menu-button > svg,
-body:not([data-view]) .auth-input-wrap > svg,
-body:not([data-view]) .auth-social-button > svg {
-  display: block !important;
-  width: 20px !important;
-  height: 20px !important;
+body:not([data-view]) .auth-back-button { left: 15px; }
+body:not([data-view]) .auth-menu-button { right: 15px; cursor: default; }
+body:not([data-view]) .auth-back-button svg,
+body:not([data-view]) .auth-menu-button svg {
+  display: block;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-body:not([data-view]) .auth-social-button#googleSignIn > svg {
-  width: 24px !important;
-  height: 24px !important;
-  fill: initial;
-  stroke: none;
+body:not([data-view]) #loginBox.auth-card {
+  display: block;
+  width: 100%;
+  max-width: 410px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+body:not([data-view]) #loginBox #loginHeading {
+  margin: 0 0 8px;
+  color: #1B2E50 !important;
+  font-size: 25px !important;
+  line-height: 1.25;
+  font-weight: 700 !important;
+  letter-spacing: -.8px;
+  text-align: center;
+}
+body:not([data-view]) #loginBox > p.muted {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #64748B;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+body:not([data-view]) #loginBox > form#loginForm {
+  display: grid;
+  width: 100%;
+  margin: 30px 0 0;
+  padding: 0;
+  row-gap: 16px;
+}
+body:not([data-view]) #loginBox .field {
+  display: grid;
+  gap: 7px;
+}
+body:not([data-view]) #loginBox .auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 body:not([data-view]) #loginBox .auth-input-wrap > svg {
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  z-index: 2;
+  display: block;
+  width: 20px;
+  height: 20px;
   flex: 0 0 20px;
   color: #1B2E50;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+body:not([data-view]) #loginBox .auth-input-wrap input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  height: 50px;
+  padding: 0 16px 0 46px;
+  border: 0;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #1B2E50;
+  font: 400 14px/1.4 Inter, sans-serif;
+  box-shadow: none;
+  outline: none;
+}
+body:not([data-view]) #loginBox .auth-input-wrap input::placeholder { color: #94A3B8; }
+body:not([data-view]) #loginBox .auth-input-wrap input:focus,
+body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+body:not([data-view]) #loginBox form > .button.primary {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  border-radius: 999px !important;
+  font-weight: 700;
+}
+body:not([data-view]) #loginBox .auth-social-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 8px auto 0;
+}
+body:not([data-view]) #loginBox .auth-social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  padding: 0;
+  border: 1px solid #E2E8F0;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #1B2E50;
+  box-shadow: 0 2px 6px rgba(27,46,80,.06);
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+body:not([data-view]) #loginBox .auth-social-button:hover {
+  border-color: #1E90FF;
+  box-shadow: 0 3px 10px rgba(30,144,255,.12);
+  transform: translateY(-1px);
+}
+body:not([data-view]) #loginBox .auth-social-button svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+body:not([data-view]) #loginBox .auth-social-button#googleSignIn svg {
+  width: 24px;
+  height: 24px;
+}
+body:not([data-view]) #loginBox .error-message { margin: 0; }
+body:not([data-view]) #loginBox #turnstileContainer[hidden] { display: none !important; }
+body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 43px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 65px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: center;
+}
+body:not([data-view]) #airgemTurnstile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+body:not([data-view]) #airgemTurnstile > div {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+body:not([data-view]) #loginBox .auth-footnote {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64748B;
+  font: 500 13px/1.4 Inter, sans-serif;
+  text-align: center;
+  box-shadow: none;
+}
+body:not([data-view]) #loginBox .auth-footnote svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: #64748B;
+}
+@media (max-width: 480px) {
+  body:not([data-view]) .auth-shell { padding: 112px 15px 40px; }
+  body:not([data-view]) #loginBox.auth-card { max-width: 100%; }
 }
