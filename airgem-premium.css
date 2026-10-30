@@ -998,3 +998,13 @@ body:not([data-view]) #loginBox #turnstileContainer {
 body:not([data-view]) #loginBox .button.primary {
   margin-top: 0 !important;
 }
+
+
+/* Fix login content 50px below the centered Airgem header brand. */
+body:not([data-view]) .auth-shell {
+  justify-content: flex-start !important;
+  padding-top: 95px !important;
+}
+body:not([data-view]) #loginBox.auth-card {
+  margin-top: 50px !important;
+}
