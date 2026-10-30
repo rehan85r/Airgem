@@ -1003,7 +1003,7 @@ body:not([data-view]) #loginBox .button.primary {
 /* Fix login content 50px below the centered Airgem header brand. */
 body:not([data-view]) .auth-shell {
   justify-content: flex-start !important;
-  padding-top: 27px !important;
+  padding-top: 92px !important;
 }
 body:not([data-view]) #loginBox.auth-card {
   margin-top: 0 !important;
@@ -1148,4 +1148,30 @@ body:not([data-view]) #loginBox .auth-social-button i,
 body:not([data-view]) #loginBox .auth-social-button i svg {
   width: 22px !important;
   height: 22px !important;
+}
+
+
+/* Ensure core login icons remain visible without an external icon font. */
+body:not([data-view]) .auth-back-button > svg,
+body:not([data-view]) .auth-menu-button > svg,
+body:not([data-view]) .auth-input-wrap > svg,
+body:not([data-view]) .auth-social-button > svg {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body:not([data-view]) .auth-social-button#googleSignIn > svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: initial;
+  stroke: none;
+}
+body:not([data-view]) #loginBox .auth-input-wrap > svg {
+  flex: 0 0 20px;
+  color: #1B2E50;
 }
