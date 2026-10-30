@@ -930,3 +930,11 @@ body:not([data-view]) .auth-menu-button svg {
   width: 20px;
   height: 20px;
 }
+
+
+/* Admin login heading: premium navy, 24px, bold. */
+body:not([data-view]) #loginBox #loginHeading {
+  color: #1B2E50 !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
