@@ -453,11 +453,11 @@ body:not([data-view]) .auth-shell {
 body:not([data-view]) #loginBox.auth-card {
   width: 100%;
   max-width: 440px;
-  padding: 34px 32px 30px;
-  border: 1px solid var(--airgem-border);
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(27,46,80,.035);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 body:not([data-view]) .auth-back-button {
   margin-bottom: 34px;
@@ -503,9 +503,6 @@ body:not([data-view]) .auth-copyright {
   body:not([data-view]) .auth-shell {
     padding: 30px 24px;
     gap: 30px;
-  }
-  body:not([data-view]) #loginBox.auth-card {
-    padding: 28px 22px 24px;
   }
   body:not([data-view]) .auth-back-button {
     margin-bottom: 30px;
