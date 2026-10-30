@@ -1146,8 +1146,11 @@
     };
   }
   try {
-    if (typeof dropyClient === 'undefined' || !window.AirgemEditor)
-      throw Error('Admin resources could not load. Check your connection and reload.');
+    const missingResources = [];
+    if (typeof dropyClient === 'undefined') missingResources.push('Supabase client');
+    if (!window.AirgemEditor) missingResources.push('project editor module');
+    if (missingResources.length)
+      throw Error(`Admin resource unavailable: ${missingResources.join(' and ')}. Reload the page; if this continues, check the network or deployment files.`);
     editor = new window.AirgemEditor.ProjectEditor({
       onChange: setDirty,
       onMessage: message,
