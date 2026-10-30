@@ -1067,3 +1067,27 @@ body:not([data-view]) #loginBox .auth-authorized-button svg {
   flex: 0 0 16px !important;
   color: #64748B !important;
 }
+
+
+/* Restore authorization notice as plain text with a 20px gap below Login. */
+body:not([data-view]) #loginBox .auth-footnote {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 0 !important;
+  margin: 20px auto 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #64748B !important;
+  font: 500 13px/1.4 Inter, sans-serif !important;
+  box-shadow: none !important;
+}
+body:not([data-view]) #loginBox .auth-footnote svg {
+  width: 16px !important;
+  height: 16px !important;
+  flex: 0 0 16px !important;
+  color: #64748B !important;
+}
