@@ -1,0 +1,195 @@
+/* Airgem Minimal Premium design layer — visual-only overrides. */
+:root {
+  --airgem-blue: #1E90FF;
+  --airgem-navy: #1B2E50;
+  --airgem-slate: #64748B;
+  --airgem-bg: #F8FAFC;
+  --airgem-surface: #FFFFFF;
+  --airgem-border: #E2E8F0;
+  --airgem-radius: 12px;
+  --airgem-shadow: 0 2px 10px rgba(27, 46, 80, 0.035);
+}
+body[data-view] {
+  background: var(--airgem-bg) !important;
+  color: var(--airgem-navy);
+  -webkit-font-smoothing: antialiased;
+}
+body[data-view] :is(button, a, input, select):focus-visible {
+  outline: 2px solid rgba(30, 144, 255, .55);
+  outline-offset: 3px;
+}
+/* Shared public header */
+body[data-view] header.header {
+  background: #fff !important;
+  border-bottom: 1px solid var(--airgem-border) !important;
+  box-shadow: none !important;
+}
+body[data-view] header.header .brand-name {
+  color: var(--airgem-navy) !important;
+  letter-spacing: -.5px !important;
+}
+body[data-view] header.header .mark {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+/* Homepage */
+body[data-view="home"] .main {
+  max-width: 1160px !important;
+  background: transparent !important;
+}
+body[data-view="home"] .airgem-hero h1 {
+  color: var(--airgem-navy);
+  letter-spacing: -1.1px;
+}
+body[data-view="home"] .airgem-hero h1 span {
+  color: var(--airgem-blue);
+}
+body[data-view="home"] .airgem-hero p {
+  color: var(--airgem-slate);
+}
+body[data-view="home"] .ag-category-tab {
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: var(--airgem-slate) !important;
+  box-shadow: none !important;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+body[data-view="home"] .ag-category-tab.active {
+  border-color: var(--airgem-blue) !important;
+  background: var(--airgem-blue) !important;
+  color: #fff !important;
+}
+body[data-view="home"] .ag-category-tab:not(.active):hover {
+  border-color: #BBD9F8 !important;
+  background: #F5F9FF !important;
+  color: var(--airgem-navy) !important;
+}
+body[data-view="home"] .search-row .searchbox {
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] .search-row .searchbox:focus-within {
+  border-color: #9CCBFA !important;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, .08) !important;
+}
+body[data-view="home"] .search-row .searchbox input {
+  color: var(--airgem-navy);
+}
+body[data-view="home"] .search-row .searchbox input::placeholder {
+  color: #94A3B8;
+}
+body[data-view="home"] .section-head h2 {
+  color: var(--airgem-navy) !important;
+  font-weight: 750 !important;
+  letter-spacing: -.45px !important;
+}
+body[data-view="home"] .section-head h2::before {
+  display: none !important;
+}
+body[data-view="home"] .section-head small {
+  color: var(--airgem-slate) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] :is(.feature, .ag-card, .project-card) {
+  background: #fff !important;
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: var(--airgem-radius) !important;
+  box-shadow: var(--airgem-shadow) !important;
+  transform: none !important;
+  transition: border-color .16s ease, box-shadow .16s ease !important;
+}
+body[data-view="home"] :is(.feature, .ag-card, .project-card):hover {
+  border-color: #C7DDF4 !important;
+  box-shadow: 0 5px 16px rgba(27, 46, 80, .055) !important;
+  transform: none !important;
+}
+body[data-view="home"] :is(.feature, .ag-card, .project-card) .project-icon {
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] .ag-card .ag-card-foot {
+  border-top: 1px solid var(--airgem-border) !important;
+}
+body[data-view="home"] .ag-card .ag-join,
+body[data-view="home"] .feature .details {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] .projects {
+  background: transparent !important;
+}
+/* Project details */
+body[data-view="project"] {
+  background: var(--airgem-bg) !important;
+}
+body[data-view="project"] main {
+  max-width: 1050px;
+}
+body[data-view="project"] main > section.panel[data-project-panel] {
+  background: #fff !important;
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: var(--airgem-radius) !important;
+  box-shadow: none !important;
+}
+body[data-view="project"] .back {
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: var(--airgem-navy) !important;
+  box-shadow: none !important;
+}
+body[data-view="project"] .back:hover {
+  background: #F5F9FF !important;
+  border-color: #C7DDF4 !important;
+}
+body[data-view="project"] .ag-investors-card {
+  border-radius: var(--airgem-radius) !important;
+  box-shadow: none !important;
+}
+body[data-view="project"] .ag-project-socials a {
+  color: var(--airgem-navy);
+}
+body[data-view="project"] .ag-project-socials a:hover {
+  color: var(--airgem-blue);
+}
+/* Admin panel — keep existing layout and controls; align surface treatment only. */
+body:not([data-view]) {
+  background: var(--airgem-bg);
+}
+body:not([data-view]) .topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--airgem-border);
+  box-shadow: none;
+}
+body:not([data-view]) .auth-card,
+body:not([data-view]) .editor-panel {
+  border-radius: var(--airgem-radius);
+  box-shadow: var(--airgem-shadow);
+}
+body:not([data-view]) .admin-project-nav-button,
+body:not([data-view]) .button,
+body:not([data-view]) .icon-button {
+  border-radius: 10px;
+}
+@media (max-width: 650px) {
+  body[data-view="home"] .main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  body[data-view="home"] .ag-category-tab {
+    border-radius: 10px !important;
+  }
+  body[data-view="project"] main > section.panel[data-project-panel] {
+    border-radius: 12px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-view] * {
+    transition-duration: .01ms !important;
+  }
+}
