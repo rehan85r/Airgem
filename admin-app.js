@@ -1086,52 +1086,48 @@
     $('passkeySignIn').onclick = () => {
       $('loginError').textContent = 'Passkey sign-in is not configured yet.';
     };
-    $('forgotPassword').onclick = async () => {
-      const email = $('email').value.trim();
-      if (!email) {
-        $('loginError').textContent = 'Enter your email address first.';
-        $('email').focus();
-        return;
-      }
-      const button = $('forgotPassword');
-      button.disabled = true;
-      $('loginError').textContent = 'Sending password reset email…';
-      try {
-        const { error } = await dropyClient.auth.resetPasswordForEmail(email, {
-          redirectTo: window.location.origin + '/admin',
-        });
-        if (error) throw error;
-        $('loginError').textContent = 'If an account exists for this email, a password reset link has been sent.';
-      } catch (error) {
-        $('loginError').textContent = error.message;
-      } finally {
-        button.disabled = false;
-      }
-    };
+    let emailOtpSent = false;
     $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
-      if (siteKey && !turnstileToken) {
+      const email = $('email').value.trim();
+      if (!email) {
+        $('email').focus();
+        $('loginError').textContent = 'Enter your email address first.';
+        return;
+      }
+      if (!emailOtpSent && siteKey && !turnstileToken) {
         $('loginError').textContent = 'Complete the security check first.';
         return;
       }
       const button = $('loginForm').querySelector('button[type="submit"]');
       button.disabled = true;
-      $('loginError').textContent = 'Signing in…';
       try {
-        const options = { email: $('email').value.trim(), password: $('password').value };
-        if (siteKey) options.options = { captchaToken: turnstileToken };
-        const { error } = await dropyClient.auth.signInWithPassword(options);
-        if (error) throw error;
-        $('password').value = '';
-        if ($('rememberMe')?.checked) localStorage.setItem('airgem-admin-remembered-email', $('email').value.trim());
-        else localStorage.removeItem('airgem-admin-remembered-email');
-        $('loginError').textContent = '';
-        await initialize();
+        if (!emailOtpSent) {
+          $('loginError').textContent = 'Sending verification code…';
+          const options = { shouldCreateUser: false };
+          if (siteKey) options.captchaToken = turnstileToken;
+          const { error } = await dropyClient.auth.signInWithOtp({ email, options });
+          if (error) throw error;
+          emailOtpSent = true;
+          $('otpField').hidden = false;
+          $('emailOtp').required = true;
+          $('emailOtp').focus();
+          button.textContent = 'Verify OTP';
+          $('loginError').textContent = 'A 6-digit verification code has been sent to your email.';
+        } else {
+          const token = $('emailOtp').value.trim();
+          if (!/^[0-9]{6}$/.test(token)) throw Error('Enter the 6-digit code sent to your email.');
+          $('loginError').textContent = 'Verifying code…';
+          const { error } = await dropyClient.auth.verifyOtp({ email, token, type: 'email' });
+          if (error) throw error;
+          $('loginError').textContent = '';
+          await initialize();
+        }
       } catch (error) {
         $('loginError').textContent = error.message;
       } finally {
         button.disabled = false;
-        if (siteKey && turnstileWidget !== null) {
+        if (!emailOtpSent && siteKey && turnstileWidget !== null) {
           turnstileToken = '';
           window.turnstile?.reset(turnstileWidget);
         }
