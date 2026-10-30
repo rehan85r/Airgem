@@ -991,9 +991,9 @@ body:not([data-view]) #airgemTurnstile > div {
 }
 
 
-/* Keep exactly 20px between Remember Me, Turnstile, and Login. */
+/* Tighten the Turnstile spacing: 20px total including the form grid gap. */
 body:not([data-view]) #loginBox #turnstileContainer {
-  margin: 20px auto !important;
+  margin: 4px auto !important;
 }
 body:not([data-view]) #loginBox .button.primary {
   margin-top: 0 !important;
