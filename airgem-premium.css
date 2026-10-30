@@ -704,3 +704,28 @@ body:not([data-view]) #loginBox > p.muted {
 body:not([data-view]) #loginBox #loginHeading + p.muted {
   text-align: center !important;
 }
+
+
+/* Icons inside admin login input fields. */
+body:not([data-view]) #loginBox .auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+body:not([data-view]) #loginBox .auth-input-wrap > i {
+  position: absolute;
+  left: 17px;
+  z-index: 1;
+  display: inline-flex;
+  color: #94A3B8;
+  pointer-events: none;
+}
+body:not([data-view]) #loginBox .auth-input-wrap > i svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.8;
+}
+body:not([data-view]) #loginBox .auth-input-wrap input {
+  width: 100%;
+  padding-left: 46px !important;
+}
