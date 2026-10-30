@@ -966,3 +966,26 @@ body:not([data-view]) .auth-brand span {
   font-weight: 700;
   line-height: 1;
 }
+
+
+/* Center the Cloudflare Turnstile security check on the admin login form. */
+body:not([data-view]) #turnstileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+  margin: 0 auto 16px;
+  overflow: visible;
+  text-align: center;
+}
+body:not([data-view]) #airgemTurnstile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body:not([data-view]) #airgemTurnstile > div {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
