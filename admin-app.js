@@ -1080,12 +1080,12 @@
       $('email').value = rememberedEmail;
       $('rememberMe').checked = true;
     }
-    $('googleSignIn').onclick = () => {
+    $('googleSignIn')?.addEventListener('click', () => {
       $('loginError').textContent = 'Google sign-in is not configured yet.';
-    };
-    $('passkeySignIn').onclick = () => {
+    });
+    $('passkeySignIn')?.addEventListener('click', () => {
       $('loginError').textContent = 'Passkey sign-in is not configured yet.';
-    };
+    });
     let emailOtpSent = false;
     $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
@@ -1133,7 +1133,7 @@
         }
       }
     };
-    $('mfaCancel').onclick = async () => {
+    $('mfaCancel')?.addEventListener('click', async () => {
       if (pendingMfa?.mode === 'enroll') {
         const { error } = await dropyClient.auth.mfa.unenroll({ factorId: pendingMfa.id });
         if (error) {
@@ -1145,7 +1145,7 @@
         $('mfaQr').hidden = true;
         await initialize();
       } else await signOut();
-    };
+    });
     $('mfaForm').onsubmit = async (event) => {
       event.preventDefault();
       const code = $('mfaCode').value.trim();
