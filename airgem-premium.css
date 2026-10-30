@@ -1031,3 +1031,15 @@ body:not([data-view]) #loginBox > form#loginForm {
   padding: 0 !important;
   row-gap: 16px !important;
 }
+
+
+/* Final override: 30px from Welcome subtitle to the first login input. */
+body:not([data-view]) #loginBox > p.muted + form#loginForm {
+  margin-block-start: 30px !important;
+  margin-top: 30px !important;
+  padding-top: 0 !important;
+}
+body:not([data-view]) #loginBox > p.muted {
+  margin-block-end: 0 !important;
+  margin-bottom: 0 !important;
+}
