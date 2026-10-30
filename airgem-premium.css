@@ -598,6 +598,5 @@ body:not([data-view]) #loginBox .auth-footnote svg {
   color: #64748B;
 }
 @media (max-width: 480px) {
-  body:not([data-view]) .auth-shell { padding: 112px 15px 40px; }
   body:not([data-view]) #loginBox.auth-card { max-width: 100%; }
 }
