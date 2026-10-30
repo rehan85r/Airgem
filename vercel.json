@@ -53,5 +53,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/admin.html",
+      "destination": "/admin",
+      "permanent": true
+    }
   ]
 }
