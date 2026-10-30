@@ -691,3 +691,10 @@ body:not([data-view]) .auth-shell {
     max-width: 100%;
   }
 }
+
+
+/* Keep the admin sign-in heading and welcome line centered. */
+body:not([data-view]) #loginBox #loginHeading,
+body:not([data-view]) #loginBox > p.muted {
+  text-align: center !important;
+}
