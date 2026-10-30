@@ -1003,13 +1003,13 @@
     });
     document.querySelector('[data-project-section]').classList.add('active');
     $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
-    $('adminProjectPickerSearchClear').onclick = () => {
+    $('adminProjectPickerSearchClear')?.onclick = () => {
       $('adminProjectPickerSearch').value = '';
       renderProjectPicker();
       $('adminProjectPickerSearch').focus();
     };
     $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
-    $('allAirdropsSearchClear').onclick = () => {
+    $('allAirdropsSearchClear')?.onclick = () => {
       $('allAirdropsSearch').value = '';
       renderAllAirdrops();
       $('allAirdropsSearch').focus();
@@ -1030,20 +1030,22 @@
       page.classList.add('airgem-editor-exit');
       page.addEventListener('animationend', finish, { once: true });
     };
-    $('backToProjects').onclick = $('cancelEdit').onclick = closeEditorWithMotion;
-    $('mobileEditorBack').onclick = $('mobileEditorClose').onclick = closeEditorWithMotion;
-    $('remove').onclick = () => removeProject(state.selected);
-    $('form').onsubmit = publish;
-    $('trendingSelect').oninput = renderTrendingSearch;
-    $('trendingSearchClear').onclick = () => {
+    if ($('backToProjects')) $('backToProjects').onclick = closeEditorWithMotion;
+    if ($('cancelEdit')) $('cancelEdit').onclick = closeEditorWithMotion;
+    if ($('mobileEditorBack')) $('mobileEditorBack').onclick = closeEditorWithMotion;
+    if ($('mobileEditorClose')) $('mobileEditorClose').onclick = closeEditorWithMotion;
+    $('remove')?.onclick = () => removeProject(state.selected);
+    $('form')?.onsubmit = publish;
+    $('trendingSelect')?.oninput = renderTrendingSearch;
+    $('trendingSearchClear')?.onclick = () => {
       $('trendingSelect').value = '';
       renderTrendingSearch();
       $('trendingSelect').focus();
     };
-    $('saveTrending').onclick = saveTrending;
-    $('publishAllAirdrops').onclick = publishAllAirdrops;
-    $('logout').onclick = signOut;
-    $('mfaSetup').onclick = startMfaSetup;
+    $('saveTrending')?.onclick = saveTrending;
+    $('publishAllAirdrops')?.onclick = publishAllAirdrops;
+    $('logout')?.onclick = signOut;
+    $('mfaSetup')?.onclick = startMfaSetup;
     document.addEventListener('keydown', (event) => {
       const tab = event.target.closest('[data-editor-tab]');
       if (tab && ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
@@ -1087,7 +1089,7 @@
       $('loginError').textContent = 'Passkey sign-in is not configured yet.';
     });
     let emailOtpSent = false;
-    $('loginForm').onsubmit = async (event) => {
+    $('loginForm')?.onsubmit = async (event) => {
       event.preventDefault();
       const email = $('email').value.trim();
       if (!email) {
@@ -1146,7 +1148,7 @@
         await initialize();
       } else await signOut();
     });
-    $('mfaForm').onsubmit = async (event) => {
+    $('mfaForm')?.onsubmit = async (event) => {
       event.preventDefault();
       const code = $('mfaCode').value.trim();
       if (!/^[0-9]{6}$/.test(code)) {
