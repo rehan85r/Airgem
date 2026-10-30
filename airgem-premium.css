@@ -528,3 +528,23 @@ body:not([data-view]) #loginBox #loginHeading,
 body:not([data-view]) #loginBox > p.muted {
   text-align: center;
 }
+
+
+/* Explicitly separate the off-white login page from white input fields. */
+html:has(body:not([data-view])),
+body:not([data-view]) {
+  background: #F8FAFC !important;
+}
+body:not([data-view]) .auth-shell {
+  background: #F8FAFC !important;
+}
+body:not([data-view]) #loginBox .field input {
+  background: #FFFFFF !important;
+  border: 0 !important;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+}
+body:not([data-view]) #loginBox .field input:focus {
+  background: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(30,144,255,.12) !important;
+}
