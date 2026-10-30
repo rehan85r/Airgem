@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" href="/admin.css?v=admin-cleanup-20261030" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-      <link rel="stylesheet" href="/airgem-premium.css?v=brand-gap-70-fix2-20261030">
+      <link rel="stylesheet" href="/airgem-premium.css?v=turnstile-above-footer-20261030">
 </head>
   <body>
     <a class="skip-link" href="#mainContent">Skip to content</a>
@@ -41,7 +41,6 @@
               <input id="emailOtp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6-Digit OTP" aria-label="6-Digit OTP" />
             </div>
           </div>
-          <div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div></div>
           <button class="button primary full-width" type="submit">Login</button>
           <div class="auth-social-actions" aria-label="Additional sign-in options">
             <button type="button" class="auth-social-button" id="googleSignIn" aria-label="Continue with Google" title="Continue with Google">
@@ -53,6 +52,7 @@
           </div>
           <p id="loginError" class="error-message" role="alert" aria-live="polite"></p>
         </form>
+        <div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div></div>
         <p class="auth-footnote"><i data-lucide="lock-keyhole" aria-hidden="true"></i> Authorized Personal Only</p>
       </section>
       <section id="mfaBox" class="auth-card" hidden aria-labelledby="mfaHeading">
