@@ -510,7 +510,10 @@ body:not([data-view]) .auth-copyright {
 }
 
 
-/* Keep the sign-in back control at the top-left with a 15px inset. */
+/* Anchor the sign-in back control to the page shell, not the login content. */
+body:not([data-view]) #loginBox.auth-card {
+  position: static;
+}
 body:not([data-view]) .auth-back-button {
   position: absolute;
   top: 15px;
