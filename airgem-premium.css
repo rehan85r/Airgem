@@ -897,3 +897,10 @@ body:not([data-view]) .auth-back-button {
   top: 15px !important;
   left: 15px !important;
 }
+
+
+/* Set admin login back arrow icon to 20px. */
+body:not([data-view]) .auth-back-button svg {
+  width: 20px !important;
+  height: 20px !important;
+}
