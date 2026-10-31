@@ -9572,3 +9572,8 @@ body:not([data-view]) #loginBox .auth-footnote svg {
   body:not([data-view]) #loginBox > form#loginForm { margin-top: 18px; }
   body:not([data-view]) #loginBox .auth-social-divider { margin: 12px 0 14px; }
 }
+
+/* Admin login: keep exactly 20px between the email field and Login button. */
+body:not([data-view]) #loginBox > form#loginForm > .field:first-child {
+  margin-bottom: -10px;
+}
