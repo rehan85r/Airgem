@@ -1086,50 +1086,110 @@
       $('loginError').textContent = 'GitHub sign-in is not configured yet.';
     });
     let emailOtpSent = false;
+    let emailOtpVerifying = false;
+    const otpDigits = Array.from(document.querySelectorAll('#otpField .otp-digit'));
+    const otpValue = () => otpDigits.map((input) => input.value).join('');
+    const verifyEmailOtp = async () => {
+      const token = otpValue();
+      if (!emailOtpSent || token.length !== 6 || emailOtpVerifying) return;
+      emailOtpVerifying = true;
+      $('emailOtp').value = token;
+      $('loginError').textContent = 'Verifying code…';
+      otpDigits.forEach((input) => { input.disabled = true; });
+      try {
+        const { error } = await dropyClient.auth.verifyOtp({
+          email: $('email').value.trim(),
+          token,
+          type: 'email',
+        });
+        if (error) throw error;
+        $('loginError').textContent = '';
+        await initialize();
+      } catch (error) {
+        $('loginError').textContent = error.message || 'Unable to verify code. Please try again.';
+        otpDigits.forEach((input) => { input.disabled = false; });
+        otpDigits[5]?.focus();
+        otpDigits[5]?.select();
+      } finally {
+        emailOtpVerifying = false;
+      }
+    };
+    const distributeOtp = (value, startIndex = 0) => {
+      const digits = String(value).replace(/\\D/g, '').slice(0, 6 - startIndex);
+      digits.split('').forEach((digit, offset) => {
+        if (otpDigits[startIndex + offset]) otpDigits[startIndex + offset].value = digit;
+      });
+      $('emailOtp').value = otpValue();
+      const next = Math.min(startIndex + digits.length, 5);
+      if (digits.length) otpDigits[next]?.focus();
+      if (otpValue().length === 6) verifyEmailOtp();
+    };
+    otpDigits.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        const value = input.value;
+        if (value.length > 1) {
+          input.value = '';
+          distributeOtp(value, index);
+          return;
+        }
+        input.value = value.replace(/\\D/g, '').slice(-1);
+        $('emailOtp').value = otpValue();
+        if (input.value && index < 5) otpDigits[index + 1].focus();
+        if (otpValue().length === 6) verifyEmailOtp();
+      });
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace' && !input.value && index > 0) {
+          otpDigits[index - 1].focus();
+          otpDigits[index - 1].value = '';
+          $('emailOtp').value = otpValue();
+        } else if (event.key === 'ArrowLeft' && index > 0) {
+          otpDigits[index - 1].focus();
+        } else if (event.key === 'ArrowRight' && index < 5) {
+          otpDigits[index + 1].focus();
+        }
+      });
+      input.addEventListener('paste', (event) => {
+        const pasted = event.clipboardData?.getData('text') || '';
+        if (pasted) {
+          event.preventDefault();
+          distributeOtp(pasted, index);
+        }
+      });
+    });
     if ($('loginForm')) $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
+      if (emailOtpSent) return;
       const email = $('email').value.trim();
       if (!email) {
         $('email').focus();
         $('loginError').textContent = 'Enter your email address first.';
         return;
       }
-      if (!emailOtpSent && siteKey && !turnstileToken) {
+      if (siteKey && !turnstileToken) {
         $('loginError').textContent = 'Complete the security check first.';
         return;
       }
       const button = $('loginForm').querySelector('button[type="submit"]');
       button.disabled = true;
+      $('loginError').textContent = 'Sending verification code…';
       try {
-        if (!emailOtpSent) {
-          $('loginError').textContent = 'Sending verification code…';
-          const options = { shouldCreateUser: false };
-          if (siteKey) options.captchaToken = turnstileToken;
-          const { error } = await dropyClient.auth.signInWithOtp({ email, options });
-          if (error) throw error;
-          emailOtpSent = true;
-          $('otpField').hidden = false;
-          $('emailOtp').required = true;
-          $('emailOtp').focus();
-          button.textContent = 'Verify OTP';
-          $('loginError').textContent = 'A 6-digit verification code has been sent to your email.';
-        } else {
-          const token = $('emailOtp').value.trim();
-          if (!/^[0-9]{6}$/.test(token)) throw Error('Enter the 6-digit code sent to your email.');
-          $('loginError').textContent = 'Verifying code…';
-          const { error } = await dropyClient.auth.verifyOtp({ email, token, type: 'email' });
-          if (error) throw error;
-          $('loginError').textContent = '';
-          await initialize();
-        }
+        const options = { shouldCreateUser: false };
+        if (siteKey) options.captchaToken = turnstileToken;
+        const { error } = await dropyClient.auth.signInWithOtp({ email, options });
+        if (error) throw error;
+        emailOtpSent = true;
+        $('otpField').hidden = false;
+        button.hidden = true;
+        $('loginError').textContent = 'A 6-digit verification code has been sent to your email.';
+        otpDigits[0]?.focus();
       } catch (error) {
         $('loginError').textContent = error.message;
       } finally {
-        button.disabled = false;
         if (!emailOtpSent && siteKey && turnstileWidget !== null) {
           turnstileToken = '';
           window.turnstile?.reset(turnstileWidget);
         }
+        button.disabled = false;
       }
     };
     $('mfaCancel')?.addEventListener('click', async () => {
