@@ -9716,7 +9716,7 @@ body:not([data-view]) #loginBox .otp-digit:disabled { opacity: .65; }
 body:not([data-view]) #loginBox #emailOtp { display: none !important; }
 body:not([data-view]) #loginBox #loginError {
   width: 100%;
-  margin: 0;
+  margin: 0 0 -10px;
   text-align: center;
 }
 body:not([data-view]) #loginBox #loginForm > button[hidden] { display: none !important; }
