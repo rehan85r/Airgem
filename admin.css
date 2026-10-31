@@ -9684,7 +9684,7 @@ body:not([data-view]) #loginBox #otpField.auth-otp-field {
   display: grid;
   width: 100%;
   gap: 12px;
-  margin: 0;
+  margin: 0 0 -10px;
 }
 body:not([data-view]) #loginBox .otp-digit-grid {
   display: flex;
