@@ -374,7 +374,7 @@ body:not([data-view]) .auth-brand img {
   display: block;
   width: 30px;
   height: 30px;
-  border-radius: 15px;
+  border-radius: 12px;
   object-fit: contain;
 }
 body:not([data-view]) .auth-brand span {
@@ -538,6 +538,12 @@ body:not([data-view]) #loginBox .auth-social-button svg {
   display: block;
   width: 22px;
   height: 22px;
+}
+body:not([data-view]) #loginBox .auth-social-button i {
+  display: block;
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.8;
 }
 body:not([data-view]) #loginBox .auth-social-button#googleSignIn svg {
   width: 24px;
