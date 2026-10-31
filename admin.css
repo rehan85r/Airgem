@@ -9372,25 +9372,13 @@ body:not([data-view]) #loginBox.auth-card {
   background: transparent;
   box-shadow: none;
 }
-body:not([data-view]) #loginBox .auth-eyebrow {
-  width: fit-content;
-  margin: 0 auto 12px;
-  padding: 5px 11px;
-  border: 1px solid #DBEAFE;
-  border-radius: 999px;
-  background: #EFF6FF;
-  color: #1E90FF;
-  font: 700 10px/1.2 Inter, sans-serif;
-  letter-spacing: 1.35px;
-  text-align: center;
-}
 body:not([data-view]) #loginBox #loginHeading {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: #1B2E50 !important;
-  font-size: 32px !important;
-  line-height: 1.15;
-  font-weight: 750 !important;
-  letter-spacing: -1.25px;
+  font-size: 28px !important;
+  line-height: 1.25;
+  font-weight: 700 !important;
+  letter-spacing: -0.9px;
   text-align: center;
 }
 body:not([data-view]) #loginBox > p.muted {
@@ -9399,8 +9387,8 @@ body:not([data-view]) #loginBox > p.muted {
   margin: 0;
   padding: 0;
   color: #64748B;
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.5;
   font-weight: 400;
   text-align: center;
 }
