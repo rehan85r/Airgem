@@ -447,7 +447,7 @@ body:not([data-view]) #loginBox > form#loginForm {
   width: 100%;
   margin: 24px 0 0;
   padding: 0;
-  row-gap: 12px;
+  row-gap: 30px;
 }
 body:not([data-view]) #loginBox .field {
   display: grid;
@@ -620,6 +620,6 @@ body:not([data-view]) #loginBox .auth-footnote svg {
 }
 @media (max-height: 760px) {
   body:not([data-view]) .auth-shell { padding-top: 143px; padding-bottom: 150px; }
-  body:not([data-view]) #loginBox > form#loginForm { margin-top: 18px; row-gap: 10px; }
+  body:not([data-view]) #loginBox > form#loginForm { margin-top: 18px; }
   body:not([data-view]) #loginBox .auth-social-divider { margin: 12px 0 14px; }
 }
