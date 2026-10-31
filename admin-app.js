@@ -1082,6 +1082,9 @@
     $('passkeySignIn')?.addEventListener('click', () => {
       $('loginError').textContent = 'Passkey sign-in is not configured yet.';
     });
+    $('githubSignIn')?.addEventListener('click', () => {
+      $('loginError').textContent = 'GitHub sign-in is not configured yet.';
+    });
     let emailOtpSent = false;
     if ($('loginForm')) $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
