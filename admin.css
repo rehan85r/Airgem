@@ -9396,6 +9396,23 @@ body:not([data-view]) .auth-menu-description {
   color: #64748B;
   font: 400 11px/1.55 Inter, sans-serif;
 }
+body:not([data-view]) details.auth-menu { position: absolute; top: 15px; right: 15px; z-index: 20; }
+body:not([data-view]) details.auth-menu > summary { list-style: none; }
+body:not([data-view]) details.auth-menu > summary::marker,
+body:not([data-view]) details.auth-menu-nested > summary::marker { content: ""; display: none; }
+body:not([data-view]) details.auth-menu > .auth-menu-panel {
+  display: none;
+  position: absolute;
+  top: 43px;
+  right: 0;
+  width: 230px;
+  box-sizing: border-box;
+}
+body:not([data-view]) details.auth-menu[open] > .auth-menu-panel { display: block; }
+body:not([data-view]) details.auth-menu-nested > summary { display: flex; }
+body:not([data-view]) details.auth-menu-nested > summary::-webkit-details-marker,
+body:not([data-view]) details.auth-menu > summary::-webkit-details-marker { display: none; }
+
 body:not([data-view]) .auth-back-button svg,
 body:not([data-view]) .auth-menu-button svg {
   display: block;
