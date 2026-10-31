@@ -2,12 +2,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Keep the custom domain as the canonical host.
-    if (url.hostname === "airgem.pages.dev") {
-      url.hostname = "airgem.app";
-      return Response.redirect(url.toString(), 301);
-    }
-
     // Serve the admin page at /admin without changing the browser URL.
     if (url.pathname === "/admin" || url.pathname === "/admin/") {
       url.pathname = "/admin.html";
