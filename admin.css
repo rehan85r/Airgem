@@ -276,7 +276,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 }
 .auth-card form {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   margin-top: 28px;
 }
 .auth-icon {
@@ -2329,7 +2329,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 }
 .auth-card form {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   margin-top: 28px;
 }
 .auth-icon {
@@ -4470,7 +4470,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 }
 .auth-card form {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   margin-top: 28px;
 }
 .auth-icon {
@@ -6523,7 +6523,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 }
 .auth-card form {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   margin-top: 28px;
 }
 .auth-icon {
