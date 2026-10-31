@@ -374,6 +374,7 @@ body:not([data-view]) .auth-brand img {
   display: block;
   width: 30px;
   height: 30px;
+  border-radius: 15px;
   object-fit: contain;
 }
 body:not([data-view]) .auth-brand span {
