@@ -1115,7 +1115,7 @@
       }
     };
     const distributeOtp = (value, startIndex = 0) => {
-      const digits = String(value).replace(/\\D/g, '').slice(0, 6 - startIndex);
+      const digits = String(value).replace(/\D/g, '').slice(0, 6 - startIndex);
       digits.split('').forEach((digit, offset) => {
         if (otpDigits[startIndex + offset]) otpDigits[startIndex + offset].value = digit;
       });
@@ -1132,7 +1132,7 @@
           distributeOtp(value, index);
           return;
         }
-        input.value = value.replace(/\\D/g, '').slice(-1);
+        input.value = value.replace(/\D/g, '').slice(-1);
         $('emailOtp').value = otpValue();
         if (input.value && index < 5) otpDigits[index + 1].focus();
         if (otpValue().length === 6) verifyEmailOtp();
