@@ -1183,7 +1183,7 @@
         return;
       }
       if (siteKey && !turnstileToken) {
-        $('loginError').textContent = 'Complete the security check first.';
+        $('loginError').textContent = 'Complete The Security Check First.';
         return;
       }
       const button = $('loginForm').querySelector('button[type="submit"]');
