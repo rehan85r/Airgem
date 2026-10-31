@@ -9495,19 +9495,19 @@ body:not([data-view]) #loginBox .auth-social-button:focus-visible {
 }
 body:not([data-view]) #loginBox .auth-social-button svg {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
 body:not([data-view]) #loginBox .auth-social-button i {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   stroke-width: 1.8;
 }
 body:not([data-view]) #loginBox .auth-social-button#googleSignIn svg {
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
 }
 body:not([data-view]) #loginBox .error-message { margin: 0; }
 body:not([data-view]) #loginBox #turnstileContainer[hidden] { display: none !important; }
