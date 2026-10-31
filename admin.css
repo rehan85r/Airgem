@@ -9599,7 +9599,11 @@ body:not([data-view]) #loginBox .auth-social-button#googleSignIn svg {
   height: 25px;
   flex: 0 0 25px;
 }
-body:not([data-view]) #loginBox .error-message { margin: 0; }
+body:not([data-view]) #loginBox .error-message {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
 body:not([data-view]) #loginBox #turnstileContainer[hidden] { display: none !important; }
 body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
   position: fixed;
