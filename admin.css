@@ -9610,16 +9610,16 @@ body:not([data-view]) #loginBox .error-message.is-info {
 body:not([data-view]) #loginBox #turnstileContainer[hidden] { display: none !important; }
 body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 50%;
+  right: auto;
   top: 77vh;
   bottom: auto;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   z-index: 6;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: min(100% - 32px, 340px);
   min-height: 65px;
   margin: 0;
   padding: 0;
@@ -9631,6 +9631,7 @@ body:not([data-view]) #airgemTurnstile {
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 100%;
 }
 body:not([data-view]) #airgemTurnstile > div {
   margin-left: auto !important;
