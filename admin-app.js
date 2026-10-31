@@ -784,9 +784,23 @@
       showAuth('mfa');
     }
   }
+  function positionTurnstileBetweenLoginOptions() {
+    const container = $('turnstileContainer');
+    const social = $('loginBox')?.querySelector('.auth-social-actions');
+    const footnote = $('loginBox')?.querySelector('.auth-footnote');
+    if (!container || container.hidden || !social || !footnote) return;
+    const socialBottom = social.getBoundingClientRect().bottom;
+    const footnoteTop = footnote.getBoundingClientRect().top;
+    const availableGap = footnoteTop - socialBottom;
+    const centerY = socialBottom + availableGap / 2;
+    container.style.setProperty('--turnstile-center-y', `${centerY}px`);
+  }
   function configureTurnstile() {
     if (!siteKey) return;
     $('turnstileContainer').hidden = false;
+    requestAnimationFrame(positionTurnstileBetweenLoginOptions);
+    window.addEventListener('resize', positionTurnstileBetweenLoginOptions, { passive: true });
+    window.visualViewport?.addEventListener('resize', positionTurnstileBetweenLoginOptions, { passive: true });
     const script = document.createElement('script');
     script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     script.dataset.airgemTurnstile = 'true';
@@ -807,6 +821,7 @@
           turnstileToken = '';
         },
       });
+      requestAnimationFrame(positionTurnstileBetweenLoginOptions);
     };
     script.onerror = () => {
       $('loginError').textContent = 'The security check could not load. Reload to try again.';
