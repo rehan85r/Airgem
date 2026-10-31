@@ -798,9 +798,22 @@
   function configureTurnstile() {
     if (!siteKey) return;
     $('turnstileContainer').hidden = false;
+    const schedulePositionUpdate = () => requestAnimationFrame(positionTurnstileBetweenLoginOptions);
     requestAnimationFrame(positionTurnstileBetweenLoginOptions);
-    window.addEventListener('resize', positionTurnstileBetweenLoginOptions, { passive: true });
-    window.visualViewport?.addEventListener('resize', positionTurnstileBetweenLoginOptions, { passive: true });
+    window.addEventListener('resize', schedulePositionUpdate, { passive: true });
+    window.visualViewport?.addEventListener('resize', schedulePositionUpdate, { passive: true });
+    const loginBox = $('loginBox');
+    const loginError = $('loginError');
+    if (loginBox && window.ResizeObserver) {
+      new ResizeObserver(schedulePositionUpdate).observe(loginBox);
+    }
+    if (loginError && window.MutationObserver) {
+      new MutationObserver(schedulePositionUpdate).observe(loginError, {
+        childList: true,
+        characterData: true,
+        subtree: true,
+      });
+    }
     const script = document.createElement('script');
     script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     script.dataset.airgemTurnstile = 'true';
@@ -821,7 +834,7 @@
           turnstileToken = '';
         },
       });
-      requestAnimationFrame(positionTurnstileBetweenLoginOptions);
+      schedulePositionUpdate();
     };
     script.onerror = () => {
       $('loginError').textContent = 'The security check could not load. Reload to try again.';
