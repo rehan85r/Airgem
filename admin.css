@@ -9517,7 +9517,11 @@ body:not([data-view]) #loginBox form > .button.primary {
   min-height: 48px;
   margin: 0;
   border-radius: 999px !important;
+  color: #FFFFFF;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
   font-weight: 700;
+  letter-spacing: -0.1px;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
   display: flex;
