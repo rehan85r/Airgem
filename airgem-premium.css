@@ -351,7 +351,7 @@ body:not([data-view]) .auth-shell {
   justify-content: flex-start;
   min-height: 100dvh;
   gap: 0;
-  padding: 112px 15px 40px;
+  padding: 96px 15px 40px;
   background: #F8FAFC !important;
   color: #1B2E50;
   font-family: Manrope, Inter, sans-serif;
@@ -445,9 +445,9 @@ body:not([data-view]) #loginBox > p.muted {
 body:not([data-view]) #loginBox > form#loginForm {
   display: grid;
   width: 100%;
-  margin: 30px 0 0;
+  margin: 26px 0 0;
   padding: 0;
-  row-gap: 16px;
+  row-gap: 12px;
 }
 body:not([data-view]) #loginBox .field {
   display: grid;
@@ -506,7 +506,7 @@ body:not([data-view]) #loginBox form > .button.primary {
   font-weight: 700;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
-  margin: 25px 0;
+  margin: 14px 0 16px;
   color: #64748B;
   font: 500 13px/1.4 Inter, sans-serif;
   text-align: center;
@@ -515,7 +515,7 @@ body:not([data-view]) #loginBox .auth-social-actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
   margin: 0 auto;
 }
@@ -523,9 +523,9 @@ body:not([data-view]) #loginBox .auth-social-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
   padding: 0;
   border: 1px solid #E2E8F0;
   border-radius: 50%;
@@ -566,7 +566,7 @@ body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 43px;
+  bottom: 48px;
   z-index: 6;
   display: flex;
   align-items: center;
@@ -592,7 +592,7 @@ body:not([data-view]) #loginBox .auth-footnote {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 10px;
+  bottom: 12px;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -617,4 +617,9 @@ body:not([data-view]) #loginBox .auth-footnote svg {
 }
 @media (max-width: 480px) {
   body:not([data-view]) #loginBox.auth-card { max-width: 100%; }
+}
+@media (max-height: 760px) {
+  body:not([data-view]) .auth-shell { padding-top: 82px; }
+  body:not([data-view]) #loginBox > form#loginForm { margin-top: 20px; row-gap: 10px; }
+  body:not([data-view]) #loginBox .auth-social-divider { margin: 10px 0 12px; }
 }
