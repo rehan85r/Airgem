@@ -351,7 +351,7 @@ body:not([data-view]) .auth-shell {
   justify-content: flex-start;
   min-height: 100dvh;
   gap: 0;
-  padding: 96px 15px 40px;
+  padding: 76px 20px 160px;
   background: #F8FAFC !important;
   color: #1B2E50;
   font-family: Manrope, Inter, sans-serif;
@@ -415,7 +415,7 @@ body:not([data-view]) .auth-menu-button svg {
 body:not([data-view]) #loginBox.auth-card {
   display: block;
   width: 100%;
-  max-width: 410px;
+  max-width: 360px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -426,8 +426,8 @@ body:not([data-view]) #loginBox.auth-card {
 body:not([data-view]) #loginBox #loginHeading {
   margin: 0 0 8px;
   color: #1B2E50 !important;
-  font-size: 25px !important;
-  line-height: 1.25;
+  font-size: 24px !important;
+  line-height: 1.3;
   font-weight: 700 !important;
   letter-spacing: -.8px;
   text-align: center;
@@ -445,7 +445,7 @@ body:not([data-view]) #loginBox > p.muted {
 body:not([data-view]) #loginBox > form#loginForm {
   display: grid;
   width: 100%;
-  margin: 26px 0 0;
+  margin: 24px 0 0;
   padding: 0;
   row-gap: 12px;
 }
@@ -480,8 +480,8 @@ body:not([data-view]) #loginBox .auth-input-wrap > svg {
 body:not([data-view]) #loginBox .auth-input-wrap input {
   box-sizing: border-box;
   width: 100%;
-  min-height: 50px;
-  height: 50px;
+  min-height: 48px;
+  height: 48px;
   padding: 0 16px 0 46px;
   border: 1px solid #CBD5E1;
   border-radius: 999px;
@@ -494,19 +494,19 @@ body:not([data-view]) #loginBox .auth-input-wrap input {
 body:not([data-view]) #loginBox .auth-input-wrap input::placeholder { color: #94A3B8; }
 body:not([data-view]) #loginBox .auth-input-wrap input:focus,
 body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
-  border: 0;
+  border: 1px solid #1E90FF;
   outline: none;
-  box-shadow: none;
+  box-shadow: 0 0 0 3px rgba(30,144,255,.10);
 }
 body:not([data-view]) #loginBox form > .button.primary {
   width: 100%;
-  min-height: 50px;
+  min-height: 48px;
   margin: 0;
   border-radius: 999px !important;
   font-weight: 700;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
-  margin: 14px 0 16px;
+  margin: 16px 0 18px;
   color: #64748B;
   font: 500 13px/1.4 Inter, sans-serif;
   text-align: center;
@@ -523,9 +523,9 @@ body:not([data-view]) #loginBox .auth-social-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   padding: 0;
   border: 1px solid #E2E8F0;
   border-radius: 50%;
@@ -616,10 +616,10 @@ body:not([data-view]) #loginBox .auth-footnote svg {
   color: #64748B;
 }
 @media (max-width: 480px) {
-  body:not([data-view]) #loginBox.auth-card { max-width: 100%; }
+  body:not([data-view]) #loginBox.auth-card { max-width: 360px; }
 }
 @media (max-height: 760px) {
-  body:not([data-view]) .auth-shell { padding-top: 82px; }
-  body:not([data-view]) #loginBox > form#loginForm { margin-top: 20px; row-gap: 10px; }
-  body:not([data-view]) #loginBox .auth-social-divider { margin: 10px 0 12px; }
+  body:not([data-view]) .auth-shell { padding-top: 68px; padding-bottom: 150px; }
+  body:not([data-view]) #loginBox > form#loginForm { margin-top: 18px; row-gap: 10px; }
+  body:not([data-view]) #loginBox .auth-social-divider { margin: 12px 0 14px; }
 }
