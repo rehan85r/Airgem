@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/admin.css?v=admin-menu-fix-20261031" />
+    <link rel="stylesheet" href="/admin.css?v=admin-cache-action-20261031" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
   <body>
@@ -26,7 +26,7 @@
         <summary class="auth-menu-button" aria-label="More options" title="More options"><i data-lucide="ellipsis-vertical" aria-hidden="true"></i></summary>
         <div class="auth-menu-panel">
           <a href="" class="auth-menu-item" onclick="window.location.reload(); return false;"><i data-lucide="refresh-cw" aria-hidden="true"></i><span>Refresh Page</span></a>
-          <button type="button" class="auth-menu-item" id="copyAdminLink"><i data-lucide="link" aria-hidden="true"></i><span>Copy Admin Link</span></button>
+          <button type="button" class="auth-menu-item" id="clearSiteCache"><i data-lucide="trash-2" aria-hidden="true"></i><span>Clear Cache</span></button>
           <details class="auth-menu-nested">
             <summary class="auth-menu-item"><i data-lucide="info" aria-hidden="true"></i><span>About Airgem</span><i data-lucide="chevron-right" class="auth-menu-chevron" aria-hidden="true"></i></summary>
             <p class="auth-menu-description">Airgem is a crypto opportunity discovery platform for airdrops, testnets, mainnets, whitelist campaigns and points programs.</p>
@@ -672,17 +672,21 @@
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
     <script src="/admin-app.js?v=otp-cleanup-20261030" defer></script>
     <script>
-      document.getElementById("copyAdminLink")?.addEventListener("click", async () => {
-        const button = document.getElementById("copyAdminLink");
+      document.getElementById("clearSiteCache")?.addEventListener("click", async () => {
+        const button = document.getElementById("clearSiteCache");
         const label = button?.querySelector("span");
+        if (label) label.textContent = "Clearing...";
         try {
-          await navigator.clipboard.writeText(window.location.origin + "/admin");
-          if (label) label.textContent = "Copied!";
-          setTimeout(() => { if (label) label.textContent = "Copy Admin Link"; }, 1800);
+          if ("caches" in window) {
+            const cacheNames = await caches.keys();
+            await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+          }
+          if (label) label.textContent = "Cache Cleared!";
+          setTimeout(() => window.location.reload(), 700);
         } catch (error) {
-          console.error("Could not copy admin link:", error);
-          if (label) label.textContent = "Copy failed";
-          setTimeout(() => { if (label) label.textContent = "Copy Admin Link"; }, 1800);
+          console.error("Could not clear site cache:", error);
+          if (label) label.textContent = "Clear failed";
+          setTimeout(() => { if (label) label.textContent = "Clear Cache"; }, 1800);
         }
       });
     </script>
