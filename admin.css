@@ -9604,6 +9604,9 @@ body:not([data-view]) #loginBox .error-message {
   margin: 0;
   text-align: center;
 }
+body:not([data-view]) #loginBox .error-message.is-info {
+  color: #64748B;
+}
 body:not([data-view]) #loginBox #turnstileContainer[hidden] { display: none !important; }
 body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
   position: fixed;
