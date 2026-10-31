@@ -9455,7 +9455,7 @@ body:not([data-view]) #loginBox form > .button.primary {
   font-weight: 700;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
-  margin: 12px 0 14px;
+  margin: 20px 0 14px;
   color: #64748B;
   font: 500 13px/1.4 Inter, sans-serif;
   text-align: center;
