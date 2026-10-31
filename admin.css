@@ -9464,7 +9464,7 @@ body:not([data-view]) #loginBox .auth-social-actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 100px;
   width: 100%;
   margin: 0 auto;
 }
