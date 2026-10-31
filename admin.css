@@ -9373,7 +9373,7 @@ body:not([data-view]) #loginBox.auth-card {
   box-shadow: none;
 }
 body:not([data-view]) #loginBox #loginHeading {
-  margin: 0 0 6px;
+  margin: -10px 0 6px;
   color: #1B2E50 !important;
   font-size: 28px !important;
   line-height: 1.25;
