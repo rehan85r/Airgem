@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/admin.css?v=social-login-message-center-20261031" />
+    <link rel="stylesheet" href="/admin.css?v=otp-six-digit-auto-20261031" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
   <body>
@@ -44,12 +44,18 @@
               <input id="email" type="email" autocomplete="username" placeholder="Email Address" autocapitalize="none" spellcheck="false" required />
             </div>
           </div>
-          <div class="field" id="otpField" hidden>
-            <div class="auth-input-wrap">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
-              <input id="emailOtp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6-Digit OTP" aria-label="6-Digit OTP" />
+          <div class="field auth-otp-field" id="otpField" hidden>
+            <div class="otp-digit-grid" role="group" aria-label="6-digit email verification code">
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 1" autocomplete="one-time-code" />
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 2"  />
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 3"  />
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 4"  />
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 5"  />
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 6"  />
             </div>
+            <input id="emailOtp" type="hidden" />
           </div>
+          <p id="loginError" class="error-message" role="alert" aria-live="polite"></p>
           <button class="button primary full-width" type="submit">Continue with Email</button>
           <p class="auth-social-divider">Or Continue With</p>
           <div class="auth-social-actions" aria-label="Additional sign-in options">
@@ -63,7 +69,6 @@
               <i data-lucide="fingerprint" aria-hidden="true"></i>
             </button>
           </div>
-          <p id="loginError" class="error-message" role="alert" aria-live="polite"></p>
         </form>
         <div id="turnstileContainer" class="field" hidden><div id="airgemTurnstile"></div></div>
         <p class="auth-footnote"><i data-lucide="lock-keyhole" aria-hidden="true"></i> Authorized Personnel Only</p>
