@@ -9529,7 +9529,9 @@ body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: clamp(190px, 15vh, 230px);
+  top: 73vh;
+  bottom: auto;
+  transform: translateY(-50%);
   z-index: 6;
   display: flex;
   align-items: center;
