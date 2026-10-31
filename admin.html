@@ -22,7 +22,21 @@
     <div class="auth-shell" id="authShell">
       <a class="auth-back-button" href="/" aria-label="Back to homepage" title="Back to homepage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
       <a class="auth-brand" href="/" aria-label="Airgem homepage"><img src="/airgem-logo.png" alt="" width="30" height="30"><span>Airgem</span></a>
-      <button type="button" class="auth-menu-button" aria-label="More options coming soon" title="More options coming soon" disabled><i data-lucide="ellipsis-vertical" aria-hidden="true"></i></button>
+      <details class="auth-menu">
+        <summary class="auth-menu-button" aria-label="More options" title="More options"><i data-lucide="ellipsis-vertical" aria-hidden="true"></i></summary>
+        <div class="auth-menu-panel">
+          <a href="/" class="auth-menu-item"><i data-lucide="house" aria-hidden="true"></i><span>Back to Website</span></a>
+          <details class="auth-menu-nested">
+            <summary class="auth-menu-item"><i data-lucide="shield-check" aria-hidden="true"></i><span>Security Information</span><i data-lucide="chevron-right" class="auth-menu-chevron" aria-hidden="true"></i></summary>
+            <p class="auth-menu-description">Your admin access is protected by secure authentication. Never share your login credentials or verification codes.</p>
+          </details>
+          <a href="" class="auth-menu-item" onclick="window.location.reload(); return false;"><i data-lucide="refresh-cw" aria-hidden="true"></i><span>Refresh Page</span></a>
+          <details class="auth-menu-nested">
+            <summary class="auth-menu-item"><i data-lucide="info" aria-hidden="true"></i><span>About Airgem</span><i data-lucide="chevron-right" class="auth-menu-chevron" aria-hidden="true"></i></summary>
+            <p class="auth-menu-description">Airgem helps you discover crypto airdrops, testnets, mainnets, whitelist opportunities and points campaigns.</p>
+          </details>
+        </div>
+      </details>
       <section id="loginBox" class="auth-card" aria-labelledby="loginHeading">
         <h1 id="loginHeading">Login</h1>
         <p class="muted">Welcome To Airgem Admin</p>
