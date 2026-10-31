@@ -9455,7 +9455,7 @@ body:not([data-view]) #loginBox form > .button.primary {
   font-weight: 700;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
-  margin: 20px 0 14px;
+  margin: 20px 0 20px;
   color: #64748B;
   font: 500 13px/1.4 Inter, sans-serif;
   text-align: center;
@@ -9570,7 +9570,7 @@ body:not([data-view]) #loginBox .auth-footnote svg {
 @media (max-height: 760px) {
   body:not([data-view]) .auth-shell { padding-top: 143px; padding-bottom: 150px; }
   body:not([data-view]) #loginBox > form#loginForm { margin-top: 18px; }
-  body:not([data-view]) #loginBox .auth-social-divider { margin: 12px 0 14px; }
+  body:not([data-view]) #loginBox .auth-social-divider { margin: 20px 0 20px; }
 }
 
 /* Admin login: keep exactly 20px between the email field and Login button. */
