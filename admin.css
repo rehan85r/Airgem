@@ -9455,10 +9455,24 @@ body:not([data-view]) #loginBox form > .button.primary {
   font-weight: 700;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   margin: 20px 0 20px;
   color: #64748B;
-  font: 500 13px/1.4 Inter, sans-serif;
+  font: 600 11px/1.4 Inter, sans-serif;
+  letter-spacing: 1.1px;
   text-align: center;
+  text-transform: uppercase;
+}
+body:not([data-view]) #loginBox .auth-social-divider::before,
+body:not([data-view]) #loginBox .auth-social-divider::after {
+  content: "";
+  flex: 1 1 auto;
+  max-width: 72px;
+  height: 1px;
+  background: #E2E8F0;
 }
 body:not([data-view]) #loginBox .auth-social-actions {
   display: flex;
