@@ -483,7 +483,7 @@ body:not([data-view]) #loginBox .auth-input-wrap input {
   min-height: 50px;
   height: 50px;
   padding: 0 16px 0 46px;
-  border: 0;
+  border: 1px solid #E2E8F0;
   border-radius: 999px;
   background: #FFFFFF;
   color: #1B2E50;
