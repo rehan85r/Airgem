@@ -9392,9 +9392,16 @@ body:not([data-view]) .auth-menu-item svg { width: 17px; height: 17px; color: #6
 body:not([data-view]) .auth-menu-chevron { margin-left: auto; width: 14px !important; height: 14px !important; }
 body:not([data-view]) .auth-menu-nested > summary::-webkit-details-marker { display: none; }
 body:not([data-view]) .auth-menu-description {
-  margin: 0 8px 8px 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
   color: #64748B;
-  font: 400 11px/1.55 Inter, sans-serif;
+  font: 400 13px/1.5 Inter, sans-serif;
 }
 body:not([data-view]) details.auth-menu { position: absolute; top: 15px; right: 15px; z-index: 20; }
 body:not([data-view]) details.auth-menu > summary { list-style: none; }
