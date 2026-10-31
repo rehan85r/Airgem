@@ -2327,11 +2327,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-.auth-card form {
-  display: grid;
-  gap: 30px;
-  margin-top: 28px;
-}
+
 .auth-icon {
   display: grid;
   place-items: center;
@@ -4468,11 +4464,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-.auth-card form {
-  display: grid;
-  gap: 30px;
-  margin-top: 28px;
-}
+
 .auth-icon {
   display: grid;
   place-items: center;
@@ -6521,11 +6513,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-.auth-card form {
-  display: grid;
-  gap: 30px;
-  margin-top: 28px;
-}
+
 .auth-icon {
   display: grid;
   place-items: center;
