@@ -351,7 +351,7 @@ body:not([data-view]) .auth-shell {
   justify-content: flex-start;
   min-height: 100dvh;
   gap: 0;
-  padding: 76px 20px 160px;
+  padding: 112px 20px 160px;
   background: #F8FAFC !important;
   color: #1B2E50;
   font-family: Manrope, Inter, sans-serif;
@@ -619,7 +619,7 @@ body:not([data-view]) #loginBox .auth-footnote svg {
   body:not([data-view]) #loginBox.auth-card { max-width: 360px; }
 }
 @media (max-height: 760px) {
-  body:not([data-view]) .auth-shell { padding-top: 68px; padding-bottom: 150px; }
+  body:not([data-view]) .auth-shell { padding-top: 96px; padding-bottom: 150px; }
   body:not([data-view]) #loginBox > form#loginForm { margin-top: 18px; row-gap: 10px; }
   body:not([data-view]) #loginBox .auth-social-divider { margin: 12px 0 14px; }
 }
