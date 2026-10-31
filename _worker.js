@@ -2,11 +2,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Serve the admin page at /admin without changing the browser URL.
-    if (url.pathname === "/admin" || url.pathname === "/admin/") {
-      url.pathname = "/admin.html";
-    }
-
     const response = await env.ASSETS.fetch(new Request(url, request));
     const secured = new Response(response.body, response);
 
