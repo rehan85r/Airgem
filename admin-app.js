@@ -1202,7 +1202,10 @@
         otpDigits[0]?.focus();
       } catch (error) {
         $('loginError').classList.remove('is-info');
-        $('loginError').textContent = error.message;
+        const cooldown = error.message.match(/you can only request this after (\\d+) seconds/i);
+        $('loginError').textContent = cooldown
+          ? `Please Wait ${cooldown[1]} Seconds Before Trying Again.`
+          : error.message;
       } finally {
         if (!emailOtpSent && siteKey && turnstileWidget !== null) {
           turnstileToken = '';
