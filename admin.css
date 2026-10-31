@@ -9609,15 +9609,17 @@ body:not([data-view]) #loginBox .error-message.is-info {
 }
 body:not([data-view]) #loginBox #turnstileContainer[hidden] { display: none !important; }
 body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
-  position: static;
-  transform: none;
-  z-index: auto;
+  position: fixed;
+  left: 50%;
+  top: var(--turnstile-center-y, 50%);
+  transform: translate(-50%, -50%);
+  z-index: 6;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: min(100% - 32px, 340px);
   min-height: 65px;
-  margin: 20px auto 0;
+  margin: 0;
   padding: 0;
   overflow: visible;
   text-align: center;
