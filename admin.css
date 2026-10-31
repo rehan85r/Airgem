@@ -9349,7 +9349,53 @@ body:not([data-view]) .auth-menu-button {
   box-shadow: 0 2px 8px rgba(27,46,80,.06);
 }
 body:not([data-view]) .auth-back-button { left: 15px; }
-body:not([data-view]) .auth-menu-button { right: 15px; cursor: default; opacity: 1; -webkit-appearance: none; appearance: none; }
+body:not([data-view]) .auth-menu { position: absolute; top: 15px; right: 15px; z-index: 10; }
+body:not([data-view]) .auth-menu-button {
+  position: static;
+  list-style: none;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-appearance: none;
+  appearance: none;
+}
+body:not([data-view]) .auth-menu-button::-webkit-details-marker { display: none; }
+body:not([data-view]) .auth-menu-panel {
+  position: absolute;
+  top: 43px;
+  right: 0;
+  width: 230px;
+  padding: 6px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 32px rgba(27,46,80,.14);
+}
+body:not([data-view]) .auth-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #1B2E50;
+  font: 500 13px/1.35 Inter, sans-serif;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+}
+body:not([data-view]) .auth-menu-item:hover { background: #F8FAFC; }
+body:not([data-view]) .auth-menu-item svg { width: 17px; height: 17px; color: #64748B; flex: 0 0 17px; }
+body:not([data-view]) .auth-menu-chevron { margin-left: auto; width: 14px !important; height: 14px !important; }
+body:not([data-view]) .auth-menu-nested > summary::-webkit-details-marker { display: none; }
+body:not([data-view]) .auth-menu-description {
+  margin: 0 8px 8px 37px;
+  color: #64748B;
+  font: 400 11px/1.55 Inter, sans-serif;
+}
 body:not([data-view]) .auth-back-button svg,
 body:not([data-view]) .auth-menu-button svg {
   display: block;
