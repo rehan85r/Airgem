@@ -351,7 +351,7 @@ body:not([data-view]) .auth-shell {
   justify-content: flex-start;
   min-height: 100dvh;
   gap: 0;
-  padding: 112px 20px 160px;
+  padding: 96px 20px 160px;
   background: #F8FAFC !important;
   color: #1B2E50;
   font-family: Manrope, Inter, sans-serif;
@@ -506,7 +506,7 @@ body:not([data-view]) #loginBox form > .button.primary {
   font-weight: 700;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
-  margin: 16px 0 18px;
+  margin: 12px 0 14px;
   color: #64748B;
   font: 500 13px/1.4 Inter, sans-serif;
   text-align: center;
@@ -566,7 +566,7 @@ body:not([data-view]) #loginBox #turnstileContainer:not([hidden]) {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 48px;
+  bottom: 100px;
   z-index: 6;
   display: flex;
   align-items: center;
