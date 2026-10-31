@@ -26,7 +26,7 @@
         <summary class="auth-menu-button" aria-label="More options" title="More options"><i data-lucide="ellipsis-vertical" aria-hidden="true"></i></summary>
         <div class="auth-menu-panel">
           <a href="" class="auth-menu-item" onclick="window.location.reload(); return false;"><i data-lucide="refresh-cw" aria-hidden="true"></i><span>Refresh Page</span></a>
-          <button type="button" class="auth-menu-item" id="clearAdminCache"><i data-lucide="trash-2" aria-hidden="true"></i><span>Clear Cache</span></button>
+          <button type="button" class="auth-menu-item" id="copyAdminLink"><i data-lucide="link" aria-hidden="true"></i><span>Copy Admin Link</span></button>
           <details class="auth-menu-nested">
             <summary class="auth-menu-item"><i data-lucide="info" aria-hidden="true"></i><span>About Airgem</span><i data-lucide="chevron-right" class="auth-menu-chevron" aria-hidden="true"></i></summary>
             <p class="auth-menu-description">Airgem is a crypto opportunity discovery platform for airdrops, testnets, mainnets, whitelist campaigns and points programs.</p>
@@ -670,19 +670,21 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
-    <script src="/admin-app.js?v=otp-cleanup-20261030" defer>
-    document.getElementById("clearAdminCache")?.addEventListener("click", async () => {
-      try {
-        if ("caches" in window) {
-          const cacheNames = await caches.keys();
-          await Promise.all(cacheNames.map(name => caches.delete(name)));
+    <script src="/admin-app.js?v=otp-cleanup-20261030" defer></script>
+    <script>
+      document.getElementById("copyAdminLink")?.addEventListener("click", async () => {
+        const button = document.getElementById("copyAdminLink");
+        const label = button?.querySelector("span");
+        try {
+          await navigator.clipboard.writeText(window.location.origin + "/admin");
+          if (label) label.textContent = "Copied!";
+          setTimeout(() => { if (label) label.textContent = "Copy Admin Link"; }, 1800);
+        } catch (error) {
+          console.error("Could not copy admin link:", error);
+          if (label) label.textContent = "Copy failed";
+          setTimeout(() => { if (label) label.textContent = "Copy Admin Link"; }, 1800);
         }
-        window.location.reload();
-      } catch (error) {
-        console.error("Could not clear browser cache:", error);
-        window.location.reload();
-      }
-    });
+      });
     </script>
   </body>
 </html>
