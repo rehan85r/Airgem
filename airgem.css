@@ -1,0 +1,380 @@
+/* Airgem public-site stylesheet — consolidated from airgem-premium.css and airgem-ui.css. */
+/* Premium layer first, shared UI layer second. */
+/* Airgem Minimal Premium design layer — visual-only overrides. */
+:root {
+  --airgem-blue: #1E90FF;
+  --airgem-navy: #1B2E50;
+  --airgem-slate: #64748B;
+  --airgem-bg: #F8FAFC;
+  --airgem-surface: #FFFFFF;
+  --airgem-border: #E2E8F0;
+  --airgem-radius: 12px;
+  --airgem-shadow: 0 2px 10px rgba(27, 46, 80, 0.035);
+}
+body[data-view] {
+  background: var(--airgem-bg) !important;
+  color: var(--airgem-navy);
+  -webkit-font-smoothing: antialiased;
+}
+body[data-view] :is(button, a, input, select):focus-visible {
+  outline: 2px solid rgba(30, 144, 255, .55);
+  outline-offset: 3px;
+}
+/* Shared public header */
+body[data-view] header.header {
+  background: #fff !important;
+  border-bottom: 1px solid var(--airgem-border) !important;
+  box-shadow: none !important;
+}
+body[data-view] header.header .brand-name {
+  color: var(--airgem-navy) !important;
+  letter-spacing: -.5px !important;
+}
+body[data-view] header.header .mark {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+/* Homepage */
+body[data-view="home"] .main {
+  max-width: 1160px !important;
+  background: transparent !important;
+}
+body[data-view="home"] .airgem-hero h1 {
+  color: var(--airgem-navy);
+  letter-spacing: -1.1px;
+}
+body[data-view="home"] .airgem-hero h1 span {
+  color: var(--airgem-blue);
+}
+body[data-view="home"] .airgem-hero p {
+  color: var(--airgem-slate);
+}
+body[data-view="home"] .ag-category-tab {
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: var(--airgem-slate) !important;
+  box-shadow: none !important;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+body[data-view="home"] .ag-category-tab.active {
+  border-color: var(--airgem-blue) !important;
+  background: var(--airgem-blue) !important;
+  color: #fff !important;
+}
+body[data-view="home"] .ag-category-tab:not(.active):hover {
+  border-color: #BBD9F8 !important;
+  background: #F5F9FF !important;
+  color: var(--airgem-navy) !important;
+}
+body[data-view="home"] .search-row .searchbox {
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] .search-row .searchbox:focus-within {
+  border-color: #9CCBFA !important;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, .08) !important;
+}
+body[data-view="home"] .search-row .searchbox input {
+  color: var(--airgem-navy);
+}
+body[data-view="home"] .search-row .searchbox input::placeholder {
+  color: #94A3B8;
+}
+body[data-view="home"] .section-head h2 {
+  color: var(--airgem-navy) !important;
+  font-weight: 750 !important;
+  letter-spacing: -.45px !important;
+}
+body[data-view="home"] .section-head h2::before {
+  display: none !important;
+}
+body[data-view="home"] .section-head small {
+  color: var(--airgem-slate) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] :is(.feature, .ag-card, .project-card) {
+  background: #fff !important;
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: var(--airgem-radius) !important;
+  box-shadow: var(--airgem-shadow) !important;
+  transform: none !important;
+  transition: border-color .16s ease, box-shadow .16s ease !important;
+}
+body[data-view="home"] :is(.feature, .ag-card, .project-card):hover {
+  border-color: #C7DDF4 !important;
+  box-shadow: 0 5px 16px rgba(27, 46, 80, .055) !important;
+  transform: none !important;
+}
+body[data-view="home"] :is(.feature, .ag-card, .project-card) .project-icon {
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] .ag-card .ag-card-foot {
+  border-top: 1px solid var(--airgem-border) !important;
+}
+body[data-view="home"] .ag-card .ag-join,
+body[data-view="home"] .feature .details {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+body[data-view="home"] .projects {
+  background: transparent !important;
+}
+/* Project details */
+body[data-view="project"] {
+  background: var(--airgem-bg) !important;
+}
+body[data-view="project"] main {
+  max-width: 1050px;
+}
+body[data-view="project"] main > section.panel[data-project-panel] {
+  background: #fff !important;
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: var(--airgem-radius) !important;
+  box-shadow: none !important;
+}
+body[data-view="project"] .back {
+  border: 1px solid var(--airgem-border) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: var(--airgem-navy) !important;
+  box-shadow: none !important;
+}
+body[data-view="project"] .back:hover {
+  background: #F5F9FF !important;
+  border-color: #C7DDF4 !important;
+}
+body[data-view="project"] .ag-investors-card {
+  border-radius: var(--airgem-radius) !important;
+  box-shadow: none !important;
+}
+body[data-view="project"] .ag-project-socials a {
+  color: var(--airgem-navy);
+}
+body[data-view="project"] .ag-project-socials a:hover {
+  color: var(--airgem-blue);
+}
+@media (max-width: 650px) {
+  body[data-view="home"] .main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  body[data-view="home"] .ag-category-tab {
+    border-radius: 10px !important;
+  }
+  body[data-view="project"] main > section.panel[data-project-panel] {
+    border-radius: 12px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-view] * {
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Shared public-site design system. Keep content and application behavior separate. */
+:root{--ag-ink:#1B2E50;--ag-muted:#607086;--ag-line:#E2E8F0;--ag-blue:#1e90ff;--ag-radius:20px;--ag-shadow:0 8px 28px rgba(20,40,70,.04)}
+body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+[data-view] button,[data-view] input,[data-view] select{font-family:inherit}
+[data-view] a,[data-view] button,[data-view] input,[data-view] select{touch-action:manipulation}
+[data-view] :is(button,a,input,select):focus-visible{outline:3px solid #86c5ff;outline-offset:4px}
+[data-view] :is(.header,header){background:#fff!important;border:0!important;border-bottom:1px solid #E2E8F0!important;outline:0!important;box-shadow:none!important}
+[data-view] .header{height:76px}
+[data-view] :is(.wrap,.head){max-width:1120px;padding-left:24px;padding-right:24px}
+[data-view] .head{min-height:76px;padding-top:12px;padding-bottom:12px}
+[data-view] :is(.brand,.brand-name){font-family:'Manrope',system-ui,sans-serif;font-size:24px;font-weight:800;letter-spacing:-.9px;color:var(--ag-ink)!important}
+[data-view] .brand{display:inline-flex;align-items:center;gap:10px}
+[data-view] .brand img{width:40px!important;height:40px!important;object-fit:contain;border-radius:11px!important;margin:0!important;display:block}
+[data-view] .brand .mark{width:40px;height:40px;box-shadow:none}
+[data-view] .back{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:1px solid var(--ag-line);border-radius:12px;background:#fff;font-size:12px;font-weight:700;white-space:nowrap}
+[data-view] .header-caption{font-size:11px;color:var(--ag-muted);letter-spacing:.08em}
+[data-view] :is(.menu-btn,.close-btn){width:44px;height:44px;border-radius:12px;box-shadow:none;color:var(--ag-ink)}
+[data-view] :is(.micro,.muted,.crumb){color:var(--ag-muted)!important}
+[data-view] .panel{background:#fff;border:1px solid var(--ag-line);border-radius:var(--ag-radius);box-shadow:var(--ag-shadow)}
+/* Discovery: consistent cards, readable metrics, and comfortable tap targets. */
+/* Single source of truth for header-to-hero spacing on desktop and mobile. */
+[data-view="home"] .main{max-width:1120px;padding:15px 20px 36px!important}
+[data-view="home"] .ag-category-tabs{gap:10px;margin:0 -20px 15px;padding:2px 20px 4px;scroll-padding-inline:20px}
+[data-view="home"] .ag-category-tab{height:40px;min-height:40px;padding:0 15px;font-size:13px;box-shadow:none;border-radius:12px}
+[data-view="home"] .searchbox{height:50px!important;padding:0 15px!important;border-color:var(--ag-line)!important;box-shadow:none!important}
+[data-view="home"] .searchbox input{font-size:15px}
+[data-view="home"] .searchbox input::placeholder{color:#718095}
+[data-view="home"] .section-head{margin:26px 0 16px}
+[data-view="home"] .section-head h2{font-size:18px!important;letter-spacing:-.45px}
+[data-view="home"] .section-head.trending-heading h2{font-size:20px!important}
+[data-view="home"] .section-head small{font-size:11px;color:#607086;background:#eef2f7}
+[data-view="home"] .ag-card{padding:26px!important;border-radius:20px!important;border-color:var(--ag-line)!important;box-shadow:var(--ag-shadow)!important;transform:none!important}
+[data-view="home"] .ag-card:before,[data-view="home"] .ag-card:after{display:none!important}
+[data-view="home"] .ag-card .project-icon{width:40px!important;height:40px!important;border-radius:12px!important;box-shadow:none!important}
+[data-view="home"] .ag-card .ag-card-head{gap:14px!important}
+[data-view="home"] .ag-card .ag-identity .card-name{font-size:15px!important;line-height:1!important;letter-spacing:-.5px!important;font-weight:700!important}
+[data-view="home"] .ag-card .ag-identity .micro{font-size:13px!important;line-height:1.5!important;color:#64748B!important;font-weight:400!important}
+[data-view="home"] .ag-card .ag-stats{margin-top:24px!important;row-gap:20px!important;column-gap:16px!important}
+[data-view="home"] .ag-card .ag-stat-label{font-size:12px!important;color:var(--ag-muted)!important;gap:7px!important}
+[data-view="home"] .ag-card .ag-stat-label svg{width:17px!important;height:17px!important;flex-basis:17px!important}
+[data-view="home"] .ag-card .ag-stat strong{font-size:15px!important;font-weight:750!important;line-height:1.5!important;color:var(--ag-ink)!important}
+[data-view="home"] .ag-card .ag-card-foot{margin-top:22px!important;padding-top:20px!important;border-color:var(--ag-line)!important}
+[data-view="home"] .ag-card .ag-join{height:48px!important;min-height:48px!important;font-size:14px!important;font-weight:700!important}
+[data-view="home"] .trending-controls button{width:30px!important;height:30px!important;min-width:30px!important}
+[data-view="home"] .trending-controls{gap:10px!important}
+[data-view="home"] .foot{padding:24px 0;font-size:12px;color:#66758a;line-height:1.7}
+[data-view="home"] .drawer{max-width:380px;padding:24px}
+[data-view="home"] .drawer .nav-item{min-height:48px;font-size:14px}
+/* Project detail: a quieter reading surface with a matching metric grid. */
+[data-view="project"] main{max-width:1120px;margin:28px auto 0;padding:0 24px 40px!important}
+[data-view="project"] .crumb{font-size:12px;margin-bottom:18px}
+[data-view="project"] .panel{padding:30px}
+[data-view="project"] .identity{gap:16px}
+[data-view="project"] .identity h1{font-size:clamp(24px,3vw,32px);line-height:1.3;letter-spacing:-1px}
+[data-view="project"] .logo{width:68px;height:68px;flex-basis:68px;border-radius:16px;box-shadow:none}
+[data-view="project"] .logo img{object-fit:contain}
+[data-view="project"] #details .item small{font-size:12px;color:var(--ag-muted)}
+[data-view="project"] #details .item strong{font-size:16px;font-weight:750;line-height:1.5}
+[data-view="project"] .panel+.panel{margin-top:24px;padding:28px 30px!important}
+[data-view="project"] .guide-article{font-size:16px;line-height:1.85;color:#34445b}
+[data-view="project"] .links .social-link{width:48px;min-height:48px;justify-self:center;margin:0!important;background:#f4f8fd;border:1px solid #e8eff6;border-radius:12px}
+[data-view="project"] .links .social-link svg{width:23px;height:23px}
+/* Research: same brand, type scale, controls, and report hierarchy. */
+@media(hover:hover){[data-view] .back:hover{background:#f1f7ff}[data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px #1428460c!important}}
+@media(max-width:650px){
+ [data-view] :is(.wrap,.head){padding-left:18px;padding-right:18px}
+ [data-view] .header{height:68px}[data-view] .head{min-height:68px}
+ [data-view] :is(.brand,.brand-name){font-size:22px}
+ [data-view] .brand img{width:40px!important;height:40px!important}
+ [data-view] .back{padding:9px 11px;font-size:11px}
+ 
+ [data-view="home"] .ag-card{padding:20px!important;border-radius:18px!important}
+
+ [data-view="home"] .ag-card .ag-card-head{gap:10px!important}
+ 
+ 
+ [data-view="home"] .ag-card .ag-stats{column-gap:9px!important;row-gap:18px!important;margin-top:22px!important}
+ [data-view="home"] .ag-card .ag-stat-label{font-size:11px!important;gap:5px!important}
+ [data-view="home"] .ag-card .ag-stat-label svg{width:15px!important;height:15px!important;flex-basis:15px!important}
+ [data-view="home"] .ag-card .ag-stat strong{font-size:13px!important;overflow-wrap:anywhere}
+ [data-view="home"] .ag-card .ag-join{font-size:13px!important}
+ [data-view="home"] .section-head h2{font-size:17px!important}
+ [data-view="project"] main{margin-top:22px;padding:0 16px 28px!important}
+ [data-view="project"] .panel{padding:22px 20px;border-radius:18px}
+ [data-view="project"] .panel+.panel{padding:24px 20px!important;margin-top:20px}
+ [data-view="project"] .logo{width:56px;height:56px;flex-basis:56px;border-radius:14px}
+ [data-view="project"] .identity h1{font-size:24px}
+ [data-view="project"] #details .item small{font-size:11px}
+ [data-view="project"] #details .item strong{font-size:13px}
+}
+@media(max-width:360px){[data-view="home"] .ag-card{padding:16px!important}[data-view="home"] .ag-card .ag-stat-label{font-size:10px!important}[data-view="home"] .ag-card .ag-stat strong{font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){[data-view] *,[data-view] *:before,[data-view] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Premium interaction system: hover only on capable pointers; preserve keyboard focus. */
+[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link){transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease,transform 180ms ease}
+[data-view] :is(input,select){transition:border-color 180ms ease,box-shadow 180ms ease}
+[data-view] :is(a,button){-webkit-tap-highlight-color:transparent}
+@media(hover:hover) and (pointer:fine){
+ [data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px rgba(20,40,70,.07)!important}
+ [data-view="home"] .ag-category-tab:not(:disabled):hover{border-color:#bfdaff;background:#f0f7ff}
+ [data-view="home"] .ag-join:not(:disabled):hover{filter:brightness(.95)}
+ [data-view] :is(.close-btn,.trending-controls button):not(:disabled):hover{background:#f1f7ff;border-color:#cbdff7}
+ [data-view] :is(.nav-item,.social-link):hover{background:#eef6ff;color:#1879d8;border-color:#d1e5ff}
+ [data-view] a:not(.ag-card):not(.ag-join):not(.back):hover{text-decoration-color:currentColor}
+}
+[data-view] :is(button,a):focus-visible{outline:3px solid #86c5ff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){[data-view] :is(a,button,.ag-card,.ag-category-tab,.nav-item,.social-link,input,select){transition:none!important}}
+
+/* Featured Top Airdrops: subtle distinction while retaining the shared card layout. */
+[data-view="home"] #featured .ag-card{border-color:#E2E8F0!important;box-shadow:none!important}
+@media(hover:hover) and (pointer:fine){
+ [data-view="home"] #featured .ag-card:hover{border-color:#E2E8F0!important;box-shadow:none!important}
+}
+
+/* Align Type, Cost and Time metrics in three equal centered columns across cards. */
+[data-view="home"] .ag-card .ag-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+[data-view="home"] .ag-card .ag-stat{align-items:center!important;justify-content:flex-start!important;text-align:center!important;min-width:0}
+[data-view="home"] .ag-card .ag-stat-label{justify-content:center!important;text-align:center!important;white-space:normal!important}
+[data-view="home"] .ag-card .ag-stat strong{text-align:center!important;overflow-wrap:anywhere}
+
+/* Mobile metric breathing room: prevent adjacent labels from crowding. */
+@media(max-width:650px){
+ [data-view="home"] .ag-card .ag-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:12px!important;row-gap:27px!important}
+ [data-view="home"] .ag-card .ag-stat{gap:7px!important;align-items:center!important;text-align:center!important}
+ [data-view="home"] .ag-card .ag-stat-label{display:flex!important;flex-direction:column;align-items:center!important;justify-content:center!important;gap:5px!important;min-height:38px;font-size:11px!important;line-height:1.25!important;white-space:normal!important}
+ [data-view="home"] .ag-card .ag-stat-label svg{width:16px!important;height:16px!important;flex-basis:16px!important}
+ [data-view="home"] .ag-card .ag-stat strong{font-size:clamp(12px,3.3vw,15px)!important;line-height:1.4!important;text-align:center!important}
+}
+
+/* Six card metrics: match Project Details typography, icon size and spacing. */
+[data-view="home"] .ag-card .ag-stats{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ column-gap:9px!important;row-gap:22px!important;align-items:start!important;width:100%!important
+}
+[data-view="home"] .ag-card .ag-stat{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:flex-start!important;text-align:center!important;min-width:0!important;
+ gap:5px!important;padding:0!important
+}
+[data-view="home"] .ag-card .ag-stat-label{
+ display:flex!important;flex-direction:row!important;align-items:center!important;
+ justify-content:center!important;text-align:center!important;gap:5px!important;
+ min-height:0!important;line-height:1.4!important;white-space:normal!important;
+ font-family:'DM Sans',system-ui,sans-serif!important;font-size:10px!important;
+ font-weight:600!important;letter-spacing:0!important;color:#7b8898!important
+}
+[data-view="home"] .ag-card .ag-stat-label svg{
+ display:block!important;width:15px!important;height:15px!important;flex:0 0 15px!important
+}
+[data-view="home"] .ag-card .ag-stat strong{
+ display:block!important;width:100%;text-align:center!important;
+ font-family:Manrope,system-ui,sans-serif!important;font-size:12px!important;
+ line-height:1.4!important;font-weight:600!important;color:#1B2E50!important;
+ overflow-wrap:anywhere!important
+}
+/* Consistent understated outline icons for all six project metrics. */
+[data-view="home"] .ag-card .ag-stat-label svg{width:15px!important;height:15px!important;flex:0 0 15px!important;color:#8190a4!important;stroke-width:1.8!important;stroke-linecap:round;stroke-linejoin:round}
+
+/* Shared slate gray for all home card metric labels and Lucide icons. */
+[data-view="home"] .ag-card .ag-stat-label,
+[data-view="home"] .ag-card .ag-stat-label svg{color:#64748B!important}
+
+/* Balanced six-metric grid: reduce outer whitespace without separating icons from labels. */
+[data-view="home"] .ag-card .ag-stats{grid-template-columns:minmax(0,.88fr) minmax(0,1.24fr) minmax(0,.88fr)!important;column-gap:10px!important}
+
+/* Set consistent 25px metric row spacing across both home card types. */
+[data-view="home"] .ag-card .ag-stats{row-gap:40px!important}
+
+/* Slate Gray separator between the project header and metrics on both home card types. */
+[data-view="home"] .ag-card .ag-card-head{padding-bottom:20px!important;border-bottom:1px solid #E2E8F0!important}
+[data-view="home"] .ag-card .ag-stats{margin-top:20px!important}
+
+/* Keep 25px between the last metric row and the footer divider. */
+[data-view="home"] .ag-card .ag-stats{margin-bottom:25px!important}
+
+
+/* Canonical branding: identical homepage and project header logo geometry. */
+body[data-view="home"] header .brand,body[data-view="project"] header .brand{display:inline-flex!important;align-items:center!important;gap:10px!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#1B2E50!important;text-decoration:none!important}
+body[data-view="home"] header .brand .mark,body[data-view="project"] header .brand .mark{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;flex:0 0 40px!important;border-radius:12px!important;overflow:hidden!important;background:transparent!important;box-shadow:none!important}
+body[data-view="home"] header .brand .mark img,body[data-view="project"] header .brand .mark img{display:block!important;width:40px!important;height:40px!important;object-fit:contain!important;border-radius:12px!important;margin:0!important}
+body[data-view="home"] header .brand .brand-name,body[data-view="project"] header .brand .brand-name{display:inline-block!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#1B2E50!important}
+
+/* Single header layout contract for homepage and project details. */
+body[data-view="home"] header.header{height:60px!important;min-height:60px!important;max-height:60px!important;position:sticky!important;top:0!important;z-index:1000!important}
+body[data-view="project"] header.header{height:60px!important;min-height:60px!important;max-height:60px!important;position:sticky!important;top:0!important;z-index:1000!important}
+body[data-view="home"] header.header > .header-inner,body[data-view="project"] header.header > .header-inner{width:100%!important;max-width:none!important;height:100%!important;min-height:0!important;margin:0!important;padding:0 15px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
+body[data-view="home"] header.header > .header-inner{padding-right:15px!important}
+body[data-view="home"] header.header > .header-inner > .brand,body[data-view="project"] header.header > .header-inner > .brand{flex:0 0 auto!important;align-self:center!important}
+
+/* Guide section is unboxed; preserve separate callout cards. */
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide){background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;margin-top:20px!important;}
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) #guide,body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .guide-article{background:transparent!important;box-shadow:none!important;border:0!important;}
+
+/* Transparent Airdrop Guide surface; retain only blue/yellow information callouts. */
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide),
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) #guide,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .guide-article,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-timeline,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-step,
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-step-content{background:transparent!important;background-image:none!important;border-color:transparent!important;box-shadow:none!important;}
+body[data-view="project"] main > section.panel[data-project-panel]:has(> #guide) .dh-step{padding-left:0!important;padding-right:0!important;}
