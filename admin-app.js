@@ -1094,6 +1094,7 @@
       if (!emailOtpSent || token.length !== 6 || emailOtpVerifying) return;
       emailOtpVerifying = true;
       $('emailOtp').value = token;
+      $('loginError').classList.add('is-info');
       $('loginError').textContent = 'Verifying code…';
       otpDigits.forEach((input) => { input.disabled = true; });
       try {
@@ -1106,6 +1107,7 @@
         $('loginError').textContent = '';
         await initialize();
       } catch (error) {
+        $('loginError').classList.remove('is-info');
         $('loginError').textContent = error.message || 'Unable to verify code. Please try again.';
         otpDigits.forEach((input) => { input.disabled = false; });
         otpDigits[5]?.focus();
@@ -1180,9 +1182,11 @@
         emailOtpSent = true;
         $('otpField').hidden = false;
         button.hidden = true;
-        $('loginError').textContent = 'A 6-digit verification code has been sent to your email.';
+        $('loginError').classList.add('is-info');
+        $('loginError').textContent = 'A 6-Digit Verification Code Has Been Sent to Your Email.';
         otpDigits[0]?.focus();
       } catch (error) {
+        $('loginError').classList.remove('is-info');
         $('loginError').textContent = error.message;
       } finally {
         if (!emailOtpSent && siteKey && turnstileWidget !== null) {
