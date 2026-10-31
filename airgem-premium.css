@@ -505,13 +505,19 @@ body:not([data-view]) #loginBox form > .button.primary {
   border-radius: 999px !important;
   font-weight: 700;
 }
+body:not([data-view]) #loginBox .auth-social-divider {
+  margin: 25px 0;
+  color: #64748B;
+  font: 500 13px/1.4 Inter, sans-serif;
+  text-align: center;
+}
 body:not([data-view]) #loginBox .auth-social-actions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   width: 100%;
-  margin: 8px auto 0;
+  margin: 0 auto;
 }
 body:not([data-view]) #loginBox .auth-social-button {
   display: inline-flex;
