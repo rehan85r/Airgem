@@ -1074,6 +1074,40 @@
     if ($('saveTrending')) $('saveTrending').onclick = saveTrending;
     if ($('publishAllAirdrops')) $('publishAllAirdrops').onclick = publishAllAirdrops;
     if ($('logout')) $('logout').onclick = signOut;
+    const adminMenu = $('adminMenu');
+    const adminMenuBackdrop = $('adminMenuBackdrop');
+    const adminMenuOpen = $('adminMenuOpen');
+    const closeAdminMenu = () => {
+      if (!adminMenu || !adminMenuBackdrop) return;
+      adminMenu.classList.remove('is-open');
+      adminMenuBackdrop.classList.remove('is-visible');
+      adminMenu.setAttribute('aria-hidden', 'true');
+      adminMenuOpen?.setAttribute('aria-expanded', 'false');
+      window.setTimeout(() => {
+        adminMenu.hidden = true;
+        adminMenuBackdrop.hidden = true;
+      }, 220);
+    };
+    const openAdminMenu = () => {
+      if (!adminMenu || !adminMenuBackdrop) return;
+      adminMenu.hidden = false;
+      adminMenuBackdrop.hidden = false;
+      requestAnimationFrame(() => {
+        adminMenu.classList.add('is-open');
+        adminMenuBackdrop.classList.add('is-visible');
+      });
+      adminMenu.setAttribute('aria-hidden', 'false');
+      adminMenuOpen?.setAttribute('aria-expanded', 'true');
+    };
+    adminMenuOpen?.addEventListener('click', openAdminMenu);
+    adminMenuBackdrop?.addEventListener('click', closeAdminMenu);
+    $('adminMenuSettings')?.addEventListener('click', () => {
+      closeAdminMenu();
+      navigate('settings');
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && adminMenu && !adminMenu.hidden) closeAdminMenu();
+    });
     if ($('mfaSetup')) $('mfaSetup').onclick = startMfaSetup;
     if ($('passkeySetup')) $('passkeySetup').onclick = async () => {
       const button = $('passkeySetup');
