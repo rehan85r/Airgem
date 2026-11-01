@@ -9909,7 +9909,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
     display: block;
     width: 40px;
     height: 4px;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
     border-radius: 999px;
     background: #CBD5E1;
   }
