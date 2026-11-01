@@ -9828,7 +9828,12 @@ body:not([data-view]) #mfaBox #mfaError {
   margin: 12px 0 0;
   text-align: center;
 }
-body:not([data-view]) #mfaBox #mfaCancel { margin-top: 20px; }
+body:not([data-view]) #mfaBox #mfaCancel {
+  margin-top: 20px;
+  border-color: #1E90FF;
+  background: #1E90FF;
+  color: #FFFFFF;
+}
 
 
 /* Six-box authenticator code input */
