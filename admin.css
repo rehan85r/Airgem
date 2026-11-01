@@ -9864,3 +9864,66 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   outline: none;
   box-shadow: none;
 }
+
+
+/* Mobile authenticator bottom sheet */
+@media (max-width: 700px) {
+  body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell {
+    justify-content: flex-end;
+    padding: 0;
+    overflow: hidden;
+    background: transparent !important;
+  }
+  body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgb(15 23 42 / 42%);
+  }
+  body:not([data-view]) #mfaBox.auth-card {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    width: 100%;
+    max-width: none;
+    height: 50dvh;
+    min-height: 340px;
+    max-height: 560px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    margin: 0;
+    padding: 24px 24px max(24px, env(safe-area-inset-bottom));
+    border: 0;
+    border-radius: 20px 20px 0 0;
+    background: #F8FAFC;
+    box-shadow: 0 -8px 32px rgb(15 23 42 / 12%);
+    animation: mfaSheetSlideUp 240ms ease-out both;
+    touch-action: pan-y;
+  }
+  body:not([data-view]) #mfaBox .mfa-sheet-handle {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin: 0 auto 18px;
+    border-radius: 999px;
+    background: #CBD5E1;
+  }
+  body:not([data-view]) #mfaBox .mfa-authenticator-icon {
+    margin-top: 0;
+  }
+  body:not([data-view]) #mfaBox #mfaCancel {
+    margin-top: 20px;
+  }
+  body:not([data-view]) #mfaBox .auth-footnote {
+    position: static;
+    margin: 20px 0 0;
+    font-size: 11px;
+  }
+}
+@keyframes mfaSheetSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
