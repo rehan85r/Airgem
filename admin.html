@@ -633,6 +633,13 @@
                   <i data-lucide="smartphone" aria-hidden="true"></i> Set up authenticator
                 </button>
                 <p id="mfaStatus" class="muted"></p>
+                <div class="settings-security-divider"></div>
+                <h2>Passkey</h2>
+                <p>Sign in with your device biometrics, PIN, or a security key.</p>
+                <button id="passkeySetup" type="button" class="button secondary">
+                  <i data-lucide="fingerprint" aria-hidden="true"></i> Set up passkey
+                </button>
+                <p id="passkeyStatus" class="muted" role="status" aria-live="polite"></p>
               </div>
             </div>
           </section>
@@ -662,12 +669,12 @@
     </dialog>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
     <script src="/supabase-config.js?v=admin-cleanup-20261030"></script>
-    <script src="/supabase-data.js?v=admin-cleanup-20261030"></script>
+    <script src="/supabase-data.js?v=auth-passkeys-20261101"></script>
     <script>
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
-    <script src="/admin-app.js?v=authenticator-footer-spacing-20261101" defer></script>
+    <script src="/admin-app.js?v=social-passkeys-20261101" defer></script>
     <script>
       document.getElementById("refreshLoginPage")?.addEventListener("click", () => window.location.reload());
       document.getElementById("clearSiteCache")?.addEventListener("click", async () => {
