@@ -1176,10 +1176,14 @@
         if (error) throw error;
         await initialize();
       } catch (error) {
-        const code = error.code || error.error_code || '';
+        const code = String(error.code || error.error_code || '').toLowerCase();
+        const message = String(error.message || '');
         $('loginError').textContent = code === 'passkey_disabled'
           ? 'Passkey Login Is Not Enabled For Airgem Yet.'
-          : error.message || 'Unable to sign in with passkey. Please try again.';
+          : code === 'passkey_not_found' || code === 'credential_not_found' ||
+            /passkey (not found|does not exist)|no (matching )?(passkey|credential) found/i.test(message)
+            ? 'Passkey Not Found'
+            : message || 'Unable to sign in with passkey. Please try again.';
         setSocialBusy(false);
       }
     });
