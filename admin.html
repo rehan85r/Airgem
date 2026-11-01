@@ -43,7 +43,7 @@
           </div>
           <div class="field auth-otp-field" id="otpField" hidden>
             <div class="otp-digit-grid" role="group" aria-label="6-digit email verification code">
-              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 1" autocomplete="one-time-code" />
+              <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" aria-label="6-digit email verification code" autocomplete="one-time-code" />
               <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 2" />
               <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 3" />
               <input class="otp-digit" type="text" inputmode="numeric" pattern="[0-9]" maxlength="1" aria-label="OTP digit 4" />
@@ -674,7 +674,7 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
-    <script src="/admin-app.js?v=social-passkeys-20261101" defer></script>
+    <script src="/admin-app.js?v=otp-autofill-fix-20261102" defer></script>
     <script>
       document.getElementById("refreshLoginPage")?.addEventListener("click", () => window.location.reload());
       document.getElementById("clearSiteCache")?.addEventListener("click", async () => {
