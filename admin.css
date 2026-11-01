@@ -9902,7 +9902,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
     background: #F8FAFC;
     box-shadow: 0 -8px 32px rgb(15 23 42 / 12%);
     animation: mfaSheetSlideUp 240ms ease-out both;
-    touch-action: pan-y;
+    touch-action: none;
     will-change: transform;
   }
   body:not([data-view]) #mfaBox .mfa-sheet-handle {
