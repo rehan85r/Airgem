@@ -1244,41 +1244,39 @@
       }
     };
     const mfaSheet = $('mfaBox');
-    let mfaPointerStartY = null;
-    let mfaPointerStartX = 0;
+    let mfaTouchStartY = null;
+    let mfaTouchStartX = 0;
     let mfaDragDelta = 0;
-    let mfaPointerId = null;
-    mfaSheet?.addEventListener('pointerdown', (event) => {
-      if (event.pointerType === 'mouse' || event.target.closest('input, button, a')) return;
-      mfaPointerStartY = event.clientY;
-      mfaPointerStartX = event.clientX;
-      mfaPointerId = event.pointerId;
+    mfaSheet?.addEventListener('touchstart', (event) => {
+      const touch = event.touches[0];
+      if (!touch || event.target.closest('input, button, a')) return;
+      mfaTouchStartY = touch.clientY;
+      mfaTouchStartX = touch.clientX;
       mfaDragDelta = 0;
       mfaSheet.style.transition = 'none';
-      mfaSheet.setPointerCapture?.(event.pointerId);
-    });
-    mfaSheet?.addEventListener('pointermove', (event) => {
-      if (mfaPointerStartY === null || event.pointerId !== mfaPointerId) return;
-      const deltaY = event.clientY - mfaPointerStartY;
-      const deltaX = Math.abs(event.clientX - mfaPointerStartX);
-      if (Math.abs(deltaY) < 3 || Math.abs(deltaY) <= deltaX) return;
+    }, { passive: true });
+    mfaSheet?.addEventListener('touchmove', (event) => {
+      if (mfaTouchStartY === null) return;
+      const touch = event.touches[0];
+      if (!touch) return;
+      const deltaY = touch.clientY - mfaTouchStartY;
+      const deltaX = Math.abs(touch.clientX - mfaTouchStartX);
+      if (Math.abs(deltaY) < 2 || Math.abs(deltaY) <= deltaX) return;
       event.preventDefault();
       mfaDragDelta = deltaY;
-      const maxUp = mfaSheet.getBoundingClientRect().height * 0.2;
-      mfaSheet.style.transform = `translateY(${Math.max(-maxUp, deltaY)}px)`;
-    });
-    const finishMfaDrag = async (event) => {
-      if (mfaPointerStartY === null || (event && event.pointerId !== mfaPointerId)) return;
+      mfaSheet.style.transform = `translateY(${deltaY}px)`;
+    }, { passive: false });
+    const finishMfaDrag = async () => {
+      if (mfaTouchStartY === null) return;
       const delta = mfaDragDelta;
       const closeThreshold = mfaSheet.getBoundingClientRect().height * 0.25;
-      mfaPointerStartY = null;
-      mfaPointerStartX = 0;
-      mfaPointerId = null;
+      mfaTouchStartY = null;
+      mfaTouchStartX = 0;
       mfaDragDelta = 0;
-      mfaSheet.style.transition = 'transform 240ms cubic-bezier(.2,.8,.2,1)';
+      mfaSheet.style.transition = 'transform 220ms cubic-bezier(.2,.8,.2,1)';
       if (delta >= closeThreshold) {
         mfaSheet.style.transform = `translateY(${window.innerHeight}px)`;
-        await new Promise((resolve) => window.setTimeout(resolve, 240));
+        await new Promise((resolve) => window.setTimeout(resolve, 220));
         mfaSheet.style.transition = '';
         mfaSheet.style.transform = '';
         await logoutFromMfa();
@@ -1289,11 +1287,11 @@
             mfaSheet.style.transition = '';
             mfaSheet.style.transform = '';
           }
-        }, 250);
+        }, 230);
       }
     };
-    mfaSheet?.addEventListener('pointerup', finishMfaDrag);
-    mfaSheet?.addEventListener('pointercancel', finishMfaDrag);
+    mfaSheet?.addEventListener('touchend', finishMfaDrag, { passive: true });
+    mfaSheet?.addEventListener('touchcancel', finishMfaDrag, { passive: true });
     $('mfaCancel')?.addEventListener('click', async () => {
       if (pendingMfa?.mode === 'enroll') {
         const { error } = await dropyClient.auth.mfa.unenroll({ factorId: pendingMfa.id });
