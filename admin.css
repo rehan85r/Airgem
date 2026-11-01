@@ -9917,7 +9917,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
     margin-top: 0;
   }
   body:not([data-view]) #mfaBox #mfaCancel {
-    margin-top: 12px;
+    margin-top: 20px;
   }
   body:not([data-view]) #mfaBox .auth-footnote {
     position: absolute;
