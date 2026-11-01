@@ -9725,3 +9725,108 @@ body:not([data-view]) #loginBox #loginForm > button[hidden] { display: none !imp
   body:not([data-view]) #loginBox .otp-digit-grid { gap: 7px; }
   body:not([data-view]) #loginBox .otp-digit { width: 40px; height: 48px; }
 }
+
+
+/* Authenticator verification page layout */
+body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell {
+  justify-content: flex-start;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background: #F8FAFC !important;
+}
+body:not([data-view]) #mfaBox.auth-card {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+body:not([data-view]) #mfaBox .mfa-authenticator-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 16px;
+  background: #E8F3FF;
+  color: #1E90FF;
+}
+body:not([data-view]) #mfaBox .mfa-authenticator-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.8;
+}
+body:not([data-view]) #mfaBox #mfaHeading {
+  margin: 0 0 20px;
+  color: #1B2E50;
+  font: 700 22px/1.25 Manrope, Inter, sans-serif;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+body:not([data-view]) #mfaBox #mfaInstructions:empty { display: none; }
+body:not([data-view]) #mfaBox #mfaInstructions {
+  margin: 0 0 20px;
+  color: #64748B;
+  font: 400 14px/1.5 Manrope, Inter, sans-serif;
+  text-align: center;
+}
+body:not([data-view]) #mfaBox #mfaQr {
+  display: block;
+  max-width: 190px;
+  margin: 0 auto 16px;
+}
+body:not([data-view]) #mfaBox #mfaSecret {
+  margin: 0 0 16px;
+  color: #64748B;
+  font-size: 13px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+body:not([data-view]) #mfaBox #mfaForm {
+  display: grid;
+  width: 100%;
+  gap: 20px;
+  margin: 0;
+}
+body:not([data-view]) #mfaBox #mfaForm .field { display: block; margin: 0; }
+body:not([data-view]) #mfaBox #mfaCode {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid #CBD5E1;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #1B2E50;
+  font: 500 16px/1.4 Inter, sans-serif;
+  letter-spacing: 5px;
+  text-align: center;
+  box-shadow: none;
+}
+body:not([data-view]) #mfaBox #mfaCode:focus,
+body:not([data-view]) #mfaBox #mfaCode:focus-visible {
+  border-color: #CBD5E1;
+  outline: none;
+  box-shadow: none;
+}
+body:not([data-view]) #mfaBox #mfaForm > button,
+body:not([data-view]) #mfaBox #mfaCancel {
+  width: 100%;
+  min-height: 48px;
+  height: 48px;
+  margin: 0;
+  border-radius: 999px !important;
+  font: 700 14px/1.2 Inter, sans-serif;
+  text-align: center;
+}
+body:not([data-view]) #mfaBox #mfaError {
+  margin: 12px 0 0;
+  text-align: center;
+}
+body:not([data-view]) #mfaBox #mfaCancel { margin-top: 20px; }
