@@ -691,7 +691,7 @@
       if (verified.length && assurance.currentLevel !== 'aal2') {
         pendingMfa = { id: verified[0].id, mode: 'verify' };
         $('mfaHeading').textContent = 'Authenticator';
-        $('mfaInstructions').textContent = '';
+        $('mfaInstructions').textContent = 'Enter The 6-Digit Code From Your Authenticator App';
         $('mfaQr').hidden = true;
         $('mfaSecret').textContent = '';
         $('mfaCancel').textContent = 'Sign out';
