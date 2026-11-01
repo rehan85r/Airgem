@@ -1283,9 +1283,11 @@
       } catch (error) {
         $('loginError').classList.remove('is-info');
         const cooldown = error.message.match(/you can only request this after (\d+) seconds/i);
-        $('loginError').textContent = cooldown
-          ? `Please Wait ${cooldown[1]} Seconds Before Trying Again.`
-          : error.message;
+        $('loginError').textContent = /signups? not allowed for otp/i.test(error.message)
+          ? 'Account Not Found'
+          : cooldown
+            ? `Please Wait ${cooldown[1]} Seconds Before Trying Again.`
+            : error.message;
       } finally {
         if (!emailOtpSent && siteKey && turnstileWidget !== null) {
           turnstileToken = '';
