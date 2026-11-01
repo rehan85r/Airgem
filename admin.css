@@ -9829,3 +9829,33 @@ body:not([data-view]) #mfaBox #mfaError {
   text-align: center;
 }
 body:not([data-view]) #mfaBox #mfaCancel { margin-top: 20px; }
+
+
+/* Six-box authenticator code input */
+body:not([data-view]) #mfaBox .mfa-code-digits {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+body:not([data-view]) #mfaBox .mfa-code-digit {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  padding: 0;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #1B2E50;
+  font: 600 20px/1 Inter, sans-serif;
+  text-align: center;
+  box-shadow: none;
+}
+body:not([data-view]) #mfaBox .mfa-code-digit:focus,
+body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
+  border-color: #94A3B8;
+  outline: none;
+  box-shadow: none;
+}
