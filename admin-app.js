@@ -1198,7 +1198,7 @@
       }
       const button = $('loginForm').querySelector('button[type="submit"]');
       button.disabled = true;
-      $('loginError').textContent = 'Sending Verification Code';
+      $('loginError').textContent = '';
       try {
         const options = { shouldCreateUser: false };
         if (siteKey) options.captchaToken = turnstileToken;
