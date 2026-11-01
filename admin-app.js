@@ -694,7 +694,7 @@
         $('mfaInstructions').textContent = 'Enter The 6-Digit Code From Your Authenticator App';
         $('mfaQr').hidden = true;
         $('mfaSecret').textContent = '';
-        $('mfaCancel').textContent = 'Sign out';
+        $('mfaCancel').textContent = 'Log Out';
         $('mfaCode').value = '';
         $('mfaError').textContent = '';
         showAuth('mfa');
@@ -1235,6 +1235,26 @@
         button.disabled = false;
       }
     };
+    const logoutFromMfa = async () => {
+      await signOut();
+      if (state.view === 'login') {
+        pendingMfa = null;
+        $('mfaCode').value = '';
+        document.querySelectorAll('#mfaBox .mfa-code-digit').forEach((input) => { input.value = ''; });
+      }
+    };
+    const mfaSheet = $('mfaBox');
+    let mfaTouchStartY = 0;
+    mfaSheet?.addEventListener('touchstart', (event) => {
+      mfaTouchStartY = event.touches[0]?.clientY || 0;
+    }, { passive: true });
+    mfaSheet?.addEventListener('touchend', async (event) => {
+      const endY = event.changedTouches[0]?.clientY || 0;
+      if (mfaTouchStartY && endY - mfaTouchStartY > 90 && mfaSheet.scrollTop <= 0) {
+        mfaTouchStartY = 0;
+        await logoutFromMfa();
+      }
+    }, { passive: true });
     $('mfaCancel')?.addEventListener('click', async () => {
       if (pendingMfa?.mode === 'enroll') {
         const { error } = await dropyClient.auth.mfa.unenroll({ factorId: pendingMfa.id });
@@ -1246,7 +1266,7 @@
         $('mfaSecret').textContent = '';
         $('mfaQr').hidden = true;
         await initialize();
-      } else await signOut();
+      } else await logoutFromMfa();
     });
     const mfaDigits = [...document.querySelectorAll('#mfaBox .mfa-code-digit')];
     const syncMfaCode = () => {
