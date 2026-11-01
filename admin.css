@@ -9421,7 +9421,6 @@ body:not([data-view]) #loginBox .auth-input-wrap > svg {
 body:not([data-view]) #loginBox .auth-input-wrap input {
   box-sizing: border-box;
   width: 100%;
-  min-height: 50px;
   height: 50px;
   padding: 0 16px 0 46px;
   border: 1px solid #CBD5E1;
@@ -9589,7 +9588,7 @@ body:not([data-view]) #loginBox .auth-footnote svg {
 }
 
 /* Admin login: keep exactly 20px between the email field and Login button. */
-body:not([data-view]) #loginBox > form#loginForm > .field:first-child {
+body:not([data-view]) #loginBox > form#loginForm > .auth-input-wrap {
   margin-bottom: -10px;
 }
 
