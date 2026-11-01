@@ -1121,7 +1121,6 @@
       const token = otpValue();
       if (!emailOtpSent || token.length !== 6 || emailOtpVerifying) return;
       emailOtpVerifying = true;
-      $('emailOtp').value = token;
       $('loginError').classList.add('is-info');
       $('loginError').textContent = 'Verifying code…';
       otpDigits.forEach((input) => { input.disabled = true; });
@@ -1150,7 +1149,6 @@
       digits.split('').forEach((digit, offset) => {
         if (otpDigits[startIndex + offset]) otpDigits[startIndex + offset].value = digit;
       });
-      $('emailOtp').value = otpValue();
       const next = Math.min(startIndex + digits.length, 5);
       if (digits.length) otpDigits[next]?.focus();
       if (otpValue().length === 6) verifyEmailOtp();
@@ -1171,16 +1169,14 @@
           return;
         }
         input.value = value.replace(/\D/g, '').slice(-1);
-        $('emailOtp').value = otpValue();
-        if (input.value && index < 5) otpDigits[index + 1].focus();
+          if (input.value && index < 5) otpDigits[index + 1].focus();
         if (otpValue().length === 6) verifyEmailOtp();
       });
       input.addEventListener('keydown', (event) => {
         if (event.key === 'Backspace' && !input.value && index > 0) {
           otpDigits[index - 1].focus();
           otpDigits[index - 1].value = '';
-          $('emailOtp').value = otpValue();
-        } else if (event.key === 'ArrowLeft' && index > 0) {
+            } else if (event.key === 'ArrowLeft' && index > 0) {
           otpDigits[index - 1].focus();
         } else if (event.key === 'ArrowRight' && index < 5) {
           otpDigits[index + 1].focus();
