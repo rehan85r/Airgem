@@ -101,8 +101,16 @@
       <div class="app-shell">
         <header class="topbar">
           <a class="admin-header-brand" href="index.html" aria-label="Airgem homepage"><img src="airgem-logo.png" alt="" width="40" height="40" /><span>Airgem</span></a>
-          <button type="button" id="logout" class="header-logout" aria-label="Log out" title="Log out"><i data-lucide="log-out" aria-hidden="true"></i><span>Log Out</span></button>
+          <button type="button" id="adminMenuOpen" class="admin-menu-open" aria-label="Open admin menu" aria-expanded="false" aria-controls="adminMenu"><i data-lucide="menu" aria-hidden="true"></i></button>
         </header>
+        <div id="adminMenuBackdrop" class="admin-menu-backdrop" hidden></div>
+        <aside id="adminMenu" class="admin-menu-sheet" aria-label="Admin menu" aria-hidden="true" hidden>
+          <div class="admin-menu-sheet-handle" aria-hidden="true"></div>
+          <div class="admin-menu-sheet-content">
+            <button type="button" id="adminMenuSettings" class="admin-menu-action"><i data-lucide="settings" aria-hidden="true"></i><span>Settings</span><i data-lucide="chevron-right" class="admin-menu-chevron" aria-hidden="true"></i></button>
+            <button type="button" id="logout" class="admin-menu-logout"><i data-lucide="log-out" aria-hidden="true"></i><span>Log Out</span></button>
+          </div>
+        </aside>
         
         <main id="mainContent" tabindex="-1">
           <section id="projectsView">
@@ -674,7 +682,7 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
-    <script src="/admin-app.js?v=mfa-otp-autofill-fix-20261102" defer></script>
+    <script src="/admin-app.js?v=admin-menu-sheet-20261102" defer></script>
     <script>
       document.getElementById("refreshLoginPage")?.addEventListener("click", () => window.location.reload());
       document.getElementById("clearSiteCache")?.addEventListener("click", async () => {
