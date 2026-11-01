@@ -9686,15 +9686,15 @@ body:not([data-view]) #loginBox #otpField.auth-otp-field {
   margin: 0 0 -10px;
 }
 body:not([data-view]) #loginBox .otp-digit-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   align-items: center;
-  justify-content: center;
   gap: 10px;
   width: 100%;
 }
 body:not([data-view]) #loginBox .otp-digit {
   box-sizing: border-box;
-  width: 44px;
+  width: 100%;
   min-width: 0;
   height: 50px;
   padding: 0;
@@ -9702,7 +9702,7 @@ body:not([data-view]) #loginBox .otp-digit {
   border-radius: 10px;
   background: #FFFFFF;
   color: #1B2E50;
-  font: 700 20px/1 Inter, sans-serif;
+  font: 600 20px/1 Inter, sans-serif;
   text-align: center;
   outline: none;
   box-shadow: none;
@@ -9723,7 +9723,7 @@ body:not([data-view]) #loginBox #loginError {
 body:not([data-view]) #loginBox #loginForm > button[hidden] { display: none !important; }
 @media (max-width: 380px) {
   body:not([data-view]) #loginBox .otp-digit-grid { gap: 7px; }
-  body:not([data-view]) #loginBox .otp-digit { width: 40px; height: 48px; }
+  body:not([data-view]) #loginBox .otp-digit { height: 50px; }
 }
 
 
