@@ -1245,15 +1245,25 @@
     };
     const mfaSheet = $('mfaBox');
     let mfaTouchStartY = 0;
+    let mfaTouchStartX = 0;
     mfaSheet?.addEventListener('touchstart', (event) => {
-      mfaTouchStartY = event.touches[0]?.clientY || 0;
+      const touch = event.touches[0];
+      mfaTouchStartY = touch?.clientY || 0;
+      mfaTouchStartX = touch?.clientX || 0;
     }, { passive: true });
+    mfaSheet?.addEventListener('touchmove', (event) => {
+      if (!mfaTouchStartY) return;
+      const touch = event.touches[0];
+      const deltaY = (touch?.clientY || 0) - mfaTouchStartY;
+      const deltaX = Math.abs((touch?.clientX || 0) - mfaTouchStartX);
+      if (deltaY > 8 && deltaY > deltaX) event.preventDefault();
+    }, { passive: false });
     mfaSheet?.addEventListener('touchend', async (event) => {
       const endY = event.changedTouches[0]?.clientY || 0;
-      if (mfaTouchStartY && endY - mfaTouchStartY > 90 && mfaSheet.scrollTop <= 0) {
-        mfaTouchStartY = 0;
-        await logoutFromMfa();
-      }
+      const distance = endY - mfaTouchStartY;
+      mfaTouchStartY = 0;
+      mfaTouchStartX = 0;
+      if (distance > 65) await logoutFromMfa();
     }, { passive: true });
     $('mfaCancel')?.addEventListener('click', async () => {
       if (pendingMfa?.mode === 'enroll') {
