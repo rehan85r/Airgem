@@ -9751,7 +9751,7 @@ body:not([data-view]) #mfaBox .mfa-authenticator-icon {
   place-items: center;
   width: 56px;
   height: 56px;
-  margin: 0 auto 14px;
+  margin: 45px auto 14px;
   border-radius: 16px;
   background: #E8F3FF;
   color: #1E90FF;
