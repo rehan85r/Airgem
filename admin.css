@@ -9847,3 +9847,20 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
 }
+
+
+/* Admin quick menu: half-screen bottom sheet */
+#dashboard .admin-menu-open{margin-left:auto;width:42px;height:42px;display:inline-grid;place-items:center;border:1px solid #E2E8F0;border-radius:50%;background:#fff;color:#1B2E50;cursor:pointer;box-shadow:0 2px 8px rgba(27,46,80,.06)}
+#dashboard .admin-menu-open svg{width:22px;height:22px}
+#dashboard .admin-menu-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,.42);opacity:0;transition:opacity .22s ease}
+#dashboard .admin-menu-backdrop.is-visible{opacity:1}
+#dashboard .admin-menu-sheet{position:fixed;z-index:1001;inset:auto 0 0;width:100%;height:50dvh;min-height:260px;max-height:520px;padding:12px 20px max(20px,env(safe-area-inset-bottom));background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -12px 40px rgba(15,23,42,.16);transform:translateY(102%);transition:transform .22s ease;display:flex;flex-direction:column}
+#dashboard .admin-menu-sheet.is-open{transform:translateY(0)}
+#dashboard .admin-menu-sheet-handle{width:42px;height:5px;border-radius:99px;background:#CBD5E1;margin:0 auto 22px;flex:0 0 auto}
+#dashboard .admin-menu-sheet-content{display:flex;flex:1;min-height:0;flex-direction:column}
+#dashboard .admin-menu-action{display:flex;align-items:center;gap:14px;width:100%;min-height:54px;padding:0 8px;border:0;border-radius:12px;background:transparent;color:#1B2E50;text-align:left;font:600 16px Manrope,sans-serif;cursor:pointer}
+#dashboard .admin-menu-action>svg:first-child{width:21px;height:21px;color:#64748B}
+#dashboard .admin-menu-action .admin-menu-chevron{width:18px;height:18px;margin-left:auto;color:#94A3B8}
+#dashboard .admin-menu-logout{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:999px;background:#1E90FF;color:#fff;font:700 15px Manrope,sans-serif;cursor:pointer}
+#dashboard .admin-menu-logout svg{width:19px;height:19px}
+@media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}
