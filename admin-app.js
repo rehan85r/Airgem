@@ -1352,8 +1352,8 @@
         $('mfaError').textContent = 'Enter a valid 6-digit code.';
         return;
       }
-      const button = $('mfaForm').querySelector('button[type="submit"]');
-      button.disabled = true;
+      const submitButton = $('mfaForm').querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
       try {
         if (!pendingMfa?.id) throw Error('MFA session expired. Sign in again.');
         const { data: challenge, error: challengeError } = await dropyClient.auth.mfa.challenge({
@@ -1375,7 +1375,7 @@
       } catch (error) {
         $('mfaError').textContent = error.message;
       } finally {
-        button.disabled = false;
+        if (submitButton) submitButton.disabled = false;
       }
     };
   }
