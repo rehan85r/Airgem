@@ -1246,25 +1246,55 @@
     const mfaSheet = $('mfaBox');
     let mfaTouchStartY = 0;
     let mfaTouchStartX = 0;
+    let mfaDragging = false;
     mfaSheet?.addEventListener('touchstart', (event) => {
       const touch = event.touches[0];
       mfaTouchStartY = touch?.clientY || 0;
       mfaTouchStartX = touch?.clientX || 0;
+      mfaDragging = false;
     }, { passive: true });
     mfaSheet?.addEventListener('touchmove', (event) => {
       if (!mfaTouchStartY) return;
       const touch = event.touches[0];
       const deltaY = (touch?.clientY || 0) - mfaTouchStartY;
       const deltaX = Math.abs((touch?.clientX || 0) - mfaTouchStartX);
-      if (deltaY > 8 && deltaY > deltaX) event.preventDefault();
+      if (deltaY > 0 && deltaY > deltaX) {
+        event.preventDefault();
+        mfaDragging = true;
+        mfaSheet.style.transition = 'none';
+        mfaSheet.style.transform = `translateY(${deltaY}px)`;
+      } else if (mfaDragging && deltaY <= 0) {
+        event.preventDefault();
+        mfaSheet.style.transform = 'translateY(0)';
+      }
     }, { passive: false });
-    mfaSheet?.addEventListener('touchend', async (event) => {
-      const endY = event.changedTouches[0]?.clientY || 0;
-      const distance = endY - mfaTouchStartY;
+    const finishMfaDrag = async (event) => {
+      if (!mfaTouchStartY) return;
+      const endY = event.changedTouches?.[0]?.clientY || mfaTouchStartY;
+      const distance = Math.max(0, endY - mfaTouchStartY);
+      const closeThreshold = mfaSheet.getBoundingClientRect().height * 0.25;
       mfaTouchStartY = 0;
       mfaTouchStartX = 0;
-      if (distance > 65) await logoutFromMfa();
-    }, { passive: true });
+      mfaDragging = false;
+      mfaSheet.style.transition = 'transform 220ms cubic-bezier(.2,.8,.2,1)';
+      if (distance >= closeThreshold) {
+        mfaSheet.style.transform = `translateY(${mfaSheet.getBoundingClientRect().height}px)`;
+        await new Promise((resolve) => setTimeout(resolve, 220));
+        mfaSheet.style.transition = '';
+        mfaSheet.style.transform = '';
+        await logoutFromMfa();
+      } else {
+        mfaSheet.style.transform = 'translateY(0)';
+        window.setTimeout(() => {
+          if (mfaSheet) {
+            mfaSheet.style.transition = '';
+            mfaSheet.style.transform = '';
+          }
+        }, 230);
+      }
+    };
+    mfaSheet?.addEventListener('touchend', finishMfaDrag, { passive: true });
+    mfaSheet?.addEventListener('touchcancel', finishMfaDrag, { passive: true });
     $('mfaCancel')?.addEventListener('click', async () => {
       if (pendingMfa?.mode === 'enroll') {
         const { error } = await dropyClient.auth.mfa.unenroll({ factorId: pendingMfa.id });
