@@ -9709,8 +9709,9 @@ body:not([data-view]) #loginBox .otp-digit {
 }
 body:not([data-view]) #loginBox .otp-digit:focus,
 body:not([data-view]) #loginBox .otp-digit:focus-visible {
-  border-color: #1E90FF;
-  box-shadow: 0 0 0 3px rgba(30,144,255,.10);
+  border-color: #CBD5E1;
+  outline: none;
+  box-shadow: none;
 }
 body:not([data-view]) #loginBox .otp-digit:disabled { opacity: .65; }
 body:not([data-view]) #loginBox #emailOtp { display: none !important; }
