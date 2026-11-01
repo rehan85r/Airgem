@@ -682,7 +682,7 @@
         .maybeSingle();
       if (error || !data) {
         await dropyClient.auth.signOut();
-        throw Error('This account is not authorized as an administrator.');
+        throw Error('Account Not Found');
       }
       const { data: factors, error: factorError } = await dropyClient.auth.mfa.listFactors();
       if (factorError) throw Error(`MFA check failed: ${factorError.message}`);
