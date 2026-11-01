@@ -322,24 +322,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 .error-message:empty {
   display: none;
 }
-#mfaQr {
-  display: block;
-  margin: 20px auto;
-}
-#mfaSecret {
-  font-family: monospace;
-  overflow-wrap: anywhere;
-  font-size: 12px;
-}
-#mfaCode {
-  font-size: 22px;
-  letter-spacing: 8px;
-  text-align: center;
-}
-#turnstileContainer {
-  min-height: 65px;
-  overflow: hidden;
-}
 .status-dot {
   display: inline-block;
   width: 6px;
@@ -2370,24 +2352,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 }
 .error-message:empty {
   display: none;
-}
-#mfaQr {
-  display: block;
-  margin: 20px auto;
-}
-#mfaSecret {
-  font-family: monospace;
-  overflow-wrap: anywhere;
-  font-size: 12px;
-}
-#mfaCode {
-  font-size: 22px;
-  letter-spacing: 8px;
-  text-align: center;
-}
-#turnstileContainer {
-  min-height: 65px;
-  overflow: hidden;
 }
 .status-dot {
   display: inline-block;
@@ -4508,24 +4472,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 .error-message:empty {
   display: none;
 }
-#mfaQr {
-  display: block;
-  margin: 20px auto;
-}
-#mfaSecret {
-  font-family: monospace;
-  overflow-wrap: anywhere;
-  font-size: 12px;
-}
-#mfaCode {
-  font-size: 22px;
-  letter-spacing: 8px;
-  text-align: center;
-}
-#turnstileContainer {
-  min-height: 65px;
-  overflow: hidden;
-}
 .status-dot {
   display: inline-block;
   width: 6px;
@@ -6556,24 +6502,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 }
 .error-message:empty {
   display: none;
-}
-#mfaQr {
-  display: block;
-  margin: 20px auto;
-}
-#mfaSecret {
-  font-family: monospace;
-  overflow-wrap: anywhere;
-  font-size: 12px;
-}
-#mfaCode {
-  font-size: 22px;
-  letter-spacing: 8px;
-  text-align: center;
-}
-#turnstileContainer {
-  min-height: 65px;
-  overflow: hidden;
 }
 .status-dot {
   display: inline-block;
@@ -9723,7 +9651,6 @@ body:not([data-view]) #loginBox #loginError {
 body:not([data-view]) #loginBox #loginForm > button[hidden] { display: none !important; }
 @media (max-width: 380px) {
   body:not([data-view]) #loginBox .otp-digit-grid { gap: 7px; }
-  body:not([data-view]) #loginBox .otp-digit { height: 50px; }
 }
 
 
