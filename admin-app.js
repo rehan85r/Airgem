@@ -1246,51 +1246,74 @@
     const mfaSheet = $('mfaBox');
     let mfaTouchStartY = 0;
     let mfaTouchStartX = 0;
-    let mfaDragging = false;
+    let mfaStartHeight = 0;
+    let mfaDragDelta = 0;
+    const mfaHalfHeight = () => Math.min(window.innerHeight * 0.5, 560);
+    const mfaExpandedHeight = () => window.innerHeight * 0.9;
+    const setMfaSheetHeight = (height, animate = true) => {
+      mfaSheet.style.transition = animate
+        ? 'height 240ms cubic-bezier(.2,.8,.2,1), transform 240ms cubic-bezier(.2,.8,.2,1)'
+        : 'none';
+      mfaSheet.style.height = `${height}px`;
+      mfaSheet.style.transform = 'translateY(0)';
+    };
     mfaSheet?.addEventListener('touchstart', (event) => {
       const touch = event.touches[0];
       mfaTouchStartY = touch?.clientY || 0;
       mfaTouchStartX = touch?.clientX || 0;
-      mfaDragging = false;
+      mfaStartHeight = mfaSheet.getBoundingClientRect().height;
+      mfaDragDelta = 0;
+      mfaSheet.style.transition = 'none';
     }, { passive: true });
     mfaSheet?.addEventListener('touchmove', (event) => {
       if (!mfaTouchStartY) return;
       const touch = event.touches[0];
       const deltaY = (touch?.clientY || 0) - mfaTouchStartY;
       const deltaX = Math.abs((touch?.clientX || 0) - mfaTouchStartX);
-      if (deltaY > 0 && deltaY > deltaX) {
-        event.preventDefault();
-        mfaDragging = true;
-        mfaSheet.style.transition = 'none';
-        mfaSheet.style.transform = `translateY(${deltaY}px)`;
-      } else if (mfaDragging && deltaY <= 0) {
-        event.preventDefault();
+      if (Math.abs(deltaY) <= deltaX) return;
+      event.preventDefault();
+      mfaDragDelta = deltaY;
+      if (deltaY < 0) {
+        const expandedHeight = Math.min(mfaExpandedHeight(), mfaStartHeight - deltaY);
+        mfaSheet.style.height = `${expandedHeight}px`;
         mfaSheet.style.transform = 'translateY(0)';
+      } else {
+        mfaSheet.style.height = `${mfaStartHeight}px`;
+        mfaSheet.style.transform = `translateY(${deltaY}px)`;
       }
     }, { passive: false });
-    const finishMfaDrag = async (event) => {
+    const finishMfaDrag = async () => {
       if (!mfaTouchStartY) return;
-      const endY = event.changedTouches?.[0]?.clientY || mfaTouchStartY;
-      const distance = Math.max(0, endY - mfaTouchStartY);
-      const closeThreshold = mfaSheet.getBoundingClientRect().height * 0.25;
+      const delta = mfaDragDelta;
+      const startHeight = mfaStartHeight;
       mfaTouchStartY = 0;
       mfaTouchStartX = 0;
-      mfaDragging = false;
-      mfaSheet.style.transition = 'transform 220ms cubic-bezier(.2,.8,.2,1)';
-      if (distance >= closeThreshold) {
-        mfaSheet.style.transform = `translateY(${mfaSheet.getBoundingClientRect().height}px)`;
-        await new Promise((resolve) => setTimeout(resolve, 220));
-        mfaSheet.style.transition = '';
-        mfaSheet.style.transform = '';
-        await logoutFromMfa();
+      mfaDragDelta = 0;
+      const halfHeight = mfaHalfHeight();
+      const expandedHeight = mfaExpandedHeight();
+      if (delta < -(window.innerHeight * 0.1)) {
+        setMfaSheetHeight(Math.min(expandedHeight, Math.max(startHeight, halfHeight)), true);
+      } else if (delta > 0) {
+        const closeThreshold = startHeight > halfHeight + 24
+          ? window.innerHeight * 0.25
+          : startHeight * 0.25;
+        if (delta >= closeThreshold) {
+          mfaSheet.style.transition = 'height 220ms cubic-bezier(.2,.8,.2,1), transform 220ms cubic-bezier(.2,.8,.2,1)';
+          mfaSheet.style.transform = `translateY(${window.innerHeight}px)`;
+          await new Promise((resolve) => window.setTimeout(resolve, 220));
+          mfaSheet.style.transition = '';
+          mfaSheet.style.transform = '';
+          mfaSheet.style.height = '';
+          await logoutFromMfa();
+          return;
+        }
+        if (startHeight > halfHeight + 24 && delta >= window.innerHeight * 0.1) {
+          setMfaSheetHeight(halfHeight, true);
+        } else {
+          setMfaSheetHeight(startHeight, true);
+        }
       } else {
-        mfaSheet.style.transform = 'translateY(0)';
-        window.setTimeout(() => {
-          if (mfaSheet) {
-            mfaSheet.style.transition = '';
-            mfaSheet.style.transform = '';
-          }
-        }, 230);
+        setMfaSheetHeight(startHeight, true);
       }
     };
     mfaSheet?.addEventListener('touchend', finishMfaDrag, { passive: true });
