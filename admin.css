@@ -9375,10 +9375,7 @@ body:not([data-view]) #loginBox #loginHeading {
   text-align: center;
 }
 body:not([data-view]) #loginBox > p.muted {
-  display: block;
-  width: 100%;
   margin: 0;
-  padding: 0;
   color: #64748B;
   font-size: 14px;
   line-height: 1.55;
@@ -9584,9 +9581,6 @@ body:not([data-view]) #loginBox .auth-footnote svg {
   height: 16px;
   flex: 0 0 16px;
   color: #64748B;
-}
-@media (max-width: 480px) {
-  body:not([data-view]) #loginBox.auth-card { max-width: 360px; }
 }
 @media (max-height: 760px) {
   body:not([data-view]) .auth-shell { padding-top: 143px; padding-bottom: 150px; }
