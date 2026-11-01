@@ -9864,3 +9864,5 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 #dashboard .admin-menu-logout{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:999px;background:#1E90FF;color:#fff;font:700 15px Manrope,sans-serif;cursor:pointer}
 #dashboard .admin-menu-logout svg{width:19px;height:19px}
 @media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}
+
+#dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}
