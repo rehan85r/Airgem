@@ -1244,34 +1244,36 @@
       }
     };
     const mfaSheet = $('mfaBox');
-    let mfaTouchStartY = 0;
-    let mfaTouchStartX = 0;
+    let mfaPointerStartY = null;
+    let mfaPointerStartX = 0;
     let mfaDragDelta = 0;
-    mfaSheet?.addEventListener('touchstart', (event) => {
-      const touch = event.touches[0];
-      mfaTouchStartY = touch?.clientY ?? 0;
-      mfaTouchStartX = touch?.clientX ?? 0;
+    let mfaPointerId = null;
+    mfaSheet?.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' || event.target.closest('input, button, a')) return;
+      mfaPointerStartY = event.clientY;
+      mfaPointerStartX = event.clientX;
+      mfaPointerId = event.pointerId;
       mfaDragDelta = 0;
       mfaSheet.style.transition = 'none';
-    }, { passive: true });
-    mfaSheet?.addEventListener('touchmove', (event) => {
-      if (!mfaTouchStartY) return;
-      const touch = event.touches[0];
-      const deltaY = (touch?.clientY ?? 0) - mfaTouchStartY;
-      const deltaX = Math.abs((touch?.clientX ?? 0) - mfaTouchStartX);
-      if (Math.abs(deltaY) < 5 || Math.abs(deltaY) <= deltaX) return;
+      mfaSheet.setPointerCapture?.(event.pointerId);
+    });
+    mfaSheet?.addEventListener('pointermove', (event) => {
+      if (mfaPointerStartY === null || event.pointerId !== mfaPointerId) return;
+      const deltaY = event.clientY - mfaPointerStartY;
+      const deltaX = Math.abs(event.clientX - mfaPointerStartX);
+      if (Math.abs(deltaY) < 3 || Math.abs(deltaY) <= deltaX) return;
       event.preventDefault();
-      const sheetHeight = mfaSheet.getBoundingClientRect().height;
       mfaDragDelta = deltaY;
-      const maxUp = sheetHeight * 0.2;
+      const maxUp = mfaSheet.getBoundingClientRect().height * 0.2;
       mfaSheet.style.transform = `translateY(${Math.max(-maxUp, deltaY)}px)`;
-    }, { passive: false });
-    const finishMfaDrag = async () => {
-      if (!mfaTouchStartY) return;
+    });
+    const finishMfaDrag = async (event) => {
+      if (mfaPointerStartY === null || (event && event.pointerId !== mfaPointerId)) return;
       const delta = mfaDragDelta;
       const closeThreshold = mfaSheet.getBoundingClientRect().height * 0.25;
-      mfaTouchStartY = 0;
-      mfaTouchStartX = 0;
+      mfaPointerStartY = null;
+      mfaPointerStartX = 0;
+      mfaPointerId = null;
       mfaDragDelta = 0;
       mfaSheet.style.transition = 'transform 240ms cubic-bezier(.2,.8,.2,1)';
       if (delta >= closeThreshold) {
@@ -1290,8 +1292,8 @@
         }, 250);
       }
     };
-    mfaSheet?.addEventListener('touchend', finishMfaDrag, { passive: true });
-    mfaSheet?.addEventListener('touchcancel', finishMfaDrag, { passive: true });
+    mfaSheet?.addEventListener('pointerup', finishMfaDrag);
+    mfaSheet?.addEventListener('pointercancel', finishMfaDrag);
     $('mfaCancel')?.addEventListener('click', async () => {
       if (pendingMfa?.mode === 'enroll') {
         const { error } = await dropyClient.auth.mfa.unenroll({ factorId: pendingMfa.id });
