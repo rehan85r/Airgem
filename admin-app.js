@@ -1170,9 +1170,18 @@
         $('loginError').textContent = 'Passkeys require a supported browser and a secure HTTPS connection.';
         return;
       }
+      const captchaToken = siteKey
+        ? (turnstileToken || window.turnstile?.getResponse(turnstileWidget) || '')
+        : '';
+      if (siteKey && !captchaToken) {
+        $('loginError').textContent = 'Complete the security check before using Passkey Login.';
+        return;
+      }
       setSocialBusy(true, button);
       try {
-        const { error } = await dropyClient.auth.signInWithPasskey();
+        const { error } = await dropyClient.auth.signInWithPasskey({
+          options: siteKey ? { captchaToken } : {},
+        });
         if (error) throw error;
         await initialize();
       } catch (error) {
@@ -1180,10 +1189,17 @@
         const message = String(error.message || '');
         $('loginError').textContent = code === 'passkey_disabled'
           ? 'Passkey Login Is Not Enabled For Airgem Yet.'
-          : code === 'passkey_not_found' || code === 'credential_not_found' ||
-            /passkey (not found|does not exist)|no (matching )?(passkey|credential) found/i.test(message)
-            ? 'Passkey Not Found'
-            : message || 'Unable to sign in with passkey. Please try again.';
+          : code === 'captcha_failed'
+            ? 'Security check expired. Complete it again and retry Passkey Login.'
+            : code === 'webauthn_credential_not_found' || code === 'passkey_not_found' ||
+              code === 'credential_not_found' ||
+              /passkey (not found|does not exist)|no (matching )?(passkey|credential) found/i.test(message)
+              ? 'Passkey Not Found'
+              : message || 'Unable to sign in with passkey. Please try again.';
+        if (siteKey && turnstileWidget !== null) {
+          turnstileToken = '';
+          window.turnstile?.reset(turnstileWidget);
+        }
         setSocialBusy(false);
       }
     });
