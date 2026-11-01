@@ -1266,8 +1266,12 @@
         $('loginError').textContent = 'Enter your email address first.';
         return;
       }
-      if (siteKey && !turnstileToken) {
-        $('loginError').textContent = '';
+      const captchaToken = siteKey
+        ? (turnstileToken || window.turnstile?.getResponse(turnstileWidget) || '')
+        : '';
+      if (siteKey && !captchaToken) {
+        $('loginError').classList.remove('is-info');
+        $('loginError').textContent = 'Complete the security check before continuing.';
         return;
       }
       const button = $('loginForm').querySelector('button[type="submit"]');
@@ -1275,7 +1279,7 @@
       $('loginError').textContent = '';
       try {
         const options = { shouldCreateUser: false };
-        if (siteKey) options.captchaToken = turnstileToken;
+        if (siteKey) options.captchaToken = captchaToken;
         const { error } = await dropyClient.auth.signInWithOtp({ email, options });
         if (error) throw error;
         emailOtpSent = true;
