@@ -9752,14 +9752,13 @@ body:not([data-view]) #mfaBox .mfa-authenticator-icon {
   width: 56px;
   height: 56px;
   margin: 45px auto 14px;
-  border-radius: 16px;
-  background: #E8F3FF;
-  color: #1E90FF;
+  background: transparent;
 }
-body:not([data-view]) #mfaBox .mfa-authenticator-icon svg {
-  width: 30px;
-  height: 30px;
-  stroke-width: 1.8;
+body:not([data-view]) #mfaBox .mfa-authenticator-icon img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 body:not([data-view]) #mfaBox #mfaHeading {
   margin: 0 0 20px;
