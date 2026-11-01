@@ -9920,9 +9920,12 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
     margin-top: 12px;
   }
   body:not([data-view]) #mfaBox .auth-footnote {
-    position: static;
-    margin: 10px 0 0;
-    font-size: 11px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    margin: 0;
+    font-size: 13px;
   }
 }
 @keyframes mfaSheetSlideUp {
