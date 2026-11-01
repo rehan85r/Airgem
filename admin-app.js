@@ -1234,13 +1234,13 @@
       }
     };
     const distributeOtp = (value, startIndex = 0) => {
-      if (startIndex === 0) otpDigits.forEach((input) => { input.value = ''; });
       const digits = String(value).replace(/\D/g, '').slice(0, 6 - startIndex);
+      if (startIndex === 0) otpDigits.forEach((input) => { input.value = ''; });
       digits.split('').forEach((digit, offset) => {
         if (otpDigits[startIndex + offset]) otpDigits[startIndex + offset].value = digit;
       });
-      const next = Math.min(startIndex + digits.length, 5);
-      if (digits.length) otpDigits[next]?.focus();
+      const nextIndex = Math.min(startIndex + digits.length, 5);
+      if (digits.length && digits.length < 6 - startIndex) otpDigits[nextIndex]?.focus();
       if (otpValue().length === 6) verifyEmailOtp();
     };
     $('otpField').addEventListener('paste', (event) => {
@@ -1253,13 +1253,13 @@
     otpDigits.forEach((input, index) => {
       input.addEventListener('input', () => {
         const value = input.value;
-        if (value.length > 1) {
-          input.value = '';
-          distributeOtp(value, index);
+        const digits = value.replace(/\D/g, '');
+        if (digits.length > 1) {
+          distributeOtp(digits, index);
           return;
         }
-        input.value = value.replace(/\D/g, '').slice(-1);
-          if (input.value && index < 5) otpDigits[index + 1].focus();
+        input.value = digits.slice(-1);
+        if (input.value && index < 5) otpDigits[index + 1].focus();
         if (otpValue().length === 6) verifyEmailOtp();
       });
       input.addEventListener('keydown', (event) => {
