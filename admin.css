@@ -9262,9 +9262,6 @@ body:not([data-view]) .auth-brand span {
 }
 body:not([data-view]) .auth-back-button,
 body:not([data-view]) .auth-menu-button {
-  position: absolute;
-  top: 15px;
-  z-index: 3;
   display: grid;
   place-items: center;
   width: 35px;
@@ -9276,7 +9273,12 @@ body:not([data-view]) .auth-menu-button {
   color: #1B2E50;
   box-shadow: 0 2px 8px rgba(27,46,80,.06);
 }
-body:not([data-view]) .auth-back-button { left: 15px; }
+body:not([data-view]) .auth-back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 3;
+}
 body:not([data-view]) details.auth-menu { position: absolute; top: 15px; right: 15px; z-index: 20; }
 body:not([data-view]) .auth-menu-button {
   position: static;
@@ -9288,9 +9290,6 @@ body:not([data-view]) .auth-menu-button {
 }
 body:not([data-view]) .auth-menu-panel {
   position: absolute;
-  top: 43px;
-  right: 0;
-  width: 230px;
   padding: 6px;
   border: 1px solid #E2E8F0;
   border-radius: 12px;
@@ -9317,7 +9316,6 @@ body:not([data-view]) .auth-menu-item {
 body:not([data-view]) .auth-menu-item:hover { background: #F8FAFC; }
 body:not([data-view]) .auth-menu-item svg { width: 17px; height: 17px; color: #64748B; flex: 0 0 17px; }
 body:not([data-view]) .auth-menu-chevron { margin-left: auto; width: 14px !important; height: 14px !important; }
-body:not([data-view]) .auth-menu-nested > summary::-webkit-details-marker { display: none; }
 body:not([data-view]) .auth-menu-description {
   display: flex;
   align-items: center;
