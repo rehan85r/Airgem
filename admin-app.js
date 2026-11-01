@@ -1178,7 +1178,7 @@
       } catch (error) {
         const code = error.code || error.error_code || '';
         $('loginError').textContent = code === 'passkey_disabled'
-          ? 'Passkey sign-in is not enabled for Airgem yet.'
+          ? 'Passkey Login Is Not Enabled For Airgem Yet.'
           : error.message || 'Unable to sign in with passkey. Please try again.';
         setSocialBusy(false);
       }
