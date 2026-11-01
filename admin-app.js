@@ -1248,6 +1248,46 @@
         await initialize();
       } else await signOut();
     });
+    const mfaDigits = [...document.querySelectorAll('#mfaBox .mfa-code-digit')];
+    const syncMfaCode = () => {
+      $('mfaCode').value = mfaDigits.map((input) => input.value).join('');
+    };
+    const fillMfaDigits = (value, start = 0) => {
+      const digits = String(value).replace(/\\D/g, '').slice(0, 6 - start);
+      digits.split('').forEach((digit, index) => {
+        if (mfaDigits[start + index]) mfaDigits[start + index].value = digit;
+      });
+      syncMfaCode();
+      const next = Math.min(start + digits.length, 5);
+      mfaDigits[next]?.focus();
+      if (mfaDigits.every((input) => input.value)) $('mfaForm').requestSubmit();
+    };
+    mfaDigits.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        const value = input.value;
+        if (value.length > 1) {
+          input.value = '';
+          fillMfaDigits(value, index);
+          return;
+        }
+        input.value = value.replace(/\\D/g, '').slice(-1);
+        syncMfaCode();
+        if (input.value && index < 5) mfaDigits[index + 1].focus();
+        if (mfaDigits.every((digit) => digit.value)) $('mfaForm').requestSubmit();
+      });
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace' && !input.value && index > 0) {
+          mfaDigits[index - 1].value = '';
+          syncMfaCode();
+          mfaDigits[index - 1].focus();
+        } else if (event.key === 'ArrowLeft' && index > 0) mfaDigits[index - 1].focus();
+        else if (event.key === 'ArrowRight' && index < 5) mfaDigits[index + 1].focus();
+      });
+      input.addEventListener('paste', (event) => {
+        event.preventDefault();
+        fillMfaDigits(event.clipboardData?.getData('text') || '', index);
+      });
+    });
     if ($('mfaForm')) $('mfaForm').onsubmit = async (event) => {
       event.preventDefault();
       const code = $('mfaCode').value.trim();
@@ -1273,6 +1313,7 @@
         $('mfaQr').hidden = true;
         $('mfaSecret').textContent = '';
         $('mfaCode').value = '';
+        mfaDigits.forEach((input) => { input.value = ''; });
         await initialize();
       } catch (error) {
         $('mfaError').textContent = error.message;
