@@ -9761,7 +9761,7 @@ body:not([data-view]) #mfaBox .mfa-authenticator-icon img {
   object-fit: contain;
 }
 body:not([data-view]) #mfaBox #mfaHeading {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   color: #1B2E50;
   font: 700 22px/1.25 Manrope, Inter, sans-serif;
   letter-spacing: -0.5px;
