@@ -1186,13 +1186,6 @@
           otpDigits[index + 1].focus();
         }
       });
-      input.addEventListener('paste', (event) => {
-        const pasted = event.clipboardData?.getData('text') || '';
-        if (pasted) {
-          event.preventDefault();
-          distributeOtp(pasted, index);
-        }
-      });
     });
     if ($('loginForm')) $('loginForm').onsubmit = async (event) => {
       event.preventDefault();
@@ -1223,7 +1216,7 @@
         otpDigits[0]?.focus();
       } catch (error) {
         $('loginError').classList.remove('is-info');
-        const cooldown = error.message.match(/you can only request this after (\\d+) seconds/i);
+        const cooldown = error.message.match(/you can only request this after (\d+) seconds/i);
         $('loginError').textContent = cooldown
           ? `Please Wait ${cooldown[1]} Seconds Before Trying Again.`
           : error.message;
