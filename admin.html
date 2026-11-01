@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/admin.css?v=google-authenticator-logo-20261101" />
+    <link rel="stylesheet" href="/admin.css?v=authenticator-six-digit-boxes-20261101" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
   <body>
@@ -80,18 +80,16 @@
         <img id="mfaQr" alt="Authenticator setup QR code" hidden width="190" height="190" />
         <p id="mfaSecret"></p>
         <form id="mfaForm">
-          <div class="field">
-            <input
-              id="mfaCode"
-              type="text"
-              inputmode="numeric"
-              autocomplete="one-time-code"
-              pattern="[0-9]{6}"
-              maxlength="6"
-              required
-              placeholder="000000"
-              aria-label="Authenticator code"
-            />
+          <div class="field mfa-code-field">
+            <input id="mfaCode" type="hidden" />
+            <div class="mfa-code-digits" role="group" aria-label="6-digit authenticator code">
+              <input class="mfa-code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1"  />
+              <input class="mfa-code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 2" tabindex="0" />
+              <input class="mfa-code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 3" tabindex="0" />
+              <input class="mfa-code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 4" tabindex="0" />
+              <input class="mfa-code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 5" tabindex="0" />
+              <input class="mfa-code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="off" aria-label="Digit 6" tabindex="0" />
+            </div>
           </div>
           <button class="button primary full-width" type="submit">Verify Code</button>
         </form>
@@ -671,7 +669,7 @@
       window.AIRGEM_TURNSTILE_SITE_KEY = '0x4AAAAAAFYFJoLw-mUoQuZo';
     </script>
     <script src="/admin-editor.js?v=admin-cleanup-20261030" defer></script>
-    <script src="/admin-app.js?v=google-authenticator-logo-20261101" defer></script>
+    <script src="/admin-app.js?v=authenticator-six-digit-boxes-20261101" defer></script>
     <script>
       document.getElementById("clearSiteCache")?.addEventListener("click", async () => {
         const button = document.getElementById("clearSiteCache");
