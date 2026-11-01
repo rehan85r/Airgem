@@ -1145,6 +1145,7 @@
       }
     };
     const distributeOtp = (value, startIndex = 0) => {
+      if (startIndex === 0) otpDigits.forEach((input) => { input.value = ''; });
       const digits = String(value).replace(/\D/g, '').slice(0, 6 - startIndex);
       digits.split('').forEach((digit, offset) => {
         if (otpDigits[startIndex + offset]) otpDigits[startIndex + offset].value = digit;
@@ -1154,6 +1155,13 @@
       if (digits.length) otpDigits[next]?.focus();
       if (otpValue().length === 6) verifyEmailOtp();
     };
+    $('otpField').addEventListener('paste', (event) => {
+      const pasted = event.clipboardData?.getData('text') || '';
+      if (!pasted) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      distributeOtp(pasted, 0);
+    }, true);
     otpDigits.forEach((input, index) => {
       input.addEventListener('input', () => {
         const value = input.value;
