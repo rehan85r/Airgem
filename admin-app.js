@@ -680,8 +680,10 @@
         .select('user_id')
         .eq('user_id', user.id)
         .maybeSingle();
-      if (error || !data)
-        throw Error(error?.message || 'This account is not authorized as an administrator.');
+      if (error || !data) {
+        await dropyClient.auth.signOut();
+        throw Error('This account is not authorized as an administrator.');
+      }
       const { data: factors, error: factorError } = await dropyClient.auth.mfa.listFactors();
       if (factorError) throw Error(`MFA check failed: ${factorError.message}`);
       const verified = factors.totp?.filter((factor) => factor.status === 'verified') || [];
@@ -1073,6 +1075,29 @@
     if ($('publishAllAirdrops')) $('publishAllAirdrops').onclick = publishAllAirdrops;
     if ($('logout')) $('logout').onclick = signOut;
     if ($('mfaSetup')) $('mfaSetup').onclick = startMfaSetup;
+    if ($('passkeySetup')) $('passkeySetup').onclick = async () => {
+      const button = $('passkeySetup');
+      const status = $('passkeyStatus');
+      button.disabled = true;
+      status.textContent = 'Preparing passkey setup…';
+      try {
+        if (!window.isSecureContext || !window.PublicKeyCredential || !navigator.credentials) {
+          throw Error('Passkeys require a supported browser and a secure HTTPS connection.');
+        }
+        const { data, error } = await dropyClient.auth.registerPasskey();
+        if (error) throw error;
+        status.textContent = data?.friendly_name
+          ? `Passkey added: ${data.friendly_name}`
+          : 'Passkey added successfully.';
+      } catch (error) {
+        const code = error.code || error.error_code || '';
+        status.textContent = code === 'passkey_disabled'
+          ? 'Passkey authentication must first be enabled in Supabase.'
+          : error.message || 'Unable to set up passkey.';
+      } finally {
+        button.disabled = false;
+      }
+    };
     document.addEventListener('keydown', (event) => {
       const tab = event.target.closest('[data-editor-tab]');
       if (tab && ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
@@ -1104,14 +1129,59 @@
       },
       true,
     );
-    $('googleSignIn')?.addEventListener('click', () => {
-      $('loginError').textContent = 'Google sign-in is not configured yet.';
+    const socialButtons = ['githubSignIn', 'googleSignIn', 'passkeySignIn']
+      .map((id) => $(id))
+      .filter(Boolean);
+    const setSocialBusy = (busy, activeButton = null) => {
+      socialButtons.forEach((button) => {
+        button.disabled = busy;
+        button.setAttribute('aria-busy', busy && button === activeButton ? 'true' : 'false');
+      });
+    };
+    const startOAuthSignIn = async (provider, button) => {
+      $('loginError').classList.remove('is-info');
+      $('loginError').textContent = '';
+      setSocialBusy(true, button);
+      try {
+        const { error } = await dropyClient.auth.signInWithOAuth({
+          provider,
+          options: {
+            redirectTo: new URL('/admin', window.location.origin).href,
+            ...(provider === 'google' ? { queryParams: { prompt: 'select_account' } } : {}),
+          },
+        });
+        if (error) throw error;
+      } catch (error) {
+        $('loginError').textContent = error.message || 'Unable to start sign-in. Please try again.';
+        setSocialBusy(false);
+      }
+    };
+    $('githubSignIn')?.addEventListener('click', (event) => {
+      startOAuthSignIn('github', event.currentTarget);
     });
-    $('passkeySignIn')?.addEventListener('click', () => {
-      $('loginError').textContent = 'Passkey sign-in is not configured yet.';
+    $('googleSignIn')?.addEventListener('click', (event) => {
+      startOAuthSignIn('google', event.currentTarget);
     });
-    $('githubSignIn')?.addEventListener('click', () => {
-      $('loginError').textContent = 'GitHub sign-in is not configured yet.';
+    $('passkeySignIn')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      $('loginError').classList.remove('is-info');
+      $('loginError').textContent = '';
+      if (!window.isSecureContext || !window.PublicKeyCredential || !navigator.credentials) {
+        $('loginError').textContent = 'Passkeys require a supported browser and a secure HTTPS connection.';
+        return;
+      }
+      setSocialBusy(true, button);
+      try {
+        const { error } = await dropyClient.auth.signInWithPasskey();
+        if (error) throw error;
+        await initialize();
+      } catch (error) {
+        const code = error.code || error.error_code || '';
+        $('loginError').textContent = code === 'passkey_disabled'
+          ? 'Passkey sign-in is not enabled for Airgem yet.'
+          : error.message || 'Unable to sign in with passkey. Please try again.';
+        setSocialBusy(false);
+      }
     });
     let emailOtpSent = false;
     let emailOtpVerifying = false;
