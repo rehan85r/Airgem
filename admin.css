@@ -10030,3 +10030,89 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
     font-size:11px;
   }
 }
+
+
+/* Shared typography system — Admin Login, MFA and Dashboard */
+body:not([data-view]) .auth-shell,
+#dashboard,
+#dashboard button,
+#dashboard input,
+#dashboard select,
+#dashboard textarea{
+  font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+body:not([data-view]) .auth-brand span,
+#dashboard .admin-header-brand span{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:20px;
+  font-weight:750;
+  letter-spacing:-.55px;
+}
+body:not([data-view]) #loginBox #loginHeading{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:30px!important;
+  font-weight:750!important;
+  line-height:1.18;
+  letter-spacing:-.9px;
+}
+body:not([data-view]) #loginBox>p.muted,
+body:not([data-view]) #mfaBox #mfaInstructions{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.55;
+  letter-spacing:-.15px;
+}
+body:not([data-view]) #loginBox .auth-input-wrap input,
+body:not([data-view]) #loginBox .otp-digit,
+body:not([data-view]) #mfaBox .mfa-code-digit{
+  font-family:Manrope,Inter,sans-serif;
+  font-weight:500;
+  letter-spacing:0;
+}
+body:not([data-view]) #loginBox form>.button.primary,
+body:not([data-view]) #mfaBox #mfaCancel{
+  font-family:Manrope,Inter,sans-serif;
+  font-weight:700;
+  letter-spacing:-.15px;
+}
+body:not([data-view]) #loginBox .auth-social-divider{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+body:not([data-view]) #loginBox .auth-footnote,
+body:not([data-view]) #mfaBox .auth-footnote{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:-.1px;
+}
+body:not([data-view]) #mfaBox #mfaHeading{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:23px;
+  font-weight:750;
+  letter-spacing:-.55px;
+}
+#projectsView .page-heading h1{
+  font-family:Manrope,Inter,sans-serif;
+  font-weight:750;
+  letter-spacing:-.65px;
+}
+#projectsView .page-heading p{
+  font-family:Manrope,Inter,sans-serif;
+  font-weight:500;
+  letter-spacing:-.15px;
+}
+#projectsView .top-airdrops-heading h2,
+#projectsView .trending-item-copy strong,
+#projectsView .all-airdrops-list .trending-item strong{
+  font-family:Manrope,Inter,sans-serif;
+}
+#projectsView nav.admin-project-nav>.admin-project-nav-button,
+#projectsView nav.admin-project-nav>#addProjectButton,
+#projectsView .top-airdrops-publish{
+  font-family:Manrope,Inter,sans-serif;
+  letter-spacing:-.1px;
+}
