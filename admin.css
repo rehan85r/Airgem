@@ -10091,7 +10091,7 @@ body:not([data-view]) #mfaBox #mfaCancel{
 body:not([data-view]) #loginBox .auth-social-divider{
   font-family:Manrope,Inter,sans-serif;
   font-size:12px;
-  font-weight:700;
+  font-weight:600;
   letter-spacing:-.5px;
   line-height:1;
 }
