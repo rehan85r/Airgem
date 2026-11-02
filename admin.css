@@ -1565,9 +1565,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 #editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
 #editorView #panel-basic{padding:15px}
 }
-@media(prefers-reduced-motion:reduce) {
-#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
-}
+
 /* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
 #panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}
@@ -3669,7 +3667,7 @@ main{padding-top:15px}
 @keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}
 #editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}
 #editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
+
 
 /* Airgem mobile-first full-screen project editor. */
 .mobile-editor-toolbar{display:none}
@@ -3691,7 +3689,7 @@ main{padding-top:15px}
   #editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
   #editorView #panel-basic{padding:15px}
 }
-@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
+
 
 /* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
@@ -5692,9 +5690,7 @@ to{opacity:0;transform:translateY(24px)}
 }
 #editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}
 #editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(prefers-reduced-motion:reduce) {
-#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
-}
+
 /* Airgem mobile-first full-screen project editor. */
 .mobile-editor-toolbar{display:none}
 @media(max-width:767px) {
@@ -5715,9 +5711,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 #editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
 #editorView #panel-basic{padding:15px}
 }
-@media(prefers-reduced-motion:reduce) {
-#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
-}
+
 /* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
 #panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}
@@ -7819,7 +7813,7 @@ main{padding-top:15px}
 @keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}
 #editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}
 #editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
+
 
 /* Airgem mobile-first full-screen project editor. */
 .mobile-editor-toolbar{display:none}
@@ -7841,7 +7835,7 @@ main{padding-top:15px}
   #editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
   #editorView #panel-basic{padding:15px}
 }
-@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}}
+
 
 /* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}
