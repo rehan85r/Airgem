@@ -9405,7 +9405,7 @@ body:not([data-view]) #loginBox .auth-input-wrap {
 }
 body:not([data-view]) #loginBox .auth-input-wrap > svg {
   position: absolute;
-  left: 17px;
+  left: 15px;
   top: 50%;
   z-index: 2;
   display: block;
