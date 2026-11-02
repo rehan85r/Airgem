@@ -9698,7 +9698,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   border-radius:9px;
   font:650 12px/1 Manrope,sans-serif;
   letter-spacing:-.1px;
-  gap:7px;
+  gap:5px;
   color:#FFFFFF;
   background:#1E90FF;
   box-shadow:none;
@@ -10186,7 +10186,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
     border-radius:9px!important;
     font:650 12px/1 Manrope,Inter,sans-serif!important;
     letter-spacing:-.1px!important;
-    gap:7px!important;
+    gap:5px!important;
     color:#FFFFFF!important;
     background:#1E90FF!important;
   }
