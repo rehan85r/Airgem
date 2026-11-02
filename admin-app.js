@@ -693,11 +693,15 @@
         await dropyClient.auth.signOut();
         throw Error('Account Not Found');
       }
-      const { data: factors, error: factorError } = await dropyClient.auth.mfa.listFactors();
+      // These independent MFA reads can run together to avoid an extra network round-trip.
+      const [factorResult, assuranceResult] = await Promise.all([
+        dropyClient.auth.mfa.listFactors(),
+        dropyClient.auth.mfa.getAuthenticatorAssuranceLevel(),
+      ]);
+      const { data: factors, error: factorError } = factorResult;
       if (factorError) throw Error(`MFA check failed: ${factorError.message}`);
       const verified = factors.totp?.filter((factor) => factor.status === 'verified') || [];
-      const { data: assurance, error: assuranceError } =
-        await dropyClient.auth.mfa.getAuthenticatorAssuranceLevel();
+      const { data: assurance, error: assuranceError } = assuranceResult;
       if (assuranceError) throw Error(`MFA assurance check failed: ${assuranceError.message}`);
       if (verified.length && assurance.currentLevel !== 'aal2') {
         pendingMfa = { id: verified[0].id, mode: 'verify' };
@@ -720,11 +724,13 @@
       restoringLocation = true;
       navigate('projects', { skipGuard: true });
       restoringLocation = false;
-      // Load projects first: Top Airdrops and editor restoration both depend on them.
-      // Keep optional Top Airdrops failures from falsely reporting that projects failed.
-      try {
-        await refreshProjects();
-      } catch (error) {
+      // Projects and Top Airdrops use independent tables, so fetch them in parallel.
+      const [projectsResult, trendingResult] = await Promise.allSettled([
+        refreshProjects(),
+        loadTrending(),
+      ]);
+      if (projectsResult.status === 'rejected') {
+        const error = projectsResult.reason;
         console.error('Airgem project loading failed:', error);
         message(`Unable to load projects: ${error.message}`, true);
         if ($('dataError')) {
@@ -740,8 +746,8 @@
           message('Unable to restore the previous editor. Please select the project again.', true);
         }
       }
-      try { await loadTrending(); }
-      catch (error) {
+      if (trendingResult.status === 'rejected') {
+        const error = trendingResult.reason;
         console.error('Airgem Top Airdrops loading failed:', error);
         showTrendingStatus('Unable to load Top Airdrops', 'is-error', error.message);
       }
