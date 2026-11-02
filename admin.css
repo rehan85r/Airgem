@@ -9315,7 +9315,7 @@ body:not([data-view]) .auth-menu-item {
   list-style: none;
 }
 body:not([data-view]) .auth-menu-item:hover { background: #F8FAFC; }
-body:not([data-view]) .auth-menu-item svg { width: 17px; height: 17px; color: #64748B; flex: 0 0 17px; }
+body:not([data-view]) .auth-menu-item svg { width: 17px; height: 17px; color: #1B2E50; flex: 0 0 17px; }
 body:not([data-view]) .auth-menu-chevron { margin-left: auto; width: 14px !important; height: 14px !important; }
 body:not([data-view]) .auth-menu-description {
   display: flex;
