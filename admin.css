@@ -10116,3 +10116,113 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-family:Manrope,Inter,sans-serif;
   letter-spacing:-.1px;
 }
+
+
+/* One typography scale across Dashboard, Basic, Details and Guide */
+#projectsView,
+#editorView,
+#projectsView *,
+#editorView *{
+  font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+#editorView .mobile-editor-toolbar strong,
+#editorView .editor-heading h1{
+  color:#1B2E50;
+  font-size:22px;
+  font-weight:750;
+  line-height:1.25;
+  letter-spacing:-.55px;
+}
+#editorView .editor-heading p,
+#editorView .section-heading p,
+#editorView .field .hint,
+#editorView .field small,
+#editorView .helper-text{
+  color:#64748B;
+  font-size:13px;
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:-.1px;
+}
+#editorView .editor-tabs button,
+#projectsView nav.admin-project-nav>.admin-project-nav-button,
+#projectsView nav.admin-project-nav>#addProjectButton{
+  font-size:13px;
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.1px;
+}
+#editorView .section-heading h2,
+#editorView .editor-panel h2,
+#editorView .editor-panel h3,
+#editorView .editor-panel legend{
+  color:#1B2E50;
+  font-family:Manrope,Inter,sans-serif;
+  font-size:17px;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:-.3px;
+}
+#editorView .editor-panel .field>label,
+#editorView .editor-panel .ag-investor-fields label,
+#editorView .editor-panel label{
+  color:#1B2E50;
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.4;
+  letter-spacing:-.1px;
+}
+#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+#editorView .editor-panel select,
+#editorView .editor-panel textarea,
+#editorView .editor-panel .ag-investor-fields input,
+#editorView .editor-panel [contenteditable="true"]{
+  color:#1B2E50;
+  font-family:Manrope,Inter,sans-serif;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:0;
+}
+#editorView .editor-panel input::placeholder,
+#editorView .editor-panel textarea::placeholder{
+  color:#94A3B8;
+  font-weight:400;
+}
+#editorView .editor-panel button,
+#editorView .editor-footer button{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:650;
+  letter-spacing:-.1px;
+}
+#editorView .editor-panel .button,
+#editorView .editor-footer #publish{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:-.1px;
+}
+#editorView .editor-panel .tag,
+#editorView .editor-panel .badge,
+#editorView .editor-panel .status,
+#editorView .editor-panel .counter{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0;
+}
+@media(max-width:767px){
+  #editorView .mobile-editor-toolbar strong{font-size:18px}
+  #editorView .editor-heading h1{font-size:21px}
+  #editorView .editor-tabs button{font-size:12px}
+  #editorView .editor-panel .field>label,
+  #editorView .editor-panel .ag-investor-fields label,
+  #editorView .editor-panel label{font-size:13px}
+  #editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  #editorView .editor-panel select,
+  #editorView .editor-panel textarea,
+  #editorView .editor-panel .ag-investor-fields input,
+  #editorView .editor-panel [contenteditable="true"]{font-size:14px}
+}
