@@ -254,6 +254,8 @@
     state.projects = projects;
     state.dataLoaded = true;
     renderDashboard();
+    // Re-render Top Airdrops after projects arrive; its parallel fetch may finish first.
+    if (state.trendingLoaded) renderTrending();
     renderAllAirdrops();
     if ($('dataError')) $('dataError').hidden = true;
   }
