@@ -10522,3 +10522,73 @@ body:not([data-view]) #mfaBox #mfaHeading{
     flex:0 0 14px!important;
   }
 }
+
+
+/* Refined compact type scale — reduce visual heaviness without losing readability */
+@media(max-width:767px){
+  #projectsView .page-heading h1{
+    font-size:21px!important;
+    letter-spacing:-.6px!important;
+  }
+  #projectsView .page-heading p{
+    font-size:12px!important;
+  }
+  #projectsView nav.admin-project-nav>.admin-project-nav-button,
+  #projectsView nav.admin-project-nav>#addProjectButton{
+    font-size:11px!important;
+    font-weight:600!important;
+  }
+  #projectsView .top-airdrops-heading h2{
+    font-size:16px!important;
+    letter-spacing:-.25px!important;
+  }
+  #projectsView .top-airdrops-publish{
+    font-size:11.5px!important;
+  }
+  #projectsView .trending-search-input-wrap input{
+    font-size:12px!important;
+  }
+  #projectsView .trending-item-copy strong,
+  #projectsView .all-airdrops-list .trending-item strong{
+    font-size:13px!important;
+    font-weight:650!important;
+  }
+  #dashboard .app-footer{
+    font-size:11px!important;
+  }
+  #editorView .mobile-editor-toolbar strong{
+    font-size:17px!important;
+  }
+  #editorView .editor-heading h1{
+    font-size:20px!important;
+  }
+  #editorView .editor-heading p,
+  #editorView #editorProjectMeta{
+    font-size:12px!important;
+  }
+  #editorView .editor-tabs button,
+  #editorView .editor-heading .actions button,
+  #editorView .editor-heading .actions .button,
+  #editorView .editor-panel button,
+  #editorView .editor-footer button{
+    font-size:12px!important;
+  }
+  #editorView .editor-panel .section-heading h2,
+  #editorView .editor-panel h2,
+  #editorView .editor-panel h3,
+  #editorView .editor-panel legend{
+    font-size:16px!important;
+  }
+  #editorView .editor-panel .field>label,
+  #editorView .editor-panel .ag-investor-fields label,
+  #editorView .editor-panel label{
+    font-size:12px!important;
+  }
+  #editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  #editorView .editor-panel select,
+  #editorView .editor-panel textarea,
+  #editorView .editor-panel .ag-investor-fields input,
+  #editorView .editor-panel [contenteditable="true"]{
+    font-size:13px!important;
+  }
+}
