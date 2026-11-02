@@ -10371,3 +10371,12 @@ body:not([data-view]) #mfaBox #mfaHeading{
     letter-spacing:-.1px!important;
   }
 }
+
+
+/* Keep Top Airdrops and All Airdrops search inputs 50px on every viewport. */
+#projectsView #trendingManager .trending-search-input-wrap input,
+#projectsView #allAirdropsManager .trending-search-input-wrap input {
+  box-sizing: border-box !important;
+  height: 50px !important;
+  min-height: 50px !important;
+}
