@@ -9256,10 +9256,11 @@ body:not([data-view]) .auth-brand img {
 }
 body:not([data-view]) .auth-brand span {
   color: #1B2E50;
+  font-family: Manrope, Inter, sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 750;
   line-height: 1;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.55px;
 }
 body:not([data-view]) .auth-back-button,
 body:not([data-view]) .auth-menu-button {
@@ -9369,21 +9370,21 @@ body:not([data-view]) #loginBox.auth-card {
 body:not([data-view]) #loginBox #loginHeading {
   margin: 0 0 10px;
   color: #1B2E50 !important;
-  font-family: Manrope, sans-serif;
-  font-size: 25px !important;
-  line-height: 1;
-  font-weight: 700 !important;
-  letter-spacing: -0.5px;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 30px !important;
+  line-height: 1.18;
+  font-weight: 750 !important;
+  letter-spacing: -0.9px;
   text-align: center;
 }
 body:not([data-view]) #loginBox > p.muted {
   margin: 0;
   color: #64748B;
-  font-family: Manrope, sans-serif;
-  font-size: 15px;
-  line-height: 1;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
   font-weight: 500;
-  letter-spacing: -0.25px;
+  letter-spacing: -0.15px;
   text-align: center;
 }
 body:not([data-view]) #loginBox > form#loginForm {
@@ -9430,7 +9431,8 @@ body:not([data-view]) #loginBox .auth-input-wrap input {
   border-radius: 999px;
   background: #FFFFFF;
   color: #1B2E50;
-  font: 400 15px/1 Manrope, sans-serif;
+  font: 500 15px/1 Manrope, Inter, sans-serif;
+  letter-spacing: 0;
   box-shadow: none;
   outline: none;
 }
@@ -9575,7 +9577,8 @@ body:not([data-view]) #loginBox .auth-footnote {
   border: 0;
   background: transparent;
   color: #64748B;
-  font: 500 13px/1.4 Manrope, sans-serif;
+  font: 600 13px/1.4 Manrope, Inter, sans-serif;
+  letter-spacing: -0.5px;
   text-align: center;
   box-shadow: none;
 }
@@ -10051,46 +10054,23 @@ body:not([data-view]) .auth-shell,
 #dashboard textarea{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-body:not([data-view]) .auth-brand span,
 #dashboard .admin-header-brand span{
   font-family:Manrope,Inter,sans-serif;
   font-size:20px;
   font-weight:750;
   letter-spacing:-.55px;
 }
-body:not([data-view]) #loginBox #loginHeading{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:30px!important;
-  font-weight:750!important;
-  line-height:1.18;
-  letter-spacing:-.9px;
-}
-body:not([data-view]) #loginBox>p.muted{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:14px;
-  font-weight:500;
-  line-height:1.55;
-  letter-spacing:-.15px;
-}
-body:not([data-view]) #loginBox .auth-input-wrap input,
 body:not([data-view]) #loginBox .otp-digit,
 body:not([data-view]) #mfaBox .mfa-code-digit{
   font-family:Manrope,Inter,sans-serif;
   font-weight:500;
   letter-spacing:0;
 }
-body:not([data-view]) #loginBox form>.button.primary{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:15px;
-  font-weight:600;
-  letter-spacing:-.5px;
-}
 body:not([data-view]) #mfaBox #mfaCancel{
   font-family:Manrope,Inter,sans-serif;
   font-weight:700;
   letter-spacing:-.15px;
 }
-body:not([data-view]) #loginBox .auth-footnote,
 body:not([data-view]) #mfaBox .auth-footnote{
   font-family:Manrope,Inter,sans-serif;
   font-size:13px;
