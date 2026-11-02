@@ -9693,7 +9693,7 @@ body:not([data-view]) #mfaBox #mfaInstructions:empty { display: none; }
 body:not([data-view]) #mfaBox #mfaInstructions {
   margin: 0 0 20px;
   color: #64748B;
-  font: 400 14px/1.5 Manrope, Inter, sans-serif;
+  font: 500 13px/1 Manrope, Inter, sans-serif;
   text-align: center;
 }
 body:not([data-view]) #mfaBox #mfaQr {
@@ -10062,12 +10062,18 @@ body:not([data-view]) #loginBox #loginHeading{
   line-height:1.18;
   letter-spacing:-.9px;
 }
-body:not([data-view]) #loginBox>p.muted,
-body:not([data-view]) #mfaBox #mfaInstructions{
+body:not([data-view]) #loginBox>p.muted{
   font-family:Manrope,Inter,sans-serif;
   font-size:14px;
   font-weight:500;
   line-height:1.55;
+  letter-spacing:-.15px;
+}
+body:not([data-view]) #mfaBox #mfaInstructions{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:500;
+  line-height:1;
   letter-spacing:-.15px;
 }
 body:not([data-view]) #loginBox .auth-input-wrap input,
