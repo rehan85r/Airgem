@@ -9562,12 +9562,12 @@ body:not([data-view]) #loginBox .auth-footnote {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 12px;
+  bottom: 10px;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   width: auto;
   min-height: 0;
   margin: 0;
@@ -9575,14 +9575,14 @@ body:not([data-view]) #loginBox .auth-footnote {
   border: 0;
   background: transparent;
   color: #64748B;
-  font: 500 13px/1.4 Inter, sans-serif;
+  font: 500 13px/1.4 Manrope, sans-serif;
   text-align: center;
   box-shadow: none;
 }
 body:not([data-view]) #loginBox .auth-footnote svg {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
   color: #64748B;
 }
 @media (max-height: 760px) {
@@ -10097,7 +10097,7 @@ body:not([data-view]) #mfaBox .auth-footnote{
   font-family:Manrope,Inter,sans-serif;
   font-size:13px;
   font-weight:600;
-  letter-spacing:-.1px;
+  letter-spacing:-.5px;
 }
 body:not([data-view]) #mfaBox #mfaHeading{
   font-family:Manrope,Inter,sans-serif;
