@@ -9692,8 +9692,8 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   stroke-width:2;
 }
 #projectsView .top-airdrops-publish{
-  min-height:36px;
-  height:36px;
+  min-height:35px;
+  height:35px;
   padding:0 12px;
   border-radius:9px;
   font:650 12px/1 Manrope,sans-serif;
@@ -10180,8 +10180,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
     border-radius:10px!important;
   }
   #projectsView .top-airdrops-publish{
-    min-height:36px!important;
-    height:36px!important;
+    min-height:35px!important;
+    height:35px!important;
     padding:0 12px!important;
     border-radius:9px!important;
     font:650 12px/1 Manrope,Inter,sans-serif!important;
