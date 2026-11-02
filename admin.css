@@ -9308,14 +9308,14 @@ body:not([data-view]) .auth-menu-item {
   border-radius: 8px;
   background: transparent;
   color: #1B2E50;
-  font: 500 13px/1.35 Inter, sans-serif;
+  font: 500 13px/1 Inter, sans-serif;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
   list-style: none;
 }
 body:not([data-view]) .auth-menu-item:hover { background: #F8FAFC; }
-body:not([data-view]) .auth-menu-item svg { width: 15px; height: 15px; color: #64748B; flex: 0 0 15px; }
+body:not([data-view]) .auth-menu-item svg { width: 17px; height: 17px; color: #64748B; flex: 0 0 17px; }
 body:not([data-view]) .auth-menu-chevron { margin-left: auto; width: 14px !important; height: 14px !important; }
 body:not([data-view]) .auth-menu-description {
   display: flex;
