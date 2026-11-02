@@ -10128,7 +10128,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
     display:flex!important;
     flex-wrap:nowrap!important;
     justify-content:flex-start!important;
-    gap:7px!important;
+    gap:10px!important;
     margin:0 0 16px!important;
     padding:0 0 3px!important;
     overflow-x:auto!important;
@@ -10139,8 +10139,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #projectsView nav.admin-project-nav>.admin-project-nav-button,
   #projectsView nav.admin-project-nav>#addProjectButton{
     flex:0 0 auto!important;
-    min-height:36px!important;
-    height:36px!important;
+    min-height:35px!important;
+    height:35px!important;
     padding:0 12px!important;
     border-radius:9px!important;
     font:600 12px/1 Manrope,Inter,sans-serif!important;
