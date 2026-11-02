@@ -1312,7 +1312,7 @@ main {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:700;line-height:1.2;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
 #projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
@@ -3353,7 +3353,7 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:700;line-height:1.2;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
 #projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
@@ -5339,7 +5339,7 @@ main {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:700;line-height:1.2;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
 #projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
@@ -7378,7 +7378,7 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:700;line-height:1.2;letter-spacing:-.5px;color:#1B2E50}
+#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:25px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
 #projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
 #projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
 #projectsView .page-heading{margin-bottom:15px}
@@ -8065,9 +8065,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .page-heading h1 {
   font-family: Manrope, sans-serif;
   font-size: 23px;
-  font-weight: 700;
+  font-weight:750;
   line-height: 1.25;
-  letter-spacing: -0.65px;
+  letter-spacing:-.6px;
 }
 #projectsView .page-heading p {
   margin-top: 6px;
@@ -8183,7 +8183,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 @media (max-width: 650px) {
 #projectsView .page-heading { margin-bottom: 16px; }
-#projectsView .page-heading h1 { font-size: 22px; letter-spacing: -.5px; }
+#projectsView .page-heading h1 { font-size: 22px; letter-spacing:-.6px; }
 #projectsView .page-heading p { font-size: 12px; }
 #projectsView nav.admin-project-nav { margin-bottom: 16px; }
 #projectsView nav.admin-project-nav > .admin-project-nav-button,
@@ -8209,7 +8209,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 /* Final dashboard polish: quieter hierarchy, consistent controls and lighter surfaces. */
 #projectsView .page-heading h1 {
   font-size: 21px;
-  letter-spacing: -.55px;
+  letter-spacing:-.6px;
 }
 #projectsView .page-heading p {
   font-size: 12px;
@@ -9639,7 +9639,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   font-size:25px;
   font-weight:750;
   line-height:1.2;
-  letter-spacing:-.65px;
+  letter-spacing:-.6px;
   color:#1B2E50;
 }
 #projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
@@ -9751,7 +9751,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 }
 @media(max-width:650px){
   #projectsView .page-heading{margin-bottom:16px}
-  #projectsView .page-heading h1{font-size:25px;letter-spacing:-.65px}
+  #projectsView .page-heading h1{font-size:25px;letter-spacing:-.6px}
   #projectsView .page-heading p{font-size:13px;line-height:1.5}
   #projectsView nav.admin-project-nav{
     flex-wrap:nowrap;
@@ -9838,7 +9838,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .page-heading h1{
   font-family:Manrope,Inter,sans-serif;
   font-weight:750;
-  letter-spacing:-.65px;
+  letter-spacing:-.6px;
 }
 #projectsView .page-heading p{
   font-family:Manrope,Inter,sans-serif;
@@ -10115,7 +10115,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #projectsView .page-heading h1{
     font-size:22px!important;
     line-height:1.22!important;
-    letter-spacing:-.55px!important;
+    letter-spacing:-.6px!important;
     font-weight:750!important;
   }
   #projectsView .page-heading p{
