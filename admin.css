@@ -9692,11 +9692,15 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   stroke-width:2;
 }
 #projectsView .top-airdrops-publish{
-  min-height:40px;
-  padding:0 14px;
-  border-radius:10px;
-  font:650 13px/1 Manrope,sans-serif;
-  letter-spacing:0;
+  min-height:36px;
+  height:36px;
+  padding:0 12px;
+  border-radius:9px;
+  font:650 12px/1 Manrope,sans-serif;
+  letter-spacing:-.1px;
+  gap:7px;
+  color:#FFFFFF;
+  background:#1E90FF;
   box-shadow:none;
 }
 #projectsView .trending-search{margin-bottom:12px}
@@ -10178,9 +10182,13 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #projectsView .top-airdrops-publish{
     min-height:36px!important;
     height:36px!important;
-    padding:0 11px!important;
+    padding:0 12px!important;
     border-radius:9px!important;
     font:650 12px/1 Manrope,Inter,sans-serif!important;
+    letter-spacing:-.1px!important;
+    gap:7px!important;
+    color:#FFFFFF!important;
+    background:#1E90FF!important;
   }
   #projectsView .trending-search{margin-bottom:11px!important}
   #projectsView .trending-search-input-wrap input{
@@ -10241,7 +10249,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
     letter-spacing:-.25px!important;
   }
   #projectsView .top-airdrops-publish{
-    font-size:11.5px!important;
+    font-size:12px!important;
   }
   #projectsView .trending-search-input-wrap input{
     font-size:12px!important;
