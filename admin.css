@@ -1525,7 +1525,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 
 /* Neutral auth boot state prevents a login-form flash on refresh. */
 .admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}
-.admin-boot img{width:40px;height:40px;object-fit:contain}
+.admin-boot img{width:40px;height:40px;object-fit:contain;border-radius:12px}
 .admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}
 
 /* Basic editor: center Upload Logo control beside 40px logo, with 10px horizontal spacing. */
@@ -3578,7 +3578,7 @@ main{padding-top:15px}
 #editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}
 /* Neutral auth boot state prevents a login-form flash on refresh. */
 .admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}
-.admin-boot img{width:40px;height:40px;object-fit:contain}
+.admin-boot img{width:40px;height:40px;object-fit:contain;border-radius:12px}
 .admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}
 /* Basic editor: center Upload Logo control beside 40px logo, with 10px horizontal spacing. */
 @media(max-width:767px){
@@ -5538,7 +5538,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 
 /* Neutral auth boot state prevents a login-form flash on refresh. */
 .admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}
-.admin-boot img{width:40px;height:40px;object-fit:contain}
+.admin-boot img{width:40px;height:40px;object-fit:contain;border-radius:12px}
 .admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}
 
 /* Basic editor: center Upload Logo control beside 40px logo, with 10px horizontal spacing. */
@@ -7590,7 +7590,7 @@ main{padding-top:15px}
 #editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}
 /* Neutral auth boot state prevents a login-form flash on refresh. */
 .admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}
-.admin-boot img{width:40px;height:40px;object-fit:contain}
+.admin-boot img{width:40px;height:40px;object-fit:contain;border-radius:12px}
 .admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}
 /* Basic editor: center Upload Logo control beside 40px logo, with 10px horizontal spacing. */
 @media(max-width:767px){
