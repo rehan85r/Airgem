@@ -145,25 +145,6 @@ svg {
 .skip-link:focus {
   top: 12px;
 }
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 27px;
-  font-weight: 750;
-  letter-spacing: -1.1px;
-}
-.brand img {
-  border-radius: 10px;
-  object-fit: contain;
-}
-.brand-label {
-  font-size: 10px;
-  color: var(--slate);
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-left: 3px;
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -283,19 +264,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-.auth-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 13px;
-  color: var(--blue);
-  background: #eaf4ff;
-}
-.auth-icon svg {
-  width: 25px;
-  height: 25px;
-}
 .auth-footnote {
   display: flex;
   align-items: center;
@@ -308,10 +276,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 .auth-footnote svg {
   width: 13px;
   height: 13px;
-}
-.auth-copyright {
-  color: var(--slate);
-  font-size: 11px;
 }
 .error-message {
   color: #bd3245;
@@ -858,14 +822,6 @@ input::placeholder {
   max-width: 850px;
   padding: 26px;
 }
-.selection-count {
-  background: #fff7e2;
-  color: #946800;
-  padding: 9px 13px;
-  font-size: 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-}
 .trending-search {
   position: relative;
   margin-bottom: 25px;
@@ -1323,10 +1279,6 @@ main {
     width: 40px;
     height: 40px;
   }
-.selection-count {
-    font-size: 10px;
-    padding: 8px;
-  }
 .library-grid,
   .media-grid {
     grid-template-columns: 1fr;
@@ -1367,11 +1319,7 @@ main {
 #projectsView .page-heading{justify-content:center;text-align:center}
 #projectsView .page-heading>div{width:100%;text-align:center}
 main{padding-top:15px}
-#dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
-#dashboard .header-logout svg{width:20px;height:20px}
 @media(max-width:640px) {
-#dashboard .header-logout span{display:none}
-#dashboard .header-logout{padding:10px}
 #dashboard .topbar{padding:0 15px}
 }
 /* All Airdrops shares the Top Airdrops card and row layout. */
@@ -1389,7 +1337,6 @@ main{padding-top:15px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 #projectsView .top-airdrops-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .selection-count{flex-shrink:0;background:#eff6ff;color:#1E90FF;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px}
 #projectsView .trending-search{margin-bottom:15px}
 #projectsView .trending-search{gap:10px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
@@ -1442,7 +1389,6 @@ main{padding-top:15px}
 #projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
 #projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
 #projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView .admin-project-picker[hidden]{display:none}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
 #projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
@@ -1742,9 +1688,6 @@ body[data-admin-view="editor"]{overflow:hidden}
 #editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
 #editorView .ag-investor-photo{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;box-sizing:border-box;overflow:hidden;border:0;border-radius:12px;background:#F5F8FC;color:#A6B6CB;font:600 15px Manrope,sans-serif}
 #editorView .ag-investor-photo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
-#editorView .ag-investor-upload-button{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin:0;padding:0 12px;gap:10px;border-radius:10px;font:500 13px/1.4 Manrope,sans-serif;color:#1B2E50;white-space:nowrap;cursor:pointer}
-#editorView .ag-investor-upload-button svg{width:15px;height:15px;flex:0 0 15px}
-#editorView .ag-investor-upload-button input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
 @media(max-width:650px){#editorView .ag-investor-editor-item{gap:10px;padding:12px}#editorView .ag-investor-fields{gap:10px}}
 
 /* Basic Editor Investors heading typography and spacing. */
@@ -2172,25 +2115,6 @@ svg {
 .skip-link:focus {
   top: 12px;
 }
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 27px;
-  font-weight: 750;
-  letter-spacing: -1.1px;
-}
-.brand img {
-  border-radius: 10px;
-  object-fit: contain;
-}
-.brand-label {
-  font-size: 10px;
-  color: var(--slate);
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-left: 3px;
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -2311,20 +2235,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-
-.auth-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 13px;
-  color: var(--blue);
-  background: #eaf4ff;
-}
-.auth-icon svg {
-  width: 25px;
-  height: 25px;
-}
 .auth-footnote {
   display: flex;
   align-items: center;
@@ -2337,10 +2247,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 .auth-footnote svg {
   width: 13px;
   height: 13px;
-}
-.auth-copyright {
-  color: var(--slate);
-  font-size: 11px;
 }
 .error-message {
   color: #bd3245;
@@ -2931,14 +2837,6 @@ input::placeholder {
   max-width: 850px;
   padding: 26px;
 }
-.selection-count {
-  background: #fff7e2;
-  color: #946800;
-  padding: 9px 13px;
-  font-size: 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-}
 .trending-search {
   position: relative;
   margin-bottom: 25px;
@@ -3417,12 +3315,6 @@ dialog .guide-editor {
     width: 40px;
     height: 40px;
   }
-  
-  
-  .selection-count {
-    font-size: 10px;
-    padding: 8px;
-  }
   .library-grid,
   .media-grid {
     grid-template-columns: 1fr;
@@ -3470,14 +3362,7 @@ dialog .guide-editor {
 #projectsView .page-heading>div{width:100%;text-align:center}
 
 main{padding-top:15px}
-
-
-
-
-
-#dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
-#dashboard .header-logout svg{width:20px;height:20px}
-@media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .topbar{padding:0 15px}}
+@media(max-width:640px){#dashboard .topbar{padding:0 15px}}
 
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
@@ -3493,7 +3378,6 @@ main{padding-top:15px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 #projectsView .top-airdrops-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .selection-count{flex-shrink:0;background:#eff6ff;color:#1E90FF;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px}
 #projectsView .trending-search{margin-bottom:15px}
 #projectsView .trending-search{gap:10px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
@@ -3560,7 +3444,6 @@ main{padding-top:15px}
 #projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
 #projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
 #projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView .admin-project-picker[hidden]{display:none}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
 #projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
@@ -3838,9 +3721,6 @@ main{padding-top:15px}
 #editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
 #editorView .ag-investor-photo{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;box-sizing:border-box;overflow:hidden;border:0;border-radius:12px;background:#F5F8FC;color:#A6B6CB;font:600 15px Manrope,sans-serif}
 #editorView .ag-investor-photo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
-#editorView .ag-investor-upload-button{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin:0;padding:0 12px;gap:10px;border-radius:10px;font:500 13px/1.4 Manrope,sans-serif;color:#1B2E50;white-space:nowrap;cursor:pointer}
-#editorView .ag-investor-upload-button svg{width:15px;height:15px;flex:0 0 15px}
-#editorView .ag-investor-upload-button input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
 @media(max-width:650px) {
 #editorView .ag-investor-editor-item{gap:10px;padding:12px}
 #editorView .ag-investor-fields{gap:10px}
@@ -4292,25 +4172,6 @@ svg {
 .skip-link:focus {
   top: 12px;
 }
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 27px;
-  font-weight: 750;
-  letter-spacing: -1.1px;
-}
-.brand img {
-  border-radius: 10px;
-  object-fit: contain;
-}
-.brand-label {
-  font-size: 10px;
-  color: var(--slate);
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-left: 3px;
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -4430,20 +4291,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-
-.auth-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 13px;
-  color: var(--blue);
-  background: #eaf4ff;
-}
-.auth-icon svg {
-  width: 25px;
-  height: 25px;
-}
 .auth-footnote {
   display: flex;
   align-items: center;
@@ -4456,10 +4303,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 .auth-footnote svg {
   width: 13px;
   height: 13px;
-}
-.auth-copyright {
-  color: var(--slate);
-  font-size: 11px;
 }
 .error-message {
   color: #bd3245;
@@ -5006,14 +4849,6 @@ input::placeholder {
   max-width: 850px;
   padding: 26px;
 }
-.selection-count {
-  background: #fff7e2;
-  color: #946800;
-  padding: 9px 13px;
-  font-size: 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-}
 .trending-search {
   position: relative;
   margin-bottom: 25px;
@@ -5471,10 +5306,6 @@ main {
     width: 40px;
     height: 40px;
   }
-.selection-count {
-    font-size: 10px;
-    padding: 8px;
-  }
 .library-grid,
   .media-grid {
     grid-template-columns: 1fr;
@@ -5515,11 +5346,7 @@ main {
 #projectsView .page-heading{justify-content:center;text-align:center}
 #projectsView .page-heading>div{width:100%;text-align:center}
 main{padding-top:15px}
-#dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
-#dashboard .header-logout svg{width:20px;height:20px}
 @media(max-width:640px) {
-#dashboard .header-logout span{display:none}
-#dashboard .header-logout{padding:10px}
 #dashboard .topbar{padding:0 15px}
 }
 /* All Airdrops shares the Top Airdrops card and row layout. */
@@ -5537,7 +5364,6 @@ main{padding-top:15px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 #projectsView .top-airdrops-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .selection-count{flex-shrink:0;background:#eff6ff;color:#1E90FF;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px}
 #projectsView .trending-search{margin-bottom:15px}
 #projectsView .trending-search{gap:10px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
@@ -5590,7 +5416,6 @@ main{padding-top:15px}
 #projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
 #projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
 #projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView .admin-project-picker[hidden]{display:none}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
 #projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
@@ -5888,9 +5713,6 @@ body[data-admin-view="editor"]{overflow:hidden}
 #editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
 #editorView .ag-investor-photo{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;box-sizing:border-box;overflow:hidden;border:0;border-radius:12px;background:#F5F8FC;color:#A6B6CB;font:600 15px Manrope,sans-serif}
 #editorView .ag-investor-photo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
-#editorView .ag-investor-upload-button{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin:0;padding:0 12px;gap:10px;border-radius:10px;font:500 13px/1.4 Manrope,sans-serif;color:#1B2E50;white-space:nowrap;cursor:pointer}
-#editorView .ag-investor-upload-button svg{width:15px;height:15px;flex:0 0 15px}
-#editorView .ag-investor-upload-button input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
 @media(max-width:650px){#editorView .ag-investor-editor-item{gap:10px;padding:12px}#editorView .ag-investor-fields{gap:10px}}
 
 /* Basic Editor Investors heading typography and spacing. */
@@ -6318,25 +6140,6 @@ svg {
 .skip-link:focus {
   top: 12px;
 }
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 27px;
-  font-weight: 750;
-  letter-spacing: -1.1px;
-}
-.brand img {
-  border-radius: 10px;
-  object-fit: contain;
-}
-.brand-label {
-  font-size: 10px;
-  color: var(--slate);
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-left: 3px;
-}
 .button {
   display: inline-flex;
   align-items: center;
@@ -6457,20 +6260,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   line-height: 1.7;
   font-size: 13px;
 }
-
-.auth-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 13px;
-  color: var(--blue);
-  background: #eaf4ff;
-}
-.auth-icon svg {
-  width: 25px;
-  height: 25px;
-}
 .auth-footnote {
   display: flex;
   align-items: center;
@@ -6483,10 +6272,6 @@ body:has(#dashboard:not([hidden])) .auth-shell {
 .auth-footnote svg {
   width: 13px;
   height: 13px;
-}
-.auth-copyright {
-  color: var(--slate);
-  font-size: 11px;
 }
 .error-message {
   color: #bd3245;
@@ -7077,14 +6862,6 @@ input::placeholder {
   max-width: 850px;
   padding: 26px;
 }
-.selection-count {
-  background: #fff7e2;
-  color: #946800;
-  padding: 9px 13px;
-  font-size: 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-}
 .trending-search {
   position: relative;
   margin-bottom: 25px;
@@ -7563,12 +7340,6 @@ dialog .guide-editor {
     width: 40px;
     height: 40px;
   }
-  
-  
-  .selection-count {
-    font-size: 10px;
-    padding: 8px;
-  }
   .library-grid,
   .media-grid {
     grid-template-columns: 1fr;
@@ -7616,14 +7387,7 @@ dialog .guide-editor {
 #projectsView .page-heading>div{width:100%;text-align:center}
 
 main{padding-top:15px}
-
-
-
-
-
-#dashboard .header-logout{margin-left:auto;display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#1B2E50;font:600 14px Manrope, sans-serif;cursor:pointer;padding:10px 0}
-#dashboard .header-logout svg{width:20px;height:20px}
-@media(max-width:640px){#dashboard .header-logout span{display:none}#dashboard .header-logout{padding:10px}#dashboard .topbar{padding:0 15px}}
+@media(max-width:640px){#dashboard .topbar{padding:0 15px}}
 
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
@@ -7639,7 +7403,6 @@ main{padding-top:15px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 #projectsView .top-airdrops-heading h2{margin:0;font-family:Manrope,sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .selection-count{flex-shrink:0;background:#eff6ff;color:#1E90FF;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px}
 #projectsView .trending-search{margin-bottom:15px}
 #projectsView .trending-search{gap:10px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
@@ -7706,7 +7469,6 @@ main{padding-top:15px}
 #projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
 #projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
 #projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView .admin-project-picker[hidden]{display:none}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
 #projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
@@ -7984,9 +7746,6 @@ main{padding-top:15px}
 #editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
 #editorView .ag-investor-photo{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;box-sizing:border-box;overflow:hidden;border:0;border-radius:12px;background:#F5F8FC;color:#A6B6CB;font:600 15px Manrope,sans-serif}
 #editorView .ag-investor-photo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
-#editorView .ag-investor-upload-button{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin:0;padding:0 12px;gap:10px;border-radius:10px;font:500 13px/1.4 Manrope,sans-serif;color:#1B2E50;white-space:nowrap;cursor:pointer}
-#editorView .ag-investor-upload-button svg{width:15px;height:15px;flex:0 0 15px}
-#editorView .ag-investor-upload-button input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
 @media(max-width:650px) {
 #editorView .ag-investor-editor-item{gap:10px;padding:12px}
 #editorView .ag-investor-fields{gap:10px}
@@ -8738,9 +8497,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font-size: 17px !important;
   line-height: 1.35 !important;
   letter-spacing: -.25px;
-}
-#editorView #form > .editor-panel .field small,
-#editorView #form > .editor-panel .field .hint {
+}#editorView #form > .editor-panel .field smallt {
   font-size: 11px !important;
   line-height: 1.45;
   color: #64748B;
@@ -10115,12 +9872,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-weight:750;
   line-height:1.25;
   letter-spacing:-.55px;
-}
-#editorView .editor-heading p,
-#editorView .section-heading p,
-#editorView .field .hint,
-#editorView .field small,
-#editorView .helper-text{
+}#editorView .editor-heading p, #editorView .section-heading p, #editorView .field smallt{
   color:#64748B;
   font-size:13px;
   font-weight:400;
@@ -10186,11 +9938,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-size:13px;
   font-weight:700;
   letter-spacing:-.1px;
-}
-#editorView .editor-panel .tag,
-#editorView .editor-panel .badge,
-#editorView .editor-panel .status,
-#editorView .editor-panel .counter{
+}#editorView .editor-panel .tag, #editorView .editor-panel .statusr{
   font-family:Manrope,Inter,sans-serif;
   font-size:12px;
   font-weight:600;
