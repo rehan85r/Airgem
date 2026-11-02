@@ -10380,3 +10380,20 @@ body:not([data-view]) #mfaBox #mfaHeading{
   height: 50px !important;
   min-height: 50px !important;
 }
+
+
+/* Unified Dashboard navigation controls: identical desktop and mobile sizing. */
+#projectsView nav.admin-project-nav > .admin-project-nav-button,
+#projectsView nav.admin-project-nav > #addProjectButton {
+  box-sizing: border-box;
+  min-height: 35px !important;
+  height: 35px !important;
+  padding: 0 12px !important;
+  border-radius: 9px !important;
+  font: 600 12px/1 Manrope, Inter, sans-serif !important;
+  letter-spacing: -0.1px !important;
+  white-space: nowrap;
+}
+#projectsView nav.admin-project-nav {
+  gap: 10px !important;
+}
