@@ -1334,7 +1334,7 @@
         $('otpField').hidden = false;
         button.hidden = true;
         $('loginError').classList.add('is-info');
-        $('loginError').textContent = 'A 6-Digit Verification Code Has Been Sent to Your Email.';
+        $('loginError').textContent = 'A 6-Digit Code Has Been Sent To Your Email';
         otpDigits[0]?.focus();
       } catch (error) {
         $('loginError').classList.remove('is-info');
