@@ -10486,3 +10486,39 @@ body:not([data-view]) #mfaBox #mfaHeading{
     border-radius:9px!important;
   }
 }
+
+
+/* Mobile admin tabs: fit all five actions without clipping Add Project */
+@media(max-width:767px){
+  #projectsView nav.admin-project-nav{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    justify-content:space-between!important;
+    gap:6px!important;
+    overflow:visible!important;
+    padding:0!important;
+    width:100%!important;
+  }
+  #projectsView nav.admin-project-nav>.admin-project-nav-button,
+  #projectsView nav.admin-project-nav>#addProjectButton{
+    flex:0 1 auto!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:36px!important;
+    min-height:36px!important;
+    padding:0 9px!important;
+    border-radius:9px!important;
+    font:600 11.5px/1 Manrope,Inter,sans-serif!important;
+    letter-spacing:-.12px!important;
+    white-space:nowrap!important;
+  }
+  #projectsView nav.admin-project-nav>#addProjectButton{
+    gap:4px!important;
+  }
+  #projectsView nav.admin-project-nav>#addProjectButton svg{
+    width:14px!important;
+    height:14px!important;
+    flex:0 0 14px!important;
+  }
+}
