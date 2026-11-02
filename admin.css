@@ -9259,6 +9259,7 @@ body:not([data-view]) .auth-brand span {
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
+  letter-spacing: -0.5px;
 }
 body:not([data-view]) .auth-back-button,
 body:not([data-view]) .auth-menu-button {
