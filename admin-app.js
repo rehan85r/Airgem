@@ -666,15 +666,24 @@
   }
   async function initialize() {
     try {
+      // Restore the persisted browser session before deciding which screen to show.
+      // getSession reads the locally persisted session immediately; getUser then
+      // validates the user with Supabase before granting access to the admin panel.
+      const { data: sessionData, error: sessionError } = await dropyClient.auth.getSession();
+      if (sessionError) throw sessionError;
+      if (!sessionData.session) {
+        showAuth('login');
+        return;
+      }
       const {
         data: { user },
         error: userError,
       } = await dropyClient.auth.getUser();
-      if (!user && (!userError || userError.name === 'AuthSessionMissingError')) {
+      if (userError) throw userError;
+      if (!user) {
         showAuth('login');
         return;
       }
-      if (userError) throw userError;
       const { data, error } = await dropyClient
         .from('admin_users')
         .select('user_id')
