@@ -9242,7 +9242,7 @@ body:not([data-view]) .auth-brand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   color: #1B2E50;
   text-decoration: none;
   transform: translateX(-50%);
