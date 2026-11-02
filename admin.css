@@ -10298,3 +10298,76 @@ body:not([data-view]) #mfaBox #mfaHeading{
     font-size:13px!important;
   }
 }
+
+
+/* Keep Top Airdrops and All Airdrops header controls visually identical. */
+#projectsView #trendingManager .top-airdrops-heading h2,
+#projectsView #allAirdropsManager .top-airdrops-heading h2{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0;
+  color:#1B2E50;
+  font:700 15px/1.25 Manrope,sans-serif;
+  letter-spacing:-.25px;
+}
+#projectsView #trendingManager .top-airdrops-heading h2 svg,
+#projectsView #allAirdropsManager .top-airdrops-heading h2 svg{
+  width:20px;
+  height:20px;
+  flex:0 0 20px;
+  box-sizing:content-box;
+  padding:7.5px;
+  border-radius:10px;
+  background:#1E90FF;
+  color:#FFFFFF;
+  stroke-width:2;
+}
+#projectsView #trendingManager .top-airdrops-publish,
+#projectsView #allAirdropsManager .top-airdrops-publish{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:35px;
+  height:35px;
+  padding:0 10px;
+  border-radius:9px;
+  gap:5px;
+  color:#FFFFFF;
+  background:#1E90FF;
+  font:650 12px/1 Manrope,sans-serif;
+  letter-spacing:-.1px;
+  white-space:nowrap;
+  box-shadow:none;
+}
+#projectsView #trendingManager .top-airdrops-publish svg,
+#projectsView #allAirdropsManager .top-airdrops-publish svg{
+  width:15px;
+  height:15px;
+}
+@media(max-width:767px){
+  #projectsView #trendingManager .top-airdrops-heading h2,
+  #projectsView #allAirdropsManager .top-airdrops-heading h2{
+    font:700 15px/1.25 Manrope,sans-serif!important;
+    letter-spacing:-.25px!important;
+    gap:10px!important;
+  }
+  #projectsView #trendingManager .top-airdrops-heading h2 svg,
+  #projectsView #allAirdropsManager .top-airdrops-heading h2 svg{
+    width:20px!important;
+    height:20px!important;
+    flex:0 0 20px!important;
+    padding:7.5px!important;
+    border-radius:10px!important;
+  }
+  #projectsView #trendingManager .top-airdrops-publish,
+  #projectsView #allAirdropsManager .top-airdrops-publish{
+    min-height:35px!important;
+    height:35px!important;
+    padding:0 10px!important;
+    border-radius:9px!important;
+    gap:5px!important;
+    font:650 12px/1 Manrope,sans-serif!important;
+    letter-spacing:-.1px!important;
+  }
+}
