@@ -845,6 +845,8 @@
   }
   function bindEvents() {
     document.addEventListener('click', (event) => {
+      const loginMenu = document.querySelector('body:not([data-view]) details.auth-menu');
+      if (loginMenu?.open && !loginMenu.contains(event.target)) loginMenu.open = false;
       const addProject = event.target.closest('#addProjectButton');
       if (addProject) {
         if (!canLeaveView('editor')) return;
