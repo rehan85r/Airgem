@@ -10091,7 +10091,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
     font:400 13px/1.4 Manrope,Inter,sans-serif!important;
   }
   #projectsView .trending-search-input-wrap>.trending-search-icon{
-    width:18px!important;height:18px!important;
+    width:20px!important;height:20px!important;
   }
   #projectsView .trending-list{gap:8px!important}
   #projectsView .trending-item{
