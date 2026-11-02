@@ -9443,7 +9443,8 @@ body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
 }
 body:not([data-view]) #loginBox form > .button.primary {
   width: 100%;
-  min-height: 48px;
+  height: 50px;
+  min-height: 50px;
   margin: 0;
   border-radius: 999px !important;
   color: #FFFFFF;
