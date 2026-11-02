@@ -9457,11 +9457,11 @@ body:not([data-view]) #loginBox .auth-social-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 15px;
   margin: 20px 0 20px;
   color: #64748B;
-  font: 600 11px/1.4 Inter, sans-serif;
-  letter-spacing: 1.1px;
+  font: 600 10px/1 Manrope, sans-serif;
+  letter-spacing: -0.5px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -9469,9 +9469,9 @@ body:not([data-view]) #loginBox .auth-social-divider::before,
 body:not([data-view]) #loginBox .auth-social-divider::after {
   content: "";
   flex: 1 1 auto;
-  max-width: 72px;
+  max-width: 75px;
   height: 1px;
-  background: #E2E8F0;
+  background: #64748B;
 }
 body:not([data-view]) #loginBox .auth-social-actions {
   display: flex;
@@ -10087,9 +10087,10 @@ body:not([data-view]) #mfaBox #mfaCancel{
 }
 body:not([data-view]) #loginBox .auth-social-divider{
   font-family:Manrope,Inter,sans-serif;
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
-  letter-spacing:1px;
+  letter-spacing:-.5px;
+  line-height:1;
 }
 body:not([data-view]) #loginBox .auth-footnote,
 body:not([data-view]) #mfaBox .auth-footnote{
