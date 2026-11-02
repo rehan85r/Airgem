@@ -9430,7 +9430,7 @@ body:not([data-view]) #loginBox .auth-input-wrap input {
   border-radius: 999px;
   background: #FFFFFF;
   color: #1B2E50;
-  font: 400 14px/1.4 Inter, sans-serif;
+  font: 400 15px/1.4 Manrope, sans-serif;
   box-shadow: none;
   outline: none;
 }
