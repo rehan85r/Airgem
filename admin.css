@@ -9866,3 +9866,167 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 @media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}
 
 #dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}
+
+
+/* Airgem Admin — final premium dashboard polish */
+#projectsView .page-heading h1{
+  font-family:Manrope,sans-serif;
+  font-size:25px;
+  font-weight:750;
+  line-height:1.2;
+  letter-spacing:-.65px;
+  color:#1B2E50;
+}
+#projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
+#projectsView .page-heading p{
+  margin-top:6px;
+  color:#64748B;
+  font:400 14px/1.5 Manrope,sans-serif;
+  letter-spacing:-.1px;
+}
+#projectsView nav.admin-project-nav{
+  gap:8px!important;
+  margin:0 0 18px!important;
+}
+#projectsView nav.admin-project-nav>.admin-project-nav-button,
+#projectsView nav.admin-project-nav>#addProjectButton{
+  min-height:40px;
+  padding:0 14px;
+  border-radius:11px;
+  font:600 13px/1.2 Manrope,sans-serif;
+  letter-spacing:0;
+}
+#projectsView .top-airdrops-section{margin-top:0}
+#projectsView .top-airdrops-section+.top-airdrops-section{margin-top:18px}
+#projectsView .collection-card{
+  padding:18px;
+  border:1px solid #E2E8F0;
+  border-radius:16px;
+  background:#FFFFFF;
+  box-shadow:0 2px 12px rgba(27,46,80,.035);
+}
+#projectsView .top-airdrops-heading{
+  margin-bottom:15px;
+  gap:12px;
+}
+#projectsView .top-airdrops-heading h2{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#1B2E50;
+  font:700 19px/1.3 Manrope,sans-serif;
+  letter-spacing:-.4px;
+}
+#projectsView .top-airdrops-heading h2 svg{
+  width:22px;
+  height:22px;
+  padding:8px;
+  border-radius:11px;
+  background:#1E90FF;
+  color:#FFFFFF;
+  stroke-width:2;
+}
+#projectsView .top-airdrops-publish{
+  min-height:40px;
+  padding:0 14px;
+  border-radius:10px;
+  font:650 13px/1 Manrope,sans-serif;
+  letter-spacing:0;
+  box-shadow:none;
+}
+#projectsView .trending-search{margin-bottom:12px}
+#projectsView .trending-search-input-wrap input{
+  height:46px;
+  min-height:46px;
+  border:1px solid #E2E8F0;
+  border-radius:11px;
+  background:#FFFFFF;
+  color:#1B2E50;
+  font:400 14px/1.4 Manrope,sans-serif;
+  letter-spacing:0;
+}
+#projectsView .trending-search-input-wrap input::placeholder{color:#94A3B8}
+#projectsView .trending-search-input-wrap>.trending-search-icon{
+  left:14px;
+  width:19px;
+  height:19px;
+  color:#64748B;
+}
+#projectsView .trending-list{gap:9px}
+#projectsView .trending-item{
+  min-height:64px;
+  padding:11px 12px;
+  gap:12px;
+  border:1px solid #E2E8F0;
+  border-radius:12px;
+  background:#FFFFFF;
+}
+#projectsView .trending-item .project-avatar{
+  width:44px;
+  height:44px;
+  border-radius:11px;
+}
+#projectsView .trending-item-copy strong,
+#projectsView .all-airdrops-list .trending-item strong{
+  color:#1B2E50;
+  font:650 15px/1.35 Manrope,sans-serif;
+  letter-spacing:-.15px;
+}
+#projectsView .trending-item .icon-button,
+#projectsView .all-airdrops-list .icon-button{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border-radius:10px;
+}
+#dashboard .app-footer{
+  padding:10px 20px 18px;
+  color:#64748B;
+  font:400 12px/1.5 Manrope,sans-serif;
+}
+@media(max-width:650px){
+  #projectsView .page-heading{margin-bottom:16px}
+  #projectsView .page-heading h1{font-size:25px;letter-spacing:-.65px}
+  #projectsView .page-heading p{font-size:13px;line-height:1.5}
+  #projectsView nav.admin-project-nav{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding:1px 0 3px;
+    gap:8px!important;
+    margin-bottom:17px!important;
+  }
+  #projectsView nav.admin-project-nav::-webkit-scrollbar{display:none}
+  #projectsView nav.admin-project-nav>.admin-project-nav-button,
+  #projectsView nav.admin-project-nav>#addProjectButton{
+    flex:0 0 auto;
+    min-height:40px;
+    padding:0 13px;
+    font-size:13px;
+    border-radius:11px;
+  }
+  #projectsView .collection-card{
+    padding:16px;
+    border-radius:16px;
+  }
+  #projectsView .top-airdrops-heading{margin-bottom:14px;gap:9px}
+  #projectsView .top-airdrops-heading h2{font-size:18px}
+  #projectsView .top-airdrops-publish{
+    min-height:38px;
+    padding:0 12px;
+    font-size:12.5px;
+  }
+  #projectsView .trending-search-input-wrap input{
+    height:44px;
+    min-height:44px;
+    font-size:13px;
+  }
+  #projectsView .trending-item{min-height:62px;padding:10px 11px}
+  #projectsView .trending-item .project-avatar{width:42px;height:42px}
+  #projectsView .trending-item-copy strong,
+  #projectsView .all-airdrops-list .trending-item strong{font-size:14px}
+  #dashboard .app-footer{
+    padding:8px 2px 18px;
+    font-size:11px;
+  }
+}
