@@ -9434,7 +9434,7 @@ body:not([data-view]) #loginBox .auth-input-wrap input {
   box-shadow: none;
   outline: none;
 }
-body:not([data-view]) #loginBox .auth-input-wrap input::placeholder { color: #94A3B8; }
+body:not([data-view]) #loginBox .auth-input-wrap input::placeholder { color: #64748B; }
 body:not([data-view]) #loginBox .auth-input-wrap input:focus,
 body:not([data-view]) #loginBox .auth-input-wrap input:focus-visible {
   border: 1px solid #1E90FF;
