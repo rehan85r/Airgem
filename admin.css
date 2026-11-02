@@ -9379,10 +9379,11 @@ body:not([data-view]) #loginBox #loginHeading {
 body:not([data-view]) #loginBox > p.muted {
   margin: 0;
   color: #64748B;
-  font-size: 14px;
-  line-height: 1.55;
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  line-height: 1;
   font-weight: 500;
-  letter-spacing: -0.15px;
+  letter-spacing: -0.5px;
   text-align: center;
 }
 body:not([data-view]) #loginBox > form#loginForm {
