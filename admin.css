@@ -9447,10 +9447,10 @@ body:not([data-view]) #loginBox form > .button.primary {
   margin: 0;
   border-radius: 999px !important;
   color: #FFFFFF;
-  font-family: Inter, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.1px;
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 body:not([data-view]) #loginBox .auth-social-divider {
   display: flex;
@@ -10073,7 +10073,12 @@ body:not([data-view]) #mfaBox .mfa-code-digit{
   font-weight:500;
   letter-spacing:0;
 }
-body:not([data-view]) #loginBox form>.button.primary,
+body:not([data-view]) #loginBox form>.button.primary{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:-.5px;
+}
 body:not([data-view]) #mfaBox #mfaCancel{
   font-family:Manrope,Inter,sans-serif;
   font-weight:700;
