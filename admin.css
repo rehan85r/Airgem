@@ -8497,7 +8497,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font-size: 17px !important;
   line-height: 1.35 !important;
   letter-spacing: -.25px;
-}#editorView #form > .editor-panel .field smallt {
+}#editorView #form > .editor-panel .field small{
   font-size: 11px !important;
   line-height: 1.45;
   color: #64748B;
@@ -9872,7 +9872,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-weight:750;
   line-height:1.25;
   letter-spacing:-.55px;
-}#editorView .editor-heading p, #editorView .section-heading p, #editorView .field smallt{
+}#editorView .editor-heading p, #editorView .section-heading p, #editorView .field small{
   color:#64748B;
   font-size:13px;
   font-weight:400;
@@ -9938,7 +9938,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-size:13px;
   font-weight:700;
   letter-spacing:-.1px;
-}#editorView .editor-panel .tag, #editorView .editor-panel .statusr{
+}#editorView .editor-panel .tag, #editorView .editor-panel .status{
   font-family:Manrope,Inter,sans-serif;
   font-size:12px;
   font-weight:600;
