@@ -10088,13 +10088,6 @@ body:not([data-view]) #mfaBox #mfaCancel{
   font-weight:700;
   letter-spacing:-.15px;
 }
-body:not([data-view]) #loginBox .auth-social-divider{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:-.5px;
-  line-height:1;
-}
 body:not([data-view]) #loginBox .auth-footnote,
 body:not([data-view]) #mfaBox .auth-footnote{
   font-family:Manrope,Inter,sans-serif;
