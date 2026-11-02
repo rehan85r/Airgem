@@ -9639,8 +9639,10 @@ body:not([data-view]) #loginBox #loginError {
   width: 100%;
   margin: 0;
   font-family: Manrope, sans-serif;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
   text-align: center;
 }
 body:not([data-view]) #loginBox #loginForm > button[hidden] { display: none !important; }
@@ -9693,7 +9695,8 @@ body:not([data-view]) #mfaBox #mfaInstructions:empty { display: none; }
 body:not([data-view]) #mfaBox #mfaInstructions {
   margin: 0 0 20px;
   color: #64748B;
-  font: 500 13px/1 Manrope, Inter, sans-serif;
+  font: 500 13px/1.4 Manrope, Inter, sans-serif;
+  letter-spacing: -0.2px;
   text-align: center;
 }
 body:not([data-view]) #mfaBox #mfaQr {
@@ -10067,13 +10070,6 @@ body:not([data-view]) #loginBox>p.muted{
   font-size:14px;
   font-weight:500;
   line-height:1.55;
-  letter-spacing:-.15px;
-}
-body:not([data-view]) #mfaBox #mfaInstructions{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:13px;
-  font-weight:500;
-  line-height:1;
   letter-spacing:-.15px;
 }
 body:not([data-view]) #loginBox .auth-input-wrap input,
