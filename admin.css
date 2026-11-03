@@ -10199,7 +10199,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   gap:10px;
   margin:0;
   color:#1B2E50;
-  font:700 15px/1.25 Manrope,sans-serif;
+  font:700 20px/1.25 Manrope,sans-serif;
   letter-spacing:-.25px;
 }
 @media(max-width:767px){
@@ -10236,7 +10236,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .top-airdrops-heading h2,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 {
   display:flex;align-items:center;gap:10px;margin:0;color:#1B2E50;
-  font:700 15px/1.25 Manrope,sans-serif;letter-spacing:-.25px;
+  font:700 20px/1.25 Manrope,sans-serif;letter-spacing:-.25px;
 }
 #projectsView #trendingManager .top-airdrops-heading h2 svg,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 svg {
