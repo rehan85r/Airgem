@@ -1405,7 +1405,6 @@ main{padding-top:15px}
 #projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
 #projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
 /* Compact header publishing action in place of the selection count */
-#projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:35px;padding:0 10px;border-radius:10px;font:600 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0;letter-spacing:-.1px}
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 #projectsView .trending-search-label-row label{margin:0;padding:0}
@@ -9951,17 +9950,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     gap:9px!important;
     margin-bottom:13px!important;
   }
-  #projectsView .top-airdrops-publish{
-    min-height:35px!important;
-    height:35px!important;
-    padding:0 12px!important;
-    border-radius:9px!important;
-    font:600 13px/1 Manrope,Inter,sans-serif!important;
-    letter-spacing:-.1px!important;
-    gap:5px!important;
-    color:#FFFFFF!important;
-    background:#1E90FF!important;
-  }
   #projectsView .trending-search{margin-bottom:11px!important}
   #projectsView .trending-search-input-wrap input{
     padding-top:0!important;
@@ -10092,9 +10080,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .top-airdrops-publish,
 #projectsView #allAirdropsManager .top-airdrops-publish {
   display:inline-flex;align-items:center;justify-content:center;
-  min-height:35px;height:35px;padding:0 10px;border:0;border-radius:9px;
-  gap:5px;color:#FFFFFF;background:#1E90FF;
-  font:650 12px/1 Manrope,sans-serif;letter-spacing:-.1px;
+  box-sizing:border-box;min-height:35px;height:35px;padding:0 10px;
+  border:0;border-radius:9px;gap:5px;
+  color:#FFFFFF;background:#1E90FF;
+  font:600 13px/1 Manrope,sans-serif;letter-spacing:-.1px;
   white-space:nowrap;box-shadow:none;
 }
 #projectsView #trendingManager .top-airdrops-publish svg,
