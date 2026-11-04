@@ -9996,8 +9996,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{width:15px;height:15px}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
-/* Shared 15px spacing for Top Airdrops and All Airdrops search results. */
-#projectsView .project-search-results{margin-top:15px}
+/* Exact 15px spacing between search inputs and their result lists. */
+#projectsView #trendingManager .trending-search{gap:15px;margin-bottom:0}
+#projectsView #allAirdropsManager .trending-search{margin-bottom:15px}
+#projectsView .project-search-results{margin-top:0}
 #projectsView #trendingSearchResults{
   position:static;
   top:auto;
@@ -10008,8 +10010,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   overscroll-behavior:contain;
 }
 #projectsView .search-results[hidden]{display:none}
-#projectsView #trendingManager .trending-search,
-#projectsView #allAirdropsManager .trending-search{margin-bottom:0}
 #projectsView #trendingCurrent{margin-top:15px}
 
 /* Keep both project-search clear buttons hidden until their inputs contain text. */
