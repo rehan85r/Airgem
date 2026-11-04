@@ -9923,3 +9923,59 @@ body:not([data-view]) #mfaBox #mfaHeading{
   margin-right: 0;
   box-sizing: border-box;
 }
+
+
+/* Settings is a dedicated full-page view without the dashboard header or footer. */
+body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,
+body[data-admin-view="settings"] #dashboard > .app-shell > .app-footer {
+  display: none !important;
+}
+body[data-admin-view="settings"] #dashboard > .app-shell > main {
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  padding: 20px 24px 32px;
+  margin: 0;
+}
+#settingsView.settings-full-page {
+  width: 100%;
+  min-height: calc(100dvh - 52px);
+  max-width: 100%;
+  margin: 0;
+}
+#settingsView .settings-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  margin: 0 0 24px;
+  padding: 0 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #1B2E50;
+  font: 600 13px/1 Manrope, sans-serif;
+  cursor: pointer;
+}
+#settingsView .settings-back-button svg {
+  width: 17px;
+  height: 17px;
+}
+#settingsView .settings-back-button:hover {
+  border-color: #1E90FF;
+  color: #1E90FF;
+}
+#settingsView .page-heading,
+#settingsView .settings-card {
+  width: 100%;
+  max-width: 850px;
+}
+@media (max-width: 650px) {
+  body[data-admin-view="settings"] #dashboard > .app-shell > main {
+    padding: 15px 15px 24px;
+  }
+  #settingsView .settings-back-button {
+    margin-bottom: 20px;
+  }
+}
