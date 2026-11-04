@@ -483,6 +483,7 @@
     const index = state.pendingProjectDeletes.findIndex((item) => String(item) === String(id));
     if (index >= 0) state.pendingProjectDeletes.splice(index, 1);
     else state.pendingProjectDeletes.push(project.id);
+    showPublishStatus('allAirdropsMessage', 'Click Publish To Save', 'is-success');
     renderAllAirdrops();
   }
   async function publishAllAirdrops() {
