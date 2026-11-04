@@ -1405,7 +1405,7 @@ main{padding-top:15px}
 #projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
 #projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
 /* Compact header publishing action in place of the selection count */
-#projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:35px;padding:0 10px;border-radius:10px;font:600 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0;letter-spacing:-.1px}
+#projectsView .top-airdrops-publish{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:35px;padding:0 10px;border-radius:10px;font:500 13px Manrope,sans-serif;white-space:nowrap;flex-shrink:0;letter-spacing:-.1px}
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 #projectsView .trending-search-label-row label{margin:0;padding:0}
@@ -10018,7 +10018,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
     height:35px!important;
     padding:0 12px!important;
     border-radius:9px!important;
-    font:600 13px/1 Manrope,Inter,sans-serif!important;
+    font:500 13px/1 Manrope,Inter,sans-serif!important;
     letter-spacing:-.1px!important;
     gap:5px!important;
     color:#FFFFFF!important;
