@@ -1336,7 +1336,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-search{margin-bottom:15px}
 #projectsView .trending-search{gap:10px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
 #projectsView .trending-search-input-wrap{position:relative}
@@ -7970,7 +7969,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   gap: 10px;
   margin-bottom: 15px;
 }
-#projectsView .trending-search { margin-bottom: 13px; }
 #projectsView .trending-search input {
   border-radius: 11px;
   padding-left: 42px;
@@ -8047,8 +8045,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .top-airdrops-heading {
   margin-bottom: 12px;
 }
-#projectsView .trending-search {
-  margin-bottom: 11px;
 }
 #projectsView .trending-search input {
   border-color: #E6EAF0;
@@ -9450,7 +9446,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   margin-bottom:15px;
   gap:12px;
 }
-#projectsView .trending-search{margin-bottom:12px}
 #projectsView .trending-search-input-wrap input{
   border:1px solid #E2E8F0;
   border-radius:12px;
@@ -9882,7 +9877,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     gap:9px!important;
     margin-bottom:13px!important;
   }
-  #projectsView .trending-search{margin-bottom:11px!important}
   #projectsView .trending-search-input-wrap input{
     padding-top:0!important;
     padding-bottom:0!important;
@@ -10056,6 +10050,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
   overscroll-behavior:contain;
 }
 #projectsView .search-results[hidden]{display:none}
+
+/* Shared 20px spacing below both project search bars. */
+#projectsView #trendingManager .trending-search,
+#projectsView #allAirdropsManager .trending-search{margin-bottom:20px}
 
 /* Keep both project-search clear buttons hidden until their inputs contain text. */
 #projectsView #trendingManager .trending-search-clear[hidden],
