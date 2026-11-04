@@ -2827,21 +2827,7 @@ input::placeholder {
   position: relative;
   margin-bottom: 25px;
 }
-.search-results {
-  display: grid;
-  gap: 10px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  max-height: 250px;
-  overflow-y: auto;
-  z-index: 10;
-  background: white;
-  box-shadow: none;
-  padding: 0;
-  margin-top: 15px;
-}
+
 .search-results button {
   display: flex;
   align-items: center;
@@ -4796,21 +4782,7 @@ input::placeholder {
   position: relative;
   margin-bottom: 25px;
 }
-.search-results {
-  display: grid;
-  gap: 10px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  max-height: 250px;
-  overflow-y: auto;
-  z-index: 10;
-  background: white;
-  box-shadow: none;
-  padding: 0;
-  margin-top: 15px;
-}
+
 .search-results button {
   display: flex;
   align-items: center;
@@ -6771,21 +6743,7 @@ input::placeholder {
   position: relative;
   margin-bottom: 25px;
 }
-.search-results {
-  display: grid;
-  gap: 10px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  max-height: 250px;
-  overflow-y: auto;
-  z-index: 10;
-  background: white;
-  box-shadow: none;
-  padding: 0;
-  margin-top: 15px;
-}
+
 .search-results button {
   display: flex;
   align-items: center;
