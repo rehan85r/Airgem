@@ -9633,7 +9633,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-weight:500;
   letter-spacing:-.15px;
 }
-#projectsView .top-airdrops-heading h2,
 #projectsView .trending-item-copy strong,
 #projectsView .all-airdrops-list .trending-item strong{
   font-family:Manrope,Inter,sans-serif;
