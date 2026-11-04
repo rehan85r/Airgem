@@ -464,6 +464,13 @@
     const availableProjects = state.projects.filter((project) =>
       !state.trending.some((id) => String(id) === String(project.id)));
     const matches = availableProjects.filter((project) => matchesProjectSearch(project, query));
+    const searchResults = $('allAirdropsSearchResults');
+    const dropdownMatches = query ? matches.slice(0, 20) : [];
+    searchResults.hidden = dropdownMatches.length === 0;
+    $('allAirdropsSearch').setAttribute('aria-expanded', String(dropdownMatches.length > 0));
+    searchResults.innerHTML = dropdownMatches.map((project) =>
+      `<button type="button" role="option" data-all-airdrop-result="${esc(String(project.id))}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong></span>${icon('arrow-down-left')}</button>`
+    ).join('');
     const selectionCount = $('allAirdropsSelectionCount');
     if (selectionCount) {
       selectionCount.textContent = String(matches.length);
@@ -473,7 +480,7 @@
     $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
     $('allAirdropsList').innerHTML = matches.map((project) => {
       const staged = state.pendingProjectDeletes.some((id) => String(id) === String(project.id));
-      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong>${staged ? '<small>Pending Deletion · Not Published</small>' : ''}</span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
+      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}" data-all-airdrop-row="${esc(String(project.id))}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong>${staged ? '<small>Pending Deletion · Not Published</small>' : ''}</span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
     }).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
   }
@@ -1066,6 +1073,14 @@
       $('adminProjectPickerSearch').focus();
     };
     $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
+    $('allAirdropsSearchResults').addEventListener('click', (event) => {
+      const result = event.target.closest('[data-all-airdrop-result]');
+      if (!result) return;
+      const row = $('allAirdropsList').querySelector(`[data-all-airdrop-row="${CSS.escape(result.dataset.allAirdropResult)}"]`);
+      $('allAirdropsSearchResults').hidden = true;
+      $('allAirdropsSearch').setAttribute('aria-expanded', 'false');
+      row?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
     if ($('allAirdropsSearchClear')) $('allAirdropsSearchClear').onclick = () => {
       $('allAirdropsSearch').value = '';
       renderAllAirdrops();
