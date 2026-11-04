@@ -1350,7 +1350,6 @@ main{padding-top:15px}
 #projectsView .trending-search-clear[hidden]{display:none}
 #projectsView .trending-search-clear svg{display:block;width:20px;height:20px;stroke-width:2;flex-shrink:0}
 #projectsView #trendingManager .trending-search-clear{display:flex;align-items:center;justify-content:center;line-height:0;box-sizing:border-box}
-#projectsView .trending-list{gap:10px}
 
 
 @media(max-width:600px) {
@@ -3345,7 +3344,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-list{gap:10px}
 
 
 @media(max-width:600px){
@@ -5274,7 +5272,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-list{gap:10px}
 
 
 @media(max-width:600px) {
@@ -7261,7 +7258,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-list{gap:10px}
 
 
 @media(max-width:600px){
@@ -7934,7 +7930,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   padding-left: 42px;
 }
 
-#projectsView .trending-list { gap: 8px; }
 
 
 #projectsView .trending-item .trending-item-copy,
@@ -9413,7 +9408,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   color:#1B2E50;
 }
 #projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;color:#94A3B8;opacity:1}
-#projectsView .trending-list{gap:9px}
 
 
 #projectsView .trending-item-copy strong,
@@ -9842,7 +9836,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     padding-bottom:0!important;
     border-radius:10px!important;
   }
-  #projectsView .trending-list{gap:8px!important}
   
   
   #projectsView .trending-item-copy strong,
@@ -10015,3 +10008,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
 /* Keep both project-search clear buttons hidden until their inputs contain text. */
 #projectsView #trendingManager .trending-search-clear[hidden],
 #projectsView #allAirdropsManager .trending-search-clear[hidden]{display:none}
+
+/* One shared 15px gap between project rows in Top Airdrops and All Airdrops. */
+#projectsView #trendingCurrent,
+#projectsView .all-airdrops-list {
+  display: grid;
+  gap: 15px;
+}
