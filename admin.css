@@ -9890,6 +9890,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 #projectsView .search-results[hidden]{display:none}
 #projectsView #trendingCurrent{margin-top:15px}
+#projectsView #allAirdropsManager .all-airdrops-list{margin-top:15px}
 
 /* Keep both project-search clear buttons hidden until their inputs contain text. */
 #projectsView #trendingManager .trending-search-clear[hidden],
