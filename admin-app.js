@@ -456,11 +456,18 @@
     }
   }
   function renderAllAirdrops() {
-    $('allAirdropsSearchClear').hidden = $('allAirdropsSearch').value.length === 0;
-    const query = $('allAirdropsSearch').value.trim().toLowerCase();
-    const matches = state.projects.filter((project) =>
-      !state.trending.some((id) => String(id) === String(project.id)) &&
+    const searchValue = $('allAirdropsSearch').value;
+    const query = searchValue.trim().toLowerCase();
+    $('allAirdropsSearchClear').hidden = searchValue.length === 0;
+    const availableProjects = state.projects.filter((project) =>
+      !state.trending.some((id) => String(id) === String(project.id)));
+    const matches = availableProjects.filter((project) =>
       (project.name || '').toLowerCase().includes(query));
+    const selectionCount = $('allAirdropsSelectionCount');
+    if (selectionCount) {
+      selectionCount.textContent = `${matches.length}/${availableProjects.length}`;
+      selectionCount.hidden = searchValue.length > 0;
+    }
     $('allAirdropsPending').textContent = '';
     $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
     $('allAirdropsList').innerHTML = matches.map((project) => {
