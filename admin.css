@@ -9489,24 +9489,25 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 #projectsView .trending-search{margin-bottom:12px}
 #projectsView .trending-search-input-wrap input{
   border:1px solid #E2E8F0;
-  border-radius:11px;
+  border-radius:12px;
   background:#FFFFFF;
   color:#1B2E50;
 }
 #projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;color:#94A3B8;opacity:1}
 #projectsView .trending-list{gap:9px}
 #projectsView .trending-item{
-  min-height:64px;
-  padding:11px 12px;
-  gap:12px;
+  min-height:50px;
+  padding:5px 10px;
+  gap:10px;
   border:1px solid #E2E8F0;
   border-radius:12px;
   background:#FFFFFF;
 }
 #projectsView .trending-item .project-avatar{
-  width:44px;
-  height:44px;
-  border-radius:11px;
+  width:30px;
+  height:30px;
+  min-width:30px;
+  border-radius:8px;
 }
 #projectsView .trending-item-copy strong,
 #projectsView .all-airdrops-list .trending-item strong{
@@ -9937,14 +9938,16 @@ body:not([data-view]) #mfaBox #mfaHeading{
   }
   #projectsView .trending-list{gap:8px!important}
   #projectsView .trending-item{
-    min-height:54px!important;
-    padding:8px 10px!important;
+    height:50px!important;
+    min-height:50px!important;
+    padding:5px 10px!important;
     gap:10px!important;
-    border-radius:11px!important;
+    border-radius:10px!important;
   }
   #projectsView .trending-item .project-avatar{
-    width:36px!important;height:36px!important;
-    border-radius:9px!important;
+    width:30px!important;height:30px!important;
+    min-width:30px!important;
+    border-radius:8px!important;
   }
   #projectsView .trending-item-copy strong,
   #projectsView .all-airdrops-list .trending-item strong{
