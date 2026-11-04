@@ -9511,7 +9511,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   font:400 14px/1.4 Manrope,sans-serif;
   letter-spacing:0;
 }
-#projectsView .trending-search-input-wrap input::placeholder{color:#94A3B8}
+#projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:400;letter-spacing:0;color:#94A3B8;opacity:1}
 #projectsView .trending-list{gap:9px}
 #projectsView .trending-item{
   min-height:64px;
