@@ -9992,6 +9992,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   color: #1B2E50;
 }
 #settingsView .settings-card {
+  position: relative;
   width: calc(100% - 30px);
   max-width: 850px;
   margin-left: auto;
@@ -10026,7 +10027,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   line-height: 1.2;
 }
 #settingsView .passkey-card-status {
-  margin-left: auto;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   color: #16A34A;
   font-family: Manrope, sans-serif;
   font-size: 12px;
