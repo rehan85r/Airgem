@@ -10036,7 +10036,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   font-weight: 600;
 }
 #settingsView #passkeySetup {
-  width: 100%;
+  align-self: center;
+  width: auto;
+  margin-bottom: 15px;
 }
 #settingsView .settings-security-actions {
   width: calc(100% - 30px);
