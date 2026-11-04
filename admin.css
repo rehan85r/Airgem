@@ -9998,3 +9998,42 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   margin-right: auto;
 }
 
+#settingsView .passkey-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+#settingsView .passkey-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 24px;
+  color: #1B2E50;
+}
+#settingsView .passkey-card-heading svg {
+  width: 22px;
+  height: 22px;
+  color: #1E90FF;
+}
+#settingsView .passkey-card-heading strong {
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+#settingsView .passkey-card-status {
+  margin-left: auto;
+  color: #16A34A;
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+#settingsView #passkeySetup {
+  width: 100%;
+}
+#settingsView .settings-security-actions {
+  width: calc(100% - 30px);
+  max-width: 850px;
+  margin: 15px auto 0;
+}
+
