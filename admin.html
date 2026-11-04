@@ -632,15 +632,22 @@
               </div>
             </div>
             <div class="card settings-card">
-              <div>
-                <button id="mfaSetup" type="button" class="button primary">
-                  <i data-lucide="smartphone" aria-hidden="true"></i> Set up authenticator
-                </button>
+              <div class="passkey-card-content">
+                <div class="passkey-card-heading">
+                  <i data-lucide="fingerprint" aria-hidden="true"></i>
+                  <strong>Passkey</strong>
+                  <span class="passkey-card-status">Active</span>
+                </div>
                 <button id="passkeySetup" type="button" class="button secondary">
-                  <i data-lucide="fingerprint" aria-hidden="true"></i> Set up passkey
+                  Set Up Passkey
                 </button>
                 <p id="passkeyStatus" class="muted" role="status" aria-live="polite"></p>
               </div>
+            </div>
+            <div class="settings-security-actions">
+              <button id="mfaSetup" type="button" class="button primary">
+                <i data-lucide="smartphone" aria-hidden="true"></i> Set up authenticator
+              </button>
             </div>
           </section>
         </main>
