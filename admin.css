@@ -9938,10 +9938,13 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   margin: 0;
 }
 #settingsView.settings-full-page {
+  position: relative;
+  box-sizing: border-box;
   width: 100%;
   min-height: calc(100dvh - 52px);
   max-width: 100%;
   margin: 0;
+  padding-top: 55px;
 }
 /* Match the circular top-left back control used on the admin login page. */
 #settingsView .settings-back-button {
