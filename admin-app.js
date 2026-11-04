@@ -465,7 +465,7 @@
       (project.name || '').toLowerCase().includes(query));
     const selectionCount = $('allAirdropsSelectionCount');
     if (selectionCount) {
-      selectionCount.textContent = `${matches.length}/${availableProjects.length}`;
+      selectionCount.textContent = String(matches.length);
       selectionCount.hidden = searchValue.length > 0;
     }
     $('allAirdropsPending').textContent = '';
