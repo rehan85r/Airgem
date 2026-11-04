@@ -3429,7 +3429,6 @@ main{padding-top:15px}
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 #projectsView .trending-search-label-row label{margin:0;padding:0}
-#projectsView .trending-selection-count{font:400 12px Manrope,sans-serif;color:#64748B;white-space:nowrap}
 
 /* Publish feedback directly below the Top Airdrops action */
 #projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
@@ -3479,8 +3478,6 @@ main{padding-top:15px}
 #projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
-#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#94A3B8;pointer-events:none;z-index:1}
-#projectsView #trendingManager .trending-search input{padding-right:100px}
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 
@@ -5373,7 +5370,6 @@ main{padding-top:15px}
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 #projectsView .trending-search-label-row label{margin:0;padding:0}
-#projectsView .trending-selection-count{font:400 12px Manrope,sans-serif;color:#64748B;white-space:nowrap}
 /* Publish feedback directly below the Top Airdrops action */
 #projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
 #projectsView .trending-publish-message:empty{display:none}
@@ -5414,8 +5410,6 @@ main{padding-top:15px}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
 #projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
-#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#94A3B8;pointer-events:none;z-index:1}
-#projectsView #trendingManager .trending-search input{padding-right:100px}
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 /* Center project names vertically against their logos in Basic, Details and Guide. */
@@ -7391,7 +7385,6 @@ main{padding-top:15px}
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 #projectsView .trending-search-label-row label{margin:0;padding:0}
-#projectsView .trending-selection-count{font:400 12px Manrope,sans-serif;color:#64748B;white-space:nowrap}
 
 /* Publish feedback directly below the Top Airdrops action */
 #projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
@@ -7441,8 +7434,6 @@ main{padding-top:15px}
 #projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
-#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#94A3B8;pointer-events:none;z-index:1}
-#projectsView #trendingManager .trending-search input{padding-right:100px}
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 
@@ -8000,10 +7991,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   border-radius: 11px;
   padding-left: 42px;
 }
-#projectsView .trending-search-input-wrap .trending-selection-count {
-  font-size: 12px;
-  letter-spacing: 0;
-}
+
 #projectsView .trending-list { gap: 8px; }
 #projectsView .trending-item {
   min-height: 52px;
