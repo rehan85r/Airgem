@@ -9996,6 +9996,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
+  padding: 15px;
 }
 
 #settingsView .passkey-card-content {
