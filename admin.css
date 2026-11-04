@@ -9943,27 +9943,33 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   max-width: 100%;
   margin: 0;
 }
+/* Match the circular top-left back control used on the admin login page. */
 #settingsView .settings-back-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 40px;
-  margin: 0 0 24px;
-  padding: 0 14px;
-  border: 1px solid #E2E8F0;
-  border-radius: 10px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  min-height: 35px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #E8EDF3;
+  border-radius: 50%;
   background: #FFFFFF;
   color: #1B2E50;
-  font: 600 13px/1 Manrope, sans-serif;
+  box-shadow: 0 2px 8px rgba(27,46,80,.06);
   cursor: pointer;
 }
 #settingsView .settings-back-button svg {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
 }
 #settingsView .settings-back-button:hover {
-  border-color: #1E90FF;
+  border-color: #BFDBFE;
   color: #1E90FF;
 }
 #settingsView .page-heading,
