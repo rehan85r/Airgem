@@ -1434,7 +1434,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
 #projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:25px;height:25px;stroke-width:2}
+#projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
@@ -3463,7 +3463,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
 #projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:25px;height:25px;stroke-width:2}
+#projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
@@ -5397,7 +5397,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
 #projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:25px;height:25px;stroke-width:2}
+#projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
@@ -7419,7 +7419,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
 #projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:25px;height:25px;stroke-width:2}
+#projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
