@@ -1361,7 +1361,7 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
-#projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
+
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 }
 /* Top Airdrops card: 15px top and left inset */
@@ -1436,7 +1436,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-#projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
+
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
@@ -1447,8 +1447,8 @@ main{padding-top:15px}
 #projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
-#projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
+
+
 #projectsView #trendingManager .trending-search-input-wrap .trending-selection-count,
 #projectsView #allAirdropsManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#94A3B8;pointer-events:none;z-index:1}
 #projectsView #trendingManager .trending-search input,
@@ -3375,12 +3375,12 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
-#projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
+
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
-#projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
+
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 
 }
@@ -3465,7 +3465,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-#projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
+
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
@@ -3477,8 +3477,8 @@ main{padding-top:15px}
 #projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
-#projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
+
+
 
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
@@ -5325,7 +5325,7 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
-#projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
+
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 }
 /* Top Airdrops card: 15px top and left inset */
@@ -5399,7 +5399,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-#projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
+
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
@@ -5410,8 +5410,8 @@ main{padding-top:15px}
 #projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
-#projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
+
+
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 /* Center project names vertically against their logos in Basic, Details and Guide. */
@@ -7331,12 +7331,12 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
-#projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
+
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
-#projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
+
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 
 }
@@ -7421,7 +7421,7 @@ main{padding-top:15px}
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-#projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px}
+
 #projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
@@ -7433,8 +7433,8 @@ main{padding-top:15px}
 #projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
-#projectsView .all-airdrops-list .icon-button[data-stage-delete]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
+
+
 
 #projectsView #trendingManager .trending-search-clear{right:10px}
 #projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
@@ -10054,3 +10054,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
 #projectsView #trendingCurrent .trending-item-copy small,
 #projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
+
+/* Shared delete action styling for Top Airdrops and All Airdrops. */
+#projectsView #trendingCurrent .icon-button[data-top-remove],
+#projectsView .all-airdrops-list .icon-button[data-stage-delete]{width:30px;height:30px;min-width:30px;border-radius:8px;background:#FEF2F2;color:#DC2626}
+#projectsView #trendingCurrent .icon-button[data-top-remove] svg,
+#projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{width:15px;height:15px}
+#projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
