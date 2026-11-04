@@ -9972,6 +9972,4 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   width: 100%;
   max-width: 850px;
 }
-@media (max-width: 650px) {
-  body[data-admin-view="settings"] #dashboard > .app-shell > main { padding: 0; }
-}
+
