@@ -9503,7 +9503,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   background:#FFFFFF;
   color:#1B2E50;
 }
-#projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:400;letter-spacing:0;color:#94A3B8;opacity:1}
+#projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;color:#94A3B8;opacity:1}
 #projectsView .trending-list{gap:9px}
 #projectsView .trending-item{
   min-height:64px;
