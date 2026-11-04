@@ -9934,7 +9934,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   width: 100%;
   max-width: none;
   min-height: 100dvh;
-  padding: 20px 24px 32px;
+  padding: 0;
   margin: 0;
 }
 #settingsView.settings-full-page {
@@ -9946,7 +9946,6 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   margin: 0;
   padding-top: 55px;
 }
-/* Match the circular top-left back control used on the admin login page. */
 #settingsView .settings-back-button {
   position: absolute;
   top: 15px;
@@ -9957,7 +9956,6 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   box-sizing: border-box;
   width: 35px;
   height: 35px;
-  min-height: 35px;
   margin: 0;
   padding: 0;
   border: 1px solid #E8EDF3;
@@ -9967,24 +9965,13 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   box-shadow: 0 2px 8px rgba(27,46,80,.06);
   cursor: pointer;
 }
-#settingsView .settings-back-button svg {
-  width: 20px;
-  height: 20px;
-}
-#settingsView .settings-back-button:hover {
-  border-color: #BFDBFE;
-  color: #1E90FF;
-}
+#settingsView .settings-back-button svg { width: 20px; height: 20px; }
+#settingsView .settings-back-button:hover { border-color: #BFDBFE; color: #1E90FF; }
 #settingsView .page-heading,
 #settingsView .settings-card {
   width: 100%;
   max-width: 850px;
 }
 @media (max-width: 650px) {
-  body[data-admin-view="settings"] #dashboard > .app-shell > main {
-    padding: 15px 15px 24px;
-  }
-  #settingsView .settings-back-button {
-    margin-bottom: 20px;
-  }
+  body[data-admin-view="settings"] #dashboard > .app-shell > main { padding: 0; }
 }
