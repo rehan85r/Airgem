@@ -3364,19 +3364,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-search{margin-bottom:15px}
-#projectsView .trending-search{gap:10px}
-#projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
-#projectsView .trending-search-input-wrap{position:relative}
-#projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
-#projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}
-#projectsView .trending-search input{min-height:50px;font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#1B2E50;border-radius:12px;padding-left:45px;padding-right:48px}
-#projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}
-#projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}
-#projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}
-#projectsView .trending-search-clear[hidden]{display:none}
-#projectsView .trending-search-clear svg{display:block;width:20px;height:20px;stroke-width:2;flex-shrink:0}
-#projectsView #trendingManager .trending-search-clear{display:flex;align-items:center;justify-content:center;line-height:0;box-sizing:border-box}
 #projectsView .trending-list{gap:10px}
 #projectsView .trending-item{gap:10px;padding:10px;border-radius:12px;min-height:55px;box-sizing:border-box}
 #projectsView .trending-item .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
@@ -3678,7 +3665,6 @@ main{padding-top:15px}
 }
 /* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
 #projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
-#projectsView .trending-search input{font-weight:400;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px) {
 #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
@@ -5330,19 +5316,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-search{margin-bottom:15px}
-#projectsView .trending-search{gap:10px}
-#projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
-#projectsView .trending-search-input-wrap{position:relative}
-#projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
-#projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}
-#projectsView .trending-search input{min-height:50px;font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#1B2E50;border-radius:12px;padding-left:45px;padding-right:48px}
-#projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}
-#projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}
-#projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}
-#projectsView .trending-search-clear[hidden]{display:none}
-#projectsView .trending-search-clear svg{display:block;width:20px;height:20px;stroke-width:2;flex-shrink:0}
-#projectsView #trendingManager .trending-search-clear{display:flex;align-items:center;justify-content:center;line-height:0;box-sizing:border-box}
 #projectsView .trending-list{gap:10px}
 #projectsView .trending-item{gap:10px;padding:10px;border-radius:12px;min-height:55px;box-sizing:border-box}
 #projectsView .trending-item .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
@@ -5655,7 +5628,6 @@ body[data-admin-view="editor"]{overflow:hidden}
 
 /* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
 #projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
-#projectsView .trending-search input{font-weight:400;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px){
   #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
@@ -7354,19 +7326,6 @@ main{padding-top:15px}
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
 #projectsView .collection-card{max-width:none;width:100%;padding:20px}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-#projectsView .trending-search{margin-bottom:15px}
-#projectsView .trending-search{gap:10px}
-#projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
-#projectsView .trending-search-input-wrap{position:relative}
-#projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
-#projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}
-#projectsView .trending-search input{min-height:50px;font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#1B2E50;border-radius:12px;padding-left:45px;padding-right:48px}
-#projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}
-#projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}
-#projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}
-#projectsView .trending-search-clear[hidden]{display:none}
-#projectsView .trending-search-clear svg{display:block;width:20px;height:20px;stroke-width:2;flex-shrink:0}
-#projectsView #trendingManager .trending-search-clear{display:flex;align-items:center;justify-content:center;line-height:0;box-sizing:border-box}
 #projectsView .trending-list{gap:10px}
 #projectsView .trending-item{gap:10px;padding:10px;border-radius:12px;min-height:55px;box-sizing:border-box}
 #projectsView .trending-item .project-avatar{width:35px;height:35px;border-radius:10px;font-size:15px}
@@ -7668,7 +7627,6 @@ main{padding-top:15px}
 }
 /* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
 #projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
-#projectsView .trending-search input{font-weight:400;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px) {
 #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
