@@ -10044,6 +10044,3 @@ body:not([data-view]) #mfaBox #mfaHeading{
   min-width:30px;
   border-radius:8px;
 }
-@media(max-width:600px){
-  #projectsView .trending-item{height:50px;min-height:50px;border-radius:10px}
-}
