@@ -856,12 +856,15 @@ input::placeholder {
   font: 600 14px Manrope, sans-serif;
   border-radius: 12px;
 }
-#projectsView #trendingSearchResults button{display:flex;align-items:center;justify-content:space-between;width:100%;height:50px;min-height:50px;box-sizing:border-box;padding:9px 10px;gap:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50}
+#projectsView #trendingSearchResults button,
+#projectsView #allAirdropsSearchResults button{display:flex;align-items:center;justify-content:space-between;width:100%;height:50px;min-height:50px;box-sizing:border-box;padding:9px 10px;gap:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50}
 #projectsView .search-results .project-avatar,
 #projectsView #trendingCurrent .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
 #projectsView #trendingSearchResults .trending-item-copy,
+#projectsView #allAirdropsSearchResults .trending-item-copy,
 #projectsView #trendingCurrent .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}
 #projectsView #trendingSearchResults .trending-item-copy strong,
+#projectsView #allAirdropsSearchResults .trending-item-copy strong,
 #projectsView #trendingCurrent .trending-item-copy strong{font-size:13px;font-weight:600}
 #projectsView .search-results button > svg{display:block;width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50;margin-right:5px}
 .search-results button:hover {
@@ -9990,10 +9993,11 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
 /* Exact 15px spacing between search inputs and their result lists. */
-#projectsView #trendingManager .trending-search{gap:15px;margin-bottom:0}
-#projectsView #allAirdropsManager .trending-search{margin-bottom:15px}
+#projectsView #trendingManager .trending-search,
+#projectsView #allAirdropsManager .trending-search{gap:15px;margin-bottom:0}
 #projectsView .project-search-results{margin-top:0}
-#projectsView #trendingSearchResults{
+#projectsView #trendingSearchResults,
+#projectsView #allAirdropsSearchResults{
   position:static;
   top:auto;
   left:auto;
@@ -10020,6 +10024,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .trending-search-input-wrap,
 #projectsView #allAirdropsManager .trending-search-input-wrap,
 #projectsView #trendingSearchResults,
+#projectsView #allAirdropsSearchResults,
 #projectsView #trendingCurrent,
 #projectsView .all-airdrops-list {
   width: calc(100% - 30px);
