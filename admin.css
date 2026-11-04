@@ -8007,11 +8007,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   letter-spacing: 0;
   padding-left: 42px;
 }
-#projectsView .trending-search-input-wrap > .trending-search-icon {
-  width: 18px;
-  height: 18px;
-  left: 13px;
-}
 #projectsView .trending-search-input-wrap .trending-selection-count {
   font-size: 12px;
   letter-spacing: 0;
@@ -9524,12 +9519,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   letter-spacing:0;
 }
 #projectsView .trending-search-input-wrap input::placeholder{color:#94A3B8}
-#projectsView .trending-search-input-wrap>.trending-search-icon{
-  left:15px;
-  width:19px;
-  height:19px;
-  color:#64748B;
-}
 #projectsView .trending-list{gap:9px}
 #projectsView .trending-item{
   min-height:64px;
@@ -9990,9 +9979,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     padding-bottom:0!important;
     border-radius:10px!important;
     font:400 13px/1.4 Manrope,Inter,sans-serif!important;
-  }
-  #projectsView .trending-search-input-wrap>.trending-search-icon{
-    width:20px!important;height:20px!important;
   }
   #projectsView .trending-list{gap:8px!important}
   #projectsView .trending-item{
