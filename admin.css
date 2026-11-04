@@ -1426,13 +1426,13 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
 #projectsView #trendingCurrent .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px;padding-left:5px;gap:10px}
 #projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
-#projectsView .all-airdrops-list .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
-#projectsView #trendingCurrent .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView #trendingCurrent .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
-#projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
+
+
+
+
+
+
+
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
@@ -3455,13 +3455,13 @@ main{padding-top:15px}
 
 
 #projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
-#projectsView .all-airdrops-list .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
-#projectsView #trendingCurrent .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView #trendingCurrent .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
-#projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
+
+
+
+
+
+
+
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
@@ -5389,13 +5389,13 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
 
 #projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
-#projectsView .all-airdrops-list .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
-#projectsView #trendingCurrent .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView #trendingCurrent .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
-#projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
+
+
+
+
+
+
+
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
@@ -7411,13 +7411,13 @@ main{padding-top:15px}
 
 
 #projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
-#projectsView .all-airdrops-list .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
-#projectsView #trendingCurrent .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView #trendingCurrent .trending-item-copy strong{font-size:13px;font-weight:600}
-#projectsView #trendingCurrent .trending-item-copy,#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
-#projectsView #trendingCurrent .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
+
+
+
+
+
+
+
 #projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
@@ -10044,3 +10044,13 @@ body:not([data-view]) #mfaBox #mfaHeading{
   min-width:30px;
   border-radius:8px;
 }
+
+/* Shared project logo and text styling for Top Airdrops and All Airdrops. */
+#projectsView #trendingCurrent .project-avatar,
+#projectsView .all-airdrops-list .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
+#projectsView #trendingCurrent .trending-item-copy,
+#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
+#projectsView #trendingCurrent .trending-item-copy strong,
+#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
+#projectsView #trendingCurrent .trending-item-copy small,
+#projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
