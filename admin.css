@@ -10054,7 +10054,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 /* Shared 20px spacing below both project search bars. */
 #projectsView #trendingManager .trending-search,
 #projectsView #trendingManager .trending-search,
-#projectsView #allAirdropsManager .trending-search{margin-bottom:20px}
+#projectsView #allAirdropsManager .trending-search{margin-bottom:15px}
 
 /* Keep both project-search clear buttons hidden until their inputs contain text. */
 #projectsView #trendingManager .trending-search-clear[hidden],
