@@ -1342,7 +1342,7 @@ main{padding-top:15px}
 #projectsView .trending-search-input-wrap{position:relative}
 #projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
 #projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}
-#projectsView .trending-search input{box-sizing:border-box;height:50px;min-height:50px;font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:-.5px;color:#1B2E50;border-radius:12px;padding-left:45px;padding-right:48px}
+#projectsView .trending-search input{box-sizing:border-box;height:50px;min-height:50px;font:400 13px/1.4 Manrope,sans-serif;letter-spacing:0;color:#1B2E50;border-radius:12px;padding-left:45px;padding-right:48px}
 #projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}
 #projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}
 #projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}
@@ -1663,7 +1663,6 @@ body[data-admin-view="editor"]{overflow:hidden}
 
 /* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
 #projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
-#projectsView .trending-search input{font-weight:400;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px){
   #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
@@ -7999,9 +7998,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .trending-search { margin-bottom: 13px; }
 #projectsView .trending-search input {
   border-radius: 11px;
-  font-size: 12.5px;
-  font-weight: 400;
-  letter-spacing: 0;
   padding-left: 42px;
 }
 #projectsView .trending-search-input-wrap .trending-selection-count {
@@ -8049,7 +8045,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   }
 #projectsView .collection-card { padding: 14px; border-radius: 15px; }
 #projectsView .top-airdrops-heading { margin-bottom: 14px; gap: 8px; }
-#projectsView .trending-search input { font-size: 12px; }
 #projectsView .trending-item { min-height: 50px; padding: 7px 9px; }
 #projectsView .trending-item .project-avatar { width: 34px; height: 34px; }
 #projectsView .trending-item .trending-item-copy,
@@ -8095,7 +8090,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .trending-search input {
   border-color: #E6EAF0;
   border-radius: 10px;
-  font-size: 12px;
 }
 #projectsView .trending-list {
   gap: 7px;
@@ -9508,8 +9502,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   border-radius:11px;
   background:#FFFFFF;
   color:#1B2E50;
-  font:400 14px/1.4 Manrope,sans-serif;
-  letter-spacing:0;
 }
 #projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:400;letter-spacing:0;color:#94A3B8;opacity:1}
 #projectsView .trending-list{gap:9px}
@@ -9570,9 +9562,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
     border-radius:16px;
   }
   #projectsView .top-airdrops-heading{margin-bottom:14px;gap:9px}
-  #projectsView .trending-search-input-wrap input{
-    font-size:13px;
-  }
   #projectsView .trending-item{min-height:62px;padding:10px 11px}
   #projectsView .trending-item .project-avatar{width:42px;height:42px}
   #projectsView .trending-item-copy strong,
@@ -9955,7 +9944,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     padding-top:0!important;
     padding-bottom:0!important;
     border-radius:10px!important;
-    font:400 13px/1.4 Manrope,Inter,sans-serif!important;
   }
   #projectsView .trending-list{gap:8px!important}
   #projectsView .trending-item{
@@ -9998,9 +9986,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #projectsView nav.admin-project-nav>#addProjectButton{
     font-size:11px!important;
     font-weight:600!important;
-  }
-  #projectsView .trending-search-input-wrap input{
-    font-size:13px!important;
   }
   #projectsView .trending-item-copy strong,
   #projectsView .all-airdrops-list .trending-item strong{
