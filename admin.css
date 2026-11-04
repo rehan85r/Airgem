@@ -10012,8 +10012,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   color: #1B2E50;
 }
 #settingsView .passkey-card-heading svg {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   color: #1E90FF;
 }
 #settingsView .passkey-card-heading strong {
