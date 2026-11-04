@@ -61,6 +61,8 @@
       /[&<>"']/g,
       (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char],
     );
+  const matchesProjectSearch = (project, query) =>
+    String(project?.name || '').trim().toLowerCase().startsWith(query);
   const safeURL = (value) => {
     try {
       const url = new URL(value);
@@ -461,8 +463,7 @@
     $('allAirdropsSearchClear').hidden = searchValue.length === 0;
     const availableProjects = state.projects.filter((project) =>
       !state.trending.some((id) => String(id) === String(project.id)));
-    const matches = availableProjects.filter((project) =>
-      (project.name || '').toLowerCase().includes(query));
+    const matches = availableProjects.filter((project) => matchesProjectSearch(project, query));
     const selectionCount = $('allAirdropsSelectionCount');
     if (selectionCount) {
       selectionCount.textContent = String(matches.length);
@@ -528,7 +529,7 @@
           .filter(
             (project) =>
               !state.trending.some((id) => String(id) === String(project.id)) &&
-              project.name.toLowerCase().includes(query),
+              matchesProjectSearch(project, query),
           )
           .slice(0, 20)
       : [];
