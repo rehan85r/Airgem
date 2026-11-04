@@ -9992,7 +9992,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   color: #1B2E50;
 }
 #settingsView .settings-card {
-  width: 100%;
+  width: calc(100% - 30px);
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
