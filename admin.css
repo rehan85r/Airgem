@@ -10044,7 +10044,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   top:auto;
   left:auto;
   right:auto;
-  margin-top:15px;
+  margin:15px 0 0!important;
   max-height:250px;
   overflow-y:auto;
   overscroll-behavior:contain;
