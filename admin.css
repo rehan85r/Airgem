@@ -1364,16 +1364,8 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 }
-/* Warm amber icon treatment for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;box-sizing:content-box;padding:9px;border-radius:10px;background:#FFF7E2;color:#CA8B00;stroke-width:2}
-/* Match the original Top Airdrops dashboard tile icon */
-#projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
 /* Top Airdrops card: 15px top and left inset */
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
-/* Top Airdrops icon tile: 30x30px with a centered 20px star */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:7.5px}
-/* Higher contrast amber star for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
@@ -3406,20 +3398,8 @@ main{padding-top:15px}
 
 }
 
-/* Warm amber icon treatment for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;box-sizing:content-box;padding:9px;border-radius:10px;background:#FFF7E2;color:#CA8B00;stroke-width:2}
-
-/* Match the original Top Airdrops dashboard tile icon */
-#projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
-
 /* Top Airdrops card: 15px top and left inset */
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
-
-/* Top Airdrops icon tile: 30x30px with a centered 20px star */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:7.5px}
-
-/* Higher contrast amber star for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
@@ -5379,16 +5359,8 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button[data-top-remove]{background:#FEF2F2;color:#DC2626}
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 }
-/* Warm amber icon treatment for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;box-sizing:content-box;padding:9px;border-radius:10px;background:#FFF7E2;color:#CA8B00;stroke-width:2}
-/* Match the original Top Airdrops dashboard tile icon */
-#projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
 /* Top Airdrops card: 15px top and left inset */
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
-/* Top Airdrops icon tile: 30x30px with a centered 20px star */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:7.5px}
-/* Higher contrast amber star for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
@@ -7418,20 +7390,8 @@ main{padding-top:15px}
 
 }
 
-/* Warm amber icon treatment for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;box-sizing:content-box;padding:9px;border-radius:10px;background:#FFF7E2;color:#CA8B00;stroke-width:2}
-
-/* Match the original Top Airdrops dashboard tile icon */
-#projectsView .top-airdrops-heading h2 svg{width:24px;height:24px;box-sizing:content-box;padding:12px;border-radius:12px;background:#FFF6E1;color:#C88700;stroke-width:2}
-
 /* Top Airdrops card: 15px top and left inset */
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
-
-/* Top Airdrops icon tile: 30x30px with a centered 20px star */
-#projectsView .top-airdrops-heading h2 svg{width:20px;height:20px;padding:7.5px}
-
-/* Higher contrast amber star for Top Airdrops */
-#projectsView .top-airdrops-heading h2 svg{background:#1E90FF;color:#FFFFFF}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
@@ -10056,11 +10016,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #projectsView .top-airdrops-heading{
     gap:9px!important;
     margin-bottom:13px!important;
-  }
-  #projectsView .top-airdrops-heading h2 svg{
-    width:20px!important;height:20px!important;
-    padding:7.5px!important;
-    border-radius:10px!important;
   }
   #projectsView .top-airdrops-publish{
     min-height:35px!important;
