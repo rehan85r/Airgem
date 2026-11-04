@@ -1148,6 +1148,9 @@
       closeAdminMenu();
       navigate('settings');
     });
+    $('settingsBackToDashboard')?.addEventListener('click', () => {
+      navigate('projects');
+    });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && adminMenu && !adminMenu.hidden) closeAdminMenu();
     });
