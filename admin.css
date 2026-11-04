@@ -8881,9 +8881,6 @@ body:not([data-view]) .app-footer {
     padding: 14px;
     border-radius: 12px;
   }
-  body:not([data-view]) .top-airdrops-heading h2 {
-    font-size: 16px;
-  }
   body:not([data-view]) .mobile-editor-toolbar {
     background: #fff;
     border-bottom-color: var(--airgem-border);
@@ -10060,11 +10057,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     gap:9px!important;
     margin-bottom:13px!important;
   }
-  #projectsView .top-airdrops-heading h2{
-    gap:10px!important;
-    font:700 15px/1.25 Manrope,Inter,sans-serif!important;
-    letter-spacing:-.25px!important;
-  }
   #projectsView .top-airdrops-heading h2 svg{
     width:20px!important;height:20px!important;
     padding:7.5px!important;
@@ -10135,10 +10127,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
     font-size:11px!important;
     font-weight:600!important;
   }
-  #projectsView .top-airdrops-heading h2{
-    font-size:15px!important;
-    letter-spacing:-.25px!important;
-  }
   #projectsView .top-airdrops-publish{
     font-size:12px!important;
   }
@@ -10191,21 +10179,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 
 
-/* Keep Top Airdrops and All Airdrops header controls visually identical. */
-#projectsView #trendingManager .top-airdrops-heading h2,
-#projectsView #allAirdropsManager .top-airdrops-heading h2{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:0;
-  color:#1B2E50;
-  font:700 20px/1.25 Manrope,sans-serif;
-  letter-spacing:-.25px;
-}
-@media(max-width:767px){
-}
-
-
 /* Keep Top Airdrops and All Airdrops search inputs 50px on every viewport. */
 #projectsView #trendingManager .trending-search-input-wrap input,
 #projectsView #allAirdropsManager .trending-search-input-wrap input {
@@ -10254,8 +10227,3 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .top-airdrops-publish svg,
 #projectsView #allAirdropsManager .top-airdrops-publish svg {width:15px;height:15px;}
 
-/* Final heading size: Top Airdrops and All Airdrops — 20px on desktop and mobile. */
-#projectsView #trendingManager .top-airdrops-heading h2,
-#projectsView #allAirdropsManager .top-airdrops-heading h2 {
-  font-size: 20px !important;
-}
