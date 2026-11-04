@@ -3044,9 +3044,7 @@ dialog .guide-editor {
 }
 
 @media (min-width: 1151px) {
-  #projectsView > .page-heading {
-    margin-right: 288px;
-  }
+  
 }
 @media (max-width: 1350px) {
   :root {
@@ -3323,47 +3321,47 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:30px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
-#projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
-#projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
-#projectsView .page-heading{margin-bottom:15px}
 
-#projectsView .page-heading{justify-content:center;text-align:center}
-#projectsView .page-heading>div{width:100%;text-align:center}
+
+
+
+
+
+
 
 main{padding-top:15px}
 @media(max-width:640px){#dashboard .topbar{padding:0 15px}}
 
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
-#projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
-#projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
-#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .actions{gap:10px}
-#projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
-@media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}}
+
+
+
+
+
+@media(max-width:600px){}
 
 /* Compact embedded Top Airdrops manager */
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
-#projectsView .collection-card{max-width:none;width:100%;padding:20px}
-#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+
+
 
 
 @media(max-width:600px){
- #projectsView .collection-card{padding:15px}
  
- #projectsView .trending-item .actions{gap:10px}
- #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
-#projectsView .trending-item .icon-button{border-radius:8px}
-#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
-#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
+ 
+ 
+ 
 
-#projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
-#projectsView .trending-item .icon-button{border-radius:8px}
-#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
-#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 
-#projectsView .trending-item .icon-button:disabled{opacity:.8}
+
+
+
+
+
+
+
+
 
 }
 
@@ -3372,62 +3370,62 @@ main{padding-top:15px}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
-#projectsView .trending-list::-webkit-scrollbar{display:none}
+
 
 
 /* Project management shortcuts below the Admin Panel subtitle */
 #projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
-#projectsView .admin-project-nav::-webkit-scrollbar{display:none}
-#projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
-#projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
-#projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
-#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
-#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
-#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}
-#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
-#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}
+
+
+
+
+
+
+
+
+
+
 /* Editor project picker uses the same compact card geometry as All Airdrops. */
 #projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
-#projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}
-#projectsView #adminProjectPicker .admin-project-picker-item .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{font:600 13px Manrope,sans-serif;color:#1B2E50}
-#projectsView #adminProjectPicker .admin-project-picker-item>svg{width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50}
-#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}
-#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
-#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}
-#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}
-#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}
-#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}
-@media(max-width:650px){#projectsView .admin-project-nav{gap:8px}#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}}
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:650px){}
 
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 /* Equal 20px spacing above the Publish row and below it on all screen sizes */
 #projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
-#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
+
 
 /* Compact header publishing action in place of the selection count */
 
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-#projectsView .trending-search-label-row label{margin:0;padding:0}
+
 
 /* Publish feedback directly below the Top Airdrops action */
 #projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
-#projectsView .trending-publish-message:empty{display:none}
 
-#projectsView .trending-publish-message.is-success{color:#15803D}
-#projectsView .trending-publish-message.is-error{color:#DC2626}
+
+
+
 
 /* Replace project count with publish result in the same label row */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}
+
 
 /* Reference-style icon and message beside Select Project */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}
-#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}
+
 
 /* Match publish feedback typography to Select Project label */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}
@@ -3436,7 +3434,6 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
 
 
-#projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
 
 
 
@@ -3444,30 +3441,31 @@ main{padding-top:15px}
 
 
 
-#projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
-#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-
-#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
-#projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
-#projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
-#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}
-
-#projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}
-#projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}
-#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}
-#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
 
 
 
-#projectsView #trendingManager .trending-search-clear{right:10px}
-#projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Center project names vertically against their logos in Basic, Details and Guide. */
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{display:flex;align-items:center;min-height:30px;line-height:1.3;flex:0 1 auto}
+
 
 /* Focused premium Basic editor, retaining the existing form and save flow. */
 #editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}
@@ -3646,7 +3644,7 @@ main{padding-top:15px}
 #projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px) {
-#projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
+
 }
 /* Match investor logos and Upload Logo controls to the project logo controls. */
 #editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
@@ -3877,60 +3875,19 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   gap: 16px;
   text-align: left;
 }
-#projectsView .projects-page-heading > div {
-  width: auto;
-  min-width: 0;
-  text-align: left;
-}
-#projectsView .dashboard-add-project {
-  flex: 0 0 auto;
-  min-height: 40px;
-  padding: 0 15px;
-  border-color: #1E90FF;
-  background: #1E90FF;
-  color: #fff;
-  white-space: nowrap;
-}
-#projectsView .dashboard-add-project:hover {
-  background: #187DE0;
-  border-color: #187DE0;
-}
+
+
+
 @media (max-width: 640px) {
-#projectsView .projects-page-heading { justify-content: center; text-align: center; }
-#projectsView .projects-page-heading > div { width: 100%; text-align: center; }
-#projectsView .projects-page-heading h1 { font-size: 25px; }
+
+
+
 }
-#projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-left: 0;
-  min-height: 40px;
-  padding: 0 14px;
-  font-size: 13px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  color: #475569;
-  box-shadow: none;
-  white-space: nowrap;
-}
-#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
+
+
+
+
+
 @media (max-width: 640px) {
 /* Keep all admin navigation controls on one horizontally scrollable row. */
 #projectsView .admin-project-nav {
@@ -3967,20 +3924,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font: 600 12.5px/1.2 Manrope,sans-serif;
   white-space: nowrap;
 }
-#projectsView .admin-project-nav .dashboard-add-project svg {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
-}
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:active,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
+
+
 @media (max-width: 640px) {
-#projectsView .admin-project-nav { gap: 8px; }
+
 #projectsView .admin-project-nav .admin-project-nav-button,
   #projectsView .admin-project-nav .dashboard-add-project {
     min-height: 40px;
@@ -4996,9 +4943,7 @@ dialog .guide-editor {
   min-height: 120px;
 }
 @media (min-width: 1151px) {
-#projectsView > .page-heading {
-    margin-right: 288px;
-  }
+
 }
 @media (max-width: 1350px) {
 :root {
@@ -5251,105 +5196,104 @@ main {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:30px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
-#projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
-#projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
-#projectsView .page-heading{margin-bottom:15px}
-#projectsView .page-heading{justify-content:center;text-align:center}
-#projectsView .page-heading>div{width:100%;text-align:center}
+
+
+
+
+
+
 main{padding-top:15px}
 @media(max-width:640px) {
 #dashboard .topbar{padding:0 15px}
 }
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
-#projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
-#projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
-#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .actions{gap:10px}
-#projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
+
+
+
+
+
 @media(max-width:600px) {
-#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}
+
 }
 /* Compact embedded Top Airdrops manager */
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
-#projectsView .collection-card{max-width:none;width:100%;padding:20px}
-#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+
+
 
 
 @media(max-width:600px) {
-#projectsView .collection-card{padding:15px}
 
-#projectsView .trending-item .actions{gap:10px}
-#projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
-#projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
-#projectsView .trending-item .icon-button{border-radius:8px}
-#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
-#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 
-#projectsView .trending-item .icon-button:disabled{opacity:.8}
+
+
+
+
+
+
+
+
 }
 /* Top Airdrops card: 15px top and left inset */
 #projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
-#projectsView .trending-list::-webkit-scrollbar{display:none}
+
 
 /* Project management shortcuts below the Admin Panel subtitle */
 #projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
-#projectsView .admin-project-nav::-webkit-scrollbar{display:none}
-#projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
-#projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
-#projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
-#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
-#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
-#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
-#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}
-#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
-#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}
+
+
+
+
+
+
+
+
+
+
 /* Editor project picker uses the same compact card geometry as All Airdrops. */
 #projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
-#projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}
-#projectsView #adminProjectPicker .admin-project-picker-item .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{font:600 13px Manrope,sans-serif;color:#1B2E50}
-#projectsView #adminProjectPicker .admin-project-picker-item>svg{width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50}
-#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}
-#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
-#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}
-#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}
-#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}
-#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width:650px) {
-#projectsView .admin-project-nav{gap:8px}
-#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}
+
+
 }
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 /* Equal 20px spacing above the Publish row and below it on all screen sizes */
 #projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
-#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
+
 /* Compact header publishing action in place of the selection count */
 /* Top Airdrops project search selection count */
 #projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-#projectsView .trending-search-label-row label{margin:0;padding:0}
+
 /* Publish feedback directly below the Top Airdrops action */
 #projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}
-#projectsView .trending-publish-message:empty{display:none}
-#projectsView .trending-publish-message.is-success{color:#15803D}
-#projectsView .trending-publish-message.is-error{color:#DC2626}
+
+
+
 /* Replace project count with publish result in the same label row */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}
+
 /* Reference-style icon and message beside Select Project */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}
-#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}
+
 /* Match publish feedback typography to Select Project label */
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}
 /* Balanced inset for Select Project and selection count */
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
 
-#projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
 
 
 
@@ -5357,27 +5301,28 @@ main{padding-top:15px}
 
 
 
-#projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:16px;height:16px;stroke-width:1.8}
-#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-
-#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item{padding-right:10px}
-#projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
-#projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
-#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}
-#projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}
-#projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}
-#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}
-#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}
 
 
-#projectsView #trendingManager .trending-search-clear{right:10px}
-#projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Center project names vertically against their logos in Basic, Details and Guide. */
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{display:flex;align-items:center;min-height:30px;line-height:1.3;flex:0 1 auto}
+
 /* Focused premium Basic editor, retaining the existing form and save flow. */
 #editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}
 #editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}
@@ -5585,7 +5530,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 #projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px){
-  #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
+  
 }
 
 /* Match investor logos and Upload Logo controls to the project logo controls. */
@@ -5823,86 +5768,28 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   gap: 16px;
   text-align: left;
 }
-#projectsView .projects-page-heading > div {
-  width: auto;
-  min-width: 0;
-  text-align: left;
-}
-#projectsView .dashboard-add-project {
-  flex: 0 0 auto;
-  min-height: 40px;
-  padding: 0 15px;
-  border-color: #1E90FF;
-  background: #1E90FF;
-  color: #fff;
-  white-space: nowrap;
-}
-#projectsView .dashboard-add-project:hover {
-  background: #187DE0;
-  border-color: #187DE0;
-}
+
+
+
 @media (max-width: 640px) {
-  #projectsView .projects-page-heading { justify-content: center; text-align: center; }
-  #projectsView .projects-page-heading > div { width: 100%; text-align: center; }
-  #projectsView .projects-page-heading h1 { font-size: 25px; }
+  
+  
+  
 }
-#projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-left: 0;
-  min-height: 40px;
-  padding: 0 14px;
-  font-size: 13px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  color: #475569;
-  box-shadow: none;
-  white-space: nowrap;
-}
-#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
+
+
+
+
+
 @media (max-width: 640px) {
-  #projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:active,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
+  
+
+
+
+
 @media (max-width: 640px) {
-  #projectsView .admin-project-nav { gap: 8px; }
-  #projectsView .admin-project-nav .dashboard-add-project { font-size: 12px; }
+  
+  
 }
 
 * {
@@ -7273,9 +7160,9 @@ main{padding-top:15px}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
-#projectsView .trending-item .icon-button{border-radius:8px}
-#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
-#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
+
+
+
 
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 
@@ -7814,13 +7701,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .projects-page-heading > div { width: 100%; text-align: center; }
 #projectsView .projects-page-heading h1 { font-size: 25px; }
 }
-#projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
+
+
 #projectsView .admin-project-nav .dashboard-add-project {
   display: inline-flex;
   flex: 0 0 auto;
@@ -7838,7 +7720,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   box-shadow: none;
   white-space: nowrap;
 }
-#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
+
 #projectsView .admin-project-nav .dashboard-add-project:hover,
 #projectsView .admin-project-nav .dashboard-add-project:focus-visible {
   background: #1E90FF;
@@ -7846,7 +7728,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   color: #fff;
 }
 @media (max-width: 640px) {
-#projectsView .admin-project-nav { gap: 8px; }
+
 #projectsView .admin-project-nav .dashboard-add-project { min-height: 40px; padding: 0 14px; font-size: 13px; }
 }
 /* Final mobile navigation fix: keep Add Project on the same row and swipe horizontally. */
@@ -9372,7 +9254,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   letter-spacing:-.6px;
   color:#1B2E50;
 }
-#projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
+
 #projectsView .page-heading p{
   margin-top:6px;
   color:#64748B;
