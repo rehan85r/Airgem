@@ -9497,7 +9497,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 #projectsView .trending-list{gap:9px}
 #projectsView .trending-item{
   min-height:50px;
-  padding:5px 10px;
+  padding:9px 10px;
   gap:10px;
   border:1px solid #E2E8F0;
   border-radius:12px;
@@ -9940,7 +9940,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #projectsView .trending-item{
     height:50px!important;
     min-height:50px!important;
-    padding:5px 10px!important;
+    padding:9px 10px!important;
     gap:10px!important;
     border-radius:10px!important;
   }
