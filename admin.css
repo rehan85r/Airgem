@@ -10038,21 +10038,20 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{width:15px;height:15px}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
-/* Top Airdrops search results stay in document flow and never cover the next card. */
+/* Top Airdrops search results stay in document flow with a shared 15px gap. */
 #projectsView #trendingSearchResults{
   position:static;
   top:auto;
   left:auto;
   right:auto;
-  margin-top:10px;
+  margin-top:15px;
   max-height:250px;
   overflow-y:auto;
   overscroll-behavior:contain;
 }
 #projectsView .search-results[hidden]{display:none}
 
-/* Shared 20px spacing below both project search bars. */
-#projectsView #trendingManager .trending-search,
+/* Shared 15px spacing below both project search bars. */
 #projectsView #trendingManager .trending-search,
 #projectsView #allAirdropsManager .trending-search{margin-bottom:15px}
 
