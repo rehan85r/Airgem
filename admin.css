@@ -9944,7 +9944,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   min-height: calc(100dvh - 52px);
   max-width: 100%;
   margin: 0;
-  padding-top: 55px;
+  padding-top: 65px;
 }
 #settingsView .settings-back-button {
   position: absolute;
@@ -9967,9 +9967,18 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 }
 #settingsView .settings-back-button svg { width: 20px; height: 20px; }
 #settingsView .settings-back-button:hover { border-color: #BFDBFE; color: #1E90FF; }
-#settingsView .page-heading,
+#settingsView .page-heading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
 #settingsView .settings-card {
   width: 100%;
   max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
