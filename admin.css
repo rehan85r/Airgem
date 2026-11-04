@@ -10061,3 +10061,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingCurrent .icon-button[data-top-remove] svg,
 #projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{width:15px;height:15px}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
+
+/* Keep both project-search clear buttons hidden until their inputs contain text. */
+#projectsView #trendingManager .trending-search-clear[hidden],
+#projectsView #allAirdropsManager .trending-search-clear[hidden]{display:none}
