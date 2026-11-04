@@ -10253,3 +10253,9 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 #projectsView #trendingManager .top-airdrops-publish svg,
 #projectsView #allAirdropsManager .top-airdrops-publish svg {width:15px;height:15px;}
+
+/* Final heading size: Top Airdrops and All Airdrops — 20px on desktop and mobile. */
+#projectsView #trendingManager .top-airdrops-heading h2,
+#projectsView #allAirdropsManager .top-airdrops-heading h2 {
+  font-size: 20px !important;
+}
