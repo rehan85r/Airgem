@@ -9903,14 +9903,15 @@ body:not([data-view]) #mfaBox #mfaHeading{
   gap: 15px;
 }
 
-/* One shared 15px horizontal inset for both search bars, search results and project lists. */
+/* One shared 15px left/right inset for both search bars, dropdowns and project lists. */
 #projectsView #trendingManager .trending-search-input-wrap,
 #projectsView #allAirdropsManager .trending-search-input-wrap,
 #projectsView #trendingSearchResults,
 #projectsView #allAirdropsSearchResults,
 #projectsView #trendingCurrent,
-#projectsView .all-airdrops-list {
+#projectsView #allAirdropsManager .all-airdrops-list {
   width: calc(100% - 30px);
-  margin-inline: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
   box-sizing: border-box;
 }
