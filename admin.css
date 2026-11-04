@@ -9996,22 +9996,21 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{width:15px;height:15px}
 #projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:#EAF2FF;color:#1E90FF}
 
-/* Top Airdrops search results stay in document flow with a shared 15px gap. */
+/* Shared 15px spacing for Top Airdrops and All Airdrops search results. */
+#projectsView .project-search-results{margin-top:15px}
 #projectsView #trendingSearchResults{
   position:static;
   top:auto;
   left:auto;
   right:auto;
-  margin:15px 0 0!important;
   max-height:250px;
   overflow-y:auto;
   overscroll-behavior:contain;
 }
 #projectsView .search-results[hidden]{display:none}
-
-/* Shared 15px spacing below both project search bars. */
 #projectsView #trendingManager .trending-search,
-#projectsView #allAirdropsManager .trending-search{margin-bottom:15px}
+#projectsView #allAirdropsManager .trending-search{margin-bottom:0}
+#projectsView #trendingCurrent{margin-top:15px}
 
 /* Keep both project-search clear buttons hidden until their inputs contain text. */
 #projectsView #trendingManager .trending-search-clear[hidden],
