@@ -9166,7 +9166,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   margin:0;
   padding:5px;
   border-radius:8px;
-  background:rgba(30,144,255,.5);
+  background:#1E90FF;
   color:#FFFFFF;
   stroke-width:2;
 }
