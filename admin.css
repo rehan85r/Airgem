@@ -1414,7 +1414,7 @@ main{padding-top:15px}
 
 
 
-#projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:20px;height:20px;min-width:20px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
+#projectsView #trendingCurrent .top-drag-handle{appearance:none;display:grid;place-items:center;width:20px;height:20px;min-width:20px;margin:0;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:20px;height:20px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 
@@ -7034,7 +7034,7 @@ main{padding-top:15px}
 
 
 
-#projectsView #trendingCurrent .top-drag-handle{display:grid;place-items:center;width:20px;height:20px;min-width:20px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#64748B;cursor:grab;touch-action:none;user-select:none}
+#projectsView #trendingCurrent .top-drag-handle{appearance:none;display:grid;place-items:center;width:20px;height:20px;min-width:20px;margin:0;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;color:#64748B;cursor:grab;touch-action:none;user-select:none}
 #projectsView #trendingCurrent .top-drag-handle svg{width:20px;height:20px;stroke-width:1.8}
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 
