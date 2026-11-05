@@ -1378,7 +1378,7 @@ main{padding-top:15px}
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
-#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
+#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:15px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
 #projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}
 #projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
@@ -6968,7 +6968,7 @@ main{padding-top:15px}
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
-#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
+#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:15px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
 #projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}
 #projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
@@ -9363,11 +9363,19 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .trending-search-clear[hidden],
 #projectsView #allAirdropsManager .trending-search-clear[hidden]{display:none}
 
-/* One shared 15px gap between project rows in Top Airdrops and All Airdrops. */
+/* Shared 15px spacing for search-to-list and between project rows in all sections. */
+#projectsView #adminProjectPicker .trending-search{
+  margin:15px 0 0;
+  padding:0;
+}
 #projectsView #trendingCurrent,
-#projectsView .all-airdrops-list {
-  display: grid;
-  gap: 15px;
+#projectsView .all-airdrops-list,
+#projectsView #adminProjectPicker .admin-project-picker-list{
+  display:grid;
+  gap:15px;
+}
+#projectsView #adminProjectPicker .admin-project-picker-list{
+  margin-top:15px;
 }
 
 /* Shared exact 15px top and left inset for all five section headings. */
