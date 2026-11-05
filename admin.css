@@ -9328,6 +9328,12 @@ body:not([data-view]) #mfaBox #mfaHeading{
   height:20px;
 }
 
+/* Exact 15px right inset for delete actions in both project lists. */
+#projectsView #trendingCurrent .trending-item,
+#projectsView .all-airdrops-list .trending-item{
+  padding-right:15px;
+}
+
 /* Exact 15px spacing between search inputs and their result lists. */
 #projectsView #trendingManager .trending-search,
 #projectsView #allAirdropsManager .trending-search{gap:15px;margin-bottom:0}
