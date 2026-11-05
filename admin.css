@@ -9155,7 +9155,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font:600 20px/1.25 Manrope,sans-serif;letter-spacing:-.25px;
 }
 #projectsView #trendingManager .top-airdrops-heading h2 svg,
-#projectsView #allAirdropsManager .top-airdrops-heading h2 svg {
+#projectsView #allAirdropsManager .top-airdrops-heading h2 svg,
+#projectsView #adminProjectPicker .top-airdrops-heading h2 svg {
   display:block;
   box-sizing:border-box;
   width:30px;
