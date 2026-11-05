@@ -9376,12 +9376,12 @@ body:not([data-view]) #mfaBox #mfaHeading{
   gap: 15px;
 }
 
-/* Shared 15px top and left inset for all five section headings. */
+/* Shared exact 15px top and left inset for all five section headings. */
 #projectsView #trendingManager .collection-card,
 #projectsView #allAirdropsManager .collection-card,
 #projectsView #adminProjectPicker .collection-card {
-  padding-top:14px !important;
-  padding-left:14px !important;
+  padding-top:15px !important;
+  padding-left:15px !important;
   padding-right:15px !important;
 }
 /* Identical 30px icon tile for Top, All, Basic, Details and Guide. */
