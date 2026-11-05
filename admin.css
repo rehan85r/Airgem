@@ -1361,7 +1361,7 @@ main{padding-top:15px}
 #projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
 #projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}
 /* Editor project picker uses the same compact card geometry as All Airdrops. */
-#projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
+
 #projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}
 
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}
@@ -3254,7 +3254,7 @@ main{padding-top:15px}
 
 
 /* Editor project picker uses the same compact card geometry as All Airdrops. */
-#projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
+
 
 
 
@@ -5062,7 +5062,7 @@ main{padding-top:15px}
 
 
 /* Editor project picker uses the same compact card geometry as All Airdrops. */
-#projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
+
 
 
 
@@ -6959,7 +6959,7 @@ main{padding-top:15px}
 #projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}
 #projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}
 /* Editor project picker uses the same compact card geometry as All Airdrops. */
-#projectsView #adminProjectPicker .top-airdrops-heading{margin-bottom:20px}
+
 #projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}
 
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}
@@ -9154,10 +9154,15 @@ body:not([data-view]) #mfaBox #mfaHeading{
   display:flex;align-items:center;align-self:flex-start;gap:10px;margin:0;color:#1B2E50;
   font:600 20px/1.25 Manrope,sans-serif;letter-spacing:-.25px;
 }
+/* Single source of truth for Basic, Details and Guide picker heading. */
 #projectsView #adminProjectPicker .top-airdrops-heading{
   box-sizing:border-box;
-  padding-top:15px;
-  padding-left:15px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  width:100%;
+  margin:0 0 20px;
+  padding:0;
 }
 #projectsView #adminProjectPicker .top-airdrops-heading h2{
   display:flex;
