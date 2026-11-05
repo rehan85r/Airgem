@@ -9271,6 +9271,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
   border-radius:12px;
   background:#FFFFFF;
 }
+/* All Airdrops delete action: keep 10px from the row's right edge. */
+#projectsView .all-airdrops-list .trending-item{
+  padding-right:10px;
+}
 #projectsView #trendingCurrent .trending-item .actions,
 #projectsView .all-airdrops-list .trending-item .actions{
   display:flex;
