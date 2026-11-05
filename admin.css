@@ -9246,8 +9246,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .trending-item .actions{
   display:flex;
   align-items:center;
+  justify-content:flex-end;
+  flex:0 0 auto;
   gap:10px;
-  margin:0;
+  margin:0 0 0 auto;
   padding:0;
 }
 #projectsView #trendingCurrent .trending-item .actions > button,
