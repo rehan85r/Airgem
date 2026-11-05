@@ -9159,11 +9159,34 @@ body:not([data-view]) #mfaBox #mfaHeading{
   box-sizing:border-box;
   display:flex;
   align-items:center;
-  justify-content:flex-start;
+  justify-content:space-between;
+  gap:12px;
   width:100%;
   margin:0 0 20px;
   padding:0 0 15px;
   border-bottom:1px solid #E2E8F0;
+}
+#projectsView #adminProjectPicker .picker-add-project{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  min-height:35px;
+  height:35px;
+  padding:0 12px;
+  border:0;
+  border-radius:9px;
+  gap:5px;
+  color:#FFFFFF;
+  background:#1E90FF;
+  font:600 12px/1 Manrope,sans-serif;
+  white-space:nowrap;
+  box-shadow:none;
+}
+#projectsView #adminProjectPicker .picker-add-project svg{
+  display:block;
+  width:14px;
+  height:14px;
 }
 #projectsView #adminProjectPicker .top-airdrops-heading h2{
   display:flex;
