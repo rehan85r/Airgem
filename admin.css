@@ -9808,6 +9808,16 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 
 
+/* Shared divider below Top Airdrops and All Airdrops heading rows. */
+#projectsView #trendingManager .top-airdrops-heading,
+#projectsView #allAirdropsManager .top-airdrops-heading {
+  box-sizing:border-box;
+  width:100%;
+  padding-bottom:15px;
+  margin-bottom:13px;
+  border-bottom:1px solid #E2E8F0;
+}
+
 /* Shared Top Airdrops and All Airdrops heading, icon and Publish controls. */
 #projectsView #trendingManager .top-airdrops-heading h2,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 {
