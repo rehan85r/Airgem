@@ -1367,8 +1367,6 @@ main{padding-top:15px}
 
 #projectsView .trending-item .icon-button:disabled{opacity:.8}
 }
-/* Top Airdrops card: 15px top and left inset */
-#projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
@@ -1404,8 +1402,6 @@ main{padding-top:15px}
 }
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
-/* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
 #projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
 /* Compact header publishing action in place of the selection count */
 /* Top Airdrops project search selection count */
@@ -3365,8 +3361,6 @@ main{padding-top:15px}
 
 }
 
-/* Top Airdrops card: 15px top and left inset */
-#projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
@@ -5234,8 +5228,6 @@ main{padding-top:15px}
 
 
 }
-/* Top Airdrops card: 15px top and left inset */
-#projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 
@@ -7168,8 +7160,6 @@ main{padding-top:15px}
 
 }
 
-/* Top Airdrops card: 15px top and left inset */
-#projectsView .collection-card{padding-top:20px;padding-left:20px;padding-right:20px}
 
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
