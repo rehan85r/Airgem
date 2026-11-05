@@ -9306,12 +9306,27 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingCurrent .trending-item-copy small,
 #projectsView .all-airdrops-list .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}
 
-/* Shared delete action styling for Top Airdrops and All Airdrops. */
+/* Single shared delete icon style for Top Airdrops and All Airdrops. */
 #projectsView #trendingCurrent .icon-button[data-top-remove],
-#projectsView .all-airdrops-list .icon-button[data-stage-delete]{appearance:none;width:15px;height:15px;min-width:15px;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;color:#64748B}
+#projectsView .all-airdrops-list .icon-button[data-stage-delete]{
+  appearance:none;
+  display:grid;
+  place-items:center;
+  width:15px;
+  height:15px;
+  min-width:15px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:#64748B;
+}
 #projectsView #trendingCurrent .icon-button[data-top-remove] svg,
-#projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{width:15px;height:15px}
-#projectsView .all-airdrops-list .trending-item.is-pending-delete .icon-button[data-stage-delete]{background:none!important;box-shadow:none!important;color:#1E90FF}
+#projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{
+  width:15px;
+  height:15px;
+}
 
 /* Exact 15px spacing between search inputs and their result lists. */
 #projectsView #trendingManager .trending-search,
