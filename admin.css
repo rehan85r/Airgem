@@ -1320,9 +1320,7 @@ main{padding-top:15px}
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
 #projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
-#projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
 #projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
 @media(max-width:600px) {
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}
 }
@@ -1347,9 +1345,7 @@ main{padding-top:15px}
 @media(max-width:600px) {
 #projectsView .collection-card{padding:15px}
 
-#projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
-#projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 
@@ -6928,9 +6924,7 @@ main{padding-top:15px}
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
 #projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
-#projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
 #projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
 @media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}}
 
 /* Compact embedded Top Airdrops manager */
@@ -6942,9 +6936,7 @@ main{padding-top:15px}
 @media(max-width:600px){
  #projectsView .collection-card{padding:15px}
  
-  #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
-#projectsView .trending-item .icon-button{border-radius:8px}
-#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
+  #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
 
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
@@ -7471,13 +7463,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font-weight: 600;
   letter-spacing: -.15px;
 }
-#projectsView .trending-item .icon-button,
-#projectsView .all-airdrops-list .icon-button {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  border-radius: 9px;
-}
 @media (max-width: 650px) {
 #projectsView .collection-card { padding: 14px; border-radius: 15px; }
 #projectsView .top-airdrops-heading { margin-bottom: 14px; gap: 8px; }
@@ -7511,13 +7496,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font-size: 13px;
   font-weight: 600;
   letter-spacing: -.1px;
-}
-#projectsView .trending-item .icon-button,
-#projectsView .all-airdrops-list .icon-button {
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
-  border-radius: 8px;
 }
 #projectsView .top-airdrops-section + .top-airdrops-section {
   margin-top: 14px;
@@ -8836,13 +8814,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   font:600 14px/1.3 Manrope,sans-serif;
   letter-spacing:-.1px;
 }
-#projectsView .trending-item .icon-button,
-#projectsView .all-airdrops-list .icon-button{
-  width:34px;
-  height:34px;
-  min-width:34px;
-  border-radius:10px;
-}
 #dashboard .app-footer{
   padding:10px 20px 18px;
   color:#64748B;
@@ -9270,10 +9241,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   border:1px solid #E2E8F0;
   border-radius:12px;
   background:#FFFFFF;
-}
-/* All Airdrops delete action: keep 10px from the row's right edge. */
-#projectsView .all-airdrops-list .trending-item{
-  padding-right:10px;
 }
 #projectsView #trendingCurrent .trending-item .actions,
 #projectsView .all-airdrops-list .trending-item .actions{
