@@ -7939,7 +7939,40 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   background: transparent !important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap {
-  display: contents !important;
+  display:flex !important;
+  grid-column:1 !important;
+  grid-row:1 !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  width:30px !important;
+  min-width:30px !important;
+  height:30px !important;
+  flex:0 0 30px !important;
+  overflow:hidden !important;
+}
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo{
+  display:grid !important;
+  place-items:center !important;
+  width:30px !important;
+  min-width:30px !important;
+  max-width:30px !important;
+  height:30px !important;
+  min-height:30px !important;
+  max-height:30px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  border:0 !important;
+  border-radius:8px !important;
+  outline:0 !important;
+  box-shadow:none !important;
+}
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo {
   grid-column: 1;
