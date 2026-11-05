@@ -8829,10 +8829,20 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   font:600 14px/1.3 Manrope,sans-serif;
   letter-spacing:-.1px;
 }
+/* Keep the dashboard footer directly after content and center its two labels. */
+#dashboard #mainContent{
+  flex:0 0 auto;
+}
 #dashboard .app-footer{
-  padding:10px 20px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:16px 16px 24px;
   color:#64748B;
   font:400 12px/1.5 Manrope,sans-serif;
+  text-align:center;
 }
 @media(max-width:650px){
   #projectsView .collection-card{
