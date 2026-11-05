@@ -9316,7 +9316,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Shared project logo and text styling for Top Airdrops and All Airdrops. */
 #projectsView #trendingCurrent .project-avatar,
-#projectsView .all-airdrops-list .project-avatar{width:30px;height:30px;min-width:30px;border-radius:8px;font-size:13px}
+#projectsView .all-airdrops-list .project-avatar{width:20px;height:20px;min-width:20px;border-radius:6px;font-size:11px}
 #projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}
 #projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}
 #projectsView #trendingCurrent .trending-item-copy small,
