@@ -9143,7 +9143,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #allAirdropsManager .top-airdrops-heading {
   box-sizing:border-box;
   width:100%;
-  padding:0;
+  padding:0 0 15px;
   margin:0;
   border-bottom:1px solid #E2E8F0;
 }
