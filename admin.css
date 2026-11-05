@@ -9835,6 +9835,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   flex:0 0 25px;
   margin:0;
   padding:0;
+  transform:translateY(-6px);
   color:#1E90FF;
   stroke-width:2;
 }
