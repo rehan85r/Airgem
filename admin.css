@@ -9160,12 +9160,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
     font:650 14px/1.3 Manrope,Inter,sans-serif!important;
     letter-spacing:-.12px!important;
   }
-  #projectsView .trending-item .icon-button,
-  #projectsView .all-airdrops-list .icon-button{
-    width:32px!important;height:32px!important;
-    min-width:32px!important;
-    border-radius:9px!important;
-  }
+
 }
 
 
@@ -9299,13 +9294,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 #projectsView #trendingCurrent .top-drag-handle{
   appearance:none;
-  display:grid;
-  place-items:center;
-  width:20px;
-  height:20px;
-  min-width:20px;
-  margin:0;
-  padding:0;
   border:0;
   border-radius:0;
   background:transparent;
@@ -9314,11 +9302,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   cursor:grab;
   touch-action:none;
   user-select:none;
-}
-#projectsView #trendingCurrent .top-drag-handle svg{
-  width:20px;
-  height:20px;
-  stroke-width:1.8;
 }
 #projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 
@@ -9344,23 +9327,19 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingCurrent .icon-button[data-top-remove],
 #projectsView .all-airdrops-list .icon-button[data-stage-delete]{
   appearance:none;
-  display:grid;
-  place-items:center;
-  width:20px;
-  height:20px;
-  min-width:20px;
-  padding:0;
   border:0;
   border-radius:0;
   background:transparent;
   box-shadow:none;
   color:#64748B;
 }
+#projectsView #trendingCurrent .top-drag-handle svg,
 #projectsView #trendingCurrent .icon-button[data-top-remove] svg,
 #projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{
   width:20px;
   height:20px;
 }
+#projectsView #trendingCurrent .top-drag-handle svg{stroke-width:1.8}
 
 /* Exact 15px spacing between search inputs and their result lists. */
 #projectsView #trendingManager .trending-search,
