@@ -9291,7 +9291,10 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Remove external spacing around both Top and All Airdrops search bars. */
 #projectsView #trendingManager .trending-search,
-#projectsView #allAirdropsManager .trending-search,
+#projectsView #allAirdropsManager .trending-search{
+  margin:15px 0 0;
+  padding:0;
+}
 #projectsView #trendingManager .trending-search-input-wrap,
 #projectsView #allAirdropsManager .trending-search-input-wrap{
   margin:0;
