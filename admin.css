@@ -9138,54 +9138,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 
 
-/* Refined compact type scale — reduce visual heaviness without losing readability */
-@media(max-width:767px){
-  #projectsView .trending-item-copy strong,
-  #projectsView .all-airdrops-list .trending-item strong{
-    font-size:13px!important;
-    font-weight:650!important;
-  }
-  #dashboard .app-footer{
-    font-size:11px!important;
-  }
-  #editorView .mobile-editor-toolbar strong{
-    font-size:17px!important;
-  }
-  #editorView .editor-heading h1{
-    font-size:20px!important;
-  }
-  #editorView .editor-heading p,
-  #editorView #editorProjectMeta{
-    font-size:12px!important;
-  }
-  #editorView .editor-tabs button,
-  #editorView .editor-heading .actions button,
-  #editorView .editor-heading .actions .button,
-  #editorView .editor-panel button,
-  #editorView .editor-footer button{
-    font-size:12px!important;
-  }
-  #editorView .editor-panel .section-heading h2,
-  #editorView .editor-panel h2,
-  #editorView .editor-panel h3,
-  #editorView .editor-panel legend{
-    font-size:16px!important;
-  }
-  #editorView .editor-panel .field>label,
-  #editorView .editor-panel .ag-investor-fields label,
-  #editorView .editor-panel label{
-    font-size:12px!important;
-  }
-  #editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
-  #editorView .editor-panel select,
-  #editorView .editor-panel textarea,
-  #editorView .editor-panel .ag-investor-fields input,
-  #editorView .editor-panel [contenteditable="true"]{
-    font-size:13px!important;
-  }
-}
-
-
 /* Shared divider below Top Airdrops and All Airdrops heading rows. */
 #projectsView #trendingManager .top-airdrops-heading,
 #projectsView #allAirdropsManager .top-airdrops-heading {
@@ -9575,3 +9527,99 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   height:15px;
   flex:0 0 15px;
 }
+
+
+/* Unified admin typography — identical on mobile and desktop. */
+#dashboard .page-heading h1,
+#projectsView .projects-page-heading h1,
+#editorView .editor-heading h1,
+#settingsView .page-heading h1{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:22px;
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:-.5px;
+}
+#dashboard .page-heading p,
+#projectsView .projects-page-heading p,
+#editorView .editor-heading p,
+#editorView #editorProjectMeta{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:400;
+  line-height:1.5;
+}
+#dashboard h2,
+#projectsView .top-airdrops-heading h2,
+#editorView .editor-panel .section-heading h2,
+#editorView .editor-panel h2,
+#editorView .editor-panel h3,
+#editorView .editor-panel legend{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:16px;
+  font-weight:650;
+  line-height:1.4;
+  letter-spacing:-.2px;
+}
+#dashboard .card h3,
+#projectsView .trending-item-copy strong,
+#projectsView .all-airdrops-list .trending-item-copy strong,
+#editorView .basic-investors-heading h2,
+#editorView .basic-investors-title h2,
+#settingsView .passkey-card-heading strong{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:-.1px;
+}
+#dashboard p,
+#dashboard .card p,
+#projectsView .trending-item-copy small,
+#projectsView .all-airdrops-list .trending-item-copy small{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.5;
+}
+#editorView .editor-panel .field>label,
+#editorView .editor-panel .ag-investor-fields label,
+#editorView .editor-panel label{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.4;
+}
+#dashboard button,
+#projectsView button,
+#editorView .editor-tabs button,
+#editorView .editor-heading .actions button,
+#editorView .editor-heading .actions .button,
+#editorView .editor-panel button,
+#editorView .editor-footer button{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.35;
+}
+#dashboard .app-footer,
+#editorView .editor-heading .editor-subtitle,
+#editorView .editor-heading .muted,
+#settingsView .passkey-card-status{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:12px;
+  font-weight:400;
+  line-height:1.5;
+}
+#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+#editorView .editor-panel select,
+#editorView .editor-panel textarea,
+#editorView .editor-panel .ag-investor-fields input,
+#editorView .editor-panel [contenteditable="true"]{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.4;
+}
+#editorView .editor-tabs button{font-size:13px}
+#editorView .mobile-editor-toolbar strong{font-size:18px;font-weight:700;line-height:1.25}
