@@ -9280,7 +9280,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .trending-item .actions{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:10px;
 }
 #projectsView #trendingCurrent .top-drag-handle{
   appearance:none;
