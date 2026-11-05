@@ -1062,9 +1062,6 @@ dialog .guide-editor {
   min-height: 120px;
 }
 @media (min-width: 1151px) {
-#projectsView > .page-heading {
-    margin-right: 288px;
-  }
 }
 @media (max-width: 1350px) {
 :root {
@@ -1317,12 +1314,6 @@ main {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:30px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
-#projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
-#projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
-#projectsView .page-heading{margin-bottom:15px}
-#projectsView .page-heading{justify-content:center;text-align:center}
-#projectsView .page-heading>div{width:100%;text-align:center}
 main{padding-top:15px}
 @media(max-width:640px) {
 #dashboard .topbar{padding:0 15px}
@@ -1894,21 +1885,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
-
-
-/* Add Project belongs in the Projects page heading, not inside the editor. */
-#projectsView .projects-page-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  text-align: left;
-}
-#projectsView .projects-page-heading > div {
-  width: auto;
-  min-width: 0;
-  text-align: left;
-}
 #projectsView .dashboard-add-project {
   flex: 0 0 auto;
   min-height: 40px;
@@ -1923,9 +1899,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   border-color: #187DE0;
 }
 @media (max-width: 640px) {
-  #projectsView .projects-page-heading { justify-content: center; text-align: center; }
-  #projectsView .projects-page-heading > div { width: 100%; text-align: center; }
-  #projectsView .projects-page-heading h1 { font-size: 25px; }
 }
 #projectsView .admin-project-nav {
   display: flex;
@@ -3861,14 +3834,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
-/* Add Project belongs in the Projects page heading, not inside the editor. */
-#projectsView .projects-page-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  text-align: left;
-}
 
 
 
@@ -5752,16 +5717,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 
 
-/* Add Project belongs in the Projects page heading, not inside the editor. */
-#projectsView .projects-page-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  text-align: left;
-}
-
-
 
 @media (max-width: 640px) {
   
@@ -6837,9 +6792,6 @@ dialog .guide-editor {
 }
 
 @media (min-width: 1151px) {
-  #projectsView > .page-heading {
-    margin-right: 288px;
-  }
 }
 @media (max-width: 1350px) {
   :root {
@@ -7116,13 +7068,6 @@ dialog .guide-editor {
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 .topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
-#projectsView .page-heading h1{font-family:Manrope,sans-serif;font-size:30px;font-weight:750;line-height:1.2;letter-spacing:-.6px;color:#1B2E50}
-#projectsView .page-heading h1 .admin-panel-accent{color:#1E90FF}
-#projectsView .page-heading p{font-size:13px;font-weight:400;line-height:1.5;color:#64748B;margin-top:5px}
-#projectsView .page-heading{margin-bottom:15px}
-
-#projectsView .page-heading{justify-content:center;text-align:center}
-#projectsView .page-heading>div{width:100%;text-align:center}
 
 main{padding-top:15px}
 @media(max-width:640px){#dashboard .topbar{padding:0 15px}}
@@ -7660,19 +7605,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
-/* Add Project belongs in the Projects page heading, not inside the editor. */
-#projectsView .projects-page-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  text-align: left;
-}
-#projectsView .projects-page-heading > div {
-  width: auto;
-  min-width: 0;
-  text-align: left;
-}
 #projectsView .dashboard-add-project {
   flex: 0 0 auto;
   min-height: 40px;
@@ -7687,9 +7619,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   border-color: #187DE0;
 }
 @media (max-width: 640px) {
-#projectsView .projects-page-heading { justify-content: center; text-align: center; }
-#projectsView .projects-page-heading > div { width: 100%; text-align: center; }
-#projectsView .projects-page-heading h1 { font-size: 25px; }
 }
 
 
@@ -7750,24 +7679,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   flex: 0 0 auto !important;
   margin-left: 0 !important;
 }
-/* Airgem Admin Dashboard — refined premium UI hierarchy */
-#projectsView .page-heading {
-  margin-bottom: 18px;
-}
-#projectsView .page-heading h1 {
-  font-family: Manrope, sans-serif;
-  font-size: 23px;
-  font-weight:750;
-  line-height: 1.25;
-  letter-spacing:-.6px;
-}
-#projectsView .page-heading p {
-  margin-top: 6px;
-  font-size: 12.5px;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: #64748B;
-}
 #projectsView nav.admin-project-nav {
   gap: 8px !important;
   margin-bottom: 18px;
@@ -7822,9 +7733,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   border-radius: 9px;
 }
 @media (max-width: 650px) {
-#projectsView .page-heading { margin-bottom: 16px; }
-#projectsView .page-heading h1 { font-size: 22px; letter-spacing:-.6px; }
-#projectsView .page-heading p { font-size: 12px; }
 #projectsView nav.admin-project-nav { margin-bottom: 16px; }
 #projectsView nav.admin-project-nav > .admin-project-nav-button,
   #projectsView nav.admin-project-nav > #addProjectButton {
@@ -7841,15 +7749,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .trending-item .trending-item-copy,
   #projectsView .trending-item strong,
   #projectsView .all-airdrops-list .trending-item strong { font-size: 13.5px; }
-}
-/* Final dashboard polish: quieter hierarchy, consistent controls and lighter surfaces. */
-#projectsView .page-heading h1 {
-  font-size: 21px;
-  letter-spacing:-.6px;
-}
-#projectsView .page-heading p {
-  font-size: 12px;
-  color: #718096;
 }
 #projectsView nav.admin-project-nav {
   gap: 7px !important;
@@ -7903,8 +7802,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   margin-top: 14px;
 }
 @media (max-width: 650px) {
-#projectsView .page-heading h1 { font-size: 21px; }
-#projectsView .page-heading p { font-size: 11.5px; }
 #projectsView nav.admin-project-nav { gap: 7px !important; }
 #projectsView nav.admin-project-nav > .admin-project-nav-button,
   #projectsView nav.admin-project-nav > #addProjectButton {
@@ -9233,24 +9130,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 @media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}
 
 #dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}
-
-
-/* Airgem Admin — final premium dashboard polish */
-#projectsView .page-heading h1{
-  font-family:Manrope,sans-serif;
-  font-size:30px;
-  font-weight:750;
-  line-height:1.2;
-  letter-spacing:-.6px;
-  color:#1B2E50;
-}
-
-#projectsView .page-heading p{
-  margin-top:6px;
-  color:#64748B;
-  font:400 14px/1.5 Manrope,sans-serif;
-  letter-spacing:-.1px;
-}
 #projectsView nav.admin-project-nav{
   gap:8px!important;
   margin:0 0 18px!important;
@@ -9304,9 +9183,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   font:400 12px/1.5 Manrope,sans-serif;
 }
 @media(max-width:650px){
-  #projectsView .page-heading{margin-bottom:16px}
-  #projectsView .page-heading h1{font-size:30px;letter-spacing:-.6px}
-  #projectsView .page-heading p{font-size:13px;line-height:1.5}
   #projectsView nav.admin-project-nav{
     flex-wrap:nowrap;
     overflow-x:auto;
@@ -9377,16 +9253,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-size:23px;
   font-weight:750;
   letter-spacing:-.55px;
-}
-#projectsView .page-heading h1{
-  font-family:Manrope,Inter,sans-serif;
-  font-weight:750;
-  letter-spacing:-.6px;
-}
-#projectsView .page-heading p{
-  font-family:Manrope,Inter,sans-serif;
-  font-weight:500;
-  letter-spacing:-.15px;
 }
 #projectsView .trending-item-copy strong,
 #projectsView .all-airdrops-list .trending-item strong{
@@ -9652,19 +9518,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Final mobile dashboard balance — compact premium sizing */
 @media(max-width:767px){
-  #projectsView .page-heading{margin:0 0 20px!important}
-  #projectsView .page-heading h1{
-    font-size:22px!important;
-    line-height:1.22!important;
-    letter-spacing:-.6px!important;
-    font-weight:750!important;
-  }
-  #projectsView .page-heading p{
-    margin-top:5px!important;
-    font-size:13px!important;
-    line-height:1.45!important;
-    letter-spacing:-.1px!important;
-  }
   #projectsView nav.admin-project-nav{
     display:flex!important;
     flex-wrap:nowrap!important;
@@ -9732,13 +9585,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Refined compact type scale — reduce visual heaviness without losing readability */
 @media(max-width:767px){
-  #projectsView .page-heading h1{
-    font-size:21px!important;
-    letter-spacing:-.6px!important;
-  }
-  #projectsView .page-heading p{
-    font-size:12px!important;
-  }
   #projectsView nav.admin-project-nav>.admin-project-nav-button,
   #projectsView nav.admin-project-nav>#addProjectButton{
     font-size:11px!important;
@@ -10056,3 +9902,32 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   margin: 15px auto 0;
 }
 
+/* Single source of truth: Admin Panel title and subtitle. */
+#projectsView .projects-page-heading {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  margin:0 0 16px;
+  text-align:center;
+}
+#projectsView .projects-page-heading > div {
+  width:100%;
+  min-width:0;
+  text-align:center;
+}
+#projectsView .projects-page-heading h1 {
+  margin:0;
+  color:#1B2E50;
+  font:750 clamp(21px, 3vw, 30px)/1.2 Manrope,sans-serif;
+  letter-spacing:-.6px;
+}
+#projectsView .projects-page-heading h1 .admin-panel-accent {
+  color:#1E90FF;
+}
+#projectsView .projects-page-heading p {
+  margin:6px 0 0;
+  color:#64748B;
+  font:400 clamp(12px, 1.4vw, 14px)/1.5 Manrope,sans-serif;
+  letter-spacing:-.1px;
+}
