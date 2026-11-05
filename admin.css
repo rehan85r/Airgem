@@ -7927,7 +7927,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 /* Basic Editor investor row: logo, name input and delete control aligned in one row. */
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item {
   display: grid !important;
-  grid-template-columns: 50px minmax(0, 1fr) 36px !important;
+  grid-template-columns: 30px minmax(0, 1fr) 36px !important;
   grid-template-rows: auto !important;
   align-items: center !important;
   column-gap: 10px !important;
@@ -7944,11 +7944,11 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo {
   grid-column: 1;
   grid-row: 1;
-  width: 40px !important;
-  min-width: 40px !important;
-  height: 40px !important;
-  min-height: 40px !important;
-  border-radius: 10px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  border-radius: 8px !important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields {
   grid-column: 2 !important;
@@ -7984,7 +7984,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 @media (max-width: 650px) {
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item {
-    grid-template-columns: 50px minmax(0, 1fr) 34px !important;
+    grid-template-columns: 30px minmax(0, 1fr) 34px !important;
     column-gap: 9px !important;
   }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields input {
