@@ -1333,7 +1333,30 @@ main{padding-top:15px}
 #projectsView .trending-search-input-wrap{position:relative}
 #projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
 #projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}
-#projectsView .trending-search input{box-sizing:border-box;height:50px;min-height:50px;font:500 15px/1.4 Manrope,sans-serif;letter-spacing:0;color:#1B2E50;border-radius:12px;padding-left:45px;padding-right:48px}
+#projectsView #trendingSelect,
+#projectsView #allAirdropsSearch,
+#projectsView #adminProjectPickerSearch{
+  box-sizing:border-box;
+  height:50px;
+  min-height:50px;
+  font-family:Manrope,sans-serif;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:0;
+  color:#1B2E50;
+  border-radius:12px;
+  padding-left:45px;
+  padding-right:48px;
+}
+#projectsView #trendingSelect::placeholder,
+#projectsView #allAirdropsSearch::placeholder,
+#projectsView #adminProjectPickerSearch::placeholder{
+  font:400 15px/1.4 Manrope,sans-serif;
+  letter-spacing:0;
+  color:#94A3B8;
+  opacity:1;
+}
 #projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}
 #projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}
 #projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}
