@@ -9689,7 +9689,10 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 #dashboard p,
 #dashboard .card p,
 #projectsView .trending-item-copy small,
-#projectsView .all-airdrops-list .trending-item-copy small{
+#projectsView .all-airdrops-list .trending-item-copy small,
+#projectsView #adminProjectPicker .trending-item-copy small,
+#editorView .editor-panel p:not(.field small),
+#editorView .editor-panel .field-description{
   font-family:Manrope,Inter,sans-serif;
   font-size:14px;
   font-weight:400;
@@ -9702,6 +9705,15 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   font-size:13px;
   font-weight:600;
   line-height:1.4;
+}
+#editorView .editor-panel .field small,
+#editorView .editor-panel .muted,
+#editorView .editor-heading .editor-subtitle,
+#editorView .editor-heading .muted{
+  font-family:Manrope,Inter,sans-serif;
+  font-size:12px;
+  font-weight:400;
+  line-height:1.5;
 }
 #dashboard button,
 #projectsView button,
