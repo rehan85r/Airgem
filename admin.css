@@ -9162,7 +9162,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
   justify-content:flex-start;
   width:100%;
   margin:0 0 20px;
-  padding:0;
+  padding:0 0 15px;
+  border-bottom:1px solid #E2E8F0;
 }
 #projectsView #adminProjectPicker .top-airdrops-heading h2{
   display:flex;
