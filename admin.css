@@ -9281,6 +9281,21 @@ body:not([data-view]) #mfaBox #mfaHeading{
   display:flex;
   align-items:center;
   gap:10px;
+  margin:0;
+  padding:0;
+}
+#projectsView #trendingCurrent .trending-item .actions > button,
+#projectsView .all-airdrops-list .trending-item .actions > button{
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  flex:0 0 20px;
+  width:20px;
+  min-width:20px;
+  height:20px;
+  min-height:20px;
+  margin:0;
+  padding:0;
 }
 #projectsView #trendingCurrent .top-drag-handle{
   appearance:none;
