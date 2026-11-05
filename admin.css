@@ -9312,9 +9312,9 @@ body:not([data-view]) #mfaBox #mfaHeading{
   appearance:none;
   display:grid;
   place-items:center;
-  width:15px;
-  height:15px;
-  min-width:15px;
+  width:20px;
+  height:20px;
+  min-width:20px;
   padding:0;
   border:0;
   border-radius:0;
@@ -9324,8 +9324,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 #projectsView #trendingCurrent .icon-button[data-top-remove] svg,
 #projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{
-  width:15px;
-  height:15px;
+  width:20px;
+  height:20px;
 }
 
 /* Exact 15px spacing between search inputs and their result lists. */
