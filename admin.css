@@ -9915,8 +9915,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
 /* Exact 15px top and left inset for both manager headings; icons add no inset. */
 #projectsView #trendingManager .collection-card,
 #projectsView #allAirdropsManager .collection-card {
-  padding-top: 15px !important;
-  padding-left: 15px !important;
+  padding-top: 14px !important;
+  padding-left: 14px !important;
   padding-right: 15px !important;
 }
 
