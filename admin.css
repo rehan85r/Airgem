@@ -9926,8 +9926,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   color:#1E90FF;
 }
 #projectsView .projects-page-heading p {
-  margin:6px 0 0;
+  margin:5px 0 0;
   color:#64748B;
-  font:400 clamp(12px, 1.4vw, 14px)/1.5 Manrope,sans-serif;
-  letter-spacing:-.1px;
+  font:500 15px/1.5 Manrope,sans-serif;
+  letter-spacing:normal;
 }
