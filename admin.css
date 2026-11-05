@@ -1323,7 +1323,6 @@ main{padding-top:15px}
 #projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 #projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
 #projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .actions{gap:10px}
 #projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
 @media(max-width:600px) {
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}
@@ -1349,7 +1348,6 @@ main{padding-top:15px}
 @media(max-width:600px) {
 #projectsView .collection-card{padding:15px}
 
-#projectsView .trending-item .actions{gap:10px}
 #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
 #projectsView .trending-item .icon-button{border-radius:8px}
@@ -1405,8 +1403,6 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}
 /* Balanced inset for Select Project and selection count */
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
-#projectsView #trendingCurrent .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px;padding-left:5px;gap:10px}
-#projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
 
 
 
@@ -1414,12 +1410,7 @@ main{padding-top:15px}
 
 
 
-#projectsView #trendingCurrent .top-drag-handle{appearance:none;display:grid;place-items:center;width:20px;height:20px;min-width:20px;margin:0;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:20px;height:20px;stroke-width:1.8}
-#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-#projectsView #trendingCurrent .trending-item .actions{gap:15px}
 
-#projectsView #trendingCurrent .trending-item{min-height:50px;padding-right:15px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
 #projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}
@@ -6940,7 +6931,6 @@ main{padding-top:15px}
 #projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 #projectsView .all-airdrops-list .icon-button{width:30px;height:30px;min-width:30px;border-radius:8px}
 #projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-#projectsView .all-airdrops-list .actions{gap:10px}
 #projectsView .all-airdrops-list .icon-button svg{width:15px;height:15px}
 @media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}}
 
@@ -6953,8 +6943,7 @@ main{padding-top:15px}
 @media(max-width:600px){
  #projectsView .collection-card{padding:15px}
  
- #projectsView .trending-item .actions{gap:10px}
- #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
+  #projectsView .trending-item .icon-button{width:30px;height:30px;min-width:30px}
 #projectsView .trending-item .icon-button{border-radius:8px}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
@@ -7027,7 +7016,6 @@ main{padding-top:15px}
 #projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}
 
 
-#projectsView .all-airdrops-list .trending-item{height:50px;min-height:50px;padding-top:5px;padding-bottom:5px}
 
 
 
@@ -7035,12 +7023,7 @@ main{padding-top:15px}
 
 
 
-#projectsView #trendingCurrent .top-drag-handle{appearance:none;display:grid;place-items:center;width:20px;height:20px;min-width:20px;margin:0;padding:0;border:0;border-radius:0;background:none!important;box-shadow:none!important;color:#64748B;cursor:grab;touch-action:none;user-select:none}
-#projectsView #trendingCurrent .top-drag-handle svg{width:20px;height:20px;stroke-width:1.8}
-#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
-#projectsView #trendingCurrent .trending-item .actions{gap:15px}
 
-#projectsView #trendingCurrent .trending-item{min-height:52px;padding-right:15px}
 #projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}
 #projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}
 #projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}
@@ -9279,18 +9262,51 @@ body:not([data-view]) #mfaBox #mfaHeading{
 }
 #projectsView #trendingManager .top-airdrops-publish svg,
 #projectsView #allAirdropsManager .top-airdrops-publish svg {width:14px;height:14px;}
-/* Shared project-row styling for Top Airdrops and All Airdrops. */
-#projectsView .trending-item{
+/* One shared row and action layout for Top Airdrops and All Airdrops. */
+#projectsView #trendingCurrent .trending-item,
+#projectsView .all-airdrops-list .trending-item{
   box-sizing:border-box;
-  min-height:50px;
-  padding:9px 10px;
   display:flex;
   align-items:center;
   gap:10px;
+  width:100%;
+  height:50px;
+  min-height:50px;
+  padding:5px 15px 5px 5px;
   border:1px solid #E2E8F0;
   border-radius:12px;
   background:#FFFFFF;
 }
+#projectsView #trendingCurrent .trending-item .actions,
+#projectsView .all-airdrops-list .trending-item .actions{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+#projectsView #trendingCurrent .top-drag-handle{
+  appearance:none;
+  display:grid;
+  place-items:center;
+  width:20px;
+  height:20px;
+  min-width:20px;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:#64748B;
+  cursor:grab;
+  touch-action:none;
+  user-select:none;
+}
+#projectsView #trendingCurrent .top-drag-handle svg{
+  width:20px;
+  height:20px;
+  stroke-width:1.8;
+}
+#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}
 #projectsView .trending-item .project-avatar{
   width:30px;
   height:30px;
