@@ -9376,12 +9376,31 @@ body:not([data-view]) #mfaBox #mfaHeading{
   gap: 15px;
 }
 
-/* Exact 15px top and left inset for both manager headings; icons add no inset. */
+/* Shared 15px top and left inset for all five section headings. */
 #projectsView #trendingManager .collection-card,
-#projectsView #allAirdropsManager .collection-card {
-  padding-top: 14px !important;
-  padding-left: 14px !important;
-  padding-right: 15px !important;
+#projectsView #allAirdropsManager .collection-card,
+#projectsView #adminProjectPicker .collection-card {
+  padding-top:14px !important;
+  padding-left:14px !important;
+  padding-right:15px !important;
+}
+/* Identical 30px icon tile for Top, All, Basic, Details and Guide. */
+#projectsView #trendingManager .top-airdrops-heading h2 svg,
+#projectsView #allAirdropsManager .top-airdrops-heading h2 svg,
+#projectsView #adminProjectPicker .top-airdrops-heading h2 svg{
+  box-sizing:border-box;
+  display:block;
+  width:30px;
+  height:30px;
+  min-width:30px;
+  min-height:30px;
+  flex:0 0 30px;
+  margin:0;
+  padding:5px;
+  border-radius:8px;
+  background:#1E90FF;
+  color:#FFFFFF;
+  stroke-width:2;
 }
 
 /* Inner search controls, dropdowns and project lists fill the card's padded content width. */
