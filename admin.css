@@ -1361,13 +1361,6 @@ main{padding-top:15px}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
-
-/* Project management shortcuts below the Admin Panel subtitle */
-#projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
-#projectsView .admin-project-nav::-webkit-scrollbar{display:none}
-#projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
-#projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
-#projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
 #projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
@@ -1388,8 +1381,6 @@ main{padding-top:15px}
 #projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}
 #projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}
 @media(max-width:650px) {
-#projectsView .admin-project-nav{gap:8px}
-#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}
 }
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
@@ -1652,12 +1643,8 @@ body[data-admin-view="editor"]{overflow:hidden}
 /* Basic Editor: align Website, Discord and X fields with the main two-column form. */
 #editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
 @media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}
-
-/* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
-#projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px){
-  #projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
 }
 
 /* Match investor logos and Upload Logo controls to the project logo controls. */
@@ -1885,78 +1872,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
-#projectsView .dashboard-add-project {
-  flex: 0 0 auto;
-  min-height: 40px;
-  padding: 0 15px;
-  border-color: #1E90FF;
-  background: #1E90FF;
-  color: #fff;
-  white-space: nowrap;
-}
-#projectsView .dashboard-add-project:hover {
-  background: #187DE0;
-  border-color: #187DE0;
-}
 @media (max-width: 640px) {
 }
-#projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-left: 0;
-  min-height: 40px;
-  padding: 0 14px;
-  font-size: 13px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  color: #475569;
-  box-shadow: none;
-  white-space: nowrap;
-}
-#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
 @media (max-width: 640px) {
-  #projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-#projectsView .admin-project-nav .admin-project-nav-button { flex: 0 0 auto; }
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-#projectsView .admin-project-nav .dashboard-add-project svg { width: 16px; height: 16px; flex: 0 0 16px; }
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:active,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
 @media (max-width: 640px) {
-  #projectsView .admin-project-nav { gap: 8px; }
-  #projectsView .admin-project-nav .dashboard-add-project { font-size: 12px; }
 }
 
 }
@@ -3340,11 +3259,6 @@ main{padding-top:15px}
 
 
 
-/* Project management shortcuts below the Admin Panel subtitle */
-#projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
-
-
-
 
 
 
@@ -3607,8 +3521,6 @@ main{padding-top:15px}
 @media(max-width:640px) {
 #editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}
 }
-/* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
-#projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px) {
 
@@ -3848,52 +3760,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 
 
 @media (max-width: 640px) {
-/* Keep all admin navigation controls on one horizontally scrollable row. */
-#projectsView .admin-project-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-#projectsView .admin-project-nav::-webkit-scrollbar { display: none; }
-#projectsView .admin-project-nav .admin-project-nav-button {
-  flex: 0 0 auto;
-  min-height: 40px;
-  box-sizing: border-box;
-}
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 0 13px;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  background: #fff;
-  color: #475569;
-  box-shadow: none;
-  font: 600 12.5px/1.2 Manrope,sans-serif;
-  white-space: nowrap;
-}
 
 
 @media (max-width: 640px) {
-
-#projectsView .admin-project-nav .admin-project-nav-button,
-  #projectsView .admin-project-nav .dashboard-add-project {
-    min-height: 40px;
-    font-size: 12px;
-    padding-left: 13px;
-    padding-right: 13px;
-  }
 }
 }
 * {
@@ -5197,10 +5066,6 @@ main{padding-top:15px}
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 
 
-/* Project management shortcuts below the Admin Panel subtitle */
-#projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
-
-
 
 
 
@@ -5482,9 +5347,6 @@ body[data-admin-view="editor"]{overflow:hidden}
 /* Basic Editor: align Website, Discord and X fields with the main two-column form. */
 #editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
 @media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}
-
-/* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
-#projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px){
   
@@ -7109,14 +6971,6 @@ main{padding-top:15px}
 /* Compact selected projects: scroll within the card instead of growing the page */
 #projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}
 #projectsView .trending-list::-webkit-scrollbar{display:none}
-
-
-/* Project management shortcuts below the Admin Panel subtitle */
-#projectsView .admin-project-nav{display:flex;justify-content:flex-start;align-items:center;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:9px;margin:0 0 20px;padding:2px 0 4px}
-#projectsView .admin-project-nav::-webkit-scrollbar{display:none}
-#projectsView .admin-project-nav-button{flex:0 0 auto;min-height:40px;padding:0 15px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#475569;font:600 12.5px/1.2 Manrope,sans-serif;cursor:pointer}
-#projectsView .admin-project-nav-button:hover{border-color:#ACD5FF;color:#1479D4}
-#projectsView .admin-project-nav-button.active{border-color:#1E90FF;color:#FFFFFF;background:#1E90FF}
 #projectsView #adminProjectPickerSearch{width:100%;min-height:50px}
 #projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:10px}
 #projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}
@@ -7136,7 +6990,7 @@ main{padding-top:15px}
 #projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}
 #projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}
 #projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}
-@media(max-width:650px){#projectsView .admin-project-nav{gap:8px}#projectsView .admin-project-nav-button{font-size:12px;padding:0 13px}}
+@media(max-width:650px){}
 
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
@@ -7378,11 +7232,8 @@ main{padding-top:15px}
 @media(max-width:640px) {
 #editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}
 }
-/* Dashboard typography polish: consistent hierarchy and improved mobile readability. */
-#projectsView .admin-project-nav-button{font-size:13px;letter-spacing:0}
 .app-footer{font-size:11px}
 @media(max-width:650px) {
-#projectsView .admin-project-nav-button{font-size:12px;letter-spacing:0}
 }
 /* Match investor logos and Upload Logo controls to the project logo controls. */
 #editorView .ag-investor-photo-wrap{display:flex;flex:0 0 auto;flex-direction:column;align-items:flex-start;gap:5px}
@@ -7605,98 +7456,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     max-height: 400px;
   }
 }
-#projectsView .dashboard-add-project {
-  flex: 0 0 auto;
-  min-height: 40px;
-  padding: 0 15px;
-  border-color: #1E90FF;
-  background: #1E90FF;
-  color: #fff;
-  white-space: nowrap;
-}
-#projectsView .dashboard-add-project:hover {
-  background: #187DE0;
-  border-color: #187DE0;
-}
 @media (max-width: 640px) {
 }
-
-
-#projectsView .admin-project-nav .dashboard-add-project {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-left: 0;
-  min-height: 40px;
-  padding: 0 14px;
-  font-size: 13px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  color: #475569;
-  box-shadow: none;
-  white-space: nowrap;
-}
-
-#projectsView .admin-project-nav .dashboard-add-project:hover,
-#projectsView .admin-project-nav .dashboard-add-project:focus-visible {
-  background: #1E90FF;
-  border-color: #1E90FF;
-  color: #fff;
-}
 @media (max-width: 640px) {
-
-#projectsView .admin-project-nav .dashboard-add-project { min-height: 40px; padding: 0 14px; font-size: 13px; }
-}
-/* Final mobile navigation fix: keep Add Project on the same row and swipe horizontally. */
-#projectsView nav.admin-project-nav {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  white-space: nowrap !important;
-  gap: 8px !important;
-  touch-action: pan-x pan-y;
-  overscroll-behavior-x: contain;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-#projectsView nav.admin-project-nav::-webkit-scrollbar {
-  display: none;
-}
-#projectsView nav.admin-project-nav > .admin-project-nav-button {
-  flex: 0 0 auto !important;
-  white-space: nowrap !important;
-}
-#projectsView nav.admin-project-nav > #addProjectButton {
-  flex: 0 0 auto !important;
-  margin-left: 0 !important;
-}
-#projectsView nav.admin-project-nav {
-  gap: 8px !important;
-  margin-bottom: 18px;
-  padding: 0 0 3px;
-}
-#projectsView nav.admin-project-nav > .admin-project-nav-button {
-  min-height: 38px;
-  padding: 0 14px;
-  border-radius: 10px;
-  font: 600 12px/1.2 Manrope, sans-serif;
-  letter-spacing: 0;
-  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
-}
-#projectsView nav.admin-project-nav > #addProjectButton {
-  min-height: 38px;
-  padding: 0 13px;
-  gap: 7px;
-  font-size: 12px;
 }
 #projectsView .top-airdrops-section { margin-top: 0; }
 #projectsView .top-airdrops-section + .top-airdrops-section { margin-top: 16px; }
@@ -7733,15 +7495,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   border-radius: 9px;
 }
 @media (max-width: 650px) {
-#projectsView nav.admin-project-nav { margin-bottom: 16px; }
-#projectsView nav.admin-project-nav > .admin-project-nav-button,
-  #projectsView nav.admin-project-nav > #addProjectButton {
-    min-height: 38px;
-    padding-left: 12px;
-    padding-right: 12px;
-    font-size: 12px;
-    border-radius: 10px;
-  }
 #projectsView .collection-card { padding: 14px; border-radius: 15px; }
 #projectsView .top-airdrops-heading { margin-bottom: 14px; gap: 8px; }
 
@@ -7749,22 +7502,6 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #projectsView .trending-item .trending-item-copy,
   #projectsView .trending-item strong,
   #projectsView .all-airdrops-list .trending-item strong { font-size: 13.5px; }
-}
-#projectsView nav.admin-project-nav {
-  gap: 7px !important;
-  margin-bottom: 15px;
-}
-#projectsView nav.admin-project-nav > .admin-project-nav-button,
-#projectsView nav.admin-project-nav > #addProjectButton {
-  min-height: 36px;
-  padding-left: 11px;
-  padding-right: 11px;
-  border-radius: 9px;
-  font-size: 11.5px;
-  font-weight: 600;
-}
-#projectsView nav.admin-project-nav > #addProjectButton {
-  gap: 6px;
 }
 #projectsView .collection-card {
   border-color: #E9EDF3;
@@ -7802,26 +7539,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   margin-top: 14px;
 }
 @media (max-width: 650px) {
-#projectsView nav.admin-project-nav { gap: 7px !important; }
-#projectsView nav.admin-project-nav > .admin-project-nav-button,
-  #projectsView nav.admin-project-nav > #addProjectButton {
-    min-height: 36px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 11.5px;
-  }
 #projectsView .collection-card { padding: 13px; }
 
 
 
-}
-/* Consistent premium styling across Basic, Details and Guide navigation/editors. */
-#projectsView nav.admin-project-nav > .admin-project-nav-button,
-#projectsView nav.admin-project-nav > #addProjectButton {
-  min-height: 36px;
-  border-radius: 9px;
-  font: 600 11.5px/1.2 Manrope,sans-serif;
-  letter-spacing: 0;
 }
 #editorView .editor-heading {
   margin-bottom: 16px;
@@ -8318,11 +8039,6 @@ body:not([data-view]) .editor-panel {
   border-radius: var(--airgem-radius);
   box-shadow: var(--airgem-shadow);
 }
-body:not([data-view]) .admin-project-nav-button,
-body:not([data-view]) .button,
-body:not([data-view]) .icon-button {
-  border-radius: 10px;
-}
 
 /* Admin dashboard + editor: complete the same Airgem design system. */
 body:not([data-view]) {
@@ -8358,28 +8074,6 @@ body:not([data-view]) .editor-heading h1 {
 body:not([data-view]) .page-heading p,
 body:not([data-view]) .muted {
   color: var(--airgem-slate);
-}
-body:not([data-view]) .admin-project-nav {
-  gap: 8px;
-}
-body:not([data-view]) .admin-project-nav-button {
-  min-height: 40px;
-  border: 1px solid var(--airgem-border);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--airgem-slate);
-  font: 650 12px/1.2 Manrope,sans-serif;
-  transition: background .16s ease,border-color .16s ease,color .16s ease;
-}
-body:not([data-view]) .admin-project-nav-button.active {
-  border-color: var(--airgem-blue);
-  background: var(--airgem-blue);
-  color: #fff;
-}
-body:not([data-view]) .admin-project-nav-button:not(.active):hover {
-  border-color: #BBD9F8;
-  background: #F5F9FF;
-  color: var(--airgem-navy);
 }
 body:not([data-view]) .collection-card,
 body:not([data-view]) .auth-card,
@@ -9130,18 +8824,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 @media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}
 
 #dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}
-#projectsView nav.admin-project-nav{
-  gap:8px!important;
-  margin:0 0 18px!important;
-}
-#projectsView nav.admin-project-nav>.admin-project-nav-button,
-#projectsView nav.admin-project-nav>#addProjectButton{
-  min-height:40px;
-  padding:0 14px;
-  border-radius:11px;
-  font:600 13px/1.2 Manrope,sans-serif;
-  letter-spacing:0;
-}
 #projectsView .top-airdrops-section{margin-top:0}
 #projectsView .top-airdrops-section+.top-airdrops-section{margin-top:18px}
 #projectsView .collection-card{
@@ -9183,23 +8865,6 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   font:400 12px/1.5 Manrope,sans-serif;
 }
 @media(max-width:650px){
-  #projectsView nav.admin-project-nav{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    scrollbar-width:none;
-    padding:1px 0 3px;
-    gap:8px!important;
-    margin-bottom:17px!important;
-  }
-  #projectsView nav.admin-project-nav::-webkit-scrollbar{display:none}
-  #projectsView nav.admin-project-nav>.admin-project-nav-button,
-  #projectsView nav.admin-project-nav>#addProjectButton{
-    flex:0 0 auto;
-    min-height:40px;
-    padding:0 13px;
-    font-size:13px;
-    border-radius:11px;
-  }
   #projectsView .collection-card{
     padding:16px;
     border-radius:16px;
@@ -9258,11 +8923,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView .all-airdrops-list .trending-item strong{
   font-family:Manrope,Inter,sans-serif;
 }
-#projectsView nav.admin-project-nav>.admin-project-nav-button,
-#projectsView nav.admin-project-nav>#addProjectButton{
-  font-family:Manrope,Inter,sans-serif;
-  letter-spacing:-.1px;
-}
 
 
 /* One typography scale across Dashboard, Basic, Details and Guide */
@@ -9284,14 +8944,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-size:13px;
   font-weight:400;
   line-height:1.5;
-  letter-spacing:-.1px;
-}
-#editorView .editor-tabs button,
-#projectsView nav.admin-project-nav>.admin-project-nav-button,
-#projectsView nav.admin-project-nav>#addProjectButton{
-  font-size:13px;
-  font-weight:600;
-  line-height:1.25;
   letter-spacing:-.1px;
 }
 #editorView .section-heading h2,
@@ -9381,21 +9033,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   line-height:1.2;
   letter-spacing:-.55px;
   color:#1B2E50;
-}
-/* Dashboard navigation, including Add Project */
-#projectsView nav.admin-project-nav>.admin-project-nav-button,
-#projectsView nav.admin-project-nav>#addProjectButton{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:13px!important;
-  font-weight:650!important;
-  line-height:1.25;
-  letter-spacing:-.1px;
-}
-#projectsView nav.admin-project-nav>#addProjectButton{
-  gap:7px;
-}
-#projectsView nav.admin-project-nav>#addProjectButton svg{
-  width:16px;height:16px;flex:0 0 16px;
 }
 /* New project editor uses the exact same editor type scale as Basic / Details / Guide */
 #editorView .mobile-editor-toolbar strong{
@@ -9506,8 +9143,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   font-family:Manrope,Inter,sans-serif;
 }
 @media(max-width:767px){
-  #projectsView nav.admin-project-nav>.admin-project-nav-button,
-  #projectsView nav.admin-project-nav>#addProjectButton{font-size:13px!important}
   #editorView .mobile-editor-toolbar strong{font-size:18px}
   #editorView .editor-heading h1{font-size:21px}
   #editorView .editor-tabs button{font-size:12px}
@@ -9518,36 +9153,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Final mobile dashboard balance — compact premium sizing */
 @media(max-width:767px){
-  #projectsView nav.admin-project-nav{
-    display:flex!important;
-    flex-wrap:nowrap!important;
-    justify-content:flex-start!important;
-    gap:10px!important;
-    margin:0 0 16px!important;
-    padding:0 0 3px!important;
-    overflow-x:auto!important;
-    scrollbar-width:none!important;
-    -webkit-overflow-scrolling:touch;
-  }
-  #projectsView nav.admin-project-nav::-webkit-scrollbar{display:none!important}
-  #projectsView nav.admin-project-nav>.admin-project-nav-button,
-  #projectsView nav.admin-project-nav>#addProjectButton{
-    flex:0 0 auto!important;
-    min-height:35px!important;
-    height:35px!important;
-    padding:0 10px!important;
-    border-radius:9px!important;
-    font:600 12px/1 Manrope,Inter,sans-serif!important;
-    letter-spacing:-.1px!important;
-    white-space:nowrap!important;
-  }
-  #projectsView nav.admin-project-nav>#addProjectButton{
-    min-width:max-content!important;
-    gap:6px!important;
-  }
-  #projectsView nav.admin-project-nav>#addProjectButton svg{
-    width:15px!important;height:15px!important;flex:0 0 15px!important;
-  }
   #projectsView .top-airdrops-section{margin-top:0!important}
   #projectsView .top-airdrops-section+.top-airdrops-section{margin-top:14px!important}
   #projectsView .collection-card{
@@ -9585,11 +9190,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Refined compact type scale — reduce visual heaviness without losing readability */
 @media(max-width:767px){
-  #projectsView nav.admin-project-nav>.admin-project-nav-button,
-  #projectsView nav.admin-project-nav>#addProjectButton{
-    font-size:11px!important;
-    font-weight:600!important;
-  }
   #projectsView .trending-item-copy strong,
   #projectsView .all-airdrops-list .trending-item strong{
     font-size:13px!important;
@@ -9633,24 +9233,6 @@ body:not([data-view]) #mfaBox #mfaHeading{
   #editorView .editor-panel [contenteditable="true"]{
     font-size:13px!important;
   }
-}
-
-
-
-/* Unified Dashboard navigation controls: identical desktop and mobile sizing. */
-#projectsView nav.admin-project-nav > .admin-project-nav-button,
-#projectsView nav.admin-project-nav > #addProjectButton {
-  box-sizing: border-box;
-  min-height: 35px !important;
-  height: 35px !important;
-  padding: 0 12px !important;
-  border-radius: 9px !important;
-  font: 600 12px/1 Manrope, Inter, sans-serif !important;
-  letter-spacing: -0.1px !important;
-  white-space: nowrap;
-}
-#projectsView nav.admin-project-nav {
-  gap: 10px !important;
 }
 
 
@@ -9930,4 +9512,63 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   color:#64748B;
   font:500 13px/1.5 Manrope,sans-serif;
   letter-spacing:normal;
+}
+
+/* Single shared navigation system for Dashboard, Basic, Details, Guide and Add Project. */
+#projectsView nav.admin-project-nav {
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+  gap:10px;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  margin:0 0 16px;
+  padding:0 0 3px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  white-space:nowrap;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+}
+#projectsView nav.admin-project-nav::-webkit-scrollbar { display:none; }
+#projectsView nav.admin-project-nav > .admin-project-nav-button {
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+  height:35px;
+  min-height:35px;
+  padding:0 12px;
+  border:1px solid #E2E8F0;
+  border-radius:9px;
+  background:#FFFFFF;
+  color:#475569;
+  font:600 12px/1 Manrope,Inter,sans-serif;
+  letter-spacing:-.1px;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background-color 120ms ease,border-color 120ms ease,color 120ms ease;
+}
+#projectsView nav.admin-project-nav > .admin-project-nav-button.active,
+#projectsView nav.admin-project-nav > .admin-project-nav-button[aria-pressed="true"] {
+  border-color:#1E90FF;
+  background:#1E90FF;
+  color:#FFFFFF;
+}
+#projectsView nav.admin-project-nav > .admin-project-nav-button:not(.active):not([aria-pressed="true"]):hover,
+#projectsView nav.admin-project-nav > .admin-project-nav-button:not(.active):not([aria-pressed="true"]):focus-visible {
+  border-color:#ACD5FF;
+  background:#F5F9FF;
+  color:#1B2E50;
+}
+#projectsView nav.admin-project-nav > #addProjectButton { gap:6px; }
+#projectsView nav.admin-project-nav > #addProjectButton svg {
+  display:block;
+  width:15px;
+  height:15px;
+  flex:0 0 15px;
 }
