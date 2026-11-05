@@ -9827,7 +9827,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .top-airdrops-heading h2 svg,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 svg {
   width:20px;height:20px;flex:0 0 20px;box-sizing:content-box;
-  padding:7.5px;border-radius:10px;background:#1E90FF;color:#FFFFFF;stroke-width:2;
+  padding:0;color:#1E90FF;stroke-width:2;
 }
 #projectsView #trendingManager .top-airdrops-publish,
 #projectsView #allAirdropsManager .top-airdrops-publish {
