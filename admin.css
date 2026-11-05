@@ -9154,13 +9154,22 @@ body:not([data-view]) #mfaBox #mfaHeading{
   display:flex;align-items:center;align-self:flex-start;gap:10px;margin:0;color:#1B2E50;
   font:600 20px/1.25 Manrope,sans-serif;letter-spacing:-.25px;
 }
-#projectsView #trendingManager .top-airdrops-heading h2 svg,
-#projectsView #allAirdropsManager .top-airdrops-heading h2 svg,
 #projectsView #adminProjectPicker .top-airdrops-heading{
   box-sizing:border-box;
   padding-top:15px;
   padding-left:15px;
 }
+#projectsView #adminProjectPicker .top-airdrops-heading h2{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
+  margin:0;
+  color:#1B2E50;
+  font:600 16px/1.4 Manrope,sans-serif;
+}
+#projectsView #trendingManager .top-airdrops-heading h2 svg,
+#projectsView #allAirdropsManager .top-airdrops-heading h2 svg,
 #projectsView #adminProjectPicker .top-airdrops-heading h2 svg {
   display:block;
   box-sizing:border-box;
