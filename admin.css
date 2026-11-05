@@ -9841,14 +9841,14 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .top-airdrops-publish,
 #projectsView #allAirdropsManager .top-airdrops-publish {
   display:inline-flex;align-items:center;justify-content:center;
-  box-sizing:border-box;min-height:35px;height:35px;padding:0 10px;
+  box-sizing:border-box;width:auto;min-width:0;min-height:35px;height:35px;padding:0 12px;
   border:0;border-radius:9px;gap:5px;
   color:#FFFFFF;background:#1E90FF;
-  font:600 13px/1 Manrope,sans-serif;letter-spacing:-.1px;
+  font:600 12px/1 Manrope,sans-serif;letter-spacing:-.1px;
   white-space:nowrap;box-shadow:none;
 }
 #projectsView #trendingManager .top-airdrops-publish svg,
-#projectsView #allAirdropsManager .top-airdrops-publish svg {width:15px;height:15px;}
+#projectsView #allAirdropsManager .top-airdrops-publish svg {width:14px;height:14px;}
 /* Shared project-row styling for Top Airdrops and All Airdrops. */
 #projectsView .trending-item{
   box-sizing:border-box;
