@@ -9919,8 +9919,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 #projectsView .projects-page-heading h1 {
   margin:0;
   color:#1B2E50;
-  font:750 clamp(21px, 3vw, 30px)/1.2 Manrope,sans-serif;
-  letter-spacing:-.6px;
+  font:700 25px/1.2 Manrope,sans-serif;
+  letter-spacing:-.5px;
 }
 #projectsView .projects-page-heading h1 .admin-panel-accent {
   color:#1E90FF;
