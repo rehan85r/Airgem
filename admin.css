@@ -9158,13 +9158,15 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #allAirdropsManager .top-airdrops-heading h2 svg {
   display:block;
   box-sizing:border-box;
-  width:25px;
-  height:25px;
-  min-width:25px;
-  min-height:25px;
-  flex:0 0 25px;
+  width:30px;
+  height:30px;
+  min-width:30px;
+  min-height:30px;
+  flex:0 0 30px;
   margin:0;
-  padding:0;
+  padding:5px;
+  border-radius:8px;
+  background:rgba(30,144,255,.5);
   color:#1E90FF;
   stroke-width:2;
 }
