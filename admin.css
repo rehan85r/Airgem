@@ -9037,7 +9037,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #projectsView #trendingManager .top-airdrops-heading h2,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 {
   display:flex;align-items:center;align-self:flex-start;gap:10px;margin:0;color:#1B2E50;
-  font:700 20px/1 Manrope,sans-serif;letter-spacing:-.3px;
+  font:600 15px/1 Manrope,sans-serif;letter-spacing:-.3px;
 }
 /* Single source of truth for Basic, Details and Guide picker heading. */
 #projectsView #adminProjectPicker .top-airdrops-heading{
