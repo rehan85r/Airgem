@@ -9751,3 +9751,16 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   letter-spacing: -0.3px;
   color: #1B2E50;
 }
+
+/* Match Basic, Details and Guide project search typography to Top Airdrops. */
+#projectsView #adminProjectPickerSearch{
+  font:500 13px/1 Manrope,sans-serif;
+  letter-spacing:0;
+  color:#1B2E50;
+}
+#projectsView #adminProjectPickerSearch::placeholder{
+  font:500 13px/1 Manrope,sans-serif;
+  letter-spacing:0;
+  color:#94A3B8;
+  opacity:1;
+}
