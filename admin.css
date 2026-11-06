@@ -1326,7 +1326,7 @@ main{padding-top:15px}
 }
 /* Compact embedded Top Airdrops manager */
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
-#projectsView .collection-card{max-width:none;width:100%;padding:20px}
+#projectsView .collection-card{max-width:none;width:100%;}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 #projectsView .trending-search{gap:10px}
 #projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}
@@ -1366,7 +1366,7 @@ main{padding-top:15px}
 
 
 @media(max-width:600px) {
-#projectsView .collection-card{padding:15px}
+#projectsView .collection-card{}
 
 #projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}
 #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
@@ -3286,7 +3286,7 @@ main{padding-top:15px}
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 /* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
+#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}
 
 
 /* Compact header publishing action in place of the selection count */
@@ -5096,7 +5096,7 @@ main{padding-top:15px}
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 /* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
+#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}
 
 /* Compact header publishing action in place of the selection count */
 /* Top Airdrops project search selection count */
@@ -6944,12 +6944,12 @@ main{padding-top:15px}
 
 /* Compact embedded Top Airdrops manager */
 #projectsView .top-airdrops-section{width:100%;margin-top:5px}
-#projectsView .collection-card{max-width:none;width:100%;padding:20px}
+#projectsView .collection-card{max-width:none;width:100%;}
 #projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 
 
 @media(max-width:600px){
- #projectsView .collection-card{padding:15px}
+ #projectsView .collection-card{}
  
   #projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}
 #projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}
@@ -6991,7 +6991,7 @@ main{padding-top:15px}
 /* Subtle divider 20px below the Top Airdrops heading */
 #projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}
 /* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px}
+#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}
 #projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}
 
 /* Compact header publishing action in place of the selection count */
@@ -7453,13 +7453,10 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 #projectsView .top-airdrops-section { margin-top: 0; }
 #projectsView .top-airdrops-section + .top-airdrops-section { margin-top: 16px; }
-#projectsView .collection-card {
-  padding: 16px;
-  border: 1px solid #E7ECF2;
+#projectsView .collection-card {border: 1px solid #E7ECF2;
   border-radius: 16px;
   background: #FFFFFF;
-  box-shadow: 0 3px 14px rgba(27,46,80,.035);
-}
+  box-shadow: 0 3px 14px rgba(27,46,80,.035);}
 #projectsView .top-airdrops-heading {
   gap: 10px;
   margin-bottom: 15px;
@@ -7479,7 +7476,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   letter-spacing: -.15px;
 }
 @media (max-width: 650px) {
-#projectsView .collection-card { padding: 14px; border-radius: 15px; }
+#projectsView .collection-card {border-radius: 15px;}
 #projectsView .top-airdrops-heading { margin-bottom: 14px; gap: 8px; }
 
 
@@ -7487,11 +7484,9 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #projectsView .trending-item strong,
   #projectsView .all-airdrops-list .trending-item strong { font-size: 13.5px; }
 }
-#projectsView .collection-card {
-  border-color: #E9EDF3;
+#projectsView .collection-card {border-color: #E9EDF3;
   border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(27,46,80,.025);
-}
+  box-shadow: 0 2px 10px rgba(27,46,80,.025);}
 #projectsView .top-airdrops-heading {
   margin-bottom: 12px;
 }
@@ -7516,7 +7511,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   margin-top: 14px;
 }
 @media (max-width: 650px) {
-#projectsView .collection-card { padding: 13px; }
+#projectsView .collection-card {}
 
 
 
@@ -8836,13 +8831,10 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 #dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}
 #projectsView .top-airdrops-section{margin-top:0}
 #projectsView .top-airdrops-section+.top-airdrops-section{margin-top:18px}
-#projectsView .collection-card{
-  padding:18px;
-  border:1px solid #E2E8F0;
+#projectsView .collection-card{border:1px solid #E2E8F0;
   border-radius:16px;
   background:#FFFFFF;
-  box-shadow:0 2px 12px rgba(27,46,80,.035);
-}
+  box-shadow:0 2px 12px rgba(27,46,80,.035);}
 #projectsView .top-airdrops-heading{
   margin-bottom:15px;
   gap:12px;
@@ -8878,10 +8870,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   text-align:center;
 }
 @media(max-width:650px){
-  #projectsView .collection-card{
-    padding:16px;
-    border-radius:16px;
-  }
+  #projectsView .collection-card{border-radius:16px;}
   #projectsView .top-airdrops-heading{margin-bottom:14px;gap:9px}
   
   
@@ -9168,11 +9157,8 @@ body:not([data-view]) #mfaBox #mfaHeading{
 @media(max-width:767px){
   #projectsView .top-airdrops-section{margin-top:0!important}
   #projectsView .top-airdrops-section+.top-airdrops-section{margin-top:14px!important}
-  #projectsView .collection-card{
-    padding:14px!important;
-    border-radius:14px!important;
-    box-shadow:0 1px 8px rgba(27,46,80,.025)!important;
-  }
+  #projectsView .collection-card{border-radius:14px!important;
+    box-shadow:0 1px 8px rgba(27,46,80,.025)!important;}
   #projectsView .top-airdrops-heading{
     gap:9px!important;
     margin-bottom:13px!important;
@@ -9424,11 +9410,9 @@ body:not([data-view]) #mfaBox #mfaHeading{
 /* Shared exact 15px top and left inset for all five section headings. */
 #projectsView #trendingManager .collection-card,
 #projectsView #allAirdropsManager .collection-card,
-#projectsView #adminProjectPicker .collection-card {
-  padding-top:15px !important;
+#projectsView #adminProjectPicker .collection-card {padding-top:15px !important;
   padding-left:15px !important;
-  padding-right:15px !important;
-}
+  padding-right:15px !important;}
 /* Identical 30px icon tile for Top, All, Basic, Details and Guide. */
 #projectsView #trendingManager .top-airdrops-heading h2 svg,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 svg,
@@ -9773,3 +9757,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 }
 #editorView .editor-tabs button{font-size:13px}
 #editorView .mobile-editor-toolbar strong{font-size:18px;font-weight:700;line-height:1.25}
+
+/* One shared 15px bottom inset for Top Airdrops, All Airdrops and Basic/Details/Guide project picker cards on every viewport. */
+#projectsView .top-airdrops-section > .collection-card {
+  padding-bottom:15px !important;
+}
