@@ -9080,7 +9080,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   gap:10px;
   margin:0;
   color:#1B2E50;
-  font:600 16px/1.4 Manrope,sans-serif;
+  font:600 15px/1 Manrope,sans-serif;
 }
 #projectsView #trendingManager .top-airdrops-heading h2 svg,
 #projectsView #allAirdropsManager .top-airdrops-heading h2 svg,
