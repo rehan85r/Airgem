@@ -1306,7 +1306,7 @@ main {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
+.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.5px;color:#1B2E50}
 main{padding-top:15px}
 @media(max-width:640px) {
 #dashboard .topbar{padding:0 15px}
@@ -3198,7 +3198,7 @@ dialog .guide-editor {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
+.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.5px;color:#1B2E50}
 
 
 
@@ -5007,7 +5007,7 @@ main {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
+.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.5px;color:#1B2E50}
 
 
 
@@ -6907,7 +6907,7 @@ dialog .guide-editor {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
+.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.5px;color:#1B2E50}
 
 main{padding-top:15px}
 @media(max-width:640px){#dashboard .topbar{padding:0 15px}}
