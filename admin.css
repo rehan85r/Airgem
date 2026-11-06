@@ -9727,7 +9727,11 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   padding-bottom:15px !important;
 }
 
-/* Single shared 20px vertical spacing for the admin footer in every panel view. */
-#dashboard .app-footer {
-  padding:20px 2px !important;
+/* Exact 20px gap above and below the copyright footer on Dashboard and project editor views. */
+#dashboard #mainContent {
+  padding-bottom:0 !important;
+}
+#dashboard > .app-shell > .app-footer {
+  margin:20px 0 !important;
+  padding:0 2px !important;
 }
