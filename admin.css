@@ -9647,8 +9647,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   font-family:Manrope,Inter,sans-serif;
   font-size:15px;
   font-weight:600;
-  line-height:1.35;
-  letter-spacing:-.1px;
+  line-height:1;
+  letter-spacing:-.3px;
 }
 #dashboard p,
 #dashboard .card p,
