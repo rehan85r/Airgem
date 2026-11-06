@@ -8816,6 +8816,8 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   border-radius:12px;
   background:#FFFFFF;
   color:#1B2E50;
+  font:500 13px/1 Manrope,sans-serif;
+  letter-spacing:0;
 }
 #projectsView .trending-search-input-wrap input::placeholder{font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;color:#94A3B8;opacity:1}
 
