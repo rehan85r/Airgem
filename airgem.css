@@ -20,20 +20,6 @@ body[data-view] :is(button, a, input, select):focus-visible {
   outline: 2px solid rgba(30, 144, 255, .55);
   outline-offset: 3px;
 }
-/* Shared public header */
-body[data-view] header.header {
-  background: #fff !important;
-  border-bottom: 1px solid var(--airgem-border) !important;
-  box-shadow: none !important;
-}
-body[data-view] header.header .brand-name {
-  color: var(--airgem-navy) !important;
-  letter-spacing: -.5px !important;
-}
-body[data-view] header.header .mark {
-  border-radius: 10px !important;
-  box-shadow: none !important;
-}
 /* Homepage */
 body[data-view="home"] .main {
   max-width: 1160px !important;
@@ -183,8 +169,6 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 [data-view] button,[data-view] input,[data-view] select{font-family:inherit}
 [data-view] a,[data-view] button,[data-view] input,[data-view] select{touch-action:manipulation}
 [data-view] :is(button,a,input,select):focus-visible{outline:3px solid #86c5ff;outline-offset:4px}
-[data-view] :is(.header,header){background:#fff!important;border:0!important;border-bottom:1px solid #E2E8F0!important;outline:0!important;box-shadow:none!important}
-[data-view] .header{height:76px}
 [data-view] :is(.wrap,.head){max-width:1120px;padding-left:24px;padding-right:24px}
 [data-view] .head{min-height:76px;padding-top:12px;padding-bottom:12px}
 [data-view] :is(.brand,.brand-name){font-family:'Manrope',system-ui,sans-serif;font-size:24px;font-weight:800;letter-spacing:-.9px;color:var(--ag-ink)!important}
@@ -243,7 +227,7 @@ body[data-view]{background:#F9FAFB!important;color:var(--ag-ink)!important;font-
 @media(hover:hover){[data-view] .back:hover{background:#f1f7ff}[data-view="home"] .ag-card:hover{border-color:#c9daee!important;box-shadow:0 10px 30px #1428460c!important}}
 @media(max-width:650px){
  [data-view] :is(.wrap,.head){padding-left:18px;padding-right:18px}
- [data-view] .header{height:68px}[data-view] .head{min-height:68px}
+ [data-view] .head{min-height:68px}
  [data-view] :is(.brand,.brand-name){font-size:22px}
  [data-view] .brand img{width:40px!important;height:40px!important}
  [data-view] .back{padding:9px 11px;font-size:11px}
@@ -359,11 +343,9 @@ body[data-view="home"] header .brand .mark,body[data-view="project"] header .bra
 body[data-view="home"] header .brand .mark img,body[data-view="project"] header .brand .mark img{display:block!important;width:40px!important;height:40px!important;object-fit:contain!important;border-radius:12px!important;margin:0!important}
 body[data-view="home"] header .brand .brand-name,body[data-view="project"] header .brand .brand-name{display:inline-block!important;font-family:Manrope,system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:-.5px!important;line-height:1!important;color:#1B2E50!important}
 
-/* Single header layout contract for homepage and project details. */
-body[data-view="home"] header.header{height:60px!important;min-height:60px!important;max-height:60px!important;position:sticky!important;top:0!important;z-index:1000!important}
-body[data-view="project"] header.header{height:60px!important;min-height:60px!important;max-height:60px!important;position:sticky!important;top:0!important;z-index:1000!important}
+/* Single header contract (homepage + project): exactly 60px. */
+body[data-view="home"] header.header,body[data-view="project"] header.header{height:60px!important;min-height:60px!important;max-height:60px!important;position:sticky!important;top:0!important;z-index:1000!important;box-sizing:border-box!important;background:#fff!important;border:0!important;border-bottom:1px solid #E2E8F0!important;outline:0!important;box-shadow:none!important}
 body[data-view="home"] header.header > .header-inner,body[data-view="project"] header.header > .header-inner{width:100%!important;max-width:none!important;height:100%!important;min-height:0!important;margin:0!important;padding:0 15px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important}
-body[data-view="home"] header.header > .header-inner{padding-right:15px!important}
 body[data-view="home"] header.header > .header-inner > .brand,body[data-view="project"] header.header > .header-inner > .brand{flex:0 0 auto!important;align-self:center!important}
 
 /* Guide section is unboxed; preserve separate callout cards. */

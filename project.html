@@ -13,9 +13,7 @@
 
 :root{color:#14233d;background:#f5f7fc}
 body{background:radial-gradient(ellipse 80% 400px at 50% -90px,#e7efff 0%,transparent 78%),#f5f7fc;color:#14233d}
-header{border-top:0;background:#ffffffed;border-bottom:1px solid #e1e9f5;box-shadow:0 3px 20px rgba(24,53,108,.025)}
 
-.brand{letter-spacing:-1.4px}
 .back{border:1px solid #dce6f4;color:#1E90FF;background:#fff;border-radius:13px;padding:12px 16px}
 main{max-width:1100px;margin-top:38px;padding-bottom:80px}
 .crumb{color:#64748B;margin-bottom:21px;font-weight:600}
@@ -431,7 +429,6 @@ body[data-view="project"] [data-project-panel] #details.grid{row-gap:40px!import
 
 /* Use the same header structure and alignment as the homepage. */
 
-body[data-view="project"] header.header .header-inner .brand{align-self:center!important}
 /* Match homepage header branding and geometry. */
 
 
@@ -464,7 +461,6 @@ body[data-view="project"] #guide .guide-article .dh-step:not(:last-child)::befor
 body[data-view="project"] #guide .guide-article .dh-step:last-child{padding-bottom:0!important;}
 
 /* Consistent 20px header logo inset on project details */
-body[data-view="project"] header.header .header-inner{padding-left:15px!important}
 
 /* Fixed height for task overview cards */
 body[data-view="project"] .ag-task-card{height:500px!important;min-height:500px!important;max-height:500px!important;box-sizing:border-box!important;overflow:auto!important}
@@ -523,7 +519,7 @@ body[data-view="project"] .ag-project-socials[hidden]{display:none!important}
 body[data-view="project"] .ag-project-socials a{width:20px;height:20px;display:grid;place-items:center;border:0;border-radius:0;background:transparent;color:#1B2E50;text-decoration:none;transition:color .15s}
 body[data-view="project"] .ag-project-socials a:is(:hover,:focus-visible,.ag-social-active){color:#1E90FF}
 body[data-view="project"] .ag-project-socials svg{width:20px;height:20px;display:block}
-</style><link rel="icon" type="image/png" href="airgem-logo.png"><link rel="stylesheet" href="airgem.css?v=20261031-consolidated"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+</style><link rel="icon" type="image/png" href="airgem-logo.png"><link rel="stylesheet" href="airgem.css?v=header-60-20261107"><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
     
 </head><body data-view="project"><header class="header"><div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Airgem Home"><span class="mark"><img src="airgem-logo.png" alt="Airgem logo" width="40" height="40" style="display:block;width:40px;height:40px;object-fit:contain;border-radius:12px"></span><span class="brand-name">Airgem</span></a><a class="back" href="index.html"><i data-lucide="arrow-left" aria-hidden="true"></i><span>Back</span></a></div></header><main><div class="crumb">Home / Project Details</div><div id="projectLoading" class="project-loading" role="status" aria-live="polite"><div class="load-row"><span class="load-logo shimmer"></span><span class="load-text"><span class="shimmer load-title"></span><span class="shimmer load-subtitle"></span></span></div><div class="load-metrics"><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer"></span></div><span class="loading-caption">Loading Project Details…</span></div><section class="panel" data-project-panel hidden><div class="identity"><div class="logo" id="logo">D</div><div class="identity-info"><h1 id="name">Project</h1><div class="muted" id="subtitle"></div></div><div class="activity-line" id="activityLine"></div></div><div class="grid" id="details"></div><nav id="projectSocials" class="ag-project-socials" aria-label="Project social links" hidden></nav></section><section class="panel ag-investors-card" data-project-panel hidden><div class="ag-investors-panel" id="investorsPanel" hidden><div class="ag-investors-summary"><div class="ag-investors-center"><span class="ag-summary-label">Investors</span><div id="investorsPreview"></div></div><button type="button" id="investorsToggle" hidden>View All</button></div><div id="investorsFull" hidden></div></div></section><section class="panel" data-project-panel hidden><div class="label guide-label"><i data-lucide="book-open" aria-hidden="true"></i><span>Step-by-Step</span></div><h2>Airdrop Guide</h2><div id="guide"></div></section></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="supabase-config.js"></script><script src="supabase-data.js"></script><script>
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

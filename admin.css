@@ -300,19 +300,10 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   display: flex;
   flex-direction: column;
 }
-.topbar {
-  position: sticky;
-  top: 0;
-  height: 60px;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  justify-content: space-between;
-  background: rgb(255 255 255 / 97%);
-  border-bottom: 1px solid var(--soft-border);
-}
+/* ===== Admin header: single source of truth (exactly 60px) ===== */
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:0;box-sizing:border-box;height:60px;min-height:60px;max-height:60px;padding:0 15px 0 12.5px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--airgem-border,#E2E8F0);box-shadow:none}
+.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;order:0;text-decoration:none;color:var(--airgem-navy,#1B2E50);font-weight:750;letter-spacing:-.45px}
+
 main {
   flex: 1;
   width: 100%;
@@ -1082,10 +1073,7 @@ dialog .guide-editor {
 main {
     padding: 24px 20px;
   }
-.topbar {
-    padding-inline: 20px;
-    gap: 12px;
-  }
+
 .editor-tabs {
     gap: 20px;
   }
@@ -1112,11 +1100,7 @@ main {
 h1 {
     font-size: 27px;
   }
-.topbar {
-    height: 61px;
-    padding: 0 16px;
-    gap: 10px;
-  }
+
 main {
     padding: 22px 16px;
   }
@@ -1302,14 +1286,14 @@ main {
     scroll-behavior: auto;
   }
 }
-.topbar{padding-right:15px}
-.topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
-.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
+
+
+
 
 
 main{padding-top:15px}
 @media(max-width:640px) {
-#dashboard .topbar{padding:0 15px}
+
 }
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
@@ -2129,19 +2113,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   display: flex;
   flex-direction: column;
 }
-.topbar {
-  position: sticky;
-  top: 0;
-  height: 60px;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  justify-content: space-between;
-  background: rgb(255 255 255 / 97%);
-  border-bottom: 1px solid var(--soft-border);
-}
+
 main {
   flex: 1;
   width: 100%;
@@ -2938,10 +2910,7 @@ dialog .guide-editor {
   main {
     padding: 24px 20px;
   }
-  .topbar {
-    padding-inline: 20px;
-    gap: 12px;
-  }
+  
   .editor-tabs {
     gap: 20px;
   }
@@ -2971,11 +2940,7 @@ dialog .guide-editor {
   h1 {
     font-size: 27px;
   }
-  .topbar {
-    height: 61px;
-    padding: 0 16px;
-    gap: 10px;
-  }
+  
   main {
     padding: 22px 16px;
   }
@@ -3177,10 +3142,10 @@ dialog .guide-editor {
 
 
 
-.topbar{padding-right:15px}
 
-.topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
-.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
+
+
+
 
 
 
@@ -3192,7 +3157,7 @@ dialog .guide-editor {
 
 
 main{padding-top:15px}
-@media(max-width:640px){#dashboard .topbar{padding:0 15px}}
+@media(max-width:640px){}
 
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
@@ -3525,12 +3490,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     overflow: hidden;
   }
 
-  body[data-admin-view="editor"] .topbar {
-    display: none;
-  }
-
-  body[data-admin-view="editor"] .app-shell,
-  body[data-admin-view="editor"] #mainContent {
+  n-view="editor"] #mainContent {
     height: 100%;
     min-height: 0;
     overflow: hidden;
@@ -4008,19 +3968,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   display: flex;
   flex-direction: column;
 }
-.topbar {
-  position: sticky;
-  top: 0;
-  height: 60px;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  justify-content: space-between;
-  background: rgb(255 255 255 / 97%);
-  border-bottom: 1px solid var(--soft-border);
-}
+
 main {
   flex: 1;
   width: 100%;
@@ -4767,10 +4715,7 @@ dialog .guide-editor {
 main {
     padding: 24px 20px;
   }
-.topbar {
-    padding-inline: 20px;
-    gap: 12px;
-  }
+
 .editor-tabs {
     gap: 20px;
   }
@@ -4797,11 +4742,7 @@ main {
 h1 {
     font-size: 27px;
   }
-.topbar {
-    height: 61px;
-    padding: 0 16px;
-    gap: 10px;
-  }
+
 main {
     padding: 22px 16px;
   }
@@ -4987,9 +4928,9 @@ main {
     scroll-behavior: auto;
   }
 }
-.topbar{padding-right:15px}
-.topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
-.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
+
+
+
 
 
 
@@ -5000,7 +4941,7 @@ main {
 
 main{padding-top:15px}
 @media(max-width:640px) {
-#dashboard .topbar{padding:0 15px}
+
 }
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
@@ -5348,12 +5289,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     overflow: hidden;
   }
 
-  body[data-admin-view="editor"] .topbar {
-    display: none;
-  }
-
-  body[data-admin-view="editor"] .app-shell,
-  body[data-admin-view="editor"] #mainContent {
+  n-view="editor"] #mainContent {
     height: 100%;
     min-height: 0;
     overflow: hidden;
@@ -5839,19 +5775,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   display: flex;
   flex-direction: column;
 }
-.topbar {
-  position: sticky;
-  top: 0;
-  height: 60px;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  justify-content: space-between;
-  background: rgb(255 255 255 / 97%);
-  border-bottom: 1px solid var(--soft-border);
-}
+
 main {
   flex: 1;
   width: 100%;
@@ -6647,10 +6571,7 @@ dialog .guide-editor {
   main {
     padding: 24px 20px;
   }
-  .topbar {
-    padding-inline: 20px;
-    gap: 12px;
-  }
+  
   .editor-tabs {
     gap: 20px;
   }
@@ -6680,11 +6601,7 @@ dialog .guide-editor {
   h1 {
     font-size: 27px;
   }
-  .topbar {
-    height: 61px;
-    padding: 0 16px;
-    gap: 10px;
-  }
+  
   main {
     padding: 22px 16px;
   }
@@ -6886,15 +6803,15 @@ dialog .guide-editor {
 
 
 
-.topbar{padding-right:15px}
 
-.topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
-.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
+
+
+
 
 
 
 main{padding-top:15px}
-@media(max-width:640px){#dashboard .topbar{padding:0 15px}}
+@media(max-width:640px){}
 
 /* All Airdrops shares the Top Airdrops card and row layout. */
 #projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}
@@ -7212,12 +7129,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     overflow: hidden;
   }
 
-  body[data-admin-view="editor"] .topbar {
-    display: none;
-  }
-
-  body[data-admin-view="editor"] .app-shell,
-  body[data-admin-view="editor"] #mainContent {
+  n-view="editor"] #mainContent {
     height: 100%;
     min-height: 0;
     overflow: hidden;
@@ -7994,11 +7906,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 body:not([data-view]) {
   background: var(--airgem-bg);
 }
-body:not([data-view]) .topbar {
-  background: #fff;
-  border-bottom: 1px solid var(--airgem-border);
-  box-shadow: none;
-}
+
 body:not([data-view]) .auth-card,
 body:not([data-view]) .editor-panel {
   border-radius: var(--airgem-radius);
@@ -8014,16 +7922,8 @@ body:not([data-view]) {
 body:not([data-view]) .app-shell {
   background: var(--airgem-bg);
 }
-body:not([data-view]) .topbar {
-  min-height: 60px;
-  border-bottom: 1px solid var(--airgem-border);
-  background: rgba(255,255,255,.98);
-}
-body:not([data-view]) .admin-header-brand {
-  color: var(--airgem-navy);
-  font-weight: 750;
-  letter-spacing: -.45px;
-}
+
+
 
 body:not([data-view]) main {
   max-width: 1160px;
@@ -9720,11 +9620,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 }
 
 /* Admin header height and horizontal spacing across desktop and mobile. */
-#dashboard .topbar {
-  height: 60px;
-  min-height: 60px;
-  padding-left: 12.5px;
-}
+
 
 /* Single source of truth for the Admin Panel Airgem brand text. */
 #dashboard .topbar .admin-header-brand span {
