@@ -9609,10 +9609,10 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 #editorView .editor-heading h1,
 #settingsView .page-heading h1{
   font-family:Manrope,Inter,sans-serif;
-  font-size:22px;
+  font-size:20px;
   font-weight:700;
-  line-height:1.25;
-  letter-spacing:-.5px;
+  line-height:1.2;
+  letter-spacing:-.3px;
 }
 #dashboard .page-heading p,
 #projectsView .projects-page-heading p,
