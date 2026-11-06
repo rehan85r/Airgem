@@ -9611,7 +9611,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   font-family:Manrope,Inter,sans-serif;
   font-size:20px;
   font-weight:700;
-  line-height:1.2;
+  line-height:1;
   letter-spacing:-.3px;
 }
 #dashboard .page-heading p,
