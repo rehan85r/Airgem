@@ -9743,3 +9743,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   object-fit:contain;
   border-radius:10px;
 }
+
+/* Admin header height: 65px across desktop and mobile. */
+#dashboard .topbar {
+  height: 65px;
+  min-height: 65px;
+}
