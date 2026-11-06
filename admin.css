@@ -9737,9 +9737,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 /* Single source of truth for the Airgem Admin Panel logo size. */
 .topbar .admin-header-brand img {
   display:block;
-  width:30px;
-  height:30px;
-  flex:0 0 30px;
+  width:35px;
+  height:35px;
+  flex:0 0 35px;
   object-fit:contain;
   border-radius:10px;
 }
