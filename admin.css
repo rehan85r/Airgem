@@ -1658,7 +1658,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title>svg{width:15px;height:15px;flex:0 0 15px;color:#1B2E50;stroke-width:2}
 
 /* Hide the admin copyright footer while the Basic Editor is open. */
-body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none}
+body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}
 
 /* Keep a 10px gap between the plus icon and Add Investors text. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic #agBasicAddInvestor{display:inline-flex;align-items:center;gap:10px}
@@ -3530,7 +3530,7 @@ main{padding-top:15px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title{display:flex;align-items:center;gap:10px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title>svg{width:15px;height:15px;flex:0 0 15px;color:#1B2E50;stroke-width:2}
 /* Hide the admin copyright footer while the Basic Editor is open. */
-body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none}
+body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}
 /* Keep a 10px gap between the plus icon and Add Investors text. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic #agBasicAddInvestor{display:inline-flex;align-items:center;gap:10px}
 /* Single source of truth for the mobile editor layout. */
@@ -5351,7 +5351,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title>svg{width:15px;height:15px;flex:0 0 15px;color:#1B2E50;stroke-width:2}
 
 /* Hide the admin copyright footer while the Basic Editor is open. */
-body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none}
+body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}
 
 /* Keep a 10px gap between the plus icon and Add Investors text. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic #agBasicAddInvestor{display:inline-flex;align-items:center;gap:10px}
@@ -7217,7 +7217,7 @@ main{padding-top:15px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title{display:flex;align-items:center;gap:10px}
 #editorView:has(#panel-basic:not([hidden])) #panel-basic .basic-investors-title>svg{width:15px;height:15px;flex:0 0 15px;color:#1B2E50;stroke-width:2}
 /* Hide the admin copyright footer while the Basic Editor is open. */
-body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none}
+body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}
 /* Keep a 10px gap between the plus icon and Add Investors text. */
 #editorView:has(#panel-basic:not([hidden])) #panel-basic #agBasicAddInvestor{display:inline-flex;align-items:center;gap:10px}
 /* Single source of truth for the mobile editor layout. */
@@ -8120,9 +8120,7 @@ body:not([data-view]) .editor-footer {
   background: rgba(255,255,255,.98);
   box-shadow: 0 4px 16px rgba(27,46,80,.06);
 }
-body:not([data-view]) .app-footer {
-  color: var(--airgem-slate);
-}
+body:not([data-view]) .app-footer {color: var(--airgem-slate);}
 @media (max-width: 767px) {
   body:not([data-view]) main {
     padding-left: 14px;
@@ -8834,17 +8832,14 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 #dashboard #mainContent{
   flex:0 0 auto;
 }
-#dashboard .app-footer{
-  display:flex;
+#dashboard .app-footer{display:flex;
   align-items:center;
   justify-content:center;
   flex-wrap:wrap;
   gap:8px;
-  padding:16px 16px 24px;
   color:#64748B;
   font:400 12px/1.5 Manrope,sans-serif;
-  text-align:center;
-}
+  text-align:center;}
 @media(max-width:650px){
   #projectsView .collection-card{border-radius:16px;}
   #projectsView .top-airdrops-heading{margin-bottom:14px;gap:9px}
@@ -8852,10 +8847,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
   
   #projectsView .trending-item-copy strong,
   #projectsView .all-airdrops-list .trending-item strong{font-size:14px}
-  #dashboard .app-footer{
-    padding:8px 2px 18px;
-    font-size:11px;
-  }
+  #dashboard .app-footer{font-size:11px;}
 }
 
 
@@ -9425,9 +9417,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 
 /* Settings is a dedicated full-page view without the dashboard header or footer. */
 body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,
-body[data-admin-view="settings"] #dashboard > .app-shell > .app-footer {
-  display: none !important;
-}
+body[data-admin-view="settings"] #dashboard > .app-shell > .app-footer {display: none !important;}
 body[data-admin-view="settings"] #dashboard > .app-shell > main {
   width: 100%;
   max-width: none;
@@ -9715,12 +9705,10 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 #dashboard .app-footer,
 #editorView .editor-heading .editor-subtitle,
 #editorView .editor-heading .muted,
-#settingsView .passkey-card-status{
-  font-family:Manrope,Inter,sans-serif;
+#settingsView .passkey-card-status{font-family:Manrope,Inter,sans-serif;
   font-size:12px;
   font-weight:400;
-  line-height:1.5;
-}
+  line-height:1.5;}
 #editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
 #editorView .editor-panel select,
 #editorView .editor-panel textarea,
@@ -9739,8 +9727,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   padding-bottom:15px !important;
 }
 
-/* Shared footer breathing room: 20px above and below on Dashboard, Basic, Details and Guide. */
+/* Single shared footer spacing rule across Dashboard, Basic, Details and Guide. */
 .app-footer {
-  padding-top:20px !important;
-  padding-bottom:20px !important;
+  padding:20px 2px !important;
 }
