@@ -341,14 +341,11 @@ main {
   font-weight: 600;
   margin-bottom: 9px;
 }
-.app-footer {
-  display: flex;
+.app-footer {display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 26px 18px;
   color: #94a3b8;
-  font-size: 10px;
-}
+  font-size: 10px;}
 .card {
   padding: 18px;
   background: var(--white);
@@ -1133,10 +1130,7 @@ main {
     line-height: 1.7;
     margin-top: 6px;
   }
-.app-footer {
-    padding: 0 16px 20px;
-    font-size: 9px;
-  }
+.app-footer {font-size: 9px;}
 .editor-heading {
     flex-wrap: wrap;
     gap: 16px;
@@ -1645,7 +1639,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 /* Basic Editor: align Website, Discord and X fields with the main two-column form. */
 #editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
 @media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}
-.app-footer{font-size:11px}
+.app-footer{font-size:11px;}
 @media(max-width:650px){
 }
 
@@ -2192,14 +2186,11 @@ main {
   font-weight: 600;
   margin-bottom: 9px;
 }
-.app-footer {
-  display: flex;
+.app-footer {display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 26px 18px;
   color: #94a3b8;
-  font-size: 10px;
-}
+  font-size: 10px;}
 .card {
   padding: 18px;
   background: var(--white);
@@ -3026,10 +3017,7 @@ dialog .guide-editor {
   
   
   
-  .app-footer {
-    padding: 0 16px 20px;
-    font-size: 9px;
-  }
+  .app-footer {font-size: 9px;}
   .editor-heading {
     flex-wrap: wrap;
     gap: 16px;
@@ -3523,7 +3511,7 @@ main{padding-top:15px}
 @media(max-width:640px) {
 #editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}
 }
-.app-footer{font-size:11px}
+.app-footer{font-size:11px;}
 @media(max-width:650px) {
 
 }
@@ -4077,14 +4065,11 @@ main {
   font-weight: 600;
   margin-bottom: 9px;
 }
-.app-footer {
-  display: flex;
+.app-footer {display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 26px 18px;
   color: #94a3b8;
-  font-size: 10px;
-}
+  font-size: 10px;}
 .card {
   padding: 18px;
   background: var(--white);
@@ -4846,10 +4831,7 @@ main {
     line-height: 1.7;
     margin-top: 6px;
   }
-.app-footer {
-    padding: 0 16px 20px;
-    font-size: 9px;
-  }
+.app-footer {font-size: 9px;}
 .editor-heading {
     flex-wrap: wrap;
     gap: 16px;
@@ -5349,7 +5331,7 @@ body[data-admin-view="editor"]{overflow:hidden}
 /* Basic Editor: align Website, Discord and X fields with the main two-column form. */
 #editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
 @media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}
-.app-footer{font-size:11px}
+.app-footer{font-size:11px;}
 @media(max-width:650px){
   
 }
@@ -5914,14 +5896,11 @@ main {
   font-weight: 600;
   margin-bottom: 9px;
 }
-.app-footer {
-  display: flex;
+.app-footer {display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 26px 18px;
   color: #94a3b8;
-  font-size: 10px;
-}
+  font-size: 10px;}
 .card {
   padding: 18px;
   background: var(--white);
@@ -6747,10 +6726,7 @@ dialog .guide-editor {
   
   
   
-  .app-footer {
-    padding: 0 16px 20px;
-    font-size: 9px;
-  }
+  .app-footer {font-size: 9px;}
   .editor-heading {
     flex-wrap: wrap;
     gap: 16px;
@@ -7223,7 +7199,7 @@ main{padding-top:15px}
 @media(max-width:640px) {
 #editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}
 }
-.app-footer{font-size:11px}
+.app-footer{font-size:11px;}
 @media(max-width:650px) {
 }
 /* Match investor logos and Upload Logo controls to the project logo controls. */
@@ -9761,4 +9737,10 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 /* One shared 15px bottom inset for Top Airdrops, All Airdrops and Basic/Details/Guide project picker cards on every viewport. */
 #projectsView .top-airdrops-section > .collection-card {
   padding-bottom:15px !important;
+}
+
+/* Shared footer breathing room: 20px above and below on Dashboard, Basic, Details and Guide. */
+.app-footer {
+  padding-top:20px !important;
+  padding-bottom:20px !important;
 }
