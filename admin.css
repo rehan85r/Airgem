@@ -9636,7 +9636,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 #projectsView nav.admin-project-nav::-webkit-scrollbar { display:none; }
 #projectsView nav.admin-project-nav > .admin-project-nav-button {
   display:inline-flex;
-  flex:0 0 auto;
+  flex:1 1 0;
+  min-width:0;
   align-items:center;
   justify-content:center;
   box-sizing:border-box;
@@ -9665,35 +9666,6 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   background:#F5F9FF;
   color:#1B2E50;
 }
-
-#projectsView nav.admin-project-nav > .admin-project-nav-add {
-  display:inline-flex;
-  flex:0 0 auto;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  height:35px;
-  min-height:35px;
-  padding:0 12px;
-  border-radius:10px;
-  font:600 13px/1 Manrope,Inter,sans-serif;
-  white-space:nowrap;
-}
-#projectsView nav.admin-project-nav > .admin-project-nav-add svg {
-  display:block;
-  width:15px;
-  height:15px;
-  flex:0 0 15px;
-}
-
-#projectsView nav.admin-project-nav > #addProjectButton svg {
-  display:block;
-  width:15px;
-  height:15px;
-  flex:0 0 15px;
-}
-
-
 /* Unified admin typography — identical on mobile and desktop. */
 #dashboard .page-heading h1,
 #projectsView .projects-page-heading h1,
