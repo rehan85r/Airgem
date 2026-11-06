@@ -1305,7 +1305,7 @@ main {
 .topbar{padding-right:15px}
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
-.topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
+.topbar .admin-header-brand img{display:block;width:30px;height:30px;flex:0 0 30px;object-fit:contain;border-radius:10px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
 main{padding-top:15px}
 @media(max-width:640px) {
@@ -3197,7 +3197,7 @@ dialog .guide-editor {
 
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
-.topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
+.topbar .admin-header-brand img{display:block;width:30px;height:30px;flex:0 0 30px;object-fit:contain;border-radius:10px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
 
 
@@ -5006,7 +5006,7 @@ main {
 .topbar{padding-right:15px}
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
-.topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
+.topbar .admin-header-brand img{display:block;width:30px;height:30px;flex:0 0 30px;object-fit:contain;border-radius:10px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
 
 
@@ -6906,7 +6906,7 @@ dialog .guide-editor {
 
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
-.topbar .admin-header-brand img{display:block;width:40px;height:40px;flex:0 0 40px;object-fit:contain;border-radius:12px}
+.topbar .admin-header-brand img{display:block;width:30px;height:30px;flex:0 0 30px;object-fit:contain;border-radius:10px}
 .topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:#1B2E50}
 
 main{padding-top:15px}
