@@ -1306,7 +1306,7 @@ main {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.3px;color:#1B2E50}
+
 main{padding-top:15px}
 @media(max-width:640px) {
 #dashboard .topbar{padding:0 15px}
@@ -3198,7 +3198,7 @@ dialog .guide-editor {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.3px;color:#1B2E50}
+
 
 
 
@@ -5007,7 +5007,7 @@ main {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.3px;color:#1B2E50}
+
 
 
 
@@ -6907,7 +6907,7 @@ dialog .guide-editor {
 .topbar{height:60px;padding:0 15px;gap:0;background:#fff;border-bottom:1px solid #E2E8F0}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:#1B2E50;order:0}
 
-.topbar .admin-header-brand span{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;letter-spacing:-.3px;color:#1B2E50}
+
 
 main{padding-top:15px}
 @media(max-width:640px){#dashboard .topbar{padding:0 15px}}
@@ -8858,12 +8858,7 @@ body:not([data-view]) .auth-shell,
 #dashboard textarea{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-#dashboard .admin-header-brand span{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:20px;
-  font-weight:750;
-  letter-spacing:-.55px;
-}
+
 body:not([data-view]) #loginBox .otp-digit,
 body:not([data-view]) #mfaBox .mfa-code-digit{
   font-family:Manrope,Inter,sans-serif;
@@ -8995,13 +8990,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
 #dashboard [contenteditable="true"]{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-#dashboard .admin-header-brand span{
-  font-size:20px;
-  font-weight:750;
-  line-height:1.2;
-  letter-spacing:-.55px;
-  color:#1B2E50;
-}
+
 /* New project editor uses the exact same editor type scale as Basic / Details / Guide */
 #editorView .mobile-editor-toolbar strong{
   font-family:Manrope,Inter,sans-serif;
@@ -9749,4 +9738,14 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   height: 60px;
   min-height: 60px;
   padding-left: 12.5px;
+}
+
+/* Single source of truth for the Admin Panel Airgem brand text. */
+#dashboard .topbar .admin-header-brand span {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.3px;
+  color: #1B2E50;
 }
