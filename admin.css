@@ -9746,7 +9746,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 
 /* Admin header height and horizontal spacing across desktop and mobile. */
 #dashboard .topbar {
-  height: 65px;
-  min-height: 65px;
-  padding-left: 15px;
+  height: 60px;
+  min-height: 60px;
+  padding-left: 12.5px;
 }
