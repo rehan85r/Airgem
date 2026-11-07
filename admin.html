@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/admin.css?v=dashboard-add-project-45px-20261107" />
+    <link rel="stylesheet" href="/admin.css?v=editor-header-tabs-20261107" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
   <body>
@@ -179,6 +179,17 @@
               <strong id="mobileEditorSectionTitle">Project Editor</strong>
               <button id="mobileEditorClose" type="button" class="mobile-editor-nav" aria-label="Close editor"><i data-lucide="x" aria-hidden="true"></i></button>
             </div>
+              <nav class="editor-tabs" aria-label="Project editor sections" role="tablist">
+                <button type="button" data-editor-tab="basic" id="tab-basic" role="tab" aria-controls="panel-basic" aria-selected="true">
+                  <i data-lucide="box" aria-hidden="true"></i> Basic
+                </button>
+                <button type="button" data-editor-tab="details" id="tab-details" role="tab" aria-controls="panel-details" aria-selected="false">
+                  <i data-lucide="sliders-horizontal" aria-hidden="true"></i> Details
+                </button>
+                <button type="button" data-editor-tab="guide" id="tab-guide" role="tab" aria-controls="panel-guide" aria-selected="false">
+                  <i data-lucide="notebook-text" aria-hidden="true"></i> Guide
+                </button>
+              </nav>
             <button id="backToProjects" type="button" class="back-link">
               <i data-lucide="arrow-left" aria-hidden="true"></i> Back to projects
             </button>
@@ -201,17 +212,7 @@
               </div>
             </div>
             <form id="form" novalidate>
-              <nav class="editor-tabs" aria-label="Project editor sections" role="tablist">
-                <button type="button" data-editor-tab="basic" id="tab-basic" role="tab" aria-controls="panel-basic" aria-selected="true">
-                  <i data-lucide="box" aria-hidden="true"></i> Basic
-                </button>
-                <button type="button" data-editor-tab="details" id="tab-details" role="tab" aria-controls="panel-details" aria-selected="false">
-                  <i data-lucide="sliders-horizontal" aria-hidden="true"></i> Details
-                </button>
-                <button type="button" data-editor-tab="guide" id="tab-guide" role="tab" aria-controls="panel-guide" aria-selected="false">
-                  <i data-lucide="notebook-text" aria-hidden="true"></i> Guide
-                </button>
-              </nav>        </nav>
+        </nav>
               <section
                 class="card editor-panel"
                 data-editor-panel="basic"
