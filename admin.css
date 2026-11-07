@@ -6059,7 +6059,10 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   max-height: 40px;
 }
 
-/* Shared Back and Close button styling for the mobile editor header. */
-#editorView .mobile-editor-nav{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:#1B2E50;cursor:pointer}
-#editorView .mobile-editor-nav svg{width:20px;height:20px}
-#editorView #mobileEditorBack{margin-left:15px}#editorView #mobileEditorClose{margin-right:15px}
+/* Basic Editor header — single responsive source of truth. */
+#editorView:has(#panel-basic:not([hidden])) .mobile-editor-toolbar{display:flex;flex:0 0 50px;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#fff;border-bottom:1px solid #E2E8F0}
+#editorView:has(#panel-basic:not([hidden])) .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,Inter,sans-serif;font-size:20px;font-weight:700;line-height:1;letter-spacing:-.3px;color:#1B2E50}
+#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav{display:grid;width:40px;height:40px;min-width:40px;flex:0 0 40px;place-items:center;margin:0;border:0;border-radius:10px;background:transparent;color:#1B2E50;cursor:pointer}
+#editorView:has(#panel-basic:not([hidden])) #mobileEditorBack{margin-left:15px}
+#editorView:has(#panel-basic:not([hidden])) #mobileEditorClose{margin-right:15px}
+#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav svg{width:20px;height:20px}
