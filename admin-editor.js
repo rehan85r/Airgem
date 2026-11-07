@@ -174,6 +174,7 @@
           )
             input.add(new Option(value, value));
           input.value = value;
+          if (key === 'activityStatus') input.dispatchEvent(new Event('change', { bubbles: true }));
         }
       }
       this.investors = parseInvestors(project.investors);
