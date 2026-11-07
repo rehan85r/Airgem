@@ -5325,7 +5325,7 @@
    All Basic-only desktop and mobile rules live below.
    Shared Details/Guide rules remain in the shared sections above.
    ========================================================== */
-@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media (max-width: 640px){#editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}@media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media(max-width:767px){#editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}#editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}#editorView #panel-basic{padding-top:15px!important;padding-left:15px!important}}#editorView #panel-basic .logo-preview{border-radius:12px;border:none;outline:none;box-shadow:none}#editorView #panel-basic .logo-preview img{border-radius:12px}#editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}@media(max-width:767px){#editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}#editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}#editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}#editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}#editorView #panel-basic #clearLogo{display:none!important}#editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:40px;min-height:40px;box-sizing:border-box;border-radius:10px}
+@media(max-width:767px){#editorView #panel-basic{padding:15px}}@media(max-width:767px){#editorView #panel-basic{padding:15px}}@media(max-width:767px){#editorView #panel-basic{padding:15px}}@media (max-width: 640px){#editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}@media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}@media(max-width:767px){#editorView #panel-basic{padding:15px}}@media(max-width:767px){#editorView #panel-basic{padding-top:15px!important;padding-left:15px!important}}#editorView #panel-basic #clearLogo{display:none!important}#editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:40px;min-height:40px;box-sizing:border-box;border-radius:10px}
 /* Basic Editor input geometry: enforce exact 40px height and 10px radius. */
 #editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;border-radius:10px!important;}#editorView #panel-basic .form-grid .field > label{padding-left:5px;margin-left:0;box-sizing:border-box}#editorView #panel-basic .form-grid .field > input,#editorView #panel-basic .form-grid .field > select{padding-left:12px;margin-left:0}#editorView #panel-basic .form-grid .field > label{font-size:15px}#editorView #panel-basic input:focus,#editorView #panel-basic input:focus-visible,#editorView #panel-basic select:focus,#editorView #panel-basic select:focus-visible,#editorView #panel-basic textarea:focus,#editorView #panel-basic textarea:focus-visible{
   outline:none;
@@ -5354,49 +5354,14 @@
 }#editorView #panel-basic .form-grid .field select option[value=""]{
   color:#64748B;
   font-weight:400;
-}#editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}@media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}}#editorView #form .basic-logo-upload{
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  margin: 0 0 16px !important;
-}#editorView #form .basic-logo-upload .logo-preview{
-  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
-}#editorView #form #logoPreview{
-  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
-}#editorView #form #logoPreview img{
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  border-radius: 10px !important;
-}#editorView #form .basic-logo-upload label.button[for="logoFile"]{
-  display: inline-flex !important;
-  flex: 0 0 auto !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  width: auto !important;
-  min-width: 0 !important;
-  height: 40px !important;
-  min-height: 40px !important;
-  margin: 0 !important;
-  padding: 0 13px !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 10px !important;
-  background: #FFFFFF !important;
-  color: #1B2E50 !important;
-  font: 600 13px/1.2 Manrope,sans-serif !important;
-  white-space: nowrap !important;
-  box-shadow: none !important;
-}#editorView #form .basic-logo-upload label.button[for="logoFile"] svg{
-  display: block !important;
-  flex: 0 0 15px !important;
-  width: 15px !important;
-  height: 15px !important;
-}#editorView #form .basic-logo-upload label.button[for="logoFile"]:hover{
-  border-color: #B8D9FA !important;
-  background: #F8FBFF !important;
-}#editorView #panel-basic .editor-footer #publish,#editorView #panel-basic #publish{min-height:48px;border-radius:10px;font:600 13px/1.2 Manrope,sans-serif}#editorView #panel-basic #agBasicInvestorList{
+}#editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}@media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}}#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;flex:0 0 40px;width:40px;align-items:center;gap:10px;margin:0}
+#editorView #panel-basic #logoPreview{display:grid;flex:0 0 40px;width:40px;min-width:40px;height:40px;min-height:40px;box-sizing:border-box;place-items:center;margin:0;padding:0;overflow:hidden;border:1px solid #E6EAF0;border-radius:11px;background:#F8FAFC;box-shadow:none;cursor:pointer}
+#editorView #panel-basic #logoPreview img{display:block;width:100%;height:100%;object-fit:contain;border-radius:10px}
+#editorView #panel-basic #logoPreview:focus-visible{outline:2px solid #1E90FF;outline-offset:3px}
+#editorView #panel-basic .basic-logo-upload label.button[for="logoFile"]{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;gap:8px;width:auto;min-width:0;height:40px;min-height:40px;box-sizing:border-box;margin:0;padding:0 13px;border:1px solid #E2E8F0;border-radius:10px;background:#fff;color:#1B2E50;font:600 13px/1.2 Manrope,sans-serif;white-space:nowrap;box-shadow:none}
+#editorView #panel-basic .basic-logo-upload label.button[for="logoFile"] svg{display:block;flex:0 0 15px;width:15px;height:15px}
+#editorView #panel-basic .basic-logo-upload label.button[for="logoFile"]:hover{border-color:#B8D9FA;background:#F8FBFF}
+@media(max-width:767px){#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{align-items:flex-start}#editorView #panel-basic .basic-logo-upload label.button[for="logoFile"]{margin-top:5px}}#editorView #panel-basic .editor-footer #publish,#editorView #panel-basic #publish{min-height:48px;border-radius:10px;font:600 13px/1.2 Manrope,sans-serif}#editorView #panel-basic #agBasicInvestorList{
   display: grid;
   width: 100%;
   min-width: 0;
