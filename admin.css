@@ -6017,7 +6017,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 
 /* Project Editor header navigation */
 #editorView>.editor-tabs{display:flex;justify-content:space-around;gap:0;margin:0;padding:10px 15px;border-bottom:1px solid #E2E8F0;background:#fff;}
-#editorView>.editor-tabs button{flex:1;justify-content:center;min-height:44px;padding:8px 4px;border:0;border-bottom:2px solid transparent;border-radius:0;font:600 13px Manrope,sans-serif;color:#64748B;}
+#editorView>.editor-tabs button{flex:1;justify-content:center;min-height:44px;padding:8px 4px;border:0;border-bottom:2px solid transparent;border-radius:0;font:600 13px Manrope,sans-serif;color:#1B2E50;}
 #editorView>.editor-tabs button[aria-selected='true']{border-bottom-color:#1E90FF;color:#1E90FF;}
 @media(min-width:768px){#editorView>.editor-tabs{margin-bottom:22px;padding-inline:0;}}
 @media(max-width:767px){#editorView>.editor-tabs{flex:0 0 auto;position:relative;z-index:2;}#editorView #form{padding-top:15px;}}
