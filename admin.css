@@ -9055,16 +9055,18 @@ body:not([data-view]) #mfaBox #mfaHeading{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  box-sizing:border-box;
   flex:0 0 auto;
   min-height:35px;
   height:35px;
   padding:0 12px;
   border:0;
-  border-radius:9px;
+  border-radius:10px;
   gap:5px;
   color:#FFFFFF;
   background:#1E90FF;
-  font:600 15px/1 Manrope,sans-serif;
+  font:600 13px/1 Manrope,sans-serif;
+  letter-spacing:-.1px;
   white-space:nowrap;
   box-shadow:none;
 }
