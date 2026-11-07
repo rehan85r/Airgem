@@ -9496,9 +9496,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 }
 
 /* Basic Editor Investors section: 15px bottom inset and 15px gap before Publish Changes. */
-#editorView #panel-basic {
+#editorView:has(#panel-basic:not([hidden])) #panel-basic {
   padding-bottom:15px;
 }
-#editorView #panel-basic + .editor-footer {
+#editorView:has(#panel-basic:not([hidden])) .editor-footer {
   margin-top:15px;
 }
