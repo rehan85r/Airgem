@@ -740,5 +740,49 @@
       $('guidePreviewClose').onclick = () => $('guidePreviewOverlay').close();
     }
   }
+  function initStatusDropdown() {
+    const select = $('activityStatus');
+    const wrap = select?.closest('.status-select-wrap');
+    const trigger = wrap?.querySelector('.status-select-trigger');
+    const menu = wrap?.querySelector('.status-select-menu');
+    if (!select || !wrap || !trigger || !menu || wrap.dataset.ready === 'true') return;
+    wrap.dataset.ready = 'true';
+    const sync = () => {
+      const option = select.options[select.selectedIndex];
+      trigger.querySelector('span').textContent = option?.textContent || 'Select Status...';
+      menu.querySelectorAll('[role="option"]').forEach((item) => {
+        const selected = item.dataset.value === select.value;
+        item.setAttribute('aria-selected', String(selected));
+        item.classList.toggle('is-selected', selected);
+      });
+    };
+    const close = () => {
+      menu.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    trigger.addEventListener('click', () => {
+      sync();
+      const open = menu.hidden;
+      menu.hidden = !open;
+      trigger.setAttribute('aria-expanded', String(open));
+    });
+    menu.addEventListener('click', (event) => {
+      const option = event.target.closest('[data-value]');
+      if (!option) return;
+      select.value = option.dataset.value;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      sync();
+      close();
+    });
+    document.addEventListener('click', (event) => {
+      if (!wrap.contains(event.target)) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+    select.addEventListener('change', sync);
+    sync();
+  }
+  initStatusDropdown();
   window.AirgemEditor = { ProjectEditor, cleanHTML, parseInvestors, safeURL, escape };
 })();
