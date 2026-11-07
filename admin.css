@@ -6013,3 +6013,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 /* Dashboard project cards open the Project Editor directly. */
 #trendingCurrent [data-edit-project],#allAirdropsList [data-edit-project]{cursor:pointer}
 #trendingCurrent [data-edit-project] .actions,#allAirdropsList [data-edit-project] .actions{cursor:default}
+
+
+/* Dashboard Add Project button — full width with 15px side spacing. */
+#projectsView .projects-add-action{width:100%;box-sizing:border-box;padding:0 15px;margin:15px 0 20px}
+#projectsView .projects-add-action #addProjectButton{display:flex;width:100%;min-height:44px;box-sizing:border-box;align-items:center;justify-content:center}
