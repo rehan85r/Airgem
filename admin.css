@@ -6065,4 +6065,4 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 #editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav:hover,#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav:focus,#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav:active{background:none;box-shadow:none}
 #editorView:has(#panel-basic:not([hidden])) #mobileEditorBack{margin-left:5px}
 #editorView:has(#panel-basic:not([hidden])) #mobileEditorClose{margin-right:5px}
-#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav svg{width:30px;height:30px}
+#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav svg{width:25px;height:25px}
