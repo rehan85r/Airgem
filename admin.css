@@ -6008,3 +6008,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 @media(max-width:767px){
   #editorView #panel-basic .basic-logo-name-row{gap:15px}
 }
+
+
+/* Dashboard project cards open the Project Editor directly. */
+#trendingCurrent [data-edit-project],#allAirdropsList [data-edit-project]{cursor:pointer}
+#trendingCurrent [data-edit-project] .actions,#allAirdropsList [data-edit-project] .actions{cursor:default}
