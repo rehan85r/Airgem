@@ -7691,17 +7691,17 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #panel-basic #agBasicAddInvestor svg{width:15px;height:15px}
 #editorView #panel-basic .investor-list{display:grid;gap:10px;margin-top:14px}
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item{
-  display:grid!important;grid-template-columns:30px minmax(0,1fr) 40px!important;grid-template-rows:auto!important;
+  display:grid!important;grid-template-columns:40px minmax(0,1fr) 40px!important;grid-template-rows:auto!important;
   align-items:center!important;column-gap:15px!important;row-gap:0!important;padding:15px 0 15px 15px!important;
   border:0!important;border-top:1px solid #E6EAF0!important;border-radius:0!important;background:transparent!important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap{
   display:flex!important;grid-column:1!important;grid-row:1!important;align-items:center!important;justify-content:flex-start!important;
-  width:30px!important;min-width:30px!important;height:30px!important;flex:0 0 30px!important;overflow:hidden!important;
+  width:40px!important;min-width:40px!important;height:40px!important;flex:0 0 40px!important;overflow:hidden!important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo{
   display:grid!important;place-items:center!important;box-sizing:border-box!important;
-  width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;
+  width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;
   overflow:hidden!important;border:0!important;border-radius:8px!important;outline:0!important;box-shadow:none!important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo img{
@@ -7728,7 +7728,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #editorView #panel-basic .basic-investors-title h2{font-size:16px}
   #editorView #panel-basic #agBasicSetInvestorsNA,
   #editorView #panel-basic #agBasicAddInvestor{min-height:40px;padding:0 12px;font-size:12px}
-  #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item{grid-template-columns:30px minmax(0,1fr) 40px!important;column-gap:15px!important;padding:15px 0!important}
+  #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item{grid-template-columns:40px minmax(0,1fr) 40px!important;column-gap:15px!important;padding:15px 0!important}
   #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>.ag-investor-fields input{width:100%!important;min-width:0!important;max-width:100%!important;min-height:40px!important;height:40px!important;max-height:40px!important;padding:8px 10px!important;font-size:12px!important}
 }
 
