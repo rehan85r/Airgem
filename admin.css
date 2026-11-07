@@ -6032,6 +6032,6 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 
 /* Basic / Details / Guide navigation header: fixed 50px shared height. */
 #editorView>.editor-tabs{height:50px;min-height:50px;box-sizing:border-box;align-items:center;padding-top:0;padding-bottom:0;}
-#editorView>.editor-tabs button{height:36px;min-height:36px;box-sizing:border-box;}
-@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;}#editorView>.editor-tabs button{height:36px;min-height:36px;padding:0 4px;}}
+#editorView>.editor-tabs button{height:35px;min-height:35px;box-sizing:border-box;border-radius:10px;}
+@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;}#editorView>.editor-tabs button{height:35px;min-height:35px;padding:0 4px;border-radius:10px;}}
 
