@@ -128,13 +128,13 @@
     const activeTab = ['basic', 'details', 'guide'].includes(tab) ? tab : (['links', 'investors'].includes(tab) ? 'details' : 'basic');
     const mobileTitle = $('mobileEditorSectionTitle');
     if (mobileTitle) mobileTitle.textContent = 'Project Editor';
-    $$$('[data-editor-tab]').forEach((button) => {
+    $('[data-editor-tab]').forEach((button) => {
       const active = button.dataset.editorTab === activeTab;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-selected', String(active));
       button.tabIndex = active ? 0 : -1;
     });
-    $$$('[data-editor-panel]').forEach((panel) => {
+    $('[data-editor-panel]').forEach((panel) => {
       const panelTab = panel.dataset.editorPanel;
       panel.hidden = activeTab === 'basic'
         ? panelTab !== 'basic'
