@@ -974,8 +974,7 @@ to{opacity:0;transform:translateY(24px)}
 @media(prefers-reduced-motion:reduce) {#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
 }
 @media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:10px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}/* Basic editor project logo size */
-#panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
+}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}
  #editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}
@@ -987,9 +986,7 @@ to{opacity:0;transform:translateY(24px)}
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}
  #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
-}/* Basic Editor logo preview: 30 x 30px. */
-#editorView #panel-basic .logo-preview{width:30px;height:30px;min-width:30px;min-height:30px}/* Basic Editor logo upload sizing */
-#editorView #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Icon-only Upload Logo control,including protection against stale label text. */
+}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Icon-only Upload Logo control,including protection against stale label text. */
 #editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Restore labeled Upload Logo button: 15px icon and 10px gap. */
 #editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}/* Basic Editor: keep the legacy clear-logo control hidden. */
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
@@ -2056,8 +2053,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 @keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
 @media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}/* Basic editor project logo size */
-#panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
+}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}
  #editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}
@@ -2069,9 +2065,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}
  #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
-}/* Basic Editor logo preview: 30 x 30px. */
-#editorView #panel-basic .logo-preview{width:30px;height:30px;min-width:30px;min-height:30px}/* Basic Editor logo upload sizing */
-#editorView #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}/* Icon-only Upload Logo control,including protection against stale label text. */
+}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}/* Icon-only Upload Logo control,including protection against stale label text. */
 #editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Restore labeled Upload Logo button: 15px icon and 10px gap. */
 #editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}/* Basic Editor: keep the legacy clear-logo control hidden. */
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
@@ -3133,8 +3127,7 @@ from{opacity:1;transform:translateY(0)}
 to{opacity:0;transform:translateY(24px)}
 }#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
 @media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}/* Basic editor project logo size */
-#panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
+}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}
  #editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}
@@ -3146,9 +3139,7 @@ to{opacity:0;transform:translateY(24px)}
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}
  #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
-}/* Basic Editor logo preview: 30 x 30px. */
-#editorView #panel-basic .logo-preview{width:30px;height:30px;min-width:30px;min-height:30px}/* Basic Editor logo upload sizing */
-#editorView #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Icon-only Upload Logo control,including protection against stale label text. */
+}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Icon-only Upload Logo control,including protection against stale label text. */
 #editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Restore labeled Upload Logo button: 15px icon and 10px gap. */
 #editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}/* Basic Editor: keep the legacy clear-logo control hidden. */
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
@@ -4211,8 +4202,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 @keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
 @media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}/* Basic editor project logo size */
-#panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
+}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}
  #editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}
@@ -4224,9 +4214,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 @media(max-width:767px){
  #editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}
  #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
-}/* Basic Editor logo preview: 30 x 30px. */
-#editorView #panel-basic .logo-preview{width:30px;height:30px;min-width:30px;min-height:30px}/* Basic Editor logo upload sizing */
-#editorView #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}/* Icon-only Upload Logo control,including protection against stale label text. */
+}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}/* Icon-only Upload Logo control,including protection against stale label text. */
 #editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Restore labeled Upload Logo button: 15px icon and 10px gap. */
 #editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}/* Basic Editor: keep the legacy clear-logo control hidden. */
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
@@ -4555,24 +4543,11 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   align-items: center !important;
   gap: 12px !important;
   margin: 0 0 16px !important;
-}#editorView #form .logo-upload .logo-preview,#editorView #form .shared-editor-logo-upload .logo-preview,#editorView #form .basic-logo-upload .logo-preview,#editorView #form #logoPreview,#editorView #form #detailsLogoPreview,#editorView #form #guideLogoPreview{
-  display: grid !important;
-  place-items: center !important;
-  flex: 0 0 50px !important;
-  width: 50px !important;
-  min-width: 50px !important;
-  max-width: 50px !important;
-  height: 50px !important;
-  min-height: 50px !important;
-  max-height: 50px !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  border: 1px solid #E6EAF0 !important;
-  border-radius: 11px !important;
-  background: #F8FAFC !important;
-  box-shadow: none !important;
+}#editorView #form .logo-upload .logo-preview,#editorView #form .shared-editor-logo-upload .logo-preview,#editorView #form .basic-logo-upload .logo-preview,#editorView #form #detailsLogoPreview,#editorView #form #guideLogoPreview{
+  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
+}
+#editorView #form #logoPreview{
+  display:grid!important;place-items:center!important;flex:0 0 30px!important;width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
 }#editorView #form .logo-upload .logo-preview img,#editorView #form #logoPreview img,#editorView #form #detailsLogoPreview img,#editorView #form #guideLogoPreview img{
   display: block !important;
   width: 100% !important;
@@ -5997,7 +5972,6 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 /* Basic Editor: place the project name field beside the logo in the top row. */
 #editorView #panel-basic .basic-logo-name-row{display:flex;align-items:center;gap:15px;width:100%;margin:0 0 16px}
 #editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;align-items:center;flex:0 0 30px;width:30px;margin:0}
-#editorView #panel-basic .basic-logo-name-row #logoPreview{flex:0 0 30px;width:30px;height:30px;min-width:30px;min-height:30px}
 #editorView #panel-basic .basic-logo-name-row .basic-name-field{flex:1 1 auto;min-width:0;margin:0}
 #editorView #panel-basic .basic-logo-name-row .basic-name-field label{display:block;margin:0 0 6px}
 #editorView #panel-basic .basic-logo-name-row .basic-name-field input{width:100%;min-width:0;box-sizing:border-box}
