@@ -6040,3 +6040,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 #editorView>.editor-tabs button:not([aria-selected="true"]):hover,
 #editorView>.editor-tabs button:not([aria-selected="true"]):focus,
 #editorView>.editor-tabs button:not([aria-selected="true"]):active{background:transparent!important;box-shadow:none!important;}
+
+/* Basic Editor: remove only the outer main card; retain all field/input boxes. */
+#editorView #panel-basic{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}
+@media(max-width:767px){#editorView #form>#panel-basic:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
