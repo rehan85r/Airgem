@@ -6029,3 +6029,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 /* Ensure Project Editor navigation remains visible on mobile and desktop. */
 #editorView .editor-tabs{display:flex!important;}
 @media(max-width:767px){#editorView>.editor-tabs{flex:0 0 auto;position:relative;z-index:5;justify-content:space-around;gap:0;margin:0;padding:8px 15px;background:#fff;border-bottom:1px solid #E2E8F0;}#editorView>.editor-tabs button{flex:1;min-height:44px;justify-content:center;padding:8px 4px;font-size:13px;}}
+
+/* Selected Project Editor tab: keep its label and icon legible on blue. */
+#editorView>.editor-tabs button[aria-selected="true"]{background:#1E90FF!important;color:#FFFFFF!important;border-bottom-color:#1E90FF!important;}
+#editorView>.editor-tabs button[aria-selected="true"] svg{color:#FFFFFF!important;stroke:#FFFFFF!important;}
