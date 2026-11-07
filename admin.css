@@ -4033,7 +4033,7 @@
   font-weight: 600 !important;
   letter-spacing: -.1px;
   color: #1B2E50 !important;
-}#editorView #form > .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView #form > .editor-panel select,#editorView #form > .editor-panel textarea{
+}#editorView #form > .editor-panel input:not(#name):not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView #form > .editor-panel select,#editorView #form > .editor-panel textarea{
   min-height: 48px !important;
   height: auto;
   padding: 10px 12px !important;
@@ -4075,7 +4075,7 @@
     border-radius: 13px !important;
   }#editorView #form > .editor-panel .field > label{
     font-size: 13px !important;
-  }#editorView #form > .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView #form > .editor-panel select{
+  }#editorView #form > .editor-panel input:not(#name):not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView #form > .editor-panel select{
     min-height: 48px !important;
     font-size: 14px !important;
   }#editorView .editor-footer{
@@ -4790,7 +4790,7 @@
   font-weight:600;
   line-height:1.4;
   letter-spacing:-.1px;
-}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{
+}#editorView .editor-panel input:not(#name):not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{
   color:#1B2E50;
   font-family:Manrope,Inter,sans-serif;
   font-size:14px;
@@ -4815,7 +4815,7 @@
   font-size:12px;
   font-weight:600;
   letter-spacing:0;
-}@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#editorView .editor-panel .field>label,#editorView .editor-panel label{font-size:13px}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{font-size:14px}
+}@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#editorView .editor-panel .field>label,#editorView .editor-panel label{font-size:13px}#editorView .editor-panel input:not(#name):not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{font-size:14px}
 }#dashboard,#dashboard button,#dashboard input,#dashboard select,#dashboard textarea,#dashboard [contenteditable="true"]{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }#editorView .editor-heading h1{
@@ -4858,7 +4858,7 @@
   line-height:1.4;
   letter-spacing:-.1px;
   color:#1B2E50;
-}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{
+}#editorView .editor-panel input:not(#name):not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{
   font-size:14px;
   font-weight:400;
   line-height:1.5;
@@ -5286,7 +5286,7 @@
 }#dashboard .app-footer,#editorView .editor-heading .editor-subtitle,#editorView .editor-heading .muted,#settingsView .passkey-card-status{font-family:Manrope,Inter,sans-serif;
   font-size:12px;
   font-weight:400;
-  line-height:1.5;}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{
+  line-height:1.5;}#editorView .editor-panel input:not(#name):not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{
   font-family:Manrope,Inter,sans-serif;
   font-size:14px;
   font-weight:400;
@@ -5486,4 +5486,4 @@
   height: 40px;
   min-height: 40px;
   max-height: 40px;
-}#editorView #panel-basic #logoPreview{cursor:pointer}#editorView #panel-basic #logoPreview:focus-visible{outline:2px solid #1E90FF;outline-offset:3px}#editorView #panel-basic .basic-logo-name-row{display:flex;align-items:flex-start;gap:15px;width:100%;box-sizing:border-box;padding:0;margin:0 0 16px}#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;align-items:center;flex:0 0 40px;width:40px;margin:0}#editorView #panel-basic .basic-logo-name-row .basic-name-field{flex:1 1 auto;min-width:0;margin:0}#editorView #panel-basic .basic-logo-name-row .basic-name-field label{display:block;margin:0 0 6px}#editorView #panel-basic #name{display:block;width:100%;min-width:0;height:35px;min-height:35px;box-sizing:border-box;border-radius:10px;padding:0;margin:0;}#editorView #form > #panel-basic{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}@media(max-width:767px){#editorView #form>#panel-basic:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
+}#editorView #panel-basic #logoPreview{cursor:pointer}#editorView #panel-basic #logoPreview:focus-visible{outline:2px solid #1E90FF;outline-offset:3px}#editorView #panel-basic .basic-logo-name-row{display:flex;align-items:flex-start;gap:15px;width:100%;box-sizing:border-box;padding:0;margin:0 0 16px}#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;align-items:center;flex:0 0 40px;width:40px;margin:0}#editorView #panel-basic .basic-logo-name-row .basic-name-field{flex:1 1 auto;min-width:0;margin:0}#editorView #panel-basic .basic-logo-name-row .basic-name-field label{display:block;margin:0 0 6px}#editorView #panel-basic #name{width:100%;height:35px;box-sizing:border-box;border-radius:10px;padding:0;margin:0;}#editorView #form > #panel-basic{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}@media(max-width:767px){#editorView #form>#panel-basic:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
