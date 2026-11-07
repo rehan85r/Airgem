@@ -5351,7 +5351,7 @@
   font-size:13px;
   font-weight:400;
   opacity:1;
-}#editorView #panel-basic .form-grid .field select option[value=""]{
+}#editorView #panel-basic #name::placeholder,#editorView #panel-basic #displayTag::placeholder,#editorView #panel-basic #basicLinks .link-url::placeholder{font-family:Manrope,sans-serif;font-size:12px;font-weight:400;line-height:1}#editorView #panel-basic .form-grid .field select option[value=""]{
   color:#64748B;
   font-weight:400;
 }#editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}@media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}}#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;flex:0 0 40px;width:40px;align-items:center;gap:10px;margin:0}
