@@ -38,22 +38,17 @@
   const clearLocation = () => {
     try { sessionStorage.removeItem(locationKey); } catch {}
   };
-  let currentPickerSection = 'dashboard';
   let restoringLocation = false;
   function restoreLocation() {
     const saved = readLocation();
     if (!saved || !state.dataLoaded) return;
-    restoringLocation = true;
-    try {
-      const section = ['basic', 'details', 'guide'].includes(saved.section) ? saved.section : 'dashboard';
-      if (section !== 'dashboard') {
-        document.querySelector('[data-project-section="' + section + '"]')?.click();
-      }
-      if (saved.editor && saved.projectId != null) {
+    if (saved.editor && saved.projectId != null) {
+      restoringLocation = true;
+      try {
         const project = state.projects.find(item => String(item.id) === String(saved.projectId));
-        if (project) editProject(project.id, section === 'dashboard' ? 'basic' : section);
-      }
-    } finally { restoringLocation = false; }
+        if (project) editProject(project.id, ['basic', 'details', 'guide'].includes(saved.section) ? saved.section : 'basic');
+      } finally { restoringLocation = false; }
+    }
   }
 
   const esc = (value) =>
@@ -153,16 +148,22 @@
   const trendingDirty = () =>
     JSON.stringify(state.trending.map(String)) !== JSON.stringify(state.savedTrending.map(String));
   function setEditorTab(tab) {
+    const activeTab = ['basic', 'details', 'guide'].includes(tab) ? tab : (['links', 'investors'].includes(tab) ? 'details' : 'basic');
     const mobileTitle = $('mobileEditorSectionTitle');
-    if (mobileTitle) mobileTitle.textContent = ({ basic: 'Basic Editor', details: 'Details Editor', links: 'Social Links', investors: 'Investors', guide: 'Guide Editor' })[tab] || 'Edit Project';
-    $$('[data-editor-tab]').forEach((button) => {
-      const active = button.dataset.editorTab === tab;
+    if (mobileTitle) mobileTitle.textContent = 'Project Editor';
+    $('[data-editor-tab]').forEach((button) => {
+      const active = button.dataset.editorTab === activeTab;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-selected', String(active));
       button.tabIndex = active ? 0 : -1;
     });
-    $$('[data-editor-panel]').forEach((panel) => {
-      panel.hidden = panel.dataset.editorPanel !== tab;
+    $('[data-editor-panel]').forEach((panel) => {
+      const panelTab = panel.dataset.editorPanel;
+      panel.hidden = activeTab === 'basic'
+        ? panelTab !== 'basic'
+        : activeTab === 'guide'
+          ? panelTab !== 'guide'
+          : !['details', 'links', 'investors'].includes(panelTab);
     });
   }
   function canLeaveView(nextView) {
@@ -182,7 +183,6 @@
     if (!skipGuard && !canLeaveView(view)) return false;
     if (state.view === 'editor') state.dirty = false;
     state.view = view;
-    if (!restoringLocation && view === 'projects') saveLocation({ section: currentPickerSection });
     document.body.dataset.adminView = view;
     for (const id of [
       'projectsView',
@@ -215,7 +215,7 @@
       return;
     }
     state.selected = project.id;
-    if (!restoringLocation) saveLocation({ section: tab, editor: true, projectId: String(project.id) });
+    if (!restoringLocation) saveLocation({ section: ['basic','details','guide'].includes(tab) ? tab : 'basic', editor: true, projectId: String(project.id) });
     state.isNew = false;
     state.dirty = false;
     editor.load(project);
@@ -480,7 +480,7 @@
     $('publishAllAirdrops').disabled = state.uploads > 0 || (state.busy && activePublishAction === 'all');
     $('allAirdropsList').innerHTML = matches.map((project) => {
       const staged = state.pendingProjectDeletes.some((id) => String(id) === String(project.id));
-      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}" data-all-airdrop-row="${esc(String(project.id))}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong>${staged ? '<small>Pending Deletion · Not Published</small>' : ''}</span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
+      return `<div class="trending-item${staged ? ' is-pending-delete' : ''}" data-all-airdrop-row="${esc(String(project.id))}" data-edit-project="${esc(String(project.id))}" role="button" tabindex="0">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong>${staged ? '<small>Pending Deletion · Not Published</small>' : ''}</span><div class="actions"><button type="button" class="icon-button" data-stage-delete="${esc(String(project.id))}" aria-label="${staged ? 'Undo deletion of' : 'Mark for deletion'} ${esc(project.name)}" title="${staged ? 'Undo Delete' : 'Delete Project'}">${icon(staged ? 'undo-2' : 'trash-2')}</button></div></div>`;
     }).join('') || '<div class="trending-empty">No matching projects.</div>';
     icons();
   }
@@ -558,7 +558,7 @@
       state.trending
         .map((id, index) => {
           const project = state.projects.find((item) => String(item.id) === String(id));
-          return `<div class="trending-item" data-top-row="${index}">${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong>${!project ? '<small>Remove this unavailable record</small>' : ''}</span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from Top Airdrops" title="Remove from Top">${icon('trash-2')}</button><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button></div></div>`;
+          return `<div class="trending-item" data-top-row="${index}" ${project ? `data-edit-project="${esc(String(project.id))}" role="button" tabindex="0"` : ''}>${project ? avatar(project) : ''}<span class="trending-item-copy"><strong>${esc(project?.name || 'Unavailable project')}</strong>${!project ? '<small>Remove this unavailable record</small>' : ''}</span><div class="actions"><button type="button" class="icon-button danger" data-top-remove="${index}" aria-label="Remove ${esc(project?.name || 'project')} from Top Airdrops" title="Remove from Top">${icon('trash-2')}</button><button type="button" class="top-drag-handle" data-top-drag="${index}" aria-label="Drag to reorder ${esc(project?.name || 'project')}" title="Drag to reorder" ${state.busy ? 'disabled' : ''}>${icon('grip-vertical')}</button></div></div>`;
         })
         .join('') ||
       '<div class="empty-state"><h3>No Top Airdrops Selected</h3><p>Search Above To Choose Up To 10 Projects.</p></div>';
@@ -921,7 +921,7 @@
         return;
       }
       const edit = event.target.closest('[data-edit-project]');
-      if (edit) {
+      if (edit && !event.target.closest('[data-stage-delete], [data-top-remove], [data-top-drag]')) {
         event.preventDefault();
         editProject(edit.dataset.editProject, edit.dataset.editorSection || 'basic');
         return;
@@ -1030,48 +1030,6 @@
     };
     list.addEventListener('pointerup', finishDrag);
     list.addEventListener('pointercancel', finishDrag);
-    let projectPickerTab = 'basic';
-    const picker = $('adminProjectPicker');
-    const pickerList = $('adminProjectPickerList');
-    const renderProjectPicker = () => {
-      $('adminProjectPickerSearchClear').hidden = !$('adminProjectPickerSearch').value.length;
-      const query = $('adminProjectPickerSearch').value.trim().toLowerCase();
-      const projects = state.projects.filter((project) => (project.name || '').toLowerCase().includes(query));
-      pickerList.innerHTML = projects.map((project) =>
-        `<button type="button" class="admin-project-picker-item trending-item" data-edit-project="${esc(String(project.id))}" data-editor-section="${projectPickerTab}">${avatar(project)}<span class="trending-item-copy"><strong>${esc(project.name)}</strong></span>${icon('chevron-right')}</button>`
-      ).join('') || '<p class="trending-empty">No matching projects.</p>';
-      icons();
-    };
-    document.querySelectorAll('[data-project-section]').forEach((button, index) => {
-      button.addEventListener('click', () => {
-        projectPickerTab = button.dataset.projectSection;
-        currentPickerSection = projectPickerTab === 'basic' || projectPickerTab === 'details' || projectPickerTab === 'guide' ? projectPickerTab : 'dashboard';
-        if (!restoringLocation) saveLocation({ section: currentPickerSection });
-        $('adminProjectPickerTitle').textContent = ['All Projects', 'Basic', 'Details', 'Guide'][index];
-        const pickerIcon = picker.querySelector('.top-airdrops-heading h2 svg, .top-airdrops-heading h2 i');
-        if (pickerIcon) {
-          const iconName = { basic: 'info', details: 'list-checks', guide: 'book-open' }[projectPickerTab] || 'layers';
-          pickerIcon.outerHTML = '<i data-lucide="' + iconName + '" aria-hidden="true"></i>';
-          icons();
-        }
-        document.querySelectorAll('[data-project-section]').forEach((item) => item.classList.toggle('active', item === button));
-        const allProjects = index === 0;
-        $('trendingManager').hidden = !allProjects;
-        $('allAirdropsManager').hidden = !allProjects;
-        picker.hidden = allProjects;
-        if (!allProjects) {
-          $('adminProjectPickerSearch').value = '';
-          renderProjectPicker();
-        }
-      });
-    });
-    document.querySelector('[data-project-section]').classList.add('active');
-    $('adminProjectPickerSearch').addEventListener('input', renderProjectPicker);
-    if ($('adminProjectPickerSearchClear')) $('adminProjectPickerSearchClear').onclick = () => {
-      $('adminProjectPickerSearch').value = '';
-      renderProjectPicker();
-      $('adminProjectPickerSearch').focus();
-    };
     $('allAirdropsSearch').addEventListener('input', renderAllAirdrops);
     $('allAirdropsSearchResults').addEventListener('click', (event) => {
       const result = event.target.closest('[data-all-airdrop-result]');
@@ -1092,7 +1050,6 @@
       const finish = () => {
         page.classList.remove('airgem-editor-exit', 'airgem-editor-enter');
         navigate('projects', { skipGuard: true });
-        if (currentPickerSection !== 'dashboard') document.querySelector('[data-project-section="' + currentPickerSection + '"]')?.click();
       };
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         finish();
@@ -1179,10 +1136,17 @@
       }
     };
     document.addEventListener('keydown', (event) => {
+      const projectRow = event.target.closest('#trendingCurrent [data-edit-project], #allAirdropsList [data-edit-project]');
+      if (projectRow && (event.key === 'Enter' || event.key === ' ')) {
+        if (event.target.closest('[data-stage-delete], [data-top-remove], [data-top-drag]')) return;
+        event.preventDefault();
+        editProject(projectRow.dataset.editProject, 'basic');
+        return;
+      }
       const tab = event.target.closest('[data-editor-tab]');
       if (tab && ['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
         event.preventDefault();
-        const tabs = $$('[data-editor-tab]'),
+        const tabs = $('[data-editor-tab]'),
           current = tabs.indexOf(tab);
         const index =
           event.key === 'Home'
@@ -1205,7 +1169,7 @@
       'invalid',
       (event) => {
         const panel = event.target.closest('[data-editor-panel]');
-        if (panel) setEditorTab(panel.dataset.editorPanel);
+        if (panel) setEditorTab(['links','investors'].includes(panel.dataset.editorPanel) ? 'details' : panel.dataset.editorPanel);
       },
       true,
     );
