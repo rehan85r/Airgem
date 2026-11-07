@@ -219,7 +219,7 @@
     state.isNew = false;
     state.dirty = false;
     editor.load(project);
-    $('title').textContent = `Edit ${project.name}`;
+    $('title').textContent = 'Project Editor';
     $('previewProject').hidden = false;
     $('previewProject').href = `project.html?id=${encodeURIComponent(project.id)}`;
     // Keep the selected editor visible even if a previous view left stale hidden states.
@@ -906,7 +906,7 @@
           guide: [],
         };
         editor.load(draft);
-        $('title').textContent = 'Add Project';
+        $('title').textContent = 'Project Editor';
         $('previewProject').hidden = true;
         if (!navigate('editor', { skipGuard: true })) return;
         const editorPage = $('editorView');
