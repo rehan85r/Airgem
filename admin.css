@@ -9494,3 +9494,11 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
 #projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{
   font-weight:500!important;
 }
+
+/* Basic Editor Investors section: 15px bottom inset and 15px gap before Publish Changes. */
+#editorView #panel-basic {
+  padding-bottom:15px;
+}
+#editorView #panel-basic + .editor-footer {
+  margin-top:15px;
+}
