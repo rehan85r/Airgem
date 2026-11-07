@@ -230,11 +230,20 @@
                     <input id="name" aria-label="Name" required maxlength="200" placeholder="Write Name..." />
                   </div>
                   <div class="field basic-status-field">
-                    <select id="activityStatus" aria-label="Status">
-                      <option value="" disabled selected>Select Status...</option>
-                      <option value="Active">Active</option>
-                      <option value="Ended">Ended</option>
-                    </select>
+                    <div class="status-select-wrap">
+                      <select id="activityStatus" aria-label="Status">
+                        <option value="" disabled selected>Select Status...</option>
+                        <option value="Active">Active</option>
+                        <option value="Ended">Ended</option>
+                      </select>
+                      <button class="status-select-trigger" type="button" aria-label="Select Status" aria-haspopup="listbox" aria-expanded="false">
+                        <span>Select Status...</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+                      </button>
+                      <div class="status-select-menu" role="listbox" aria-label="Status options" hidden>
+                        <button type="button" role="option" data-value="Active">Active</button>
+                        <button type="button" role="option" data-value="Ended">Ended</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <input id="logoUrl" type="hidden" /><input
