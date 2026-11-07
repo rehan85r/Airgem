@@ -972,9 +972,8 @@ from{opacity:1;transform:translateY(0)}
 to{opacity:0;transform:translateY(24px)}
 }#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
 @media(prefers-reduced-motion:reduce) {#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
-}/* Airgem mobile-first full-screen project editor. */
-.mobile-editor-toolbar{display:flex;flex:0 0 50px;align-items:center;justify-content:space-between;padding:0 15px;gap:12px;background:#fff;border-bottom:1px solid #E2E8F0}#editorView .mobile-editor-toolbar strong{font:700 17px/1.3 Manrope,sans-serif;color:#1B2E50;text-align:center;min-width:0}
-@media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView .mobile-editor-toolbar{display:flex;flex:0 0 60px;align-items:center;justify-content:space-between;padding:0 15px;gap:12px;background:#fff;border-bottom:1px solid #E2E8F0}#editorView .mobile-editor-toolbar strong{font:700 17px/1.3 Manrope,sans-serif;color:#1B2E50;text-align:center;min-width:0}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
+}
+@media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
 }/* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
@@ -2071,9 +2070,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}
 @media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}/* Lightweight full-page slide-up entrance for Basic,Details and Guide editors. */
 @keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}/* Airgem mobile-first full-screen project editor. */
-.mobile-editor-toolbar{display:none}
-@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView .mobile-editor-toolbar{display:flex;flex:0 0 60px;align-items:center;justify-content:space-between;padding:0 15px;gap:12px;background:#fff;border-bottom:1px solid #E2E8F0}#editorView .mobile-editor-toolbar strong{font:700 17px/1.3 Manrope,sans-serif;color:#1B2E50;text-align:center;min-width:0}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
+@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
+@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
 }/* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
@@ -3165,9 +3163,8 @@ to {
 @keyframes airgem-editor-slide-down {
 from{opacity:1;transform:translateY(0)}
 to{opacity:0;transform:translateY(24px)}
-}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}/* Airgem mobile-first full-screen project editor. */
-.mobile-editor-toolbar{display:none}
-@media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView .mobile-editor-toolbar{display:flex;flex:0 0 60px;align-items:center;justify-content:space-between;padding:0 15px;gap:12px;background:#fff;border-bottom:1px solid #E2E8F0}#editorView .mobile-editor-toolbar strong{font:700 17px/1.3 Manrope,sans-serif;color:#1B2E50;text-align:center;min-width:0}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
+}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
+@media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
 }/* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
@@ -4260,9 +4257,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}
 @media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}/* Lightweight full-page slide-up entrance for Basic,Details and Guide editors. */
 @keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}/* Airgem mobile-first full-screen project editor. */
-.mobile-editor-toolbar{display:none}
-@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView .mobile-editor-toolbar{display:flex;flex:0 0 60px;align-items:center;justify-content:space-between;padding:0 15px;gap:12px;background:#fff;border-bottom:1px solid #E2E8F0}#editorView .mobile-editor-toolbar strong{font:700 17px/1.3 Manrope,sans-serif;color:#1B2E50;text-align:center;min-width:0}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
+@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
+@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
 }/* Basic editor project logo size */
 #panel-basic .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
 @media(max-width:767px){
@@ -4742,9 +4738,6 @@ body:not([data-view]){
   }body:not([data-view]) .collection-card{
     padding: 14px;
     border-radius: 12px;
-  }body:not([data-view]) .mobile-editor-toolbar{
-    background: #fff;
-    border-bottom-color: var(--airgem-border);
   }body:not([data-view]) .editor-footer{
     border-radius: 12px 12px 0 0;
     box-shadow: 0 -3px 16px rgba(27,46,80,.05);
@@ -5346,7 +5339,7 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
 }/* One typography scale across Dashboard,Basic,Details and Guide */
 #projectsView,#editorView,#projectsView *,#editorView *{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}#editorView .mobile-editor-toolbar strong,#editorView .editor-heading h1{
+}#editorView .editor-heading h1{
   color:#1B2E50;
   font-size:22px;
   font-weight:750;
@@ -5398,18 +5391,10 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   font-weight:600;
   letter-spacing:0;
 }
-@media(max-width:767px){#editorView .mobile-editor-toolbar strong{font-size:18px}#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#editorView .editor-panel .field>label,#editorView .editor-panel label{font-size:13px}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{font-size:14px}
+@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#editorView .editor-panel .field>label,#editorView .editor-panel label{font-size:13px}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{font-size:14px}
 }/* Airgem Admin complete typography contract — every authenticated panel surface */
 #dashboard,#dashboard button,#dashboard input,#dashboard select,#dashboard textarea,#dashboard [contenteditable="true"]{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}/* New project editor uses the exact same editor type scale as Basic / Details / Guide */
-#editorView .mobile-editor-toolbar strong{
-  font-family:Manrope,Inter,sans-serif;
-  font-size:18px;
-  font-weight:750;
-  line-height:1.25;
-  letter-spacing:-.4px;
-  color:#1B2E50;
 }#editorView .editor-heading h1{
   font-family:Manrope,Inter,sans-serif;
   font-size:22px;
@@ -5483,7 +5468,7 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
 }#dashboard .admin-menu-sheet{
   font-family:Manrope,Inter,sans-serif;
 }
-@media(max-width:767px){#editorView .mobile-editor-toolbar strong{font-size:18px}#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#dashboard .admin-menu-action{font-size:14px}#dashboard .admin-menu-logout{font-size:13px}
+@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#dashboard .admin-menu-action{font-size:14px}#dashboard .admin-menu-logout{font-size:13px}
 }/* Final mobile dashboard balance — compact premium sizing */
 @media(max-width:767px){
   #projectsView .top-airdrops-section{margin-top:0!important}
@@ -5917,7 +5902,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   font-size:14px;
   font-weight:400;
   line-height:1.4;
-}#editorView .editor-tabs button{font-size:13px}#editorView .mobile-editor-toolbar strong{font-size:18px;font-weight:700;line-height:1.25}/* One shared 15px bottom inset for Top Airdrops,All Airdrops and Basic/Details/Guide project picker cards on every viewport. */
+}#editorView .editor-tabs button{font-size:13px}/* One shared 15px bottom inset for Top Airdrops,All Airdrops and Basic/Details/Guide project picker cards on every viewport. */
 #projectsView .top-airdrops-section > .collection-card{
   padding-bottom:15px !important;
 }/* Exact 20px gap above and below the copyright footer on Dashboard and project editor views. */
@@ -6058,11 +6043,15 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   min-height: 40px;
   max-height: 40px;
 }
-
-/* Basic Editor header — single responsive source of truth. */
-#editorView:has(#panel-basic:not([hidden])) .mobile-editor-toolbar{display:flex;flex:0 0 50px;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#fff;border-bottom:1px solid #E2E8F0}
-#editorView:has(#panel-basic:not([hidden])) .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,Inter,sans-serif;font-size:20px;font-weight:600;line-height:1;letter-spacing:-.3px;color:#1B2E50}
-#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav:hover,#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav:focus,#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav:active{background:none;box-shadow:none}
 #editorView:has(#panel-basic:not([hidden])) #mobileEditorBack{margin-left:10px}
 #editorView:has(#panel-basic:not([hidden])) #mobileEditorClose{margin-right:15px}
-#editorView:has(#panel-basic:not([hidden])) .mobile-editor-nav svg{width:25px;height:25px}
+
+
+/* Shared editor header — single source of truth for Basic, Details and Guide. */
+#editorView .mobile-editor-toolbar{display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#fff;border-bottom:1px solid #E2E8F0}
+#editorView .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,Inter,sans-serif;font-size:20px;font-weight:600;line-height:1;letter-spacing:-.3px;color:#1B2E50}
+#editorView .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}
+#editorView .mobile-editor-nav:hover,#editorView .mobile-editor-nav:focus,#editorView .mobile-editor-nav:active{background:none;box-shadow:none}
+#editorView #mobileEditorBack{margin-left:10px}
+#editorView #mobileEditorClose{margin-right:15px}
+#editorView .mobile-editor-nav svg{width:25px;height:25px}
