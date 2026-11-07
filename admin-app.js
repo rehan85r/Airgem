@@ -28,29 +28,6 @@
     turnstileWidget = null,
     turnstileToken = '';
   const siteKey = String(window.AIRGEM_TURNSTILE_SITE_KEY || '').trim();
-  const locationKey = 'airgem-admin-location-v1';
-  const saveLocation = (location) => {
-    try { sessionStorage.setItem(locationKey, JSON.stringify(location)); } catch {}
-  };
-  const readLocation = () => {
-    try { return JSON.parse(sessionStorage.getItem(locationKey) || 'null'); } catch { return null; }
-  };
-  const clearLocation = () => {
-    try { sessionStorage.removeItem(locationKey); } catch {}
-  };
-  let restoringLocation = false;
-  function restoreLocation() {
-    const saved = readLocation();
-    if (!saved || !state.dataLoaded) return;
-    if (saved.editor && saved.projectId != null) {
-      restoringLocation = true;
-      try {
-        const project = state.projects.find(item => String(item.id) === String(saved.projectId));
-        if (project) editProject(project.id, ['basic', 'details', 'guide'].includes(saved.section) ? saved.section : 'basic');
-      } finally { restoringLocation = false; }
-    }
-  }
-
   const esc = (value) =>
     String(value ?? '').replace(
       /[&<>"']/g,
@@ -215,7 +192,6 @@
       return;
     }
     state.selected = project.id;
-    if (!restoringLocation) saveLocation({ section: ['basic','details','guide'].includes(tab) ? tab : 'basic', editor: true, projectId: String(project.id) });
     state.isNew = false;
     state.dirty = false;
     editor.load(project);
@@ -739,9 +715,7 @@
         $('mfaStatus').textContent = verified.length
           ? 'Two-factor authentication is enabled.'
           : 'Add an authenticator app for another layer of security.';
-      restoringLocation = true;
       navigate('projects', { skipGuard: true });
-      restoringLocation = false;
       // Projects and Top Airdrops use independent tables, so fetch them in parallel.
       const [projectsResult, trendingResult] = await Promise.allSettled([
         refreshProjects(),
@@ -755,13 +729,6 @@
           $('dataError').hidden = false;
           $('dataError').textContent =
             `Projects could not load. ${error.message} Reload to try again.`;
-        }
-      }
-      if (state.dataLoaded) {
-        try { restoreLocation(); }
-        catch (error) {
-          console.error('Airgem editor restoration failed:', error);
-          message('Unable to restore the previous editor. Please select the project again.', true);
         }
       }
       if (trendingResult.status === 'rejected') {
@@ -784,7 +751,6 @@
       message(`Unable to sign out: ${error.message}`, true);
       return;
     }
-    clearLocation();
     state.dirty = false;
     state.projects = [];
     state.dataLoaded = false;
@@ -1523,7 +1489,6 @@
     dropyClient.auth.onAuthStateChange?.((event) => {
       // Revoke the visible workspace immediately if the SDK signs the user out.
       if (event === 'SIGNED_OUT') {
-        clearLocation();
         state.dirty = false;
         showAuth('login');
       }
