@@ -230,8 +230,7 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-}/* ===== Admin header: single source of truth (exactly 60px) ===== */
-.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:0;box-sizing:border-box;height:60px;min-height:60px;max-height:60px;padding:0 12.5px 0 12.5px;background:#F8FAFC;border-bottom:1px solid var(--airgem-border,#E2E8F0);box-shadow:none}.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;order:0;text-decoration:none;color:var(--airgem-navy,#1B2E50);font-weight:750;letter-spacing:-.45px}main{
+}.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:0;box-sizing:border-box;height:60px;min-height:60px;max-height:60px;padding:0 12.5px 0 12.5px;background:#F8FAFC;border-bottom:1px solid var(--airgem-border,#E2E8F0);box-shadow:none}.topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;order:0;text-decoration:none;color:var(--airgem-navy,#1B2E50);font-weight:750;letter-spacing:-.45px}main{
   flex: 1;
   width: 100%;
   padding: 20px 24px 24px;
@@ -323,9 +322,7 @@
   border-radius: 9px;
   font-size: 12px;
   line-height: 1.7;
-}
-@keyframes spin {
-to {
+}@keyframes spin{to{
     transform: rotate(360deg);
   }
 }.section-view{
@@ -786,20 +783,17 @@ to {
   margin-bottom: 4px;
 }dialog .guide-editor{
   min-height: 120px;
-}
-@media (max-width: 1350px) {:root{
+}@media (max-width: 1350px){:root{
     --sidebar-width: 205px;
   }
-}
-@media (max-width: 1150px) {.library-grid{
+}@media (max-width: 1150px){.library-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }.media-grid{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }.task-fields{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-@media (max-width: 850px) {:root{
+}@media (max-width: 850px){:root{
     --sidebar-width: 182px;
   }main{
     padding: 24px 20px;
@@ -816,8 +810,7 @@ to {
     max-width: 155px;
     line-height: 1.6;
   }
-}
-@media (max-width: 640px) {:root{
+}@media (max-width: 640px){:root{
     --sidebar-width: 0px;
   }h1{
     font-size: 27px;
@@ -932,68 +925,34 @@ to {
   }.auth-card{
     padding: 26px 22px;
   }
-}
-@media (prefers-reduced-motion: reduce) {*,*::before,*::after{
+}@media (prefers-reduced-motion: reduce){*,*::before,*::after{
     animation: none;
     transition: none;
     scroll-behavior: auto;
   }
-}main{padding-top:15px}/* All Airdrops shares the Top Airdrops card and row layout. */
-#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}#projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-@media(max-width:600px) {#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}
-}/* Compact embedded Top Airdrops manager */
-#projectsView .top-airdrops-section{width:100%;margin-top:5px}#projectsView .collection-card{max-width:none;width:100%;}#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}#projectsView .trending-search{gap:10px}#projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}#projectsView .trending-search-input-wrap{position:relative}#projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}#projectsView #trendingSelect::placeholder,#projectsView #allAirdropsSearch::placeholder,#projectsView #adminProjectPickerSearch::placeholder{
+}main{padding-top:15px}#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}#projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}@media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}
+}#projectsView .top-airdrops-section{width:100%;margin-top:5px}#projectsView .collection-card{max-width:none;width:100%;}#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}#projectsView .trending-search{gap:10px}#projectsView .trending-search label{font-size:12px;font-weight:500;letter-spacing:-0.5px;color:#1B2E50;margin-left:5px;padding-left:0}#projectsView .trending-search-input-wrap{position:relative}#projectsView #allAirdropsSearch::-webkit-search-cancel-button,#projectsView #allAirdropsSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#projectsView #allAirdropsSearch{appearance:none;-webkit-appearance:none}#projectsView #trendingSelect::placeholder,#projectsView #allAirdropsSearch::placeholder,#projectsView #adminProjectPickerSearch::placeholder{
   font:500 13px/1 Manrope,sans-serif;
   letter-spacing:0;
   color:#94A3B8;
   opacity:1;
-}#projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}#projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}#projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}#projectsView .trending-search-clear[hidden]{display:none}#projectsView .trending-search-clear svg{display:block;width:20px;height:20px;stroke-width:2;flex-shrink:0}#projectsView #trendingManager .trending-search-clear{display:flex;align-items:center;justify-content:center;line-height:0;box-sizing:border-box}
-
-
-@media(max-width:600px) {#projectsView .collection-card{}#projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}#projectsView .trending-item .icon-button:disabled{opacity:.8}
-}/* Compact selected projects: scroll within the card instead of growing the page */
-#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}#projectsView .trending-list::-webkit-scrollbar{display:none}#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:15px}#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}/* Picker row geometry is defined by the shared project-row rule below. */
-#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}/* Subtle divider 20px below the Top Airdrops heading */
-#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}/* Compact header publishing action in place of the selection count */
-/* Top Airdrops project search selection count */
-#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}#projectsView .trending-search-label-row label{margin:0;padding:0}#projectsView .trending-selection-count{font:400 12px Manrope,sans-serif;color:#64748B;white-space:nowrap}/* Publish feedback directly below the Top Airdrops action */
-#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}#projectsView .trending-publish-message:empty{display:none}#projectsView .trending-publish-message.is-success{color:#15803D}#projectsView .trending-publish-message.is-error{color:#DC2626}/* Replace project count with publish result in the same label row */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}#projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}/* Reference-style icon and message beside Select Project */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}/* Match publish feedback typography to Select Project label */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}/* Balanced inset for Select Project and selection count */
-#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}#projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}#projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}#projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}#projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}#projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}#projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count,#projectsView #allAirdropsManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;color:#94A3B8;pointer-events:none;z-index:1}#projectsView #trendingManager .trending-search input,#projectsView #allAirdropsManager .trending-search input{padding-right:100px}#projectsView #trendingManager .trending-search-clear{right:10px}#projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}/* Picker row geometry is defined by the shared project-row rule below. */
-/* Lightweight full-page slide-up entrance for Basic,Details and Guide editors. */
-@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes airgem-editor-slide-down {
-from{opacity:1;transform:translateY(0)}
-to{opacity:0;transform:translateY(24px)}
-}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(prefers-reduced-motion:reduce) {#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
-}
-@media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:10px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Single source of truth for the mobile editor layout. */
-@media (max-width: 767px){
-  html:has(body[data-admin-view="editor"]),
-  body[data-admin-view="editor"] {
+}#projectsView .trending-search-input-wrap>.trending-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#64748B;pointer-events:none;z-index:1}#projectsView .trending-search input:focus,#projectsView .trending-search input:focus-visible{outline:none;outline-offset:0;box-shadow:none;border-color:#E2E8F0}#projectsView .trending-search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:grid;place-items:center;border:0;background:transparent;color:#1B2E50;cursor:pointer;padding:0}#projectsView .trending-search-clear[hidden]{display:none}#projectsView .trending-search-clear svg{display:block;width:20px;height:20px;stroke-width:2;flex-shrink:0}#projectsView #trendingManager .trending-search-clear{display:flex;align-items:center;justify-content:center;line-height:0;box-sizing:border-box}@media(max-width:600px){#projectsView .collection-card{}#projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}#projectsView .trending-item .icon-button:disabled{opacity:.8}
+}#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}#projectsView .trending-list::-webkit-scrollbar{display:none}#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:15px}#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}#projectsView .trending-search-label-row label{margin:0;padding:0}#projectsView .trending-selection-count{font:400 12px Manrope,sans-serif;color:#64748B;white-space:nowrap}#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}#projectsView .trending-publish-message:empty{display:none}#projectsView .trending-publish-message.is-success{color:#15803D}#projectsView .trending-publish-message.is-error{color:#DC2626}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}#projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}#projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}#projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}#projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}#projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}#projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}#projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}#projectsView #trendingManager .trending-search-input-wrap .trending-selection-count,#projectsView #allAirdropsManager .trending-search-input-wrap .trending-selection-count{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-family:Manrope,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;color:#94A3B8;pointer-events:none;z-index:1}#projectsView #trendingManager .trending-search input,#projectsView #allAirdropsManager .trending-search input{padding-right:100px}#projectsView #trendingManager .trending-search-clear{right:10px}#projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}
+}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}@media(prefers-reduced-motion:reduce){#editorView.airgem-editor-enter,#editorView.airgem-editor-exit{animation:none}
+}@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:10px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
+}@media (max-width: 767px){html:has(body[data-admin-view="editor"]),body[data-admin-view="editor"]{
     height: 100%;
     overflow: hidden;
-  }
-
-  body[data-admin-view="editor"] .topbar {
+  }body[data-admin-view="editor"] .topbar{
     display: none;
-  }
-
-  body[data-admin-view="editor"] .app-shell,
-  body[data-admin-view="editor"] #mainContent {
+  }body[data-admin-view="editor"] .app-shell,body[data-admin-view="editor"] #mainContent{
     height: 100%;
     min-height: 0;
     overflow: hidden;
     padding: 0;
     margin: 0;
     max-width: none;
-  }
-
-  body[data-admin-view="editor"] #editorView:not([hidden]) {
+  }body[data-admin-view="editor"] #editorView:not([hidden]){
     position: fixed;
     inset: 0;
     z-index: 1000;
@@ -1008,11 +967,7 @@ to{opacity:0;transform:translateY(24px)}
     padding: 0;
     box-sizing: border-box;
     background: #F8FAFC;
-  }
-
-  
-
-  body[data-admin-view="editor"] #editorView #form {
+  }body[data-admin-view="editor"] #editorView #form{
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -1025,19 +980,13 @@ to{opacity:0;transform:translateY(24px)}
     padding: 15px 15px 100px;
     margin: 0;
     box-sizing: border-box;
-  }
-
-  body[data-admin-view="editor"] #editorView #form > .editor-panel:not([hidden]) {
+  }body[data-admin-view="editor"] #editorView #form > .editor-panel:not([hidden]){
     flex: 0 0 auto;
     min-height: 0;
     margin: 0 0 15px;
-  }
-
-  body[data-admin-view="editor"] #editorView #form > .editor-panel[hidden] {
+  }body[data-admin-view="editor"] #editorView #form > .editor-panel[hidden]{
     display: none !important;
-  }
-
-  body[data-admin-view="editor"] #editorView .editor-footer {
+  }body[data-admin-view="editor"] #editorView .editor-footer{
     position: fixed;
     left: 0;
     right: 0;
@@ -1344,10 +1293,7 @@ to{opacity:0;transform:translateY(24px)}
   border-radius: 9px;
   font-size: 12px;
   line-height: 1.7;
-}
-
-@keyframes spin {
-  to {
+}@keyframes spin{to{
     transform: rotate(360deg);
   }
 }.section-view{
@@ -1794,23 +1740,20 @@ to{opacity:0;transform:translateY(24px)}
   margin-bottom: 4px;
 }dialog .guide-editor{
   min-height: 120px;
-}
-@media (max-width: 1350px) {:root{
+}@media (max-width: 1350px){:root{
     --sidebar-width: 205px;
   }
   
   
   
-}
-@media (max-width: 1150px) {.library-grid{
+}@media (max-width: 1150px){.library-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }.media-grid{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }.task-fields{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-@media (max-width: 850px) {:root{
+}@media (max-width: 850px){:root{
     --sidebar-width: 182px;
   }main{
     padding: 24px 20px;
@@ -1827,8 +1770,7 @@ to{opacity:0;transform:translateY(24px)}
     max-width: 155px;
     line-height: 1.6;
   }
-}
-@media (max-width: 640px) {:root{
+}@media (max-width: 640px){:root{
     --sidebar-width: 0px;
   }h1{
     font-size: 27px;
@@ -1943,47 +1885,13 @@ to{opacity:0;transform:translateY(24px)}
   }.auth-card{
     padding: 26px 22px;
   }
-}
-@media (prefers-reduced-motion: reduce) {*,*::before,*::after{
+}@media (prefers-reduced-motion: reduce){*,*::before,*::after{
     animation: none;
     transition: none;
     scroll-behavior: auto;
   }
-}main{padding-top:15px}/* All Airdrops shares the Top Airdrops card and row layout. */
-#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}/* Compact embedded Top Airdrops manager */
-#projectsView .top-airdrops-section{width:100%;margin-top:5px}/* Compact selected projects: scroll within the card instead of growing the page */
-#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}/* Editor project picker uses the same compact card geometry as All Airdrops. */
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width:650px){}/* Subtle divider 20px below the Top Airdrops heading */
-#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}/* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}/* Compact header publishing action in place of the selection count */
-
-/* Top Airdrops project search selection count */
-#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}/* Publish feedback directly below the Top Airdrops action */
-#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}/* Replace project count with publish result in the same label row */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}/* Reference-style icon and message beside Select Project */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}/* Match publish feedback typography to Select Project label */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}/* Balanced inset for Select Project and selection count */
-#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}/* Center project names vertically against their logos in Basic,Details and Guide. */
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}/* Lightweight full-page slide-up entrance for Basic,Details and Guide editors. */
-@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Single source of truth for the mobile editor layout. */
-@media (max-width: 767px){
-  html:has(body[data-admin-view="editor"]),
-  body[data-admin-view="editor"] {
+}main{padding-top:15px}#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}#projectsView .top-airdrops-section{width:100%;margin-top:5px}#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
+}@media (max-width: 767px){html:has(body[data-admin-view="editor"]),body[data-admin-view="editor"]{
     height: 100%;
     overflow: hidden;
   }
@@ -2348,9 +2256,7 @@ to{opacity:0;transform:translateY(24px)}
   border-radius: 9px;
   font-size: 12px;
   line-height: 1.7;
-}
-@keyframes spin {
-to {
+}@keyframes spin{to{
     transform: rotate(360deg);
   }
 }.section-view{
@@ -2797,20 +2703,17 @@ to {
   margin-bottom: 4px;
 }dialog .guide-editor{
   min-height: 120px;
-}
-@media (max-width: 1350px) {:root{
+}@media (max-width: 1350px){:root{
     --sidebar-width: 205px;
   }
-}
-@media (max-width: 1150px) {.library-grid{
+}@media (max-width: 1150px){.library-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }.media-grid{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }.task-fields{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-@media (max-width: 850px) {:root{
+}@media (max-width: 850px){:root{
     --sidebar-width: 182px;
   }main{
     padding: 24px 20px;
@@ -2827,8 +2730,7 @@ to {
     max-width: 155px;
     line-height: 1.6;
   }
-}
-@media (max-width: 640px) {:root{
+}@media (max-width: 640px){:root{
     --sidebar-width: 0px;
   }h1{
     font-size: 27px;
@@ -2943,52 +2845,14 @@ to {
   }.auth-card{
     padding: 26px 22px;
   }
-}
-@media (prefers-reduced-motion: reduce) {*,*::before,*::after{
+}@media (prefers-reduced-motion: reduce){*,*::before,*::after{
     animation: none;
     transition: none;
     scroll-behavior: auto;
   }
-}main{padding-top:15px}/* All Airdrops shares the Top Airdrops card and row layout. */
-#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}/* Compact embedded Top Airdrops manager */
-#projectsView .top-airdrops-section{width:100%;margin-top:5px}/* Compact selected projects: scroll within the card instead of growing the page */
-#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}/* Editor project picker uses the same compact card geometry as All Airdrops. */
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width:650px){
-
-
-}/* Subtle divider 20px below the Top Airdrops heading */
-#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}/* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}/* Compact header publishing action in place of the selection count */
-/* Top Airdrops project search selection count */
-#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}/* Publish feedback directly below the Top Airdrops action */
-#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}/* Replace project count with publish result in the same label row */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}/* Reference-style icon and message beside Select Project */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}/* Match publish feedback typography to Select Project label */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}/* Balanced inset for Select Project and selection count */
-#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}/* Center project names vertically against their logos in Basic,Details and Guide. */
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}/* Lightweight full-page slide-up entrance for Basic,Details and Guide editors. */
-@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes airgem-editor-slide-down {
-from{opacity:1;transform:translateY(0)}
-to{opacity:0;transform:translateY(24px)}
-}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(max-width:767px) {body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Single source of truth for the mobile editor layout. */
-@media (max-width: 767px){
-  html:has(body[data-admin-view="editor"]),
-  body[data-admin-view="editor"] {
+}main{padding-top:15px}#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}#projectsView .top-airdrops-section{width:100%;margin-top:5px}#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}
+}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
+}@media (max-width: 767px){html:has(body[data-admin-view="editor"]),body[data-admin-view="editor"]{
     height: 100%;
     overflow: hidden;
   }
@@ -3061,13 +2925,7 @@ to{opacity:0;transform:translateY(24px)}
     border-radius: 0;
     box-shadow: 0 -5px 18px rgba(27, 46, 80, 0.06);
   }
-}
-
-
-
-
-
-@media (max-width: 640px) {*{
+}@media (max-width: 640px){*{
   box-sizing: border-box;
 }body{
   margin: 0;
@@ -3359,10 +3217,7 @@ to{opacity:0;transform:translateY(24px)}
   border-radius: 9px;
   font-size: 12px;
   line-height: 1.7;
-}
-
-@keyframes spin {
-  to {
+}@keyframes spin{to{
     transform: rotate(360deg);
   }
 }.section-view{
@@ -3809,23 +3664,20 @@ to{opacity:0;transform:translateY(24px)}
   margin-bottom: 4px;
 }dialog .guide-editor{
   min-height: 120px;
-}
-@media (max-width: 1350px) {:root{
+}@media (max-width: 1350px){:root{
     --sidebar-width: 205px;
   }
   
   
   
-}
-@media (max-width: 1150px) {.library-grid{
+}@media (max-width: 1150px){.library-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }.media-grid{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }.task-fields{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
-@media (max-width: 850px) {:root{
+}@media (max-width: 850px){:root{
     --sidebar-width: 182px;
   }main{
     padding: 24px 20px;
@@ -3842,8 +3694,7 @@ to{opacity:0;transform:translateY(24px)}
     max-width: 155px;
     line-height: 1.6;
   }
-}
-@media (max-width: 640px) {:root{
+}@media (max-width: 640px){:root{
     --sidebar-width: 0px;
   }h1{
     font-size: 27px;
@@ -3958,110 +3809,22 @@ to{opacity:0;transform:translateY(24px)}
   }.auth-card{
     padding: 26px 22px;
   }
-}
-@media (prefers-reduced-motion: reduce) {*,*::before,*::after{
+}@media (prefers-reduced-motion: reduce){*,*::before,*::after{
     animation: none;
     transition: none;
     scroll-behavior: auto;
   }
-}main{padding-top:15px}/* All Airdrops shares the Top Airdrops card and row layout. */
-#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}#projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}
-@media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}}/* Compact embedded Top Airdrops manager */
-#projectsView .top-airdrops-section{width:100%;margin-top:5px}#projectsView .collection-card{max-width:none;width:100%;}#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+}main{padding-top:15px}#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:20px}#projectsView .all-airdrops-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}#projectsView .all-airdrops-list .icon-button[data-delete-project]{background:#FEF2F2;color:#DC2626}@media(max-width:600px){#projectsView .top-airdrops-section + .top-airdrops-section{margin-top:15px}}#projectsView .top-airdrops-section{width:100%;margin-top:5px}#projectsView .collection-card{max-width:none;width:100%;}#projectsView .top-airdrops-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}@media(max-width:600px){#projectsView .collection-card{}#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}#projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}#projectsView .trending-item .icon-button:disabled{opacity:.8}
 
-
-@media(max-width:600px){#projectsView .collection-card{}#projectsView .trending-item .icon-button[data-direction="-1"]{background:#EFF6FF;color:#1E90FF}#projectsView .trending-item .icon-button[data-direction="1"]{background:#FFFBEB;color:#D97706}#projectsView .trending-item .icon-button:disabled{opacity:.8;cursor:not-allowed}#projectsView .trending-item .icon-button:disabled{opacity:.8}
-
-}/* Compact selected projects: scroll within the card instead of growing the page */
-#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}#projectsView .trending-list::-webkit-scrollbar{display:none}#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:15px}#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}/* Editor project picker uses the same compact card geometry as All Airdrops. */
-
-#projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{font:600 13px Manrope,sans-serif;color:#1B2E50}#projectsView #adminProjectPicker .admin-project-picker-item>svg{width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50}#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}/* Subtle divider 20px below the Top Airdrops heading */
-#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}/* Equal 20px spacing above the Publish row and below it on all screen sizes */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}/* Compact header publishing action in place of the selection count */
-
-/* Top Airdrops project search selection count */
-#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}#projectsView .trending-search-label-row label{margin:0;padding:0}/* Publish feedback directly below the Top Airdrops action */
-#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}#projectsView .trending-publish-message:empty{display:none}#projectsView .trending-publish-message.is-success{color:#15803D}#projectsView .trending-publish-message.is-error{color:#DC2626}/* Replace project count with publish result in the same label row */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}#projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}/* Reference-style icon and message beside Select Project */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}/* Match publish feedback typography to Select Project label */
-#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}/* Balanced inset for Select Project and selection count */
-#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}#projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}#projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}#projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}#projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}#projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}#projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}#projectsView #trendingManager .trending-search-clear{right:10px}#projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}/* Center project names vertically against their logos in Basic,Details and Guide. */
-#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{display:flex;align-items:center;min-height:30px;flex:0 1 auto;font:600 15px/1 Manrope,Inter,sans-serif;letter-spacing:-.3px;color:#1B2E50}/* Focused premium Basic editor,retaining the existing form and save flow. */
-#editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}
-@media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}/* Lightweight full-page slide-up entrance for Basic,Details and Guide editors. */
-@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}
-@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}#editorView #panel-basic{padding:15px}
-}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}/* Keep Basic logo 15px from the card's top and left edges. */
-@media(max-width:767px){
- #editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}
- #editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}
- #editorView #panel-basic{padding-top:15px!important;padding-left:15px!important}
-}/* Basic logo: clean 12px corners with no dashed outline. */
-#editorView #panel-basic .logo-preview{border-radius:12px;border:none;outline:none;box-shadow:none}#editorView #panel-basic .logo-preview img{border-radius:12px}/* Compact Basic editor Upload Logo button: 35px high,natural width. */
-#editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}/* Neutral auth boot state prevents a login-form flash on refresh. */
-.admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}.admin-boot img{width:40px;height:40px;object-fit:contain;border-radius:12px}.admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}/* Basic editor: center Upload Logo control beside 40px logo,with 10px horizontal spacing. */
-@media(max-width:767px){
- #editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}
- #editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}
-}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}/* Icon-only Upload Logo control,including protection against stale label text. */
-#editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Restore labeled Upload Logo button: 15px icon and 10px gap. */
-#editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}/* Basic Editor: keep the legacy clear-logo control hidden. */
-#editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
-#editorView .shared-editor-logo-upload{display:flex;align-items:flex-start;gap:10px;margin:0 0 15px}#editorView .shared-editor-logo-upload .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px;border:0;outline:0;box-shadow:none;border-radius:12px}#editorView .shared-editor-logo-upload .logo-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px}#editorView .shared-editor-logo-upload label.button[for="logoFile"]{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin-top:5px;padding:0 12px;gap:10px;font-size:15px;font-weight:500;line-height:1.4;color:#1B2E50;white-space:nowrap}#editorView .shared-editor-logo-upload label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Mobile Basic Editor top header: 50px. */
-@media(max-width:767px){
- 
- body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
-}/* Consistent Basic Editor field dimensions across mobile and desktop. */
-#editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}/* Mobile editor: consistent 15px left/right spacing for Basic,Details and Guide cards. */
-@media(max-width:767px){
-  body[data-admin-view="editor"] #editorView #form{padding-left:15px;padding-right:15px}
-  body[data-admin-view="editor"] #editorView .editor-footer{margin-left:-15px;margin-right:-15px;padding-left:15px;padding-right:15px}
-}/* Visually align Basic Editor labels 20px from the field box edge. */
-#editorView #panel-basic .form-grid .field > label{padding-left:5px;margin-left:0;box-sizing:border-box}#editorView #panel-basic .form-grid .field > input,#editorView #panel-basic .form-grid .field > select{padding-left:12px;margin-left:0}/* Basic Editor: set Name,Category and Status labels to 15px. */
-#editorView #panel-basic .form-grid .field > label{font-size:15px}/* Basic Editor: remove blue focus highlight from all form boxes. */
-#editorView #panel-basic input:focus,#editorView #panel-basic input:focus-visible,#editorView #panel-basic select:focus,#editorView #panel-basic select:focus-visible,#editorView #panel-basic textarea:focus,#editorView #panel-basic textarea:focus-visible{
-  outline:none;
-  outline-offset:0;
-  box-shadow:none;
-  border-color:#E2E8F0;
-}/* Basic Editor: keep placeholder and entered text visually consistent. */
-#editorView #panel-basic .form-grid .field input{
-  color:#1B2E50;
-  font-weight:400;
-}#editorView #panel-basic .form-grid .field input::placeholder,#editorView #panel-basic .form-grid .field select:invalid{
-  color:#64748B;
-  font-weight:400;
-  opacity:1;
+}#projectsView .trending-list{max-height:315px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:0}#projectsView .trending-list::-webkit-scrollbar{display:none}#projectsView #adminProjectPickerSearch{width:100%;min-height:50px}#projectsView .admin-project-picker-list{max-height:315px;overflow-y:auto;gap:15px}#projectsView .admin-project-picker-item{display:flex;align-items:center;gap:10px;width:100%;min-height:55px;padding:10px;border:1px solid #E2E8F0;border-radius:12px;background:#FFFFFF;color:#1B2E50;text-align:left;cursor:pointer}#projectsView .admin-project-picker-item strong{font:600 14px Manrope,sans-serif;flex:1;min-width:0}#projectsView .admin-project-picker-item span{font:400 11px Manrope,sans-serif;color:#64748B}#projectsView .admin-project-picker-item svg{width:15px;height:15px;flex-shrink:0}#projectsView #adminProjectPicker .admin-project-picker-item{height:50px;min-height:50px;padding:5px 10px;gap:10px;box-sizing:border-box}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-self:stretch;min-width:0}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{font:600 13px Manrope,sans-serif;color:#1B2E50}#projectsView #adminProjectPicker .admin-project-picker-item>svg{width:20px;height:20px;flex:0 0 20px;stroke-width:2;color:#1B2E50}#projectsView #adminProjectPicker .trending-search-input-wrap,#projectsView #adminProjectPicker .admin-project-picker-item{width:100%;box-sizing:border-box}#projectsView #adminProjectPickerSearch::-webkit-search-cancel-button,#projectsView #adminProjectPickerSearch::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#projectsView #adminProjectPickerSearch{-webkit-appearance:none;appearance:none}#projectsView #adminProjectPicker .admin-project-picker-list{padding-right:0;scrollbar-width:none}#projectsView #adminProjectPicker .admin-project-picker-list::-webkit-scrollbar{display:none}#projectsView #closeAdminProjectPicker{width:30px;height:30px;min-width:30px;border:0;background:transparent;color:#64748B}#projectsView .top-airdrops-heading{padding-bottom:0;border-bottom:0;margin-bottom:15px}#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px;padding-left:15px;padding-right:15px;}#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{margin-bottom:20px}#projectsView .trending-search-label-row{display:flex;align-items:center;justify-content:space-between;gap:10px}#projectsView .trending-search-label-row label{margin:0;padding:0}#projectsView .trending-publish-message:not(:empty){margin:10px 0 0;text-align:right;font:500 12px Manrope,sans-serif}#projectsView .trending-publish-message:empty{display:none}#projectsView .trending-publish-message.is-success{color:#15803D}#projectsView .trending-publish-message.is-error{color:#DC2626}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){margin:0 0 0 auto;padding:0;text-align:right;font:500 13px Manrope,sans-serif;white-space:nowrap}#projectsView .trending-search-label-row .trending-publish-message:not(:empty)~.trending-selection-count{display:none}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){display:inline-flex;align-items:center;justify-content:flex-end;gap:5px}#projectsView .trending-publish-message svg{width:16px;height:16px;flex-shrink:0;stroke:currentColor;stroke-width:2.5}#projectsView .trending-search-label-row .trending-publish-message:not(:empty){font-family:inherit;font-size:12px;font-weight:500;letter-spacing:-0.5px;line-height:inherit}#projectsView .trending-search-label-row{padding-left:5px;padding-right:5px}#projectsView #trendingCurrent .trending-item.is-dragging{background:#EFF6FF;border-color:#1E90FF}#projectsView #trendingCurrent .trending-item.drag-target{outline:2px solid #1E90FF;outline-offset:-2px}#projectsView #trendingCurrent .trending-item.drag-recent{background:#EFF6FF;border-color:#1E90FF}#projectsView .all-airdrops-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-5px 0 15px;font:500 12px Manrope,sans-serif;color:#64748B}#projectsView .all-airdrops-meta #allAirdropsPending{color:#DC2626;text-align:right}#projectsView #allAirdropsManager .all-airdrops-meta:has(#allAirdropsPending:empty){display:none}#projectsView #allAirdropsManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}#projectsView .all-airdrops-list .trending-item.is-pending-delete{border-color:#FECACA;background:#FFF8F8}#projectsView .all-airdrops-list .trending-item.is-pending-delete .trending-item-copy small{color:#DC2626}#projectsView #trendingManager .trending-search-clear{right:10px}#projectsView #trendingManager .trending-search-label-row:has(.trending-publish-message:empty){display:none}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy{align-items:flex-start}#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{display:flex;align-items:center;min-height:30px;flex:0 1 auto;font:600 15px/1 Manrope,Inter,sans-serif;letter-spacing:-.3px;color:#1B2E50}@keyframes airgem-editor-slide-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes airgem-editor-slide-down{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(24px)}}#editorView.airgem-editor-enter{animation:airgem-editor-slide-up 250ms ease-out both}#editorView.airgem-editor-exit{animation:airgem-editor-slide-down 250ms ease-in both;pointer-events:none}@media(max-width:767px){body[data-admin-view="editor"]{overflow:hidden}#editorView:not([hidden]){position:fixed;inset:0;z-index:1000;max-width:none;width:100%;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#F8FAFC;margin:0;padding:0;box-sizing:border-box}#editorView>.back-link,#editorView>.editor-heading{display:none}#editorView .editor-tabs{display:none!important}#editorView #form{display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:15px 15px 0;gap:0}#editorView #form>.editor-panel:not([hidden]){display:block;flex:0 0 auto;min-height:0;margin:0 0 15px;padding:15px;border:1px solid #E2E8F0;border-radius:12px;background:#fff}#editorView #form>.editor-panel[hidden]{display:none!important}#editorView .editor-footer{position:sticky;bottom:0;z-index:3;flex:0 0 auto;margin:auto -15px 0;padding:12px 15px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E2E8F0;box-shadow:0 -5px 18px rgba(27,46,80,.06);border-radius:0;gap:0}#editorView .editor-footer>div:first-child,#editorView #cancelEdit{display:none}#editorView .editor-footer .actions{width:100%}#editorView #publish{width:100%;min-height:48px;border-radius:12px;font:600 14px Manrope,sans-serif;background:#1E90FF;color:#fff}
+}.admin-boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;background:#F8FAFC;color:#1B2E50;font:600 14px Manrope,sans-serif}.admin-boot img{width:40px;height:40px;object-fit:contain;border-radius:12px}.admin-boot[hidden],#authShell[hidden],#dashboard[hidden]{display:none!important}#editorView .shared-editor-logo-upload{display:flex;align-items:flex-start;gap:10px;margin:0 0 15px}#editorView .shared-editor-logo-upload .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px;border:0;outline:0;box-shadow:none;border-radius:12px}#editorView .shared-editor-logo-upload .logo-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px}#editorView .shared-editor-logo-upload label.button[for="logoFile"]{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin-top:5px;padding:0 12px;gap:10px;font-size:15px;font-weight:500;line-height:1.4;color:#1B2E50;white-space:nowrap}#editorView .shared-editor-logo-upload label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}@media(max-width:767px){body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
+}@media(max-width:767px){body[data-admin-view="editor"] #editorView #form{padding-left:15px;padding-right:15px}body[data-admin-view="editor"] #editorView .editor-footer{margin-left:-15px;margin-right:-15px;padding-left:15px;padding-right:15px}
 }placeholders{
   font-family:Manrope,sans-serif;
   font-size:15px;
   font-weight:500;
   color:#1B2E50;
-}/* Basic Editor typography: clear hierarchy with premium,consistent colors. */
-#editorView #panel-basic .form-grid .field > label{
-  color:#1B2E50;
-  font-weight:500;
-}#editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{
-  color:#1B2E50;
-  font-size:13px;
-  font-weight:400;
-}#editorView #panel-basic .form-grid .field input::placeholder,#editorView #panel-basic .form-grid .field select:invalid{
-  color:#64748B;
-  font-size:13px;
-  font-weight:400;
-  opacity:1;
-}#editorView #panel-basic .form-grid .field select option[value=""]{
-  color:#64748B;
-  font-weight:400;
-}/* Basic Editor: align Website,Discord and X fields with the main two-column form. */
-#editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}
-@media(max-width:640px) {#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}
-}.app-footer{font-size:11px;}/* Hide the admin copyright footer while the Basic Editor is open. */
-body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}/* Single source of truth for the mobile editor layout. */
-@media (max-width: 767px){
-  html:has(body[data-admin-view="editor"]),
-  body[data-admin-view="editor"] {
+}.app-footer{font-size:11px;}@media (max-width: 767px){html:has(body[data-admin-view="editor"]),body[data-admin-view="editor"]{
     height: 100%;
     overflow: hidden;
   }
@@ -4147,8 +3910,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -.15px;
-}
-@media (max-width: 650px) {#projectsView .collection-card{border-radius: 15px;}#projectsView .top-airdrops-heading{ margin-bottom: 14px; gap: 8px; }#projectsView .trending-item .trending-item-copy,#projectsView .trending-item strong,#projectsView .all-airdrops-list .trending-item strong{ font-size: 13.5px; }
+}@media (max-width: 650px){#projectsView .collection-card{border-radius: 15px;}#projectsView .top-airdrops-heading{ margin-bottom: 14px; gap: 8px; }#projectsView .trending-item .trending-item-copy,#projectsView .trending-item strong,#projectsView .all-airdrops-list .trending-item strong{ font-size: 13.5px; }
 }#projectsView .collection-card{border-color: #E9EDF3;
   border-radius: 14px;
   box-shadow: 0 2px 10px rgba(27,46,80,.025);}#projectsView .top-airdrops-heading{
@@ -4165,8 +3927,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   letter-spacing: -.1px;
 }#projectsView .top-airdrops-section + .top-airdrops-section{
   margin-top: 14px;
-}
-@media (max-width: 650px) {#projectsView .collection-card{}
+}@media (max-width: 650px){#projectsView .collection-card{}
 
 
 
@@ -4263,10 +4024,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   padding: 0 14px;
   border-radius: 10px;
   font: 600 12px/1.2 Manrope,sans-serif;
-}
-@media (max-width: 767px) {#editorView .editor-heading h1{ font-size: 20px; }#editorView .editor-panel{ padding: 14px; border-radius: 13px; }#editorView .editor-tabs{ gap: 7px; }#editorView .editor-tabs button{ min-height: 36px; padding: 0 11px; font-size: 11.5px; }#editorView .editor-panel .form-grid{ row-gap: 14px; }#editorView .editor-footer #publish{ min-height: 40px; }
-}/* Shared compact field rhythm for Basic,Details and Guide editors. */
-#editorView #form > .editor-panel .field{
+}@media (max-width: 767px){#editorView .editor-heading h1{ font-size: 20px; }#editorView .editor-panel{ padding: 14px; border-radius: 13px; }#editorView .editor-tabs{ gap: 7px; }#editorView .editor-tabs button{ min-height: 36px; padding: 0 11px; font-size: 11.5px; }#editorView .editor-panel .form-grid{ row-gap: 14px; }#editorView .editor-footer #publish{ min-height: 40px; }
+}#editorView #form > .editor-panel .field{
   gap: 5px !important;
   margin-bottom: 0;
 }#editorView #form > .editor-panel .field > label{
@@ -4312,8 +4071,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font-family: Manrope,sans-serif !important;
   font-size: 13px !important;
   font-weight: 600 !important;
-}
-@media (max-width: 767px) {#editorView #form > .editor-panel{
+}@media (max-width: 767px){#editorView #form > .editor-panel{
     padding: 14px !important;
     margin-bottom: 12px !important;
     border-radius: 13px !important;
@@ -4327,24 +4085,20 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   }#editorView .editor-footer #publish{
     min-height: 48px !important;
   }
-}/* Match project logo preview and Upload Logo control across Basic,Details and Guide. */
-#editorView #form .logo-upload,#editorView #form .shared-editor-logo-upload,#editorView #form .basic-logo-upload{
+}#editorView #form .logo-upload,#editorView #form .shared-editor-logo-upload{
   display: flex !important;
   align-items: center !important;
   gap: 12px !important;
   margin: 0 0 16px !important;
-}#editorView #form .logo-upload .logo-preview,#editorView #form .shared-editor-logo-upload .logo-preview,#editorView #form .basic-logo-upload .logo-preview,#editorView #form #detailsLogoPreview,#editorView #form #guideLogoPreview{
+}#editorView #form .logo-upload .logo-preview,#editorView #form .shared-editor-logo-upload .logo-preview,#editorView #form #detailsLogoPreview,#editorView #form #guideLogoPreview{
   display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
-}
-#editorView #form #logoPreview{
-  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
-}#editorView #form .logo-upload .logo-preview img,#editorView #form #logoPreview img,#editorView #form #detailsLogoPreview img,#editorView #form #guideLogoPreview img{
+}#editorView #form .logo-upload .logo-preview img,#editorView #form #detailsLogoPreview img,#editorView #form #guideLogoPreview img{
   display: block !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
   border-radius: 10px !important;
-}#editorView #form .logo-upload label.button[for="logoFile"],#editorView #form .shared-editor-logo-upload label.button[for="logoFile"],#editorView #form .basic-logo-upload label.button[for="logoFile"]{
+}#editorView #form .logo-upload label.button[for="logoFile"],#editorView #form .shared-editor-logo-upload label.button[for="logoFile"]{
   display: inline-flex !important;
   flex: 0 0 auto !important;
   align-items: center !important;
@@ -4363,23 +4117,20 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   font: 600 13px/1.2 Manrope,sans-serif !important;
   white-space: nowrap !important;
   box-shadow: none !important;
-}#editorView #form .logo-upload label.button[for="logoFile"] svg,#editorView #form .shared-editor-logo-upload label.button[for="logoFile"] svg,#editorView #form .basic-logo-upload label.button[for="logoFile"] svg{
+}#editorView #form .logo-upload label.button[for="logoFile"] svg,#editorView #form .shared-editor-logo-upload label.button[for="logoFile"] svg{
   display: block !important;
   flex: 0 0 15px !important;
   width: 15px !important;
   height: 15px !important;
-}#editorView #form .logo-upload label.button[for="logoFile"]:hover,#editorView #form .shared-editor-logo-upload label.button[for="logoFile"]:hover,#editorView #form .basic-logo-upload label.button[for="logoFile"]:hover{
+}#editorView #form .logo-upload label.button[for="logoFile"]:hover,#editorView #form .shared-editor-logo-upload label.button[for="logoFile"]:hover{
   border-color: #B8D9FA !important;
   background: #F8FBFF !important;
-}#editorView #panel-basic .editor-footer #publish,#editorView #panel-basic #publish{min-height:48px;border-radius:10px;font:600 13px/1.2 Manrope,sans-serif}/* Admin panel premium styling — consolidated from the former shared design layer. */
-/* Admin panel — keep existing layout and controls; align surface treatment only. */
-body:not([data-view]){
+}body:not([data-view]){
   background: var(--airgem-bg);
 }body:not([data-view]) .auth-card,body:not([data-view]) .editor-panel{
   border-radius: var(--airgem-radius);
   box-shadow: var(--airgem-shadow);
-}/* Admin dashboard + editor: complete the same Airgem design system. */
-body:not([data-view]){
+}body:not([data-view]){
   color: var(--airgem-navy);
   font-family: Manrope, Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -4432,8 +4183,7 @@ body:not([data-view]){
   border-radius: 12px;
   background: rgba(255,255,255,.98);
   box-shadow: 0 4px 16px rgba(27,46,80,.06);
-}body:not([data-view]) .app-footer{color: var(--airgem-slate);}
-@media (max-width: 767px) {body:not([data-view]) main{
+}body:not([data-view]) .app-footer{color: var(--airgem-slate);}@media (max-width: 767px){body:not([data-view]) main{
     padding-left: 14px;
     padding-right: 14px;
   }body:not([data-view]) .collection-card{
@@ -4443,8 +4193,7 @@ body:not([data-view]){
     border-radius: 12px 12px 0 0;
     box-shadow: 0 -3px 16px rgba(27,46,80,.05);
   }
-}/* Admin login — single source of truth. */
-body:not([data-view]) .auth-shell{
+}body:not([data-view]) .auth-shell{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4757,13 +4506,10 @@ body:not([data-view]) .auth-shell{
   height: 15px;
   flex: 0 0 15px;
   color: #64748B;
-}
-@media (max-height: 760px) {body:not([data-view]) .auth-shell{ padding-top: 143px; padding-bottom: 150px; }body:not([data-view]) #loginBox > form#loginForm{ margin-top: 18px; }body:not([data-view]) #loginBox .auth-social-divider{ margin: 20px 0 20px; }
-}/* Admin login: keep exactly 20px between the email field and Login button. */
-body:not([data-view]) #loginBox > form#loginForm > .auth-input-wrap{
+}@media (max-height: 760px){body:not([data-view]) .auth-shell{ padding-top: 143px; padding-bottom: 150px; }body:not([data-view]) #loginBox > form#loginForm{ margin-top: 18px; }body:not([data-view]) #loginBox .auth-social-divider{ margin: 20px 0 20px; }
+}body:not([data-view]) #loginBox > form#loginForm > .auth-input-wrap{
   margin-bottom: -10px;
-}/* Admin email OTP: six compact code cells with automatic verification. */
-body:not([data-view]) #loginBox #otpField[hidden]{ display: none !important; }body:not([data-view]) #loginBox #otpField.auth-otp-field{
+}body:not([data-view]) #loginBox #otpField[hidden]{ display: none !important; }body:not([data-view]) #loginBox #otpField.auth-otp-field{
   display: grid;
   width: 100%;
   gap: 12px;
@@ -4801,10 +4547,8 @@ body:not([data-view]) #loginBox #otpField[hidden]{ display: none !important; }bo
   line-height: 1.4;
   letter-spacing: -0.2px;
   text-align: center;
-}body:not([data-view]) #loginBox #loginForm > button[hidden]{ display: none !important; }
-@media (max-width: 380px) {body:not([data-view]) #loginBox .otp-digit-grid{ gap: 7px; }
-}/* Authenticator verification page layout */
-body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell{
+}body:not([data-view]) #loginBox #loginForm > button[hidden]{ display: none !important; }@media (max-width: 380px){body:not([data-view]) #loginBox .otp-digit-grid{ gap: 7px; }
+}body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell{
   justify-content: flex-start;
   padding-top: 100px;
   padding-bottom: 60px;
@@ -4893,8 +4637,7 @@ body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell{
   border-color: #1E90FF;
   background: #1E90FF;
   color: #FFFFFF;
-}/* Six-box authenticator code input */
-body:not([data-view]) #mfaBox .mfa-code-digits{
+}body:not([data-view]) #mfaBox .mfa-code-digits{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
@@ -4917,22 +4660,18 @@ body:not([data-view]) #mfaBox .mfa-code-digits{
   border-color: #94A3B8;
   outline: none;
   box-shadow: none;
-}/* Mobile authenticator bottom sheet */
-@media (max-width: 700px){
-  body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell {
+}@media (max-width: 700px){body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell{
     justify-content: flex-end;
     padding: 0;
     overflow: hidden;
     background: transparent !important;
-  }
-  body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell::before {
+  }body:not([data-view]):has(#mfaBox:not([hidden])) .auth-shell::before{
     content: "";
     position: fixed;
     inset: 0;
     z-index: 40;
     background: rgb(15 23 42 / 42%);
-  }
-  body:not([data-view]) #mfaBox.auth-card {
+  }body:not([data-view]) #mfaBox.auth-card{
     position: fixed;
     left: 0;
     right: 0;
@@ -4955,22 +4694,18 @@ body:not([data-view]) #mfaBox .mfa-code-digits{
     animation: mfaSheetSlideUp 240ms ease-out both;
     touch-action: none;
     will-change: transform;
-  }
-  body:not([data-view]) #mfaBox .mfa-sheet-handle {
+  }body:not([data-view]) #mfaBox .mfa-sheet-handle{
     display: block;
     width: 40px;
     height: 4px;
     margin: 0 auto 20px;
     border-radius: 999px;
     background: #CBD5E1;
-  }
-  body:not([data-view]) #mfaBox .mfa-authenticator-icon {
+  }body:not([data-view]) #mfaBox .mfa-authenticator-icon{
     margin-top: 0;
-  }
-  body:not([data-view]) #mfaBox #mfaCancel {
+  }body:not([data-view]) #mfaBox #mfaCancel{
     margin-top: 20px;
-  }
-  body:not([data-view]) #mfaBox .auth-footnote {
+  }body:not([data-view]) #mfaBox .auth-footnote{
     position: absolute;
     left: 0;
     right: 0;
@@ -4979,13 +4714,8 @@ body:not([data-view]) #mfaBox .mfa-code-digits{
     font-size: 13px;
     line-height: 1.4;
   }
-}
-@keyframes mfaSheetSlideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}/* Admin quick menu: half-screen bottom sheet */
-#dashboard .admin-menu-open{margin-left:auto;width:30px;height:30px;min-width:30px;min-height:30px;max-width:30px;max-height:30px;flex:0 0 30px;padding:0;box-sizing:border-box;line-height:0;align-self:center;overflow:hidden;border:0;border-radius:0;background:transparent;color:#1B2E50;display:grid;place-items:center;box-shadow:none;cursor:pointer}#dashboard .admin-menu-open svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}#dashboard .admin-menu-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,.42);opacity:0;transition:opacity .22s ease}#dashboard .admin-menu-backdrop.is-visible{opacity:1}#dashboard .admin-menu-sheet{position:fixed;z-index:1001;inset:auto 0 0;width:100%;height:50dvh;min-height:260px;max-height:520px;padding:12px 20px max(20px,env(safe-area-inset-bottom));background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -12px 40px rgba(15,23,42,.16);transform:translateY(102%);transition:transform .22s ease;display:flex;flex-direction:column}#dashboard .admin-menu-sheet.is-open{transform:translateY(0)}#dashboard .admin-menu-sheet-handle{width:42px;height:5px;border-radius:99px;background:#CBD5E1;margin:0 auto 22px;flex:0 0 auto}#dashboard .admin-menu-sheet-content{display:flex;flex:1;min-height:0;flex-direction:column}#dashboard .admin-menu-action{display:flex;align-items:center;gap:14px;width:100%;min-height:54px;padding:0 8px;border:0;border-radius:12px;background:transparent;color:#1B2E50;text-align:left;font:600 16px Manrope,sans-serif;cursor:pointer}#dashboard .admin-menu-action>svg:first-child{width:21px;height:21px;color:#64748B}#dashboard .admin-menu-action .admin-menu-chevron{width:18px;height:18px;margin-left:auto;color:#94A3B8}#dashboard .admin-menu-logout{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:999px;background:#1E90FF;color:#fff;font:700 15px Manrope,sans-serif;cursor:pointer}#dashboard .admin-menu-logout svg{width:19px;height:19px}
-@media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}#dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}#projectsView .top-airdrops-section{margin-top:0}#projectsView .top-airdrops-section+.top-airdrops-section{margin-top:18px}#projectsView .collection-card{border:1px solid #E2E8F0;
+}@keyframes mfaSheetSlideUp{from{ transform: translateY(100%); }to{ transform: translateY(0); }
+}#dashboard .admin-menu-open{margin-left:auto;width:30px;height:30px;min-width:30px;min-height:30px;max-width:30px;max-height:30px;flex:0 0 30px;padding:0;box-sizing:border-box;line-height:0;align-self:center;overflow:hidden;border:0;border-radius:0;background:transparent;color:#1B2E50;display:grid;place-items:center;box-shadow:none;cursor:pointer}#dashboard .admin-menu-open svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}#dashboard .admin-menu-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,.42);opacity:0;transition:opacity .22s ease}#dashboard .admin-menu-backdrop.is-visible{opacity:1}#dashboard .admin-menu-sheet{position:fixed;z-index:1001;inset:auto 0 0;width:100%;height:50dvh;min-height:260px;max-height:520px;padding:12px 20px max(20px,env(safe-area-inset-bottom));background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -12px 40px rgba(15,23,42,.16);transform:translateY(102%);transition:transform .22s ease;display:flex;flex-direction:column}#dashboard .admin-menu-sheet.is-open{transform:translateY(0)}#dashboard .admin-menu-sheet-handle{width:42px;height:5px;border-radius:99px;background:#CBD5E1;margin:0 auto 22px;flex:0 0 auto}#dashboard .admin-menu-sheet-content{display:flex;flex:1;min-height:0;flex-direction:column}#dashboard .admin-menu-action{display:flex;align-items:center;gap:14px;width:100%;min-height:54px;padding:0 8px;border:0;border-radius:12px;background:transparent;color:#1B2E50;text-align:left;font:600 16px Manrope,sans-serif;cursor:pointer}#dashboard .admin-menu-action>svg:first-child{width:21px;height:21px;color:#64748B}#dashboard .admin-menu-action .admin-menu-chevron{width:18px;height:18px;margin-left:auto;color:#94A3B8}#dashboard .admin-menu-logout{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:999px;background:#1E90FF;color:#fff;font:700 15px Manrope,sans-serif;cursor:pointer}#dashboard .admin-menu-logout svg{width:19px;height:19px}@media(prefers-reduced-motion:reduce){#dashboard .admin-menu-backdrop,#dashboard .admin-menu-sheet{transition:none}}#dashboard .admin-menu-sheet[hidden],#dashboard .admin-menu-backdrop[hidden]{display:none!important}#projectsView .top-airdrops-section{margin-top:0}#projectsView .top-airdrops-section+.top-airdrops-section{margin-top:18px}#projectsView .collection-card{border:1px solid #E2E8F0;
   border-radius:16px;
   background:#FFFFFF;
   box-shadow:0 2px 12px rgba(27,46,80,.035);}#projectsView .top-airdrops-heading{
@@ -5002,8 +4732,7 @@ body:not([data-view]) #mfaBox .mfa-code-digits{
   color:#1B2E50;
   font:600 14px/1.3 Manrope,sans-serif;
   letter-spacing:-.1px;
-}/* Keep the dashboard footer directly after content and center its two labels. */
-#dashboard #mainContent{
+}#dashboard #mainContent{
   flex:0 0 auto;
 }#dashboard .app-footer{display:flex;
   align-items:center;
@@ -5012,10 +4741,8 @@ body:not([data-view]) #mfaBox .mfa-code-digits{
   gap:8px;
   color:#64748B;
   font:400 12px/1.5 Manrope,sans-serif;
-  text-align:center;}
-@media(max-width:650px){#projectsView .collection-card{border-radius:16px;}#projectsView .top-airdrops-heading{margin-bottom:14px;gap:9px}#projectsView .trending-item-copy strong,#projectsView .all-airdrops-list .trending-item strong{font-size:14px}#dashboard .app-footer{font-size:11px;}
-}/* Shared typography system — Admin Login,MFA and Dashboard */
-body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,#dashboard select,#dashboard textarea{
+  text-align:center;}@media(max-width:650px){#projectsView .collection-card{border-radius:16px;}#projectsView .top-airdrops-heading{margin-bottom:14px;gap:9px}#projectsView .trending-item-copy strong,#projectsView .all-airdrops-list .trending-item strong{font-size:14px}#dashboard .app-footer{font-size:11px;}
+}body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,#dashboard select,#dashboard textarea{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }body:not([data-view]) #loginBox .otp-digit,body:not([data-view]) #mfaBox .mfa-code-digit{
   font-family:Manrope,Inter,sans-serif;
@@ -5037,8 +4764,7 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   letter-spacing:-.55px;
 }#projectsView .trending-item-copy strong,#projectsView .all-airdrops-list .trending-item strong{
   font-family:Manrope,Inter,sans-serif;
-}/* One typography scale across Dashboard,Basic,Details and Guide */
-#projectsView,#editorView,#projectsView *,#editorView *{
+}#projectsView,#editorView,#projectsView *,#editorView *{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }#editorView .editor-heading h1{
   color:#1B2E50;
@@ -5091,10 +4817,8 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   font-size:12px;
   font-weight:600;
   letter-spacing:0;
-}
-@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#editorView .editor-panel .field>label,#editorView .editor-panel label{font-size:13px}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{font-size:14px}
-}/* Airgem Admin complete typography contract — every authenticated panel surface */
-#dashboard,#dashboard button,#dashboard input,#dashboard select,#dashboard textarea,#dashboard [contenteditable="true"]{
+}@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#editorView .editor-panel .field>label,#editorView .editor-panel label{font-size:13px}#editorView .editor-panel input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),#editorView .editor-panel select,#editorView .editor-panel textarea,#editorView .editor-panel [contenteditable="true"]{font-size:14px}
+}#dashboard,#dashboard button,#dashboard input,#dashboard select,#dashboard textarea,#dashboard [contenteditable="true"]{
   font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }#editorView .editor-heading h1{
   font-family:Manrope,Inter,sans-serif;
@@ -5150,8 +4874,7 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
 }#editorView .editor-footer #publish{
   font-size:13px;
   font-weight:700;
-}/* Header menu and bottom sheet use the same compact action scale */
-#dashboard .admin-menu-action{
+}#dashboard .admin-menu-action{
   font-family:Manrope,Inter,sans-serif;
   font-size:14px;
   font-weight:650;
@@ -5168,44 +4891,30 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   font-family:Manrope,Inter,sans-serif;
 }#dashboard .admin-menu-sheet{
   font-family:Manrope,Inter,sans-serif;
-}
-@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#dashboard .admin-menu-action{font-size:14px}#dashboard .admin-menu-logout{font-size:13px}
-}/* Final mobile dashboard balance — compact premium sizing */
-@media(max-width:767px){
-  #projectsView .top-airdrops-section{margin-top:0!important}
-  #projectsView .top-airdrops-section+.top-airdrops-section{margin-top:14px!important}
-  #projectsView .collection-card{border-radius:14px!important;
-    box-shadow:0 1px 8px rgba(27,46,80,.025)!important;}
-  #projectsView .top-airdrops-heading{
+}@media(max-width:767px){#editorView .editor-heading h1{font-size:21px}#editorView .editor-tabs button{font-size:12px}#dashboard .admin-menu-action{font-size:14px}#dashboard .admin-menu-logout{font-size:13px}
+}@media(max-width:767px){#projectsView .top-airdrops-section{margin-top:0!important}#projectsView .top-airdrops-section+.top-airdrops-section{margin-top:14px!important}#projectsView .collection-card{border-radius:14px!important;
+    box-shadow:0 1px 8px rgba(27,46,80,.025)!important;}#projectsView .top-airdrops-heading{
     gap:9px!important;
     margin-bottom:13px!important;
-  }
-  #projectsView .trending-search-input-wrap input{
+  }#projectsView .trending-search-input-wrap input{
     padding-top:0!important;
     padding-bottom:0!important;
     border-radius:10px!important;
-  }
-  
-  
-  #projectsView .trending-item-copy strong,
-  #projectsView .all-airdrops-list .trending-item strong{
+  }#projectsView .trending-item-copy strong,#projectsView .all-airdrops-list .trending-item strong{
     font:650 14px/1.3 Manrope,Inter,sans-serif!important;
     letter-spacing:-.12px!important;
   }
 
-}/* Shared divider below Top Airdrops and All Airdrops heading rows. */
-#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{
+}#projectsView #trendingManager .top-airdrops-heading,#projectsView #allAirdropsManager .top-airdrops-heading{
   box-sizing:border-box;
   width:100%;
   padding:0 0 15px;
   margin:0;
   border-bottom:1px solid #E2E8F0;
-}/* Shared Top Airdrops and All Airdrops heading,icon and Publish controls. */
-#projectsView #trendingManager .top-airdrops-heading h2,#projectsView #allAirdropsManager .top-airdrops-heading h2{
+}#projectsView #trendingManager .top-airdrops-heading h2,#projectsView #allAirdropsManager .top-airdrops-heading h2{
   display:flex;align-items:center;align-self:flex-start;gap:10px;margin:0;color:#1B2E50;
   font:700 15px/1 Manrope,sans-serif;letter-spacing:-.3px;
-}/* Single source of truth for Basic,Details and Guide picker heading. */
-#projectsView #adminProjectPicker .top-airdrops-heading{
+}#projectsView #adminProjectPicker .top-airdrops-heading{
   box-sizing:border-box;
   display:flex;
   align-items:flex-start;
@@ -5267,8 +4976,7 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   color:#FFFFFF;background:#1E90FF;
   font:600 13px/1 Manrope,sans-serif;letter-spacing:-.1px;
   white-space:nowrap;box-shadow:none;
-}#projectsView #trendingManager .top-airdrops-publish svg,#projectsView #allAirdropsManager .top-airdrops-publish svg{width:15px;height:15px;}/* One shared project-row layout for Top Airdrops,All Airdrops,Basic,Details and Guide. */
-#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item,#projectsView #adminProjectPicker .admin-project-picker-item{
+}#projectsView #trendingManager .top-airdrops-publish svg,#projectsView #allAirdropsManager .top-airdrops-publish svg{width:15px;height:15px;}#projectsView #trendingCurrent .trending-item,#projectsView .all-airdrops-list .trending-item,#projectsView #adminProjectPicker .admin-project-picker-item{
   box-sizing:border-box;
   display:flex;
   align-items:center;
@@ -5309,15 +5017,13 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   cursor:grab;
   touch-action:none;
   user-select:none;
-}#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}/* Single shared project logo size across project lists,search results and picker. */
-#projectsView #trendingCurrent .project-avatar,#projectsView .all-airdrops-list .project-avatar,#projectsView #trendingSearchResults .project-avatar,#projectsView #allAirdropsSearchResults .project-avatar,#projectsView #adminProjectPicker .project-avatar{
+}#projectsView #trendingCurrent .top-drag-handle:active{cursor:grabbing}#projectsView #trendingCurrent .project-avatar,#projectsView .all-airdrops-list .project-avatar,#projectsView #trendingSearchResults .project-avatar,#projectsView #allAirdropsSearchResults .project-avatar,#projectsView #adminProjectPicker .project-avatar{
   width:30px;
   height:30px;
   min-width:30px;
   border-radius:8px;
   font-size:13px;
-}#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}#projectsView #trendingCurrent .trending-item-copy small,#projectsView .all-airdrops-list .trending-item-copy small,#projectsView #adminProjectPicker .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}/* Single shared delete icon style for Top Airdrops and All Airdrops. */
-#projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{
+}#projectsView .all-airdrops-list .trending-item-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch}#projectsView .all-airdrops-list .trending-item-copy strong{font-size:13px;font-weight:600}#projectsView #trendingCurrent .trending-item-copy small,#projectsView .all-airdrops-list .trending-item-copy small,#projectsView #adminProjectPicker .trending-item-copy small{font-size:11px;font-weight:400;margin-top:3px}#projectsView #trendingCurrent .icon-button[data-top-remove],#projectsView .all-airdrops-list .icon-button[data-stage-delete]{
   appearance:none;
   border:0;
   border-radius:0;
@@ -5327,15 +5033,13 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
 }#projectsView #trendingCurrent .top-drag-handle svg,#projectsView #trendingCurrent .icon-button[data-top-remove] svg,#projectsView .all-airdrops-list .icon-button[data-stage-delete] svg{
   width:20px;
   height:20px;
-}#projectsView #trendingCurrent .top-drag-handle svg{stroke-width:1.8}/* Remove external spacing around both Top and All Airdrops search bars. */
-#projectsView #trendingManager .trending-search,#projectsView #allAirdropsManager .trending-search{
+}#projectsView #trendingCurrent .top-drag-handle svg{stroke-width:1.8}#projectsView #trendingManager .trending-search,#projectsView #allAirdropsManager .trending-search{
   margin:15px 0 0;
   padding:0;
 }#projectsView #trendingManager .trending-search-input-wrap,#projectsView #allAirdropsManager .trending-search-input-wrap{
   margin:0;
   padding:0;
-}/* Exact 15px spacing between search inputs and their result lists. */
-#projectsView #trendingManager .trending-search,#projectsView #allAirdropsManager .trending-search{gap:15px;margin-bottom:0}#projectsView .project-search-results{margin-top:0}#projectsView #trendingSearchResults,#projectsView #allAirdropsSearchResults{
+}#projectsView #trendingManager .trending-search,#projectsView #allAirdropsManager .trending-search{gap:15px;margin-bottom:0}#projectsView .project-search-results{margin-top:0}#projectsView #trendingSearchResults,#projectsView #allAirdropsSearchResults{
   position:static;
   top:auto;
   left:auto;
@@ -5343,9 +5047,7 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   max-height:250px;
   overflow-y:auto;
   overscroll-behavior:contain;
-}#projectsView .search-results[hidden]{display:none}#projectsView #trendingCurrent{margin-top:15px}#projectsView #allAirdropsManager .all-airdrops-list{margin-top:15px}/* Keep both project-search clear buttons hidden until their inputs contain text. */
-#projectsView #trendingManager .trending-search-clear[hidden],#projectsView #allAirdropsManager .trending-search-clear[hidden]{display:none}/* Shared 15px spacing for search-to-list and between project rows in all sections. */
-#projectsView #adminProjectPicker .trending-search{
+}#projectsView .search-results[hidden]{display:none}#projectsView #trendingCurrent{margin-top:15px}#projectsView #allAirdropsManager .all-airdrops-list{margin-top:15px}#projectsView #trendingManager .trending-search-clear[hidden],#projectsView #allAirdropsManager .trending-search-clear[hidden]{display:none}#projectsView #adminProjectPicker .trending-search{
   margin:15px 0 0;
   padding:0;
 }#projectsView #trendingCurrent,#projectsView .all-airdrops-list,#projectsView #adminProjectPicker .admin-project-picker-list{
@@ -5353,11 +5055,9 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   gap:15px;
 }#projectsView #adminProjectPicker .admin-project-picker-list{
   margin-top:15px;
-}/* Shared exact 15px top and left inset for all five section headings. */
-#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px !important;
+}#projectsView #trendingManager .collection-card,#projectsView #allAirdropsManager .collection-card,#projectsView #adminProjectPicker .collection-card{padding-top:15px !important;
   padding-left:15px !important;
-  padding-right:15px !important;}/* Identical 30px icon tile for Top,All,Basic,Details and Guide. */
-#projectsView #trendingManager .top-airdrops-heading h2 svg,#projectsView #allAirdropsManager .top-airdrops-heading h2 svg,#projectsView #adminProjectPicker .top-airdrops-heading h2 svg{
+  padding-right:15px !important;}#projectsView #trendingManager .top-airdrops-heading h2 svg,#projectsView #allAirdropsManager .top-airdrops-heading h2 svg,#projectsView #adminProjectPicker .top-airdrops-heading h2 svg{
   box-sizing:border-box;
   display:block;
   width:30px;
@@ -5371,20 +5071,13 @@ body:not([data-view]) .auth-shell,#dashboard,#dashboard button,#dashboard input,
   background:#1E90FF;
   color:#FFFFFF;
   stroke-width:2;
-}/* Inner search controls,dropdowns and project lists fill the card's padded content width. */
-#projectsView #trendingManager .trending-search-input-wrap,
-#projectsView #allAirdropsManager .trending-search-input-wrap,
-#projectsView #trendingSearchResults,
-#projectsView #allAirdropsSearchResults,
-#projectsView #trendingCurrent,
-#projectsView #allAirdropsManager .all-airdrops-list{
+}#projectsView #trendingManager .trending-search-input-wrap,#projectsView #allAirdropsManager .trending-search-input-wrap,#projectsView #trendingSearchResults,#projectsView #allAirdropsSearchResults,#projectsView #trendingCurrent,#projectsView #allAirdropsManager .all-airdrops-list{
   width: 100%;
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
-}/* Settings is a dedicated full-page view without the dashboard header or footer. */
-body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-admin-view="settings"] #dashboard > .app-shell > .app-footer{display: none !important;}body[data-admin-view="settings"] #dashboard > .app-shell > main{
+}body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-admin-view="settings"] #dashboard > .app-shell > .app-footer{display: none !important;}body[data-admin-view="settings"] #dashboard > .app-shell > main{
   width: 100%;
   max-width: none;
   min-height: 100dvh;
@@ -5482,8 +5175,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   width: calc(100% - 30px);
   max-width: 850px;
   margin: 15px auto 0;
-}/* Single source of truth: Admin Panel title and subtitle. */
-#projectsView .projects-page-heading{
+}#projectsView .projects-page-heading{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -5506,8 +5198,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   color:#64748B;
   font:500 13px/1.5 Manrope,sans-serif;
   letter-spacing:normal;
-}/* Single shared navigation system for Dashboard,Basic,Details,Guide and Add Project. */
-#projectsView nav.admin-project-nav{
+}#projectsView nav.admin-project-nav{
   display:flex;
   align-items:center;
   justify-content:flex-start;
@@ -5551,8 +5242,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   border-color:#ACD5FF;
   background:#F5F9FF;
   color:#1B2E50;
-}/* Unified admin typography — identical on mobile and desktop. */
-#dashboard .page-heading h1,#projectsView .projects-page-heading h1,#editorView .editor-heading h1,#settingsView .page-heading h1{
+}#dashboard .page-heading h1,#projectsView .projects-page-heading h1,#editorView .editor-heading h1,#settingsView .page-heading h1{
   font-family:Manrope,Inter,sans-serif;
   font-size:20px;
   font-weight:700;
@@ -5603,52 +5293,115 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   font-size:14px;
   font-weight:400;
   line-height:1.4;
-}#editorView .editor-tabs button{font-size:13px}/* One shared 15px bottom inset for Top Airdrops,All Airdrops and Basic/Details/Guide project picker cards on every viewport. */
-#projectsView .top-airdrops-section > .collection-card{
+}#editorView .editor-tabs button{font-size:13px}#projectsView .top-airdrops-section > .collection-card{
   padding-bottom:15px !important;
-}/* Exact 20px gap above and below the copyright footer on Dashboard and project editor views. */
-#dashboard #mainContent{
+}#dashboard #mainContent{
   padding-bottom:0 !important;
 }#dashboard > .app-shell > .app-footer{
   margin:20px 0 !important;
   padding:0 2px !important;
-}/* Single source of truth for the Airgem Admin Panel logo size. */
-.topbar .admin-header-brand img{
+}.topbar .admin-header-brand img{
   display:block;
   width:35px;
   height:35px;
   flex:0 0 35px;
   object-fit:contain;
   border-radius:10px;
-}/* Admin header height and horizontal spacing across desktop and mobile. */
-
-
-/* Single source of truth for the Admin Panel Airgem brand text. */
-#dashboard .topbar .admin-header-brand span{
+}#dashboard .topbar .admin-header-brand span{
   font-family: Manrope, Inter, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.3px;
   color: #1B2E50;
-}/* Match Basic,Details and Guide project search typography to Top Airdrops. */
-#projectsView #adminProjectPickerSearch{
+}#projectsView #adminProjectPickerSearch{
   font:500 13px/1 Manrope,sans-serif;
   letter-spacing:0;
   color:#1B2E50;
-}/* Single shared project-name weight across Top,All,Basic,Details and Guide. */
-#projectsView #trendingCurrent .trending-item-copy strong,#projectsView .all-airdrops-list .trending-item-copy strong,#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{
+}#projectsView #trendingCurrent .trending-item-copy strong,#projectsView .all-airdrops-list .trending-item-copy strong,#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{
   font-weight:500!important;
-}
+}#editorView .mobile-editor-toolbar{position:relative;inset:auto;z-index:1003;display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#F8FAFC;border-bottom:1px solid #E2E8F0}#editorView .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,sans-serif;font-size:15px;font-weight:700;line-height:1;letter-spacing:-.3px;color:#1B2E50}#editorView .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}#editorView .mobile-editor-nav:hover,#editorView .mobile-editor-nav:focus,#editorView .mobile-editor-nav:active{background:none;box-shadow:none}#editorView #mobileEditorBack{margin-left:10px}#editorView #mobileEditorClose{margin-right:15px}#editorView .mobile-editor-nav svg{width:20px;height:20px}#trendingCurrent [data-edit-project],#allAirdropsList [data-edit-project]{cursor:pointer}#trendingCurrent [data-edit-project] .actions,#allAirdropsList [data-edit-project] .actions{cursor:default}#projectsView .projects-add-action{width:100%;box-sizing:border-box;padding:0 15px;margin:15px 0 20px}#projectsView .projects-add-action #addProjectButton{display:flex;width:100%;height:45px;min-height:45px;box-sizing:border-box;align-items:center;justify-content:center;border-radius:10px}#editorView>.editor-tabs{display:flex;justify-content:space-around;gap:0;margin:0;padding:10px 15px;border-bottom:1px solid #E2E8F0;background:#fff;}#editorView>.editor-tabs button{flex:1;justify-content:center;min-height:44px;padding:8px 4px;border:0;border-bottom:2px solid transparent;border-radius:0;font:600 13px Manrope,sans-serif;color:#1B2E50;}#editorView>.editor-tabs button[aria-selected='true']{border-bottom-color:#1E90FF;color:#1E90FF;}@media(min-width:768px){#editorView>.editor-tabs{margin-bottom:22px;padding-inline:0;}}@media(max-width:767px){#editorView>.editor-tabs{flex:0 0 auto;position:relative;z-index:2;}#editorView #form{padding-top:15px;}}#editorView .editor-tabs{display:flex!important;}@media(max-width:767px){#editorView>.editor-tabs{flex:0 0 auto;position:relative;z-index:5;justify-content:space-around;gap:0;margin:0;padding:8px 15px;background:#fff;border-bottom:1px solid #E2E8F0;}#editorView>.editor-tabs button{flex:1;min-height:44px;justify-content:center;padding:8px 4px;font-size:13px;}}#editorView>.editor-tabs button[aria-selected="true"]{background:#1E90FF!important;color:#FFFFFF!important;border-bottom-color:#1E90FF!important;}#editorView>.editor-tabs button[aria-selected="true"] svg{color:#FFFFFF!important;stroke:#FFFFFF!important;}#editorView>.editor-tabs{height:50px;min-height:50px;box-sizing:border-box;align-items:center;padding-top:0;padding-bottom:0;background:#F8FAFC;}#editorView>.editor-tabs button{height:35px;min-height:35px;box-sizing:border-box;border-radius:10px;}@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;background:#F8FAFC;}#editorView>.editor-tabs button{height:35px;min-height:35px;padding:0 4px;border-radius:10px;}}#editorView>.editor-tabs button:not([aria-selected="true"]),#editorView>.editor-tabs button:not([aria-selected="true"]):hover,#editorView>.editor-tabs button:not([aria-selected="true"]):focus,#editorView>.editor-tabs button:not([aria-selected="true"]):active{background:transparent!important;box-shadow:none!important;}#editorView #panel-details,#editorView #panel-guide{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}@media(max-width:767px){#editorView #form>#panel-details:not([hidden]),#editorView #form>#panel-guide:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
 
-/* Basic Editor Investors — single source of truth (desktop and mobile). */
-#editorView #panel-basic #agBasicInvestorList {
+/* ==========================================================
+   BASIC EDITOR — SINGLE CONSOLIDATED STYLE SECTION
+   All Basic-only desktop and mobile rules live below.
+   Shared Details/Guide rules remain in the shared sections above.
+   ========================================================== */
+@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media (max-width: 640px){#editorView:has(#panel-basic:not([hidden])) .editor-tabs{display:none}#editorView:has(#panel-basic:not([hidden])) .editor-heading{margin-bottom:15px}#editorView:has(#panel-basic:not([hidden])) #panel-basic{border:1px solid #E2E8F0;border-radius:12px;background:#fff;padding:20px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .section-heading h2{font-family:Manrope,sans-serif;font-size:20px;font-weight:600;color:#1B2E50;letter-spacing:-.5px}#editorView:has(#panel-basic:not([hidden])) #panel-basic .field label{font-family:Manrope,sans-serif;color:#1B2E50}@media(max-width:640px){#editorView:has(#panel-basic:not([hidden])) #panel-basic{padding:15px}}@media(max-width:767px){#editorView #panel-basic{padding:15px}}#panel-basic .logo-preview img{width:100%;height:100%;object-fit:cover}@media(max-width:767px){#editorView #panel-basic .logo-upload{align-items:flex-start;margin-top:0}#editorView #panel-basic .logo-preview{margin-top:0;align-self:flex-start}#editorView #panel-basic{padding-top:15px!important;padding-left:15px!important}}#editorView #panel-basic .logo-preview{border-radius:12px;border:none;outline:none;box-shadow:none}#editorView #panel-basic .logo-preview img{border-radius:12px}#editorView #panel-basic label.button[for="logoFile"]{height:30px;min-height:30px;box-sizing:border-box;padding:0 12px}@media(max-width:767px){#editorView #panel-basic .logo-upload{gap:10px;align-items:flex-start}#editorView #panel-basic .logo-upload>div:nth-child(2)>label.button[for="logoFile"]{margin-top:5px}}#editorView #panel-basic label.button[for="logoFile"]{gap:10px}#editorView #panel-basic label.button[for="logoFile"]{width:30px;min-width:30px;height:30px;min-height:30px;padding:0;gap:0;font-size:0;line-height:0;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}#editorView #panel-basic label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}#editorView #panel-basic label.button[for="logoFile"]{width:auto;min-width:0;height:30px;min-height:30px;padding:0 12px;gap:10px;font-size:13px;line-height:1.4;overflow:visible;white-space:nowrap}#editorView #panel-basic #clearLogo{display:none!important}#editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}#editorView #panel-basic .form-grid .field > label{padding-left:5px;margin-left:0;box-sizing:border-box}#editorView #panel-basic .form-grid .field > input,#editorView #panel-basic .form-grid .field > select{padding-left:12px;margin-left:0}#editorView #panel-basic .form-grid .field > label{font-size:15px}#editorView #panel-basic input:focus,#editorView #panel-basic input:focus-visible,#editorView #panel-basic select:focus,#editorView #panel-basic select:focus-visible,#editorView #panel-basic textarea:focus,#editorView #panel-basic textarea:focus-visible{
+  outline:none;
+  outline-offset:0;
+  box-shadow:none;
+  border-color:#E2E8F0;
+}#editorView #panel-basic .form-grid .field input{
+  color:#1B2E50;
+  font-weight:400;
+}#editorView #panel-basic .form-grid .field input::placeholder,#editorView #panel-basic .form-grid .field select:invalid{
+  color:#64748B;
+  font-weight:400;
+  opacity:1;
+}#editorView #panel-basic .form-grid .field > label{
+  color:#1B2E50;
+  font-weight:500;
+}#editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{
+  color:#1B2E50;
+  font-size:13px;
+  font-weight:400;
+}#editorView #panel-basic .form-grid .field input::placeholder,#editorView #panel-basic .form-grid .field select:invalid{
+  color:#64748B;
+  font-size:13px;
+  font-weight:400;
+  opacity:1;
+}#editorView #panel-basic .form-grid .field select option[value=""]{
+  color:#64748B;
+  font-weight:400;
+}#editorView #panel-basic #basicLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:22px;margin-top:0}@media(max-width:640px){#editorView #panel-basic #basicLinks{grid-template-columns:minmax(0,1fr)}}body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{display:none;}}#editorView #form .basic-logo-upload{
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 0 16px !important;
+}#editorView #form .basic-logo-upload .logo-preview{
+  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
+}#editorView #form #logoPreview{
+  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
+}#editorView #form #logoPreview img{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  border-radius: 10px !important;
+}#editorView #form .basic-logo-upload label.button[for="logoFile"]{
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 13px !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+  background: #FFFFFF !important;
+  color: #1B2E50 !important;
+  font: 600 13px/1.2 Manrope,sans-serif !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}#editorView #form .basic-logo-upload label.button[for="logoFile"] svg{
+  display: block !important;
+  flex: 0 0 15px !important;
+  width: 15px !important;
+  height: 15px !important;
+}#editorView #form .basic-logo-upload label.button[for="logoFile"]:hover{
+  border-color: #B8D9FA !important;
+  background: #F8FBFF !important;
+}#editorView #panel-basic .editor-footer #publish,#editorView #panel-basic #publish{min-height:48px;border-radius:10px;font:600 13px/1.2 Manrope,sans-serif}#editorView #panel-basic #agBasicInvestorList{
   display: grid;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item{
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr) 40px;
   align-items: center;
@@ -5657,8 +5410,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   min-width: 0;
   box-sizing: border-box;
   padding: 15px 0 15px 15px;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap{
   display: flex;
   grid-column: 1;
   align-items: center;
@@ -5671,8 +5423,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   max-height: 40px;
   flex: 0 0 40px;
   overflow: hidden;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo{
   display: grid;
   place-items: center;
   width: 40px;
@@ -5688,17 +5439,13 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   background: #F5F8FC;
   outline: 0;
   box-shadow: none;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:hover,
-#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:focus,
-#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:focus-within {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:hover,#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:focus,#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:focus-within{
   border: 0;
   border-radius: 10px;
   background: #F5F8FC;
   outline: 0;
   box-shadow: none;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo img {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo img{
   display: block;
   width: 100%;
   height: 100%;
@@ -5706,8 +5453,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   max-height: 100%;
   object-fit: contain;
   border-radius: 10px;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields{
   display: block;
   grid-column: 2;
   width: 100%;
@@ -5715,11 +5461,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   max-width: 100%;
   margin: 0;
   gap: 0;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields label {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields label{
   display: none;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields input {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > .ag-investor-fields input{
   display: block;
   width: 100%;
   min-width: 0;
@@ -5732,8 +5476,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   border: 1px solid #E6EAF0;
   border-radius: 10px;
   font: 400 13px/1.2 Manrope, sans-serif;
-}
-#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > button.icon-button {
+}#editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item > button.icon-button{
   grid-column: 3;
   justify-self: end;
   align-self: center;
@@ -5743,68 +5486,4 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   height: 40px;
   min-height: 40px;
   max-height: 40px;
-}
-/* Shared editor header — single source of truth for Basic, Details and Guide. */
-#editorView .mobile-editor-toolbar{position:relative;inset:auto;z-index:1003;display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#F8FAFC;border-bottom:1px solid #E2E8F0}
-#editorView .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,sans-serif;font-size:15px;font-weight:700;line-height:1;letter-spacing:-.3px;color:#1B2E50}
-#editorView .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}
-#editorView .mobile-editor-nav:hover,#editorView .mobile-editor-nav:focus,#editorView .mobile-editor-nav:active{background:none;box-shadow:none}
-#editorView #mobileEditorBack{margin-left:10px}
-#editorView #mobileEditorClose{margin-right:15px}
-#editorView .mobile-editor-nav svg{width:20px;height:20px}
-
-
-/* Basic Editor project logo is the upload control. */
-#editorView #panel-basic #logoPreview{cursor:pointer}
-#editorView #panel-basic #logoPreview:focus-visible{outline:2px solid #1E90FF;outline-offset:3px}
-
-
-/* Basic Editor: place the project name field beside the logo in the top row. */
-#editorView #panel-basic .basic-logo-name-row{display:flex;align-items:center;gap:15px;width:100%;box-sizing:border-box;padding:0;margin:0 0 16px}
-#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;align-items:center;flex:0 0 40px;width:40px;margin:0}
-#editorView #panel-basic .basic-logo-name-row .basic-name-field{flex:1 1 auto;min-width:0;margin:0}
-#editorView #panel-basic .basic-logo-name-row .basic-name-field label{display:block;margin:0 0 6px}
-#editorView #panel-basic .basic-logo-name-row .basic-name-field input{width:100%;min-width:0;box-sizing:border-box}
-/* Dashboard project cards open the Project Editor directly. */
-#trendingCurrent [data-edit-project],#allAirdropsList [data-edit-project]{cursor:pointer}
-#trendingCurrent [data-edit-project] .actions,#allAirdropsList [data-edit-project] .actions{cursor:default}
-
-
-/* Dashboard Add Project button — full width with 15px side spacing. */
-#projectsView .projects-add-action{width:100%;box-sizing:border-box;padding:0 15px;margin:15px 0 20px}
-#projectsView .projects-add-action #addProjectButton{display:flex;width:100%;height:45px;min-height:45px;box-sizing:border-box;align-items:center;justify-content:center;border-radius:10px}
-
-/* Project Editor header navigation */
-#editorView>.editor-tabs{display:flex;justify-content:space-around;gap:0;margin:0;padding:10px 15px;border-bottom:1px solid #E2E8F0;background:#fff;}
-#editorView>.editor-tabs button{flex:1;justify-content:center;min-height:44px;padding:8px 4px;border:0;border-bottom:2px solid transparent;border-radius:0;font:600 13px Manrope,sans-serif;color:#1B2E50;}
-#editorView>.editor-tabs button[aria-selected='true']{border-bottom-color:#1E90FF;color:#1E90FF;}
-@media(min-width:768px){#editorView>.editor-tabs{margin-bottom:22px;padding-inline:0;}}
-@media(max-width:767px){#editorView>.editor-tabs{flex:0 0 auto;position:relative;z-index:2;}#editorView #form{padding-top:15px;}}
-
-/* Ensure Project Editor navigation remains visible on mobile and desktop. */
-#editorView .editor-tabs{display:flex!important;}
-@media(max-width:767px){#editorView>.editor-tabs{flex:0 0 auto;position:relative;z-index:5;justify-content:space-around;gap:0;margin:0;padding:8px 15px;background:#fff;border-bottom:1px solid #E2E8F0;}#editorView>.editor-tabs button{flex:1;min-height:44px;justify-content:center;padding:8px 4px;font-size:13px;}}
-
-/* Selected Project Editor tab: keep its label and icon legible on blue. */
-#editorView>.editor-tabs button[aria-selected="true"]{background:#1E90FF!important;color:#FFFFFF!important;border-bottom-color:#1E90FF!important;}
-#editorView>.editor-tabs button[aria-selected="true"] svg{color:#FFFFFF!important;stroke:#FFFFFF!important;}
-
-/* Basic / Details / Guide navigation header: fixed 50px shared height. */
-#editorView>.editor-tabs{height:50px;min-height:50px;box-sizing:border-box;align-items:center;padding-top:0;padding-bottom:0;background:#F8FAFC;}
-#editorView>.editor-tabs button{height:35px;min-height:35px;box-sizing:border-box;border-radius:10px;}
-@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;background:#F8FAFC;}#editorView>.editor-tabs button{height:35px;min-height:35px;padding:0 4px;border-radius:10px;}}
-
-/* Inactive Basic / Details / Guide tabs blend into the off-white navigation header. */
-#editorView>.editor-tabs button:not([aria-selected="true"]),
-#editorView>.editor-tabs button:not([aria-selected="true"]):hover,
-#editorView>.editor-tabs button:not([aria-selected="true"]):focus,
-#editorView>.editor-tabs button:not([aria-selected="true"]):active{background:transparent!important;box-shadow:none!important;}
-
-/* Basic Editor: remove only the outer main card; retain all field/input boxes. */
-#editorView #panel-basic{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}
-@media(max-width:767px){#editorView #form>#panel-basic:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
-
-
-/* Details and Guide Editors: remove only each outer main card; preserve all input fields and inner field boxes. */
-#editorView #panel-details,#editorView #panel-guide{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}
-@media(max-width:767px){#editorView #form>#panel-details:not([hidden]),#editorView #form>#panel-guide:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
+}#editorView #panel-basic #logoPreview{cursor:pointer}#editorView #panel-basic #logoPreview:focus-visible{outline:2px solid #1E90FF;outline-offset:3px}#editorView #panel-basic .basic-logo-name-row{display:flex;align-items:center;gap:15px;width:100%;box-sizing:border-box;padding:0;margin:0 0 16px}#editorView #panel-basic .basic-logo-name-row .basic-logo-upload{display:flex;align-items:center;flex:0 0 40px;width:40px;margin:0}#editorView #panel-basic .basic-logo-name-row .basic-name-field{flex:1 1 auto;min-width:0;margin:0}#editorView #panel-basic .basic-logo-name-row .basic-name-field label{display:block;margin:0 0 6px}#editorView #panel-basic .basic-logo-name-row .basic-name-field input{width:100%;min-width:0;box-sizing:border-box}#editorView #panel-basic{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;}@media(max-width:767px){#editorView #form>#panel-basic:not([hidden]){margin:0 0 15px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;}}
