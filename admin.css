@@ -5980,7 +5980,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
   max-height: 40px;
 }
 /* Shared editor header — single source of truth for Basic, Details and Guide. */
-#editorView .mobile-editor-toolbar{position:relative;inset:auto;z-index:1003;display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#fff;border-bottom:1px solid #E2E8F0}
+#editorView .mobile-editor-toolbar{position:relative;inset:auto;z-index:1003;display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#F8FAFC;border-bottom:1px solid #E2E8F0}
 #editorView .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,sans-serif;font-size:15px;font-weight:700;line-height:1;letter-spacing:-.3px;color:#1B2E50}
 #editorView .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}
 #editorView .mobile-editor-nav:hover,#editorView .mobile-editor-nav:focus,#editorView .mobile-editor-nav:active{background:none;box-shadow:none}
@@ -6031,7 +6031,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 #editorView>.editor-tabs button[aria-selected="true"] svg{color:#FFFFFF!important;stroke:#FFFFFF!important;}
 
 /* Basic / Details / Guide navigation header: fixed 50px shared height. */
-#editorView>.editor-tabs{height:50px;min-height:50px;box-sizing:border-box;align-items:center;padding-top:0;padding-bottom:0;}
+#editorView>.editor-tabs{height:50px;min-height:50px;box-sizing:border-box;align-items:center;padding-top:0;padding-bottom:0;background:#F8FAFC;}
 #editorView>.editor-tabs button{height:35px;min-height:35px;box-sizing:border-box;border-radius:10px;}
-@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;}#editorView>.editor-tabs button{height:35px;min-height:35px;padding:0 4px;border-radius:10px;}}
+@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;background:#F8FAFC;}#editorView>.editor-tabs button{height:35px;min-height:35px;padding:0 4px;border-radius:10px;}}
 
