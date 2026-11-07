@@ -6029,3 +6029,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 /* Selected Project Editor tab: keep its label and icon legible on blue. */
 #editorView>.editor-tabs button[aria-selected="true"]{background:#1E90FF!important;color:#FFFFFF!important;border-bottom-color:#1E90FF!important;}
 #editorView>.editor-tabs button[aria-selected="true"] svg{color:#FFFFFF!important;stroke:#FFFFFF!important;}
+
+/* Basic / Details / Guide navigation header: fixed 50px shared height. */
+#editorView>.editor-tabs{height:50px;min-height:50px;box-sizing:border-box;align-items:center;padding-top:0;padding-bottom:0;}
+#editorView>.editor-tabs button{height:36px;min-height:36px;box-sizing:border-box;}
+@media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;}#editorView>.editor-tabs button{height:36px;min-height:36px;padding:0 4px;}}
+
