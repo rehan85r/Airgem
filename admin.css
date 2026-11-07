@@ -4547,7 +4547,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
 }
 #editorView #form #logoPreview{
-  display:grid!important;place-items:center!important;flex:0 0 30px!important;width:30px!important;min-width:30px!important;max-width:30px!important;height:30px!important;min-height:30px!important;max-height:30px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
+  display:grid!important;place-items:center!important;flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important;height:40px!important;min-height:40px!important;max-height:40px!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:hidden!important;border:1px solid #E6EAF0!important;border-radius:11px!important;background:#F8FAFC!important;box-shadow:none!important;
 }#editorView #form .logo-upload .logo-preview img,#editorView #form #logoPreview img,#editorView #form #detailsLogoPreview img,#editorView #form #guideLogoPreview img{
   display: block !important;
   width: 100% !important;
