@@ -229,6 +229,13 @@
                   <div class="field basic-name-field">
                     <input id="name" aria-label="Name" required maxlength="200" placeholder="Write Name..." />
                   </div>
+                  <div class="field basic-status-field">
+                    <select id="activityStatus" aria-label="Status">
+                      <option value="" disabled selected>Select Status...</option>
+                      <option value="Active">Active</option>
+                      <option value="Ended">Ended</option>
+                    </select>
+                  </div>
                 </div>
                 <input id="logoUrl" type="hidden" /><input
                   id="color"
@@ -243,14 +250,6 @@
 
 
 
-                  <div class="field">
-                    <label for="activityStatus">Status</label
-                    ><select id="activityStatus">
-                      <option value="" disabled>Select Status...</option>
-                      <option value="Active">Active</option>
-                      <option value="Ended">Ended</option>
-                    </select>
-                  </div>
                   <div id="basicLinks" class="form-grid" style="grid-column:1 / -1; width:100%; max-width:none;"></div>
                 </div>
                 <div class="section-heading basic-investors-heading">
