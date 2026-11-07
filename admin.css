@@ -7731,6 +7731,21 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>.ag-investor-fields input{min-height:40px!important;height:40px!important;padding:9px 10px!important;font-size:12.5px!important}
 }
 
+/* Basic Editor investor logo: neutral hover/focus state and 10px radius. */
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo,
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:hover,
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:focus,
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo:focus-within{
+  border-radius:10px!important;
+  border-color:transparent!important;
+  background:#F5F8FC!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+#editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap .ag-investor-photo img{
+  border-radius:10px!important;
+}
+
 /* Admin panel premium styling — consolidated from the former shared design layer. */
 /* Admin panel — keep existing layout and controls; align surface treatment only. */
 body:not([data-view]) {
