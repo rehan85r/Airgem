@@ -6062,3 +6062,4 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 /* Shared Back and Close button styling for the mobile editor header. */
 #editorView .mobile-editor-nav{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:#1B2E50;cursor:pointer}
 #editorView .mobile-editor-nav svg{width:20px;height:20px}
+#editorView #mobileEditorBack{margin-left:15px}#editorView #mobileEditorClose{margin-right:15px}
