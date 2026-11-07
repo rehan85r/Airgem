@@ -5991,3 +5991,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 #editorView #mobileEditorBack{margin-left:10px}
 #editorView #mobileEditorClose{margin-right:15px}
 #editorView .mobile-editor-nav svg{width:25px;height:25px}
+
+
+/* Basic Editor project logo is the upload control. */
+#editorView #panel-basic #logoPreview{cursor:pointer}
+#editorView #panel-basic #logoPreview:focus-visible{outline:2px solid #1E90FF;outline-offset:3px}
