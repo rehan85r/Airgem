@@ -6035,3 +6035,8 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 #editorView>.editor-tabs button{height:35px;min-height:35px;box-sizing:border-box;border-radius:10px;}
 @media(max-width:767px){#editorView>.editor-tabs{height:50px;min-height:50px;padding:0 15px;background:#F8FAFC;}#editorView>.editor-tabs button{height:35px;min-height:35px;padding:0 4px;border-radius:10px;}}
 
+/* Inactive Basic / Details / Guide tabs blend into the off-white navigation header. */
+#editorView>.editor-tabs button:not([aria-selected="true"]),
+#editorView>.editor-tabs button:not([aria-selected="true"]):hover,
+#editorView>.editor-tabs button:not([aria-selected="true"]):focus,
+#editorView>.editor-tabs button:not([aria-selected="true"]):active{background:transparent!important;box-shadow:none!important;}
