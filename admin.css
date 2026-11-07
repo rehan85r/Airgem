@@ -9112,7 +9112,7 @@ body:not([data-view]) #mfaBox #mfaHeading{
   white-space:nowrap;box-shadow:none;
 }
 #projectsView #trendingManager .top-airdrops-publish svg,
-#projectsView #allAirdropsManager .top-airdrops-publish svg {width:14px;height:14px;}
+#projectsView #allAirdropsManager .top-airdrops-publish svg {width:15px;height:15px;}
 /* One shared project-row layout for Top Airdrops, All Airdrops, Basic, Details and Guide. */
 #projectsView #trendingCurrent .trending-item,
 #projectsView .all-airdrops-list .trending-item,
