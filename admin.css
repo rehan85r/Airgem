@@ -7692,7 +7692,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #panel-basic .investor-list{display:grid;gap:10px;margin-top:14px}
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item{
   display:grid!important;grid-template-columns:30px minmax(0,1fr) 40px!important;grid-template-rows:auto!important;
-  align-items:center!important;column-gap:10px!important;row-gap:0!important;padding:15px 0!important;
+  align-items:center!important;column-gap:10px!important;row-gap:0!important;padding:15px 0 15px 15px!important;
   border:0!important;border-top:1px solid #E6EAF0!important;border-radius:0!important;background:transparent!important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-photo-wrap{
