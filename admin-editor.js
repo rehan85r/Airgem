@@ -614,6 +614,15 @@
         this.syncNA();
         this.changed();
       };
+      const logoPreviewTarget = $('logoPreview');
+      const openLogoPicker = () => $('logoFile').click();
+      logoPreviewTarget.addEventListener('click', openLogoPicker);
+      logoPreviewTarget.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLogoPicker();
+        }
+      });
       $('logoFile').onchange = async (event) => {
         const file = event.target.files?.[0];
         if (!file) return;
