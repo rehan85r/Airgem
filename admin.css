@@ -301,7 +301,7 @@ body:has(#dashboard:not([hidden])) .auth-shell {
   flex-direction: column;
 }
 /* ===== Admin header: single source of truth (exactly 60px) ===== */
-.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:0;box-sizing:border-box;height:60px;min-height:60px;max-height:60px;padding:0 12.5px 0 12.5px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--airgem-border,#E2E8F0);box-shadow:none}
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:0;box-sizing:border-box;height:60px;min-height:60px;max-height:60px;padding:0 12.5px 0 12.5px;background:#F8FAFC;border-bottom:1px solid var(--airgem-border,#E2E8F0);box-shadow:none}
 .topbar .admin-header-brand{display:flex;align-items:center;gap:10px;min-width:0;order:0;text-decoration:none;color:var(--airgem-navy,#1B2E50);font-weight:750;letter-spacing:-.45px}
 
 main {
