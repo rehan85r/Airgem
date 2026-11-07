@@ -8669,7 +8669,7 @@ body:not([data-view]) #mfaBox .mfa-code-digit:focus-visible {
 
 
 /* Admin quick menu: half-screen bottom sheet */
-#dashboard .admin-menu-open{margin-left:auto;width:40px;height:40px;min-width:40px;min-height:40px;max-width:40px;max-height:40px;flex:0 0 40px;padding:0;box-sizing:border-box;line-height:0;align-self:center;overflow:hidden;border:0;border-radius:12px;background:transparent;color:#1B2E50;display:grid;place-items:center;box-shadow:none;cursor:pointer}
+#dashboard .admin-menu-open{margin-left:auto;width:30px;height:30px;min-width:30px;min-height:30px;max-width:30px;max-height:30px;flex:0 0 30px;padding:0;box-sizing:border-box;line-height:0;align-self:center;overflow:hidden;border:0;border-radius:0;background:transparent;color:#1B2E50;display:grid;place-items:center;box-shadow:none;cursor:pointer}
 #dashboard .admin-menu-open svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 #dashboard .admin-menu-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,.42);opacity:0;transition:opacity .22s ease}
 #dashboard .admin-menu-backdrop.is-visible{opacity:1}
