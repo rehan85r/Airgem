@@ -9472,3 +9472,9 @@ body[data-admin-view="settings"] #dashboard > .app-shell > main {
   color:#1B2E50;
 }
 
+/* Single shared project-name weight across Top, All, Basic, Details and Guide. */
+#projectsView #trendingCurrent .trending-item-copy strong,
+#projectsView .all-airdrops-list .trending-item-copy strong,
+#projectsView #adminProjectPicker .admin-project-picker-item .trending-item-copy strong{
+  font-weight:500!important;
+}
