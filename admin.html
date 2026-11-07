@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/admin.css?v=investor-layout-fix-20261107-2" />
+    <link rel="stylesheet" href="/admin.css?v=basic-logo-name-row-20261107" />
     <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
   <body>
@@ -275,10 +275,16 @@
                 role="tabpanel"
                 aria-labelledby="tab-basic"
               >
-                <div class="logo-upload basic-logo-upload">
-                  <div id="logoPreview" class="logo-preview" role="button" tabindex="0" aria-label="Choose project logo">?</div>
-                  <input id="logoFile" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
-                  <button id="clearLogo" type="button" class="text-button" hidden>Remove logo</button>
+                <div class="basic-logo-name-row">
+                  <div class="logo-upload basic-logo-upload">
+                    <div id="logoPreview" class="logo-preview" role="button" tabindex="0" aria-label="Choose project logo">?</div>
+                    <input id="logoFile" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+                    <button id="clearLogo" type="button" class="text-button" hidden>Remove logo</button>
+                  </div>
+                  <div class="field basic-name-field">
+                    <label for="name">Name</label>
+                    <input id="name" required maxlength="200" placeholder="Write Name..." />
+                  </div>
                 </div>
                 <input id="logoUrl" type="hidden" /><input
                   id="color"
@@ -286,10 +292,6 @@
                   value="#1E90FF"
                 />
                 <div class="form-grid">
-                  <div class="field">
-                    <label for="name">Name</label
-                    ><input id="name" required maxlength="200" placeholder="Write Name..." />
-                  </div>
                   <div class="field">
                     <label for="displayTag">Category</label
                     ><input id="displayTag" placeholder="Add Category..." maxlength="150" />
