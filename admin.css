@@ -995,7 +995,7 @@ to{opacity:0;transform:translateY(24px)}
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
 #editorView .shared-editor-logo-upload{display:flex;align-items:flex-start;gap:10px;margin:0 0 15px}#editorView .shared-editor-logo-upload .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px;border:0;outline:0;box-shadow:none;border-radius:12px}#editorView .shared-editor-logo-upload .logo-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px}#editorView .shared-editor-logo-upload label.button[for="logoFile"]{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin-top:5px;padding:0 12px;gap:10px;font-size:15px;font-weight:500;line-height:1.4;color:#1B2E50;white-space:nowrap}#editorView .shared-editor-logo-upload label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Mobile Basic Editor top header: 50px. */
 @media(max-width:767px){
- body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{height:50px;min-height:50px;flex:0 0 50px}
+ 
  body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
 }/* Consistent Basic Editor field dimensions across mobile and desktop. */
 #editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}/* Mobile editor: consistent 15px left/right spacing for Basic,Details and Guide cards. */
@@ -1084,23 +1084,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     background: #F8FAFC;
   }
 
-  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar {
-    position: relative;
-    inset: auto;
-    z-index: 1003;
-    display: flex;
-    flex: 0 0 50px;
-    width: 100%;
-    height: 50px;
-    min-height: 50px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    background: #fff;
-    border-bottom: 1px solid #E2E8F0;
-  }
+  
 
   body[data-admin-view="editor"] #editorView #form {
     display: flex;
@@ -2093,7 +2077,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
 #editorView .shared-editor-logo-upload{display:flex;align-items:flex-start;gap:10px;margin:0 0 15px}#editorView .shared-editor-logo-upload .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px;border:0;outline:0;box-shadow:none;border-radius:12px}#editorView .shared-editor-logo-upload .logo-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px}#editorView .shared-editor-logo-upload label.button[for="logoFile"]{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin-top:5px;padding:0 12px;gap:10px;font-size:15px;font-weight:500;line-height:1.4;color:#1B2E50;white-space:nowrap}#editorView .shared-editor-logo-upload label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Mobile Basic Editor top header: 50px. */
 @media(max-width:767px){
- body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{height:50px;min-height:50px;flex:0 0 50px}
+ 
  body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
 }/* Consistent Basic Editor field dimensions across mobile and desktop. */
 #editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}/* Mobile editor: consistent 15px left/right spacing for Basic,Details and Guide cards. */
@@ -2175,23 +2159,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     background: #F8FAFC;
   }
 
-  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar {
-    position: relative;
-    inset: auto;
-    z-index: 1003;
-    display: flex;
-    flex: 0 0 50px;
-    width: 100%;
-    height: 50px;
-    min-height: 50px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    background: #fff;
-    border-bottom: 1px solid #E2E8F0;
-  }
+  
 
   body[data-admin-view="editor"] #editorView #form {
     display: flex;
@@ -3186,7 +3154,7 @@ to{opacity:0;transform:translateY(24px)}
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
 #editorView .shared-editor-logo-upload{display:flex;align-items:flex-start;gap:10px;margin:0 0 15px}#editorView .shared-editor-logo-upload .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px;border:0;outline:0;box-shadow:none;border-radius:12px}#editorView .shared-editor-logo-upload .logo-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px}#editorView .shared-editor-logo-upload label.button[for="logoFile"]{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin-top:5px;padding:0 12px;gap:10px;font-size:15px;font-weight:500;line-height:1.4;color:#1B2E50;white-space:nowrap}#editorView .shared-editor-logo-upload label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Mobile Basic Editor top header: 50px. */
 @media(max-width:767px){
- body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{height:50px;min-height:50px;flex:0 0 50px}
+ 
  body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
 }/* Consistent Basic Editor field dimensions across mobile and desktop. */
 #editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}/* Mobile editor: consistent 15px left/right spacing for Basic,Details and Guide cards. */
@@ -3270,23 +3238,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     background: #F8FAFC;
   }
 
-  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar {
-    position: relative;
-    inset: auto;
-    z-index: 1003;
-    display: flex;
-    flex: 0 0 50px;
-    width: 100%;
-    height: 50px;
-    min-height: 50px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    background: #fff;
-    border-bottom: 1px solid #E2E8F0;
-  }
+  
 
   body[data-admin-view="editor"] #editorView #form {
     display: flex;
@@ -4280,7 +4232,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 #editorView #panel-basic #clearLogo{display:none!important}/* Matching project logo and upload control in Basic,Details and Guide. */
 #editorView .shared-editor-logo-upload{display:flex;align-items:flex-start;gap:10px;margin:0 0 15px}#editorView .shared-editor-logo-upload .logo-preview{width:40px;height:40px;min-width:40px;min-height:40px;border:0;outline:0;box-shadow:none;border-radius:12px}#editorView .shared-editor-logo-upload .logo-preview img{width:100%;height:100%;object-fit:cover;border-radius:12px}#editorView .shared-editor-logo-upload label.button[for="logoFile"]{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:0;height:30px;min-height:30px;margin-top:5px;padding:0 12px;gap:10px;font-size:15px;font-weight:500;line-height:1.4;color:#1B2E50;white-space:nowrap}#editorView .shared-editor-logo-upload label.button[for="logoFile"] svg{width:15px;height:15px;flex:0 0 15px}/* Mobile Basic Editor top header: 50px. */
 @media(max-width:767px){
- body[data-admin-view="editor"] #editorView .mobile-editor-toolbar{height:50px;min-height:50px;flex:0 0 50px}
+ 
  body[data-admin-view="editor"] #editorView #form{min-height:calc(100dvh - 50px)}
 }/* Consistent Basic Editor field dimensions across mobile and desktop. */
 #editorView #panel-basic .form-grid .field input,#editorView #panel-basic .form-grid .field select{height:50px;min-height:50px;box-sizing:border-box;border-radius:12px}/* Mobile editor: consistent 15px left/right spacing for Basic,Details and Guide cards. */
@@ -4362,23 +4314,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
     background: #F8FAFC;
   }
 
-  body[data-admin-view="editor"] #editorView .mobile-editor-toolbar {
-    position: relative;
-    inset: auto;
-    z-index: 1003;
-    display: flex;
-    flex: 0 0 50px;
-    width: 100%;
-    height: 50px;
-    min-height: 50px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    background: #fff;
-    border-bottom: 1px solid #E2E8F0;
-  }
+  
 
   body[data-admin-view="editor"] #editorView #form {
     display: flex;
@@ -6048,7 +5984,7 @@ body[data-admin-view="settings"] #dashboard > .app-shell > .topbar,body[data-adm
 
 
 /* Shared editor header — single source of truth for Basic, Details and Guide. */
-#editorView .mobile-editor-toolbar{display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#fff;border-bottom:1px solid #E2E8F0}
+#editorView .mobile-editor-toolbar{position:relative;inset:auto;z-index:1003;display:flex;flex:0 0 50px;width:100%;height:50px;min-height:50px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;padding:0;background:#fff;border-bottom:1px solid #E2E8F0}
 #editorView .mobile-editor-toolbar strong{flex:1;min-width:0;text-align:center;font-family:Manrope,Inter,sans-serif;font-size:20px;font-weight:600;line-height:1;letter-spacing:-.3px;color:#1B2E50}
 #editorView .mobile-editor-nav{display:grid;width:30px;height:30px;min-width:30px;flex:0 0 30px;place-items:center;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:#1B2E50;cursor:pointer}
 #editorView .mobile-editor-nav:hover,#editorView .mobile-editor-nav:focus,#editorView .mobile-editor-nav:active{background:none;box-shadow:none}
