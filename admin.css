@@ -9064,14 +9064,14 @@ body:not([data-view]) #mfaBox #mfaHeading{
   gap:5px;
   color:#FFFFFF;
   background:#1E90FF;
-  font:600 12px/1 Manrope,sans-serif;
+  font:600 15px/1 Manrope,sans-serif;
   white-space:nowrap;
   box-shadow:none;
 }
 #projectsView #adminProjectPicker .picker-add-project svg{
   display:block;
-  width:14px;
-  height:14px;
+  width:15px;
+  height:15px;
 }
 #projectsView #adminProjectPicker .top-airdrops-heading h2{
   display:flex;
