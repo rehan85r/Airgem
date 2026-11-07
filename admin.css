@@ -7712,8 +7712,8 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>.ag-investor-fields label{display:none!important}
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>.ag-investor-fields input{
-  display:block!important;width:30px!important;min-width:30px!important;max-width:30px!important;box-sizing:border-box!important;
-  min-height:30px!important;height:30px!important;max-height:30px!important;padding:4px!important;
+  display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;
+  min-height:30px!important;height:30px!important;max-height:30px!important;padding:4px 10px!important;
   border:1px solid #E6EAF0!important;border-radius:8px!important;font:400 12px/1.2 Manrope,sans-serif!important;
 }
 #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>button.icon-button{
@@ -7729,7 +7729,7 @@ body:has(#editorView:not([hidden])):has(#panel-basic:not([hidden])) .app-footer{
   #editorView #panel-basic #agBasicSetInvestorsNA,
   #editorView #panel-basic #agBasicAddInvestor{min-height:40px;padding:0 12px;font-size:12px}
   #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item{grid-template-columns:30px minmax(0,1fr) 40px!important;column-gap:15px!important;padding:15px 0!important}
-  #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>.ag-investor-fields input{width:30px!important;min-width:30px!important;max-width:30px!important;min-height:30px!important;height:30px!important;max-height:30px!important;padding:4px!important;font-size:12px!important}
+  #editorView #panel-basic #agBasicInvestorList .ag-investor-editor-item>.ag-investor-fields input{width:100%!important;min-width:0!important;max-width:100%!important;min-height:30px!important;height:30px!important;max-height:30px!important;padding:4px 10px!important;font-size:12px!important}
 }
 
 /* Basic Editor investor logo: neutral hover/focus state and 10px radius. */
