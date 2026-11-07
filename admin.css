@@ -4083,7 +4083,7 @@
   }#editorView .editor-footer #publish{
     min-height: 48px !important;
   }
-}#editorView #form .logo-upload,#editorView #form .shared-editor-logo-upload{
+}#editorView #form .logo-upload:not(.basic-logo-upload),#editorView #form .shared-editor-logo-upload{
   display: flex !important;
   align-items: center !important;
   gap: 12px !important;
